@@ -1,3 +1,6 @@
 [submodule "ThirdParty/HoaLibrary"]
 	path = ThirdParty/HoaLibrary
 	url = https://github.com/CICM/HoaLibrary-Light.git
+[submodule "ThirdParty/Max"]
+	path = ThirdParty/Max
+	url = https://github.com/CICM/max6-sdk.git
