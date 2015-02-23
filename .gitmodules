@@ -1,0 +1,3 @@
+[submodule "ThirdParty/HoaLibrary"]
+	path = ThirdParty/HoaLibrary
+	url = https://github.com/CICM/HoaLibrary-Light.git
