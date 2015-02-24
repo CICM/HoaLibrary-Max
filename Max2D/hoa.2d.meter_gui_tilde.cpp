@@ -505,13 +505,13 @@ t_max_err angles_set(t_meter *x, t_object *attr, long ac, t_atom *av)
         }
         x->f_meter->computeDisplay();
         x->f_vector->computeRendering();
+        
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_skeleton_layer);
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_separator_layer);
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_leds_layer);
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_vectors_layer);
+        jbox_redraw((t_jbox *)x);
     }
-	
-	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_skeleton_layer);
-	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_separator_layer);
-	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_leds_layer);
-	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_vectors_layer);
-	jbox_redraw((t_jbox *)x);
 	
     return MAX_ERR_NONE;
 }
@@ -523,7 +523,9 @@ t_max_err angles_get(t_meter *x, t_object *attr, long *argc, t_atom **argv)
     if(argv[0] && argc[0])
     {
         for(int i = 0; i < x->f_meter->getNumberOfPlanewaves(); i++)
+        {
             atom_setfloat(argv[0]+i, x->f_meter->getPlanewaveAzimuth(i) / HOA_2PI * 360.);
+        }
     }
     else
     {
@@ -551,19 +553,20 @@ t_max_err offset_get(t_meter *x, t_object *attr, long *argc, t_atom **argv)
 
 t_max_err offset_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
 {
-    if(argc && argv && atom_gettype(argv) == A_FLOAT)
+    if(argc && argv && atom_isNumber(argv))
     {
         x->f_vector->setPlanewavesRotation(atom_getfloat(argv) / 360 * HOA_2PI);
         x->f_meter->setPlanewavesRotation(atom_getfloat(argv) / 360 * HOA_2PI);
         x->f_vector->computeRendering();
         x->f_meter->computeDisplay();
+        
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_skeleton_layer);
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_separator_layer);
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_leds_layer);
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_vectors_layer);
+        jbox_redraw((t_jbox *)x);
     }
     
-    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_skeleton_layer);
-    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_separator_layer);
-    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_leds_layer);
-    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_vectors_layer);
-    jbox_redraw((t_jbox *)x);
     return MAX_ERR_NONE;
 }
 
@@ -724,11 +727,10 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
             // skelton separators and leds bg:
             for(i = 0; i < x->f_meter->getNumberOfPlanewaves(); i++)
             {
-                /*
 				channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
                 deg2 = degToRad(90 + channelWidth);
 				
-                rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5);
+                rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5) + x->f_meter->getPlanewavesRotation();
                 if (!x->f_rotation)
 				{
                     rotateAngle += channelWidth;
@@ -784,7 +786,6 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
                     jgraphics_stroke(g);
                 }
                 jgraphics_rotate(g, degToRad(-rotateAngle));
-                */
             }
         }
 		jbox_end_layer((t_object*)x, view, hoa_sym_skeleton_layer);
@@ -813,9 +814,8 @@ void draw_separator(t_meter *x,  t_object *view, t_rect *rect)
 		// skelton separators and leds bg:
 		for(int i=0; i < x->f_meter->getNumberOfPlanewaves(); i++)
 		{
-            /*
-			channelWidth = radToDeg(x->f_meter->getChannelWidth(i));
-			rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5) + x->f_offset_of_channels;
+			channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
+            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5) + x->f_meter->getPlanewavesRotation();
 			if (!x->f_rotation)
 			{
 				rotateAngle += channelWidth;
@@ -834,7 +834,6 @@ void draw_separator(t_meter *x,  t_object *view, t_rect *rect)
 			}
 			
 			jgraphics_rotate(g, degToRad(-rotateAngle));
-            */
 		}
 		
 		jbox_end_layer((t_object*)x, view, hoa_sym_separator_layer);
@@ -871,13 +870,13 @@ void draw_leds(t_meter *x, t_object *view, t_rect *rect)
 		
 		for(i = 0; i < nLoudSpeak; i++)
 		{
-            /*
 			// dB (negatif) de -240 à 0;
-            meter_dB = x->f_meter->getChannelEnergy(i);
-			
-			channelWidth = radToDeg(x->f_meter->getChannelWidth(i));
+            meter_dB = x->f_meter->getPlanewaveEnergy(i);
+            
+            channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
             deg2 = degToRad(90+(channelWidth));
-            rotateAngle = radToDeg(x->f_meter->getChannelAzimuthMapped(i)) - (channelWidth*0.5) + x->f_offset_of_channels;
+            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5) + x->f_meter->getPlanewavesRotation();
+            
             if(!x->f_rotation)
             {
                 rotateAngle += channelWidth;
@@ -946,7 +945,7 @@ void draw_leds(t_meter *x, t_object *view, t_rect *rect)
 				}
 			}
             
-            if ( x->f_overled[i] > 0 )
+            if(x->f_meter->getPlanewaveOverLed(i))
             {
                 jgraphics_set_source_jrgba(g, &x->f_color_over);
                 jgraphics_set_line_width(g, ledMargin);
@@ -995,7 +994,6 @@ void draw_leds(t_meter *x, t_object *view, t_rect *rect)
             }
             
             jgraphics_rotate(g, degToRad(-rotateAngle));
-            */
 		}
 		
 		jbox_end_layer((t_object*)x, view, hoa_sym_leds_layer);
@@ -1016,13 +1014,13 @@ void draw_vectors(t_meter *x, t_object *view, t_rect *rect)
 	
 	if (g)
 	{
-        /*
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
+        
 		if (x->f_rotation)
-			jgraphics_rotate(g, degToRad(x->f_offset_of_channels));
+			jgraphics_rotate(g, x->f_meter->getPlanewavesRotation());
 		else
-			jgraphics_rotate(g, -degToRad(x->f_offset_of_channels));
+			jgraphics_rotate(g, -x->f_meter->getPlanewavesRotation());
 		
 		if (x->f_drawvector == VECTOR_BOTH || x->f_drawvector == VECTOR_ENERGY)
 		{
@@ -1033,13 +1031,11 @@ void draw_vectors(t_meter *x, t_object *view, t_rect *rect)
 			}
 			else
 			{
-				double rad = radius(x->f_vector_coords[2], x->f_vector_coords[3]) * maxRadius;
-                double ang = -azimuth(x->f_vector_coords[2], x->f_vector_coords[3]);
-                vecX = abscissa(rad, ang);
-                vecY = ordinate(rad, ang);
+                double rad = Math<double>::radius(x->f_vector_coords[2], x->f_vector_coords[3]) * maxRadius;
+                double ang = -Math<double>::azimuth(x->f_vector_coords[2], x->f_vector_coords[3]);
+                vecX = Math<double>::abscissa(rad, ang);
+                vecY = Math<double>::ordinate(rad, ang);
 			}
-			
-			
 			
 			jgraphics_set_source_jrgba(g, &x->f_color_energy);
 			jgraphics_arc(g, vecX, vecY, pointSize, 0., HOA_2PI);
@@ -1052,17 +1048,17 @@ void draw_vectors(t_meter *x, t_object *view, t_rect *rect)
 		{
 			if (x->f_rotation)
 			{
-				double rad = clip_max(radius(x->f_vector_coords[0], x->f_vector_coords[1]), 1.) * maxRadius;
-                double ang = azimuth(x->f_vector_coords[0], x->f_vector_coords[1]);
-                vecX = abscissa(rad, ang);
-                vecY = ordinate(rad, ang);
+				double rad = min(Math<double>::radius(x->f_vector_coords[0], x->f_vector_coords[1]), 1.) * maxRadius;
+                double ang = Math<double>::azimuth(x->f_vector_coords[0], x->f_vector_coords[1]);
+                vecX = Math<double>::abscissa(rad, ang);
+                vecY = Math<double>::ordinate(rad, ang);
 			}
 			else
 			{
-				double rad = clip_max(radius(x->f_vector_coords[0], x->f_vector_coords[1]), 1.) * maxRadius;
-                double ang = -azimuth(x->f_vector_coords[0], x->f_vector_coords[1]);
-                vecX = abscissa(rad, ang);
-                vecY = ordinate(rad, ang);
+				double rad = min(Math<double>::radius(x->f_vector_coords[0], x->f_vector_coords[1]), 1.) * maxRadius;
+                double ang = -Math<double>::azimuth(x->f_vector_coords[0], x->f_vector_coords[1]);
+                vecX = Math<double>::abscissa(rad, ang);
+                vecY = Math<double>::ordinate(rad, ang);
 			}
 						
 			jgraphics_set_source_jrgba(g, &x->f_color_velocity);
@@ -1071,7 +1067,6 @@ void draw_vectors(t_meter *x, t_object *view, t_rect *rect)
 			jgraphics_set_source_rgba(g, 0.2, 0.2, 0.2, 1.);
 			jgraphics_stroke(g);
 		}
-        */
 		jbox_end_layer((t_object*)x, view, hoa_sym_vectors_layer);
 	}
 	
