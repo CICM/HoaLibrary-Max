@@ -1,0 +1,165 @@
+/*
+	Copyright (c) 2012 Cycling '74
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+	and associated documentation files (the "Software"), to deal in the Software without restriction, 
+	including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+	and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+	subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all copies 
+	or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+	INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+	IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+	OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+#searchTabLink img {
+	padding: 1px;
+	padding-bottom: 3px;
+}
+
+#nav {
+	top: 0px;
+	right: 0px;
+	margin-bottom: 10px;
+	max-height: 100%;
+	padding-bottom: 3px;
+}
+
+.caption {
+	position: static;
+}
+
+#objNavTop {
+	padding-bottom: 3px;
+}
+.sortButton {
+	width: 9em;
+}
+
+#searchBox {
+	display: inline;
+	clear: none;
+	width: 147px;
+	height: 20px;
+}
+
+#searchButton {
+	display: inline;
+	float: none;
+	width: 36px;
+	height: 23px;
+	position: relative;
+	top: -1px;
+}
+
+.ui-button {
+	position: static;
+}
+
+.ui-icon-document-b{
+	display: none;
+}
+
+.ui-icon-newwin {
+	display: none;
+}
+
+.ui-button-text {
+	font-size: 9px;
+	text-align: center;
+}
+
+.ui-button-text-only .ui-button-text{
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	
+}
+
+
+#listByCatButton {
+	margin-right: 4px;
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+UL li a {
+	padding-top: 0px;
+	padding-left: 5px;
+}
+
+.nav2 a {
+	padding-left: 12px;
+	background-position: 7px;
+}
+
+.vigNav a {
+	padding-left: 0px;
+	background-position: 7px;
+	list-style-position: outside;
+	margin-left: 10px;
+}
+.abcNav A {
+	padding-left: 3px;
+	background-position-y: 7px;
+}
+.nav3 a {
+	padding-left: 12px;
+	list-style-position: outside;
+}
+
+#seealsos {
+	width: 95%;
+}
+
+#reflist {
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+.nav3 div.digest {
+	list-style-position: outside;
+}
+
+.searchNav a {
+	padding-left: 2px;
+}
+.searchresult {
+	padding-left: 12px;
+}
+
+.searchresult .digest {
+	padding-left: 2px;
+}
+
+.reflistItem {
+	list-style-position: outside;
+}
+
+#content {
+	height: 100%;
+}
+
+.trigger {
+	padding-left: 20px;
+	background-position-x: 6px;
+	background-position-y: 7px;
+}
+
+.open {
+	background-position-x: 6px;
+	background-position-y: 7px;
+}
+
+.textIllustration {
+position: static;
+}

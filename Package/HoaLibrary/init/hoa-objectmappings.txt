@@ -1,0 +1,24 @@
+max objectfile hoa.decoder~ hoa.2d.decoder~;
+max objectfile hoa.encoder~ hoa.2d.encoder~;
+max objectfile hoa.map~ hoa.2d.map~;
+max objectfile hoa.meter~ hoa.2d.meter~;
+max objectfile hoa.optim~ hoa.2d.optim~;
+max objectfile hoa.projector~ hoa.2d.projector~;
+max objectfile hoa.recomposer hoa.2d.recomposer;
+max objectfile hoa.recomposer~ hoa.2d.recomposer~;
+max objectfile hoa.rotate~ hoa.2d.rotate~;
+max objectfile hoa.scope~ hoa.2d.scope~;
+max objectfile hoa.space hoa.2d.space;
+max objectfile hoa.vector~ hoa.2d.vector~;
+max objectfile hoa.wider~ hoa.2d.wider~;
+
+max objectfile hoa.2d.play~ hoa.play~;
+max objectfile hoa.3d.play~ hoa.play~;
+max objectfile hoa.2d.record~ hoa.record~;
+max objectfile hoa.3d.record~ hoa.record~;
+
+max objectfile hoa.2d.process~ hoa.process~;
+max objectfile hoa.3d.process~ hoa.process~;
+
+max objectfile hoa.2d.map hoa.map;
+max objectfile hoa.3d.map hoa.map;

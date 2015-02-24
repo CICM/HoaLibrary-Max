@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="127.7px" height="127.145px" viewBox="0 0 127.7 127.145" enable-background="new 0 0 127.7 127.145" xml:space="preserve">
+<path fill="#CCCCCC" stroke="#3F3F3F" d="M126.664,115.717c0,5.866-4.759,10.623-10.622,10.623H11.403
+	c-5.866-0.001-10.622-4.757-10.622-10.623V11.079c0-5.866,4.756-10.622,10.622-10.622h104.639c5.863,0,10.622,4.755,10.622,10.622
+	V115.717z"/>
+<g id="Layer_3">
+	<path fill="none" stroke="#606060" stroke-width="0.5" d="M125.915,111.637"/>
+	<line fill="none" stroke="#999999" stroke-width="0.5" x1="1.53" y1="63.4" x2="125.272" y2="63.4"/>
+	<line fill="none" stroke="#999999" stroke-width="0.5" x1="63.854" y1="1.448" x2="63.854" y2="125.348"/>
+	<line fill="none" stroke="#999999" stroke-width="0.5" x1="95.651" y1="10.206" x2="32.057" y2="116.59"/>
+	<line fill="none" stroke="#999999" stroke-width="0.5" x1="10.475" y1="31.914" x2="117.233" y2="94.881"/>
+	<ellipse fill="none" stroke="#999999" stroke-width="0.5" cx="63.856" cy="63.403" rx="21.426" ry="21.411"/>
+	<path fill="none" stroke="#999999" stroke-width="0.5" d="M63.856,29.789c18.58,0,33.64,15.048,33.64,33.615
+		c0,18.56-15.061,33.615-33.64,33.615c-18.577,0-33.636-15.055-33.636-33.615C30.22,44.838,45.279,29.789,63.856,29.789z"/>
+	<path fill="none" stroke="#999999" stroke-width="0.5" d="M63.398,14.859c26.827,0,48.576,21.731,48.576,48.538
+		c0,26.802-21.749,48.54-48.576,48.54c-26.823,0-48.569-21.737-48.569-48.54C14.828,36.59,36.574,14.859,63.398,14.859z"/>
+	<line fill="none" stroke="#999999" stroke-width="0.5" x1="117.91" y1="33.405" x2="9.448" y2="93.391"/>
+	<line fill="none" stroke="#999999" stroke-width="0.5" x1="33.368" y1="9.443" x2="94.348" y2="117.348"/>
+	<ellipse fill="#CCCCCC" stroke="#999999" stroke-width="0.5" cx="63.854" cy="63.399" rx="9.957" ry="9.95"/>
+	<path fill="none" stroke="#999999" stroke-width="0.5" d="M63.855,1.985c33.941,0,61.458,27.494,61.458,61.412
+		c0,33.911-27.518,61.413-61.458,61.413c-33.937,0-61.451-27.502-61.451-61.413C2.404,29.478,29.918,1.985,63.855,1.985z"/>
+</g>
+<g id="Layer_2">
+	<circle fill="none" stroke="#0303FC" stroke-width="0.75" cx="94.498" cy="63.403" r="30.142"/>
+	<circle fill="none" stroke="#FF0000" stroke-width="0.75" cx="33.527" cy="63.403" r="30.116"/>
+</g>
+</svg>

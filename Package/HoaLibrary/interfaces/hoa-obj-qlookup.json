@@ -1,0 +1,542 @@
+{
+  "hoa.2d.decoder~": {
+    "digest": "A 2d ambisonic decoder.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.2d.encoder~": {
+    "digest": "A 2d ambisonic encoder.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.2d.map~": {
+    "digest": "A 2d ambisonic multisource spatializer.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.2d.meter~": {
+    "digest": "A circular array of visual peak level indicators",
+    "module": "hoa",
+    "category": [
+      "planewaves",
+      "hoa objects",
+      "audio",
+      "GUI",
+      "MSP"
+    ],
+    "palette": {
+      "category": [
+        "planewaves",
+        "hoa objects",
+        "audio",
+        "GUI",
+        "MSP"
+      ],
+      "action": "hoa.2d.meter~",
+      "pic": "hoa.2d.meter~.svg"
+    }
+  },
+  "hoa.2d.optim~": {
+    "digest": "A 2d ambisonic signal optimization external.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "msp"
+    ]
+  },
+  "hoa.2d.projector~": {
+    "digest": "A 2d ambisonic projection external",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.2d.recomposer": {
+    "digest": "A Graphical User Interface to manipulate channels in 2d.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "GUI"
+    ],
+    "palette": {
+      "category": [
+        "ambisonics",
+        "hoa objects",
+        "GUI"
+      ],
+      "action": "hoa.2d.recomposer",
+      "pic": "hoa.2d.recomposer.svg"
+    }
+  },
+  "hoa.2d.recomposer~": {
+    "digest": "Recomposes a 2d plane wave decomposition into circular harmonics",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.2d.rotate~": {
+    "digest": "A 2d ambisonic sound field rotation external",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.2d.scope~": {
+    "digest": "A 2d ambisonic harmonic scope.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "GUI",
+      "MSP"
+    ],
+    "palette": {
+      "category": [
+        "ambisonics",
+        "hoa objects",
+        "audio",
+        "GUI",
+        "MSP"
+      ],
+      "action": "hoa.2d.scope~",
+      "pic": "hoa.2d.scope~.svg"
+    }
+  },
+  "hoa.2d.space": {
+    "digest": "A graphic user interface to design 2d ambisonic space",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "GUI"
+    ],
+    "palette": {
+      "category": [
+        "ambisonics",
+        "hoa objects",
+        "GUI"
+      ],
+      "action": "hoa.2d.space",
+      "pic": "hoa.2d.space.svg"
+    }
+  },
+  "hoa.2d.vector~": {
+    "digest": "A 2d soundfield energy and velocity vectors calculator.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.2d.wider~": {
+    "digest": "A 2d fractional ambisonic orders simulator",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.3d.decoder~": {
+    "digest": "A 3d ambisonic decoder.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.3d.encoder~": {
+    "digest": "A 3d ambisonic encoder.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.3d.map~": {
+    "digest": "A 3d ambisonic multisource spatializer",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.3d.meter~": {
+    "digest": "Displays the peak level indicators for a spherical array of loudspeakers",
+    "module": "hoa",
+    "category": [
+      "planewaves",
+      "hoa objects",
+      "audio",
+      "GUI",
+      "MSP"
+    ],
+    "palette": {
+      "category": [
+        "planewaves",
+        "hoa objects",
+        "audio",
+        "GUI",
+        "MSP"
+      ],
+      "action": "hoa.3d.meter~",
+      "pic": "hoa.3d.meter~.svg"
+    }
+  },
+  "hoa.3d.optim~": {
+    "digest": "A 3d ambisonic optimization tool",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.3d.scope~": {
+    "digest": "A spherical harmonic visualizer",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "GUI",
+      "MSP"
+    ],
+    "palette": {
+      "category": [
+        "ambisonics",
+        "hoa objects",
+        "audio",
+        "GUI",
+        "MSP"
+      ],
+      "action": "hoa.3d.scope~",
+      "pic": "hoa.3d.scope~.svg"
+    }
+  },
+  "hoa.3d.vector~": {
+    "digest": "A 3d soundfield energy and velocity vectors calculator.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.3d.wider~": {
+    "digest": "A 3d fractional ambisonic orders simulator",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "c.convolve~": {
+    "digest": "A zero latency convolution reverberation processor",
+    "module": "hoa",
+    "category": [
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "c.freeverb~": {
+    "digest": "A freeverb reverberation processor implementation",
+    "module": "hoa",
+    "category": [
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.connect": {
+    "digest": "automatically connect several hoa objects together.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "script"
+    ]
+  },
+  "hoa.dac~": {
+    "digest": "A custom dac~ object with MathLab syntax.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "msp"
+    ]
+  },
+  "hoa.gain~": {
+    "digest": "A multichannel gain~ object.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "GUI",
+      "msp"
+    ],
+    "palette": {
+      "category": [
+        "ambisonics",
+        "hoa objects",
+        "GUI",
+        "msp"
+      ],
+      "action": "hoa.gain~",
+      "pic": "hoa.gain~.svg"
+    }
+  },
+  "hoa.in": {
+    "digest": "message inlet for a patcher loaded by hoa.process~",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "msp"
+    ]
+  },
+  "hoa.in~": {
+    "digest": "signal inlet for a patcher loaded by hoa.process~",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "msp"
+    ]
+  },
+  "hoa.map": {
+    "digest": "A graphic user interface to spatialize sources on a plane.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "GUI",
+      "MSP"
+    ],
+    "palette": {
+      "category": [
+        "ambisonics",
+        "hoa objects",
+        "audio",
+        "GUI",
+        "MSP"
+      ],
+      "action": "hoa.map",
+      "pic": "hoa.map.svg"
+    }
+  },
+  "hoa.out": {
+    "digest": "message outlet for a patcher loaded by hoa.process~",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "msp"
+    ]
+  },
+  "hoa.out~": {
+    "digest": "signal outlet for a patcher loaded by hoa.process~",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "msp"
+    ]
+  },
+  "hoa.pi": {
+    "digest": "π constant.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "maths"
+    ]
+  },
+  "hoa.pi~": {
+    "digest": "π signal constant.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "maths",
+      "msp"
+    ]
+  },
+  "hoa.play~": {
+    "digest": "an ambisonic sfplay~ object",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "msp"
+    ]
+  },
+  "hoa.process~": {
+    "digest": "patcher loader for multichannel processing.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "msp"
+    ]
+  },
+  "hoa.record~": {
+    "digest": "an ambisonic sfrecord~ object",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "msp"
+    ]
+  },
+  "hoa.thisprocess~": {
+    "digest": "Control hoa.process~ voice allocation, muting, argument and attributes.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "msp"
+    ]
+  },
+  "hoa.fx.convolve~": {
+    "digest": "A multichannel zero latency convolution reverberation processor.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.decorrelation~": {
+    "digest": "A multichannel decorrelator processor.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.delay~": {
+    "digest": "A delay sound field diffuser.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.freeverb~": {
+    "digest": "A freeverb reverberation for sound fields.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.gain~": {
+    "digest": "A mulichannel gain manager.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.grain~": {
+    "digest": "A multichannel granulator processor.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.mirror~": {
+    "digest": "An ambisonic sound field mirror processor.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.mixer~": {
+    "digest": "An ambisonic harmonic mixer.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.ringmod~": {
+    "digest": "A ring modulation sound field diffuser.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.receive~": {
+    "digest": "A multichannel version of the <o>receive~</o> object.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.send~": {
+    "digest": "A multichannel version of the <o>send~</o> object.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.syn.decorrelation~": {
+    "digest": "A multichannel decorrelator synthesizer.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.syn.delay~": {
+    "digest": "A delay sound field synthesizer.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.syn.grain~": {
+    "digest": "A granular sound field synthesizer.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.syn.ringmod~": {
+    "digest": "A sound ring modulation field diffusion synthesizer.",
+    "module": "hoa",
+    "category": [
+    ]
+  }
+}

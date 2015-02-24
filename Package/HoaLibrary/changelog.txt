@@ -1,0 +1,141 @@
+
+HoaLibrary for MaxMSP, Pure Data, Faust and VST
+
+------------------------ ------------------------
+		   Max Version 
+------------------------ ------------------------
+
+------------------------
+version Beta 2.0.2
+------------------------
+ - hoa.map : fix crash on Max 6.1.8
+
+------------------------
+version Beta 2.0.1
+------------------------
+ - hoa.connect : fix crash on Max 6.1.8
+
+
+------------------------
+version Beta 2.0
+------------------------
+
+Max : For an overview of hoa.library and new features in version Beta 2.0, please refer to the 'hoa.overview' patch in the extra folder, and at the object helps.
+
+
+• New Objects and Features:
+
+ - new 3D objects : hoa.3d.encoder~, hoa.3d.decoder~, hoa.3d.map~, hoa.3d.optim~, hoa.3d.scope~, hoa.3d.vector~, hoa.3d.wider~, hoa.3d.meter~, hoa.3d.scope~
+
+ - hoa.process~ : new object to manage patcher based multichannel processing (replace the deprecated hoa.plug~ object).
+	with hoa.in~, hoa.out~, hoa.in, hoa.out, hoa.thisprocess~
+
+• Changes :
+
+ - hoa.map : complete refactory, compatible with the pattrstorage and preset system, 2d/3d
+
+ - All 2d objects should now be prepended by a 2d symbol in their name, ex : hoa.wider~ => hoa.2d.wider~.
+ - All 3d objects are prepended by a 3d symbol in their name, ex : hoa.3d.wider~.
+
+ - By convention and for clarity, patchers destinated to be loaded by a hoa.process~ object are now either prepended by syn or fx. ex hoa.syn.delay~ / hoa.fx.delay~ (equivalent of the deprecated hoa.delay~ abstraction)
+  |=> you will need to adapt you patch in function if you used it with the old hoa.plug~ object.
+
+• Deprecated objects :
+
+ - hoa.plug~, have a look at the hoa.process~ object.
+
+ - hoa.convolve~ is now deprecated, have a look at the hoa.fx.convolve~ process patch
+
+ - hoa.freeverb is now deprecated, have a look at the hoa.fx.convolve~ process patch
+
+ - hoa.space~ is now deprecated. please use the hoa.fx.gain~ process patch instead.
+
+------------------------
+version 1.3
+------------------------
+
+Max : For an overview of hoa.library and new features in version 1.3, please refer to the 'hoa.overview' patch in the extra folder.
+
+
+Bug Fixed and New Features:
+
+ - hoa.gain~ : 	new GUI Object.
+ - hoa.recomposer : new GUI Object.
+ - hoa.decoder~ : dynamic number of loudspeakers, 3 restitution modes (ambisonics | binaural | irregular), automatically reconnect patchlines to hoa.meter~, hoa.gain~, hoa.dac~, hoa.vector~ when configuration has changed. less CPU usage.
+ - hoa.stereo~, hoa.binaural => (removed) now merged in the "all in one" hoa.decoder~ object.
+ - hoa.meter~ : dynamic inlets, draw overled like vanilla meter~, draw and outputs energy and velocity vectors coords, graphics bug fixed, output peak value for each loudspeakers. assist inlet shows LS angles.
+ - hoa.recomposer~ : 3 mode (fixe | fisheye | free), now takes angles and directivities messages as input.
+ - hoa.scope~ : dynamic inlets (order).
+ - hoa.freeverb~ : spread factors added.
+ - hoa.gigaverb~ : removed.
+ - hoa.control : removed.
+ - hoa.space : GUI revisited, shadow color attr removed, ctrl+drag => rotate, shift+drag => change gain
+ - hoa.pi~ : phase inlet added.
+ - hoa.vector~ : custom angles.
+ - hoa.map : clear method, various bug fixed.
+ - hoa.map~ : 1 source => signal coord
+ - hoa.dac~ : can take a symbol as first arg for bus creation (like vanilla dac~)
+
+------------------------
+version 1.2
+------------------------
+
+New FEATURES:
+ - hoa.freeverb~ : new MSP object.
+ - hoa.gigaverb~ : new MSP object.
+ - hoa.space : new UI object.
+ - hoa.space~ : new MSP object.
+ - hoa.pi~ : new MSP object.
+ - hoa.vector~ : new MSP object.
+ - hoa.map : object revisited.
+ - hoa.map~ : new MSP object.
+ - hoa.convolve~ : object revisited.
+ - hoa.irconverter~ : removed from package (deprecated).
+ - hoa.halo~ : removed from package (deprecated because of the the new hoa.space~ object).
+ - hoa.granular~ : new abstraction for hoa.plug~.
+
+BUGS FIXED:
+ - hoa.plug~ : mode out now output good index number.
+ - hoa.connect : better coloration and several bug fixed.
+ - hoa.decorrelation~ : harmonic index fixed.
+ - hoa.rotate~ : now accept float for azimuth.
+
+------------------------
+version 1.1
+------------------------
+
+New FEATURES:
+ - hoa.irconverter~ : new MSP object.
+ - hoa.convolve~ : new MSP object.
+ - hoa.halo~ : new MSP object.
+ - hoa.stereo~ : new MSP object.
+ - hoa.control : new UI object.
+ - hoa.map : new UI object.
+ - hoa.plug~ : "out" mode in beta + you can now pass args and attr to the object + mute msg deprecated.
+ - hoa.wider~ (external) : new MSP object.
+ - hoa.wider~ (patch) : renamed to hoa.pwider~ to prevent conflicts.
+ - hoa.closer~ : new abstraction for hoa.plug~.
+ - hoa.decorellation~ : new abstraction for hoa.plug~.
+ - hoa.pencoder~ : new abstraction for hoa.plug~.
+ - hoa.connect : color patchlines.
+ - operators : more operators added + help files + args and attr compatible
+ - h shortcut added to create a new hoa object
+ - new clippings patches.
+ - uninstaller for mac.
+
+BUGS FIXED:
+ - overview : update.
+ - refs : several updates.
+ - helps : several updates.
+ - hoa.connect : works now with drag and click selection.
+ - hoa.projector~ : lighter.
+ - hoa.recomposer~ : lighter.
+ - hoa.plug~ : don't show error message anymore when no args provided
+ - hoa.meter~ : update (several bug fixes, works now for 1 to 64 loudspeakers, same behavior than the original meter~, method added for angle settings, method added for number of led, dbperled…).
+ - hoa.scope~ : new design, various drawing bugs fixed.
+ - hoa.trajectory and dependencies removed.
+
+------------------------
+version beta 1.0.0
+------------------------
+ - first version.
