@@ -21,7 +21,7 @@
   <key>CFBundleShortVersionString</key>
   <string>${PRODUCT_VERSION}</string>
   <key>CFBundleLongVersionString</key>
-  <string>${PRODUCT_NAME} ${PRODUCT_VERSION}, Copyright 2010 Cycling &apos;74</string>
+  <string>${PRODUCT_NAME} ${PRODUCT_VERSION}, Copyright 2015 Cycling &apos;74</string>
   <key>CSResourcesFileMapped</key>
   <true/>
 </dict>
