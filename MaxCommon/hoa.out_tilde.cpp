@@ -48,51 +48,6 @@ typedef struct _hoa_sig_out
 
 t_class *hoa_sig_out_class;
 
-void *hoa_sig_out_new(t_symbol *s, long ac, t_atom *av);
-void hoa_sig_out_free(t_hoa_sig_out *x);
-void hoa_sig_out_assist(t_hoa_sig_out *x, void *b, long m, long a, char *s);
-
-void hoa_sig_out_dsp64 (t_hoa_sig_out *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags);
-void hoa_sig_out_perform64 (t_hoa_sig_out *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userextra);
-
-t_max_err hoa_sig_in_setattr_extra(t_hoa_sig_out *x, void *attr, long ac, t_atom *av);
-t_max_err hoa_sig_in_setattr_comment(t_hoa_sig_out *x, void *attr, long ac, t_atom *av);
-
-#ifdef HOA_PACKED_LIB
-int hoa_out_sig_main(void)
-#else
-int C74_EXPORT main(void)
-#endif
-{
-	t_class* c;
-	c = class_new("hoa.out~", (method) hoa_sig_out_new, (method)hoa_sig_out_free, sizeof(t_hoa_sig_out), NULL, A_GIMME, 0);
-	class_setname((char *)"hoa.out~", (char *)"hoa.out~");
-    
-	hoa_initclass(c, (method)NULL);
-    
-    // @method signal @digest output signal in the corresponding hoa.process~ object's signal outlet
-	// @description output signal in the corresponding hoa.process~ object's signal outlet
-	class_addmethod(c, (method)hoa_sig_out_dsp64, "dsp64", A_CANT, 0);
-    class_addmethod(c, (method)hoa_sig_out_assist, "assist", A_CANT, 0);
-    
-	CLASS_ATTR_LONG		(c, "extra", 0, t_hoa_sig_out, extra);
-	CLASS_ATTR_ACCESSORS(c, "extra", 0, hoa_sig_in_setattr_extra);
-	CLASS_ATTR_LABEL	(c, "extra", 0, "extra index");
-	// @description Defines an extra outlet. Extra outlet are added to the "normal" instance outlet and can be used to receive signal from all instances.
-    
-	CLASS_ATTR_SYM		(c, "comment", 0, t_hoa_sig_out, comment);
-	CLASS_ATTR_ACCESSORS(c, "comment", 0, hoa_sig_in_setattr_comment);
-	CLASS_ATTR_LABEL	(c, "comment", 0, "Description");
-	CLASS_ATTR_SAVE		(c, "comment", 1);
-    // @description Sets a description to the outlet which will be shown in the assist outlet of the <o>hoa.process~</o> that load this <o>hoa.out~</o>.
-    // Only works if the <m>extra</m> parameter is greater than 0.
-	
-	class_dspinit(c);
-	class_register(CLASS_BOX, c);
-	hoa_sig_out_class = c;
-	return 0;
-}
-
 void *hoa_sig_out_new(t_symbol *s, long ac, t_atom *av)
 {
     t_hoa_sig_out *x = (t_hoa_sig_out *)object_alloc(hoa_sig_out_class);
@@ -154,14 +109,9 @@ void hoa_sig_out_assist(t_hoa_sig_out *x, void *b, long m, long a, char *s)
 	}
 }
 
-void hoa_sig_out_dsp64(t_hoa_sig_out *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
-{
-	object_method(dsp64, gensym("dsp_add64"), x, hoa_sig_out_perform64, 0, NULL);		// scalar routine
-}
-
 // Perform Routine for misaligned vectors or small vector sizes (done in scalar code) 64 Bit
 
-void hoa_sig_out_perform64(t_hoa_sig_out *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userextra)
+void hoa_sig_out_perform64(t_hoa_sig_out *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vecsize, long flags, void *userextra)
 {	
     double *in1 = ins[0];	
 	double *io_pointer;
@@ -178,7 +128,7 @@ void hoa_sig_out_perform64(t_hoa_sig_out *x, t_object *dsp64, double **ins, long
 		if (out_ptrs && outlet_num > 0 && outlet_num <= declared_sig_outs)
 		{
 			io_pointer = out_ptrs[outlet_num - 1];
-			for (i = 0; i < vec_size; i++)
+			for (i = 0; i < vecsize; i++)
 			{
 				*io_pointer += *in1++; 
 				io_pointer++;
@@ -187,7 +137,47 @@ void hoa_sig_out_perform64(t_hoa_sig_out *x, t_object *dsp64, double **ins, long
 	}
 }
 
+void hoa_sig_out_dsp64(t_hoa_sig_out *x, t_object *dsp64, short *count, double sr, long vecsize, long flags)
+{
+    object_method(dsp64, gensym("dsp_add64"), x, hoa_sig_out_perform64, 0, NULL);		// scalar routine
+}
+
 void hoa_sig_out_free(t_hoa_sig_out *x)
 {
 	dsp_free(&x->x_obj);
+}
+
+#ifdef HOA_PACKED_LIB
+int hoa_out_sig_main(void)
+#else
+int C74_EXPORT main(void)
+#endif
+{
+    t_class* c;
+    c = class_new("hoa.out~", (method) hoa_sig_out_new, (method)hoa_sig_out_free, sizeof(t_hoa_sig_out), NULL, A_GIMME, 0);
+    class_setname((char *)"hoa.out~", (char *)"hoa.out~");
+    
+    hoa_initclass(c, (method)NULL);
+    
+    // @method signal @digest output signal in the corresponding hoa.process~ object's signal outlet
+    // @description output signal in the corresponding hoa.process~ object's signal outlet
+    class_addmethod(c, (method)hoa_sig_out_dsp64, "dsp64", A_CANT, 0);
+    class_addmethod(c, (method)hoa_sig_out_assist, "assist", A_CANT, 0);
+    
+    CLASS_ATTR_LONG		(c, "extra", 0, t_hoa_sig_out, extra);
+    CLASS_ATTR_ACCESSORS(c, "extra", 0, hoa_sig_in_setattr_extra);
+    CLASS_ATTR_LABEL	(c, "extra", 0, "extra index");
+    // @description Defines an extra outlet. Extra outlet are added to the "normal" instance outlet and can be used to receive signal from all instances.
+    
+    CLASS_ATTR_SYM		(c, "comment", 0, t_hoa_sig_out, comment);
+    CLASS_ATTR_ACCESSORS(c, "comment", 0, hoa_sig_in_setattr_comment);
+    CLASS_ATTR_LABEL	(c, "comment", 0, "Description");
+    CLASS_ATTR_SAVE		(c, "comment", 1);
+    // @description Sets a description to the outlet which will be shown in the assist outlet of the <o>hoa.process~</o> that load this <o>hoa.out~</o>.
+    // Only works if the <m>extra</m> parameter is greater than 0.
+    
+    class_dspinit(c);
+    class_register(CLASS_BOX, c);
+    hoa_sig_out_class = c;
+    return 0;
 }

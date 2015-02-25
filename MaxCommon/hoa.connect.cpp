@@ -52,103 +52,6 @@ typedef struct  _connect
 
 static t_class *connect_class;
 
-void *connect_new(t_symbol *s, long argc, t_atom *argv);
-void connect_free(t_connect *x);
-void connect_bang(t_connect *x);
-void connect_assist(t_connect *x, void *b, long m, long a, char *s);
-void connect_attach(t_connect *x);
-t_max_err connect_notify(t_connect *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
-
-t_max_err connect_setattr_zerocolor(t_connect *x, void *attr, long argc, t_atom *argv);
-t_max_err connect_setattr_poscolor(t_connect *x, void *attr, long argc, t_atom *argv);
-t_max_err connect_setattr_negcolor(t_connect *x, void *attr, long argc, t_atom *argv);
-t_max_err connect_setattr_planecolor(t_connect *x, void *attr, long argc, t_atom *argv);
-
-short is_obj_hoa_exotic(t_object *obj);
-short is_obj_hoa_bpatcher(t_object *obj);
-void make_patchline(t_connect *x);
-void color_patchline(t_connect *x);
-void connect_connect(t_patcher *p, t_object *send, int outlet, t_object *receive, int inlet);
-
-#ifdef HOA_PACKED_LIB
-int hoa_connect_main(void)
-#else
-int C74_EXPORT main(void)
-#endif
-{
-	t_class *c;
-
-	c = class_new("hoa.connect", (method)connect_new, (method)connect_free, sizeof(t_connect), 0L, A_GIMME, 0);
-    class_setname((char *)"hoa.connect", (char *)"hoa.connect");
-	
-	hoa_initclass(c, (method)NULL);
-	
-    class_addmethod(c, (method)connect_assist,	"assist",	A_CANT,	0);
-	class_addmethod(c, (method)connect_notify,	"notify",	A_CANT, 0);
-    
-    // @method bang @digest trigger autoconnection and color
-	// @description The <m>bang</m> message connect all of the appropriate selected hoa objects together
-	class_addmethod(c, (method)connect_bang,	"bang",		A_CANT,	0);
-	
-	CLASS_STICKY_ATTR		(c, "category", 0, "Behavior");
-	CLASS_ATTR_RGBA			(c, "zhcolor", 0, t_connect, f_color_zero);
-	CLASS_ATTR_ACCESSORS	(c, "zhcolor", NULL, connect_setattr_zerocolor);
-	CLASS_ATTR_SAVE			(c, "zhcolor", 1);
-	CLASS_ATTR_STYLE_LABEL	(c, "zhcolor", 0, "rgba", "zero harmonics color");
-    // @description Sets the RGBA values for the zero harmonics color of the ambisonic domain patchlines
-	
-	CLASS_ATTR_RGBA			(c, "phcolor", 0, t_connect, f_color_positiv);
-	CLASS_ATTR_ACCESSORS	(c, "phcolor", NULL, connect_setattr_poscolor);
-	CLASS_ATTR_SAVE			(c, "phcolor", 1);
-	CLASS_ATTR_STYLE_LABEL	(c, "phcolor", 0, "rgba", "positive harmonics color");
-    // @description Sets the RGBA values for the positive harmonics color of the ambisonic domain patchlines
-    
-	CLASS_ATTR_RGBA			(c, "nhcolor", 0, t_connect, f_color_negativ);
-	CLASS_ATTR_ACCESSORS	(c, "nhcolor", NULL, connect_setattr_negcolor);
-	CLASS_ATTR_SAVE			(c, "nhcolor", 1);
-	CLASS_ATTR_STYLE_LABEL	(c, "nhcolor", 0, "rgba", "negative harmonics color");
-    // @description Sets the RGBA values for the negative harmonics color of the ambisonic domain patchlines
-	
-	CLASS_ATTR_RGBA			(c, "planecolor", 0, t_connect, f_color_plane);
-	CLASS_ATTR_ACCESSORS	(c, "planecolor", NULL, connect_setattr_planecolor);
-	CLASS_ATTR_STYLE_LABEL	(c, "planecolor", 0, "rgba", "planewaves signals color");
-	CLASS_ATTR_SAVE			(c, "planecolor", 1);
-    // @description Sets the RGBA values for the planewaves signals color of the planewaves domain patchlines
-    
-	CLASS_STICKY_ATTR_CLEAR	(c, "category");
-	
-	class_register(CLASS_BOX, c);
-	connect_class = c;
-	hoa_print_credit();
-	return 0;
-}
-
-void *connect_new(t_symbol *s, long argc, t_atom *argv)
-{
-	t_connect *x = NULL;
-
-	x = (t_connect *)object_alloc((t_class *)connect_class);
-	if (x)
-	{
-		// load Ambisonic instances to query harmonics band or argument in 2D or 3D
-        x->f_ambi2D = new Harmonic<Hoa2d, t_sample>::Processor(HOA_MAX_PLANEWAVES*0.5 -1);
-        x->f_ambi3D = new Harmonic<Hoa3d, t_sample>::Processor(sqrt((long double)HOA_MAX_PLANEWAVES)-1);
-		
-		x->f_objects = new t_object*[CONNECT_MAX_TAB];
-		
-		// colors setup
-		x->f_color_zero.green = x->f_color_positiv.red = x->f_color_negativ.blue = 1.;
-		x->f_color_plane.red = x->f_color_plane.green = x->f_color_plane.blue = 1.;
-		x->f_color_zero.red = x->f_color_zero.green = x->f_color_zero.blue = 0.2;
-		x->f_color_zero.alpha = x->f_color_positiv.alpha = x->f_color_negativ.alpha = x->f_color_plane.alpha = 1.;
-		
-		x->f_nbSelected = 0;
-		defer_low(x, (method)connect_attach, NULL, 0, NULL);
-	}
-	
-	return x;
-}
-
 void connect_free(t_connect *x)
 {
 	if(x->f_patcherview)
@@ -219,10 +122,64 @@ t_max_err connect_setattr_planecolor(t_connect *x, void *attr, long argc, t_atom
 	return MAX_ERR_NONE;
 }
 
-void connect_bang(t_connect *x)
+void connect_connect(t_patcher *p, t_object *send, int outlet, t_object *receive, int inlet)
 {
-	make_patchline(x);
-	color_patchline(x);
+    t_atom msg[4];
+    t_atom rv;
+    
+    atom_setobj(msg, send);
+    atom_setlong(msg + 1, outlet);
+    atom_setobj(msg + 2, receive);
+    atom_setlong(msg + 3, inlet);
+    
+    object_method_typed(p , hoa_sym_connect, 4, msg, &rv);
+}
+
+short is_obj_hoa_exotic(t_object *obj)
+{
+    int i;
+    t_object *jb, *o;
+    char objName[] = "nop.";
+    
+    if(object_classname(obj) == hoa_sym_jpatcher)
+    {
+        if(strlen(jpatcher_get_name(obj)->s_name) >= 4)
+        {
+            for(i = 0; i < 4; i++)
+            {
+                objName[i] = jpatcher_get_name(obj)->s_name[i];
+            }
+        }
+        else
+        {
+            jb = jpatcher_get_firstobject(obj);
+            while(jb)
+            {
+                o = jbox_get_object(jb);
+                if(object_classname(o) == gensym("hoa.plug_script"))
+                {
+                    strcpy(objName, "hoa.");
+                }
+                jb = jbox_get_nextobject(jb);
+            }
+        }
+    }
+    else if (object_classname(obj) == gensym("dac~") || object_classname(obj) == gensym("sfrecord~") || object_classname(obj) == gensym("sfplay~"))
+    {
+        strcpy(objName, "hoa.");
+    }
+    else if (strlen(object_classname(obj)->s_name) >= 4)
+    {
+        for(i = 0; i < 4; i++)
+        {
+            objName[i] = object_classname(obj)->s_name[i];
+        }
+    }
+    
+    if(strcmp(objName, "hoa.") == 0)
+        return 1;
+    
+    return 0;
 }
 
 void make_patchline(t_connect *x)
@@ -378,17 +335,10 @@ void color_patchline(t_connect *x)
 	free(startobj_infos);
 }
 
-void connect_connect(t_patcher *p, t_object *send, int outlet, t_object *receive, int inlet)
+void connect_bang(t_connect *x)
 {
-	t_atom msg[4];
-	t_atom rv;
-
-	atom_setobj(msg, send);
-	atom_setlong(msg + 1, outlet);
-	atom_setobj(msg + 2, receive);
-	atom_setlong(msg + 3, inlet);
-
-	object_method_typed(p , hoa_sym_connect, 4, msg, &rv);
+    make_patchline(x);
+    color_patchline(x);
 }
 
 t_max_err connect_notify(t_connect *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
@@ -486,49 +436,81 @@ t_max_err connect_notify(t_connect *x, t_symbol *s, t_symbol *msg, void *sender,
 	return MAX_ERR_NONE;
 }
 
-short is_obj_hoa_exotic(t_object *obj)
+void *connect_new(t_symbol *s, long argc, t_atom *argv)
 {
-	int i;
-	t_object *jb, *o;
-	char objName[] = "nop.";
-		
-	if(object_classname(obj) == hoa_sym_jpatcher)
-	{
-		if(strlen(jpatcher_get_name(obj)->s_name) >= 4)
-		{
-			for(i = 0; i < 4; i++)
-			{
-				objName[i] = jpatcher_get_name(obj)->s_name[i];
-			}
-		}
-		else
-		{
-			jb = jpatcher_get_firstobject(obj);
-			while(jb)
-			{
-				o = jbox_get_object(jb);
-				if(object_classname(o) == gensym("hoa.plug_script"))
-				{
-					strcpy(objName, "hoa.");
-				}
-				jb = jbox_get_nextobject(jb);
-			}
-		}
-	}
-	else if (object_classname(obj) == gensym("dac~") || object_classname(obj) == gensym("sfrecord~") || object_classname(obj) == gensym("sfplay~"))
-	{
-		strcpy(objName, "hoa.");
-	}
-	else if (strlen(object_classname(obj)->s_name) >= 4)
-	{
-		for(i = 0; i < 4; i++)
-		{
-			objName[i] = object_classname(obj)->s_name[i];
-		}
-	}
-	
-	if(strcmp(objName, "hoa.") == 0)
-		return 1;
-	
-	return 0;
+    t_connect *x = NULL;
+    
+    x = (t_connect *)object_alloc((t_class *)connect_class);
+    if (x)
+    {
+        // load Ambisonic instances to query harmonics band or argument in 2D or 3D
+        x->f_ambi2D = new Harmonic<Hoa2d, t_sample>::Processor(HOA_MAX_PLANEWAVES*0.5 -1);
+        x->f_ambi3D = new Harmonic<Hoa3d, t_sample>::Processor(sqrt((long double)HOA_MAX_PLANEWAVES)-1);
+        
+        x->f_objects = new t_object*[CONNECT_MAX_TAB];
+        
+        // colors setup
+        x->f_color_zero.green = x->f_color_positiv.red = x->f_color_negativ.blue = 1.;
+        x->f_color_plane.red = x->f_color_plane.green = x->f_color_plane.blue = 1.;
+        x->f_color_zero.red = x->f_color_zero.green = x->f_color_zero.blue = 0.2;
+        x->f_color_zero.alpha = x->f_color_positiv.alpha = x->f_color_negativ.alpha = x->f_color_plane.alpha = 1.;
+        
+        x->f_nbSelected = 0;
+        defer_low(x, (method)connect_attach, NULL, 0, NULL);
+    }
+    
+    return x;
+}
+
+#ifdef HOA_PACKED_LIB
+int hoa_connect_main(void)
+#else
+int C74_EXPORT main(void)
+#endif
+{
+    t_class *c;
+    
+    c = class_new("hoa.connect", (method)connect_new, (method)connect_free, sizeof(t_connect), 0L, A_GIMME, 0);
+    class_setname((char *)"hoa.connect", (char *)"hoa.connect");
+    
+    hoa_initclass(c, (method)NULL);
+    
+    class_addmethod(c, (method)connect_assist,	"assist",	A_CANT,	0);
+    class_addmethod(c, (method)connect_notify,	"notify",	A_CANT, 0);
+    
+    // @method bang @digest trigger autoconnection and color
+    // @description The <m>bang</m> message connect all of the appropriate selected hoa objects together
+    class_addmethod(c, (method)connect_bang,	"bang",		A_CANT,	0);
+    
+    CLASS_STICKY_ATTR		(c, "category", 0, "Behavior");
+    CLASS_ATTR_RGBA			(c, "zhcolor", 0, t_connect, f_color_zero);
+    CLASS_ATTR_ACCESSORS	(c, "zhcolor", NULL, connect_setattr_zerocolor);
+    CLASS_ATTR_SAVE			(c, "zhcolor", 1);
+    CLASS_ATTR_STYLE_LABEL	(c, "zhcolor", 0, "rgba", "zero harmonics color");
+    // @description Sets the RGBA values for the zero harmonics color of the ambisonic domain patchlines
+    
+    CLASS_ATTR_RGBA			(c, "phcolor", 0, t_connect, f_color_positiv);
+    CLASS_ATTR_ACCESSORS	(c, "phcolor", NULL, connect_setattr_poscolor);
+    CLASS_ATTR_SAVE			(c, "phcolor", 1);
+    CLASS_ATTR_STYLE_LABEL	(c, "phcolor", 0, "rgba", "positive harmonics color");
+    // @description Sets the RGBA values for the positive harmonics color of the ambisonic domain patchlines
+    
+    CLASS_ATTR_RGBA			(c, "nhcolor", 0, t_connect, f_color_negativ);
+    CLASS_ATTR_ACCESSORS	(c, "nhcolor", NULL, connect_setattr_negcolor);
+    CLASS_ATTR_SAVE			(c, "nhcolor", 1);
+    CLASS_ATTR_STYLE_LABEL	(c, "nhcolor", 0, "rgba", "negative harmonics color");
+    // @description Sets the RGBA values for the negative harmonics color of the ambisonic domain patchlines
+    
+    CLASS_ATTR_RGBA			(c, "planecolor", 0, t_connect, f_color_plane);
+    CLASS_ATTR_ACCESSORS	(c, "planecolor", NULL, connect_setattr_planecolor);
+    CLASS_ATTR_STYLE_LABEL	(c, "planecolor", 0, "rgba", "planewaves signals color");
+    CLASS_ATTR_SAVE			(c, "planecolor", 1);
+    // @description Sets the RGBA values for the planewaves signals color of the planewaves domain patchlines
+    
+    CLASS_STICKY_ATTR_CLEAR	(c, "category");
+    
+    class_register(CLASS_BOX, c);
+    connect_class = c;
+    hoa_print_credit();
+    return 0;
 }

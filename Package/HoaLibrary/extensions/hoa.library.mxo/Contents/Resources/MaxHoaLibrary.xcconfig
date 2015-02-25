@@ -15,7 +15,7 @@ C74SUPPORT = $(SRCROOT)/ThirdParty/Max/c74support
 HEADER_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
 FRAMEWORK_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
 MAXPACKAGE = $(SRCROOT)/Package/HoaLibrary
-DSTROOT = $(MAXPACKAGE)/extensions
+DSTROOT = $(MAXPACKAGE)/externals
 // (This next path is relative to DSTROOT)
 INSTALL_PATH = /
 

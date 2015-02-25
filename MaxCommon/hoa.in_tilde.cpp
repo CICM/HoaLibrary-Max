@@ -53,50 +53,6 @@ typedef struct _hoa_sig_in
 
 t_class *hoa_sig_in_class;
 
-void *hoa_sig_in_new(t_symbol *s, long ac, t_atom *av);
-void hoa_sig_in_free(t_hoa_sig_in *x);
-void hoa_sig_in_assist(t_hoa_sig_in *x, void *b, long m, long a, char *s);
-void hoa_sig_in_dsp64(t_hoa_sig_in *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags);
-void hoa_sig_in_perform64(t_hoa_sig_in *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userparam);
-
-t_max_err hoa_sig_in_setattr_extra(t_hoa_sig_in *x, void *attr, long ac, t_atom *av);
-t_max_err hoa_sig_in_setattr_comment(t_hoa_sig_in *x, void *attr, long ac, t_atom *av);
-
-#ifdef HOA_PACKED_LIB
-int hoa_in_sig_main(void)
-#else
-int C74_EXPORT main(void)
-#endif
-{
-	t_class* c;
-	c = class_new("hoa.in~", (method)hoa_sig_in_new, (method)hoa_sig_in_free, sizeof(t_hoa_sig_in), NULL, A_GIMME, 0);
-    class_setname((char *)"hoa.in~", (char *)"hoa.in~");
-    
-	hoa_initclass(c, NULL);
-	
-	class_addmethod(c, (method)hoa_sig_in_dsp64,	"dsp64",	A_CANT, 0);
-    class_addmethod(c, (method)hoa_sig_in_assist,	"assist",	A_CANT, 0);
-	
-	CLASS_ATTR_LONG		(c, "extra", 0, t_hoa_sig_in, extra);
-	CLASS_ATTR_ACCESSORS(c, "extra", 0, hoa_sig_in_setattr_extra);
-	CLASS_ATTR_LABEL	(c, "extra", 0, "param index");
-	CLASS_ATTR_INVISIBLE(c, "extra", 1);
-	CLASS_ATTR_SAVE		(c, "extra", 0);
-    // @description Defines an extra inlet. Extra inlet are added to the "normal" instance inlet and can be used to send signal to all instances.
-	
-	CLASS_ATTR_SYM		(c, "comment", 0, t_hoa_sig_in, comment);
-	CLASS_ATTR_ACCESSORS(c, "comment", 0, hoa_sig_in_setattr_comment);
-	CLASS_ATTR_LABEL	(c, "comment", 0, "Description");
-	CLASS_ATTR_SAVE		(c, "comment", 1);
-    // @description Sets a description to the inlet which will be shown in the assist inlet of the <o>hoa.process~</o> that load this <o>hoa.in~</o>.
-    // Only works if the <m>extra</m> parameter is greater than 0.
-    
-	class_dspinit(c);
-	class_register(CLASS_BOX, c);
-	hoa_sig_in_class = c;
-	return 0;
-}
-
 void hoa_sig_in_free(t_hoa_sig_in *x)
 {
 	dsp_free(&x->x_obj);
@@ -171,27 +127,61 @@ void hoa_sig_in_assist(t_hoa_sig_in *x, void *b, long m, long a, char *s)
             sprintf(s,"Dummy");
 }
 
-void hoa_sig_in_dsp64(t_hoa_sig_in *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
+void hoa_sig_in_perform64(t_hoa_sig_in *x, t_object *dsp64, t_sample **ins, long numins, t_sample **outs, long numouts, long vecsize, long flags, void *userparam)
 {
-	object_method(dsp64, gensym("dsp_add64"), x, hoa_sig_in_perform64, 0, NULL);		// scalar routine
-}
-
-void hoa_sig_in_perform64(t_hoa_sig_in *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userparam)
-{
-    double *from, *out1;
-	long i;
+    t_sample *from, *out1;
 	
     out1 = outs[0];
 	
 	if (x->valid)
 	{
 		from = x->sig_ins[x->inlet_num - 1];
-		for (i = 0; i < vec_size; i++)
+		for (long i = 0; i < vecsize; i++)
 			*out1++ = *from++;
 	}
 	else
 	{
-		for (i = 0; i < vec_size; i++)
+		for (long i = 0; i < vecsize; i++)
 			*out1++ = x->value_default;
 	}
+}
+
+void hoa_sig_in_dsp64(t_hoa_sig_in *x, t_object *dsp64, short *count, double sr, long vecsize, long flags)
+{
+    object_method(dsp64, gensym("dsp_add64"), x, hoa_sig_in_perform64, 0, NULL);		// scalar routine
+}
+
+#ifdef HOA_PACKED_LIB
+int hoa_in_sig_main(void)
+#else
+int C74_EXPORT main(void)
+#endif
+{
+    t_class* c;
+    c = class_new("hoa.in~", (method)hoa_sig_in_new, (method)hoa_sig_in_free, sizeof(t_hoa_sig_in), NULL, A_GIMME, 0);
+    class_setname((char *)"hoa.in~", (char *)"hoa.in~");
+    
+    hoa_initclass(c, NULL);
+    
+    class_addmethod(c, (method)hoa_sig_in_dsp64,	"dsp64",	A_CANT, 0);
+    class_addmethod(c, (method)hoa_sig_in_assist,	"assist",	A_CANT, 0);
+    
+    CLASS_ATTR_LONG		(c, "extra", 0, t_hoa_sig_in, extra);
+    CLASS_ATTR_ACCESSORS(c, "extra", 0, hoa_sig_in_setattr_extra);
+    CLASS_ATTR_LABEL	(c, "extra", 0, "param index");
+    CLASS_ATTR_INVISIBLE(c, "extra", 1);
+    CLASS_ATTR_SAVE		(c, "extra", 0);
+    // @description Defines an extra inlet. Extra inlet are added to the "normal" instance inlet and can be used to send signal to all instances.
+    
+    CLASS_ATTR_SYM		(c, "comment", 0, t_hoa_sig_in, comment);
+    CLASS_ATTR_ACCESSORS(c, "comment", 0, hoa_sig_in_setattr_comment);
+    CLASS_ATTR_LABEL	(c, "comment", 0, "Description");
+    CLASS_ATTR_SAVE		(c, "comment", 1);
+    // @description Sets a description to the inlet which will be shown in the assist inlet of the <o>hoa.process~</o> that load this <o>hoa.in~</o>.
+    // Only works if the <m>extra</m> parameter is greater than 0.
+    
+    class_dspinit(c);
+    class_register(CLASS_BOX, c);
+    hoa_sig_in_class = c;
+    return 0;
 }
