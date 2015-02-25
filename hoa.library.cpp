@@ -24,9 +24,7 @@ int C74_EXPORT main(void)
     hoa_out_sig_main();
     hoa_pi_main();
     hoa_pi_sig_main();
-    hoa_play_main();
     hoa_process_main();
-    hoa_record_main();
     hoa_thisprocess_main();
     
     // HOA 2D //

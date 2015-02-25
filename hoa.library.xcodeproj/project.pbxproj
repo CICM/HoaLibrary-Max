@@ -286,9 +286,7 @@
 		2CE0CD8619720A0300217823 /* hoa.out_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5019720A0300217823 /* hoa.out_tilde.cpp */; };
 		2CE0CD8719720A0300217823 /* hoa.pi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5119720A0300217823 /* hoa.pi.cpp */; };
 		2CE0CD8819720A0300217823 /* hoa.pi_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5219720A0300217823 /* hoa.pi_tilde.cpp */; };
-		2CE0CD8919720A0300217823 /* hoa.play_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5319720A0300217823 /* hoa.play_tilde.cpp */; };
 		2CE0CD8A19720A0300217823 /* hoa.process_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5419720A0300217823 /* hoa.process_tilde.cpp */; };
-		2CE0CD8B19720A0300217823 /* hoa.record_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5519720A0300217823 /* hoa.record_tilde.cpp */; };
 		2CE0CD8C19720A0300217823 /* hoa.thisprocess_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5619720A0300217823 /* hoa.thisprocess_tilde.cpp */; };
 		2CE0CD9119720A0300217823 /* HoaCommon.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD5B19720A0300217823 /* HoaCommon.max.h */; };
 		2CE0CD9219720A0300217823 /* HoaProcessSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD5C19720A0300217823 /* HoaProcessSuite.h */; };
@@ -383,9 +381,7 @@
 		2CE0CD5019720A0300217823 /* hoa.out_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.out_tilde.cpp; sourceTree = "<group>"; };
 		2CE0CD5119720A0300217823 /* hoa.pi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.pi.cpp; sourceTree = "<group>"; };
 		2CE0CD5219720A0300217823 /* hoa.pi_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.pi_tilde.cpp; sourceTree = "<group>"; };
-		2CE0CD5319720A0300217823 /* hoa.play_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.play_tilde.cpp; sourceTree = "<group>"; };
 		2CE0CD5419720A0300217823 /* hoa.process_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = hoa.process_tilde.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		2CE0CD5519720A0300217823 /* hoa.record_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.record_tilde.cpp; sourceTree = "<group>"; };
 		2CE0CD5619720A0300217823 /* hoa.thisprocess_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.thisprocess_tilde.cpp; sourceTree = "<group>"; };
 		2CE0CD5B19720A0300217823 /* HoaCommon.max.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoaCommon.max.h; sourceTree = "<group>"; };
 		2CE0CD5C19720A0300217823 /* HoaProcessSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoaProcessSuite.h; sourceTree = "<group>"; };
@@ -670,9 +666,7 @@
 				2CE0CD5019720A0300217823 /* hoa.out_tilde.cpp */,
 				2CE0CD5119720A0300217823 /* hoa.pi.cpp */,
 				2CE0CD5219720A0300217823 /* hoa.pi_tilde.cpp */,
-				2CE0CD5319720A0300217823 /* hoa.play_tilde.cpp */,
 				2CE0CD5419720A0300217823 /* hoa.process_tilde.cpp */,
-				2CE0CD5519720A0300217823 /* hoa.record_tilde.cpp */,
 				2CE0CD5619720A0300217823 /* hoa.thisprocess_tilde.cpp */,
 				2CE0CD5C19720A0300217823 /* HoaProcessSuite.h */,
 				2CE0CD5D19720A0300217823 /* Utilities.cpp */,
@@ -1657,7 +1651,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE0CD8919720A0300217823 /* hoa.play_tilde.cpp in Sources */,
 				2CE93332196EB9B60079A368 /* hoa.max.cpp in Sources */,
 				2CE0CD6319720A0300217823 /* hoa.2d.meter_gui_tilde.cpp in Sources */,
 				2CE0CD6119720A0300217823 /* hoa.2d.encoder_tilde.cpp in Sources */,
@@ -1676,7 +1669,6 @@
 				2CE0CD6019720A0300217823 /* hoa.2d.decoder_tilde.cpp in Sources */,
 				2CE0CD6419720A0300217823 /* hoa.2d.optim_tilde.cpp in Sources */,
 				2CE0CD7019720A0300217823 /* hoa.3d.encoder_tilde.cpp in Sources */,
-				2CE0CD8B19720A0300217823 /* hoa.record_tilde.cpp in Sources */,
 				2CE0CD6719720A0300217823 /* hoa.2d.recomposer_tilde.cpp in Sources */,
 				2CE0CD9319720A0300217823 /* Utilities.cpp in Sources */,
 				2CE0CD8019720A0300217823 /* hoa.dac_tilde.c in Sources */,
