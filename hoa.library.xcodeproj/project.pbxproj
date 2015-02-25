@@ -233,6 +233,304 @@
 		2C9B3A611A9E39E400E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
 		2C9B3A621A9E39E400E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
 		2C9B3A691A9E3A4800E6921E /* hoa.thisprocess_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5619720A0300217823 /* hoa.thisprocess_tilde.cpp */; };
+		2C9B3A6D1A9E418A00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3A6E1A9E418A00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3A6F1A9E418A00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3A701A9E418A00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3A711A9E418A00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3A721A9E418A00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3A731A9E418A00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3A741A9E418A00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3A751A9E418A00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3A791A9E418A00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3A7A1A9E418A00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3A7C1A9E418A00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3A7D1A9E418A00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3A881A9E44F800E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3A891A9E44F800E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3A8A1A9E44F800E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3A8B1A9E44F800E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3A8C1A9E44F800E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3A8D1A9E44F800E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3A8E1A9E44F800E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3A8F1A9E44F800E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3A901A9E44F800E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3A931A9E44F800E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3A951A9E44F800E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3A971A9E44F800E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3A981A9E44F800E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3A9F1A9E453600E6921E /* hoa.2d.decoder_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2819720A0300217823 /* hoa.2d.decoder_tilde.cpp */; };
+		2C9B3AA01A9E454000E6921E /* hoa.2d.encoder_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2919720A0300217823 /* hoa.2d.encoder_tilde.cpp */; };
+		2C9B3AA31A9E714B00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3AA41A9E714B00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3AA51A9E714B00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3AA61A9E714B00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3AA71A9E714B00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3AA81A9E714B00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3AA91A9E714B00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3AAA1A9E714B00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3AAB1A9E714B00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3AAF1A9E714B00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3AB01A9E714B00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3AB21A9E714B00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3AB31A9E714B00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3ABA1A9E719700E6921E /* hoa.2d.map_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2A19720A0300217823 /* hoa.2d.map_tilde.cpp */; };
+		2C9B3ABD1A9E71C800E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3ABE1A9E71C800E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3ABF1A9E71C800E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3AC01A9E71C800E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3AC11A9E71C800E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3AC21A9E71C800E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3AC31A9E71C800E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3AC41A9E71C800E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3AC51A9E71C800E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3AC81A9E71C800E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3ACA1A9E71C800E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3ACC1A9E71C800E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3ACD1A9E71C800E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3AD71A9E722F00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3AD81A9E722F00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3AD91A9E722F00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3ADA1A9E722F00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3ADB1A9E722F00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3ADC1A9E722F00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3ADD1A9E722F00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3ADE1A9E722F00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3ADF1A9E722F00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3AE21A9E722F00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3AE31A9E722F00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3AE61A9E722F00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3AE71A9E722F00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3AEE1A9E726800E6921E /* hoa.2d.optim_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2C19720A0300217823 /* hoa.2d.optim_tilde.cpp */; };
+		2C9B3AEF1A9E727E00E6921E /* hoa.2d.meter_gui_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2B19720A0300217823 /* hoa.2d.meter_gui_tilde.cpp */; };
+		2C9B3AF21A9E729800E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3AF31A9E729800E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3AF41A9E729800E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3AF51A9E729800E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3AF61A9E729800E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3AF71A9E729800E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3AF81A9E729800E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3AF91A9E729800E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3AFA1A9E729800E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3AFD1A9E729800E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3AFE1A9E729800E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3B011A9E729800E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3B021A9E729800E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3B091A9E72F300E6921E /* hoa.2d.projector_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2D19720A0300217823 /* hoa.2d.projector_tilde.cpp */; };
+		2C9B3B0C1A9E730900E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3B0D1A9E730900E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3B0E1A9E730900E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3B0F1A9E730900E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3B101A9E730900E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3B111A9E730900E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3B121A9E730900E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3B131A9E730900E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3B141A9E730900E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3B171A9E730900E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3B181A9E730900E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3B1B1A9E730900E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3B1C1A9E730900E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3B231A9E733D00E6921E /* hoa.2d.recomposer_gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2E19720A0300217823 /* hoa.2d.recomposer_gui.cpp */; };
+		2C9B3B241A9E734600E6921E /* ChannelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8781851A9BE0B600BA0E2B /* ChannelManager.cpp */; };
+		2C9B3B251A9E734600E6921E /* ChannelManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781861A9BE0B600BA0E2B /* ChannelManager.h */; };
+		2C9B3B281A9E736900E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3B291A9E736900E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3B2A1A9E736900E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3B2B1A9E736900E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3B2C1A9E736900E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3B2D1A9E736900E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3B2E1A9E736900E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3B2F1A9E736900E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3B301A9E736900E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3B331A9E736900E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3B341A9E736900E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3B371A9E736900E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3B381A9E736900E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3B3F1A9E739800E6921E /* hoa.2d.recomposer_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2F19720A0300217823 /* hoa.2d.recomposer_tilde.cpp */; };
+		2C9B3B421A9E73BD00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3B431A9E73BD00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3B441A9E73BD00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3B451A9E73BD00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3B461A9E73BD00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3B471A9E73BD00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3B481A9E73BD00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3B491A9E73BD00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3B4A1A9E73BD00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3B4D1A9E73BD00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3B4E1A9E73BD00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3B511A9E73BD00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3B521A9E73BD00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3B591A9E73F900E6921E /* hoa.2d.rotate_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3019720A0300217823 /* hoa.2d.rotate_tilde.cpp */; };
+		2C9B3B5C1A9E740200E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3B5D1A9E740200E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3B5E1A9E740200E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3B5F1A9E740200E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3B601A9E740200E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3B611A9E740200E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3B621A9E740200E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3B631A9E740200E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3B641A9E740200E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3B671A9E740200E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3B681A9E740200E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3B6B1A9E740200E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3B6C1A9E740200E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3B751A9E743100E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3B761A9E743100E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3B771A9E743100E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3B781A9E743100E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3B791A9E743100E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3B7A1A9E743100E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3B7B1A9E743100E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3B7C1A9E743100E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3B7D1A9E743100E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3B801A9E743100E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3B811A9E743100E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3B841A9E743100E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3B851A9E743100E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3B8C1A9E746A00E6921E /* hoa.2d.scope_gui_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3119720A0300217823 /* hoa.2d.scope_gui_tilde.cpp */; };
+		2C9B3B8D1A9E747100E6921E /* hoa.2d.space_gui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3219720A0300217823 /* hoa.2d.space_gui.cpp */; };
+		2C9B3B901A9E74AF00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3B911A9E74AF00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3B921A9E74AF00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3B931A9E74AF00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3B941A9E74AF00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3B951A9E74AF00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3B961A9E74AF00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3B971A9E74AF00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3B981A9E74AF00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3B9B1A9E74AF00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3B9D1A9E74AF00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3B9F1A9E74AF00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3BA01A9E74AF00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3BA71A9E74E600E6921E /* hoa.2d.vector_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3319720A0300217823 /* hoa.2d.vector_tilde.cpp */; };
+		2C9B3BAA1A9E750300E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3BAB1A9E750300E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3BAC1A9E750300E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3BAD1A9E750300E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3BAE1A9E750300E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3BAF1A9E750300E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3BB01A9E750300E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3BB11A9E750300E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3BB21A9E750300E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3BB51A9E750300E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3BB71A9E750300E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3BB91A9E750300E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3BBA1A9E750300E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3BC11A9E759200E6921E /* hoa.2d.wider_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3419720A0300217823 /* hoa.2d.wider_tilde.cpp */; };
+		2C9B3BC41A9E763100E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3BC51A9E763100E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3BC61A9E763100E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3BC71A9E763100E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3BC81A9E763100E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3BC91A9E763100E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3BCA1A9E763100E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3BCB1A9E763100E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3BCC1A9E763100E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3BCF1A9E763100E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3BD11A9E763100E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3BD31A9E763100E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3BD41A9E763100E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3BDB1A9E767D00E6921E /* hoa.3d.decoder_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3819720A0300217823 /* hoa.3d.decoder_tilde.cpp */; };
+		2C9B3BDE1A9E76B900E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3BDF1A9E76B900E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3BE01A9E76B900E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3BE11A9E76B900E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3BE21A9E76B900E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3BE31A9E76B900E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3BE41A9E76B900E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3BE51A9E76B900E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3BE61A9E76B900E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3BEA1A9E76B900E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3BEB1A9E76B900E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3BED1A9E76B900E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3BEE1A9E76B900E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3BF51A9E774D00E6921E /* hoa.3d.encoder_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3919720A0300217823 /* hoa.3d.encoder_tilde.cpp */; };
+		2C9B3BF81A9E776B00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3BF91A9E776B00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3BFA1A9E776B00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3BFB1A9E776B00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3BFC1A9E776B00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3BFD1A9E776B00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3BFE1A9E776B00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3BFF1A9E776B00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3C001A9E776B00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3C031A9E776B00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3C041A9E776B00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3C071A9E776B00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3C081A9E776B00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3C0F1A9E77A300E6921E /* hoa.3d.map_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3A19720A0300217823 /* hoa.3d.map_tilde.cpp */; };
+		2C9B3C121A9E77BD00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3C131A9E77BD00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3C141A9E77BD00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3C151A9E77BD00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3C161A9E77BD00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3C171A9E77BD00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3C181A9E77BD00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3C191A9E77BD00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3C1A1A9E77BD00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3C1D1A9E77BD00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3C1E1A9E77BD00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3C211A9E77BD00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3C221A9E77BD00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3C2B1A9E77ED00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3C2C1A9E77ED00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3C2D1A9E77ED00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3C2E1A9E77ED00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3C2F1A9E77ED00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3C301A9E77ED00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3C311A9E77ED00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3C321A9E77ED00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3C331A9E77ED00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3C361A9E77ED00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3C371A9E77ED00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3C3A1A9E77ED00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3C3B1A9E77ED00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3C441A9E781600E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3C451A9E781600E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3C461A9E781600E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3C471A9E781600E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3C481A9E781600E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3C491A9E781600E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3C4A1A9E781600E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3C4B1A9E781600E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3C4C1A9E781600E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3C4F1A9E781600E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3C501A9E781600E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3C531A9E781600E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3C541A9E781600E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3C5D1A9E783B00E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3C5E1A9E783B00E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3C5F1A9E783B00E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3C601A9E783B00E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3C611A9E783B00E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3C621A9E783B00E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3C631A9E783B00E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3C641A9E783B00E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3C651A9E783B00E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3C681A9E783B00E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3C691A9E783B00E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3C6C1A9E783B00E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3C6D1A9E783B00E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3C761A9E787300E6921E /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C9B3C771A9E787300E6921E /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C9B3C781A9E787300E6921E /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C9B3C791A9E787300E6921E /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C9B3C7A1A9E787300E6921E /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C9B3C7B1A9E787300E6921E /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C9B3C7C1A9E787300E6921E /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C9B3C7D1A9E787300E6921E /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C9B3C7E1A9E787300E6921E /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C9B3C811A9E787300E6921E /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C9B3C821A9E787300E6921E /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C9B3C851A9E787300E6921E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C9B3C861A9E787300E6921E /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C9B3C8D1A9E78B100E6921E /* hoa.3d.meter_gui_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3B19720A0300217823 /* hoa.3d.meter_gui_tilde.cpp */; };
+		2C9B3C8E1A9E78BA00E6921E /* Meter_3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C3958501A9ABDCD00C91175 /* Meter_3D.cpp */; };
+		2C9B3C8F1A9E78FC00E6921E /* hoa.3d.optim_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3C19720A0300217823 /* hoa.3d.optim_tilde.cpp */; };
+		2C9B3C901A9E790000E6921E /* hoa.3d.scope_gui_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3D19720A0300217823 /* hoa.3d.scope_gui_tilde.cpp */; };
+		2C9B3C911A9E790300E6921E /* hoa.3d.vector_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3E19720A0300217823 /* hoa.3d.vector_tilde.cpp */; };
+		2C9B3C921A9E790700E6921E /* hoa.3d.wider_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD3F19720A0300217823 /* hoa.3d.wider_tilde.cpp */; };
+		2C9B3C931A9E79AC00E6921E /* Meter_3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C3958501A9ABDCD00C91175 /* Meter_3D.cpp */; };
 		2CCD1F2E1A9CCBB3001F137D /* HoaCommon.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD5B19720A0300217823 /* HoaCommon.max.h */; };
 		2CCD1F341A9CCBB3001F137D /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
 		2CCD1F351A9CCBB3001F137D /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
@@ -341,6 +639,27 @@
 		2C9B3A2F1A9E372300E6921E /* hoa.out~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.out~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9B3A4A1A9E38EC00E6921E /* hoa.process~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.process~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9B3A671A9E39E400E6921E /* hoa.thisprocess~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.thisprocess~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3A821A9E418A00E6921E /* hoa.2d.decoder~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.decoder~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3A9D1A9E44F800E6921E /* hoa.2d.encoder~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.encoder~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3AB81A9E714B00E6921E /* hoa.2d.map~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.map~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3AD21A9E71C800E6921E /* hoa.2d.meter~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.meter~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3AEC1A9E722F00E6921E /* hoa.2d.optim~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.optim~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3B071A9E729800E6921E /* hoa.2d.projector~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.projector~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3B211A9E730900E6921E /* hoa.2d.recomposer.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hoa.2d.recomposer.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3B3D1A9E736900E6921E /* hoa.2d.recomposer~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.recomposer~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3B571A9E73BD00E6921E /* hoa.2d.rotate~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.rotate~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3B711A9E740200E6921E /* hoa.2d.scope~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.scope~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3B8A1A9E743100E6921E /* hoa.2d.space.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hoa.2d.space.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3BA51A9E74AF00E6921E /* hoa.2d.vector~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.vector~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3BBF1A9E750300E6921E /* hoa.2d.wider~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.wider~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3BD91A9E763100E6921E /* hoa.3d.decoder~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.decoder~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3BF31A9E76B900E6921E /* hoa.3d.encoder~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.encoder~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3C0D1A9E776B00E6921E /* hoa.3d.map~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.map~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3C271A9E77BD00E6921E /* hoa.3d.meter~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.meter~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3C401A9E77ED00E6921E /* hoa.3d.optim~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.optim~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3C591A9E781600E6921E /* hoa.3d.scope~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.scope~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3C721A9E783B00E6921E /* hoa.3d.vector~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.vector~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9B3C8B1A9E787300E6921E /* hoa.3d.wider~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.wider~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CCD1F811A9CCBB3001F137D /* hoa.pi.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hoa.pi.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE0CD2819720A0300217823 /* hoa.2d.decoder_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = hoa.2d.decoder_tilde.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		2CE0CD2919720A0300217823 /* hoa.2d.encoder_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.2d.encoder_tilde.cpp; sourceTree = "<group>"; };
@@ -512,6 +831,195 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C9B3A7B1A9E418A00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3A7C1A9E418A00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3A7D1A9E418A00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3A961A9E44F800E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3A971A9E44F800E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3A981A9E44F800E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AB11A9E714B00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AB21A9E714B00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3AB31A9E714B00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3ACB1A9E71C800E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3ACC1A9E71C800E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3ACD1A9E71C800E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AE51A9E722F00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AE61A9E722F00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3AE71A9E722F00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B001A9E729800E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B011A9E729800E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3B021A9E729800E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B1A1A9E730900E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B1B1A9E730900E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3B1C1A9E730900E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B361A9E736900E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B371A9E736900E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3B381A9E736900E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B501A9E73BD00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B511A9E73BD00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3B521A9E73BD00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B6A1A9E740200E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B6B1A9E740200E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3B6C1A9E740200E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B831A9E743100E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B841A9E743100E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3B851A9E743100E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B9E1A9E74AF00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B9F1A9E74AF00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3BA01A9E74AF00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BB81A9E750300E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BB91A9E750300E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3BBA1A9E750300E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BD21A9E763100E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BD31A9E763100E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3BD41A9E763100E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BEC1A9E76B900E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BED1A9E76B900E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3BEE1A9E76B900E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C061A9E776B00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C071A9E776B00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3C081A9E776B00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C201A9E77BD00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C211A9E77BD00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3C221A9E77BD00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C391A9E77ED00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C3A1A9E77ED00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3C3B1A9E77ED00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C521A9E781600E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C531A9E781600E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3C541A9E781600E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C6B1A9E783B00E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C6C1A9E783B00E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3C6D1A9E783B00E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C841A9E787300E6921E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C851A9E787300E6921E /* Accelerate.framework in Frameworks */,
+				2C9B3C861A9E787300E6921E /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CCD1F7A1A9CCBB3001F137D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -573,6 +1081,27 @@
 				2C9B3A2F1A9E372300E6921E /* hoa.out~.mxo */,
 				2C9B3A4A1A9E38EC00E6921E /* hoa.process~.mxo */,
 				2C9B3A671A9E39E400E6921E /* hoa.thisprocess~.mxo */,
+				2C9B3A821A9E418A00E6921E /* hoa.2d.decoder~.mxo */,
+				2C9B3A9D1A9E44F800E6921E /* hoa.2d.encoder~.mxo */,
+				2C9B3AB81A9E714B00E6921E /* hoa.2d.map~.mxo */,
+				2C9B3AD21A9E71C800E6921E /* hoa.2d.meter~.mxo */,
+				2C9B3AEC1A9E722F00E6921E /* hoa.2d.optim~.mxo */,
+				2C9B3B071A9E729800E6921E /* hoa.2d.projector~.mxo */,
+				2C9B3B211A9E730900E6921E /* hoa.2d.recomposer.mxo */,
+				2C9B3B3D1A9E736900E6921E /* hoa.2d.recomposer~.mxo */,
+				2C9B3B571A9E73BD00E6921E /* hoa.2d.rotate~.mxo */,
+				2C9B3B711A9E740200E6921E /* hoa.2d.scope~.mxo */,
+				2C9B3B8A1A9E743100E6921E /* hoa.2d.space.mxo */,
+				2C9B3BA51A9E74AF00E6921E /* hoa.2d.vector~.mxo */,
+				2C9B3BBF1A9E750300E6921E /* hoa.2d.wider~.mxo */,
+				2C9B3BD91A9E763100E6921E /* hoa.3d.decoder~.mxo */,
+				2C9B3BF31A9E76B900E6921E /* hoa.3d.encoder~.mxo */,
+				2C9B3C0D1A9E776B00E6921E /* hoa.3d.map~.mxo */,
+				2C9B3C271A9E77BD00E6921E /* hoa.3d.meter~.mxo */,
+				2C9B3C401A9E77ED00E6921E /* hoa.3d.optim~.mxo */,
+				2C9B3C591A9E781600E6921E /* hoa.3d.scope~.mxo */,
+				2C9B3C721A9E783B00E6921E /* hoa.3d.vector~.mxo */,
+				2C9B3C8B1A9E787300E6921E /* hoa.3d.wider~.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -901,6 +1430,343 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C9B3A6B1A9E418A00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3A6D1A9E418A00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3A6E1A9E418A00E6921E /* Math.hpp in Headers */,
+				2C9B3A6F1A9E418A00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3A701A9E418A00E6921E /* Defs.hpp in Headers */,
+				2C9B3A711A9E418A00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3A721A9E418A00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3A731A9E418A00E6921E /* Hoa.hpp in Headers */,
+				2C9B3A741A9E418A00E6921E /* Tools.hpp in Headers */,
+				2C9B3A751A9E418A00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3A861A9E44F800E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3A881A9E44F800E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3A891A9E44F800E6921E /* Math.hpp in Headers */,
+				2C9B3A8A1A9E44F800E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3A8B1A9E44F800E6921E /* Defs.hpp in Headers */,
+				2C9B3A8C1A9E44F800E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3A8D1A9E44F800E6921E /* hoa.max.math.h in Headers */,
+				2C9B3A8E1A9E44F800E6921E /* Hoa.hpp in Headers */,
+				2C9B3A8F1A9E44F800E6921E /* Tools.hpp in Headers */,
+				2C9B3A901A9E44F800E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AA21A9E714B00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AA31A9E714B00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3AA41A9E714B00E6921E /* Math.hpp in Headers */,
+				2C9B3AA51A9E714B00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3AA61A9E714B00E6921E /* Defs.hpp in Headers */,
+				2C9B3AA71A9E714B00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3AA81A9E714B00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3AA91A9E714B00E6921E /* Hoa.hpp in Headers */,
+				2C9B3AAA1A9E714B00E6921E /* Tools.hpp in Headers */,
+				2C9B3AAB1A9E714B00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3ABC1A9E71C800E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3ABD1A9E71C800E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3ABE1A9E71C800E6921E /* Math.hpp in Headers */,
+				2C9B3ABF1A9E71C800E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3AC01A9E71C800E6921E /* Defs.hpp in Headers */,
+				2C9B3AC11A9E71C800E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3AC21A9E71C800E6921E /* hoa.max.math.h in Headers */,
+				2C9B3AC31A9E71C800E6921E /* Hoa.hpp in Headers */,
+				2C9B3AC41A9E71C800E6921E /* Tools.hpp in Headers */,
+				2C9B3AC51A9E71C800E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AD61A9E722F00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AD71A9E722F00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3AD81A9E722F00E6921E /* Math.hpp in Headers */,
+				2C9B3AD91A9E722F00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3ADA1A9E722F00E6921E /* Defs.hpp in Headers */,
+				2C9B3ADB1A9E722F00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3ADC1A9E722F00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3ADD1A9E722F00E6921E /* Hoa.hpp in Headers */,
+				2C9B3ADE1A9E722F00E6921E /* Tools.hpp in Headers */,
+				2C9B3ADF1A9E722F00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AF11A9E729800E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AF21A9E729800E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3AF31A9E729800E6921E /* Math.hpp in Headers */,
+				2C9B3AF41A9E729800E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3AF51A9E729800E6921E /* Defs.hpp in Headers */,
+				2C9B3AF61A9E729800E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3AF71A9E729800E6921E /* hoa.max.math.h in Headers */,
+				2C9B3AF81A9E729800E6921E /* Hoa.hpp in Headers */,
+				2C9B3AF91A9E729800E6921E /* Tools.hpp in Headers */,
+				2C9B3AFA1A9E729800E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B0B1A9E730900E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B0C1A9E730900E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3B0D1A9E730900E6921E /* Math.hpp in Headers */,
+				2C9B3B0E1A9E730900E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3B0F1A9E730900E6921E /* Defs.hpp in Headers */,
+				2C9B3B101A9E730900E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3B111A9E730900E6921E /* hoa.max.math.h in Headers */,
+				2C9B3B251A9E734600E6921E /* ChannelManager.h in Headers */,
+				2C9B3B121A9E730900E6921E /* Hoa.hpp in Headers */,
+				2C9B3B131A9E730900E6921E /* Tools.hpp in Headers */,
+				2C9B3B141A9E730900E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B271A9E736900E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B281A9E736900E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3B291A9E736900E6921E /* Math.hpp in Headers */,
+				2C9B3B2A1A9E736900E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3B2B1A9E736900E6921E /* Defs.hpp in Headers */,
+				2C9B3B2C1A9E736900E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3B2D1A9E736900E6921E /* hoa.max.math.h in Headers */,
+				2C9B3B2E1A9E736900E6921E /* Hoa.hpp in Headers */,
+				2C9B3B2F1A9E736900E6921E /* Tools.hpp in Headers */,
+				2C9B3B301A9E736900E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B411A9E73BD00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B421A9E73BD00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3B431A9E73BD00E6921E /* Math.hpp in Headers */,
+				2C9B3B441A9E73BD00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3B451A9E73BD00E6921E /* Defs.hpp in Headers */,
+				2C9B3B461A9E73BD00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3B471A9E73BD00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3B481A9E73BD00E6921E /* Hoa.hpp in Headers */,
+				2C9B3B491A9E73BD00E6921E /* Tools.hpp in Headers */,
+				2C9B3B4A1A9E73BD00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B5B1A9E740200E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B5C1A9E740200E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3B5D1A9E740200E6921E /* Math.hpp in Headers */,
+				2C9B3B5E1A9E740200E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3B5F1A9E740200E6921E /* Defs.hpp in Headers */,
+				2C9B3B601A9E740200E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3B611A9E740200E6921E /* hoa.max.math.h in Headers */,
+				2C9B3B621A9E740200E6921E /* Hoa.hpp in Headers */,
+				2C9B3B631A9E740200E6921E /* Tools.hpp in Headers */,
+				2C9B3B641A9E740200E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B741A9E743100E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B751A9E743100E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3B761A9E743100E6921E /* Math.hpp in Headers */,
+				2C9B3B771A9E743100E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3B781A9E743100E6921E /* Defs.hpp in Headers */,
+				2C9B3B791A9E743100E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3B7A1A9E743100E6921E /* hoa.max.math.h in Headers */,
+				2C9B3B7B1A9E743100E6921E /* Hoa.hpp in Headers */,
+				2C9B3B7C1A9E743100E6921E /* Tools.hpp in Headers */,
+				2C9B3B7D1A9E743100E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B8F1A9E74AF00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B901A9E74AF00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3B911A9E74AF00E6921E /* Math.hpp in Headers */,
+				2C9B3B921A9E74AF00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3B931A9E74AF00E6921E /* Defs.hpp in Headers */,
+				2C9B3B941A9E74AF00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3B951A9E74AF00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3B961A9E74AF00E6921E /* Hoa.hpp in Headers */,
+				2C9B3B971A9E74AF00E6921E /* Tools.hpp in Headers */,
+				2C9B3B981A9E74AF00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BA91A9E750300E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BAA1A9E750300E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3BAB1A9E750300E6921E /* Math.hpp in Headers */,
+				2C9B3BAC1A9E750300E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3BAD1A9E750300E6921E /* Defs.hpp in Headers */,
+				2C9B3BAE1A9E750300E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3BAF1A9E750300E6921E /* hoa.max.math.h in Headers */,
+				2C9B3BB01A9E750300E6921E /* Hoa.hpp in Headers */,
+				2C9B3BB11A9E750300E6921E /* Tools.hpp in Headers */,
+				2C9B3BB21A9E750300E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BC31A9E763100E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BC41A9E763100E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3BC51A9E763100E6921E /* Math.hpp in Headers */,
+				2C9B3BC61A9E763100E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3BC71A9E763100E6921E /* Defs.hpp in Headers */,
+				2C9B3BC81A9E763100E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3BC91A9E763100E6921E /* hoa.max.math.h in Headers */,
+				2C9B3BCA1A9E763100E6921E /* Hoa.hpp in Headers */,
+				2C9B3BCB1A9E763100E6921E /* Tools.hpp in Headers */,
+				2C9B3BCC1A9E763100E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BDD1A9E76B900E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BDE1A9E76B900E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3BDF1A9E76B900E6921E /* Math.hpp in Headers */,
+				2C9B3BE01A9E76B900E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3BE11A9E76B900E6921E /* Defs.hpp in Headers */,
+				2C9B3BE21A9E76B900E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3BE31A9E76B900E6921E /* hoa.max.math.h in Headers */,
+				2C9B3BE41A9E76B900E6921E /* Hoa.hpp in Headers */,
+				2C9B3BE51A9E76B900E6921E /* Tools.hpp in Headers */,
+				2C9B3BE61A9E76B900E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BF71A9E776B00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BF81A9E776B00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3BF91A9E776B00E6921E /* Math.hpp in Headers */,
+				2C9B3BFA1A9E776B00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3BFB1A9E776B00E6921E /* Defs.hpp in Headers */,
+				2C9B3BFC1A9E776B00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3BFD1A9E776B00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3BFE1A9E776B00E6921E /* Hoa.hpp in Headers */,
+				2C9B3BFF1A9E776B00E6921E /* Tools.hpp in Headers */,
+				2C9B3C001A9E776B00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C111A9E77BD00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C121A9E77BD00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3C131A9E77BD00E6921E /* Math.hpp in Headers */,
+				2C9B3C141A9E77BD00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3C151A9E77BD00E6921E /* Defs.hpp in Headers */,
+				2C9B3C161A9E77BD00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3C171A9E77BD00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3C181A9E77BD00E6921E /* Hoa.hpp in Headers */,
+				2C9B3C191A9E77BD00E6921E /* Tools.hpp in Headers */,
+				2C9B3C1A1A9E77BD00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C2A1A9E77ED00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C2B1A9E77ED00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3C2C1A9E77ED00E6921E /* Math.hpp in Headers */,
+				2C9B3C2D1A9E77ED00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3C2E1A9E77ED00E6921E /* Defs.hpp in Headers */,
+				2C9B3C2F1A9E77ED00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3C301A9E77ED00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3C311A9E77ED00E6921E /* Hoa.hpp in Headers */,
+				2C9B3C321A9E77ED00E6921E /* Tools.hpp in Headers */,
+				2C9B3C331A9E77ED00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C431A9E781600E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C441A9E781600E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3C451A9E781600E6921E /* Math.hpp in Headers */,
+				2C9B3C461A9E781600E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3C471A9E781600E6921E /* Defs.hpp in Headers */,
+				2C9B3C481A9E781600E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3C491A9E781600E6921E /* hoa.max.math.h in Headers */,
+				2C9B3C4A1A9E781600E6921E /* Hoa.hpp in Headers */,
+				2C9B3C4B1A9E781600E6921E /* Tools.hpp in Headers */,
+				2C9B3C4C1A9E781600E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C5C1A9E783B00E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C5D1A9E783B00E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3C5E1A9E783B00E6921E /* Math.hpp in Headers */,
+				2C9B3C5F1A9E783B00E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3C601A9E783B00E6921E /* Defs.hpp in Headers */,
+				2C9B3C611A9E783B00E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3C621A9E783B00E6921E /* hoa.max.math.h in Headers */,
+				2C9B3C631A9E783B00E6921E /* Hoa.hpp in Headers */,
+				2C9B3C641A9E783B00E6921E /* Tools.hpp in Headers */,
+				2C9B3C651A9E783B00E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C751A9E787300E6921E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C761A9E787300E6921E /* Hoa3D.max.h in Headers */,
+				2C9B3C771A9E787300E6921E /* Math.hpp in Headers */,
+				2C9B3C781A9E787300E6921E /* Hoa2D.max.h in Headers */,
+				2C9B3C791A9E787300E6921E /* Defs.hpp in Headers */,
+				2C9B3C7A1A9E787300E6921E /* hoa.max_commonsyms.h in Headers */,
+				2C9B3C7B1A9E787300E6921E /* hoa.max.math.h in Headers */,
+				2C9B3C7C1A9E787300E6921E /* Hoa.hpp in Headers */,
+				2C9B3C7D1A9E787300E6921E /* Tools.hpp in Headers */,
+				2C9B3C7E1A9E787300E6921E /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CCD1F2A1A9CCBB3001F137D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1206,6 +2072,405 @@
 			productReference = 2C9B3A671A9E39E400E6921E /* hoa.thisprocess~.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
+		2C9B3A6A1A9E418A00E6921E /* hoa.2d.decoder~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3A7F1A9E418A00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.decoder~" */;
+			buildPhases = (
+				2C9B3A6B1A9E418A00E6921E /* Headers */,
+				2C9B3A761A9E418A00E6921E /* Resources */,
+				2C9B3A771A9E418A00E6921E /* Sources */,
+				2C9B3A7B1A9E418A00E6921E /* Frameworks */,
+				2C9B3A7E1A9E418A00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.decoder~";
+			productName = iterator;
+			productReference = 2C9B3A821A9E418A00E6921E /* hoa.2d.decoder~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3A851A9E44F800E6921E /* hoa.2d.encoder~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3A9A1A9E44F800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.encoder~" */;
+			buildPhases = (
+				2C9B3A861A9E44F800E6921E /* Headers */,
+				2C9B3A911A9E44F800E6921E /* Resources */,
+				2C9B3A921A9E44F800E6921E /* Sources */,
+				2C9B3A961A9E44F800E6921E /* Frameworks */,
+				2C9B3A991A9E44F800E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.encoder~";
+			productName = iterator;
+			productReference = 2C9B3A9D1A9E44F800E6921E /* hoa.2d.encoder~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3AA11A9E714B00E6921E /* hoa.2d.map~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3AB51A9E714B00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.map~" */;
+			buildPhases = (
+				2C9B3AA21A9E714B00E6921E /* Headers */,
+				2C9B3AAC1A9E714B00E6921E /* Resources */,
+				2C9B3AAD1A9E714B00E6921E /* Sources */,
+				2C9B3AB11A9E714B00E6921E /* Frameworks */,
+				2C9B3AB41A9E714B00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.map~";
+			productName = iterator;
+			productReference = 2C9B3AB81A9E714B00E6921E /* hoa.2d.map~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3ABB1A9E71C800E6921E /* hoa.2d.meter~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3ACF1A9E71C800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.meter~" */;
+			buildPhases = (
+				2C9B3ABC1A9E71C800E6921E /* Headers */,
+				2C9B3AC61A9E71C800E6921E /* Resources */,
+				2C9B3AC71A9E71C800E6921E /* Sources */,
+				2C9B3ACB1A9E71C800E6921E /* Frameworks */,
+				2C9B3ACE1A9E71C800E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.meter~";
+			productName = iterator;
+			productReference = 2C9B3AD21A9E71C800E6921E /* hoa.2d.meter~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3AD51A9E722F00E6921E /* hoa.2d.optim~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3AE91A9E722F00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.optim~" */;
+			buildPhases = (
+				2C9B3AD61A9E722F00E6921E /* Headers */,
+				2C9B3AE01A9E722F00E6921E /* Resources */,
+				2C9B3AE11A9E722F00E6921E /* Sources */,
+				2C9B3AE51A9E722F00E6921E /* Frameworks */,
+				2C9B3AE81A9E722F00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.optim~";
+			productName = iterator;
+			productReference = 2C9B3AEC1A9E722F00E6921E /* hoa.2d.optim~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3AF01A9E729800E6921E /* hoa.2d.projector~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3B041A9E729800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.projector~" */;
+			buildPhases = (
+				2C9B3AF11A9E729800E6921E /* Headers */,
+				2C9B3AFB1A9E729800E6921E /* Resources */,
+				2C9B3AFC1A9E729800E6921E /* Sources */,
+				2C9B3B001A9E729800E6921E /* Frameworks */,
+				2C9B3B031A9E729800E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.projector~";
+			productName = iterator;
+			productReference = 2C9B3B071A9E729800E6921E /* hoa.2d.projector~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3B0A1A9E730900E6921E /* hoa.2d.recomposer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3B1E1A9E730900E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.recomposer" */;
+			buildPhases = (
+				2C9B3B0B1A9E730900E6921E /* Headers */,
+				2C9B3B151A9E730900E6921E /* Resources */,
+				2C9B3B161A9E730900E6921E /* Sources */,
+				2C9B3B1A1A9E730900E6921E /* Frameworks */,
+				2C9B3B1D1A9E730900E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hoa.2d.recomposer;
+			productName = iterator;
+			productReference = 2C9B3B211A9E730900E6921E /* hoa.2d.recomposer.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3B261A9E736900E6921E /* hoa.2d.recomposer~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3B3A1A9E736900E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.recomposer~" */;
+			buildPhases = (
+				2C9B3B271A9E736900E6921E /* Headers */,
+				2C9B3B311A9E736900E6921E /* Resources */,
+				2C9B3B321A9E736900E6921E /* Sources */,
+				2C9B3B361A9E736900E6921E /* Frameworks */,
+				2C9B3B391A9E736900E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.recomposer~";
+			productName = iterator;
+			productReference = 2C9B3B3D1A9E736900E6921E /* hoa.2d.recomposer~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3B401A9E73BD00E6921E /* hoa.2d.rotate~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3B541A9E73BD00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.rotate~" */;
+			buildPhases = (
+				2C9B3B411A9E73BD00E6921E /* Headers */,
+				2C9B3B4B1A9E73BD00E6921E /* Resources */,
+				2C9B3B4C1A9E73BD00E6921E /* Sources */,
+				2C9B3B501A9E73BD00E6921E /* Frameworks */,
+				2C9B3B531A9E73BD00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.rotate~";
+			productName = iterator;
+			productReference = 2C9B3B571A9E73BD00E6921E /* hoa.2d.rotate~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3B5A1A9E740200E6921E /* hoa.2d.scope~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3B6E1A9E740200E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.scope~" */;
+			buildPhases = (
+				2C9B3B5B1A9E740200E6921E /* Headers */,
+				2C9B3B651A9E740200E6921E /* Resources */,
+				2C9B3B661A9E740200E6921E /* Sources */,
+				2C9B3B6A1A9E740200E6921E /* Frameworks */,
+				2C9B3B6D1A9E740200E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.scope~";
+			productName = iterator;
+			productReference = 2C9B3B711A9E740200E6921E /* hoa.2d.scope~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3B731A9E743100E6921E /* hoa.2d.space */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3B871A9E743100E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.space" */;
+			buildPhases = (
+				2C9B3B741A9E743100E6921E /* Headers */,
+				2C9B3B7E1A9E743100E6921E /* Resources */,
+				2C9B3B7F1A9E743100E6921E /* Sources */,
+				2C9B3B831A9E743100E6921E /* Frameworks */,
+				2C9B3B861A9E743100E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hoa.2d.space;
+			productName = iterator;
+			productReference = 2C9B3B8A1A9E743100E6921E /* hoa.2d.space.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3B8E1A9E74AF00E6921E /* hoa.2d.vector~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3BA21A9E74AF00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.vector~" */;
+			buildPhases = (
+				2C9B3B8F1A9E74AF00E6921E /* Headers */,
+				2C9B3B991A9E74AF00E6921E /* Resources */,
+				2C9B3B9A1A9E74AF00E6921E /* Sources */,
+				2C9B3B9E1A9E74AF00E6921E /* Frameworks */,
+				2C9B3BA11A9E74AF00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.vector~";
+			productName = iterator;
+			productReference = 2C9B3BA51A9E74AF00E6921E /* hoa.2d.vector~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3BA81A9E750300E6921E /* hoa.2d.wider~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3BBC1A9E750300E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.wider~" */;
+			buildPhases = (
+				2C9B3BA91A9E750300E6921E /* Headers */,
+				2C9B3BB31A9E750300E6921E /* Resources */,
+				2C9B3BB41A9E750300E6921E /* Sources */,
+				2C9B3BB81A9E750300E6921E /* Frameworks */,
+				2C9B3BBB1A9E750300E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.wider~";
+			productName = iterator;
+			productReference = 2C9B3BBF1A9E750300E6921E /* hoa.2d.wider~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3BC21A9E763100E6921E /* hoa.3d.decoder~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3BD61A9E763100E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.decoder~" */;
+			buildPhases = (
+				2C9B3BC31A9E763100E6921E /* Headers */,
+				2C9B3BCD1A9E763100E6921E /* Resources */,
+				2C9B3BCE1A9E763100E6921E /* Sources */,
+				2C9B3BD21A9E763100E6921E /* Frameworks */,
+				2C9B3BD51A9E763100E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.decoder~";
+			productName = iterator;
+			productReference = 2C9B3BD91A9E763100E6921E /* hoa.3d.decoder~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3BDC1A9E76B900E6921E /* hoa.3d.encoder~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3BF01A9E76B900E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.encoder~" */;
+			buildPhases = (
+				2C9B3BDD1A9E76B900E6921E /* Headers */,
+				2C9B3BE71A9E76B900E6921E /* Resources */,
+				2C9B3BE81A9E76B900E6921E /* Sources */,
+				2C9B3BEC1A9E76B900E6921E /* Frameworks */,
+				2C9B3BEF1A9E76B900E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.encoder~";
+			productName = iterator;
+			productReference = 2C9B3BF31A9E76B900E6921E /* hoa.3d.encoder~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3BF61A9E776B00E6921E /* hoa.3d.map~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3C0A1A9E776B00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.map~" */;
+			buildPhases = (
+				2C9B3BF71A9E776B00E6921E /* Headers */,
+				2C9B3C011A9E776B00E6921E /* Resources */,
+				2C9B3C021A9E776B00E6921E /* Sources */,
+				2C9B3C061A9E776B00E6921E /* Frameworks */,
+				2C9B3C091A9E776B00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.map~";
+			productName = iterator;
+			productReference = 2C9B3C0D1A9E776B00E6921E /* hoa.3d.map~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3C101A9E77BD00E6921E /* hoa.3d.meter~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3C241A9E77BD00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.meter~" */;
+			buildPhases = (
+				2C9B3C111A9E77BD00E6921E /* Headers */,
+				2C9B3C1B1A9E77BD00E6921E /* Resources */,
+				2C9B3C1C1A9E77BD00E6921E /* Sources */,
+				2C9B3C201A9E77BD00E6921E /* Frameworks */,
+				2C9B3C231A9E77BD00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.meter~";
+			productName = iterator;
+			productReference = 2C9B3C271A9E77BD00E6921E /* hoa.3d.meter~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3C291A9E77ED00E6921E /* hoa.3d.optim~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3C3D1A9E77ED00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.optim~" */;
+			buildPhases = (
+				2C9B3C2A1A9E77ED00E6921E /* Headers */,
+				2C9B3C341A9E77ED00E6921E /* Resources */,
+				2C9B3C351A9E77ED00E6921E /* Sources */,
+				2C9B3C391A9E77ED00E6921E /* Frameworks */,
+				2C9B3C3C1A9E77ED00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.optim~";
+			productName = iterator;
+			productReference = 2C9B3C401A9E77ED00E6921E /* hoa.3d.optim~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3C421A9E781600E6921E /* hoa.3d.scope~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3C561A9E781600E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.scope~" */;
+			buildPhases = (
+				2C9B3C431A9E781600E6921E /* Headers */,
+				2C9B3C4D1A9E781600E6921E /* Resources */,
+				2C9B3C4E1A9E781600E6921E /* Sources */,
+				2C9B3C521A9E781600E6921E /* Frameworks */,
+				2C9B3C551A9E781600E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.scope~";
+			productName = iterator;
+			productReference = 2C9B3C591A9E781600E6921E /* hoa.3d.scope~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3C5B1A9E783B00E6921E /* hoa.3d.vector~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3C6F1A9E783B00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.vector~" */;
+			buildPhases = (
+				2C9B3C5C1A9E783B00E6921E /* Headers */,
+				2C9B3C661A9E783B00E6921E /* Resources */,
+				2C9B3C671A9E783B00E6921E /* Sources */,
+				2C9B3C6B1A9E783B00E6921E /* Frameworks */,
+				2C9B3C6E1A9E783B00E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.vector~";
+			productName = iterator;
+			productReference = 2C9B3C721A9E783B00E6921E /* hoa.3d.vector~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C9B3C741A9E787300E6921E /* hoa.3d.wider~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C9B3C881A9E787300E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.wider~" */;
+			buildPhases = (
+				2C9B3C751A9E787300E6921E /* Headers */,
+				2C9B3C7F1A9E787300E6921E /* Resources */,
+				2C9B3C801A9E787300E6921E /* Sources */,
+				2C9B3C841A9E787300E6921E /* Frameworks */,
+				2C9B3C871A9E787300E6921E /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.wider~";
+			productName = iterator;
+			productReference = 2C9B3C8B1A9E787300E6921E /* hoa.3d.wider~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
 		2CCD1F291A9CCBB3001F137D /* hoa.pi */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CCD1F7E1A9CCBB3001F137D /* Build configuration list for PBXNativeTarget "hoa.pi" */;
@@ -1281,6 +2546,27 @@
 				2C9B3A171A9E372300E6921E /* hoa.out~ */,
 				2C9B3A321A9E38EC00E6921E /* hoa.process~ */,
 				2C9B3A4E1A9E39E400E6921E /* hoa.thisprocess~ */,
+				2C9B3A6A1A9E418A00E6921E /* hoa.2d.decoder~ */,
+				2C9B3A851A9E44F800E6921E /* hoa.2d.encoder~ */,
+				2C9B3AA11A9E714B00E6921E /* hoa.2d.map~ */,
+				2C9B3ABB1A9E71C800E6921E /* hoa.2d.meter~ */,
+				2C9B3AD51A9E722F00E6921E /* hoa.2d.optim~ */,
+				2C9B3AF01A9E729800E6921E /* hoa.2d.projector~ */,
+				2C9B3B0A1A9E730900E6921E /* hoa.2d.recomposer */,
+				2C9B3B261A9E736900E6921E /* hoa.2d.recomposer~ */,
+				2C9B3B401A9E73BD00E6921E /* hoa.2d.rotate~ */,
+				2C9B3B5A1A9E740200E6921E /* hoa.2d.scope~ */,
+				2C9B3B731A9E743100E6921E /* hoa.2d.space */,
+				2C9B3B8E1A9E74AF00E6921E /* hoa.2d.vector~ */,
+				2C9B3BA81A9E750300E6921E /* hoa.2d.wider~ */,
+				2C9B3BC21A9E763100E6921E /* hoa.3d.decoder~ */,
+				2C9B3BDC1A9E76B900E6921E /* hoa.3d.encoder~ */,
+				2C9B3BF61A9E776B00E6921E /* hoa.3d.map~ */,
+				2C9B3C101A9E77BD00E6921E /* hoa.3d.meter~ */,
+				2C9B3C291A9E77ED00E6921E /* hoa.3d.optim~ */,
+				2C9B3C421A9E781600E6921E /* hoa.3d.scope~ */,
+				2C9B3C5B1A9E783B00E6921E /* hoa.3d.vector~ */,
+				2C9B3C741A9E787300E6921E /* hoa.3d.wider~ */,
 			);
 		};
 /* End PBXProject section */
@@ -1371,6 +2657,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C9B3A5B1A9E39E400E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3A761A9E418A00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3A911A9E44F800E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AAC1A9E714B00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AC61A9E71C800E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AE01A9E722F00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AFB1A9E729800E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B151A9E730900E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B311A9E736900E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B4B1A9E73BD00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B651A9E740200E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B7E1A9E743100E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B991A9E74AF00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BB31A9E750300E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BCD1A9E763100E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BE71A9E76B900E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C011A9E776B00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C1B1A9E77BD00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C341A9E77ED00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C4D1A9E781600E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C661A9E783B00E6921E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C7F1A9E787300E6921E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1480,6 +2913,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C9B3A631A9E39E400E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3A7E1A9E418A00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3A991A9E44F800E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AB41A9E714B00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3ACE1A9E71C800E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AE81A9E722F00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B031A9E729800E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B1D1A9E730900E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B391A9E736900E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B531A9E73BD00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B6D1A9E740200E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B861A9E743100E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BA11A9E74AF00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BBB1A9E750300E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BD51A9E763100E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BEF1A9E76B900E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C091A9E776B00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C231A9E77BD00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C3C1A9E77ED00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C551A9E781600E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C6E1A9E783B00E6921E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C871A9E787300E6921E /* Rez */ = {
 			isa = PBXRezBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1634,6 +3214,219 @@
 				2C9B3A5D1A9E39E400E6921E /* hoa.max.cpp in Sources */,
 				2C9B3A5F1A9E39E400E6921E /* hoa.library.cpp in Sources */,
 				2C9B3A691A9E3A4800E6921E /* hoa.thisprocess_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3A771A9E418A00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3A791A9E418A00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3A9F1A9E453600E6921E /* hoa.2d.decoder_tilde.cpp in Sources */,
+				2C9B3A7A1A9E418A00E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3A921A9E44F800E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AA01A9E454000E6921E /* hoa.2d.encoder_tilde.cpp in Sources */,
+				2C9B3A931A9E44F800E6921E /* hoa.max.cpp in Sources */,
+				2C9B3A951A9E44F800E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AAD1A9E714B00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AAF1A9E714B00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3ABA1A9E719700E6921E /* hoa.2d.map_tilde.cpp in Sources */,
+				2C9B3AB01A9E714B00E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AC71A9E71C800E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AEF1A9E727E00E6921E /* hoa.2d.meter_gui_tilde.cpp in Sources */,
+				2C9B3AC81A9E71C800E6921E /* hoa.max.cpp in Sources */,
+				2C9B3ACA1A9E71C800E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AE11A9E722F00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AE21A9E722F00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3AE31A9E722F00E6921E /* hoa.library.cpp in Sources */,
+				2C9B3AEE1A9E726800E6921E /* hoa.2d.optim_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3AFC1A9E729800E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3AFD1A9E729800E6921E /* hoa.max.cpp in Sources */,
+				2C9B3AFE1A9E729800E6921E /* hoa.library.cpp in Sources */,
+				2C9B3B091A9E72F300E6921E /* hoa.2d.projector_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B161A9E730900E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B171A9E730900E6921E /* hoa.max.cpp in Sources */,
+				2C9B3B241A9E734600E6921E /* ChannelManager.cpp in Sources */,
+				2C9B3B181A9E730900E6921E /* hoa.library.cpp in Sources */,
+				2C9B3B231A9E733D00E6921E /* hoa.2d.recomposer_gui.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B321A9E736900E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B331A9E736900E6921E /* hoa.max.cpp in Sources */,
+				2C9B3B341A9E736900E6921E /* hoa.library.cpp in Sources */,
+				2C9B3B3F1A9E739800E6921E /* hoa.2d.recomposer_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B4C1A9E73BD00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B4D1A9E73BD00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3B4E1A9E73BD00E6921E /* hoa.library.cpp in Sources */,
+				2C9B3B591A9E73F900E6921E /* hoa.2d.rotate_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B661A9E740200E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B8C1A9E746A00E6921E /* hoa.2d.scope_gui_tilde.cpp in Sources */,
+				2C9B3B671A9E740200E6921E /* hoa.max.cpp in Sources */,
+				2C9B3B681A9E740200E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B7F1A9E743100E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B801A9E743100E6921E /* hoa.max.cpp in Sources */,
+				2C9B3B8D1A9E747100E6921E /* hoa.2d.space_gui.cpp in Sources */,
+				2C9B3B811A9E743100E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3B9A1A9E74AF00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3B9B1A9E74AF00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3BA71A9E74E600E6921E /* hoa.2d.vector_tilde.cpp in Sources */,
+				2C9B3B9D1A9E74AF00E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BB41A9E750300E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BB51A9E750300E6921E /* hoa.max.cpp in Sources */,
+				2C9B3BC11A9E759200E6921E /* hoa.2d.wider_tilde.cpp in Sources */,
+				2C9B3BB71A9E750300E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BCE1A9E763100E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BDB1A9E767D00E6921E /* hoa.3d.decoder_tilde.cpp in Sources */,
+				2C9B3BCF1A9E763100E6921E /* hoa.max.cpp in Sources */,
+				2C9B3BD11A9E763100E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3BE81A9E76B900E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3BEA1A9E76B900E6921E /* hoa.max.cpp in Sources */,
+				2C9B3BEB1A9E76B900E6921E /* hoa.library.cpp in Sources */,
+				2C9B3BF51A9E774D00E6921E /* hoa.3d.encoder_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C021A9E776B00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C031A9E776B00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3C041A9E776B00E6921E /* hoa.library.cpp in Sources */,
+				2C9B3C0F1A9E77A300E6921E /* hoa.3d.map_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C1C1A9E77BD00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C8E1A9E78BA00E6921E /* Meter_3D.cpp in Sources */,
+				2C9B3C1D1A9E77BD00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3C1E1A9E77BD00E6921E /* hoa.library.cpp in Sources */,
+				2C9B3C8D1A9E78B100E6921E /* hoa.3d.meter_gui_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C351A9E77ED00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C361A9E77ED00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3C371A9E77ED00E6921E /* hoa.library.cpp in Sources */,
+				2C9B3C8F1A9E78FC00E6921E /* hoa.3d.optim_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C4E1A9E781600E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C4F1A9E781600E6921E /* hoa.max.cpp in Sources */,
+				2C9B3C501A9E781600E6921E /* hoa.library.cpp in Sources */,
+				2C9B3C901A9E790000E6921E /* hoa.3d.scope_gui_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C671A9E783B00E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C931A9E79AC00E6921E /* Meter_3D.cpp in Sources */,
+				2C9B3C911A9E790300E6921E /* hoa.3d.vector_tilde.cpp in Sources */,
+				2C9B3C681A9E783B00E6921E /* hoa.max.cpp in Sources */,
+				2C9B3C691A9E783B00E6921E /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C9B3C801A9E787300E6921E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C9B3C811A9E787300E6921E /* hoa.max.cpp in Sources */,
+				2C9B3C821A9E787300E6921E /* hoa.library.cpp in Sources */,
+				2C9B3C921A9E790700E6921E /* hoa.3d.wider_tilde.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2922,6 +4715,1980 @@
 			};
 			name = Deployment;
 		};
+		2C9B3A801A9E418A00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3A811A9E418A00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3A9B1A9E44F800E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3A9C1A9E44F800E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3AB61A9E714B00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3AB71A9E714B00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3AD01A9E71C800E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3AD11A9E71C800E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3AEA1A9E722F00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3AEB1A9E722F00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3B051A9E729800E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3B061A9E729800E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3B1F1A9E730900E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3B201A9E730900E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3B3B1A9E736900E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3B3C1A9E736900E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3B551A9E73BD00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3B561A9E73BD00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3B6F1A9E740200E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3B701A9E740200E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3B881A9E743100E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3B891A9E743100E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3BA31A9E74AF00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3BA41A9E74AF00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3BBD1A9E750300E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3BBE1A9E750300E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3BD71A9E763100E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3BD81A9E763100E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3BF11A9E76B900E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3BF21A9E76B900E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3C0B1A9E776B00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3C0C1A9E776B00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3C251A9E77BD00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3C261A9E77BD00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3C3E1A9E77ED00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3C3F1A9E77ED00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3C571A9E781600E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3C581A9E781600E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3C701A9E783B00E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3C711A9E783B00E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
+		2C9B3C891A9E787300E6921E /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2C9B3C8A1A9E787300E6921E /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
 		2CCD1F7F1A9CCBB3001F137D /* Development */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
@@ -3274,6 +7041,195 @@
 			buildConfigurations = (
 				2C9B3A651A9E39E400E6921E /* Development */,
 				2C9B3A661A9E39E400E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3A7F1A9E418A00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.decoder~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3A801A9E418A00E6921E /* Development */,
+				2C9B3A811A9E418A00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3A9A1A9E44F800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.encoder~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3A9B1A9E44F800E6921E /* Development */,
+				2C9B3A9C1A9E44F800E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3AB51A9E714B00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.map~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3AB61A9E714B00E6921E /* Development */,
+				2C9B3AB71A9E714B00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3ACF1A9E71C800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.meter~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3AD01A9E71C800E6921E /* Development */,
+				2C9B3AD11A9E71C800E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3AE91A9E722F00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.optim~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3AEA1A9E722F00E6921E /* Development */,
+				2C9B3AEB1A9E722F00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3B041A9E729800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.projector~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3B051A9E729800E6921E /* Development */,
+				2C9B3B061A9E729800E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3B1E1A9E730900E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.recomposer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3B1F1A9E730900E6921E /* Development */,
+				2C9B3B201A9E730900E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3B3A1A9E736900E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.recomposer~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3B3B1A9E736900E6921E /* Development */,
+				2C9B3B3C1A9E736900E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3B541A9E73BD00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.rotate~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3B551A9E73BD00E6921E /* Development */,
+				2C9B3B561A9E73BD00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3B6E1A9E740200E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.scope~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3B6F1A9E740200E6921E /* Development */,
+				2C9B3B701A9E740200E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3B871A9E743100E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.space" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3B881A9E743100E6921E /* Development */,
+				2C9B3B891A9E743100E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3BA21A9E74AF00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.vector~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3BA31A9E74AF00E6921E /* Development */,
+				2C9B3BA41A9E74AF00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3BBC1A9E750300E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.wider~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3BBD1A9E750300E6921E /* Development */,
+				2C9B3BBE1A9E750300E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3BD61A9E763100E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.decoder~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3BD71A9E763100E6921E /* Development */,
+				2C9B3BD81A9E763100E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3BF01A9E76B900E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.encoder~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3BF11A9E76B900E6921E /* Development */,
+				2C9B3BF21A9E76B900E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3C0A1A9E776B00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.map~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3C0B1A9E776B00E6921E /* Development */,
+				2C9B3C0C1A9E776B00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3C241A9E77BD00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.meter~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3C251A9E77BD00E6921E /* Development */,
+				2C9B3C261A9E77BD00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3C3D1A9E77ED00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.optim~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3C3E1A9E77ED00E6921E /* Development */,
+				2C9B3C3F1A9E77ED00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3C561A9E781600E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.scope~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3C571A9E781600E6921E /* Development */,
+				2C9B3C581A9E781600E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3C6F1A9E783B00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.vector~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3C701A9E783B00E6921E /* Development */,
+				2C9B3C711A9E783B00E6921E /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C9B3C881A9E787300E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.wider~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C9B3C891A9E787300E6921E /* Development */,
+				2C9B3C8A1A9E787300E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Deployment;

@@ -409,20 +409,20 @@ int C74_EXPORT main(void)
     // @method float @digest Set single source coordinate with messages depending on the mode.
     // @description Set single source coordinate with messages depending on the mode.
     // @marg 0 @name coord @optional 0 @type float
-    class_addmethod(c, (method)hoa_map_tilde_float,		"float",	A_FLOAT, 0);
+    class_addmethod(c, (method)hoa_map_tilde_float,     "float",	A_FLOAT, 0);
     
     // @method float @digest Set single source coordinate with messages depending on the mode.
     // @description Set single source coordinate with messages depending on the mode.
     // @marg 0 @name coord @optional 0 @type float
-    class_addmethod(c, (method)hoa_map_tilde_int,         "int",		A_LONG, 0);
+    class_addmethod(c, (method)hoa_map_tilde_int,       "int",		A_LONG, 0);
     
     // @method cartesian @digest Swith the input mode to cartesian (default).
     // @description The <m>cartesian</m> message swith the input mode to cartesian
-    class_addmethod(c, (method)hoa_map_tilde_cartesian,   "cartesian",A_NOTHING, 0);
+    class_addmethod(c, (method)hoa_map_tilde_cartesian, "cartesian",A_NOTHING, 0);
     
     // @method polar @digest Swith the input mode to polar.
     // @description The <m>polar</m> message swith the input mode to polar
-    class_addmethod(c, (method)hoa_map_tilde_polar,		"polar",	A_NOTHING, 0);
+    class_addmethod(c, (method)hoa_map_tilde_polar,     "polar",	A_NOTHING, 0);
     
     // @method list @digest Send source messages like coordinates and mute state.
     // @description Send source messages like coordinates and mute state. The list must be formatted like this : source-index input-mode radius/abscissa azimuth/ordinate to set source positions or like this : source-index 'mute' mute-state to set the mute state of a source.
@@ -430,8 +430,8 @@ int C74_EXPORT main(void)
     // marg 1 @name input-mode/mute @optional 0 @type symbol
     // marg 2 @name coord-1/mute-state @optional 0 @type float/int
     // marg 3 @name coord-2 @optional 0 @type float
-    class_addmethod(c, (method)hoa_map_tilde_list,        "list",				A_GIMME, 0);
-    class_addmethod(c, (method)hoa_map_tilde_assist,      "assist",			A_CANT, 0);
+    class_addmethod(c, (method)hoa_map_tilde_list,       "list",	A_GIMME, 0);
+    class_addmethod(c, (method)hoa_map_tilde_assist,     "assist",	A_CANT, 0);
     
     CLASS_ATTR_DOUBLE           (c, "ramp", 0, t_hoa_map_tilde, f_ramp);
     CLASS_ATTR_CATEGORY			(c, "ramp", 0, "Behavior");
