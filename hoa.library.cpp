@@ -54,6 +54,6 @@ int C74_EXPORT main(void)
     hoa_3d_vector_main();
     hoa_3d_wider_main();
     
-    //return 0;
+    return 0;
 }
 #endif

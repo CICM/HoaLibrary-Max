@@ -33,6 +33,23 @@
 		2C8781841A9B72F200BA0E2B /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
 		2C8781871A9BE0B600BA0E2B /* ChannelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8781851A9BE0B600BA0E2B /* ChannelManager.cpp */; };
 		2C8781881A9BE0B600BA0E2B /* ChannelManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781861A9BE0B600BA0E2B /* ChannelManager.h */; };
+		2CCD1F2E1A9CCBB3001F137D /* HoaCommon.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD5B19720A0300217823 /* HoaCommon.max.h */; };
+		2CCD1F341A9CCBB3001F137D /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2CCD1F351A9CCBB3001F137D /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2CCD1F361A9CCBB3001F137D /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2CCD1F371A9CCBB3001F137D /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2CCD1F391A9CCBB3001F137D /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2CCD1F3B1A9CCBB3001F137D /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2CCD1F3C1A9CCBB3001F137D /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2CCD1F3F1A9CCBB3001F137D /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2CCD1F431A9CCBB3001F137D /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2CCD1F441A9CCBB3001F137D /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD5E19720A0300217823 /* Utilities.h */; };
+		2CCD1F4B1A9CCBB3001F137D /* MaxHoaLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */; };
+		2CCD1F4E1A9CCBB3001F137D /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2CCD1F551A9CCBB3001F137D /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2CCD1F751A9CCBB3001F137D /* hoa.pi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5119720A0300217823 /* hoa.pi.cpp */; };
+		2CCD1F7B1A9CCBB3001F137D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2CCD1F7C1A9CCBB3001F137D /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
 		2CE0CD6019720A0300217823 /* hoa.2d.decoder_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2819720A0300217823 /* hoa.2d.decoder_tilde.cpp */; };
 		2CE0CD6119720A0300217823 /* hoa.2d.encoder_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2919720A0300217823 /* hoa.2d.encoder_tilde.cpp */; };
 		2CE0CD6219720A0300217823 /* hoa.2d.map_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD2A19720A0300217823 /* hoa.2d.map_tilde.cpp */; };
@@ -89,6 +106,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0326451A9DFEAD0076BE56 /* MaxHoaLibraryPacked.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MaxHoaLibraryPacked.xcconfig; sourceTree = "<group>"; };
 		2C3958491A9ABDCD00C91175 /* Decoder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Decoder.hpp; sourceTree = "<group>"; };
 		2C39584A1A9ABDCD00C91175 /* Defs.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Defs.hpp; sourceTree = "<group>"; };
 		2C39584B1A9ABDCD00C91175 /* Encoder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Encoder.hpp; sourceTree = "<group>"; };
@@ -115,6 +133,7 @@
 		2C8781831A9B72F200BA0E2B /* hoa.max.math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoa.max.math.h; sourceTree = "<group>"; };
 		2C8781851A9BE0B600BA0E2B /* ChannelManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChannelManager.cpp; sourceTree = "<group>"; };
 		2C8781861A9BE0B600BA0E2B /* ChannelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelManager.h; sourceTree = "<group>"; };
+		2CCD1F811A9CCBB3001F137D /* hoa.pi.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hoa.pi.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE0CD2819720A0300217823 /* hoa.2d.decoder_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = hoa.2d.decoder_tilde.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		2CE0CD2919720A0300217823 /* hoa.2d.encoder_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.2d.encoder_tilde.cpp; sourceTree = "<group>"; };
 		2CE0CD2A19720A0300217823 /* hoa.2d.map_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.2d.map_tilde.cpp; sourceTree = "<group>"; };
@@ -172,12 +191,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2CCD1F7A1A9CCBB3001F137D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCD1F7B1A9CCBB3001F137D /* Accelerate.framework in Frameworks */,
+				2CCD1F7C1A9CCBB3001F137D /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FBBEADC08F335360078DB84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE93335196EBA530079A368 /* MaxAudioAPI.framework in Frameworks */,
 				8F18A8BE17287341005FD621 /* Accelerate.framework in Frameworks */,
+				2CE93335196EBA530079A368 /* MaxAudioAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +215,8 @@
 		089C166AFE841209C02AAC07 /* iterator */ = {
 			isa = PBXGroup;
 			children = (
+				2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */,
+				2C0326451A9DFEAD0076BE56 /* MaxHoaLibraryPacked.xcconfig */,
 				2C874C93196EB76900659F07 /* hoa.library.cpp */,
 				2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */,
 				2CE9332F196EB9B60079A368 /* hoa.max.cpp */,
@@ -196,7 +226,6 @@
 				2CE0CD2619720A0300217823 /* Max2D */,
 				2CE0CD3619720A0300217823 /* Max3D */,
 				2CE0CD4119720A0300217823 /* MaxCommon */,
-				2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */,
 				2CE93334196EBA530079A368 /* MaxAudioAPI.framework */,
 				8F18A8BD17287341005FD621 /* Accelerate.framework */,
 				19C28FB4FE9D528D11CA2CBB /* Products */,
@@ -209,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				2FBBEAE508F335360078DB84 /* hoa.library.mxo */,
+				2CCD1F811A9CCBB3001F137D /* hoa.pi.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +346,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2CCD1F2A1A9CCBB3001F137D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCD1F2E1A9CCBB3001F137D /* HoaCommon.max.h in Headers */,
+				2CCD1F341A9CCBB3001F137D /* Hoa3D.max.h in Headers */,
+				2CCD1F351A9CCBB3001F137D /* Math.hpp in Headers */,
+				2CCD1F361A9CCBB3001F137D /* Hoa2D.max.h in Headers */,
+				2CCD1F371A9CCBB3001F137D /* Defs.hpp in Headers */,
+				2CCD1F391A9CCBB3001F137D /* hoa.max_commonsyms.h in Headers */,
+				2CCD1F3B1A9CCBB3001F137D /* hoa.max.math.h in Headers */,
+				2CCD1F3C1A9CCBB3001F137D /* Hoa.hpp in Headers */,
+				2CCD1F3F1A9CCBB3001F137D /* Tools.hpp in Headers */,
+				2CCD1F431A9CCBB3001F137D /* hoa.max.h in Headers */,
+				2CCD1F441A9CCBB3001F137D /* Utilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FBBEAD708F335360078DB84 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,9 +405,28 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2FBBEAD608F335360078DB84 /* max-external */ = {
+		2CCD1F291A9CCBB3001F137D /* hoa.pi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FBBEAE008F335360078DB84 /* Build configuration list for PBXNativeTarget "max-external" */;
+			buildConfigurationList = 2CCD1F7E1A9CCBB3001F137D /* Build configuration list for PBXNativeTarget "hoa.pi" */;
+			buildPhases = (
+				2CCD1F2A1A9CCBB3001F137D /* Headers */,
+				2CCD1F4A1A9CCBB3001F137D /* Resources */,
+				2CCD1F4C1A9CCBB3001F137D /* Sources */,
+				2CCD1F7A1A9CCBB3001F137D /* Frameworks */,
+				2CCD1F7D1A9CCBB3001F137D /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hoa.pi;
+			productName = iterator;
+			productReference = 2CCD1F811A9CCBB3001F137D /* hoa.pi.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2FBBEAD608F335360078DB84 /* hoa.library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FBBEAE008F335360078DB84 /* Build configuration list for PBXNativeTarget "hoa.library" */;
 			buildPhases = (
 				2FBBEAD708F335360078DB84 /* Headers */,
 				2FBBEAD808F335360078DB84 /* Resources */,
@@ -371,7 +438,7 @@
 			);
 			dependencies = (
 			);
-			name = "max-external";
+			name = hoa.library;
 			productName = iterator;
 			productReference = 2FBBEAE508F335360078DB84 /* hoa.library.mxo */;
 			productType = "com.apple.product-type.bundle";
@@ -398,12 +465,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2FBBEAD608F335360078DB84 /* max-external */,
+				2CCD1F291A9CCBB3001F137D /* hoa.pi */,
+				2FBBEAD608F335360078DB84 /* hoa.library */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2CCD1F4A1A9CCBB3001F137D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCD1F4B1A9CCBB3001F137D /* MaxHoaLibrary.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FBBEAD808F335360078DB84 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -415,6 +491,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXRezBuildPhase section */
+		2CCD1F7D1A9CCBB3001F137D /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FBBEADF08F335360078DB84 /* Rez */ = {
 			isa = PBXRezBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,6 +508,16 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2CCD1F4C1A9CCBB3001F137D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCD1F4E1A9CCBB3001F137D /* hoa.max.cpp in Sources */,
+				2CCD1F551A9CCBB3001F137D /* hoa.library.cpp in Sources */,
+				2CCD1F751A9CCBB3001F137D /* hoa.pi.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FBBEADA08F335360078DB84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -480,6 +573,100 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		2CCD1F7F1A9CCBB3001F137D /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Development;
+		};
+		2CCD1F801A9CCBB3001F137D /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = $DSTROOT;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FAST_MATH = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"\"DENORM_WANT_FIX = 1\"",
+					"\"NO_TRANSLATION_SUPPORT = 1\"",
+				);
+				GCC_UNROLL_LOOPS = YES;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					"\"$(C74SUPPORT)/max-includes\"",
+					"\"$(C74SUPPORT)/msp-includes\"",
+					"\"$(C74SUPPORT)/jit-includes\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Deployment;
+		};
 		2FBBEAD008F335010078DB84 /* Development */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
@@ -528,6 +715,7 @@
 		};
 		2FBBEAE108F335360078DB84 /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C0326451A9DFEAD0076BE56 /* MaxHoaLibraryPacked.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -575,6 +763,7 @@
 		};
 		2FBBEAE208F335360078DB84 /* Deployment */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C0326451A9DFEAD0076BE56 /* MaxHoaLibraryPacked.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -623,6 +812,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2CCD1F7E1A9CCBB3001F137D /* Build configuration list for PBXNativeTarget "hoa.pi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CCD1F7F1A9CCBB3001F137D /* Development */,
+				2CCD1F801A9CCBB3001F137D /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
 		2FBBEACF08F335010078DB84 /* Build configuration list for PBXProject "hoa.library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -632,7 +830,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Deployment;
 		};
-		2FBBEAE008F335360078DB84 /* Build configuration list for PBXNativeTarget "max-external" */ = {
+		2FBBEAE008F335360078DB84 /* Build configuration list for PBXNativeTarget "hoa.library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FBBEAE108F335360078DB84 /* Development */,

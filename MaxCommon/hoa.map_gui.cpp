@@ -1307,7 +1307,7 @@ void hoamap_jsave(t_hoa_map *x, t_dictionary *d)
 
 t_max_err hoamap_zoom(t_hoa_map *x, t_object *attr, long argc, t_atom *argv)
 {
-    if(argc >= 1 && argv && atom_gettype(argv) == A_FLOAT)
+    if(argc >= 1 && argv && atom_isNumber(argv))
         x->f_zoom_factor = Math<double>::clip(atom_getfloat(argv), MIN_ZOOM, MAX_ZOOM);
     
     jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_background_layer);
