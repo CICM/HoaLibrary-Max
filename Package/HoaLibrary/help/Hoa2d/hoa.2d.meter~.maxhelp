@@ -5,7 +5,7 @@
 			"major" : 7,
 			"minor" : 0,
 			"revision" : 0,
-			"architecture" : "x86",
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -54,7 +54,7 @@
 							"major" : 7,
 							"minor" : 0,
 							"revision" : 0,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -171,7 +171,7 @@
 											"major" : 7,
 											"minor" : 0,
 											"revision" : 0,
-											"architecture" : "x86",
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -326,8 +326,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"fontsize" : [ 12.059008 ],
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+													"fontsize" : [ 12.059008 ]
 												}
 ,
 												"parentstyle" : "",
@@ -336,8 +336,8 @@
 , 											{
 												"name" : "newobjYellow-2",
 												"default" : 												{
-													"fontsize" : [ 12.059008 ],
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+													"fontsize" : [ 12.059008 ]
 												}
 ,
 												"parentstyle" : "",
@@ -412,7 +412,7 @@
 											"major" : 7,
 											"minor" : 0,
 											"revision" : 0,
-											"architecture" : "x86",
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -597,8 +597,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"fontsize" : [ 12.059008 ],
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+													"fontsize" : [ 12.059008 ]
 												}
 ,
 												"parentstyle" : "",
@@ -815,7 +815,7 @@
 											"major" : 7,
 											"minor" : 0,
 											"revision" : 0,
-											"architecture" : "x86",
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1017,8 +1017,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"fontsize" : [ 12.059008 ],
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+													"fontsize" : [ 12.059008 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1027,8 +1027,8 @@
 , 											{
 												"name" : "newobjYellow-2",
 												"default" : 												{
-													"fontsize" : [ 12.059008 ],
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+													"fontsize" : [ 12.059008 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1115,9 +1115,8 @@
 							}
 , 							{
 								"box" : 								{
-									"angles" : [ 0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0 ],
 									"bgcolor" : [ 0.760784, 0.760784, 0.760784, 1.0 ],
-									"channels" : 8,
+									"channels" : 8.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-25",
 									"interval" : 20,
@@ -1563,8 +1562,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1604,7 +1603,7 @@
 							"major" : 7,
 							"minor" : 0,
 							"revision" : 0,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -2020,7 +2019,7 @@
 , 							{
 								"box" : 								{
 									"angles" : [ 0.0, 72.0, 144.0, 216.0, 288.0 ],
-									"channels" : 5,
+									"channels" : 5.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"energycolor" : [ 0.0, 0.054688, 0.875, 1.0 ],
 									"id" : "obj-4",
@@ -2125,7 +2124,7 @@
 											"major" : 7,
 											"minor" : 0,
 											"revision" : 0,
-											"architecture" : "x86",
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -2572,7 +2571,7 @@
 									"destination" : [ "obj-4", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 406.5, 615.0, 314.0, 615.0, 314.0, 345.0, 39.566666, 345.0 ],
+									"midpoints" : [ 406.5, 615.0, 314.0, 615.0, 314.0, 345.0, 39.566668, 345.0 ],
 									"source" : [ "obj-32", 0 ]
 								}
 
@@ -2612,7 +2611,7 @@
 									"destination" : [ "obj-4", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 406.5, 529.0, 314.0, 529.0, 314.0, 345.0, 39.566666, 345.0 ],
+									"midpoints" : [ 406.5, 529.0, 314.0, 529.0, 314.0, 345.0, 39.566668, 345.0 ],
 									"source" : [ "obj-59", 0 ]
 								}
 
@@ -2711,8 +2710,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2753,7 +2752,7 @@
 							"major" : 7,
 							"minor" : 0,
 							"revision" : 0,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -2821,7 +2820,7 @@
 							"major" : 7,
 							"minor" : 0,
 							"revision" : 0,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -2870,7 +2869,7 @@
 											"major" : 7,
 											"minor" : 0,
 											"revision" : 0,
-											"architecture" : "x86",
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -3410,7 +3409,7 @@
 , 							{
 								"box" : 								{
 									"angles" : [ 0.0, 72.0, 144.0, 216.0, 288.0 ],
-									"channels" : 5,
+									"channels" : 5.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-1",
 									"maxclass" : "hoa.2d.meter~",
@@ -3452,7 +3451,7 @@
 											"major" : 7,
 											"minor" : 0,
 											"revision" : 0,
-											"architecture" : "x86",
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -3991,11 +3990,11 @@
 							"major" : 7,
 							"minor" : 0,
 							"revision" : 0,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 850.0, 687.0 ],
+						"rect" : [ 0.0, 26.0, 850.0, 687.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -4328,7 +4327,7 @@
 								"box" : 								{
 									"angles" : [ 0.0, 72.0, 144.0, 216.0, 288.0 ],
 									"bgcolor" : [ 0.707936, 0.616169, 0.070814, 1.0 ],
-									"channels" : 5,
+									"channels" : 5.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-1",
 									"maxclass" : "hoa.2d.meter~",
@@ -4522,7 +4521,7 @@
 							"major" : 7,
 							"minor" : 0,
 							"revision" : 0,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -5243,7 +5242,7 @@
 									"destination" : [ "obj-1", 2 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 27.5, 237.0, 214.833328, 237.0 ],
+									"midpoints" : [ 27.5, 237.0, 214.833333, 237.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -5253,7 +5252,7 @@
 									"destination" : [ "obj-1", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 27.5, 237.0, 121.166664, 237.0 ],
+									"midpoints" : [ 27.5, 237.0, 121.166667, 237.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -5336,7 +5335,7 @@
 							"major" : 7,
 							"minor" : 0,
 							"revision" : 0,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -5627,7 +5626,7 @@
 									"mbgcolor" : [ 0.611765, 0.611765, 0.611765, 1.0 ],
 									"numinlets" : 4,
 									"numoutlets" : 0,
-									"offset" : -45.0,
+									"offset" : 315.0,
 									"patching_rect" : [ 497.0, 155.0, 225.0, 225.0 ]
 								}
 
@@ -5650,7 +5649,7 @@
 , 							{
 								"box" : 								{
 									"angles" : [ 0.0, 15.0, 30.0, 45.0, 60.0, 75.0, 90.0, 105.0, 120.0, 135.0, 150.0, 165.0, 180.0, 195.0, 210.0, 225.0, 240.0, 255.0, 270.0, 285.0, 300.0, 315.0, 330.0, 345.0 ],
-									"channels" : 24,
+									"channels" : 24.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-27",
 									"interval" : 150,
@@ -5681,7 +5680,7 @@
 , 							{
 								"box" : 								{
 									"angles" : [ 0.0 ],
-									"channels" : 1,
+									"channels" : 1.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-25",
 									"interval" : 150,
@@ -5712,8 +5711,7 @@
 							}
 , 							{
 								"box" : 								{
-									"angles" : [ 0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0 ],
-									"channels" : 8,
+									"channels" : 8.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-23",
 									"maxclass" : "hoa.2d.meter~",
@@ -5819,7 +5817,7 @@
 , 							{
 								"box" : 								{
 									"angles" : [ 0.0, 180.0 ],
-									"channels" : 2,
+									"channels" : 2.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-2",
 									"interval" : 150,
@@ -5827,7 +5825,7 @@
 									"mbgcolor" : [ 0.611765, 0.611765, 0.611765, 1.0 ],
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"offset" : -90.0,
+									"offset" : 270.0,
 									"patching_rect" : [ 256.0, 155.0, 225.0, 225.0 ],
 									"prototypename" : "bigOctoBlack"
 								}
@@ -5836,7 +5834,7 @@
 , 							{
 								"box" : 								{
 									"angles" : [ 0.0, 22.5, 45.0, 67.5, 90.0, 112.5, 135.0, 157.5, 180.0, 202.5, 225.0, 247.5, 270.0, 292.5, 315.0, 337.5 ],
-									"channels" : 16,
+									"channels" : 16.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-1",
 									"interval" : 150,
@@ -6025,11 +6023,11 @@
 							"major" : 7,
 							"minor" : 0,
 							"revision" : 0,
-							"architecture" : "x86",
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 850.0, 687.0 ],
+						"rect" : [ 100.0, 126.0, 850.0, 687.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -6713,7 +6711,7 @@
 											"major" : 7,
 											"minor" : 0,
 											"revision" : 0,
-											"architecture" : "x86",
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -6939,7 +6937,7 @@
 											"major" : 7,
 											"minor" : 0,
 											"revision" : 0,
-											"architecture" : "x86",
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -7095,6 +7093,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-3",
@@ -7104,7 +7103,7 @@
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 									"patching_rect" : [ 31.0, 194.0, 424.0, 22.0 ],
 									"style" : "",
-									"text" : "hoa.2d.decoder~ 15 32"
+									"text" : "hoa.2d.decoder~ 15 @channels 32"
 								}
 
 							}
@@ -7126,7 +7125,7 @@
 , 							{
 								"box" : 								{
 									"angles" : [ 0.0, 11.25, 22.5, 33.75, 45.0, 56.25, 67.5, 78.75, 90.0, 101.25, 112.5, 123.75, 135.0, 146.25, 157.5, 168.75, 180.0, 191.25, 202.5, 213.75, 225.0, 236.25, 247.5, 258.75, 270.0, 281.25, 292.5, 303.75, 315.0, 326.25, 337.5, 348.75 ],
-									"channels" : 32,
+									"channels" : 32.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"dbperled" : 2,
 									"energycolor" : [ 0.027451, 0.0, 0.913725, 0.7 ],
@@ -7969,31 +7968,31 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-15::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-30::obj-28" : [ "umenu", "umenu", 0 ],
 			"obj-30::obj-38" : [ "umenu[1]", "umenu[1]", 0 ],
-			"obj-1::obj-15::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-1::obj-15::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-30::obj-19" : [ "flonum", "flonum", 0 ],
+			"obj-30::obj-28" : [ "umenu", "umenu", 0 ],
 			"obj-30::obj-21" : [ "toggle", "toggle", 0 ],
-			"obj-30::obj-19" : [ "flonum", "flonum", 0 ]
+			"obj-1::obj-15::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
@@ -8001,35 +8000,35 @@
 , 			{
 				"name" : "demosound.maxpat",
 				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/help/msp",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/help/msp",
+				"patcherrelativepath" : "../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/help/msp",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sine.svg",
 				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"patcherrelativepath" : "../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "saw.svg",
 				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"patcherrelativepath" : "../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "square.svg",
 				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"patcherrelativepath" : "../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "random.svg",
 				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"patcherrelativepath" : "../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
