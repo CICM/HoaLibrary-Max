@@ -67,13 +67,15 @@ t_hoa_err hoa_getinfos(t_hoa_2d_scope* x, t_hoa_boxinfos* boxinfos)
 	return HOA_ERR_NONE;
 }
 
-void hoa_2d_scope_perform64(t_hoa_2d_scope *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+void hoa_2d_scope_perform64(t_hoa_2d_scope *x, t_object *dsp64, t_sample **ins, long numins, t_sample **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
-    for(long i = 0; i < numins; i++)
+    for(int i = 0; i < numins; i++)
     {
         cblas_dcopy(sampleframes, ins[i], 1, x->f_signals+i, numins);
     }
+
     cblas_dscal(numins * sampleframes, x->f_gain, x->f_signals, 1);
+    
     if(x->f_startclock)
     {
         x->f_startclock = 0;
@@ -81,7 +83,7 @@ void hoa_2d_scope_perform64(t_hoa_2d_scope *x, t_object *dsp64, double **ins, lo
     }
 }
 
-void hoa_2d_scope_dsp64(t_hoa_2d_scope *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
+void hoa_2d_scope_dsp64(t_hoa_2d_scope *x, t_object *dsp64, short *count, double sr, long vecsize, long flags)
 {
     object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_scope_perform64, 0, NULL);
     x->f_startclock = 1;
@@ -93,6 +95,7 @@ void hoa_2d_scope_tick(t_hoa_2d_scope *x)
 
 	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_harmonics_layer);
 	jbox_redraw((t_jbox *)x);
+    
 	if (sys_getdspstate())
 		clock_fdelay(x->f_clock, x->f_interval);
 }
@@ -187,13 +190,14 @@ void draw_background(t_hoa_2d_scope *x,  t_object *view, t_rect *rect)
 	jbox_paint_layer((t_object *)x, view, hoa_sym_background_layer, 0., 0.);
 }
 
-void draw_harmonics(t_hoa_2d_scope *x,  t_object *view, t_rect *rect)
+void draw_harmonics(t_hoa_2d_scope *x, t_object *view, t_rect *rect)
 {
 	int pathLength = 0;
 	t_pt beginCoord;
     t_jpath* posHarmPath = NULL;
     t_jpath* negHarmPath = NULL;
     t_jmatrix transform;
+    const ulong npoint = x->f_scope->getNumberOfPoints();
     long posPathLen = 0, negPathLen = 0, precIndex = 0;
 
 	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_harmonics_layer, rect->width, rect->height);
@@ -204,14 +208,13 @@ void draw_harmonics(t_hoa_2d_scope *x,  t_object *view, t_rect *rect)
         jgraphics_set_line_cap(g, JGRAPHICS_LINE_CAP_ROUND);
 		jgraphics_set_line_width(g, 1);
         
-        // positiv harmonics
-        for(int i = 0; i < x->f_scope->getNumberOfPoints(); i++)
+        for(ulong i = 0; i < npoint; i++)
         {
             precIndex = i-1;
             if(precIndex < 0)
-                precIndex += x->f_scope->getNumberOfPoints();
+                precIndex += npoint;
             
-            if(i == x->f_scope->getNumberOfPoints()-1)
+            if(i == npoint - 1)
             {
                 jgraphics_line_to(g, beginCoord.x, beginCoord.y );
             }
@@ -238,10 +241,10 @@ void draw_harmonics(t_hoa_2d_scope *x,  t_object *view, t_rect *rect)
         
         pathLength = 0;
         jgraphics_new_path(g);
-        for(int i = 0; i < x->f_scope->getNumberOfPoints(); i++)
+        for(int i = 0; i < npoint; i++)
         {
             precIndex = i-1;
-            if (precIndex < 0) precIndex += x->f_scope->getNumberOfPoints();
+            if (precIndex < 0) precIndex += npoint;
             
             if(i == x->f_scope->getNumberOfPoints()-1)
             {
@@ -323,7 +326,7 @@ t_max_err set_order(t_hoa_2d_scope *x, t_object *attr, long ac, t_atom *av)
             delete [] x->f_signals;
             x->f_scope      = new Scope<Hoa2d, t_sample>(order, HOA_DISPLAY_NPOINTS);
             x->f_order      = x->f_scope->getDecompositionOrder();
-            x->f_signals    = new double[x->f_scope->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
+            x->f_signals    = new t_sample[x->f_scope->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
             
             t_object *b = NULL;
             object_obex_lookup(x, gensym("#B"), (t_object **)&b);
@@ -345,7 +348,7 @@ void *hoa_2d_scope_new(t_symbol *s, int argc, t_atom *argv)
     t_dictionary *d;
     long flags;
     
-    if(!(d = object_dictionaryarg(argc,argv)))
+    if(!(d = object_dictionaryarg(argc, argv)))
         return NULL;
     
     x = (t_hoa_2d_scope *)object_alloc(hoa_2d_scope_class);
@@ -361,14 +364,14 @@ void *hoa_2d_scope_new(t_symbol *s, int argc, t_atom *argv)
     jbox_new((t_jbox *)x, flags, argc, argv);
     x->j_box.z_box.b_firstin = (t_object *)x;
     
-    x->f_order = 1;
-    dictionary_getlong(d, gensym("order"), (t_atom_long *)&x->f_order);
-    if(x->f_order < 1)
-        x->f_order = 1;
+    ulong order = 1;
+    dictionary_getlong(d, gensym("order"), (t_atom_long *)&order);
+    if(order < 1)
+        order = 1;
     
-    x->f_scope      = new Scope<Hoa2d, t_sample>(x->f_order, HOA_DISPLAY_NPOINTS);
+    x->f_scope      = new Scope<Hoa2d, t_sample>(order, HOA_DISPLAY_NPOINTS);
     x->f_order      = x->f_scope->getDecompositionOrder();
-    x->f_signals    = new t_sample[x->f_scope->getNumberOfHarmonics()];
+    x->f_signals    = new t_sample[x->f_scope->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
     
     dsp_setupjbox((t_pxjbox *)x, x->f_scope->getNumberOfHarmonics());
     

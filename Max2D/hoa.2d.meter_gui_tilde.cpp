@@ -51,6 +51,7 @@ typedef struct  _meter
     long                        f_ramp;
     
     void*       f_attrs;
+    
     t_clock*	f_clock;
 	int			f_startclock;
 	t_atom_long	f_interval;
@@ -71,6 +72,13 @@ typedef struct  _meter
 	t_jrgba		f_color_over;
 	t_jrgba		f_color_energy;
 	t_jrgba		f_color_velocity;
+    
+    double      f_metersize;
+    t_atom_long f_drawledsbg;
+    t_atom_long f_drawvector;
+    t_atom_long f_drawmborder;
+    t_atom_long f_rotation;
+    t_atom_long f_direction;
 	
 	double		f_center;
 	double		f_rayonMax;
@@ -80,330 +88,10 @@ typedef struct  _meter
 	double		f_strokeWidth;
 	double		f_rayonExt;
 	double		f_rayonInt;
-    
-    double      f_metersize;
-	t_atom_long f_drawledsbg;
-    t_atom_long f_drawvector;
-    t_atom_long f_drawmborder;
-    t_atom_long f_rotation;
-    t_atom_long f_direction;
 	
 } t_meter;
 
-void *meter_new(t_symbol *s, int argc, t_atom *argv);
-void meter_free(t_meter *x);
-void meter_assist(t_meter *x, void *b, long m, long a, char *s);
-
-void meter_dsp64(t_meter *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags);
-void meter_perform64(t_meter *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam);
-void meter_tick(t_meter *x);
-
-t_max_err meter_notify(t_meter *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
-t_max_err channels_set(t_meter *x, t_object *attr, long ac, t_atom *av);
-t_max_err channels_get(t_meter *x, t_object *attr, long *ac, t_atom **av);
-t_max_err angles_set(t_meter *x, t_object *attr, long ac, t_atom *av);
-t_max_err angles_get(t_meter *x, t_object *attr, long *ac, t_atom **av);
-t_max_err offset_set(t_meter *x, t_object *attr, long ac, t_atom *av);
-t_max_err offset_get(t_meter *x, t_object *attr, long *ac, t_atom **av);
-
-void meter_paint(t_meter *x, t_object *view);
-void draw_background(t_meter *x, t_object *view, t_rect *rect);
-void draw_leds(t_meter *x,  t_object *view, t_rect *rect);
-void draw_vectors(t_meter *x, t_object *view, t_rect *rect);
-void draw_angle(t_meter *x,  t_object *view, t_rect *rect);
-void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect);
-void draw_separator(t_meter *x,  t_object *view, t_rect *rect);
-
-t_hoa_err hoa_getinfos(t_meter* x, t_hoa_boxinfos* boxinfos);
-
 t_class *meter_class;
-
-#ifdef HOA_PACKED_LIB
-int hoa_2d_meter_main(void)
-#else
-int C74_EXPORT main(void)
-#endif
-{
-	t_class *c;
-    
-	c = class_new("hoa.2d.meter~", (method)meter_new, (method)meter_free, (short)sizeof(t_meter), 0L, A_GIMME, 0);
-    class_setname((char *)"hoa.2d.meter~", (char *)"hoa.2d.meter~");
-    
-	c->c_flags |= CLASS_FLAG_NEWDICTIONARY;
-	class_dspinitjbox(c);
-	jbox_initclass(c, JBOX_COLOR);
-	
-    hoa_initclass(c, (method)hoa_getinfos);
-	
-	// @method signal @digest Array of signals to be visualize.
-	// @description Array of signals to be visualize.
-	// @marg 0 @name channel-signal @optional 0 @type signal
-	class_addmethod(c, (method) meter_dsp64,		 "dsp64",		  A_CANT, 0);
-	class_addmethod(c, (method) meter_assist,		 "assist",		  A_CANT, 0);
-	class_addmethod(c, (method) meter_paint,		 "paint",		  A_CANT, 0);
-	class_addmethod(c, (method) meter_notify,        "notify",		  A_CANT, 0);
-    
-	CLASS_ATTR_DEFAULT              (c, "patching_rect", 0, "0 0 150 150");
-	CLASS_ATTR_INVISIBLE            (c, "color", 0);
-	
-	/* APPEARANCE */
-    CLASS_STICKY_CATEGORY           (c, 0, "Appearance");
-	CLASS_ATTR_LONG                 (c, "ledsbg", 0, t_meter, f_drawledsbg);
-	CLASS_ATTR_ORDER                (c, "ledsbg", 0, "1");
-	CLASS_ATTR_STYLE_LABEL          (c, "ledsbg", 0, "onoff", "Draw Leds Background");
-	CLASS_ATTR_DEFAULT              (c, "ledsbg", 0, "1");
-	CLASS_ATTR_SAVE                 (c, "ledsbg", 1);
-	// @description Draw leds background ?
-	
-	CLASS_ATTR_LONG                 (c, "vectors", 0, t_meter, f_drawvector);
-	CLASS_ATTR_ORDER                (c, "vectors", 0, "2");
-    CLASS_ATTR_LABEL                (c, "vectors", 0, "Draw Vectors");
-    CLASS_ATTR_ENUMINDEX4           (c, "vectors", 0, "none", "energy", "velocity", "both")
-	CLASS_ATTR_DEFAULT              (c, "vectors", 0, "1");
-	CLASS_ATTR_SAVE                 (c, "vectors", 1);
-	// @description The vector(s) to draw.
-    
-    CLASS_ATTR_LONG                 (c, "mborder", 0, t_meter, f_drawmborder);
-	CLASS_ATTR_ORDER                (c, "mborder", 0, "3");
-    CLASS_ATTR_LABEL                (c, "mborder", 0, "Draw Meter Borders");
-    CLASS_ATTR_ENUMINDEX4           (c, "mborder", 0, "none", "Circles", "Axes", "both")
-	CLASS_ATTR_DEFAULT              (c, "mborder", 0, "3");
-	CLASS_ATTR_SAVE                 (c, "mborder", 1);
-	// @description The meter border(s) to draw.
-	
-	CLASS_ATTR_DOUBLE               (c, "metersize", 0, t_meter, f_metersize);
-	CLASS_ATTR_ORDER                (c, "metersize", 0, "4");
-	CLASS_ATTR_LABEL                (c, "metersize", 0, "Meter Circle Size");
-	CLASS_ATTR_FILTER_CLIP          (c, "metersize", 0., 1);
-	CLASS_ATTR_DEFAULT              (c, "metersize", 0, "0.8");
-	CLASS_ATTR_SAVE                 (c, "metersize", 1);
-	// @description The size of the inner circle of the <o>hoa.2d.meter~</o>.
-    
-    CLASS_ATTR_LONG                 (c, "orientation", 0, t_meter, f_direction);
-	CLASS_ATTR_LABEL                (c, "orientation", 0, "Meter Fill Orientation");
-    CLASS_ATTR_ORDER                (c, "orientation", 0, "5");
-	CLASS_ATTR_ENUMINDEX            (c, "orientation", 0, "inside outside");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c,"orientation",0, "0");
-	// @description The filling orientation of the peak level indicators <o>hoa.2d.meter~</o>.
-	
-    CLASS_STICKY_CATEGORY_CLEAR (c);
-	
-    CLASS_STICKY_CATEGORY           (c, 0, "Behavior");
-	CLASS_ATTR_LONG                 (c, "channels", 0 , t_meter, f_attrs);
-    CLASS_ATTR_ACCESSORS            (c, "channels", channels_get, channels_set);
-	CLASS_ATTR_ORDER                (c, "channels", 0, "1");
-	CLASS_ATTR_LABEL                (c, "channels", 0, "Number of Channels");
-	CLASS_ATTR_SAVE                 (c, "channels", 1);
-    CLASS_ATTR_DEFAULT              (c, "channels", 0, "4");
-	// @description The number of displayed channel and peak level indicators.
-    
-	CLASS_ATTR_DOUBLE_VARSIZE       (c, "angles", ATTR_SET_DEFER_LOW, t_meter, f_attrs, f_attrs, MAX_UI_CHANNELS);
-	CLASS_ATTR_ACCESSORS            (c, "angles", angles_get, angles_set);
-	CLASS_ATTR_ORDER                (c, "angles", 0, "2");
-	CLASS_ATTR_LABEL                (c, "angles", 0, "Angles of Channels");
-    CLASS_ATTR_SAVE                 (c, "angles", 1);
-    CLASS_ATTR_DEFAULT              (c, "angles", 0, "0 45 90 135 180 225 270 315");
-	// @description The angles of displayed channels and peak level indicators. Values are in degrees, wrapped between 0. and 360., so you can also set the angles with negative values.
-    
-	CLASS_ATTR_DOUBLE               (c, "offset", 0, t_meter, f_attrs);
-    CLASS_ATTR_ACCESSORS            (c, "angles", offset_get, offset_set);
-	CLASS_ATTR_ORDER                (c, "offset", 0, "3");
-	CLASS_ATTR_LABEL                (c, "offset", 0, "Offset of Channels");
-	CLASS_ATTR_FILTER_CLIP			(c, "offset", -180, 180);
-	CLASS_ATTR_DEFAULT              (c, "offset", 0, "0");
-	CLASS_ATTR_SAVE                 (c, "offset", 1);
-	// @description Display offset of channels and peak level indicators. the value is in degree, clipped between -180. and 180.
-    
-    CLASS_ATTR_LONG                 (c, "rotation", 0, t_meter, f_rotation);
-    CLASS_ATTR_ORDER                (c, "rotation", 0, "4");
-	CLASS_ATTR_LABEL                (c, "rotation", 0, "Rotation of Channels");
-	CLASS_ATTR_ENUMINDEX            (c, "rotation", 0, "clockwise anti-clockwise");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "rotation",0, "1");
-	// @description The rotation can either be <b>clockwise</b> or <b>anti-clockwise</b>
-    
-    CLASS_ATTR_LONG                 (c, "interval", 0, t_meter, f_interval);
-	CLASS_ATTR_ORDER                (c, "interval", 0, "5");
-	CLASS_ATTR_LABEL                (c, "interval", 0, "Refresh Interval in Milliseconds");
-	CLASS_ATTR_FILTER_MIN           (c, "interval", 20);
-	CLASS_ATTR_DEFAULT              (c, "interval", 0, "50");
-	CLASS_ATTR_SAVE                 (c, "interval", 1);
-	// @description The refresh interval time in milliseconds.
-	
-    CLASS_STICKY_CATEGORY_CLEAR     (c);
-	
-	CLASS_ATTR_LONG                 (c, "dbperled", 0, t_meter, f_dbperled);
-    CLASS_ATTR_CATEGORY             (c, "dbperled", 0, "Value");
-	CLASS_ATTR_ORDER                (c, "dbperled", 0, "4");
-	CLASS_ATTR_LABEL                (c, "dbperled", 0, "DeciBels per Led");
-	CLASS_ATTR_FILTER_CLIP          (c, "dbperled", 1, 12);
-	CLASS_ATTR_DEFAULT              (c, "dbperled", 0, "3");
-	CLASS_ATTR_SAVE                 (c, "dbperled", 1);
-	// @description Sets the amount of signal level in deciBels represented by each LED. By default each LED represents a 3dB change in volume from its neighboring LEDs.
-	
-	CLASS_ATTR_LONG                 (c, "nhotleds", 0, t_meter, f_nhotleds);
-    CLASS_ATTR_CATEGORY             (c, "nhotleds", 0, "Value");
-	CLASS_ATTR_ORDER                (c, "nhotleds", 0, "5");
-	CLASS_ATTR_LABEL                (c, "nhotleds", 0, "Number of Hot Leds");
-	CLASS_ATTR_FILTER_CLIP          (c, "nhotleds", 0, 20);
-	CLASS_ATTR_DEFAULT              (c, "nhotleds", 0, "3");
-	CLASS_ATTR_SAVE                 (c, "nhotleds", 1);
-	// @description Sets the total number "hot" warning LEDs displayed on the <o>hoa.2d.meter~</o> object (corresponding to the color set by the <b>hotcolor</b> message).
-
-	CLASS_ATTR_LONG                 (c, "ntepidleds", 0, t_meter, f_ntepidleds);
-    CLASS_ATTR_CATEGORY             (c, "ntepidleds", 0, "Value");
-	CLASS_ATTR_ORDER                (c, "ntepidleds", 0, "6");
-	CLASS_ATTR_LABEL                (c, "ntepidleds", 0, "Number of Tepid Leds");
-	CLASS_ATTR_FILTER_CLIP          (c, "ntepidleds", 0, 20);
-	CLASS_ATTR_DEFAULT              (c, "ntepidleds", 0, "3");
-	CLASS_ATTR_SAVE                 (c, "ntepidleds", 1);
-	// @description Sets the total number "tepid" mid-range LEDs displayed on the <o>hoa.2d.meter~</o> object (corresponding to the color set by the <b>tepidcolor</b> message).
-	
-	CLASS_ATTR_LONG                 (c, "nwarmleds", 0, t_meter, f_nwarmleds);
-    CLASS_ATTR_CATEGORY             (c, "nwarmleds", 0, "Value");
-	CLASS_ATTR_ORDER                (c, "nwarmleds", 0, "7");
-	CLASS_ATTR_LABEL                (c, "nwarmleds", 0, "Number of Warm Leds");
-	CLASS_ATTR_FILTER_CLIP          (c, "nwarmleds", 0, 20);
-	CLASS_ATTR_DEFAULT              (c, "nwarmleds", 0, "3");
-	CLASS_ATTR_SAVE                 (c, "nwarmleds", 1);
-	// @description Sets the total number "warm" lower-mid-range LEDs displayed on the <o>hoa.2d.meter~</o> object (corresponding to the color set by the <b>warmcolor</b> message).
-	
-	CLASS_ATTR_LONG                 (c, "numleds", 0, t_meter, f_numleds);
-    CLASS_ATTR_CATEGORY             (c, "numleds", 0, "Value");
-	CLASS_ATTR_ORDER                (c, "numleds", 0, "8");
-	CLASS_ATTR_LABEL                (c, "numleds", 0, "Total Number of Leds");
-	CLASS_ATTR_FILTER_CLIP          (c, "numleds", 10, 20);
-	CLASS_ATTR_DEFAULT              (c, "numleds", 0, "12");
-	CLASS_ATTR_SAVE                 (c, "numleds", 1);
-    // @description The word numleds, followed by a number between 10 and 20, sets the total number of LEDs displayed on the <o>hoa.2d.meter~</o> object. The range is 10-20 LEDs.
-    
-    CLASS_ATTR_RGBA                 (c, "bgcolor", 0, t_meter, f_color_bg);
-	CLASS_ATTR_CATEGORY             (c, "bgcolor", 0, "Color");
-	CLASS_ATTR_STYLE                (c, "bgcolor", 0, "rgba");
-	CLASS_ATTR_LABEL                (c, "bgcolor", 0, "Background Color");
-	CLASS_ATTR_ORDER                (c, "bgcolor", 0, "1");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "bgcolor", 0, "0.76 0.76 0.76 1.");
-	// @description Sets the RGBA values for the background color of the <o>hoa.2d.meter~</o> object
-    
-	CLASS_ATTR_RGBA                 (c, "mbgcolor", 0, t_meter, f_color_mbg);
-	CLASS_ATTR_LABEL                (c, "mbgcolor", 0, "Meter Background Color");
-    CLASS_ATTR_CATEGORY             (c, "mbgcolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "mbgcolor", 0, "rgba");
-	CLASS_ATTR_ORDER                (c, "mbgcolor", 0, "2");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "mbgcolor", 0, "0.61 0.61 0.61 1.");
-	// @description Sets the RGBA values for the filled circle background color of the <o>hoa.2d.meter~</o> object
-    
-    CLASS_ATTR_RGBA                 (c, "ledbgcolor", 0, t_meter, f_color_ledbg);
-    CLASS_ATTR_LABEL                (c, "ledbgcolor", 0, "Leds Background Color");
-    CLASS_ATTR_CATEGORY             (c, "ledbgcolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "ledbgcolor", 0, "rgba");
-    CLASS_ATTR_ORDER                (c, "ledbgcolor", 0, "3");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "ledbgcolor", 0, "0. 0. 0. 0.05");
-    // @description Sets the RGBA values for leds background color of the <o>hoa.2d.meter~</o> object
-	
-	CLASS_ATTR_RGBA                 (c, "coldcolor", 0, t_meter, f_color_cold);
-    CLASS_ATTR_CATEGORY             (c, "coldcolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "coldcolor", 0, "rgba");
-	CLASS_ATTR_LABEL                (c, "coldcolor", 0, "Cold Signal Color");
-	CLASS_ATTR_ORDER                (c, "coldcolor", 0, "4");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "coldcolor", 0, "0. 0.6 0. 0.8");
-	// @description Sets the RGBA values for the cold signal color of the <o>hoa.2d.meter~</o> object
-	
-	CLASS_ATTR_RGBA                 (c, "tepidcolor", 0, t_meter, f_color_tepid);
-    CLASS_ATTR_CATEGORY             (c, "tepidcolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "tepidcolor", 0, "rgba");
-	CLASS_ATTR_LABEL                (c, "tepidcolor", 0, "Tepid Signal Color");
-	CLASS_ATTR_ORDER                (c, "tepidcolor", 0, "5");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "tepidcolor", 0, "0.6 0.73 0. 0.8");
-	// @description Sets the RGBA values for the LEDs color for the lower-middle "tepid" range of the <o>hoa.2d.meter~</o> object
-	
-	CLASS_ATTR_RGBA                 (c, "warmcolor", 0, t_meter, f_color_warm);
-    CLASS_ATTR_CATEGORY             (c, "warmcolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "warmcolor", 0, "rgba");
-	CLASS_ATTR_LABEL                (c, "warmcolor", 0, "Warm Signal Color");
-	CLASS_ATTR_ORDER                (c, "warmcolor", 0, "6");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "warmcolor", 0, ".85 .85 0. 0.8");
-	// @description Sets the RGBA values for the LEDs color for upper-middle "warm" range of the <o>hoa.2d.meter~</o> object
-	
-	CLASS_ATTR_RGBA                 (c, "hotcolor", 0, t_meter, f_color_hot);
-    CLASS_ATTR_CATEGORY             (c, "hotcolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "hotcolor", 0, "rgba");
-	CLASS_ATTR_LABEL                (c, "hotcolor", 0, "Hot Signal Color");
-	CLASS_ATTR_ORDER                (c, "hotcolor", 0, "7");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "hotcolor", 0, "1. 0.6 0. 0.8");
-	// @description Sets the RGBA values for the LEDs color for the upper "hot" range of the <o>hoa.2d.meter~</o> object
-	
-	CLASS_ATTR_RGBA                 (c, "overloadcolor", 0, t_meter, f_color_over);
-    CLASS_ATTR_CATEGORY             (c, "overloadcolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "overloadcolor", 0, "rgba");
-	CLASS_ATTR_LABEL                (c, "overloadcolor", 0, "Overload Signal Color");
-	CLASS_ATTR_ORDER                (c, "overloadcolor", 0, "8");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "overloadcolor", 0, "1. 0. 0. 0.8");
-	// @description Sets the RGBA values for the LEDs color for the "over" indicator of the <o>hoa.2d.meter~</o> object
-	
-	CLASS_ATTR_RGBA                 (c, "energycolor", 0, t_meter, f_color_energy);
-    CLASS_ATTR_CATEGORY             (c, "energycolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "energycolor", 0, "rgba");
-	CLASS_ATTR_LABEL                (c, "energycolor", 0, "Energy Vector Color");
-	CLASS_ATTR_ORDER                (c, "energycolor", 0, "9");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "energycolor", 0, "0. 0. 1. 0.8");
-	// @description Sets the RGBA values for the energy vector color of the <o>hoa.2d.meter~</o> object
-    
-    CLASS_ATTR_RGBA                 (c, "velocitycolor", 0, t_meter, f_color_velocity);
-    CLASS_ATTR_CATEGORY             (c, "velocitycolor", 0, "Color");
-    CLASS_ATTR_STYLE                (c, "velocitycolor", 0, "rgba");
-	CLASS_ATTR_LABEL                (c, "velocitycolor", 0, "Velocity Vector Color");
-	CLASS_ATTR_ORDER                (c, "velocitycolor", 0, "9");
-	CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "velocitycolor", 0, "1. 0. 0. 0.8");
-	// @description Sets the RGBA values for the velocity vector color of the <o>hoa.2d.meter~</o> object
-	
-	class_register(CLASS_BOX, c);
-    class_alias(c, gensym("hoa.meter~"));
-	meter_class = c;
-	return 0;
-}
-
-void *meter_new(t_symbol *s, int argc, t_atom *argv)
-{
-	t_meter *x =  NULL;
-	t_dictionary *d;
-	long flags;
-	if (!(d = object_dictionaryarg(argc,argv)))
-		return NULL;
-    
-	x = (t_meter *)object_alloc(meter_class);
-	flags = 0
-    | JBOX_DRAWFIRSTIN
-    | JBOX_NODRAWBOX
-    | JBOX_DRAWINLAST
-    | JBOX_TRANSPARENT
-    | JBOX_DRAWBACKGROUND
-    | JBOX_GROWY
-    ;
-    
-    ulong channels = 8;
-	jbox_new((t_jbox *)x, flags, argc, argv);
-	x->j_box.z_box.b_firstin = (t_object *)x;
-    
-    dictionary_getlong(d, hoa_sym_channels, (t_atom_long *)&channels);
-	if(channels < 1)
-        channels = 1;
-    
-    x->f_meter  = new Meter<Hoa2d, t_sample>(channels);
-    x->f_vector = new Vector<Hoa2d, t_sample>(channels);
-	
-    x->f_signals  = new t_sample[MAX_UI_CHANNELS * HOA_MAXBLKSIZE];
-    x->f_meter->computeDisplay();
-    x->f_vector->computeRendering();
-    
-    dsp_setupjbox((t_pxjbox *)x, x->f_meter->getNumberOfPlanewaves());
-    x->f_clock = (t_clock*)clock_new(x,(method)meter_tick);
-	x->f_startclock = 0;
-	
-	attr_dictionary_process(x, d);
-	jbox_ready((t_jbox *)x);
-	
-	return (x);
-}
 
 t_hoa_err hoa_getinfos(t_meter* x, t_hoa_boxinfos* boxinfos)
 {
@@ -503,6 +191,7 @@ t_max_err angles_set(t_meter *x, t_object *attr, long ac, t_atom *av)
                 x->f_vector->setPlanewaveAzimuth(i, atom_getfloat(av+i) / 360.f * HOA_2PI);
             }
         }
+        
         x->f_meter->computeDisplay();
         x->f_vector->computeRendering();
         
@@ -570,13 +259,6 @@ t_max_err offset_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
     return MAX_ERR_NONE;
 }
 
-void meter_dsp64(t_meter *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
-{
-    x->f_meter->setVectorSize(maxvectorsize);
-	object_method(dsp64, gensym("dsp_add64"), x, meter_perform64, 0, NULL);
-	x->f_startclock = 1;
-}
-
 void meter_perform64(t_meter *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
 	for(int i = 0; i < numins; i++)
@@ -594,14 +276,27 @@ void meter_perform64(t_meter *x, t_object *dsp64, double **ins, long numins, dou
 	}
 }
 
+void meter_dsp64(t_meter *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
+{
+    x->f_meter->setVectorSize(maxvectorsize);
+    object_method(dsp64, gensym("dsp_add64"), x, meter_perform64, 0, NULL);
+    x->f_startclock = 1;
+}
+
 void meter_tick(t_meter *x)
 {
 	if(x->f_drawvector == VECTOR_BOTH)
+    {
         x->f_vector->process(x->f_signals, x->f_vector_coords);
+    }
     else if(x->f_drawvector == VECTOR_VELOCITY)
+    {
         x->f_vector->processVelocity(x->f_signals, x->f_vector_coords);
+    }
     else if(x->f_drawvector == VECTOR_ENERGY)
+    {
 		x->f_vector->processEnergy(x->f_signals, x->f_vector_coords + 2);
+    }
     
     x->f_meter->tick(1000 / x->f_interval);
 	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_leds_layer);
@@ -653,26 +348,6 @@ t_max_err meter_notify(t_meter *x, t_symbol *s, t_symbol *msg, void *sender, voi
 		jbox_redraw((t_jbox *)x);
 	}
 	return jbox_notify((t_jbox *)x, s, msg, sender, data);
-}
-
-void meter_paint(t_meter *x, t_object *view)
-{
-	t_rect rect;
-	jbox_get_rect_for_view((t_object *)x, view, &rect);
-	
-	x->f_center = rect.width * 0.5;
-	x->f_rayonMax = x->f_center;
-	x->f_fontsize = (x->f_rayonMax / 14.) - 1.;
-	x->f_rayonCircle = x->f_rayonMax / 32;
-	x->f_rayonExt = x->f_rayonMax - 2.5;
-	x->f_rayonInt = x->f_rayonExt * (1 - x->f_metersize);
-	
-	draw_skeleton(x, view, &rect);
-    draw_leds(x, view, &rect);
-    if (x->f_drawmborder == 2 || x->f_drawmborder == 3)
-        draw_separator(x, view, &rect);
-    if (x->f_drawvector != VECTOR_NONE)
-		draw_vectors(x, view, &rect);
 }
 
 void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
@@ -1017,11 +692,13 @@ void draw_vectors(t_meter *x, t_object *view, t_rect *rect)
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
         
+        /*
 		if (x->f_rotation)
-			jgraphics_rotate(g, x->f_meter->getPlanewavesRotation());
+			jgraphics_rotate(g, radToDeg(x->f_meter->getPlanewavesRotation()));
 		else
-			jgraphics_rotate(g, -x->f_meter->getPlanewavesRotation());
-		
+			jgraphics_rotate(g, -radToDeg(x->f_meter->getPlanewavesRotation()));
+		*/
+        
 		if (x->f_drawvector == VECTOR_BOTH || x->f_drawvector == VECTOR_ENERGY)
 		{
 			if (x->f_rotation)
@@ -1071,4 +748,312 @@ void draw_vectors(t_meter *x, t_object *view, t_rect *rect)
 	}
 	
 	jbox_paint_layer((t_object *)x, view, hoa_sym_vectors_layer, 0., 0.);
+}
+
+void meter_paint(t_meter *x, t_object *view)
+{
+    t_rect rect;
+    jbox_get_rect_for_view((t_object *)x, view, &rect);
+    
+    x->f_center = rect.width * 0.5;
+    x->f_rayonMax = x->f_center;
+    x->f_fontsize = (x->f_rayonMax / 14.) - 1.;
+    x->f_rayonCircle = x->f_rayonMax / 32;
+    x->f_rayonExt = x->f_rayonMax - 2.5;
+    x->f_rayonInt = x->f_rayonExt * (1 - x->f_metersize);
+    
+    draw_skeleton(x, view, &rect);
+    draw_leds(x, view, &rect);
+    if (x->f_drawmborder == 2 || x->f_drawmborder == 3)
+        draw_separator(x, view, &rect);
+    if (x->f_drawvector != VECTOR_NONE)
+        draw_vectors(x, view, &rect);
+}
+
+void *meter_new(t_symbol *s, int argc, t_atom *argv)
+{
+    t_meter *x =  NULL;
+    t_dictionary *d;
+    long flags;
+    
+    if(!(d = object_dictionaryarg(argc, argv)))
+        return NULL;
+    
+    x = (t_meter *)object_alloc(meter_class);
+    flags = 0
+    | JBOX_DRAWFIRSTIN
+    | JBOX_NODRAWBOX
+    | JBOX_DRAWINLAST
+    | JBOX_TRANSPARENT
+    | JBOX_DRAWBACKGROUND
+    | JBOX_GROWY
+    ;
+    
+    jbox_new((t_jbox *)x, flags, argc, argv);
+    x->j_box.z_box.b_firstin = (t_object *)x;
+    
+    ulong channels = 8;
+    dictionary_getlong(d, hoa_sym_channels, (t_atom_long *)&channels);
+    if(channels < 1)
+        channels = 1;
+    
+    x->f_meter  = new Meter<Hoa2d, t_sample>(channels);
+    x->f_vector = new Vector<Hoa2d, t_sample>(channels);
+    
+    x->f_signals  = new t_sample[MAX_UI_CHANNELS * HOA_MAXBLKSIZE];
+    x->f_meter->computeDisplay();
+    x->f_vector->computeRendering();
+    
+    dsp_setupjbox((t_pxjbox *)x, x->f_meter->getNumberOfPlanewaves());
+    x->f_clock = (t_clock*)clock_new(x,(method)meter_tick);
+    x->f_startclock = 0;
+    
+    attr_dictionary_process(x, d);
+    jbox_ready((t_jbox *)x);
+    
+    return (x);
+}
+
+#ifdef HOA_PACKED_LIB
+int hoa_2d_meter_main(void)
+#else
+int C74_EXPORT main(void)
+#endif
+{
+    t_class *c;
+    
+    c = class_new("hoa.2d.meter~", (method)meter_new, (method)meter_free, (short)sizeof(t_meter), 0L, A_GIMME, 0);
+    class_setname((char *)"hoa.2d.meter~", (char *)"hoa.2d.meter~");
+    
+    c->c_flags |= CLASS_FLAG_NEWDICTIONARY;
+    class_dspinitjbox(c);
+    jbox_initclass(c, JBOX_COLOR);
+    
+    hoa_initclass(c, (method)hoa_getinfos);
+    
+    // @method signal @digest Array of signals to be visualize.
+    // @description Array of signals to be visualize.
+    // @marg 0 @name channel-signal @optional 0 @type signal
+    class_addmethod(c, (method) meter_dsp64,		 "dsp64",		  A_CANT, 0);
+    class_addmethod(c, (method) meter_assist,		 "assist",		  A_CANT, 0);
+    class_addmethod(c, (method) meter_paint,		 "paint",		  A_CANT, 0);
+    class_addmethod(c, (method) meter_notify,        "notify",		  A_CANT, 0);
+    
+    CLASS_ATTR_DEFAULT              (c, "patching_rect", 0, "0 0 150 150");
+    CLASS_ATTR_INVISIBLE            (c, "color", 0);
+    
+    /* APPEARANCE */
+    CLASS_STICKY_CATEGORY           (c, 0, "Appearance");
+    CLASS_ATTR_LONG                 (c, "ledsbg", 0, t_meter, f_drawledsbg);
+    CLASS_ATTR_ORDER                (c, "ledsbg", 0, "1");
+    CLASS_ATTR_STYLE_LABEL          (c, "ledsbg", 0, "onoff", "Draw Leds Background");
+    CLASS_ATTR_DEFAULT              (c, "ledsbg", 0, "1");
+    CLASS_ATTR_SAVE                 (c, "ledsbg", 1);
+    // @description Draw leds background ?
+    
+    CLASS_ATTR_LONG                 (c, "vectors", 0, t_meter, f_drawvector);
+    CLASS_ATTR_ORDER                (c, "vectors", 0, "2");
+    CLASS_ATTR_LABEL                (c, "vectors", 0, "Draw Vectors");
+    CLASS_ATTR_ENUMINDEX4           (c, "vectors", 0, "none", "energy", "velocity", "both")
+    CLASS_ATTR_DEFAULT              (c, "vectors", 0, "1");
+    CLASS_ATTR_SAVE                 (c, "vectors", 1);
+    // @description The vector(s) to draw.
+    
+    CLASS_ATTR_LONG                 (c, "mborder", 0, t_meter, f_drawmborder);
+    CLASS_ATTR_ORDER                (c, "mborder", 0, "3");
+    CLASS_ATTR_LABEL                (c, "mborder", 0, "Draw Meter Borders");
+    CLASS_ATTR_ENUMINDEX4           (c, "mborder", 0, "none", "Circles", "Axes", "both")
+    CLASS_ATTR_DEFAULT              (c, "mborder", 0, "3");
+    CLASS_ATTR_SAVE                 (c, "mborder", 1);
+    // @description The meter border(s) to draw.
+    
+    CLASS_ATTR_DOUBLE               (c, "metersize", 0, t_meter, f_metersize);
+    CLASS_ATTR_ORDER                (c, "metersize", 0, "4");
+    CLASS_ATTR_LABEL                (c, "metersize", 0, "Meter Circle Size");
+    CLASS_ATTR_FILTER_CLIP          (c, "metersize", 0., 1);
+    CLASS_ATTR_DEFAULT              (c, "metersize", 0, "0.8");
+    CLASS_ATTR_SAVE                 (c, "metersize", 1);
+    // @description The size of the inner circle of the <o>hoa.2d.meter~</o>.
+    
+    CLASS_ATTR_LONG                 (c, "orientation", 0, t_meter, f_direction);
+    CLASS_ATTR_LABEL                (c, "orientation", 0, "Meter Fill Orientation");
+    CLASS_ATTR_ORDER                (c, "orientation", 0, "5");
+    CLASS_ATTR_ENUMINDEX            (c, "orientation", 0, "inside outside");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "orientation", 0, "0");
+    // @description The filling orientation of the peak level indicators <o>hoa.2d.meter~</o>.
+    
+    CLASS_STICKY_CATEGORY_CLEAR (c);
+    
+    CLASS_STICKY_CATEGORY           (c, 0, "Behavior");
+    CLASS_ATTR_LONG                 (c, "channels", 0 , t_meter, f_attrs);
+    CLASS_ATTR_ACCESSORS            (c, "channels", channels_get, channels_set);
+    CLASS_ATTR_ORDER                (c, "channels", 0, "1");
+    CLASS_ATTR_LABEL                (c, "channels", 0, "Number of Channels");
+    CLASS_ATTR_SAVE                 (c, "channels", 1);
+    CLASS_ATTR_DEFAULT              (c, "channels", 0, "4");
+    // @description The number of displayed channel and peak level indicators.
+    
+    CLASS_ATTR_DOUBLE_VARSIZE       (c, "angles", ATTR_SET_DEFER_LOW, t_meter, f_attrs, f_attrs, MAX_UI_CHANNELS);
+    CLASS_ATTR_ACCESSORS            (c, "angles", angles_get, angles_set);
+    CLASS_ATTR_ORDER                (c, "angles", 0, "2");
+    CLASS_ATTR_LABEL                (c, "angles", 0, "Angles of Channels");
+    CLASS_ATTR_SAVE                 (c, "angles", 1);
+    CLASS_ATTR_DEFAULT              (c, "angles", 0, "0 45 90 135 180 225 270 315");
+    // @description The angles of the displayed channels and peak level indicators. Values are in degrees, wrapped between 0. and 360., so you can also set the angles with negative values.
+    
+    CLASS_ATTR_DOUBLE               (c, "offset", 0, t_meter, f_attrs);
+    CLASS_ATTR_ACCESSORS            (c, "offset", offset_get, offset_set);
+    CLASS_ATTR_ORDER                (c, "offset", 0, "3");
+    CLASS_ATTR_LABEL                (c, "offset", 0, "Offset of Channels");
+    CLASS_ATTR_FILTER_CLIP			(c, "offset", -180, 180);
+    CLASS_ATTR_DEFAULT              (c, "offset", 0, "0");
+    CLASS_ATTR_SAVE                 (c, "offset", 1);
+    // @description Display offset of channels and peak level indicators. the value is in degree, clipped between -180. and 180.
+    
+    CLASS_ATTR_LONG                 (c, "rotation", 0, t_meter, f_rotation);
+    CLASS_ATTR_ORDER                (c, "rotation", 0, "4");
+    CLASS_ATTR_LABEL                (c, "rotation", 0, "Rotation of Channels");
+    CLASS_ATTR_ENUMINDEX            (c, "rotation", 0, "clockwise anti-clockwise");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "rotation",0, "1");
+    // @description The rotation can either be <b>clockwise</b> or <b>anti-clockwise</b>
+    
+    CLASS_ATTR_LONG                 (c, "interval", 0, t_meter, f_interval);
+    CLASS_ATTR_ORDER                (c, "interval", 0, "5");
+    CLASS_ATTR_LABEL                (c, "interval", 0, "Refresh Interval in Milliseconds");
+    CLASS_ATTR_FILTER_MIN           (c, "interval", 20);
+    CLASS_ATTR_DEFAULT              (c, "interval", 0, "50");
+    CLASS_ATTR_SAVE                 (c, "interval", 1);
+    // @description The refresh interval time in milliseconds.
+    
+    CLASS_STICKY_CATEGORY_CLEAR     (c);
+    
+    CLASS_ATTR_LONG                 (c, "dbperled", 0, t_meter, f_dbperled);
+    CLASS_ATTR_CATEGORY             (c, "dbperled", 0, "Value");
+    CLASS_ATTR_ORDER                (c, "dbperled", 0, "4");
+    CLASS_ATTR_LABEL                (c, "dbperled", 0, "DeciBels per Led");
+    CLASS_ATTR_FILTER_CLIP          (c, "dbperled", 1, 12);
+    CLASS_ATTR_DEFAULT              (c, "dbperled", 0, "3");
+    CLASS_ATTR_SAVE                 (c, "dbperled", 1);
+    // @description Sets the amount of signal level in deciBels represented by each LED. By default each LED represents a 3dB change in volume from its neighboring LEDs.
+    
+    CLASS_ATTR_LONG                 (c, "nhotleds", 0, t_meter, f_nhotleds);
+    CLASS_ATTR_CATEGORY             (c, "nhotleds", 0, "Value");
+    CLASS_ATTR_ORDER                (c, "nhotleds", 0, "5");
+    CLASS_ATTR_LABEL                (c, "nhotleds", 0, "Number of Hot Leds");
+    CLASS_ATTR_FILTER_CLIP          (c, "nhotleds", 0, 20);
+    CLASS_ATTR_DEFAULT              (c, "nhotleds", 0, "3");
+    CLASS_ATTR_SAVE                 (c, "nhotleds", 1);
+    // @description Sets the total number "hot" warning LEDs displayed on the <o>hoa.2d.meter~</o> object (corresponding to the color set by the <b>hotcolor</b> message).
+    
+    CLASS_ATTR_LONG                 (c, "ntepidleds", 0, t_meter, f_ntepidleds);
+    CLASS_ATTR_CATEGORY             (c, "ntepidleds", 0, "Value");
+    CLASS_ATTR_ORDER                (c, "ntepidleds", 0, "6");
+    CLASS_ATTR_LABEL                (c, "ntepidleds", 0, "Number of Tepid Leds");
+    CLASS_ATTR_FILTER_CLIP          (c, "ntepidleds", 0, 20);
+    CLASS_ATTR_DEFAULT              (c, "ntepidleds", 0, "3");
+    CLASS_ATTR_SAVE                 (c, "ntepidleds", 1);
+    // @description Sets the total number "tepid" mid-range LEDs displayed on the <o>hoa.2d.meter~</o> object (corresponding to the color set by the <b>tepidcolor</b> message).
+    
+    CLASS_ATTR_LONG                 (c, "nwarmleds", 0, t_meter, f_nwarmleds);
+    CLASS_ATTR_CATEGORY             (c, "nwarmleds", 0, "Value");
+    CLASS_ATTR_ORDER                (c, "nwarmleds", 0, "7");
+    CLASS_ATTR_LABEL                (c, "nwarmleds", 0, "Number of Warm Leds");
+    CLASS_ATTR_FILTER_CLIP          (c, "nwarmleds", 0, 20);
+    CLASS_ATTR_DEFAULT              (c, "nwarmleds", 0, "3");
+    CLASS_ATTR_SAVE                 (c, "nwarmleds", 1);
+    // @description Sets the total number "warm" lower-mid-range LEDs displayed on the <o>hoa.2d.meter~</o> object (corresponding to the color set by the <b>warmcolor</b> message).
+    
+    CLASS_ATTR_LONG                 (c, "numleds", 0, t_meter, f_numleds);
+    CLASS_ATTR_CATEGORY             (c, "numleds", 0, "Value");
+    CLASS_ATTR_ORDER                (c, "numleds", 0, "8");
+    CLASS_ATTR_LABEL                (c, "numleds", 0, "Total Number of Leds");
+    CLASS_ATTR_FILTER_CLIP          (c, "numleds", 10, 20);
+    CLASS_ATTR_DEFAULT              (c, "numleds", 0, "12");
+    CLASS_ATTR_SAVE                 (c, "numleds", 1);
+    // @description The word numleds, followed by a number between 10 and 20, sets the total number of LEDs displayed on the <o>hoa.2d.meter~</o> object. The range is 10-20 LEDs.
+    
+    CLASS_ATTR_RGBA                 (c, "bgcolor", 0, t_meter, f_color_bg);
+    CLASS_ATTR_CATEGORY             (c, "bgcolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "bgcolor", 0, "rgba");
+    CLASS_ATTR_LABEL                (c, "bgcolor", 0, "Background Color");
+    CLASS_ATTR_ORDER                (c, "bgcolor", 0, "1");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "bgcolor", 0, "0.76 0.76 0.76 1.");
+    // @description Sets the RGBA values for the background color of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "mbgcolor", 0, t_meter, f_color_mbg);
+    CLASS_ATTR_LABEL                (c, "mbgcolor", 0, "Meter Background Color");
+    CLASS_ATTR_CATEGORY             (c, "mbgcolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "mbgcolor", 0, "rgba");
+    CLASS_ATTR_ORDER                (c, "mbgcolor", 0, "2");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "mbgcolor", 0, "0.61 0.61 0.61 1.");
+    // @description Sets the RGBA values for the filled circle background color of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "ledbgcolor", 0, t_meter, f_color_ledbg);
+    CLASS_ATTR_LABEL                (c, "ledbgcolor", 0, "Leds Background Color");
+    CLASS_ATTR_CATEGORY             (c, "ledbgcolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "ledbgcolor", 0, "rgba");
+    CLASS_ATTR_ORDER                (c, "ledbgcolor", 0, "3");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "ledbgcolor", 0, "0. 0. 0. 0.05");
+    // @description Sets the RGBA values for leds background color of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "coldcolor", 0, t_meter, f_color_cold);
+    CLASS_ATTR_CATEGORY             (c, "coldcolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "coldcolor", 0, "rgba");
+    CLASS_ATTR_LABEL                (c, "coldcolor", 0, "Cold Signal Color");
+    CLASS_ATTR_ORDER                (c, "coldcolor", 0, "4");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "coldcolor", 0, "0. 0.6 0. 0.8");
+    // @description Sets the RGBA values for the cold signal color of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "tepidcolor", 0, t_meter, f_color_tepid);
+    CLASS_ATTR_CATEGORY             (c, "tepidcolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "tepidcolor", 0, "rgba");
+    CLASS_ATTR_LABEL                (c, "tepidcolor", 0, "Tepid Signal Color");
+    CLASS_ATTR_ORDER                (c, "tepidcolor", 0, "5");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "tepidcolor", 0, "0.6 0.73 0. 0.8");
+    // @description Sets the RGBA values for the LEDs color for the lower-middle "tepid" range of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "warmcolor", 0, t_meter, f_color_warm);
+    CLASS_ATTR_CATEGORY             (c, "warmcolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "warmcolor", 0, "rgba");
+    CLASS_ATTR_LABEL                (c, "warmcolor", 0, "Warm Signal Color");
+    CLASS_ATTR_ORDER                (c, "warmcolor", 0, "6");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "warmcolor", 0, ".85 .85 0. 0.8");
+    // @description Sets the RGBA values for the LEDs color for upper-middle "warm" range of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "hotcolor", 0, t_meter, f_color_hot);
+    CLASS_ATTR_CATEGORY             (c, "hotcolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "hotcolor", 0, "rgba");
+    CLASS_ATTR_LABEL                (c, "hotcolor", 0, "Hot Signal Color");
+    CLASS_ATTR_ORDER                (c, "hotcolor", 0, "7");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "hotcolor", 0, "1. 0.6 0. 0.8");
+    // @description Sets the RGBA values for the LEDs color for the upper "hot" range of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "overloadcolor", 0, t_meter, f_color_over);
+    CLASS_ATTR_CATEGORY             (c, "overloadcolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "overloadcolor", 0, "rgba");
+    CLASS_ATTR_LABEL                (c, "overloadcolor", 0, "Overload Signal Color");
+    CLASS_ATTR_ORDER                (c, "overloadcolor", 0, "8");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "overloadcolor", 0, "1. 0. 0. 0.8");
+    // @description Sets the RGBA values for the LEDs color for the "over" indicator of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "energycolor", 0, t_meter, f_color_energy);
+    CLASS_ATTR_CATEGORY             (c, "energycolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "energycolor", 0, "rgba");
+    CLASS_ATTR_LABEL                (c, "energycolor", 0, "Energy Vector Color");
+    CLASS_ATTR_ORDER                (c, "energycolor", 0, "9");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "energycolor", 0, "0. 0. 1. 0.8");
+    // @description Sets the RGBA values for the energy vector color of the <o>hoa.2d.meter~</o> object
+    
+    CLASS_ATTR_RGBA                 (c, "velocitycolor", 0, t_meter, f_color_velocity);
+    CLASS_ATTR_CATEGORY             (c, "velocitycolor", 0, "Color");
+    CLASS_ATTR_STYLE                (c, "velocitycolor", 0, "rgba");
+    CLASS_ATTR_LABEL                (c, "velocitycolor", 0, "Velocity Vector Color");
+    CLASS_ATTR_ORDER                (c, "velocitycolor", 0, "9");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "velocitycolor", 0, "1. 0. 0. 0.8");
+    // @description Sets the RGBA values for the velocity vector color of the <o>hoa.2d.meter~</o> object
+    
+    class_register(CLASS_BOX, c);
+    class_alias(c, gensym("hoa.meter~"));
+    meter_class = c;
+    return 0;
 }

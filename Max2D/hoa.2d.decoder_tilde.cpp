@@ -60,7 +60,7 @@ t_hoa_err hoa_getinfos(t_hoa_2d_decoder* x, t_hoa_boxinfos* boxinfos)
 	return HOA_ERR_NONE;
 }
 
-void hoa_2d_decoder_perform64(t_hoa_2d_decoder *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+void hoa_2d_decoder_perform64(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins, long numins, t_sample **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
     for(int i = 0; i < numins; i++)
     {
@@ -118,6 +118,7 @@ void send_configuration(t_hoa_2d_decoder *x)
     {
         atom_setlong(&nchannels, x->f_decoder->getNumberOfPlanewaves());
         atom_setfloat(&offset, Math<double>::wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180));
+        
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
             atom_setfloat(argv+i, x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.);
         
@@ -287,9 +288,10 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
         ulong order = x->f_decoder->getDecompositionOrder();
         delete x->f_decoder;
         
-        ulong number_of_channels = Math<ulong>::clip(atom_getlong(argv+2), 2, HOA_MAX_PLANEWAVES);
+        ulong number_of_channels = Math<ulong>::clip(atom_getlong(argv), 2, HOA_MAX_PLANEWAVES);
         
         x->f_decoder = new Decoder<Hoa2d, t_sample>(order, number_of_channels);
+        x->f_decoder->computeMatrix();
         
         if(outlet_count((t_object *)x) > x->f_decoder->getNumberOfPlanewaves())
         {
@@ -307,40 +309,9 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
         }
         
         object_method(b, hoa_sym_dynlet_end);
-        object_attr_touch((t_object *)x, hoa_sym_angles);
-        x->f_decoder->computeMatrix();
-        send_configuration(x);
         
-        /*
-        if(x->f_decoder->getDecodingMode() != Hoa2D::DecoderMulti::Regular || atom_getlong(argv) >= x->f_decoder->getNumberOfHarmonics())
-        {
-            object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            
-            object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
-            object_method(b, hoa_sym_dynlet_begin);
-            
-            x->f_decoder->setNumberOfChannels(atom_getlong(argv));
-            
-            if(outlet_count((t_object *)x) > x->f_decoder->getNumberOfPlanewaves())
-            {
-                for(int i = outlet_count((t_object *)x); i > x->f_decoder->getNumberOfChannels(); i--)
-                {
-                    outlet_delete(outlet_nth((t_object*)x, i-1));
-                }
-            }
-            else if(outlet_count((t_object *)x) < x->f_decoder->getNumberOfPlanewaves())
-            {
-                for(int i = outlet_count((t_object *)x); i < x->f_decoder->getNumberOfPlanewaves(); i++)
-                {
-                    outlet_append((t_object*)x, NULL, gensym("signal"));
-                }
-            }
-            
-            object_method(b, hoa_sym_dynlet_end);
-            object_attr_touch((t_object *)x, hoa_sym_angles);
-            send_configuration(x);
-        }
-        */
+        object_attr_touch((t_object *)x, hoa_sym_angles);
+        send_configuration(x);
     }
     return 0;
 }
@@ -445,8 +416,14 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
             order = max<ulong>(atom_getlong(argv), 1);
         
         ulong number_of_channels = 4;
-        if(argc > 2 && argv && atom_gettype(argv+2) == A_LONG)
-            number_of_channels = Math<ulong>::clip(atom_getlong(argv+2), 2, HOA_MAX_PLANEWAVES);
+        if(argc > 1 && argv+1 && atom_gettype(argv+1) == A_LONG)
+        {
+            number_of_channels = Math<ulong>::clip(atom_getlong(argv+1), 2, HOA_MAX_PLANEWAVES);
+        }
+        else // default to ambisonic + 1
+        {
+            number_of_channels = order*2+2;
+        }
         
         x->f_send_config = 1;
         

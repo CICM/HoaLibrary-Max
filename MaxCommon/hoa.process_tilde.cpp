@@ -323,7 +323,7 @@ int C74_EXPORT main(void)
 	class_addmethod(c, (method)hoa_processor_query_outptrs_ptr,			"get_outptrs_ptr",		A_CANT, 0);
 	class_addmethod(c, (method)hoa_processor_client_get_patch_on,		"get_patch_on",			A_CANT, 0);
 	class_addmethod(c, (method)hoa_processor_client_set_patch_on,		"set_patch_on",			A_CANT, 0);
-	class_addmethod(c, (method)hoa_processor_out_message,				"out_message",			A_CANT, 0); // used to receive a message from a hoa.out object
+	class_addmethod(c, (method)hoa_processor_out_message,				"out_message",			A_CANT, 0); // receive a message from a hoa.out object
 	class_addmethod(c, (method)hoa_processor_query_io_index,			"get_io_index",			A_CANT, 0);
 	
 	class_dspinit(c);

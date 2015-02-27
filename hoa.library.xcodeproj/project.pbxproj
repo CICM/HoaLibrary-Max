@@ -638,7 +638,6 @@
 		2CE0CD9219720A0300217823 /* HoaProcessSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD5C19720A0300217823 /* HoaProcessSuite.h */; };
 		2CE0CD9319720A0300217823 /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD5D19720A0300217823 /* Utilities.cpp */; };
 		2CE0CD9419720A0300217823 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD5E19720A0300217823 /* Utilities.h */; };
-		2CE9332D196EB7A30079A368 /* MaxHoaLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */; };
 		2CE93331196EB9B60079A368 /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
 		2CE93332196EB9B60079A368 /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
 		2CE93333196EB9B60079A368 /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
@@ -1439,6 +1438,7 @@
 				2CE0CD2919720A0300217823 /* hoa.2d.encoder_tilde.cpp */,
 				2CE0CD2A19720A0300217823 /* hoa.2d.map_tilde.cpp */,
 				2CE0CD2B19720A0300217823 /* hoa.2d.meter_gui_tilde.cpp */,
+				2CE0CD3119720A0300217823 /* hoa.2d.scope_gui_tilde.cpp */,
 				2CE0CD2C19720A0300217823 /* hoa.2d.optim_tilde.cpp */,
 				2CE0CD2D19720A0300217823 /* hoa.2d.projector_tilde.cpp */,
 				2C8781851A9BE0B600BA0E2B /* ChannelManager.cpp */,
@@ -1446,7 +1446,6 @@
 				2CE0CD2E19720A0300217823 /* hoa.2d.recomposer_gui.cpp */,
 				2CE0CD2F19720A0300217823 /* hoa.2d.recomposer_tilde.cpp */,
 				2CE0CD3019720A0300217823 /* hoa.2d.rotate_tilde.cpp */,
-				2CE0CD3119720A0300217823 /* hoa.2d.scope_gui_tilde.cpp */,
 				2CE0CD3219720A0300217823 /* hoa.2d.space_gui.cpp */,
 				2CE0CD3319720A0300217823 /* hoa.2d.vector_tilde.cpp */,
 				2CE0CD3419720A0300217823 /* hoa.2d.wider_tilde.cpp */,
@@ -2811,7 +2810,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				TargetAttributes = {
 					2C9B3C941A9E7F7700E6921E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -3123,7 +3122,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CE9332D196EB7A30079A368 /* MaxHoaLibrary.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6045,8 +6043,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DSTROOT = $DSTROOT;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = YES;
@@ -6083,6 +6082,7 @@
 				LLVM_LTO = YES;
 				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_STYLE = "non-global";
 				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
@@ -6092,6 +6092,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = $DSTROOT;
@@ -6130,6 +6131,7 @@
 				LLVM_LTO = YES;
 				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_STYLE = "non-global";
 				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
@@ -7735,6 +7737,7 @@
 				2C9B3C971A9E7F7700E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
 		};
 		2CCD1F7E1A9CCBB3001F137D /* Build configuration list for PBXNativeTarget "hoa.pi" */ = {
 			isa = XCConfigurationList;

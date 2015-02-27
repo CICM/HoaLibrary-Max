@@ -24,8 +24,8 @@ extern "C"
 #include <jpatcher_syms.h>
 }
 
-#include "hoa.max_commonsyms.h"
 #include "ThirdParty/HoaLibrary/Sources/Hoa.hpp"
+#include "hoa.max_commonsyms.h"
 #include "hoa.max.math.h"
 
 #define HOA_MAX_PLANEWAVES      SYS_MAXSIGS
