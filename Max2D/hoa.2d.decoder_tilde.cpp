@@ -290,7 +290,7 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
         
         ulong number_of_channels = Math<ulong>::clip(atom_getlong(argv), 2, HOA_MAX_PLANEWAVES);
         
-        x->f_decoder = new Decoder<Hoa2d, t_sample>(order, number_of_channels);
+        x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
         x->f_decoder->computeMatrix();
         
         if(outlet_count((t_object *)x) > x->f_decoder->getNumberOfPlanewaves())
@@ -427,7 +427,7 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         
         x->f_send_config = 1;
         
-        x->f_decoder = new Decoder<Hoa2d, t_sample>(order, number_of_channels);
+        x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
         
         dsp_setup((t_pxobject *)x, x->f_decoder->getNumberOfHarmonics());
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)

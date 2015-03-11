@@ -70,7 +70,7 @@ void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
 		else
 			number_of_channels = (order+1)*(order+1);
 		
-        x->f_decoder = new Decoder<Hoa3d, t_sample>(order, number_of_channels);
+        x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, number_of_channels);
         
 		x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
 		x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
@@ -216,7 +216,7 @@ t_max_err channel_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *ar
         long channels = Math<long>::clip(atom_getlong(argv), 4, HOA_MAX_PLANEWAVES);
         ulong order = x->f_decoder->getDecompositionOrder();
         delete x->f_decoder;
-        x->f_decoder = new Decoder<Hoa3d, t_sample>(order, channels);
+        x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, channels);
         x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
         x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
         

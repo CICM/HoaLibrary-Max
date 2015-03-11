@@ -163,6 +163,7 @@ void hoa_gain_perform64(t_hoa_gain *x, t_object *dsp64, double **ins, long numin
     for(i = 0; i < sampleframes; i++)
 	{
 		gain = x->f_amp->process();
+        //post("gain : %f", gain);
 		
 		for (j=0; j < x->f_numberOfChannels; j++)
 		{
@@ -200,6 +201,8 @@ double hoa_gain_getInputModeValue(t_hoa_gain *x)
 void hoa_gain_set_gain(t_hoa_gain *x)
 {
     x->f_amp->setValue(x->j_valdB > -70.0f ? dbtoa(x->j_valdB) : 0.0f);
+    post("gain : %f", dbtoa(x->j_valdB));
+    post("gain real : %f", x->f_amp->getValue());
 }
 
 double hoa_gain_constrain_real_value(t_hoa_gain *x, double f)

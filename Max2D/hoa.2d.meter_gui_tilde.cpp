@@ -154,9 +154,9 @@ t_max_err channels_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
                 object_attr_setdisabled((t_object*)x, gensym("offset"), 0);
                 object_attr_setdisabled((t_object*)x, gensym("rotation"), 0);
             }
-            
-            object_attr_setvalueof(x, hoa_sym_angles, 0, NULL);
         }
+        
+        object_attr_setvalueof(x, hoa_sym_angles, 0, NULL);
     }
     return MAX_ERR_NONE;
 }
@@ -230,7 +230,14 @@ t_max_err offset_get(t_meter *x, t_object *attr, long *argc, t_atom **argv)
     argv[0] = (t_atom *)malloc(sizeof(t_atom));
     if(argv[0] && argc[0])
     {
-        atom_setfloat(argv[0], x->f_meter->getPlanewavesRotation() / HOA_2PI * 360.);
+        double offset = x->f_meter->getPlanewavesRotation() / HOA_2PI * 360.;
+        
+        if (offset > 180.)
+        {
+            offset = - (360. - offset);
+        }
+        
+        atom_setfloat(argv[0], offset);
     }
     else
     {
@@ -244,8 +251,9 @@ t_max_err offset_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
 {
     if(argc && argv && atom_isNumber(argv))
     {
-        x->f_vector->setPlanewavesRotation(atom_getfloat(argv) / 360 * HOA_2PI);
-        x->f_meter->setPlanewavesRotation(atom_getfloat(argv) / 360 * HOA_2PI);
+        const double offset = atom_getfloat(argv) / 360. * HOA_2PI;
+        x->f_vector->setPlanewavesRotation(offset);
+        x->f_meter->setPlanewavesRotation(offset);
         x->f_vector->computeRendering();
         x->f_meter->computeDisplay();
         
@@ -403,9 +411,9 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
             for(i = 0; i < x->f_meter->getNumberOfPlanewaves(); i++)
             {
 				channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
-                deg2 = degToRad(90 + channelWidth);
+                deg2 = degToRad(90. + channelWidth);
 				
-                rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5) + x->f_meter->getPlanewavesRotation();
+                rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5);
                 if (!x->f_rotation)
 				{
                     rotateAngle += channelWidth;
@@ -413,7 +421,7 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
                 }
 				
                 jgraphics_rotate(g, degToRad(rotateAngle));
-				
+                
                 // leds Background :
                 jgraphics_set_line_width(g, ledStroke);
                 jgraphics_set_line_cap(g, JGRAPHICS_LINE_CAP_BUTT);
@@ -490,7 +498,7 @@ void draw_separator(t_meter *x,  t_object *view, t_rect *rect)
 		for(int i=0; i < x->f_meter->getNumberOfPlanewaves(); i++)
 		{
 			channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
-            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5) + x->f_meter->getPlanewavesRotation();
+            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5);
 			if (!x->f_rotation)
 			{
 				rotateAngle += channelWidth;
@@ -550,7 +558,7 @@ void draw_leds(t_meter *x, t_object *view, t_rect *rect)
             
             channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
             deg2 = degToRad(90+(channelWidth));
-            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5) + x->f_meter->getPlanewavesRotation();
+            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5);
             
             if(!x->f_rotation)
             {
@@ -792,7 +800,7 @@ void *meter_new(t_symbol *s, int argc, t_atom *argv)
     jbox_new((t_jbox *)x, flags, argc, argv);
     x->j_box.z_box.b_firstin = (t_object *)x;
     
-    ulong channels = 8;
+    ulong channels = 4;
     dictionary_getlong(d, hoa_sym_channels, (t_atom_long *)&channels);
     if(channels < 1)
         channels = 1;
@@ -890,7 +898,7 @@ int C74_EXPORT main(void)
     CLASS_ATTR_ORDER                (c, "channels", 0, "1");
     CLASS_ATTR_LABEL                (c, "channels", 0, "Number of Channels");
     CLASS_ATTR_SAVE                 (c, "channels", 1);
-    CLASS_ATTR_DEFAULT              (c, "channels", 0, "4");
+    CLASS_ATTR_DEFAULT              (c, "channels", 0, "8");
     // @description The number of displayed channel and peak level indicators.
     
     CLASS_ATTR_DOUBLE_VARSIZE       (c, "angles", ATTR_SET_DEFER_LOW, t_meter, f_attrs, f_attrs, MAX_UI_CHANNELS);
@@ -898,14 +906,14 @@ int C74_EXPORT main(void)
     CLASS_ATTR_ORDER                (c, "angles", 0, "2");
     CLASS_ATTR_LABEL                (c, "angles", 0, "Angles of Channels");
     CLASS_ATTR_SAVE                 (c, "angles", 1);
-    CLASS_ATTR_DEFAULT              (c, "angles", 0, "0 45 90 135 180 225 270 315");
+    //CLASS_ATTR_DEFAULT              (c, "angles", 0, "0 45 90 135 180 225 270 315");
     // @description The angles of the displayed channels and peak level indicators. Values are in degrees, wrapped between 0. and 360., so you can also set the angles with negative values.
     
     CLASS_ATTR_DOUBLE               (c, "offset", 0, t_meter, f_attrs);
     CLASS_ATTR_ACCESSORS            (c, "offset", offset_get, offset_set);
     CLASS_ATTR_ORDER                (c, "offset", 0, "3");
     CLASS_ATTR_LABEL                (c, "offset", 0, "Offset of Channels");
-    CLASS_ATTR_FILTER_CLIP			(c, "offset", -180, 180);
+    //CLASS_ATTR_FILTER_CLIP			(c, "offset", -180, 180);
     CLASS_ATTR_DEFAULT              (c, "offset", 0, "0");
     CLASS_ATTR_SAVE                 (c, "offset", 1);
     // @description Display offset of channels and peak level indicators. the value is in degree, clipped between -180. and 180.

@@ -122,7 +122,6 @@
 		2C3958701A9ABDCD00C91175 /* Source.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585A1A9ABDCD00C91175 /* Source.hpp */; };
 		2C3958711A9ABDCD00C91175 /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
 		2C3958721A9ABDCD00C91175 /* Vector.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585C1A9ABDCD00C91175 /* Vector.hpp */; };
-		2C3958731A9ABDCD00C91175 /* Voronoi.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585D1A9ABDCD00C91175 /* Voronoi.hpp */; };
 		2C3958741A9ABDCD00C91175 /* Wider.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585E1A9ABDCD00C91175 /* Wider.hpp */; };
 		2C874C94196EB76900659F07 /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
 		2C8781841A9B72F200BA0E2B /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
@@ -918,7 +917,6 @@
 		2C39585A1A9ABDCD00C91175 /* Source.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Source.hpp; sourceTree = "<group>"; };
 		2C39585B1A9ABDCD00C91175 /* Tools.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tools.hpp; sourceTree = "<group>"; };
 		2C39585C1A9ABDCD00C91175 /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
-		2C39585D1A9ABDCD00C91175 /* Voronoi.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Voronoi.hpp; sourceTree = "<group>"; };
 		2C39585E1A9ABDCD00C91175 /* Wider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Wider.hpp; sourceTree = "<group>"; };
 		2C874C93196EB76900659F07 /* hoa.library.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.library.cpp; sourceTree = "<group>"; };
 		2C8781831A9B72F200BA0E2B /* hoa.max.math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoa.max.math.h; sourceTree = "<group>"; };
@@ -1424,7 +1422,6 @@
 				2C39585A1A9ABDCD00C91175 /* Source.hpp */,
 				2C39585B1A9ABDCD00C91175 /* Tools.hpp */,
 				2C39585C1A9ABDCD00C91175 /* Vector.hpp */,
-				2C39585D1A9ABDCD00C91175 /* Voronoi.hpp */,
 				2C39585E1A9ABDCD00C91175 /* Wider.hpp */,
 			);
 			name = Sources;
@@ -2102,7 +2099,6 @@
 				2C8781841A9B72F200BA0E2B /* hoa.max.math.h in Headers */,
 				2C3958631A9ABDCD00C91175 /* Hoa.hpp in Headers */,
 				2C39586E1A9ABDCD00C91175 /* Signal.hpp in Headers */,
-				2C3958731A9ABDCD00C91175 /* Voronoi.hpp in Headers */,
 				2C3958711A9ABDCD00C91175 /* Tools.hpp in Headers */,
 				2CE0CD9219720A0300217823 /* HoaProcessSuite.h in Headers */,
 				2C3958651A9ABDCD00C91175 /* Meter.hpp in Headers */,

@@ -2,32 +2,41 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 6,
-			"minor" : 1,
-			"revision" : 7,
-			"architecture" : "x64"
+			"major" : 7,
+			"minor" : 0,
+			"revision" : 1,
+			"architecture" : "x64",
+			"modernui" : 1
 		}
 ,
-		"rect" : [ 333.0, 198.0, 773.0, 648.0 ],
+		"rect" : [ 333.0, 198.0, 540.0, 648.0 ],
 		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 14.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
-		"gridonopen" : 0,
+		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 0,
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
-		"imprint" : 0,
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
 		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -38,6 +47,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 131.0, 140.0, 68.0, 22.0 ],
+					"style" : "",
 					"text" : "loadbang"
 				}
 
@@ -52,6 +62,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 72.0, 271.0, 63.0, 22.0 ],
+					"style" : "",
 					"text" : "deferlow"
 				}
 
@@ -66,6 +77,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 311.0, 373.0, 204.0, 20.0 ],
+					"style" : "",
 					"text" : "presentation_rect 1. 1. 328. 32."
 				}
 
@@ -80,6 +92,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 72.0, 373.0, 204.0, 20.0 ],
+					"style" : "",
 					"text" : "presentation_rect 1. 1. 543. 19."
 				}
 
@@ -94,6 +107,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
 					"patching_rect" : [ 72.0, 308.0, 52.0, 22.0 ],
+					"style" : "",
 					"text" : "sel 0 1"
 				}
 
@@ -102,7 +116,6 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
-					"frgb" : 0.0,
 					"id" : "obj-3",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -111,6 +124,7 @@
 					"presentation" : 1,
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 1.0, 1.0, 328.0, 32.0 ],
+					"style" : "",
 					"text" : "HoaLibrary | Julien Colafrancesco, Pierre Guillot & Eliott Paris © 2012 - 2014 CICM | University Paris 8",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -118,17 +132,21 @@
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-28",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1.0, 1.0, 543.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 1.0, 328.0, 32.0 ],
-					"rounded" : 6,
-					"shadow" : -1
+					"proportion" : 0.39,
+					"rounded" : 0,
+					"shadow" : -1,
+					"style" : ""
 				}
 
 			}
@@ -140,7 +158,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 72.0, 180.0, 25.0, 25.0 ]
+					"patching_rect" : [ 72.0, 180.0, 25.0, 25.0 ],
+					"style" : ""
 				}
 
 			}
@@ -154,6 +173,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 131.0, 180.0, 121.0, 20.0 ],
+					"style" : "",
 					"text" : "patcherargs @size 1"
 				}
 
@@ -168,6 +188,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 72.0, 235.0, 63.0, 20.0 ],
+					"style" : "",
 					"text" : "route size"
 				}
 
@@ -274,7 +295,8 @@
 
 			}
  ],
-		"dependency_cache" : [  ]
+		"dependency_cache" : [  ],
+		"embedsnapshot" : 0
 	}
 
 }
