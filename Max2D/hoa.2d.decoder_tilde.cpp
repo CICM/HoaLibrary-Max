@@ -32,11 +32,15 @@ typedef struct _hoa_2d_decoder
 {
 	t_pxobject                  f_ob;
     
-    Decoder<Hoa2d, t_sample>*   f_decoder;
-    t_sample*                   f_ins;
-    t_sample*                   f_outs;
-    t_atom_long                 f_send_config;
-    void*                   	f_attr;
+    Decoder<Hoa2d, t_sample>::Regular*      f_decoder_regular;
+    Decoder<Hoa2d, t_sample>::Irregular*    f_decoder_irregular;
+    Decoder<Hoa2d, t_sample>::Binaural*     f_decoder_binaural;
+    Decoder<Hoa2d, t_sample>*               f_decoder;
+    t_sample*                               f_ins;
+    t_sample*                               f_outs;
+    t_symbol*                               f_mode;
+    t_atom_long                             f_send_config;
+    void*                                   f_attr;
     
 } t_hoa_2d_decoder;
 
@@ -45,7 +49,9 @@ t_class *hoa_2d_decoder_class;
 void hoa_2d_decoder_free(t_hoa_2d_decoder *x)
 {
     dsp_free((t_pxobject *)x);
-    delete x->f_decoder;
+    delete x->f_decoder_regular;
+    delete x->f_decoder_irregular;
+    delete x->f_decoder_binaural;
     delete [] x->f_ins;
     delete [] x->f_outs;
 }
@@ -162,16 +168,7 @@ t_max_err mode_get(t_hoa_2d_decoder *x, t_object *attr, long *argc, t_atom **arg
     argv[0] = (t_atom *)sysmem_newptr(argc[0] * sizeof(t_atom));
     if(argv[0])
     {
-        /*
-        if(x->f_decoder->getDecodingMode() == Hoa2D::DecoderMulti::Regular)
-            atom_setsym(argv[0], hoa_sym_ambisonic);
-        else if(x->f_decoder->getDecodingMode() == Hoa2D::DecoderMulti::Irregular)
-            atom_setsym(argv[0], hoa_sym_irregular);
-        else
-            atom_setsym(argv[0], hoa_sym_binaural);
-        */
-        
-        atom_setsym(argv[0], hoa_sym_ambisonic);
+        atom_setsym(argv[0], x->f_mode);
     }
     else
     {
@@ -186,39 +183,36 @@ t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
 {
     if(argc && argv && atom_gettype(argv) == A_SYM)
 	{
-        /*
-        if(atom_getsym(argv) == hoa_sym_ambisonic && x->f_decoder->getDecodingMode() != Hoa2D::DecoderMulti::Regular)
+        t_symbol* lastMode = x->f_mode;
+        
+        if(atom_getsym(argv) == hoa_sym_ambisonic && lastMode != hoa_sym_ambisonic)
         {
-            //short dspstate = dsp_setloadupdate(true);
             object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder->setDecodingMode(Hoa2D::DecoderMulti::Regular);
+            x->f_mode = atom_getsym(argv);
+            x->f_decoder = x->f_decoder_regular;
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
             object_attr_setdisabled((t_object *)x, hoa_sym_channels, 0);
             object_attr_setdisabled((t_object *)x, hoa_sym_offset, 0);
-            object_attr_setdisabled((t_object *)x, hoa_sym_pinna, 1);
-            object_attr_setfloat(x, hoa_sym_offset, (float)x->f_decoder->getChannelsOffset() / HOA_2PI * 360.f);
-		}
-        else if(atom_getsym(argv) == hoa_sym_irregular && x->f_decoder->getDecodingMode() != Hoa2D::DecoderMulti::Irregular)
+        }
+        else if(atom_getsym(argv) == hoa_sym_irregular && lastMode != hoa_sym_irregular)
         {
-            //short dspstate = dsp_setloadupdate(true);
             object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder->setDecodingMode(Hoa2D::DecoderMulti::Irregular);
+            x->f_decoder = x->f_decoder_irregular;
+            x->f_mode = atom_getsym(argv);
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 0);
             object_attr_setdisabled((t_object *)x, hoa_sym_channels, 0);
             object_attr_setdisabled((t_object *)x, hoa_sym_offset, 0);
-            object_attr_setdisabled((t_object *)x, hoa_sym_pinna, 1);
         }
-        else if(atom_getsym(argv) == hoa_sym_binaural && x->f_decoder->getDecodingMode() != Hoa2D::DecoderMulti::Binaural)
+        else if(atom_getsym(argv) == hoa_sym_binaural && lastMode != hoa_sym_binaural)
         {
-            //short dspstate = dsp_setloadupdate(true);
-            //object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder->setDecodingMode(Hoa2D::DecoderMulti::Binaural);
+            object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+            x->f_decoder = x->f_decoder_binaural;
+            x->f_mode = atom_getsym(argv);
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
             object_attr_setdisabled((t_object *)x, hoa_sym_channels, 1);
             object_attr_setdisabled((t_object *)x, hoa_sym_offset, 1);
-            object_attr_setdisabled((t_object *)x, hoa_sym_pinna, 0);
         }
-        */
+        
         object_attr_setlong(x, hoa_sym_channels, x->f_decoder->getNumberOfPlanewaves());
         send_configuration(x);
     }
@@ -286,11 +280,22 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
         object_method(b, hoa_sym_dynlet_begin);
         
         ulong order = x->f_decoder->getDecompositionOrder();
-        delete x->f_decoder;
-        
         ulong number_of_channels = Math<ulong>::clip(atom_getlong(argv), 2, HOA_MAX_PLANEWAVES);
         
-        x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
+        if(x->f_mode == hoa_sym_ambisonic || x->f_mode == hoa_sym_irregular)
+        {
+            delete x->f_decoder_regular;
+            delete x->f_decoder_irregular;
+            
+            x->f_decoder_regular = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
+            x->f_decoder_irregular = new Decoder<Hoa2d, t_sample>::Irregular(order, number_of_channels);
+            
+            if (x->f_mode == hoa_sym_ambisonic)
+                x->f_decoder = x->f_decoder_regular;
+            else if (x->f_mode == hoa_sym_irregular)
+                x->f_decoder = x->f_decoder_irregular;
+        }
+        
         x->f_decoder->computeMatrix();
         
         if(outlet_count((t_object *)x) > x->f_decoder->getNumberOfPlanewaves())
@@ -359,50 +364,6 @@ t_max_err angles_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *arg
     return MAX_ERR_NONE;
 }
 
-t_max_err pinna_get(t_hoa_2d_decoder *x, t_object *attr, long *argc, t_atom **argv)
-{
-    argc[0] = 1;
-    argv[0] = (t_atom *)sysmem_newptr(argc[0] * sizeof(t_atom));
-    if(argv[0])
-    {
-        /*
-        if(x->f_decoder->getPinnaSize() == Hoa2D::DecoderBinaural::Small)
-            atom_setsym(argv[0], gensym("small"));
-        else
-            atom_setsym(argv[0], gensym("large"));
-        */
-        atom_setsym(argv[0], gensym("small"));
-    }
-    else
-    {
-        argc[0] = 0;
-        argv[0] = NULL;
-    }
-    return MAX_ERR_NONE;
-}
-
-t_max_err pinna_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
-{
-    if(argc && argv && atom_gettype(argv) == A_SYM)
-	{
-        /*
-        if(atom_getsym(argv) == gensym("small") && x->f_decoder->getPinnaSize() != Hoa2D::DecoderBinaural::Small)
-        {
-            if(x->f_decoder->getDecodingMode() == Hoa2D::DecoderMulti::Binaural)
-                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder->setPinnaSize(Hoa2D::DecoderBinaural::Small);
-		}
-        else if(atom_getsym(argv) == gensym("large") && x->f_decoder->getPinnaSize() != Hoa2D::DecoderBinaural::Large)
-        {
-            if(x->f_decoder->getDecodingMode() == Hoa2D::DecoderMulti::Binaural)
-                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder->setPinnaSize(Hoa2D::DecoderBinaural::Large);
-        }
-        */
-    }
-    return MAX_ERR_NONE;
-}
-
 void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
 {
     // @arg 0 @name ambisonic-order @optional 0 @type int @digest The ambisonic order of decomposition
@@ -426,8 +387,12 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         }
         
         x->f_send_config = 1;
+        x->f_mode = hoa_sym_ambisonic;
         
-        x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
+        x->f_decoder_regular    = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
+        x->f_decoder_irregular  = new Decoder<Hoa2d, t_sample>::Irregular(order, number_of_channels);
+        x->f_decoder_binaural   = new Decoder<Hoa2d, t_sample>::Binaural(order);
+        x->f_decoder = x->f_decoder_regular;
         
         dsp_setup((t_pxobject *)x, x->f_decoder->getNumberOfHarmonics());
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
@@ -469,7 +434,7 @@ int C74_EXPORT main(void)
     CLASS_ATTR_ORDER            (c, "autoconnect", 0, "1");
     // @description If the <m>autoconnect</m> attribute is checked, connected objects like the <o>hoa.2d.meter~</o>, <o>hoa.2d.vector~</o>, <o>hoa.dac~</o> or <o>hoa.gain~</o> will be notified of changes and adapt their behavior accordingly.
     
-    CLASS_ATTR_SYM              (c, "mode", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_attr);
+    CLASS_ATTR_SYM              (c, "mode", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_mode);
     CLASS_ATTR_LABEL            (c, "mode", 0, "Mode");
     CLASS_ATTR_ENUM             (c, "mode", 0, "ambisonic binaural irregular");
     CLASS_ATTR_ACCESSORS		(c, "mode", mode_get, mode_set);
@@ -500,14 +465,7 @@ int C74_EXPORT main(void)
     CLASS_ATTR_ACCESSORS		(c, "angles", angles_get, angles_set);
     CLASS_ATTR_ORDER            (c, "angles", 0, "4");
     // @description Angles of each channels. The angles of channels are only settable in <b>irregular</b> <m>mode</m>. Each angle are in degrees and is wrapped between 0. and 360. So you can also set an angle with a negative value. ex : angles for a 5.1 loudspeakers restitution system can be setted either by the "angles 0 30 110 250 330" or by "angles 0 30 110 -110 -30".
-    
-    CLASS_ATTR_SYM              (c, "pinna", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_attr);
-    CLASS_ATTR_LABEL            (c, "pinna", 0, "Pinna Size");
-    CLASS_ATTR_ENUM             (c, "pinna", 0, "small large");
-    CLASS_ATTR_ACCESSORS		(c, "pinna", pinna_get, pinna_set);
-    CLASS_ATTR_ORDER            (c, "pinna", 0, "5");
-    // @description The pinna size to use for the binaural restitution. The <m>pinna</m> message followed by the <b>symbol</b> <b>small</b> or <b>large</b> set the pinna size of the HRTF responses for the binaural restitution. Choose the one that suits you best.
-    
+
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.decoder~"));
