@@ -31,16 +31,12 @@
 typedef struct _hoa_2d_decoder 
 {
 	t_pxobject                  f_ob;
-    
-    Decoder<Hoa2d, t_sample>::Regular*      f_decoder_regular;
-    Decoder<Hoa2d, t_sample>::Irregular*    f_decoder_irregular;
-    Decoder<Hoa2d, t_sample>::Binaural*     f_decoder_binaural;
-    Decoder<Hoa2d, t_sample>*               f_decoder;
-    t_sample*                               f_ins;
-    t_sample*                               f_outs;
-    t_symbol*                               f_mode;
-    t_atom_long                             f_send_config;
-    void*                                   f_attr;
+    Decoder<Hoa2d, t_sample>*   f_decoder;
+    t_sample*                   f_ins;
+    t_sample*                   f_outs;
+    t_symbol*                   f_mode;
+    t_atom_long                 f_send_config;
+    void*                       f_attr;
     
 } t_hoa_2d_decoder;
 
@@ -49,9 +45,7 @@ t_class *hoa_2d_decoder_class;
 void hoa_2d_decoder_free(t_hoa_2d_decoder *x)
 {
     dsp_free((t_pxobject *)x);
-    delete x->f_decoder_regular;
-    delete x->f_decoder_irregular;
-    delete x->f_decoder_binaural;
+    delete x->f_decoder;
     delete [] x->f_ins;
     delete [] x->f_outs;
 }
@@ -184,12 +178,17 @@ t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
     if(argc && argv && atom_gettype(argv) == A_SYM)
 	{
         t_symbol* lastMode = x->f_mode;
+        long order = x->f_decoder->getDecompositionOrder();
         
         if(atom_getsym(argv) == hoa_sym_ambisonic && lastMode != hoa_sym_ambisonic)
         {
             object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+            
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, order*2+2);
+            x->f_decoder->computeMatrix();
+            
             x->f_mode = atom_getsym(argv);
-            x->f_decoder = x->f_decoder_regular;
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
             object_attr_setdisabled((t_object *)x, hoa_sym_channels, 0);
             object_attr_setdisabled((t_object *)x, hoa_sym_offset, 0);
@@ -197,7 +196,11 @@ t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
         else if(atom_getsym(argv) == hoa_sym_irregular && lastMode != hoa_sym_irregular)
         {
             object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder = x->f_decoder_irregular;
+            
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa2d, t_sample>::Irregular(order, order*2+2);
+            x->f_decoder->computeMatrix();
+            
             x->f_mode = atom_getsym(argv);
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 0);
             object_attr_setdisabled((t_object *)x, hoa_sym_channels, 0);
@@ -206,7 +209,11 @@ t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
         else if(atom_getsym(argv) == hoa_sym_binaural && lastMode != hoa_sym_binaural)
         {
             object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder = x->f_decoder_binaural;
+            
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa2d, t_sample>::Binaural(order);
+            x->f_decoder->computeMatrix();
+            
             x->f_mode = atom_getsym(argv);
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
             object_attr_setdisabled((t_object *)x, hoa_sym_channels, 1);
@@ -282,18 +289,15 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
         ulong order = x->f_decoder->getDecompositionOrder();
         ulong number_of_channels = Math<ulong>::clip(atom_getlong(argv), 2, HOA_MAX_PLANEWAVES);
         
-        if(x->f_mode == hoa_sym_ambisonic || x->f_mode == hoa_sym_irregular)
+        if(x->f_mode == hoa_sym_ambisonic)
         {
-            delete x->f_decoder_regular;
-            delete x->f_decoder_irregular;
-            
-            x->f_decoder_regular = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
-            x->f_decoder_irregular = new Decoder<Hoa2d, t_sample>::Irregular(order, number_of_channels);
-            
-            if (x->f_mode == hoa_sym_ambisonic)
-                x->f_decoder = x->f_decoder_regular;
-            else if (x->f_mode == hoa_sym_irregular)
-                x->f_decoder = x->f_decoder_irregular;
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, max(number_of_channels, order*2+1));
+        }
+        else if(x->f_mode == hoa_sym_irregular)
+        {
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa2d, t_sample>::Irregular(order, max<ulong>(number_of_channels, 2));
         }
         
         x->f_decoder->computeMatrix();
@@ -389,10 +393,7 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         x->f_send_config = 1;
         x->f_mode = hoa_sym_ambisonic;
         
-        x->f_decoder_regular    = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
-        x->f_decoder_irregular  = new Decoder<Hoa2d, t_sample>::Irregular(order, number_of_channels);
-        x->f_decoder_binaural   = new Decoder<Hoa2d, t_sample>::Binaural(order);
-        x->f_decoder = x->f_decoder_regular;
+        x->f_decoder    = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
         
         dsp_setup((t_pxobject *)x, x->f_decoder->getNumberOfHarmonics());
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
