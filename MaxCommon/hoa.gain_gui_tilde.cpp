@@ -62,7 +62,7 @@ typedef struct _hoa_gain
 	char                j_orientation;	// 0 = auto, 1 = horiz, 2 = vertical
 	t_jrgba             j_brgba;
     t_jrgba             j_knobcolor;
-    t_jrgba             j_stripecolor;
+    t_jrgba             j_barcolor;
     
     // gain
     Line<t_sample>*		f_amp;
@@ -321,7 +321,7 @@ void hoa_gain_setInputModeValue(t_hoa_gain *x, double value, bool notify)
     }
     
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
-    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
+    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuerect_layer"));
     jbox_redraw((t_jbox *)x);
 }
 
@@ -338,7 +338,7 @@ void hoa_gain_set_dB(t_hoa_gain *x, double dBValue)
     hoa_gain_set_gain(x);
     object_notify(x, gensym("modified"), NULL);
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
-    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
+    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuerect_layer"));
     jbox_redraw((t_jbox *)x);
 }
 
@@ -380,36 +380,6 @@ void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
     jbox_paint_layer((t_object *)x, view, gensym("bg_layer"), 0, 0);
 }
 
-void draw_offstripes(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
-{
-    t_jgraphics *g = jbox_start_layer((t_object *)x, view, gensym("offstripe_layer"), rect->width - (knobMargin*2), rect->height - (knobMargin*2));
-    
-    if (g)
-    {
-        jgraphics_translate(g, -hoa_gain_STRIPEWIDTH, -hoa_gain_STRIPEWIDTH);
-        jgraphics_set_source_jrgba(g, &x->j_stripecolor);
-        jgraphics_diagonal_line_fill(g, hoa_gain_STRIPEWIDTH, 0, 0, rect->width, rect->height);
-    }
-    
-    jbox_end_layer((t_object*)x, view, gensym("offstripe_layer"));
-    jbox_paint_layer((t_object *)x, view, gensym("offstripe_layer"), knobMargin, knobMargin);
-}
-
-void draw_offrect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
-{
-    t_jgraphics *g = jbox_start_layer((t_object *)x, view, gensym("offstripe_layer"), rect->width - (knobMargin*2), rect->height - (knobMargin*2));
-    
-    if (g)
-    {
-        jgraphics_translate(g, -hoa_gain_STRIPEWIDTH, -hoa_gain_STRIPEWIDTH);
-        jgraphics_set_source_jrgba(g, &x->j_stripecolor);
-        jgraphics_diagonal_line_fill(g, hoa_gain_STRIPEWIDTH, 0, 0, rect->width, rect->height);
-    }
-    
-    jbox_end_layer((t_object*)x, view, gensym("offstripe_layer"));
-    jbox_paint_layer((t_object *)x, view, gensym("offstripe_layer"), knobMargin, knobMargin);
-}
-
 void draw_cursor(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 {    
 	t_jgraphics *g;
@@ -435,47 +405,6 @@ void draw_cursor(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 	jbox_paint_layer((t_object *)x, view, gensym("cursor_layer"), 0., 0.);
 }
 
-void draw_valuestripes(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
-{
-    t_jgraphics *g;
-    t_rect layer;
-    
-    int pos = hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
-    
-    if (isHoriz)
-    {
-        layer.x = layer.y = knobMargin;
-        layer.width = pos - hoa_gain_DISPLAYINSET*0.5 - knobMargin*1.5;
-        layer.height = rect->height - (knobMargin*2);
-    }
-    else
-    {
-        layer.x = knobMargin;
-        layer.y = pos + hoa_gain_DISPLAYINSET*0.5 + knobMargin*0.5;
-        layer.width = rect->width - (knobMargin*2);
-        layer.height = rect->height - layer.y - knobMargin;
-    }
-    
-    if (MAX(layer.width, 0) == 0 || MAX(layer.height, 0) == 0)
-        return;
-    
-    g = jbox_start_layer((t_object *)x, view, gensym("valuestripe_layer"), layer.width, layer.height);
-    
-    if (g)
-    {
-        if (isHoriz)
-            jgraphics_translate(g, -hoa_gain_STRIPEWIDTH, -hoa_gain_STRIPEWIDTH);
-        else
-            jgraphics_translate(g, -hoa_gain_STRIPEWIDTH, hoa_gain_STRIPEWIDTH - pos);
-        
-        jgraphics_set_source_jrgba(g, &x->j_knobcolor);
-        jgraphics_diagonal_line_fill(g, hoa_gain_STRIPEWIDTH, 0, 0, rect->width, rect->height);
-    }
-    
-    jbox_end_layer((t_object*)x, view, gensym("valuestripe_layer"));
-    jbox_paint_layer((t_object *)x, view, gensym("valuestripe_layer"), layer.x, layer.y);
-}
-
 void draw_valuerect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 {
     t_jgraphics *g;
@@ -495,26 +424,22 @@ void draw_valuerect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
         layer.y = pos + hoa_gain_DISPLAYINSET*0.5 + knobMargin*0.5;
         layer.width = rect->width - (knobMargin*2);
         layer.height = rect->height - layer.y - knobMargin;
-        //post("layer.y : %f layer.height : %f", layer.y, layer.height);
     }
-    
-    post("layer.x : %f layer.y : %f layer.width : %f layer.height : %f", layer.x, layer.y, layer.width, layer.height);
     
     if (max(layer.width, 0.) == 0 || max(layer.height, 0.) == 0)
         return;
     
-    g = jbox_start_layer((t_object *)x, view, gensym("valuestripe_layer"), rect->width, rect->height);
+    g = jbox_start_layer((t_object *)x, view, gensym("valuerect_layer"), rect->width, rect->height);
     
     if (g)
     {
-        post("--- g --- layer.x : %f layer.y : %f layer.width : %f layer.height : %f", layer.x, layer.y, layer.width, layer.height);
         jgraphics_rectangle(g, layer.x, layer.y, layer.width, layer.height);
-        jgraphics_set_source_jrgba(g, &x->j_knobcolor);
+        jgraphics_set_source_jrgba(g, &x->j_barcolor);
         jgraphics_fill(g);
     }
     
-    jbox_end_layer((t_object*)x, view, gensym("valuestripe_layer"));
-    jbox_paint_layer((t_object *)x, view, gensym("valuestripe_layer"), 0., 0.);
+    jbox_end_layer((t_object*)x, view, gensym("valuerect_layer"));
+    jbox_paint_layer((t_object *)x, view, gensym("valuerect_layer"), 0., 0.);
 }
 
 void hoa_gain_paint(t_hoa_gain *x, t_object *view)
@@ -524,11 +449,8 @@ void hoa_gain_paint(t_hoa_gain *x, t_object *view)
     jbox_get_rect_for_view((t_object *)x, view, &rect);
     isHoriz = hoa_gain_ishorizontal(x, &rect);
     draw_background(x, view, &rect, isHoriz);
-    draw_offrect(x, view, &rect, isHoriz);
-    draw_valuerect(x, view, &rect, isHoriz);
-    //draw_offstripes(x, view, &rect, isHoriz);
-    //draw_valuestripes(x, view, &rect, isHoriz);
     draw_cursor(x, view, &rect, isHoriz);
+    draw_valuerect(x, view, &rect, isHoriz);
 }
 
 void hoa_gain_bang(t_hoa_gain *x)
@@ -550,7 +472,7 @@ void hoa_gain_float_dB(t_hoa_gain *x, double dBValue)
     hoa_gain_set_gain(x);
     object_notify(x, gensym("modified"), NULL);
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
-    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
+    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuerect_layer"));
     jbox_redraw((t_jbox *)x);
     
     hoa_gain_bang(x);
@@ -696,7 +618,7 @@ void hoa_gain_setminmax(t_hoa_gain *x, t_symbol *s, long argc, t_atom *argv)
         {
             jbox_invalidate_layer((t_object *)x, NULL, gensym("bg_layer"));
             jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
-            jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
+            jbox_invalidate_layer((t_object *)x, NULL, gensym("valuerect_layer"));
             jbox_redraw((t_jbox *)x);
         }
 	}
@@ -936,15 +858,14 @@ t_max_err hoa_gain_notify(t_hoa_gain *x, t_symbol *s, t_symbol *msg, void *sende
         {
             jbox_invalidate_layer((t_object *)x, NULL, gensym("bg_layer"));
             jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
-            jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
         }
         else if(name == gensym("bgcolor"))
 		{
             jbox_invalidate_layer((t_object *)x, NULL, gensym("bg_layer"));
 		}
-        else if (name == gensym("stripecolor"))
+        else if (name == gensym("barcolor"))
         {
-            jbox_invalidate_layer((t_object *)x, NULL, gensym("offstripe_layer"));
+            jbox_invalidate_layer((t_object *)x, NULL, gensym("valuerect_layer"));
         }
         jbox_redraw((t_jbox *)x);
 	}
@@ -1134,21 +1055,20 @@ int C74_EXPORT main(void)
     
     CLASS_ATTR_RGBA_LEGACY		(c, "bgcolor", "brgb", 0, t_hoa_gain, j_brgba);
     CLASS_ATTR_ALIAS			(c,"bgcolor", "brgba");
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bgcolor",0,"0.290196 0.309804 0.301961 1.");
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bgcolor",0,"0.611765 0.611765 0.611765 1.");
     CLASS_ATTR_STYLE_LABEL		(c, "bgcolor", 0, "rgba", "Background Color");
-    class_parameter_register_default_color(c, gensym("bgcolor"), ps_control_text_bg);
     CLASS_ATTR_BASIC			(c, "bgcolor", 0);
     // @description Sets the RGBA values for the background color of the <o>hoa.gain~</o> object
     
     CLASS_ATTR_RGBA				(c, "knobcolor", 0, t_hoa_gain, j_knobcolor);
-    CLASS_ATTR_STYLE_LABEL      (c, "knobcolor", 0, "rgba","Value Color");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "knobcolor", 0, "0.803922 0.898039 0.909804 1.0");
+    CLASS_ATTR_STYLE_LABEL      (c, "knobcolor", 0, "rgba","Knob Color");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "knobcolor", 0, "0.396078 0.396078 0.396078 1.");
     // @description Sets the RGBA values for the knob color of the <o>hoa.gain~</o> object
     
-    CLASS_ATTR_RGBA				(c, "stripecolor", 0, t_hoa_gain, j_stripecolor);
-    CLASS_ATTR_STYLE_LABEL      (c, "stripecolor", 0, "rgba","Off Color");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "stripecolor", 0, "0.376471 0.384314 0.4 1.0");
-    // @description Sets the RGBA values for the "Off" value stripe color of the <o>hoa.gain~</o> object
+    CLASS_ATTR_RGBA				(c, "barcolor", 0, t_hoa_gain, j_barcolor);
+    CLASS_ATTR_STYLE_LABEL      (c, "barcolor", 0, "rgba","Value Bar Color");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "barcolor", 0, "0.396078 0.396078 0.396078 0.6");
+    // @description Sets the RGBA values for the value bar color of the <o>hoa.gain~</o> object
     
     CLASS_STICKY_CATEGORY_CLEAR(c);
     
