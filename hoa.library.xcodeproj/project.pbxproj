@@ -123,6 +123,9 @@
 		2C3958711A9ABDCD00C91175 /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
 		2C3958721A9ABDCD00C91175 /* Vector.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585C1A9ABDCD00C91175 /* Vector.hpp */; };
 		2C3958741A9ABDCD00C91175 /* Wider.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585E1A9ABDCD00C91175 /* Wider.hpp */; };
+		2C396D341AB11FC500FAA1F0 /* Hrtf.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */; };
+		2C396D351AB11FC500FAA1F0 /* Hrtf.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */; };
+		2C396D361AB11FC500FAA1F0 /* Hrtf.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */; };
 		2C874C94196EB76900659F07 /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
 		2C8781841A9B72F200BA0E2B /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
 		2C8781871A9BE0B600BA0E2B /* ChannelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8781851A9BE0B600BA0E2B /* ChannelManager.cpp */; };
@@ -918,6 +921,7 @@
 		2C39585B1A9ABDCD00C91175 /* Tools.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tools.hpp; sourceTree = "<group>"; };
 		2C39585C1A9ABDCD00C91175 /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
 		2C39585E1A9ABDCD00C91175 /* Wider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Wider.hpp; sourceTree = "<group>"; };
+		2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Hrtf.hpp; sourceTree = "<group>"; };
 		2C874C93196EB76900659F07 /* hoa.library.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.library.cpp; sourceTree = "<group>"; };
 		2C8781831A9B72F200BA0E2B /* hoa.max.math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoa.max.math.h; sourceTree = "<group>"; };
 		2C8781851A9BE0B600BA0E2B /* ChannelManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChannelManager.cpp; sourceTree = "<group>"; };
@@ -1402,12 +1406,14 @@
 		2C3958481A9ABDCD00C91175 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2C3958491A9ABDCD00C91175 /* Decoder.hpp */,
-				2C39584A1A9ABDCD00C91175 /* Defs.hpp */,
-				2C39584B1A9ABDCD00C91175 /* Encoder.hpp */,
-				2C39584C1A9ABDCD00C91175 /* Harmonics.hpp */,
 				2C39584D1A9ABDCD00C91175 /* Hoa.hpp */,
+				2C39584A1A9ABDCD00C91175 /* Defs.hpp */,
 				2C39584E1A9ABDCD00C91175 /* Math.hpp */,
+				2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */,
+				2C39585B1A9ABDCD00C91175 /* Tools.hpp */,
+				2C39584C1A9ABDCD00C91175 /* Harmonics.hpp */,
+				2C39584B1A9ABDCD00C91175 /* Encoder.hpp */,
+				2C3958491A9ABDCD00C91175 /* Decoder.hpp */,
 				2C39584F1A9ABDCD00C91175 /* Meter.hpp */,
 				2C3958501A9ABDCD00C91175 /* Meter_3D.cpp */,
 				2C3958511A9ABDCD00C91175 /* Meter_3D.h */,
@@ -1420,7 +1426,6 @@
 				2C3958581A9ABDCD00C91175 /* Signal.hpp */,
 				2C3958591A9ABDCD00C91175 /* Source.cpp */,
 				2C39585A1A9ABDCD00C91175 /* Source.hpp */,
-				2C39585B1A9ABDCD00C91175 /* Tools.hpp */,
 				2C39585C1A9ABDCD00C91175 /* Vector.hpp */,
 				2C39585E1A9ABDCD00C91175 /* Wider.hpp */,
 			);
@@ -1730,6 +1735,7 @@
 				2C9B3A6E1A9E418A00E6921E /* Math.hpp in Headers */,
 				2C9B3A6F1A9E418A00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3A701A9E418A00E6921E /* Defs.hpp in Headers */,
+				2C396D351AB11FC500FAA1F0 /* Hrtf.hpp in Headers */,
 				2C9B3A711A9E418A00E6921E /* hoa.max_commonsyms.h in Headers */,
 				2C9B3A721A9E418A00E6921E /* hoa.max.math.h in Headers */,
 				2C9B3A731A9E418A00E6921E /* Hoa.hpp in Headers */,
@@ -1939,6 +1945,7 @@
 				2C9B3BC51A9E763100E6921E /* Math.hpp in Headers */,
 				2C9B3BC61A9E763100E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3BC71A9E763100E6921E /* Defs.hpp in Headers */,
+				2C396D361AB11FC500FAA1F0 /* Hrtf.hpp in Headers */,
 				2C9B3BC81A9E763100E6921E /* hoa.max_commonsyms.h in Headers */,
 				2C9B3BC91A9E763100E6921E /* hoa.max.math.h in Headers */,
 				2C9B3BCA1A9E763100E6921E /* Hoa.hpp in Headers */,
@@ -2098,6 +2105,7 @@
 				2CE0CD7A19720A0300217823 /* AudioFFT.h in Headers */,
 				2C8781841A9B72F200BA0E2B /* hoa.max.math.h in Headers */,
 				2C3958631A9ABDCD00C91175 /* Hoa.hpp in Headers */,
+				2C396D341AB11FC500FAA1F0 /* Hrtf.hpp in Headers */,
 				2C39586E1A9ABDCD00C91175 /* Signal.hpp in Headers */,
 				2C3958711A9ABDCD00C91175 /* Tools.hpp in Headers */,
 				2CE0CD9219720A0300217823 /* HoaProcessSuite.h in Headers */,

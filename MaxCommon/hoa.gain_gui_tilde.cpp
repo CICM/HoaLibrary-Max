@@ -163,7 +163,6 @@ void hoa_gain_perform64(t_hoa_gain *x, t_object *dsp64, double **ins, long numin
     for(i = 0; i < sampleframes; i++)
 	{
 		gain = x->f_amp->process();
-        //post("gain : %f", gain);
 		
 		for (j=0; j < x->f_numberOfChannels; j++)
 		{
@@ -201,8 +200,6 @@ double hoa_gain_getInputModeValue(t_hoa_gain *x)
 void hoa_gain_set_gain(t_hoa_gain *x)
 {
     x->f_amp->setValue(x->j_valdB > -70.0f ? dbtoa(x->j_valdB) : 0.0f);
-    post("gain : %f", dbtoa(x->j_valdB));
-    post("gain real : %f", x->f_amp->getValue());
 }
 
 double hoa_gain_constrain_real_value(t_hoa_gain *x, double f)
@@ -324,6 +321,7 @@ void hoa_gain_setInputModeValue(t_hoa_gain *x, double value, bool notify)
     }
     
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
+    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
     jbox_redraw((t_jbox *)x);
 }
 
@@ -340,6 +338,7 @@ void hoa_gain_set_dB(t_hoa_gain *x, double dBValue)
     hoa_gain_set_gain(x);
     object_notify(x, gensym("modified"), NULL);
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
+    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
     jbox_redraw((t_jbox *)x);
 }
 
@@ -382,6 +381,21 @@ void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 }
 
 void draw_offstripes(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
+{
+    t_jgraphics *g = jbox_start_layer((t_object *)x, view, gensym("offstripe_layer"), rect->width - (knobMargin*2), rect->height - (knobMargin*2));
+    
+    if (g)
+    {
+        jgraphics_translate(g, -hoa_gain_STRIPEWIDTH, -hoa_gain_STRIPEWIDTH);
+        jgraphics_set_source_jrgba(g, &x->j_stripecolor);
+        jgraphics_diagonal_line_fill(g, hoa_gain_STRIPEWIDTH, 0, 0, rect->width, rect->height);
+    }
+    
+    jbox_end_layer((t_object*)x, view, gensym("offstripe_layer"));
+    jbox_paint_layer((t_object *)x, view, gensym("offstripe_layer"), knobMargin, knobMargin);
+}
+
+void draw_offrect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 {
     t_jgraphics *g = jbox_start_layer((t_object *)x, view, gensym("offstripe_layer"), rect->width - (knobMargin*2), rect->height - (knobMargin*2));
     
@@ -462,6 +476,47 @@ void draw_valuestripes(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz
     jbox_paint_layer((t_object *)x, view, gensym("valuestripe_layer"), layer.x, layer.y);
 }
 
+void draw_valuerect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
+{
+    t_jgraphics *g;
+    t_rect layer;
+    
+    int pos = hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
+    
+    if (isHoriz)
+    {
+        layer.x = layer.y = knobMargin;
+        layer.width = pos - hoa_gain_DISPLAYINSET*0.5 - knobMargin*1.5;
+        layer.height = rect->height - (knobMargin*2);
+    }
+    else
+    {
+        layer.x = knobMargin;
+        layer.y = pos + hoa_gain_DISPLAYINSET*0.5 + knobMargin*0.5;
+        layer.width = rect->width - (knobMargin*2);
+        layer.height = rect->height - layer.y - knobMargin;
+        //post("layer.y : %f layer.height : %f", layer.y, layer.height);
+    }
+    
+    post("layer.x : %f layer.y : %f layer.width : %f layer.height : %f", layer.x, layer.y, layer.width, layer.height);
+    
+    if (max(layer.width, 0.) == 0 || max(layer.height, 0.) == 0)
+        return;
+    
+    g = jbox_start_layer((t_object *)x, view, gensym("valuestripe_layer"), rect->width, rect->height);
+    
+    if (g)
+    {
+        post("--- g --- layer.x : %f layer.y : %f layer.width : %f layer.height : %f", layer.x, layer.y, layer.width, layer.height);
+        jgraphics_rectangle(g, layer.x, layer.y, layer.width, layer.height);
+        jgraphics_set_source_jrgba(g, &x->j_knobcolor);
+        jgraphics_fill(g);
+    }
+    
+    jbox_end_layer((t_object*)x, view, gensym("valuestripe_layer"));
+    jbox_paint_layer((t_object *)x, view, gensym("valuestripe_layer"), 0., 0.);
+}
+
 void hoa_gain_paint(t_hoa_gain *x, t_object *view)
 {
     t_rect rect;
@@ -469,8 +524,10 @@ void hoa_gain_paint(t_hoa_gain *x, t_object *view)
     jbox_get_rect_for_view((t_object *)x, view, &rect);
     isHoriz = hoa_gain_ishorizontal(x, &rect);
     draw_background(x, view, &rect, isHoriz);
-    draw_offstripes(x, view, &rect, isHoriz);
-    draw_valuestripes(x, view, &rect, isHoriz);
+    draw_offrect(x, view, &rect, isHoriz);
+    draw_valuerect(x, view, &rect, isHoriz);
+    //draw_offstripes(x, view, &rect, isHoriz);
+    //draw_valuestripes(x, view, &rect, isHoriz);
     draw_cursor(x, view, &rect, isHoriz);
 }
 
@@ -493,6 +550,7 @@ void hoa_gain_float_dB(t_hoa_gain *x, double dBValue)
     hoa_gain_set_gain(x);
     object_notify(x, gensym("modified"), NULL);
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
+    jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
     jbox_redraw((t_jbox *)x);
     
     hoa_gain_bang(x);
@@ -638,6 +696,7 @@ void hoa_gain_setminmax(t_hoa_gain *x, t_symbol *s, long argc, t_atom *argv)
         {
             jbox_invalidate_layer((t_object *)x, NULL, gensym("bg_layer"));
             jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
+            jbox_invalidate_layer((t_object *)x, NULL, gensym("valuestripe_layer"));
             jbox_redraw((t_jbox *)x);
         }
 	}
@@ -653,10 +712,8 @@ t_max_err hoa_gain_setattr_interp(t_hoa_gain *x, t_object *attr, long ac, t_atom
 {
 	if (ac && av && atom_isNumber(av))
     {
-        double d = atom_getfloat(av);
-        
-        x->f_amp->setRamp(d / 1000. * sys_getsr());
-        x->f_interp = x->f_amp->getRamp();
+        x->f_amp->setRamp(atom_getfloat(av) / 1000. * sys_getsr());
+        x->f_interp = x->f_amp->getRamp() / sys_getsr() * 1000;
 	}
 	return MAX_ERR_NONE;
 }
@@ -956,7 +1013,7 @@ void *hoa_gain_new(t_symbol *s, short argc, t_atom *argv)
     
     x->f_amp = new Line<t_sample>();
     x->f_amp->setRamp(0.1 * sys_getsr());
-    x->f_amp->setValue(1.f);
+    x->f_amp->setValueDirect(1.f);
     
     // inputs
     dsp_setupjbox((t_pxjbox *)x, x->f_numberOfChannels + 1);
