@@ -30,7 +30,7 @@
 
 typedef struct _hoa_3d_decoder 
 {
-	t_pxobject				f_ob;
+	t_pxobject                  f_ob;
     Decoder<Hoa3d, t_sample>*   f_decoder;
     t_sample*                   f_ins;
     t_sample*                   f_outs;
@@ -38,20 +38,16 @@ typedef struct _hoa_3d_decoder
     double                      f_angles_of_channels[HOA_MAX_PLANEWAVES * 2];
     long                        f_number_of_angles;
     double                      f_offsets[3];
-    t_symbol*                   f_pinna;
     t_symbol*                   f_mode;
     
 } t_hoa_3d_decoder;
 
-void *hoa_3d_decoder_class;
+t_class *hoa_3d_decoder_class;
 
 void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
 {
 	// @arg 0 @name ambisonic-order @optional 0 @type int @digest The ambisonic order of decomposition
 	// @description First argument is the ambisonic order of decomposition.
-	
-	// @arg 1 @name number-of-channels @optional 0 @type int @digest The number of channels
-	// @description Second argument is the number of channels
     
     t_hoa_3d_decoder *x = (t_hoa_3d_decoder *)object_alloc((t_class*)hoa_3d_decoder_class);
 	if(x)
@@ -59,9 +55,6 @@ void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         ulong order = 1;
         ulong number_of_channels = 4;
         
-		x->f_mode = hoa_sym_ambisonic;
-		x->f_pinna = hoa_sym_small;
-		
 		if(argc && atom_gettype(argv) == A_LONG)
 			order = max<ulong>(atom_getlong(argv), 1);
         
@@ -70,6 +63,7 @@ void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
 		else
 			number_of_channels = (order+1)*(order+1);
 		
+        x->f_mode = hoa_sym_ambisonic;
         x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, number_of_channels);
         
 		x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
@@ -122,6 +116,7 @@ void hoa_3d_decoder_3D_perform64(t_hoa_3d_decoder *x, t_object *dsp64, double **
 
 void hoa_3d_decoder_dsp64(t_hoa_3d_decoder *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
+    x->f_decoder->computeMatrix(maxvectorsize);
     object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_3d_decoder_3D_perform64, 0, NULL);
 }
 
@@ -169,38 +164,45 @@ t_max_err mode_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
 {
 	if(argc && argv && atom_gettype(argv) == A_SYM)
 	{
-        /*
-		t_symbol* mode = atom_getsym(argv);
-        if(mode == hoa_sym_ambisonic && x->f_decoder->getDecodingMode() != Hoa3D::DecoderMulti::Regular)
+        t_symbol* mode = atom_getsym(argv);
+        if (mode != x->f_mode)
         {
-            x->f_decoder->setDecodingMode(Hoa3D::DecoderMulti::Regular);
-            object_attr_setdisabled((t_object *)x, hoa_sym_angles, 0);
-            object_attr_setdisabled((t_object *)x, hoa_sym_offset, 0);
-			object_attr_setdisabled((t_object *)x, hoa_sym_channels, 0);
-            object_attr_setdisabled((t_object *)x, hoa_sym_pinna, 1);
-			float offset[3];
-			offset[0] = x->f_decoder->getChannelsRotationX() / HOA_2PI * 360.f;
-			offset[1] = x->f_decoder->getChannelsRotationY() / HOA_2PI * 360.f;
-			offset[2] = x->f_decoder->getChannelsRotationZ() / HOA_2PI * 360.f;
-			object_attr_setfloat_array(x, hoa_sym_offset, 3, offset);
-			x->f_mode = mode;
-			x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
-			object_attr_touch((t_object *)x, hoa_sym_channels);
-			hoa_3d_decoder_resize_outlets(x);
-		}
-        else if(mode == hoa_sym_binaural && x->f_decoder->getDecodingMode() != Hoa3D::DecoderMulti::Binaural)
-        {
-			x->f_decoder->setDecodingMode(Hoa3D::DecoderMulti::Binaural);
-            object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
-            object_attr_setdisabled((t_object *)x, hoa_sym_offset, 1);
-			object_attr_setdisabled((t_object *)x, hoa_sym_channels, 1);
-            object_attr_setdisabled((t_object *)x, hoa_sym_pinna, 0);
-			x->f_mode = mode;
-			x->f_number_of_channels = 2;
-			object_attr_touch((t_object *)x, hoa_sym_channels);
-			hoa_3d_decoder_resize_outlets(x);
+            if(mode == hoa_sym_ambisonic)
+            {
+                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+                
+                ulong order = x->f_decoder->getDecompositionOrder();
+                delete x->f_decoder;
+                x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, (order+1)*(order+1));
+                
+                x->f_mode = mode;
+                object_attr_setdisabled((t_object *)x, hoa_sym_angles, 0);
+                object_attr_setdisabled((t_object *)x, hoa_sym_offset, 0);
+                object_attr_setdisabled((t_object *)x, hoa_sym_channels, 0);
+                
+                object_attr_setdouble_array(x, hoa_sym_offset, 3, x->f_offsets);
+                x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
+                object_attr_touch((t_object *)x, hoa_sym_channels);
+                hoa_3d_decoder_resize_outlets(x);
+            }
+            else if(mode == hoa_sym_binaural)
+            {
+                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+                
+                ulong order = x->f_decoder->getDecompositionOrder();
+                delete x->f_decoder;
+                x->f_decoder = new Decoder<Hoa3d, t_sample>::Binaural(order);
+                
+                x->f_mode = mode;
+                object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
+                object_attr_setdisabled((t_object *)x, hoa_sym_offset, 1);
+                object_attr_setdisabled((t_object *)x, hoa_sym_channels, 1);
+                x->f_mode = mode;
+                x->f_number_of_channels = 2;
+                object_attr_touch((t_object *)x, hoa_sym_channels);
+                hoa_3d_decoder_resize_outlets(x);
+            }
         }
-        */
     }
     return MAX_ERR_NONE;
 }
@@ -284,30 +286,6 @@ t_max_err offset_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
     return MAX_ERR_NONE;
 }
 
-t_max_err pinna_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
-{
-	if(argc && argv && atom_gettype(argv) == A_SYM)
-	{
-        /*
-        if(atom_getsym(argv) == hoa_sym_small && x->f_decoder->getPinnaSize() != Hoa3D::DecoderBinaural::Small)
-        {
-            if(x->f_decoder->getDecodingMode() == Hoa3D::DecoderMulti::Binaural)
-                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder->setPinnaSize(Hoa3D::DecoderBinaural::Small);
-			x->f_pinna = atom_getsym(argv);
-		}
-        else if(atom_getsym(argv) == hoa_sym_large && x->f_decoder->getPinnaSize() != Hoa3D::DecoderBinaural::Large)
-        {
-            if(x->f_decoder->getDecodingMode() == Hoa3D::DecoderMulti::Binaural)
-                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder->setPinnaSize(Hoa3D::DecoderBinaural::Large);
-			x->f_pinna = atom_getsym(argv);
-        }
-        */
-    }
-	return MAX_ERR_NONE;
-}
-
 void hoa_3d_decoder_free(t_hoa_3d_decoder *x)
 {
 	dsp_free((t_pxobject *)x);
@@ -362,13 +340,6 @@ int C74_EXPORT main(void)
     CLASS_ATTR_ACCESSORS		(c, "channels", NULL, channel_set);
     CLASS_ATTR_ORDER            (c, "channels", 0, "2");
     // @description The number of Channels.
-    
-    CLASS_ATTR_SYM              (c, "pinna", 0, t_hoa_3d_decoder, f_pinna);
-    CLASS_ATTR_LABEL            (c, "pinna", 0, "Pinna Size");
-    CLASS_ATTR_ENUM             (c, "pinna", 0, "small large");
-    CLASS_ATTR_ACCESSORS		(c, "pinna", NULL, pinna_set);
-    CLASS_ATTR_ORDER            (c, "pinna", 0, "4");
-    // @description The pinna size to use for the binaural restitution. The <m>pinna</m> message followed by the <b>symbol</b> <b>small</b> or <b>large</b> set the pinna size of the HRTF responses for the binaural restitution. Choose the one that suits you best.
     
     class_dspinit(c);
     class_register(CLASS_BOX, c);	

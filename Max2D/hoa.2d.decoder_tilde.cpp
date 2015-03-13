@@ -78,6 +78,7 @@ void hoa_2d_decoder_perform64(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **i
 
 void hoa_2d_decoder_dsp64(t_hoa_2d_decoder *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
+    x->f_decoder->computeMatrix();
     object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_2d_decoder_perform64, 0, NULL);
 }
 
@@ -186,7 +187,6 @@ t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
             
             delete x->f_decoder;
             x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, order*2+2);
-            x->f_decoder->computeMatrix();
             
             x->f_mode = atom_getsym(argv);
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
@@ -199,7 +199,6 @@ t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
             
             delete x->f_decoder;
             x->f_decoder = new Decoder<Hoa2d, t_sample>::Irregular(order, order*2+2);
-            x->f_decoder->computeMatrix();
             
             x->f_mode = atom_getsym(argv);
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 0);
@@ -212,7 +211,6 @@ t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
             
             delete x->f_decoder;
             x->f_decoder = new Decoder<Hoa2d, t_sample>::Binaural(order);
-            x->f_decoder->computeMatrix();
             
             x->f_mode = atom_getsym(argv);
             object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
@@ -252,7 +250,6 @@ t_max_err offset_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *arg
         {
             object_method(gensym("dsp")->s_thing, hoa_sym_stop);
             x->f_decoder->setPlanewavesRotation(offset);
-            x->f_decoder->computeMatrix();
             send_configuration(x);
         }
     }
@@ -299,8 +296,6 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
             delete x->f_decoder;
             x->f_decoder = new Decoder<Hoa2d, t_sample>::Irregular(order, max<ulong>(number_of_channels, 2));
         }
-        
-        x->f_decoder->computeMatrix();
         
         if(outlet_count((t_object *)x) > x->f_decoder->getNumberOfPlanewaves())
         {
@@ -358,7 +353,6 @@ t_max_err angles_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *arg
             if(atom_isNumber(argv+i))
                 x->f_decoder->setPlanewaveAzimuth(i, atom_getfloat(argv+i) / 360. * HOA_2PI);
         }
-        x->f_decoder->computeMatrix();
         send_configuration(x);
         
         if (state)
