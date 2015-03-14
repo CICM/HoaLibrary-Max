@@ -4,7 +4,7 @@
 // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 
 // Name & Version
-HOALIBRARY_VERSION = beta 2.0.3
+HOALIBRARY_VERSION = beta 2.0.4
 PRODUCT_NAME = $(TARGET_NAME)
 PRODUCT_VERSION = HoaLibrary $(HOALIBRARY_VERSION)
 ARCHS = i386 x86_64

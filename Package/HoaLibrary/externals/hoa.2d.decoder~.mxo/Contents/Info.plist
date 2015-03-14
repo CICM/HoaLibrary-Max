@@ -13,15 +13,15 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleLongVersionString</key>
-	<string>hoa.2d.decoder~ HoaLibrary beta 2.0.3, Copyright 2015 Cycling '74</string>
+	<string>hoa.2d.decoder~ HoaLibrary beta 2.0.4, Copyright 2015 Cycling '74</string>
 	<key>CFBundlePackageType</key>
 	<string>iLaX</string>
 	<key>CFBundleShortVersionString</key>
-	<string>HoaLibrary beta 2.0.3</string>
+	<string>HoaLibrary beta 2.0.4</string>
 	<key>CFBundleSignature</key>
 	<string>max2</string>
 	<key>CFBundleVersion</key>
-	<string>HoaLibrary beta 2.0.3</string>
+	<string>HoaLibrary beta 2.0.4</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>DTCompiler</key>

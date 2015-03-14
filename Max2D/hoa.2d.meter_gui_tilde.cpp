@@ -362,8 +362,6 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
 {
 	int i,j;
 	double deg1, deg2, rotateAngle, ledContainerSize, ledStroke, ledMargin, ledOffset, channelWidth;
-    t_jrgba black;
-    double contrastBlack = 0.12;
 	t_jmatrix transform;
 	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_skeleton_layer, rect->width, rect->height);
 	
@@ -373,8 +371,7 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
 	ledStroke = ledOffset * 0.75;
 	ledMargin = ledOffset * 0.5;
     
-    black = x->f_color_mbg;
-    black = rgba_addContrast(x->f_color_bg, -contrastBlack);
+    t_jrgba black = rgba_addContrast(x->f_color_mbg, -0.12);
 	
 	if (g)
 	{
@@ -479,16 +476,11 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
 void draw_separator(t_meter *x,  t_object *view, t_rect *rect)
 {
 	double rotateAngle, channelWidth;
-    t_jrgba black, white;
-    double contrastBlack = 0.12;
-    double contrastWhite = 0.08;
 	t_jmatrix transform;
-	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_separator_layer, rect->width, rect->height);
+    t_jrgba black = rgba_addContrast(x->f_color_mbg, -0.12);
     
-    black = white = x->f_color_mbg;
-    black = rgba_addContrast(black, -contrastBlack);
-    white = rgba_addContrast(white, contrastWhite);
-
+    t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_separator_layer, rect->width, rect->height);
+    
 	if (g)
 	{
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);

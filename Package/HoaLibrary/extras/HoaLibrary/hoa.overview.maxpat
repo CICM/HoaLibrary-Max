@@ -2,10 +2,11 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 6,
-			"minor" : 1,
-			"revision" : 9,
-			"architecture" : "x64"
+			"major" : 7,
+			"minor" : 0,
+			"revision" : 2,
+			"architecture" : "x64",
+			"modernui" : 1
 		}
 ,
 		"rect" : [ 402.0, 147.0, 700.0, 575.0 ],
@@ -18,16 +19,24 @@
 		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
 		"statusbarvisible" : 0,
 		"toolbarvisible" : 0,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
-		"imprint" : 0,
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
 		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
 		"title" : "|-- HoaLibrary overview --|",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -39,7 +48,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ -165.0, 428.117065, 32.5, 20.0 ],
+					"patching_rect" : [ -165.0, 428.117065, 32.5, 22.0 ],
+					"style" : "",
 					"text" : "t b l"
 				}
 
@@ -54,7 +64,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -165.0, 525.117065, 56.0, 20.0 ],
+					"patching_rect" : [ -165.0, 525.117065, 56.0, 22.0 ],
+					"style" : "",
 					"text" : "deferlow"
 				}
 
@@ -70,7 +81,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -165.0, 458.0, 105.0, 60.0 ],
+					"patching_rect" : [ -165.0, 458.0, 105.0, 62.0 ],
+					"style" : "",
 					"text" : "loadmess patching_rect 31.6875 477.5 629.8125 23."
 				}
 
@@ -98,7 +110,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -165.0, 185.0, 74.0, 20.0 ],
+					"patching_rect" : [ -165.0, 185.0, 74.0, 22.0 ],
+					"style" : "",
 					"text" : "prepend set"
 				}
 
@@ -113,7 +126,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ -211.4375, 129.0, 60.0, 20.0 ],
+					"patching_rect" : [ -211.4375, 129.0, 60.0, 22.0 ],
+					"style" : "",
 					"text" : "loadbang"
 				}
 
@@ -128,8 +142,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -165.0, 159.0, 74.0, 18.0 ],
-					"text" : "\"Beta 2.0.3\""
+					"patching_rect" : [ -165.0, 159.0, 74.0, 22.0 ],
+					"style" : "",
+					"text" : "\"Beta 2.0.4\""
 				}
 
 			}
@@ -143,7 +158,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -128.0, 369.5, 74.0, 20.0 ],
+					"patching_rect" : [ -128.0, 369.5, 74.0, 22.0 ],
+					"style" : "",
 					"text" : "prepend set"
 				}
 
@@ -159,7 +175,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -165.0, 285.5, 164.0, 72.0 ],
+					"patching_rect" : [ -165.0, 285.5, 164.0, 76.0 ],
+					"style" : "",
 					"text" : "\"hover each object to have a short description of their functionalities, click on them to open the corresponding help patch.\""
 				}
 
@@ -168,12 +185,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-4",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 408.0, 47.0, 19.0, 20.0 ],
+					"style" : "",
 					"text" : "|",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -191,7 +208,8 @@
 ,
 					"maxclass" : "fpic",
 					"numinlets" : 1,
-					"numoutlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
 					"patching_rect" : [ 604.875, 22.898775, 58.625, 30.70245 ],
 					"pic" : "GPLv3_Logo.svg"
 				}
@@ -208,7 +226,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 82.875, 242.0, 25.0 ],
+					"patching_rect" : [ 691.729187, 82.875, 242.0, 29.0 ],
+					"style" : "",
 					"text" : ";\rmax launchbrowser https://www.gnu.org/copyleft/gpl.html"
 				}
 
@@ -240,13 +259,13 @@
 					"fontface" : 3,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-23",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 210.78125, 20.75, 73.0, 20.0 ],
-					"text" : "Beta 2.0.2",
+					"style" : "",
+					"text" : "Beta 2.0.3",
 					"textcolor" : [ 0.9404, 0.940544, 0.940332, 1.0 ],
 					"textjustification" : 1,
 					"varname" : "autohelp_top_title[4]"
@@ -258,13 +277,13 @@
 					"fontface" : 3,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-27",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 211.78125, 21.75, 73.0, 20.0 ],
-					"text" : "Beta 2.0.2",
+					"style" : "",
+					"text" : "Beta 2.0.3",
 					"textcolor" : [ 0.424631, 0.424696, 0.4246, 0.21 ],
 					"textjustification" : 1,
 					"varname" : "autohelp_top_title[5]"
@@ -273,27 +292,39 @@
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-29",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 210.78125, 20.75, 74.0, 21.0 ],
+					"proportion" : 0.39,
 					"rounded" : 6,
-					"shadow" : -1
+					"shadow" : -1,
+					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"args" : [ "@obj-name", "HoaLibrary", "@width", 290, "@obj-desc", "High Order Ambisonics Library " ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
 					"id" : "obj-8",
+					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "hoa.helpheader.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 6.78125, 10.75, 292.0, 55.0 ]
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 6.78125, 10.75, 292.0, 55.0 ],
+					"viewvisibility" : 1
 				}
 
 			}
@@ -329,7 +360,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -61.9375, 30.75, 55.0, 15.0 ],
+					"patching_rect" : [ -61.9375, 30.75, 55.0, 17.0 ],
+					"style" : "",
 					"text" : "loadmess 1"
 				}
 
@@ -338,13 +370,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.425629,
-					"frgb" : 0.0,
 					"hidden" : 1,
 					"id" : "obj-54",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 6.78125, 63.75, 33.28125, 17.0 ],
+					"style" : "",
 					"text" : "grow"
 				}
 
@@ -359,7 +391,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ -269.9375, 10.75, 46.0, 20.0 ],
+					"patching_rect" : [ -269.9375, 10.75, 46.0, 22.0 ],
+					"style" : "",
 					"text" : "sel 0 1"
 				}
 
@@ -373,7 +406,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ -6.21875, 63.75, 13.0, 13.0 ]
+					"patching_rect" : [ -6.21875, 63.75, 13.0, 13.0 ],
+					"style" : ""
 				}
 
 			}
@@ -381,13 +415,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
-					"frgb" : 0.0,
 					"id" : "obj-19",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 314.5625, 10.75, 262.0, 32.0 ],
+					"style" : "",
 					"text" : "Julien Colafrancesco, Pierre Guillot & Eliott Paris © 2012 - 2014 CICM / University of Paris 8",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -395,15 +429,19 @@
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-28",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 314.5625, 10.75, 259.5, 32.0 ],
+					"proportion" : 0.39,
 					"rounded" : 6,
-					"shadow" : -1
+					"shadow" : -1,
+					"style" : ""
 				}
 
 			}
@@ -417,7 +455,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -269.9375, 45.75, 177.0, 17.0 ],
+					"patching_rect" : [ -269.9375, 45.75, 177.0, 21.0 ],
+					"style" : "",
 					"text" : "window flags grow, window exec"
 				}
 
@@ -432,7 +471,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -253.4375, 68.75, 190.0, 17.0 ],
+					"patching_rect" : [ -253.4375, 68.75, 190.0, 21.0 ],
+					"style" : "",
 					"text" : "window flags nogrow, window exec"
 				}
 
@@ -446,7 +486,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 4,
 					"numoutlets" : 0,
-					"patching_rect" : [ -149.9375, 611.75, 143.0, 20.0 ],
+					"patching_rect" : [ -149.9375, 611.75, 143.0, 22.0 ],
+					"style" : "",
 					"text" : "bgcolor 0.93 0.93 0.92 1."
 				}
 
@@ -455,41 +496,49 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 14.0,
-					"frgb" : 0.0,
 					"id" : "obj-18",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 31.6875, 477.5, 629.8125, 22.0 ],
+					"style" : "",
 					"textcolor" : [ 0.192668, 0.192697, 0.192653, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"bgcolor" : [ 0.390905, 0.495765, 0.666667, 1.0 ],
 					"bordercolor" : [ 0.999903, 1.0, 0.99983, 1.0 ],
 					"id" : "obj-21",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0625, 473.5, 6.0, 80.0 ],
-					"rounded" : 0
+					"proportion" : 0.39,
+					"rounded" : 0,
+					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"background" : 1,
 					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"id" : "obj-17",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0625, 469.5, 664.6875, 87.25 ],
-					"rounded" : 0
+					"proportion" : 0.39,
+					"rounded" : 0,
+					"style" : ""
 				}
 
 			}
@@ -497,12 +546,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-9",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 420.0625, 46.75, 65.0, 20.0 ],
+					"style" : "",
 					"text" : "contact us",
 					"textcolor" : [ 0.392157, 0.494118, 0.666667, 1.0 ]
 				}
@@ -532,7 +581,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 44.75, 318.0, 25.0 ],
+					"patching_rect" : [ 691.729187, 44.75, 318.0, 29.0 ],
+					"style" : "",
 					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/contacts/"
 				}
 
@@ -547,8 +597,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ -269.9375, 95.25, 69.0, 20.0 ],
+					"patching_rect" : [ -269.9375, 95.25, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+					"style" : "",
 					"text" : "thispatcher"
 				}
 
@@ -557,12 +608,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-80",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 315.0625, 46.75, 96.0, 20.0 ],
+					"style" : "",
 					"text" : "visit our website",
 					"textcolor" : [ 0.392157, 0.494118, 0.666667, 1.0 ]
 				}
@@ -570,23 +621,30 @@
 			}
 , 			{
 				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
 					"clickthrough" : 1,
 					"embed" : 1,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
 					"id" : "obj-22",
+					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 6,
-							"minor" : 1,
-							"revision" : 9,
-							"architecture" : "x64"
+							"major" : 7,
+							"minor" : 0,
+							"revision" : 2,
+							"architecture" : "x64",
+							"modernui" : 1
 						}
 ,
-						"rect" : [ 642.0, 318.0, 665.0, 285.0 ],
+						"rect" : [ 690.0, 318.0, 665.0, 285.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -596,16 +654,24 @@
 						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
 						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
 						"boxanimatetime" : 200,
-						"imprint" : 0,
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
 						"devicewidth" : 0.0,
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -616,6 +682,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 568.0, 696.0, 150.0, 18.0 ],
+									"style" : "",
 									"text" : "hoa.fx.decorrelation~"
 								}
 
@@ -630,6 +697,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 532.5, 778.0, 81.0, 20.0 ],
+									"style" : "",
 									"text" : "prepend load",
 									"varname" : "phelp[2]"
 								}
@@ -645,6 +713,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 439.5, 778.0, 83.0, 20.0 ],
+									"style" : "",
 									"text" : "prepend help",
 									"varname" : "phelp[1]"
 								}
@@ -660,6 +729,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 439.5, 808.5, 56.0, 20.0 ],
+									"style" : "",
 									"text" : "pcontrol"
 								}
 
@@ -674,6 +744,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 439.5, 747.0, 112.0, 20.0 ],
+									"style" : "",
 									"text" : "gate 2"
 								}
 
@@ -688,6 +759,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"patching_rect" : [ 489.5, 720.0, 24.0, 20.0 ],
+									"style" : "",
 									"text" : "t 1"
 								}
 
@@ -702,6 +774,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"patching_rect" : [ 439.5, 720.0, 24.0, 20.0 ],
+									"style" : "",
 									"text" : "t 2"
 								}
 
@@ -716,6 +789,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 439.5, 644.0, 73.0, 20.0 ],
+									"style" : "",
 									"text" : "fromsymbol"
 								}
 
@@ -730,6 +804,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 425.5, 605.0, 33.0, 20.0 ],
+									"style" : "",
 									"text" : "t s s"
 								}
 
@@ -744,6 +819,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 439.5, 693.0, 69.0, 20.0 ],
+									"style" : "",
 									"text" : "sel Tutorial"
 								}
 
@@ -758,6 +834,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 214.0, 621.0, 75.0, 18.0 ],
+									"style" : "",
 									"text" : "autowatch 1"
 								}
 
@@ -772,6 +849,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 483.875, 168.0, 311.0, 20.0 ],
+									"style" : "",
 									"text" : "prepend get_category_description_from_category_index"
 								}
 
@@ -784,7 +862,8 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 145.0, 74.0, 25.0, 25.0 ]
+									"patching_rect" : [ 145.0, 74.0, 25.0, 25.0 ],
+									"style" : ""
 								}
 
 							}
@@ -798,6 +877,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "" ],
 									"patching_rect" : [ 7.0, 30.0, 33.0, 20.0 ],
+									"style" : "",
 									"text" : "t 0 s"
 								}
 
@@ -838,6 +918,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 16.0, 180.0, 138.0, 20.0 ],
+									"style" : "",
 									"text" : "t s s"
 								}
 
@@ -852,6 +933,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 16.0, 617.0, 105.0, 20.0 ],
+									"style" : "",
 									"text" : "join 2 @triggers 1"
 								}
 
@@ -866,6 +948,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 16.0, 645.0, 273.0, 20.0 ],
+									"style" : "",
 									"text" : "prepend get_objectref_from_category_and_index"
 								}
 
@@ -885,6 +968,7 @@
 										"parameter_enable" : 0
 									}
 ,
+									"style" : "",
 									"text" : "js hoa.overviewer"
 								}
 
@@ -904,6 +988,7 @@
 										"parameter_enable" : 0
 									}
 ,
+									"style" : "",
 									"text" : "js hoa.overviewer"
 								}
 
@@ -918,6 +1003,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 135.0, 217.0, 105.0, 20.0 ],
+									"style" : "",
 									"text" : "prepend objectlist"
 								}
 
@@ -932,6 +1018,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 21.0, 86.0, 81.0, 20.0 ],
+									"style" : "",
 									"text" : "prepend tabs"
 								}
 
@@ -946,6 +1033,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 7.0, 4.0, 107.0, 20.0 ],
+									"style" : "",
 									"text" : "loadmess getkeys"
 								}
 
@@ -965,14 +1053,13 @@
 										"parameter_enable" : 0
 									}
 ,
+									"style" : "",
 									"text" : "js hoa.overviewer"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
 									"htabcolor" : [ 0.392157, 0.494118, 0.666667, 1.0 ],
 									"id" : "obj-57",
 									"margin" : 0,
@@ -988,7 +1075,10 @@
 									"rounded" : 0.0,
 									"spacing_x" : 1.0,
 									"spacing_y" : 0.0,
-									"tabs" : [ "2d", "3d", "Common", "process" ]
+									"style" : "",
+									"tabcolor" : [ 0.85, 0.85, 0.85, 1.0 ],
+									"tabs" : [ "2d", "3d", "Common", "process" ],
+									"textcolor" : [ 0.15, 0.15, 0.15, 1.0 ]
 								}
 
 							}
@@ -1002,6 +1092,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 135.0, 277.0, 81.0, 20.0 ],
+									"style" : "",
 									"text" : "prepend tabs"
 								}
 
@@ -1009,8 +1100,8 @@
 , 							{
 								"box" : 								{
 									"button" : 1,
-									"fontname" : "Arial",
 									"fontsize" : 16.0,
+									"htabcolor" : [ 0.6, 0.6, 0.6, 1.0 ],
 									"id" : "obj-59",
 									"margin" : 0,
 									"maxclass" : "tab",
@@ -1024,8 +1115,10 @@
 									"rounded" : 0.0,
 									"spacing_x" : 20.0,
 									"spacing_y" : 5.0,
+									"style" : "",
 									"tabcolor" : [ 0.85098, 0.85098, 0.85098, 0.9 ],
-									"tabs" : [ "hoa.fx.convolve~", "hoa.fx.decorrelation~", "hoa.syn.decorrelation~", "hoa.fx.delay~", "hoa.syn.delay~", "hoa.fx.freeverb~", "hoa.fx.gain~", "hoa.fx.grain~", "hoa.syn.grain~", "hoa.fx.mirror~", "hoa.fx.mixer~", "hoa.fx.ringmod~", "hoa.syn.ringmod~" ]
+									"tabs" : [ "hoa.2d.decoder~", "hoa.2d.encoder~", "hoa.2d.map~", "hoa.2d.map", "hoa.2d.meter~", "hoa.2d.optim~", "hoa.2d.projector~", "hoa.2d.process~", "hoa.2d.recomposer~", "hoa.2d.recomposer", "hoa.2d.rotate~", "hoa.2d.scope~", "hoa.2d.space", "hoa.2d.vector~", "hoa.2d.wider~" ],
+									"textcolor" : [ 0.15, 0.15, 0.15, 1.0 ]
 								}
 
 							}
@@ -1036,7 +1129,8 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 16.0, 712.0, 25.0, 25.0 ]
+									"patching_rect" : [ 16.0, 712.0, 25.0, 25.0 ],
+									"style" : ""
 								}
 
 							}
@@ -1044,13 +1138,13 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
-									"frgb" : 0.0,
 									"hidden" : 1,
 									"id" : "obj-7",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 259.0, 252.0, 24.0, 20.0 ],
+									"style" : "",
 									"text" : "All"
 								}
 
@@ -1355,7 +1449,8 @@
  ]
 					}
 ,
-					"patching_rect" : [ 18.0625, 171.257935, 664.5625, 284.25 ]
+					"patching_rect" : [ 18.0625, 171.257935, 664.5625, 284.25 ],
+					"viewvisibility" : 1
 				}
 
 			}
@@ -1383,7 +1478,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 10.75, 261.5, 25.0 ],
+					"patching_rect" : [ 691.729187, 10.75, 261.5, 29.0 ],
+					"style" : "",
 					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/"
 				}
 
@@ -1397,7 +1493,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ -51.9375, 10.75, 45.0, 17.0 ],
+					"patching_rect" : [ -51.9375, 10.75, 45.0, 19.0 ],
+					"style" : "",
 					"text" : "onecopy"
 				}
 
@@ -1406,13 +1503,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 15.0,
-					"frgb" : 0.0,
 					"id" : "obj-5",
 					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 15.9375, 85.25, 666.6875, 74.0 ],
+					"style" : "",
 					"text" : "HoaLibrary allows musicians and composers to synthesize, transform and render sound fields in a creative and artistic way. This library facilitates the understanding and the appropriation of key concepts of ambisonics. A lot of new signal processing are allowed like diffuse sound field synthesis, perspective distorsion or spatial filtering...",
 					"textcolor" : [ 0.27596, 0.276002, 0.27594, 1.0 ],
 					"varname" : "autohelp_top_description"
@@ -1421,31 +1518,39 @@
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"background" : 1,
 					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"id" : "obj-77",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0625, 171.257935, 664.5625, 292.25 ],
-					"rounded" : 0
+					"proportion" : 0.39,
+					"rounded" : 0,
+					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"background" : 1,
 					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"id" : "obj-26",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 15.9375, 85.25, 666.6875, 74.25 ],
-					"rounded" : 0
+					"proportion" : 0.39,
+					"rounded" : 0,
+					"style" : ""
 				}
 
 			}
@@ -1646,33 +1751,34 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "hoa.overviewer.js",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/javascript",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "GPLv3_Logo.svg",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "svg ",
 				"implicit" : 1
 			}
- ]
+ ],
+		"embedsnapshot" : 0
 	}
 
 }

@@ -37,7 +37,7 @@ extern "C"
 #define HOA_DISPLAY_NPOINTS     360
 
 static t_symbol* _sym_is_hoa	   = gensym("is_hoa");
-static t_symbol* _sym_hoa_version  = gensym("(v2.0.3)");
+static t_symbol* _sym_hoa_version  = gensym("(v2.0.4)");
 static t_symbol* _sym_credit_line1 = gensym("by Julien Colafrancesco, Pierre Guillot & Eliott Paris");
 #ifdef _WINDOWS
 		static t_symbol* _sym_credit_line2 = gensym("(C) 2012 - 2015, CICM | University of Paris 8");
