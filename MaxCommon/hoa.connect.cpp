@@ -39,8 +39,8 @@ typedef struct  _connect
 	
 	t_object**	f_objects;
 	
-    Harmonic<Hoa2d, t_sample>::Processor*   f_ambi2D;
-    Harmonic<Hoa3d, t_sample>::Processor*   f_ambi3D;
+    Processor<Harmonic<Hoa2d, t_sample>>* f_ambi2D;
+    Processor<Harmonic<Hoa3d, t_sample>>* f_ambi3D;
 	
 	t_jrgba		f_color_zero;
 	t_jrgba		f_color_positiv;
@@ -85,39 +85,6 @@ t_max_err connect_setattr_zerocolor(t_connect *x, void *attr, long argc, t_atom 
 		x->f_color_zero.green = atom_getfloat(argv + 1);
 		x->f_color_zero.blue = atom_getfloat(argv + 2);
 		x->f_color_zero.alpha = atom_getfloat(argv + 3);
-	}
-	return MAX_ERR_NONE;
-}
-t_max_err connect_setattr_poscolor(t_connect *x, void *attr, long argc, t_atom *argv)
-{
-	if (argc >= 4 && argv)
-	{
-		x->f_color_positiv.red = atom_getfloat(argv);
-		x->f_color_positiv.green = atom_getfloat(argv + 1);
-		x->f_color_positiv.blue = atom_getfloat(argv + 2);
-		x->f_color_positiv.alpha = atom_getfloat(argv + 3);
-	}
-	return MAX_ERR_NONE;
-}
-t_max_err connect_setattr_negcolor(t_connect *x, void *attr, long argc, t_atom *argv)
-{
-	if (argc >= 4 && argv)
-	{
-		x->f_color_negativ.red = atom_getfloat(argv);
-		x->f_color_negativ.green = atom_getfloat(argv + 1);
-		x->f_color_negativ.blue = atom_getfloat(argv + 2);
-		x->f_color_negativ.alpha = atom_getfloat(argv + 3);
-	}
-	return MAX_ERR_NONE;
-}
-t_max_err connect_setattr_planecolor(t_connect *x, void *attr, long argc, t_atom *argv)
-{
-	if (argc >= 4 && argv)
-	{
-		x->f_color_plane.red = atom_getfloat(argv);
-		x->f_color_plane.green = atom_getfloat(argv + 1);
-		x->f_color_plane.blue = atom_getfloat(argv + 2);
-		x->f_color_plane.alpha = atom_getfloat(argv + 3);
 	}
 	return MAX_ERR_NONE;
 }
@@ -257,14 +224,13 @@ void make_patchline(t_connect *x)
 void color_patchline(t_connect *x)
 {
 	t_object *line, *startobj;
-	t_object *jb, *o;
 	t_hoa_err err;
 	t_jrgba* linecolor = NULL;
 	int inletnum, sign;
 	short startobj_type;
 	t_hoa_boxinfos* startobj_infos = (t_hoa_boxinfos*) malloc( sizeof(t_hoa_boxinfos));
 	line = jpatcher_get_firstline(x->f_patcher);
-	
+    
 	while (line)
 	{
 		startobj = jbox_get_object(jpatchline_get_box1(line));
@@ -295,37 +261,14 @@ void color_patchline(t_connect *x)
 					else
 						linecolor = &x->f_color_zero;
 					
-					jpatchline_set_color(line, linecolor);
+                    object_attr_setcolor(line, hoa_sym_patchlinecolor, linecolor);
 				}
+                
 				// planewave color (ex: hoa.projector~ => hoa.recomposer~)
 				else if (startobj_infos->autoconnect_outputs_type == HOA_CONNECT_TYPE_PLANEWAVES)
 				{
-					jpatchline_set_color(line, &x->f_color_plane);
+                    object_attr_setcolor(line, hoa_sym_patchlinecolor, &x->f_color_plane);
 				}
-			}
-			
-			// hoa.plug~ retro compatibility
-			else if (object_classname(startobj) == hoa_sym_jpatcher)
-			{
-				jb = jpatcher_get_firstobject(startobj);
-				while(jb)
-				{
-					o = jbox_get_object(jb);
-					if(object_classname(o) == gensym("hoa.plug_script"))
-					{
-						inletnum = jpatchline_get_inletnum(line);
-						
-						if (inletnum == 0)
-							jpatchline_set_color(line, &x->f_color_zero);
-						else if (inletnum % 2 == 1)
-							jpatchline_set_color(line, &x->f_color_negativ);
-						else
-							jpatchline_set_color(line, &x->f_color_positiv);
-						break;
-					}
-					jb = jbox_get_nextobject(jb);
-				}
-				
 			}
 		}
 		
@@ -341,10 +284,47 @@ void connect_bang(t_connect *x)
     color_patchline(x);
 }
 
+t_max_err connect_setattr_poscolor(t_connect *x, void *attr, long argc, t_atom *argv)
+{
+    if (argc >= 4 && argv)
+    {
+        x->f_color_positiv.red = atom_getfloat(argv);
+        x->f_color_positiv.green = atom_getfloat(argv + 1);
+        x->f_color_positiv.blue = atom_getfloat(argv + 2);
+        x->f_color_positiv.alpha = atom_getfloat(argv + 3);
+        connect_bang(x);
+    }
+    return MAX_ERR_NONE;
+}
+t_max_err connect_setattr_negcolor(t_connect *x, void *attr, long argc, t_atom *argv)
+{
+    if (argc >= 4 && argv)
+    {
+        x->f_color_negativ.red = atom_getfloat(argv);
+        x->f_color_negativ.green = atom_getfloat(argv + 1);
+        x->f_color_negativ.blue = atom_getfloat(argv + 2);
+        x->f_color_negativ.alpha = atom_getfloat(argv + 3);
+        connect_bang(x);
+    }
+    return MAX_ERR_NONE;
+}
+t_max_err connect_setattr_planecolor(t_connect *x, void *attr, long argc, t_atom *argv)
+{
+    if (argc >= 4 && argv)
+    {
+        x->f_color_plane.red = atom_getfloat(argv);
+        x->f_color_plane.green = atom_getfloat(argv + 1);
+        x->f_color_plane.blue = atom_getfloat(argv + 2);
+        x->f_color_plane.alpha = atom_getfloat(argv + 3);
+        connect_bang(x);
+    }
+    return MAX_ERR_NONE;
+}
+
 t_max_err connect_notify(t_connect *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
 {
 	int i, j, k, tabcheck;
-    if(msg == gensym("free") && sender == x->f_patcherview)
+    if(msg == hoa_sym_free && sender == x->f_patcherview)
 	{
         x->f_patcherview = NULL;
     }
@@ -444,8 +424,8 @@ void *connect_new(t_symbol *s, long argc, t_atom *argv)
     if (x)
     {
         // load Ambisonic instances to query harmonics band or argument in 2D or 3D
-        x->f_ambi2D = new Harmonic<Hoa2d, t_sample>::Processor(HOA_MAX_PLANEWAVES*0.5 -1);
-        x->f_ambi3D = new Harmonic<Hoa3d, t_sample>::Processor(sqrt((long double)HOA_MAX_PLANEWAVES)-1);
+        x->f_ambi2D = new Processor<Harmonic<Hoa2d, t_sample>>(HOA_MAX_PLANEWAVES*0.5 -1);
+        x->f_ambi3D = new Processor<Harmonic<Hoa3d, t_sample>>(sqrt((long double)HOA_MAX_PLANEWAVES)-1);
         
         x->f_objects = new t_object*[CONNECT_MAX_TAB];
         

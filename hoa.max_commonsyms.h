@@ -48,6 +48,7 @@ static t_symbol* hoa_sym_start						= gensym("start");
 static t_symbol* hoa_sym_stop 						= gensym("stop");
 static t_symbol* hoa_sym_front 						= gensym("front");
 static t_symbol* hoa_sym_iterate 					= gensym("iterate");
+static t_symbol* hoa_sym_patchlinecolor             = gensym("patchlinecolor");
 
 // common messages
 static t_symbol* hoa_sym_done						= gensym("done");
