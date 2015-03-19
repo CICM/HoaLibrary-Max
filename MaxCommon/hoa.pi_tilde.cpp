@@ -84,7 +84,7 @@ void hoa_pi_sig_perform64_phase(t_hoa_pi_sig *x, t_object *dsp64, double **ins, 
 {
     for(int i = 0; i < sampleframes; i++)
     {
-        x->f_phase = Math<double>::wrap(ins[1][i], 0.0f, 1.0f);
+        x->f_phase = fmod(ins[1][i], 1.);
         outs[0][i] = HOA_PI * x->f_value * x->f_phase;
     }
 }
@@ -134,7 +134,7 @@ void hoa_pi_sig_int(t_hoa_pi_sig *x, long n)
 void hoa_pi_sig_float(t_hoa_pi_sig *x, double n) 
 {
     if (proxy_getinlet((t_object*)x))
-        x->f_phase = Math<double>::wrap(n, 0.0f, 1.0f);
+        x->f_phase = fmod(n, 1.);
     else
     {
         x->f_value = n;

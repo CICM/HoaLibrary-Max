@@ -160,7 +160,7 @@ t_max_err offset_get(t_hoa_2d_vector *x, t_object *attr, long *argc, t_atom **ar
     
     if(argv[0])
     {
-        atom_setfloat(argv[0], Math<double>::wrap(x->f_vector->getPlanewavesRotation() / HOA_2PI * 360.f, -180., 180.));
+        atom_setfloat(argv[0], wrap(x->f_vector->getPlanewavesRotation() / HOA_2PI * 360.f, -180., 180.));
     }
     else
     {

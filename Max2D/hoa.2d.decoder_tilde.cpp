@@ -97,7 +97,7 @@ void send_configuration(t_hoa_2d_decoder *x)
     
     t_object *patcher;
     t_object *decoder;
-    t_object *object;
+    t_object *box;
     t_object *line;
     t_object *obj;
     t_max_err err;
@@ -118,7 +118,7 @@ void send_configuration(t_hoa_2d_decoder *x)
     if(argv)
     {
         atom_setlong(&nchannels, x->f_decoder->getNumberOfPlanewaves());
-        atom_setfloat(&offset, Math<double>::wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180));
+        atom_setfloat(&offset, wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180));
         
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
             atom_setfloat(argv+i, x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.);
@@ -127,8 +127,8 @@ void send_configuration(t_hoa_2d_decoder *x)
         {
             if (jpatchline_get_box1(line) == decoder)
             {
-                object = jpatchline_get_box2(line);
-                obj = jbox_get_object(object);
+                box = jpatchline_get_box2(line);
+                obj = jbox_get_object(box);
                 t_symbol* classname = object_classname(obj);
                 
                 if(classname == hoa_sym_hoa_2d_meter || classname == hoa_sym_hoa_2d_vector || classname == hoa_sym_hoa_gain || classname == hoa_sym_hoa_dac || hoa_sym_dac)
@@ -138,16 +138,16 @@ void send_configuration(t_hoa_2d_decoder *x)
                         object_method_typed(obj, hoa_sym_channels, 1, &nchannels, NULL);
                         object_method_typed(obj, hoa_sym_angles, x->f_decoder->getNumberOfPlanewaves(), argv, NULL);
                         object_method_typed(obj, hoa_sym_offset, 1, &offset, NULL);
-                    }
-                    
-                    // connection
-                    for(int i = 0; jbox_getinlet((t_jbox *)object, i) != NULL && i < x->f_decoder->getNumberOfPlanewaves(); i++)
-                    {
-                        atom_setobj(msg, decoder);
-                        atom_setlong(msg + 1, i);
-                        atom_setobj(msg + 2, object);
-                        atom_setlong(msg + 3, i);
-                        object_method_typed(patcher , hoa_sym_connect, 4, msg, &rv);
+                        
+                        // connection
+                        for(int i = 0; jbox_getinlet((t_jbox *)box, i) != NULL && i < x->f_decoder->getNumberOfPlanewaves(); i++)
+                        {
+                            atom_setobj(msg, decoder);
+                            atom_setlong(msg + 1, i);
+                            atom_setobj(msg + 2, box);
+                            atom_setlong(msg + 3, i);
+                            object_method_typed(patcher , hoa_sym_connect, 4, msg, &rv);
+                        }
                     }
                 }
             }
@@ -234,7 +234,7 @@ t_max_err offset_get(t_hoa_2d_decoder *x, t_object *attr, long *argc, t_atom **a
     
     if(argv[0])
     {
-        atom_setfloat(argv[0], Math<double>::wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180));
+        atom_setfloat(argv[0], wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180));
     }
     else
     {
@@ -248,7 +248,7 @@ t_max_err offset_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *arg
 {
     if(argc && argv && atom_isNumber(argv))
     {
-        double offset =  Math<double>::wrap_twopi( Math<double>::wrap(atom_getfloat(argv), -180, 180) / 360. * HOA_2PI);
+        double offset =  Math<double>::wrap_twopi(wrap(atom_getfloat(argv), -180, 180) / 360. * HOA_2PI);
         if(offset != x->f_decoder->getPlanewavesRotation())
         {
             object_method(gensym("dsp")->s_thing, hoa_sym_stop);

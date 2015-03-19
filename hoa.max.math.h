@@ -66,6 +66,21 @@ namespace hoa
     {
         return denom == 0. ? 0. : num/denom;
     }
+    
+    inline double wrap(const double value, const double low, const double high)
+    {
+        const double increment = high - low;
+        double new_value = value;
+        while(new_value < low)
+        {
+            new_value += increment;
+        }
+        while(new_value > high)
+        {
+            new_value -= increment;
+        }
+        return new_value;
+    }
 
 	inline double scale(const double in, const double inlow, const double inhigh, const double outlow, const double outhigh, const double power)
     {
