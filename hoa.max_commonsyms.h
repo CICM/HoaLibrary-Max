@@ -164,6 +164,18 @@ static t_symbol* hoa_sym_leds_layer					= gensym("leds_layer");
 static t_symbol* hoa_sym_separator_layer			= gensym("separator_layer");
 static t_symbol* hoa_sym_skeleton_layer				= gensym("skeleton_layer");
 
+// meter
+static t_symbol* hoa_sym_none                       = gensym("none");
+static t_symbol* hoa_sym_energy                     = gensym("energy");
+static t_symbol* hoa_sym_velocity                   = gensym("velocity");
+static t_symbol* hoa_sym_both                       = gensym("both");
+static t_symbol* hoa_sym_clockwise                  = gensym("clockwise");
+static t_symbol* hoa_sym_anticlock                  = gensym("anti-clockwise");
+static t_symbol* hoa_sym_top                        = gensym("top");
+static t_symbol* hoa_sym_bottom                     = gensym("bottom");
+static t_symbol* hoa_sym_toponbottom                = gensym("top/bottom");
+static t_symbol* hoa_sym_topnextbottom              = gensym("top-bottom");
+
 
 static t_symbol* hoa_sym_relpolar 					= gensym("relpolar");
 static t_symbol* hoa_sym_relradius 					= gensym("relradius");

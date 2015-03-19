@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x86",
+			"revision" : 2,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 251.0, 131.0, 626.0, 696.0 ],
+		"rect" : [ 100.0, 100.0, 558.0, 687.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -55,12 +55,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 2,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 251.0, 157.0, 626.0, 670.0 ],
+						"rect" : [ 100.0, 126.0, 558.0, 661.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -91,6 +91,93 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-10",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 518.0, 249.0, 33.0 ],
+									"presentation_rect" : [ 286.0, 512.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "NB : This is theoretical, the best choice is to trust your ears.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[2]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-11",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 518.0, 249.0, 33.0 ],
+									"presentation_rect" : [ 286.0, 512.0, 0.0, 0.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-4",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 446.0, 249.0, 60.0 ],
+									"presentation_rect" : [ 277.0, 398.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "inPhase optimization could be used when an\naudience is confined to the center of the restitution area or when an audience covers all of the restitution area.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[4]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-3",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 388.0, 249.0, 47.0 ],
+									"presentation_rect" : [ 277.25, 353.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "maxRe optimization could be used when a listener is ideally placed at the center of the loudspeaker arrangement.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[3]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 319.5, 127.0, 60.0, 22.0 ],
+									"style" : "",
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 0.853045, 0.853045, 0.853045, 1.0 ],
 									"color" : [ 0.92549, 0.364706, 0.341176, 1.0 ],
 									"id" : "obj-8",
@@ -115,8 +202,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 277.0, 274.0, 246.92215, 54.0 ],
-									"presentation_rect" : [ 277.0, 274.0, 246.92215, 54.0 ]
+									"patching_rect" : [ 277.0, 274.0, 246.922134, 54.0 ],
+									"presentation_rect" : [ 277.0, 274.0, 246.922134, 54.0 ]
 								}
 
 							}
@@ -138,8 +225,6 @@
 							}
 , 							{
 								"box" : 								{
-									"fontface" : 0,
-									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-34",
 									"items" : [ "basic", ",", "maxRe", ",", "inPhase" ],
@@ -175,23 +260,6 @@
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-45",
-									"linecount" : 3,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 277.25, 477.0, 213.75, 47.0 ],
-									"style" : "",
-									"text" : "Take a look at the optimization hoa tutorial for a better understanding of the process.",
-									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
-									"varname" : "autohelp_top_description[2]"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"angle" : 0.0,
 									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
 									"border" : 1,
@@ -201,7 +269,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 277.25, 477.0, 213.75, 47.0 ],
+									"patching_rect" : [ 287.0, 388.0, 249.0, 47.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -253,7 +321,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 7.0, 78.0, 471.0, 33.0 ],
+									"patching_rect" : [ 7.0, 78.0, 481.0, 33.0 ],
 									"style" : "",
 									"text" : "hoa.2d.optim~ weights the circular harmonics signals depending on the ambisonic optimization. It can be \"basic\" for no optimization, \"maxRe\" or \"inPhase\".",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -272,7 +340,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 7.0, 78.0, 471.0, 33.0 ],
+									"patching_rect" : [ 7.0, 78.0, 481.0, 33.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -312,7 +380,7 @@
 , 							{
 								"box" : 								{
 									"angles" : [ 0.0, 22.5, 45.0, 67.5, 90.0, 112.5, 135.0, 157.5, 180.0, 202.5, 225.0, 247.5, 270.0, 292.5, 315.0, 337.5 ],
-									"channels" : 16,
+									"channels" : 16.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-19",
 									"maxclass" : "hoa.2d.meter~",
@@ -363,13 +431,14 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 247.0, 141.0, 50.0, 21.0 ],
+									"patching_rect" : [ 247.0, 134.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"hidden" : 1,
@@ -378,9 +447,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 247.0, 122.0, 79.0, 21.0 ],
+									"patching_rect" : [ 247.0, 115.0, 73.0, 21.0 ],
 									"style" : "",
-									"text" : "loadmess 0.5"
+									"text" : "loadmess 0."
 								}
 
 							}
@@ -413,8 +482,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 2,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -532,7 +601,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 357.0, 358.0, 51.0, 21.0 ],
+									"patching_rect" : [ 462.0, 128.0, 51.0, 21.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -555,7 +624,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 357.0, 388.0, 74.0, 21.0 ],
+									"patching_rect" : [ 462.0, 158.0, 74.0, 21.0 ],
 									"saved_object_attributes" : 									{
 										"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
 										"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
@@ -570,6 +639,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-29",
@@ -577,9 +647,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 247.0, 167.0, 72.0, 21.0 ],
+									"patching_rect" : [ 247.0, 167.0, 66.0, 21.0 ],
 									"style" : "",
-									"text" : "phasor~ 0.5"
+									"text" : "phasor~ 0."
 								}
 
 							}
@@ -619,8 +689,35 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-5",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 446.0, 249.0, 60.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"disabled" : 0,
+									"hidden" : 1,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 15 ],
 									"disabled" : 0,
@@ -1259,7 +1356,7 @@
 									"destination" : [ "obj-31", 0 ],
 									"disabled" : 0,
 									"hidden" : 1,
-									"midpoints" : [ 366.5, 379.0, 366.5, 379.0 ],
+									"midpoints" : [ 471.5, 149.0, 471.5, 149.0 ],
 									"source" : [ "obj-46", 0 ]
 								}
 
@@ -1354,12 +1451,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 2,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 626.0, 670.0 ],
+						"rect" : [ 0.0, 26.0, 558.0, 661.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1446,64 +1543,58 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "demosound.maxpat",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/help/msp",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/help/msp",
+				"bootpath" : "C74:/help/msp",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sine.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "saw.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "square.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "random.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "helpargs.js",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/help/resources",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/help/resources",
+				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

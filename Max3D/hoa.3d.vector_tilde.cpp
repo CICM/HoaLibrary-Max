@@ -126,7 +126,8 @@ t_max_err angles_set(t_hoa_3d_vector *x, t_object *attr, long argc, t_atom *argv
 {
     if(argc && argv)
     {
-		short dspstate = dsp_setloadupdate(false);
+		object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        
         for(int i = 1, j = 0; i < x->f_vector->getNumberOfChannels() * 2 && i < argc; i+= 2, j++)
         {
             if( (atom_gettype(argv+i-1) == A_FLOAT || atom_gettype(argv+i-1) == A_LONG) &&
@@ -138,7 +139,6 @@ t_max_err angles_set(t_hoa_3d_vector *x, t_object *attr, long argc, t_atom *argv
 			x->f_angles_of_channels[i-1] = x->f_vector->getChannelAzimuth(j) / HOA_2PI * 360;
 			x->f_angles_of_channels[i] = x->f_vector->getChannelElevation(j) / HOA_2PI * 360;
         }
-		dsp_setloadupdate(dspstate);
     }
     return MAX_ERR_NONE;
 }

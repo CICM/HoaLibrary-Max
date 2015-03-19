@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 333.0, 198.0, 540.0, 648.0 ],
+		"rect" : [ 346.0, 368.0, 540.0, 648.0 ],
 		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 131.0, 140.0, 68.0, 22.0 ],
+					"patching_rect" : [ 131.0, 140.0, 68.0, 24.0 ],
 					"style" : "",
 					"text" : "loadbang"
 				}
@@ -61,7 +61,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 72.0, 271.0, 63.0, 22.0 ],
+					"patching_rect" : [ 72.0, 271.0, 63.0, 24.0 ],
 					"style" : "",
 					"text" : "deferlow"
 				}
@@ -76,7 +76,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 311.0, 373.0, 204.0, 20.0 ],
+					"patching_rect" : [ 311.0, 373.0, 204.0, 24.0 ],
 					"style" : "",
 					"text" : "presentation_rect 1. 1. 328. 32."
 				}
@@ -91,7 +91,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 72.0, 373.0, 204.0, 20.0 ],
+					"patching_rect" : [ 72.0, 373.0, 204.0, 24.0 ],
 					"style" : "",
 					"text" : "presentation_rect 1. 1. 543. 19."
 				}
@@ -106,7 +106,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 72.0, 308.0, 52.0, 22.0 ],
+					"patching_rect" : [ 72.0, 308.0, 52.0, 24.0 ],
 					"style" : "",
 					"text" : "sel 0 1"
 				}
@@ -125,7 +125,7 @@
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 1.0, 1.0, 328.0, 32.0 ],
 					"style" : "",
-					"text" : "HoaLibrary | Julien Colafrancesco, Pierre Guillot & Eliott Paris © 2012 - 2014 CICM | University Paris 8",
+					"text" : "HoaLibrary | Julien Colafrancesco, Pierre Guillot & Eliott Paris © 2012 - 2015 CICM | University Paris 8",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -172,7 +172,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 131.0, 180.0, 121.0, 20.0 ],
+					"patching_rect" : [ 131.0, 180.0, 121.0, 22.0 ],
 					"style" : "",
 					"text" : "patcherargs @size 1"
 				}
@@ -187,7 +187,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 72.0, 235.0, 63.0, 20.0 ],
+					"patching_rect" : [ 72.0, 235.0, 63.0, 22.0 ],
 					"style" : "",
 					"text" : "route size"
 				}

@@ -114,14 +114,8 @@ void hoa_optim_basic(t_hoa_optim *x)
 {
     if(hoa_sym_basic != x->f_mode)
     {
-        int state = sys_getdspstate();
-        if (state)
-            canvas_stop_dsp();
-        
+        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
         x->f_mode = hoa_sym_basic;
-        
-        if (state)
-            canvas_start_dsp();
     }
 }
 
@@ -129,14 +123,8 @@ void hoa_optim_maxre(t_hoa_optim *x)
 {
     if(hoa_sym_maxRe != x->f_mode)
     {
-        int state = sys_getdspstate();
-        if (state)
-            canvas_stop_dsp();
-        
+        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
         x->f_mode = hoa_sym_maxRe;
-        
-        if (state)
-            canvas_start_dsp();
     }
 }
 
@@ -144,14 +132,8 @@ void hoa_optim_inphase(t_hoa_optim *x)
 {
     if(hoa_sym_inPhase != x->f_mode)
     {
-        int state = sys_getdspstate();
-        if (state)
-            canvas_stop_dsp();
-        
+        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
         x->f_mode = hoa_sym_inPhase;
-        
-        if (state)
-            canvas_start_dsp();
     }
 }
 

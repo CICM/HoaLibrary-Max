@@ -116,7 +116,7 @@ void hoa_3d_decoder_3D_perform64(t_hoa_3d_decoder *x, t_object *dsp64, double **
 
 void hoa_3d_decoder_dsp64(t_hoa_3d_decoder *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
-    x->f_decoder->computeMatrix(maxvectorsize);
+    x->f_decoder->computeRendering(maxvectorsize);
     object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_3d_decoder_3D_perform64, 0, NULL);
 }
 
@@ -211,9 +211,7 @@ t_max_err channel_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *ar
 {
 	if(argc && argv && atom_isNumber(argv))
 	{
-        int state = sys_getdspstate();
-        if (state)
-            canvas_stop_dsp();
+        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
         
         long channels = Math<long>::clip(atom_getlong(argv), 4, HOA_MAX_PLANEWAVES);
         ulong order = x->f_decoder->getDecompositionOrder();
@@ -224,9 +222,6 @@ t_max_err channel_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *ar
         
         object_attr_touch((t_object *)x, hoa_sym_angles);
         hoa_3d_decoder_resize_outlets(x);
-        
-        if (state)
-            canvas_start_dsp();
     }
     return MAX_ERR_NONE;
 }
@@ -235,7 +230,8 @@ t_max_err angles_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
 {
     if(argc && argv)
     {
-		short dspstate = dsp_setloadupdate(false);
+		object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        
         for(int i = 1, j = 0; i < x->f_decoder->getNumberOfPlanewaves() * 2 && i < argc; i+= 2, j++)
         {
             if(atom_isNumber(argv+i-1) && atom_isNumber(argv+i))
@@ -247,10 +243,6 @@ t_max_err angles_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
 			x->f_angles_of_channels[i-1] = x->f_decoder->getPlanewaveAzimuth(j) / HOA_2PI * 360;
 			x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveElevation(j) / HOA_2PI * 360;
         }
-        
-        x->f_decoder->computeMatrix();
-        
-		dsp_setloadupdate(dspstate);
     }
     return MAX_ERR_NONE;
 }
@@ -259,7 +251,8 @@ t_max_err offset_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
 {
     if(argc && argv)
     {
-        short dspstate = dsp_setloadupdate(false);
+        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        
         double ax, ay, az;
         if(atom_isNumber(argv))
             ax = atom_getfloat(argv) / 360. * HOA_2PI;
@@ -275,8 +268,6 @@ t_max_err offset_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
             az = x->f_decoder->getPlanewavesRotationZ();
         
         x->f_decoder->setPlanewavesRotation(ax, ay, az);
-        x->f_decoder->computeMatrix();
-        dsp_setloadupdate(dspstate);
     }
     
     x->f_offsets[0] = x->f_decoder->getPlanewavesRotationX() / HOA_2PI * 360.;

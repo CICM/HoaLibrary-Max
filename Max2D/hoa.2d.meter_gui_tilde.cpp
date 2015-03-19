@@ -133,7 +133,7 @@ t_max_err channels_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
 			
             x->f_meter  = new Meter<Hoa2d, t_sample>(numberOfPlanewaves);
             x->f_vector  = new Vector<Hoa2d, t_sample>(numberOfPlanewaves);
-            x->f_meter->computeDisplay();
+            x->f_meter->computeRendering();
             x->f_vector->computeRendering();
             
             object_obex_lookup(x, gensym("#B"), (t_object **)&b);
@@ -192,7 +192,7 @@ t_max_err angles_set(t_meter *x, t_object *attr, long ac, t_atom *av)
             }
         }
         
-        x->f_meter->computeDisplay();
+        x->f_meter->computeRendering();
         x->f_vector->computeRendering();
         
         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_skeleton_layer);
@@ -255,7 +255,7 @@ t_max_err offset_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
         x->f_vector->setPlanewavesRotation(offset);
         x->f_meter->setPlanewavesRotation(offset);
         x->f_vector->computeRendering();
-        x->f_meter->computeDisplay();
+        x->f_meter->computeRendering();
         
         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_skeleton_layer);
         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_separator_layer);
@@ -801,7 +801,7 @@ void *meter_new(t_symbol *s, int argc, t_atom *argv)
     x->f_vector = new Vector<Hoa2d, t_sample>(channels);
     
     x->f_signals  = new t_sample[MAX_UI_CHANNELS * HOA_MAXBLKSIZE];
-    x->f_meter->computeDisplay();
+    x->f_meter->computeRendering();
     x->f_vector->computeRendering();
     
     dsp_setupjbox((t_pxjbox *)x, x->f_meter->getNumberOfPlanewaves());

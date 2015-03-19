@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x86",
+			"revision" : 2,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 106.0, 111.0, 483.0, 56.0 ],
+		"rect" : [ 467.0, 337.0, 483.0, 56.0 ],
 		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -42,9 +42,9 @@
 					"autofit" : 1,
 					"id" : "hoa.2d.scope~",
 					"instance_attributes" : 					{
-						"palette_action" : "hoa.2d.scope~",
 						"palette_caption" : "hoa.2d.scope~",
-						"palette_category" : [ "HoaLib", "Interface", "Recent" ]
+						"palette_category" : [ "HoaLib", "Interface", "Recent" ],
+						"palette_action" : "hoa.2d.scope~"
 					}
 ,
 					"maxclass" : "fpic",
@@ -136,17 +136,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 62.28125, 4.0, 5.0, 48.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "live.line",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 61.28125, 3.0, 5.0, 48.0 ]
+					"patching_rect" : [ 65.28125, 8.0, 5.0, 38.0 ]
 				}
 
 			}
@@ -160,7 +150,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 78.0, 32.0, 402.0, 21.0 ],
 					"style" : "",
-					"text" : "A graphic user interface to spatialize sources in a 2d or 3d context.",
+					"text" : " ",
 					"textcolor" : [ 0.999903, 1.0, 0.99983, 1.0 ],
 					"varname" : "autohelp_top_digest[1]"
 				}
@@ -175,9 +165,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 77.0, 3.0, 403.0, 30.0 ],
+					"patching_rect" : [ 78.0, 4.0, 403.0, 30.0 ],
 					"style" : "",
-					"text" : "hoa.map",
+					"text" : "hoa.library",
 					"textcolor" : [ 0.999903, 1.0, 0.99983, 1.0 ],
 					"varname" : "autohelp_top_title[1]"
 				}
@@ -194,7 +184,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 79.0, 5.0, 401.0, 30.0 ],
 					"style" : "",
-					"text" : "hoa.map",
+					"text" : "hoa.library",
 					"textcolor" : [ 0.0, 0.0, 0.0, 0.5 ],
 					"varname" : "autohelp_top_title[2]"
 				}
@@ -210,7 +200,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 79.0, 33.0, 401.0, 21.0 ],
 					"style" : "",
-					"text" : "A graphic user interface to spatialize sources in a 2d or 3d context.",
+					"text" : " ",
 					"textcolor" : [ 0.0, 0.0, 0.0, 0.5 ],
 					"varname" : "autohelp_top_digest[4]"
 				}
@@ -388,7 +378,16 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "hoa.2d.scope~.svg",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
+				"patcherrelativepath" : "../object-palettes",
+				"type" : "svg ",
+				"implicit" : 1
+			}
+ ],
+		"embedsnapshot" : 0
 	}
 
 }
