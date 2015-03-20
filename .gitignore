@@ -38,4 +38,10 @@ xcshareddata/
 *.mode1V3
 *.pbxuser
 
+#################
+## Max
+#################
 
+*.mxo
+*.mxe
+*.mxe64
