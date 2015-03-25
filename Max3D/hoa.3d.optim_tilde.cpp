@@ -113,7 +113,7 @@ void hoa_3d_optim_basic(t_hoa_3d_optim *x)
 {
     if(hoa_sym_basic != x->f_mode)
     {
-        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         x->f_mode = hoa_sym_basic;
     }
 }
@@ -122,7 +122,7 @@ void hoa_3d_optim_maxre(t_hoa_3d_optim *x)
 {
     if(hoa_sym_maxRe != x->f_mode)
     {
-        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         x->f_mode = hoa_sym_maxRe;
     }
 }
@@ -131,7 +131,7 @@ void hoa_3d_optim_inphase(t_hoa_3d_optim *x)
 {
     if(hoa_sym_inPhase != x->f_mode)
     {
-        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         x->f_mode = hoa_sym_inPhase;
     }
 }

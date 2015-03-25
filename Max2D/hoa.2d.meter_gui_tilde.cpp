@@ -121,9 +121,7 @@ t_max_err channels_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
         int numberOfPlanewaves = atom_getlong(argv);
         if(numberOfPlanewaves != x->f_meter->getNumberOfPlanewaves() && numberOfPlanewaves > 0 && numberOfPlanewaves <= MAX_UI_CHANNELS)
         {
-            int dspState = sys_getdspobjdspstate((t_object*)x);
-            if(dspState)
-                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+            object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
 			
             if (x->f_meter)
 				delete x->f_meter;
@@ -181,7 +179,7 @@ t_max_err angles_set(t_meter *x, t_object *attr, long ac, t_atom *av)
 {
     if(ac && av)
     {
-        object_method(gensym("dsp")->s_thing, gensym("stop"));
+        object_method(hoa_sym_dsp->s_thing, gensym("stop"));
         
         for(long i = 0; i < ac && i < x->f_meter->getNumberOfPlanewaves(); i++)
         {

@@ -1455,8 +1455,8 @@
 		2CE0CD3619720A0300217823 /* Max3D */ = {
 			isa = PBXGroup;
 			children = (
-				2CE0CD3819720A0300217823 /* hoa.3d.decoder_tilde.cpp */,
 				2CE0CD3919720A0300217823 /* hoa.3d.encoder_tilde.cpp */,
+				2CE0CD3819720A0300217823 /* hoa.3d.decoder_tilde.cpp */,
 				2CE0CD3A19720A0300217823 /* hoa.3d.map_tilde.cpp */,
 				2CE0CD3B19720A0300217823 /* hoa.3d.meter_gui_tilde.cpp */,
 				2CE0CD3C19720A0300217823 /* hoa.3d.optim_tilde.cpp */,

@@ -32,7 +32,6 @@
 #include "HoaCommon.max.h"
 
 #define MAX_IO 64
-#define MIN_IO 1
 #define DEF_IO 8
 
 // mouse tracking stuff
@@ -77,7 +76,7 @@ typedef struct _hoa_gain
     
     // options
     double              f_interp;
-    t_atom_long     	f_numberOfChannels;
+    long                f_number_of_channels;
     
 } t_hoa_gain;
 
@@ -86,8 +85,8 @@ t_class	*s_hoa_gain_class;
 t_hoa_err hoa_getinfos(t_hoa_gain* x, t_hoa_boxinfos* boxinfos)
 {
 	boxinfos->object_type = HOA_OBJECT_STANDARD;
-	boxinfos->autoconnect_inputs = x->f_numberOfChannels;
-	boxinfos->autoconnect_outputs = x->f_numberOfChannels;
+	boxinfos->autoconnect_inputs = x->f_number_of_channels;
+	boxinfos->autoconnect_outputs = x->f_number_of_channels;
 	boxinfos->autoconnect_inputs_type = HOA_CONNECT_TYPE_STANDARD;
 	boxinfos->autoconnect_outputs_type = HOA_CONNECT_TYPE_STANDARD;
 	return HOA_ERR_NONE;
@@ -100,7 +99,7 @@ void hoa_gain_assist(t_hoa_gain *x, void *b, long m, long a, char *s)
     
 	if (m == ASSIST_INLET)
     {
-        if (a != x->f_numberOfChannels)
+        if (a != x->f_number_of_channels)
         {
             sprintf(s,"(signal) Audio Signal to be scaled (ch %ld)", a+1);
         }
@@ -129,7 +128,7 @@ void hoa_gain_assist(t_hoa_gain *x, void *b, long m, long a, char *s)
     
 	else
     {
-		if (a != x->f_numberOfChannels)
+		if (a != x->f_number_of_channels)
         {
             sprintf(s,"(signal) Scaled Signal (ch %ld)", a+1);
         }
@@ -164,7 +163,7 @@ void hoa_gain_perform64(t_hoa_gain *x, t_object *dsp64, double **ins, long numin
 	{
 		gain = x->f_amp->process();
 		
-		for (j=0; j < x->f_numberOfChannels; j++)
+		for (j=0; j < x->f_number_of_channels; j++)
 		{
 			outs[j][i] = gain * ins[j][i];
 		}
@@ -317,7 +316,7 @@ void hoa_gain_setInputModeValue(t_hoa_gain *x, double value, bool notify)
     
     if (notify)
     {
-        object_notify(x, gensym("modified"), NULL);
+        object_notify(x, hoa_sym_modified, NULL);
     }
     
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
@@ -336,7 +335,7 @@ void hoa_gain_set_dB(t_hoa_gain *x, double dBValue)
     x->j_val = hoa_gain_constrain_real_value(x, dBValue) - x->j_min;
     x->j_valdB = x->j_val + x->j_min;
     hoa_gain_set_gain(x);
-    object_notify(x, gensym("modified"), NULL);
+    object_notify(x, hoa_sym_modified, NULL);
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
     jbox_invalidate_layer((t_object *)x, NULL, gensym("valuerect_layer"));
     jbox_redraw((t_jbox *)x);
@@ -353,7 +352,7 @@ void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
     int zerodBpos;
     zerodBpos = hoa_gain_dBvaltopos(x, 0, rect, isHoriz);
     
-    t_jgraphics *g = jbox_start_layer((t_object *)x, view, gensym("bg_layer"), rect->width, rect->height);
+    t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_background_layer, rect->width, rect->height);
     
     if (g)
     {
@@ -376,8 +375,8 @@ void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
         }
     }
     
-    jbox_end_layer((t_object*)x, view, gensym("bg_layer"));
-    jbox_paint_layer((t_object *)x, view, gensym("bg_layer"), 0, 0);
+    jbox_end_layer((t_object*)x, view, hoa_sym_background_layer);
+    jbox_paint_layer((t_object *)x, view, hoa_sym_background_layer, 0, 0);
 }
 
 void draw_cursor(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
@@ -470,7 +469,7 @@ void hoa_gain_float_dB(t_hoa_gain *x, double dBValue)
     x->j_val = hoa_gain_constrain_real_value(x, dBValue) - x->j_min;
     x->j_valdB = x->j_val + x->j_min;
     hoa_gain_set_gain(x);
-    object_notify(x, gensym("modified"), NULL);
+    object_notify(x, hoa_sym_modified, NULL);
     jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
     jbox_invalidate_layer((t_object *)x, NULL, gensym("valuerect_layer"));
     jbox_redraw((t_jbox *)x);
@@ -616,7 +615,7 @@ void hoa_gain_setminmax(t_hoa_gain *x, t_symbol *s, long argc, t_atom *argv)
 		
 		if (old_min != x->j_min || old_size != x->j_size)
         {
-            jbox_invalidate_layer((t_object *)x, NULL, gensym("bg_layer"));
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_background_layer);
             jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
             jbox_invalidate_layer((t_object *)x, NULL, gensym("valuerect_layer"));
             jbox_redraw((t_jbox *)x);
@@ -641,139 +640,133 @@ t_max_err hoa_gain_setattr_interp(t_hoa_gain *x, t_object *attr, long ac, t_atom
 }
 
 void hoa_gain_resize_io(t_hoa_gain *x, long newNumberOfChannel)
+//void hoa_gain_resize_io(t_hoa_gain *x, t_symbol *s, long ac, t_atom *av)
 {
-    int dspState = sys_getdspobjdspstate((t_object*)x);
-    int lastNumberOfChannels = x->f_numberOfChannels;
-    newNumberOfChannel = Math<long>::clip(newNumberOfChannel, MIN_IO, MAX_IO);
+    //long newNumberOfChannel = atom_getlong(av);
+    long lastNumberOfChannels = x->f_number_of_channels;
+    newNumberOfChannel = Math<long>::clip(newNumberOfChannel, 1, MAX_IO);
     
     if (lastNumberOfChannels != newNumberOfChannel)
     {
-        if(dspState)
-            object_method(gensym("dsp")->s_thing, gensym("stop"));
-        
         t_object *b = NULL;
-		object_obex_lookup(x, gensym("#B"), (t_object **)&b);
-        object_method(b, gensym("dynlet_begin"));
+        object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
         
-        dsp_resize((t_pxobject*)x, newNumberOfChannel+1);
-        
-        outlet_delete(outlet_nth((t_object*)x, lastNumberOfChannels)); // delete value out outlet
-        
-        if(lastNumberOfChannels > newNumberOfChannel)
+        if (b)
         {
-            for(int i = lastNumberOfChannels; i > newNumberOfChannel; i--)
+            post("dsp was on : %i", sys_getdspobjdspstate((t_object*)x));
+            post("dsp global was on : %i", sys_getdspstate());
+            
+            dspmess(hoa_sym_stop);
+            
+            post("dsp is on : %i", sys_getdspobjdspstate((t_object*)x));
+            post("dsp global is on : %i", sys_getdspstate());
+            
+            object_method(b, hoa_sym_dynlet_begin);
+            
+            post("dsp is on : %i", sys_getdspobjdspstate((t_object*)x));
+            post("dsp global is on : %i", sys_getdspstate());
+            
+            dsp_resize((t_pxobject*)x, newNumberOfChannel+1);
+            
+            outlet_delete(outlet_nth((t_object*)x, lastNumberOfChannels)); // delete value out outlet
+            
+            if(lastNumberOfChannels > newNumberOfChannel)
             {
-                outlet_delete(outlet_nth((t_object*)x, i-1));
+                for(int i = lastNumberOfChannels; i > newNumberOfChannel; i--)
+                {
+                    outlet_delete(outlet_nth((t_object*)x, i-1));
+                }
             }
-        }
-        else if(lastNumberOfChannels < newNumberOfChannel)
-        {
-            for(int i = lastNumberOfChannels; i < newNumberOfChannel; i++)
+            else if(lastNumberOfChannels < newNumberOfChannel)
             {
-                outlet_append((t_object*)x, NULL, gensym("signal"));
+                for(int i = lastNumberOfChannels; i < newNumberOfChannel; i++)
+                {
+                    outlet_append((t_object*)x, NULL, hoa_sym_signal);
+                }
             }
+            
+            x->f_outlet_infos = outlet_append((t_object*)x, NULL, NULL); // restore value out outlet
+            
+            x->f_number_of_channels = newNumberOfChannel;
+            
+            object_method(b, hoa_sym_dynlet_end);
         }
-        
-        x->f_outlet_infos = outlet_append((t_object*)x, NULL, NULL); // restore value out outlet
-        
-        object_method(b, gensym("dynlet_end"));
-        
-        if(dspState)
-            object_method(gensym("dsp")->s_thing, gensym("start"));
-        
-        x->f_numberOfChannels = newNumberOfChannel;
     }
 }
 
-void hoa_gain_tometer(t_hoa_gain *x, t_symbol *s, long argc, t_atom *argv)
+void hoa_gain_tometer(t_hoa_gain *x, t_symbol *s, long ac, t_atom *av)
 {
-    t_object *patcher;
-    t_object *gain;
-    t_object *object;
-    t_object *line;
-    t_max_err err;
-    
-    if(argc && argv && ((s == gensym("angles") || s == gensym("offset") || s == gensym("channels"))))
+    if(ac && av && (s == hoa_sym_angles || s == hoa_sym_offset || s == hoa_sym_channels))
     {
-        err = object_obex_lookup(x, gensym("#P"), (t_object **)&patcher);
+        t_object *patcher;
+        t_object *gain;
+        t_object *line;
+        t_max_err err;
+        t_atom rv;
+        t_atom msg[4];
+        
+        err = object_obex_lookup(x, hoa_sym_pound_P, (t_object **)&patcher);
         if (err != MAX_ERR_NONE)
             return;
         
-        err = object_obex_lookup(x, gensym("#B"), (t_object **)&gain);
+        err = object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&gain);
         if (err != MAX_ERR_NONE)
             return;
+        
+        vector<t_jbox *> boxes;
         
         for (line = jpatcher_get_firstline(patcher); line; line = jpatchline_get_nextline(line))
         {
             if (jpatchline_get_box1(line) == gain)
             {
-                object = jpatchline_get_box2(line);
-                t_symbol *classname = object_classname(jbox_get_object(object));
-                if(classname == gensym("hoa.2d.meter~") || classname == gensym("hoa.2d.gain~") || classname == gensym("hoa.2d.vector~"))
+                t_jbox *box = (t_jbox*)jpatchline_get_box2(line);
+                t_object *obj = jbox_get_object((t_object*)box);
+                t_symbol* classname = object_classname(obj);
+                
+                if (find(boxes.begin(), boxes.end(), box) == boxes.end())
                 {
-                    object_method_typed(jbox_get_object(object), s, argc, argv, NULL);
+                    if(classname == hoa_sym_hoa_2d_meter ||
+                       classname == hoa_sym_hoa_2d_vector ||
+                       classname == hoa_sym_hoa_gain)
+                    {
+                        object_method_typed(obj, s, ac, av, NULL);
+                        boxes.push_back(box);
+                    }
+                    else if(classname == hoa_sym_dac || (object_is_hoa(obj) && classname != hoa_sym_hoa_pi && classname != hoa_sym_hoa_pi_tilde))
+                    {
+                        boxes.push_back(box);
+                    }
                 }
             }
         }
-    }
-}
-
-void HoaGain_reconnect_outlet(t_hoa_gain *x)
-{
-    t_object *patcher;
-    t_object *gain_box;
-    t_object *obj2_box;
-    t_object *obj2;
-    t_object *line;
-    t_max_err err;
-    
-    err = object_obex_lookup(x, hoa_sym_pound_P, (t_object **)&patcher);
-    if (err != MAX_ERR_NONE)
-        return;
-    
-    err = object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&gain_box);
-    if (err != MAX_ERR_NONE)
-        return;
-    
-    for (line = jpatcher_get_firstline(patcher); line; line = jpatchline_get_nextline(line))
-    {
-        if (jpatchline_get_box1(line) == gain_box)
+        
+        for (auto box : boxes)
         {
-            obj2_box = jpatchline_get_box2(line);
-            obj2 = jbox_get_object(obj2_box);
-            t_symbol* classname = object_classname(obj2);
-            
-            if ( classname == hoa_sym_dac || (object_is_hoa(obj2) && classname != hoa_sym_hoa_pi && classname != hoa_sym_hoa_pi_tilde))
+            // re-connect patchlines
+            for(int i = 0; jbox_getinlet(box, i) != NULL && i < x->f_number_of_channels; i++)
             {
-                for(int i = 0; jbox_getinlet((t_jbox *)obj2_box, i) != NULL && i < x->f_numberOfChannels; i++)
-                {
-                    t_atom msg[4];
-                    t_atom rv;
-                    
-                    atom_setobj(msg, gain_box);
-                    atom_setlong(msg + 1, i);
-                    atom_setobj(msg + 2, obj2_box);
-                    atom_setlong(msg + 3, i);
-                    
-                    object_method_typed(patcher , hoa_sym_connect, 4, msg, &rv);
-                }
+                atom_setobj(msg, gain);
+                atom_setlong(msg + 1, i);
+                atom_setobj(msg + 2, box);
+                atom_setlong(msg + 3, i);
+                object_method_typed(patcher , hoa_sym_connect, 4, msg, &rv);
             }
         }
+        
+        boxes.clear();
     }
 }
 
 t_max_err hoa_gain_setattr_channels(t_hoa_gain *x, t_object *attr, long ac, t_atom *av)
 {
-    long d;
-    if (ac && av)
+    if (ac && av && atom_gettype(av) == A_LONG)
     {
-        if (atom_gettype(av) == A_LONG)
-        {
-            d = atom_getlong(av);
-            hoa_gain_resize_io(x, d);
-            HoaGain_reconnect_outlet(x);
-            hoa_gain_tometer(x, gensym("channels"), ac, av);
-        }
+        post("setchannel");
+        //dspmess(hoa_sym_stop);
+        //defer_low(x, (method)hoa_gain_resize_io, NULL, ac, av);
+        //defer_low(x, (method)hoa_gain_tometer, hoa_sym_channels, ac, av);
+        hoa_gain_resize_io(x, atom_getlong(av));
+        hoa_gain_tometer(x, hoa_sym_channels, ac, av);
     }
     return MAX_ERR_NONE;
 }
@@ -838,30 +831,17 @@ t_max_err hoa_gain_getvalueof(t_hoa_gain *x, long *ac, t_atom **av)
 
 t_max_err hoa_gain_notify(t_hoa_gain *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
 {
-	long argc = 0;
-	t_atom *argv = NULL;
-	t_symbol *name;
-	
 	if (msg == hoa_sym_attr_modified)
 	{
-		name = (t_symbol *)object_method((t_object *)data, hoa_sym_getname);
-		if (name == gensym("color")) 
-		{
-			object_attr_getvalueof(x, gensym("color"), &argc, &argv);
-			if (argc && argv) 
-			{
-				object_attr_setvalueof(x, gensym("bgcolor"), argc, argv);
-				sysmem_freeptr(argv);
-			}
-		}
-        else if (name == gensym("knobcolor"))
+		t_symbol *name = (t_symbol *)object_method((t_object *)data, hoa_sym_getname);
+        if (name == gensym("knobcolor"))
         {
-            jbox_invalidate_layer((t_object *)x, NULL, gensym("bg_layer"));
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_background_layer);
             jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
         }
         else if(name == gensym("bgcolor"))
 		{
-            jbox_invalidate_layer((t_object *)x, NULL, gensym("bg_layer"));
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_background_layer);
 		}
         else if (name == gensym("barcolor"))
         {
@@ -927,7 +907,7 @@ void *hoa_gain_new(t_symbol *s, short argc, t_atom *argv)
     x->j_defaultValuedB = 0;
     x->j_valdB = x->j_defaultValuedB;
     x->f_interp = 20;
-    x->f_numberOfChannels = 8;
+    x->f_number_of_channels = 8;
     
     jbox_new((t_jbox *)x, flags, argc, argv);
     x->j_box.z_box.b_firstin = (t_object *)x;
@@ -937,11 +917,11 @@ void *hoa_gain_new(t_symbol *s, short argc, t_atom *argv)
     x->f_amp->setValueDirect(1.f);
     
     // inputs
-    dsp_setupjbox((t_pxjbox *)x, x->f_numberOfChannels + 1);
+    dsp_setupjbox((t_pxjbox *)x, x->f_number_of_channels + 1);
     
     // outputs
     x->f_outlet_infos = outlet_new(x, NULL);
-    for (int i=0; i < x->f_numberOfChannels; i++)
+    for (int i=0; i < x->f_number_of_channels; i++)
         outlet_new(x,"signal");
     
     attr_dictionary_process(x,d); // handle attribute args
@@ -1053,6 +1033,9 @@ int C74_EXPORT main(void)
     
     CLASS_STICKY_CATEGORY(c, 0, "Color");
     
+    CLASS_ATTR_INVISIBLE(c, "color", 0);
+    // @exclude hoa.gain~
+    
     CLASS_ATTR_RGBA_LEGACY		(c, "bgcolor", "brgb", 0, t_hoa_gain, j_brgba);
     CLASS_ATTR_ALIAS			(c,"bgcolor", "brgba");
     CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bgcolor",0,"0.611765 0.611765 0.611765 1.");
@@ -1072,10 +1055,6 @@ int C74_EXPORT main(void)
     
     CLASS_STICKY_CATEGORY_CLEAR(c);
     
-    CLASS_ATTR_INVISIBLE(c, "color", 0);
-    CLASS_ATTR_ATTR_PARSE(c, "color","save", USESYM(long), 0, "0");
-    // @exclude hoa.gain~
-    
     CLASS_ATTR_DEFAULT_SAVE		(c,"relative",0,"0");
     CLASS_ATTR_DEFAULT_SAVE		(c,"defvaldb",0,"0");
     CLASS_ATTR_DEFAULT_SAVE		(c,"inputmode",0,"0");
@@ -1090,7 +1069,7 @@ int C74_EXPORT main(void)
     CLASS_ATTR_ORDER			(c, "mult",			0, "5");
     
     CLASS_ATTR_CATEGORY			(c, "channels", 0, "Custom");
-    CLASS_ATTR_LONG				(c, "channels", 0, t_hoa_gain, f_numberOfChannels);
+    CLASS_ATTR_LONG				(c, "channels", 0, t_hoa_gain, f_number_of_channels);
     CLASS_ATTR_ACCESSORS        (c, "channels", (method)NULL,(method)hoa_gain_setattr_channels);
     CLASS_ATTR_ORDER			(c, "channels", 0, "1");
     CLASS_ATTR_LABEL			(c, "channels", 0, "Number of Channels");

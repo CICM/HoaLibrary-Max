@@ -113,7 +113,7 @@ void *hoa_3d_map_new(t_symbol *s, long argc, t_atom *argv)
 			order = max<ulong>(atom_getlong(argv), 0);
         
 		if(argc > 1 && atom_gettype(argv+1) == A_LONG)
-            numberOfSources = Math<ulong>::clip(atom_getlong(argv+1), 1, HOA_MAX_PLANEWAVES);
+            numberOfSources = Math<long>::clip(atom_getlong(argv+1), 1, HOA_MAX_PLANEWAVES);
         
         x->f_mode = 0;
 		if(argc > 2 && atom_gettype(argv+2) == A_SYM)

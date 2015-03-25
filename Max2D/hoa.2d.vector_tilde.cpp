@@ -136,7 +136,7 @@ t_max_err channels_set(t_hoa_2d_vector *x, t_object *attr, long argc, t_atom *ar
            channels > 0 &&
            channels <= HOA_MAX_PLANEWAVES)
         {
-            object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+            object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
             
             delete x->f_vector;
             x->f_vector = new Vector<Hoa2d, t_sample>(channels);

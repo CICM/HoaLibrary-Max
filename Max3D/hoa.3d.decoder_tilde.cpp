@@ -44,50 +44,6 @@ typedef struct _hoa_3d_decoder
 
 t_class *hoa_3d_decoder_class;
 
-void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
-{
-	// @arg 0 @name ambisonic-order @optional 0 @type int @digest The ambisonic order of decomposition
-	// @description First argument is the ambisonic order of decomposition.
-    
-    t_hoa_3d_decoder *x = (t_hoa_3d_decoder *)object_alloc((t_class*)hoa_3d_decoder_class);
-	if(x)
-	{
-        ulong order = 1;
-        ulong number_of_channels = 4;
-        
-		if(argc && atom_gettype(argv) == A_LONG)
-			order = max<ulong>(atom_getlong(argv), 1);
-        
-        if(argc > 1 && atom_gettype(argv+1) == A_LONG)
-			number_of_channels	= max<ulong>(atom_getlong(argv+1), 2);
-		else
-			number_of_channels = (order+1)*(order+1);
-		
-        x->f_mode = hoa_sym_ambisonic;
-        x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, number_of_channels);
-        
-		x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
-		x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
-        
-		dsp_setup((t_pxobject *)x, x->f_decoder->getNumberOfHarmonics());
-		for (int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
-			outlet_new(x, "signal");
-		
-        x->f_ins = new t_sample[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
-        x->f_outs= new t_sample[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
-		
-		for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves() * 2; i+= 2)
-        {
-			x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveAzimuth(i/2) / HOA_2PI * 360;
-			x->f_angles_of_channels[i+1] = x->f_decoder->getPlanewaveElevation(i/2) / HOA_2PI * 360;
-        }
-		
-		attr_args_process(x, argc, argv);
-	}
-    
-	return (x);
-}
-
 t_hoa_err hoa_getinfos(t_hoa_3d_decoder* x, t_hoa_boxinfos* boxinfos)
 {
 	boxinfos->object_type = HOA_OBJECT_3D;
@@ -136,28 +92,31 @@ void hoa_3d_decoder_assist(t_hoa_3d_decoder *x, void *b, long m, long a, char *s
 
 void hoa_3d_decoder_resize_outlets(t_hoa_3d_decoder *x)
 {
-	t_object *b = NULL;
-	object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-	
-	object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
-	object_method(b, hoa_sym_dynlet_begin);
-	
-	if(outlet_count((t_object *)x) > x->f_decoder->getNumberOfPlanewaves())
-	{
-		for(int i = outlet_count((t_object *)x); i > x->f_decoder->getNumberOfPlanewaves(); i--)
-		{
-			outlet_delete(outlet_nth((t_object*)x, i-1));
-		}
-	}
-	else if(outlet_count((t_object *)x) < x->f_decoder->getNumberOfPlanewaves())
-	{
-		for(int i = outlet_count((t_object *)x); i < x->f_decoder->getNumberOfPlanewaves(); i++)
-		{
-			outlet_append((t_object*)x, NULL, gensym("signal"));
-		}
-	}
-	
-	object_method(b, hoa_sym_dynlet_end);
+    t_object *b = NULL;
+    object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
+    
+    if (b)
+    {
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
+        object_method(b, hoa_sym_dynlet_begin);
+        
+        if(outlet_count((t_object *)x) > x->f_decoder->getNumberOfPlanewaves())
+        {
+            for(int i = outlet_count((t_object *)x); i > x->f_decoder->getNumberOfPlanewaves(); i--)
+            {
+                outlet_delete(outlet_nth((t_object*)x, i-1));
+            }
+        }
+        else if(outlet_count((t_object *)x) < x->f_decoder->getNumberOfPlanewaves())
+        {
+            for(int i = outlet_count((t_object *)x); i < x->f_decoder->getNumberOfPlanewaves(); i++)
+            {
+                outlet_append((t_object*)x, NULL, hoa_sym_signal);
+            }
+        }
+        
+        object_method(b, hoa_sym_dynlet_end);
+    }
 }
 
 t_max_err mode_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
@@ -169,7 +128,7 @@ t_max_err mode_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
         {
             if(mode == hoa_sym_ambisonic)
             {
-                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+                object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
                 
                 ulong order = x->f_decoder->getDecompositionOrder();
                 delete x->f_decoder;
@@ -183,11 +142,12 @@ t_max_err mode_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
                 object_attr_setdouble_array(x, hoa_sym_offset, 3, x->f_offsets);
                 x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
                 object_attr_touch((t_object *)x, hoa_sym_channels);
+                object_attr_touch((t_object *)x, hoa_sym_angles);
                 hoa_3d_decoder_resize_outlets(x);
             }
             else if(mode == hoa_sym_binaural)
             {
-                object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+                object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
                 
                 ulong order = x->f_decoder->getDecompositionOrder();
                 delete x->f_decoder;
@@ -197,9 +157,11 @@ t_max_err mode_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
                 object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
                 object_attr_setdisabled((t_object *)x, hoa_sym_offset, 1);
                 object_attr_setdisabled((t_object *)x, hoa_sym_channels, 1);
+                
                 x->f_mode = mode;
                 x->f_number_of_channels = 2;
                 object_attr_touch((t_object *)x, hoa_sym_channels);
+                object_attr_touch((t_object *)x, hoa_sym_angles);
                 hoa_3d_decoder_resize_outlets(x);
             }
         }
@@ -211,13 +173,16 @@ t_max_err channel_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *ar
 {
 	if(argc && argv && atom_isNumber(argv))
 	{
-        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        if (x->f_mode == hoa_sym_ambisonic)
+        {
+            object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
+            long channels = Math<long>::clip(atom_getlong(argv), 4, HOA_MAX_PLANEWAVES);
+            ulong order = x->f_decoder->getDecompositionOrder();
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, channels);
+            x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
+        }
         
-        long channels = Math<long>::clip(atom_getlong(argv), 4, HOA_MAX_PLANEWAVES);
-        ulong order = x->f_decoder->getDecompositionOrder();
-        delete x->f_decoder;
-        x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, channels);
-        x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
         x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
         
         object_attr_touch((t_object *)x, hoa_sym_angles);
@@ -230,7 +195,7 @@ t_max_err angles_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
 {
     if(argc && argv)
     {
-		object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+		object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         
         for(int i = 1, j = 0; i < x->f_decoder->getNumberOfPlanewaves() * 2 && i < argc; i+= 2, j++)
         {
@@ -239,11 +204,31 @@ t_max_err angles_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
                 x->f_decoder->setPlanewaveAzimuth(j, atom_getfloat(argv+i-1) / 360. * HOA_2PI);
                 x->f_decoder->setPlanewaveElevation(j, atom_getfloat(argv+i) / 360. * HOA_2PI);
 			}
-			
-			x->f_angles_of_channels[i-1] = x->f_decoder->getPlanewaveAzimuth(j) / HOA_2PI * 360;
-			x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveElevation(j) / HOA_2PI * 360;
         }
     }
+    
+    if (x->f_mode == hoa_sym_ambisonics)
+    {
+        for(int i = 1, j = 0; i < x->f_decoder->getNumberOfPlanewaves() * 2 && i < argc; i+= 2, j++)
+        {
+            if(atom_isNumber(argv+i-1) && atom_isNumber(argv+i))
+            {
+                x->f_decoder->setPlanewaveAzimuth(j, atom_getfloat(argv+i-1) / 360. * HOA_2PI);
+                x->f_decoder->setPlanewaveElevation(j, atom_getfloat(argv+i) / 360. * HOA_2PI);
+            }
+            
+            x->f_angles_of_channels[i-1] = x->f_decoder->getPlanewaveAzimuth(j) / HOA_2PI * 360;
+            x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveElevation(j) / HOA_2PI * 360;
+        }
+    }
+    else if (x->f_mode == hoa_sym_binaural)
+    {
+        for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
+        {
+            x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.;
+        }
+    }
+    
     return MAX_ERR_NONE;
 }
 
@@ -251,7 +236,7 @@ t_max_err offset_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
 {
     if(argc && argv)
     {
-        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         
         double ax, ay, az;
         if(atom_isNumber(argv))
@@ -283,6 +268,50 @@ void hoa_3d_decoder_free(t_hoa_3d_decoder *x)
 	delete x->f_decoder;
     delete [] x->f_ins;
     delete [] x->f_outs;
+}
+
+void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
+{
+    // @arg 0 @name ambisonic-order @optional 0 @type int @digest The ambisonic order of decomposition
+    // @description First argument is the ambisonic order of decomposition.
+    
+    t_hoa_3d_decoder *x = (t_hoa_3d_decoder *)object_alloc((t_class*)hoa_3d_decoder_class);
+    if(x)
+    {
+        ulong order = 1;
+        ulong number_of_channels = 4;
+        
+        if(argc && atom_gettype(argv) == A_LONG)
+            order = max<ulong>(atom_getlong(argv), 1);
+        
+        if(argc > 1 && atom_gettype(argv+1) == A_LONG)
+            number_of_channels	= max<ulong>(atom_getlong(argv+1), 2);
+        else
+            number_of_channels = (order+1)*(order+1);
+        
+        x->f_mode = hoa_sym_ambisonic;
+        x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, number_of_channels);
+        
+        x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
+        x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
+        
+        dsp_setup((t_pxobject *)x, x->f_decoder->getNumberOfHarmonics());
+        for (int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
+            outlet_new(x, "signal");
+        
+        x->f_ins = new t_sample[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
+        x->f_outs= new t_sample[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
+        
+        for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves() * 2; i+= 2)
+        {
+            x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveAzimuth(i/2) / HOA_2PI * 360;
+            x->f_angles_of_channels[i+1] = x->f_decoder->getPlanewaveElevation(i/2) / HOA_2PI * 360;
+        }
+        
+        attr_args_process(x, argc, argv);
+    }
+    
+    return (x);
 }
 
 #ifdef HOA_PACKED_LIB

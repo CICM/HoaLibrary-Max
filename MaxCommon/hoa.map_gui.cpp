@@ -194,7 +194,9 @@ void textfield_doselect(t_textfield *x)
 {
     t_object *p = NULL;
     object_obex_lookup(x, hoa_sym_pound_P, &p);
-    if (p) {
+    
+    if (p)
+    {
         t_atom rv;
         long ac = 1;
         t_atom av[1];
@@ -229,10 +231,12 @@ long textfield_keyfilter(t_textfield *x, t_object *patcherview, long *keycode, l
     long rv = 1;
     long k = *keycode;
     
-    if (k == JKEY_TAB || k == JKEY_ENTER || k == JKEY_RETURN || k == JKEY_ESC) {
+    if (k == JKEY_TAB || k == JKEY_ENTER || k == JKEY_RETURN || k == JKEY_ESC)
+    {
         object_method_typed(patcherview, hoa_sym_endeditbox, 0, NULL, &arv);
         rv = 0;
     }
+    
     long size	= 0;
     char *text	= NULL;
     t_object *textfield = jbox_get_textfield((t_object *)x);

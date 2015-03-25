@@ -23,7 +23,7 @@
  
  @category ambisonics, hoa objects, audio, MSP
  
- @seealso hoa.2d.meter~, hoa.2d.scope~, hoa.dac~, hoa.vector~, hoa.2d.optim~, hoa.2d.map~, hoa.2d.encoder~, hoa.3d.decoder~
+ @seealso hoa.2d.meter~, hoa.2d.scope~, hoa.dac~, hoa.2d.vector~, hoa.2d.optim~, hoa.2d.map~, hoa.2d.encoder~, hoa.3d.decoder~
  */
 
 #include "Hoa2D.max.h"
@@ -34,9 +34,11 @@ typedef struct _hoa_2d_decoder
     Decoder<Hoa2d, t_sample>*   f_decoder;
     t_sample*                   f_ins;
     t_sample*                   f_outs;
+    long                        f_number_of_channels;
+    double                      f_angles_of_channels[HOA_MAX_PLANEWAVES];
+    double                      f_offset;
     t_symbol*                   f_mode;
-    t_atom_long                 f_send_config;
-    void*                       f_attr;
+    char                        f_send_config;
     
 } t_hoa_2d_decoder;
 
@@ -66,10 +68,12 @@ void hoa_2d_decoder_perform64(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **i
     {
         cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins);
     }
+    
 	for(int i = 0; i < sampleframes; i++)
     {
         x->f_decoder->process(x->f_ins + numins * i, x->f_outs + numouts * i);
     }
+    
     for(int i = 0; i < numouts; i++)
     {
         cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
@@ -78,7 +82,7 @@ void hoa_2d_decoder_perform64(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **i
 
 void hoa_2d_decoder_dsp64(t_hoa_2d_decoder *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
-    x->f_decoder->computeRendering();
+    x->f_decoder->computeRendering(maxvectorsize);
     object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_2d_decoder_perform64, 0, NULL);
 }
 
@@ -97,9 +101,7 @@ void send_configuration(t_hoa_2d_decoder *x)
     
     t_object *patcher;
     t_object *decoder;
-    t_object *box;
     t_object *line;
-    t_object *obj;
     t_max_err err;
     t_atom msg[4];
     t_atom rv;
@@ -118,187 +120,73 @@ void send_configuration(t_hoa_2d_decoder *x)
     if(argv)
     {
         atom_setlong(&nchannels, x->f_decoder->getNumberOfPlanewaves());
-        atom_setfloat(&offset, wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180));
+        atom_setfloat(&offset, wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360., -180., 180.));
         
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
             atom_setfloat(argv+i, x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.);
+        
+        vector<t_jbox *> boxes;
         
         for (line = jpatcher_get_firstline(patcher); line; line = jpatchline_get_nextline(line))
         {
             if (jpatchline_get_box1(line) == decoder)
             {
-                box = jpatchline_get_box2(line);
-                obj = jbox_get_object(box);
+                t_jbox *box = (t_jbox*)jpatchline_get_box2(line);
+                t_object *obj = jbox_get_object((t_object*)box);
                 t_symbol* classname = object_classname(obj);
                 
-                if(classname == hoa_sym_hoa_2d_meter || classname == hoa_sym_hoa_2d_vector || classname == hoa_sym_hoa_gain || classname == hoa_sym_hoa_dac || hoa_sym_dac)
+                if(classname == hoa_sym_hoa_2d_meter ||
+                   classname == hoa_sym_hoa_2d_vector ||
+                   classname == hoa_sym_hoa_gain ||
+                   classname == hoa_sym_hoa_dac ||
+                   classname == hoa_sym_dac)
                 {
-                    if (classname == hoa_sym_hoa_2d_meter || classname == hoa_sym_hoa_2d_vector || classname == hoa_sym_hoa_gain)
+                    if (find(boxes.begin(), boxes.end(), box) != boxes.end())
+                    {
+                        continue;
+                    }
+                    
+                    if (classname == hoa_sym_hoa_2d_meter ||
+                        classname == hoa_sym_hoa_2d_vector ||
+                        classname == hoa_sym_hoa_gain)
                     {
                         object_method_typed(obj, hoa_sym_channels, 1, &nchannels, NULL);
                         object_method_typed(obj, hoa_sym_angles, x->f_decoder->getNumberOfPlanewaves(), argv, NULL);
                         object_method_typed(obj, hoa_sym_offset, 1, &offset, NULL);
-                        
-                        // connection
-                        for(int i = 0; jbox_getinlet((t_jbox *)box, i) != NULL && i < x->f_decoder->getNumberOfPlanewaves(); i++)
-                        {
-                            atom_setobj(msg, decoder);
-                            atom_setlong(msg + 1, i);
-                            atom_setobj(msg + 2, box);
-                            atom_setlong(msg + 3, i);
-                            object_method_typed(patcher , hoa_sym_connect, 4, msg, &rv);
-                        }
                     }
+                    
+                    boxes.push_back(box);
                 }
             }
         }
         
+        for (auto box : boxes)
+        {
+            // re-connect patchlines
+            for(int i = 0; jbox_getinlet(box, i) != NULL && i < x->f_decoder->getNumberOfPlanewaves(); i++)
+            {
+                atom_setobj(msg, decoder);
+                atom_setlong(msg + 1, i);
+                atom_setobj(msg + 2, box);
+                atom_setlong(msg + 3, i);
+                object_method_typed(patcher , hoa_sym_connect, 4, msg, &rv);
+            }
+        }
+        
+        boxes.clear();
         free(argv);
     }
 }
 
-t_max_err mode_get(t_hoa_2d_decoder *x, t_object *attr, long *argc, t_atom **argv)
+void hoa_decoder_resize_outlets(t_hoa_2d_decoder *x)
 {
-    argc[0] = 1;
-    argv[0] = (t_atom *)sysmem_newptr(argc[0] * sizeof(t_atom));
-    if(argv[0])
-    {
-        atom_setsym(argv[0], x->f_mode);
-    }
-    else
-    {
-        argc[0] = 0;
-        argv[0] = NULL;
-    }
+    t_object *b = NULL;
+    object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
     
-    return MAX_ERR_NONE;
-}
-
-t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
-{
-    if(argc && argv && atom_gettype(argv) == A_SYM)
-	{
-        t_symbol* lastMode = x->f_mode;
-        long order = x->f_decoder->getDecompositionOrder();
-        
-        if(atom_getsym(argv) == hoa_sym_ambisonic && lastMode != hoa_sym_ambisonic)
-        {
-            object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            
-            delete x->f_decoder;
-            x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, order*2+2);
-            
-            x->f_mode = hoa_sym_ambisonic;
-            object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
-            object_attr_setdisabled((t_object *)x, hoa_sym_channels, 0);
-            object_attr_setdisabled((t_object *)x, hoa_sym_offset, 0);
-            object_attr_setlong(x, hoa_sym_channels, x->f_decoder->getNumberOfPlanewaves());
-            send_configuration(x);
-        }
-        else if(atom_getsym(argv) == hoa_sym_irregular && lastMode != hoa_sym_irregular)
-        {
-            object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            
-            delete x->f_decoder;
-            x->f_decoder = new Decoder<Hoa2d, t_sample>::Irregular(order, order*2+2);
-            
-            x->f_mode = hoa_sym_irregular;
-            object_attr_setdisabled((t_object *)x, hoa_sym_angles, 0);
-            object_attr_setdisabled((t_object *)x, hoa_sym_channels, 0);
-            object_attr_setdisabled((t_object *)x, hoa_sym_offset, 0);
-            object_attr_setlong(x, hoa_sym_channels, x->f_decoder->getNumberOfPlanewaves());
-            send_configuration(x);
-        }
-        else if(atom_getsym(argv) == hoa_sym_binaural && lastMode != hoa_sym_binaural)
-        {
-            object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            
-            delete x->f_decoder;
-            x->f_decoder = new Decoder<Hoa2d, t_sample>::Binaural(order);
-            
-            x->f_mode = hoa_sym_binaural;
-            object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
-            object_attr_setdisabled((t_object *)x, hoa_sym_channels, 1);
-            object_attr_setdisabled((t_object *)x, hoa_sym_offset, 1);
-            object_attr_setlong(x, hoa_sym_channels, 2);
-            send_configuration(x);
-        }
-    }
-    return MAX_ERR_NONE;
-}
-
-t_max_err offset_get(t_hoa_2d_decoder *x, t_object *attr, long *argc, t_atom **argv)
-{
-    argc[0] = 1;
-    argv[0] = (t_atom *)sysmem_newptr(argc[0] * sizeof(t_atom));
-    
-    if(argv[0])
+    if (b)
     {
-        atom_setfloat(argv[0], wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180));
-    }
-    else
-    {
-        argc[0] = 0;
-        argv[0] = NULL;
-    }
-    return MAX_ERR_NONE;
-}
-
-t_max_err offset_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
-{
-    if(argc && argv && atom_isNumber(argv))
-    {
-        double offset =  Math<double>::wrap_twopi(wrap(atom_getfloat(argv), -180, 180) / 360. * HOA_2PI);
-        if(offset != x->f_decoder->getPlanewavesRotation())
-        {
-            object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-            x->f_decoder->setPlanewavesRotation(offset);
-            send_configuration(x);
-        }
-    }
-    return MAX_ERR_NONE;
-}
-
-t_max_err channel_get(t_hoa_2d_decoder *x, t_object *attr, long *argc, t_atom **argv)
-{
-    argc[0] = 1;
-    argv[0] = (t_atom *)sysmem_newptr(argc[0] * sizeof(t_atom));
-    if(argv[0])
-    {
-        atom_setlong(argv[0], x->f_decoder->getNumberOfPlanewaves());
-    }
-    else
-    {
-        argc[0] = 0;
-        argv[0] = NULL;
-    }
-    
-    return MAX_ERR_NONE;
-}
-
-t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
-{
-    if(argc && argv && atom_gettype(argv) == A_LONG && atom_getlong(argv) != outlet_count((t_object *)x))
-    {
-        t_object *b = NULL;
-        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-        
-        object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         object_method(b, hoa_sym_dynlet_begin);
-        
-        ulong order = x->f_decoder->getDecompositionOrder();
-        ulong number_of_channels = Math<ulong>::clip(atom_getlong(argv), 2, HOA_MAX_PLANEWAVES);
-        
-        if(x->f_mode == hoa_sym_ambisonic)
-        {
-            delete x->f_decoder;
-            x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, max(number_of_channels, order*2+2));
-        }
-        else if(x->f_mode == hoa_sym_irregular)
-        {
-            delete x->f_decoder;
-            x->f_decoder = new Decoder<Hoa2d, t_sample>::Irregular(order, max<ulong>(number_of_channels, 2));
-        }
         
         if(outlet_count((t_object *)x) > x->f_decoder->getNumberOfPlanewaves())
         {
@@ -311,53 +199,134 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
         {
             for(int i = outlet_count((t_object *)x); i < x->f_decoder->getNumberOfPlanewaves(); i++)
             {
-                outlet_append((t_object*)x, NULL, gensym("signal"));
+                outlet_append((t_object*)x, NULL, hoa_sym_signal);
             }
         }
         
         object_method(b, hoa_sym_dynlet_end);
-        
-        object_attr_touch((t_object *)x, hoa_sym_angles);
-        send_configuration(x);
     }
-    return 0;
 }
 
-t_max_err angles_get(t_hoa_2d_decoder *x, t_object *attr, long *argc, t_atom **argv)
+void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, double offset = 0., long n_angles = 0, t_atom *angles = NULL)
 {
-    argc[0] = x->f_decoder->getNumberOfPlanewaves();
-    argv[0] = (t_atom *)sysmem_newptr(argc[0] * sizeof(t_atom));
-    if(argv[0])
+    bool modeChanged    = false;
+    const t_symbol* lastMode = x->f_mode;
+    const long order = x->f_decoder->getDecompositionOrder();
+    
+    if(lastMode != mode && (mode == hoa_sym_ambisonic || mode == hoa_sym_irregular || mode == hoa_sym_binaural))
     {
-        for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
-        {
-            atom_setfloat(argv[0]+i, x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.);
-        }
-    }
-    else
-    {
-        argc[0] = 0;
-        argv[0] = NULL;
+        x->f_mode = mode;
+        channels = order*2+2;
+        modeChanged = true;
     }
     
+    if (modeChanged || channels != x->f_decoder->getNumberOfPlanewaves())
+    {
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
+        
+        if(mode == hoa_sym_ambisonic)
+        {
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, Math<long>::clip(channels, order*2+1, HOA_MAX_PLANEWAVES));
+            x->f_decoder->computeRendering(sys_getblksize());
+        }
+        else if(mode == hoa_sym_irregular)
+        {
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa2d, t_sample>::Irregular(order, Math<long>::clip(channels, 2, HOA_MAX_PLANEWAVES));
+        }
+        else if(modeChanged && mode == hoa_sym_binaural)
+        {
+            delete x->f_decoder;
+            x->f_decoder = new Decoder<Hoa2d, t_sample>::Binaural(order);
+        }
+        
+        x->f_decoder->computeRendering(sys_getblksize());
+        
+        x->f_offset = offset = 0.;
+        x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
+        
+        n_angles = 0;
+        for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
+        {
+            x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.;
+        }
+        
+        object_attr_touch((t_object*)x, hoa_sym_angles);
+        object_attr_touch((t_object*)x, hoa_sym_offset);
+        object_attr_touch((t_object*)x, hoa_sym_channels);
+        
+        object_attr_setdisabled((t_object *)x, hoa_sym_angles, (mode != hoa_sym_irregular));
+        object_attr_setdisabled((t_object *)x, hoa_sym_channels, (mode == hoa_sym_binaural));
+        object_attr_setdisabled((t_object *)x, hoa_sym_offset, (mode == hoa_sym_binaural));
+        
+        hoa_decoder_resize_outlets(x);
+    }
+    
+    if(mode != hoa_sym_binaural)
+    {
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
+        
+        offset = Math<double>::wrap_twopi(wrap(offset, -180., 180.) / 360. * HOA_2PI);
+        if(offset != x->f_decoder->getPlanewavesRotation())
+        {
+            x->f_decoder->setPlanewavesRotation(offset);
+            x->f_offset = wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180);
+            object_attr_touch((t_object*)x, hoa_sym_offset);
+        }
+    }
+    
+    if(n_angles > 0 && mode == hoa_sym_irregular)
+    {
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
+        
+        for(int i = 0; i < n_angles && i < x->f_decoder->getNumberOfPlanewaves(); i++)
+        {
+            if(atom_isNumber(angles+i))
+            {
+                x->f_decoder->setPlanewaveAzimuth(i, atom_getfloat(angles+i) / 360. * HOA_2PI);
+            }
+            
+            x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.;
+        }
+        
+        object_attr_touch((t_object*)x, hoa_sym_angles);
+    }
+
+    send_configuration(x);
+}
+
+t_max_err mode_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
+{
+    if(argc && argv && atom_gettype(argv) == A_SYM)
+	{
+        hoa_decoder_config(x, atom_getsym(argv), x->f_number_of_channels);
+    }
+    return MAX_ERR_NONE;
+}
+
+t_max_err offset_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
+{
+    if(argc && argv && atom_isNumber(argv))
+    {
+        hoa_decoder_config(x, x->f_mode, x->f_number_of_channels, atom_getfloat(argv));
+        return MAX_ERR_NONE;
+    }
+    return MAX_ERR_NONE;
+}
+
+t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
+{
+    if(argc && argv && atom_gettype(argv) == A_LONG)
+    {
+        hoa_decoder_config(x, x->f_mode, atom_getfloat(argv));
+    }
     return MAX_ERR_NONE;
 }
 
 t_max_err angles_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
 {
-    if(argc && argv)
-    {
-        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
-        
-        for(int i = 0; i < argc && i < x->f_decoder->getNumberOfPlanewaves(); i++)
-        {
-            if(atom_isNumber(argv+i))
-                x->f_decoder->setPlanewaveAzimuth(i, atom_getfloat(argv+i) / 360. * HOA_2PI);
-        }
-        
-        send_configuration(x);
-    }
-    
+    hoa_decoder_config(x, x->f_mode, x->f_number_of_channels, x->f_offset, argc, argv);
     return MAX_ERR_NONE;
 }
 
@@ -376,7 +345,7 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         ulong number_of_channels = 4;
         if(argc > 1 && argv+1 && atom_gettype(argv+1) == A_LONG)
         {
-            number_of_channels = Math<ulong>::clip(atom_getlong(argv+1), 2, HOA_MAX_PLANEWAVES);
+            number_of_channels = Math<long>::clip(atom_getlong(argv+1), 2, HOA_MAX_PLANEWAVES);
         }
         else // default to ambisonic + 1
         {
@@ -386,15 +355,25 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         x->f_send_config = 1;
         x->f_mode = hoa_sym_ambisonic;
         
-        x->f_decoder    = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
+        x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, number_of_channels);
+        x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
         
         dsp_setup((t_pxobject *)x, x->f_decoder->getNumberOfHarmonics());
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
             outlet_new(x, "signal");
         
         x->f_ob.z_misc = Z_NO_INPLACE;
-        x->f_ins = new t_sample[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
-        x->f_outs= new t_sample[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
+        x->f_ins  = new t_sample[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
+        x->f_outs = new t_sample[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
+        
+        for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
+        {
+            x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.;
+        }
+        
+        object_attr_setdisabled((t_object *)x, hoa_sym_angles, (x->f_mode != hoa_sym_irregular));
+        object_attr_setdisabled((t_object *)x, hoa_sym_channels, (x->f_mode == hoa_sym_binaural));
+        object_attr_setdisabled((t_object *)x, hoa_sym_offset, (x->f_mode == hoa_sym_binaural));
         
         attr_args_process(x, argc, argv);
         
@@ -422,7 +401,7 @@ int C74_EXPORT main(void)
     class_addmethod(c, (method)hoa_2d_decoder_dsp64,		"dsp64",	A_CANT, 0);
     class_addmethod(c, (method)hoa_2d_decoder_assist,		"assist",	A_CANT, 0);
     
-    CLASS_ATTR_LONG             (c, "autoconnect", 0, t_hoa_2d_decoder, f_send_config);
+    CLASS_ATTR_CHAR             (c, "autoconnect", 0, t_hoa_2d_decoder, f_send_config);
     CLASS_ATTR_CATEGORY			(c, "autoconnect", 0, "Behavior");
     CLASS_ATTR_STYLE_LABEL      (c, "autoconnect", 0, "onoff", "Auto connection");
     CLASS_ATTR_ORDER            (c, "autoconnect", 0, "1");
@@ -431,32 +410,30 @@ int C74_EXPORT main(void)
     CLASS_ATTR_SYM              (c, "mode", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_mode);
     CLASS_ATTR_LABEL            (c, "mode", 0, "Mode");
     CLASS_ATTR_ENUM             (c, "mode", 0, "ambisonic binaural irregular");
-    CLASS_ATTR_ACCESSORS		(c, "mode", mode_get, mode_set);
+    CLASS_ATTR_ACCESSORS		(c, "mode", NULL, mode_set);
     CLASS_ATTR_ORDER            (c, "mode", 0, "1");
     // @description There is three decoding <m>mode</m> :
     // <ul>
-    // <li><b>Ambisonics</b> : for a regular loudspeakers repartition over a circular array.</li>
-    // <li><b>Binaural</b> : for headphones.</li>
-    // <li><b>Irregular</b> : for an irregular loudspeakers repartition over a circular array.</li>
+    // <li>- <b>Ambisonics</b> : for a regular loudspeakers repartition over a circular array.</li>
+    // <li>- <b>Binaural</b> : for headphones.</li>
+    // <li>- <b>Irregular</b> : for an irregular loudspeakers repartition over a circular array.</li>
     // </ul>
     
-    CLASS_ATTR_LONG             (c, "channels", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_attr);
+    CLASS_ATTR_LONG             (c, "channels", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_number_of_channels);
     CLASS_ATTR_LABEL            (c, "channels", 0, "Number of Channels");
-    CLASS_ATTR_ACCESSORS		(c, "channels", channel_get, channel_set);
-    CLASS_ATTR_DEFAULT          (c, "channels", 0, "4");
+    CLASS_ATTR_ACCESSORS		(c, "channels", NULL, channel_set);
     CLASS_ATTR_ORDER            (c, "channels", 0, "2");
-    // @description The number of Channels. In <b>ambisonic</b> <m>mode</m>, the number of channels must be equal or higher to the number of harmonics : (order *2 + 1), (default : order * 2 + 2).
+    // @description The number of Channels. NB : in <b>ambisonic</b> <m>mode</m>, the number of channels must be equal or higher to the number of harmonics : (order *2 + 1), (default : order * 2 + 2).
     
-    CLASS_ATTR_DOUBLE           (c, "offset", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_attr);
-    CLASS_ATTR_LABEL            (c, "offset", 0, "Offsets of Channels");
-    CLASS_ATTR_ACCESSORS		(c, "offset", offset_get, offset_set);
-    CLASS_ATTR_DEFAULT          (c, "offset", 0, "0");
+    CLASS_ATTR_DOUBLE           (c, "offset", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_offset);
+    CLASS_ATTR_LABEL            (c, "offset", 0, "Offset of Channels");
+    CLASS_ATTR_ACCESSORS		(c, "offset", NULL, offset_set);
     CLASS_ATTR_ORDER            (c, "offset", 0, "3");
     // @description The offset of channels, in degrees between 0. and 360.
     
-    CLASS_ATTR_DOUBLE_VARSIZE   (c, "angles", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_attr, f_attr, HOA_MAX_PLANEWAVES);
+    CLASS_ATTR_DOUBLE_VARSIZE   (c, "angles", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_angles_of_channels, f_number_of_channels, HOA_MAX_PLANEWAVES);
     CLASS_ATTR_LABEL            (c, "angles", 0, "Angles of Channels");
-    CLASS_ATTR_ACCESSORS		(c, "angles", angles_get, angles_set);
+    CLASS_ATTR_ACCESSORS		(c, "angles", NULL, angles_set);
     CLASS_ATTR_ORDER            (c, "angles", 0, "4");
     // @description Angles of each channels. The angles of channels are only settable in <b>irregular</b> <m>mode</m>. Each angle are in degrees and is wrapped between 0. and 360. So you can also set an angle with a negative value. ex : angles for a 5.1 loudspeakers restitution system can be setted either by the "angles 0 30 110 250 330" or by "angles 0 30 110 -110 -30".
 

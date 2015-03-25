@@ -67,7 +67,7 @@ void *hoa_map_tilde_new(t_symbol *s, long argc, t_atom *argv)
 			order = max<ulong>(atom_getlong(argv), 1);
         
         if(argc > 1 && atom_gettype(argv+1) == A_LONG)
-            numberOfSources = Math<ulong>::clip(atom_getlong(argv+1), 1, HOA_MAX_PLANEWAVES);
+            numberOfSources = Math<long>::clip(atom_getlong(argv+1), 1, HOA_MAX_PLANEWAVES);
 		
 		if(argc > 2 && atom_gettype(argv+2) == A_SYM)
 		{

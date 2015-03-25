@@ -151,7 +151,7 @@ t_max_err channels_set(t_hoa_meter_3d *x, t_object *attr, long argc, t_atom *arg
                 
 				if (b)
 				{
-					object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+					object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
 
                     delete x->f_meter;
                     x->f_meter = new Meter<Hoa3d, t_sample>(d);
@@ -203,7 +203,7 @@ t_max_err angles_set(t_hoa_meter_3d *x, t_object *attr, long argc, t_atom *argv)
 {
     if(argc && argv)
     {
-        object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         
         for(ulong i = 0; i < x->f_meter->getNumberOfPlanewaves() * 2 && i < argc; i++)
         {
@@ -973,7 +973,7 @@ int C74_EXPORT main(void)
     CLASS_ATTR_RGBA                 (c, "offcolor", 0, t_hoa_meter_3d, f_color_off_signal);
     CLASS_ATTR_LABEL                (c, "offcolor", 0, "Off Signal Color");
     CLASS_ATTR_ORDER                (c, "offcolor", 0, "4");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "offcolor", 0, "0. 0. 0. 0.2");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT   (c, "offcolor", 0, "0. 0. 0. 0.1");
     CLASS_ATTR_STYLE                (c, "offcolor", 1, "rgba");
     // @description Sets the RGBA values for the off signal color of the <o>hoa.2d.meter~</o> object
     

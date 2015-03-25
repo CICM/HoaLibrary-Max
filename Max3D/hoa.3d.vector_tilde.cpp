@@ -126,7 +126,7 @@ t_max_err angles_set(t_hoa_3d_vector *x, t_object *attr, long argc, t_atom *argv
 {
     if(argc && argv)
     {
-		object_method(gensym("dsp")->s_thing, hoa_sym_stop);
+		object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         
         for(int i = 1, j = 0; i < x->f_vector->getNumberOfChannels() * 2 && i < argc; i+= 2, j++)
         {
