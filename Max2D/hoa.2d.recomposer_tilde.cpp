@@ -275,7 +275,7 @@ void *hoa_recomposer_new(t_symbol *s, long argc, t_atom *argv)
         x->f_mode       = hoa_sym_fixe;
         
         if(argc && atom_gettype(argv) == A_LONG)
-            order = max<ulong>(atom_getlong(argv), 1);
+            order = max<long>(atom_getlong(argv), 1);
         
         if(argc > 1 && atom_gettype(argv+1) == A_LONG)
             numberOfPlanewaves = atom_getlong(argv+1);

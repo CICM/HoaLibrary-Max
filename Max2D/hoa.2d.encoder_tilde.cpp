@@ -30,9 +30,9 @@
 
 typedef struct _hoa_encoder_2D 
 {
-	t_pxobject                  f_ob;
-    double*                     f_signals;
-    Encoder<Hoa2d, t_sample>*   f_encoder;
+	t_pxobject                          f_ob;
+    double*                             f_signals;
+    Encoder<Hoa2d, t_sample>::Basic*    f_encoder;
     
 } t_hoa_encoder_2D;
 
@@ -49,9 +49,9 @@ void *hoa_encoder_2D_new(t_symbol *s, long argc, t_atom *argv)
 	if (x)
 	{		
 		if(argc && argv && atom_gettype(argv) == A_LONG)
-			order = std::max<ulong>(atom_getlong(argv), 1);
+			order = std::max<long>(atom_getlong(argv), 1);
         
-        x->f_encoder = new Encoder<Hoa2d, t_sample>(order);
+        x->f_encoder = new Encoder<Hoa2d, t_sample>::Basic(order);
 		
 		dsp_setup((t_pxobject *)x, 2);
 		for (int i = 0; i < x->f_encoder->getNumberOfHarmonics(); i++)
@@ -83,7 +83,7 @@ void hoa_encoder_2D_int(t_hoa_encoder_2D *x, long n)
 	x->f_encoder->setAzimuth(n);
 }
 
-void hoa_encoder_2D_perform64_azimuth(t_hoa_encoder_2D *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+void hoa_encoder_2D_perform_azimuth(t_hoa_encoder_2D *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
     for(long i = 0; i < sampleframes; i++)
     {
@@ -96,7 +96,7 @@ void hoa_encoder_2D_perform64_azimuth(t_hoa_encoder_2D *x, t_object *dsp64, doub
     }
 }
 
-void hoa_encoder_2D_perform64(t_hoa_encoder_2D *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+void hoa_encoder_2D_perform(t_hoa_encoder_2D *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
     for(long i = 0; i < sampleframes; i++)
     {
@@ -111,9 +111,9 @@ void hoa_encoder_2D_perform64(t_hoa_encoder_2D *x, t_object *dsp64, double **ins
 void hoa_encoder_2D_dsp64(t_hoa_encoder_2D *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
     if(count[1])
-        object_method(dsp64, gensym("dsp_add64"), x, hoa_encoder_2D_perform64_azimuth, 0, NULL);
+        object_method(dsp64, gensym("dsp_add64"), x, hoa_encoder_2D_perform_azimuth, 0, NULL);
     else
-        object_method(dsp64, gensym("dsp_add64"), x, hoa_encoder_2D_perform64, 0, NULL);
+        object_method(dsp64, gensym("dsp_add64"), x, hoa_encoder_2D_perform, 0, NULL);
 }
 
 void hoa_encoder_2D_assist(t_hoa_encoder_2D *x, void *b, long m, long a, char *s)

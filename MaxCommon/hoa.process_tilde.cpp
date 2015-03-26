@@ -141,8 +141,8 @@ typedef struct _hoa_processor
 	long num_proxies;				// number of proxies
 	
 	// Hoa stuff
-    Harmonic<Hoa2d, t_sample>::Processor*   f_ambi2D;
-    Harmonic<Hoa3d, t_sample>::Processor*   f_ambi3D;
+    Processor<Hoa2d, t_sample>::Harmonics*  f_ambi2D;
+    Processor<Hoa3d, t_sample>::Harmonics*  f_ambi3D;
 	ulong                                   f_order;
 	t_symbol*                               f_mode;
 	e_hoa_object_type                       f_object_type;
@@ -433,8 +433,8 @@ void *hoa_processor_new(t_symbol *s, short argc, t_atom *argv)
 	}
 	
 	x->f_order = first_int;
-    x->f_ambi2D = new Harmonic<Hoa2d, t_sample>::Processor(x->f_order);
-    x->f_ambi3D = new Harmonic<Hoa3d, t_sample>::Processor(x->f_order);
+    x->f_ambi2D = new Processor<Hoa2d, t_sample>::Harmonics(x->f_order);
+    x->f_ambi3D = new Processor<Hoa3d, t_sample>::Harmonics(x->f_order);
 	
 	// Initialise patcher symbol
 	

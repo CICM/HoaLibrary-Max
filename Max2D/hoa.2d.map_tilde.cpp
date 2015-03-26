@@ -32,14 +32,14 @@
 
 typedef struct _hoa_map_tilde
 {
-	t_pxobject                      f_ob;
-    EncoderMulti<Hoa2d, t_sample>*  f_map;
-    PolarLines<Hoa2d, t_sample>*    f_lines;
-    t_sample*                       f_sig_ins;
-    t_sample*                       f_sig_outs;
-    t_sample*                       f_lines_vector;
-    int                             f_mode;
-    double                          f_ramp;
+	t_pxobject                          f_ob;
+    Encoder<Hoa2d, t_sample>::Multi*    f_map;
+    PolarLines<Hoa2d, t_sample>*        f_lines;
+    t_sample*                           f_sig_ins;
+    t_sample*                           f_sig_outs;
+    t_sample*                           f_lines_vector;
+    int                             	f_mode;
+    double                          	f_ramp;
     
 } t_hoa_map_tilde;
 
@@ -64,7 +64,7 @@ void *hoa_map_tilde_new(t_symbol *s, long argc, t_atom *argv)
         x->f_mode       = 0; // polar
 		
 		if(argc && atom_gettype(argv) == A_LONG)
-			order = max<ulong>(atom_getlong(argv), 1);
+			order = max<long>(atom_getlong(argv), 1);
         
         if(argc > 1 && atom_gettype(argv+1) == A_LONG)
             numberOfSources = Math<long>::clip(atom_getlong(argv+1), 1, HOA_MAX_PLANEWAVES);
@@ -76,7 +76,7 @@ void *hoa_map_tilde_new(t_symbol *s, long argc, t_atom *argv)
 		}
         
         x->f_ramp       = 100;
-        x->f_map        = new EncoderMulti<Hoa2d, t_sample>(order, numberOfSources);
+        x->f_map        = new Encoder<Hoa2d, t_sample>::Multi(order, numberOfSources);
         x->f_lines      = new PolarLines<Hoa2d, t_sample>(x->f_map->getNumberOfSources());
         x->f_lines->setRamp(0.1 * sys_getsr());
 		

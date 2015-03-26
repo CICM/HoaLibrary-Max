@@ -150,7 +150,7 @@ namespace hoa
 		/**
 		 @param     number_of_channels		The number of channels you need to manage.
          */
-		void setNumberOfChannels(ulong number_of_channels);
+		void setNumberOfChannels(long number_of_channels);
 		
 		//! Set one or each channel azimuth value.
 		/**

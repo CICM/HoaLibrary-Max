@@ -282,10 +282,10 @@ void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         ulong number_of_channels = 4;
         
         if(argc && atom_gettype(argv) == A_LONG)
-            order = max<ulong>(atom_getlong(argv), 1);
+            order = max<long>(atom_getlong(argv), 1);
         
         if(argc > 1 && atom_gettype(argv+1) == A_LONG)
-            number_of_channels	= max<ulong>(atom_getlong(argv+1), 2);
+            number_of_channels	= max<long>(atom_getlong(argv+1), 2);
         else
             number_of_channels = (order+1)*(order+1);
         

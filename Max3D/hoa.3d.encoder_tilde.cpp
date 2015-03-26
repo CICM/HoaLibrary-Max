@@ -31,7 +31,7 @@
 typedef struct _hoa_3d_encoder 
 {
 	t_pxobject                  f_ob;
-    Encoder<Hoa3d, t_sample>*   f_encoder;
+    Encoder<Hoa3d, t_sample>::Basic*   f_encoder;
     t_sample*                   f_signals;
     
 } t_hoa_3d_encoder;
@@ -172,9 +172,9 @@ void *hoa_3d_encoder_new(t_symbol *s, long argc, t_atom *argv)
     {
         ulong order = 1;
         if(argc && atom_gettype(argv) == A_LONG)
-            order = max<ulong>(atom_getlong(argv), 1);
+            order = max<long>(atom_getlong(argv), 1);
         
-        x->f_encoder = new Encoder<Hoa3d, t_sample>(order);
+        x->f_encoder = new Encoder<Hoa3d, t_sample>::Basic(order);
         
         x->f_ob.z_misc = Z_NO_INPLACE;
         

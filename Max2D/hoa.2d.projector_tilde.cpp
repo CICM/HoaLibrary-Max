@@ -55,10 +55,10 @@ void *hoa_projector_new(t_symbol *s, long argc, t_atom *argv)
         ulong numberOfPlanewaves = 4;
         
 		if(argc && atom_gettype(argv) == A_LONG)
-			order = max<ulong>(atom_getlong(argv), 1);
+			order = max<long>(atom_getlong(argv), 1);
         
         if(argc > 1 && atom_gettype(argv+1) == A_LONG)
-			numberOfPlanewaves = max<ulong>(atom_getlong(argv+1), order * 2 + 1);
+			numberOfPlanewaves = max<long>(atom_getlong(argv+1), order * 2 + 1);
 		
 		x->f_projector = new Projector<Hoa2d, t_sample>(order, numberOfPlanewaves);
 		

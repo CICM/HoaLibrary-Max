@@ -49,7 +49,7 @@ void *hoa_3d_wider_new(t_symbol *s, long argc, t_atom *argv)
 	{
         ulong order = 1;
 		if(argc && atom_gettype(argv) == A_LONG)
-			order = max<ulong>(atom_getlong(argv), 1);
+			order = max<long>(atom_getlong(argv), 1);
 		
 		x->f_wider = new Wider<Hoa3d, t_sample>(order);
 		

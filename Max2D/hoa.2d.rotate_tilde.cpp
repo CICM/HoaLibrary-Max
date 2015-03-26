@@ -51,7 +51,7 @@ void *hoa_rotate_new(t_symbol *s, long argc, t_atom *argv)
 	if (x)
 	{		
 		if(argc && atom_gettype(argv) == A_LONG)
-			order = max<ulong>(atom_getlong(argv), 1);
+			order = max<long>(atom_getlong(argv), 1);
 		
 		x->f_rotate = new Rotate<Hoa2d, t_sample>(order);
 		

@@ -21,9 +21,9 @@ namespace hoa
 			free(m_defaultAzimuths);
 	}
 	
-	void ChannelManager::setNumberOfChannels(ulong number_of_channels)
+	void ChannelManager::setNumberOfChannels(long number_of_channels)
 	{
-		number_of_channels = max<ulong>(number_of_channels, 3);
+        number_of_channels = Math<long>::clip(number_of_channels, 0, 3);
 		
 		if(m_channels.size() > number_of_channels)
 		{

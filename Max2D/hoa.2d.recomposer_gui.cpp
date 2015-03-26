@@ -54,16 +54,16 @@ typedef struct  _hoa_2d_recomposer_gui
 	t_jrgba     f_color_fisheye;
     
     // channels
-    ChannelManager*                 f_channels;
-    int                             f_number_of_channels;
-    int                             f_fisheye_show;
-    double                          f_fisheye_azimuth;
+    ChannelManager*                     f_channels;
+    int                                 f_number_of_channels;
+    int                                 f_fisheye_show;
+    double                              f_fisheye_azimuth;
 	
 	// viewer
-    Encoder<Hoa2d, t_sample>*       f_encoder;
-    Wider<Hoa2d, t_sample>*         f_wider;
-    Scope<Hoa2d, t_sample>*         f_scope;
-	t_sample*                       f_harmonicsValues;
+    Encoder<Hoa2d, t_sample>::Basic*    f_encoder;
+    Wider<Hoa2d, t_sample>*             f_wider;
+    Scope<Hoa2d, t_sample>*             f_scope;
+	t_sample*                           f_harmonicsValues;
     
     // mouse
     t_pt        f_rectSelectionBegin;
@@ -355,7 +355,7 @@ void *hoa_2d_recomposer_gui_new(t_symbol *s, int argc, t_atom *argv)
 	
 	long order = 7;
     
-	x->f_encoder    = new Encoder<Hoa2d, t_sample>(order);
+	x->f_encoder    = new Encoder<Hoa2d, t_sample>::Basic(order);
 	x->f_wider      = new Wider<Hoa2d, t_sample>(order);
     x->f_scope      = new Scope<Hoa2d, t_sample>(order, HOA_DISPLAY_NPOINTS);
 	x->f_harmonicsValues = new t_sample[order * 2 + 1];
@@ -613,7 +613,7 @@ t_max_err set_numberOfChannels(t_hoa_2d_recomposer_gui *x, void *attr, long ac, 
 		delete x->f_scope;
 		delete x->f_wider;
 		
-        x->f_encoder    = new Encoder<Hoa2d, t_sample>(order);
+        x->f_encoder    = new Encoder<Hoa2d, t_sample>::Basic(order);
         x->f_wider      = new Wider<Hoa2d, t_sample>(order);
         x->f_scope      = new Scope<Hoa2d, t_sample>(order, HOA_DISPLAY_NPOINTS);
         x->f_harmonicsValues = new t_sample[order * 2 + 1];

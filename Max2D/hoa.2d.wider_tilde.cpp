@@ -49,7 +49,7 @@ void *hoa_2d_wider_new(t_symbol *s, long argc, t_atom *argv)
 	{
         int	order = 1;
 		if(argc && atom_gettype(argv) == A_LONG)
-			order = max<ulong>(atom_getlong(argv), 1);
+			order = max<long>(atom_getlong(argv), 1);
         
         x->f_wider = new Wider<Hoa2d, t_sample>(order);
         dsp_setup((t_pxobject *)x, x->f_wider->getNumberOfHarmonics() + 1);

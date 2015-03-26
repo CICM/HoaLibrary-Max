@@ -44,8 +44,8 @@ typedef struct _hoa_thisprocess
 	
 	int                                     f_order;
     
-    Harmonic<Hoa2d, t_sample>::Processor*   f_ambi2D;
-    Harmonic<Hoa3d, t_sample>::Processor*   f_ambi3D;
+    Processor<Hoa2d, t_sample>::Harmonics*   f_ambi2D;
+    Processor<Hoa3d, t_sample>::Harmonics*   f_ambi3D;
 	
 	t_args_struct object_args;
 	long object_nAttrs;
@@ -466,8 +466,8 @@ void *hoa_thisprocess_new(t_symbol *s, short argc, t_atom *argv)
     x->f_order = HoaProcessor_Get_Ambisonic_Order(x->hoaProcessor_parent);
     x->index = Get_HoaProcessor_Patch_Index(x->hoaProcessor_parent);
     
-    x->f_ambi2D = new Harmonic<Hoa2d, t_sample>::Processor(x->f_order);
-    x->f_ambi3D = new Harmonic<Hoa3d, t_sample>::Processor(x->f_order);
+    x->f_ambi2D = new Processor<Hoa2d, t_sample>::Harmonics(x->f_order);
+    x->f_ambi3D = new Processor<Hoa3d, t_sample>::Harmonics(x->f_order);
     
     hoa_args_setup(argc, argv, &x->object_nAttrs, &x->object_args, &x->object_attrs);
     

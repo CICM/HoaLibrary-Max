@@ -52,7 +52,7 @@ void *hoa_2d_vector_new(t_symbol *s, long argc, t_atom *argv)
 	{
         ulong channels = 4;
         if (argc && atom_gettype(argv) == A_LONG)
-            channels = max<ulong>(atom_getlong(argv), 1);
+            channels = max<long>(atom_getlong(argv), 1);
         
         x->f_vector = new Vector<Hoa2d, t_sample>(channels);
 		
@@ -160,7 +160,7 @@ t_max_err offset_get(t_hoa_2d_vector *x, t_object *attr, long *argc, t_atom **ar
     
     if(argv[0])
     {
-        atom_setfloat(argv[0], wrap(x->f_vector->getPlanewavesRotation() / HOA_2PI * 360.f, -180., 180.));
+        atom_setfloat(argv[0], wrap(x->f_vector->getPlanewavesRotationX() / HOA_2PI * 360.f, -180., 180.));
     }
     else
     {
@@ -174,10 +174,10 @@ t_max_err offset_set(t_hoa_2d_vector *x, t_object *attr, long argc, t_atom *argv
 {
     if(argc && argv && (atom_gettype(argv) == A_FLOAT || atom_gettype(argv) == A_LONG))
     {
-        double offset = Math<double>::wrap_twopi(Math<double>::wrap(atom_getfloat(argv), -180., 180.) / 360. * HOA_2PI);
-        if(offset != x->f_vector->getPlanewavesRotation())
+        double offset = Math<double>::wrap_twopi(wrap(atom_getfloat(argv), -180., 180.) / 360. * HOA_2PI);
+        if(offset != x->f_vector->getPlanewavesRotationX())
         {
-            x->f_vector->setPlanewavesRotation(offset);
+            x->f_vector->setPlanewavesRotation(offset, 0., 0.);
         }
     }
     return MAX_ERR_NONE;

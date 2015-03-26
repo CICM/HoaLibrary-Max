@@ -228,7 +228,7 @@ t_max_err offset_get(t_meter *x, t_object *attr, long *argc, t_atom **argv)
     argv[0] = (t_atom *)malloc(sizeof(t_atom));
     if(argv[0] && argc[0])
     {
-        double offset = x->f_meter->getPlanewavesRotation() / HOA_2PI * 360.;
+        double offset = x->f_meter->getPlanewavesRotationX() / HOA_2PI * 360.;
         
         if (offset > 180.)
         {
@@ -250,8 +250,8 @@ t_max_err offset_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
     if(argc && argv && atom_isNumber(argv))
     {
         const double offset = atom_getfloat(argv) / 360. * HOA_2PI;
-        x->f_vector->setPlanewavesRotation(offset);
-        x->f_meter->setPlanewavesRotation(offset);
+        x->f_vector->setPlanewavesRotation(offset, 0., 0.);
+        x->f_meter->setPlanewavesRotation(offset, 0., 0.);
         x->f_vector->computeRendering();
         x->f_meter->computeRendering();
         
@@ -692,9 +692,9 @@ void draw_vectors(t_meter *x, t_object *view, t_rect *rect)
         
         /*
 		if (x->f_rotation)
-			jgraphics_rotate(g, radToDeg(x->f_meter->getPlanewavesRotation()));
+			jgraphics_rotate(g, radToDeg(x->f_meter->getPlanewavesRotationX()));
 		else
-			jgraphics_rotate(g, -radToDeg(x->f_meter->getPlanewavesRotation()));
+			jgraphics_rotate(g, -radToDeg(x->f_meter->getPlanewavesRotationX()));
 		*/
         
 		if (x->f_drawvector == VECTOR_BOTH || x->f_drawvector == VECTOR_ENERGY)

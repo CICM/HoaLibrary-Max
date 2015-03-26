@@ -62,7 +62,7 @@ t_hoa_err hoa_getinfos(t_hoa_2d_decoder* x, t_hoa_boxinfos* boxinfos)
 	return HOA_ERR_NONE;
 }
 
-void hoa_2d_decoder_perform64(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins, long numins, t_sample **outs, long numouts, long sampleframes, long flags, void *userparam)
+void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins, long numins, t_sample **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
     for(int i = 0; i < numins; i++)
     {
@@ -80,10 +80,36 @@ void hoa_2d_decoder_perform64(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **i
     }
 }
 
+static void hoa_2d_decoder_perform_binaural(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins, long numins, t_sample **outs, long numouts, long sampleframes, long flags, void *userparam)
+{
+    const long max = numins < 11 ? numins : 11;
+    for(long i = 0; i < max; i++)
+    {
+        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, max);
+    }
+    for(long i = 0; i < sampleframes; i++)
+    {
+        (static_cast<Decoder<Hoa2d, t_sample>::Binaural*>(x->f_decoder))->process(x->f_ins + max * i, x->f_outs + 2 * i);
+    }
+    for(long i = 0; i < 2; i++)
+    {
+        cblas_dcopy(sampleframes, x->f_outs+i, 2, outs[i], 1);
+    }
+}
+
+
 void hoa_2d_decoder_dsp64(t_hoa_2d_decoder *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
     x->f_decoder->computeRendering(maxvectorsize);
-    object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_2d_decoder_perform64, 0, NULL);
+    
+    if(x->f_mode == hoa_sym_binaural)
+    {
+        object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_2d_decoder_perform_binaural, 0, NULL);
+    }
+    else
+    {
+        object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_2d_decoder_perform, 0, NULL);
+    }
 }
 
 void hoa_2d_decoder_assist(t_hoa_2d_decoder *x, void *b, long m, long a, char *s)
@@ -120,7 +146,7 @@ void send_configuration(t_hoa_2d_decoder *x)
     if(argv)
     {
         atom_setlong(&nchannels, x->f_decoder->getNumberOfPlanewaves());
-        atom_setfloat(&offset, wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360., -180., 180.));
+        atom_setfloat(&offset, wrap(x->f_decoder->getPlanewavesRotationX() / HOA_2PI * 360., -180., 180.));
         
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
             atom_setfloat(argv+i, x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.);
@@ -268,10 +294,11 @@ void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, 
         object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         
         offset = Math<double>::wrap_twopi(wrap(offset, -180., 180.) / 360. * HOA_2PI);
-        if(offset != x->f_decoder->getPlanewavesRotation())
+        const double rot = x->f_decoder->getPlanewavesRotationX();
+        if(offset != rot)
         {
-            x->f_decoder->setPlanewavesRotation(offset);
-            x->f_offset = wrap(x->f_decoder->getPlanewavesRotation() / HOA_2PI * 360.f, -180, 180);
+            x->f_decoder->setPlanewavesRotation(offset, 0., 0.);
+            x->f_offset = wrap(rot / HOA_2PI * 360.f, -180, 180);
             object_attr_touch((t_object*)x, hoa_sym_offset);
         }
     }
@@ -340,7 +367,7 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
     {
         ulong order = 1;
         if(argc && argv && atom_gettype(argv) == A_LONG)
-            order = max<ulong>(atom_getlong(argv), 1);
+            order = max<long>(atom_getlong(argv), 1);
         
         ulong number_of_channels = 4;
         if(argc > 1 && argv+1 && atom_gettype(argv+1) == A_LONG)
