@@ -358,21 +358,20 @@ t_max_err meter_notify(t_meter *x, t_symbol *s, t_symbol *msg, void *sender, voi
 
 void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
 {
-	int i,j;
-	double deg1, deg2, rotateAngle, ledContainerSize, ledStroke, ledMargin, ledOffset, channelWidth;
-	t_jmatrix transform;
 	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_skeleton_layer, rect->width, rect->height);
-	
-	deg1 = HOA_PI2;
-	ledContainerSize = x->f_rayonExt - x->f_rayonInt - (1*4);
-	ledOffset = ledContainerSize / (x->f_numleds+1);
-	ledStroke = ledOffset * 0.75;
-	ledMargin = ledOffset * 0.5;
-    
-    t_jrgba black = rgba_addContrast(x->f_color_mbg, -0.12);
-	
+
 	if (g)
 	{
+        double deg1, deg2, rotateAngle, ledContainerSize, ledStroke, ledMargin, ledOffset, channelWidth;
+        t_jmatrix transform;
+        deg1 = HOA_PI2;
+        ledContainerSize = x->f_rayonExt - x->f_rayonInt - (1*4);
+        ledOffset = ledContainerSize / (x->f_numleds+1);
+        ledStroke = ledOffset * 0.75;
+        ledMargin = ledOffset * 0.5;
+        
+        t_jrgba black = rgba_addContrast(x->f_color_mbg, -0.12);
+        
 		// Background :
         jgraphics_rectangle(g, 0., 0., rect->width, rect->height);
         jgraphics_set_source_jrgba(g, &x->f_color_bg);
@@ -408,12 +407,12 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
             jgraphics_set_matrix(g, &transform);
 			
             // skelton separators and leds bg:
-            for(i = 0; i < x->f_meter->getNumberOfPlanewaves(); i++)
+            for(ulong i = 0; i < x->f_meter->getNumberOfPlanewaves(); i++)
             {
 				channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
                 deg2 = degToRad(90. + channelWidth);
 				
-                rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5);
+                rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i) + x->f_meter->getPlanewavesRotationX()) - (channelWidth*0.5);
                 if (!x->f_rotation)
 				{
                     rotateAngle += channelWidth;
@@ -426,7 +425,7 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
                 jgraphics_set_line_width(g, ledStroke);
                 jgraphics_set_line_cap(g, JGRAPHICS_LINE_CAP_BUTT);
                 jgraphics_set_source_jrgba(g, &x->f_color_ledbg);
-                for( j=0; j < x->f_numleds; j++ )
+                for(ulong j=0; j < x->f_numleds; j++ )
                 {
                     if (x->f_meter->getNumberOfPlanewaves() > 1)
 					{
@@ -478,14 +477,14 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
 
 void draw_separator(t_meter *x,  t_object *view, t_rect *rect)
 {
-	double rotateAngle, channelWidth;
-	t_jmatrix transform;
-    t_jrgba black = rgba_addContrast(x->f_color_mbg, -0.12);
-    
     t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_separator_layer, rect->width, rect->height);
     
 	if (g)
 	{
+        double rotateAngle, channelWidth;
+        t_jmatrix transform;
+        t_jrgba black = rgba_addContrast(x->f_color_mbg, -0.12);
+        
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
 		
@@ -493,7 +492,7 @@ void draw_separator(t_meter *x,  t_object *view, t_rect *rect)
 		for(int i=0; i < x->f_meter->getNumberOfPlanewaves(); i++)
 		{
 			channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
-            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5);
+            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i) + x->f_meter->getPlanewavesRotationX()) - (channelWidth*0.5);
 			if (!x->f_rotation)
 			{
 				rotateAngle += channelWidth;
@@ -521,26 +520,26 @@ void draw_separator(t_meter *x,  t_object *view, t_rect *rect)
 
 void draw_leds(t_meter *x, t_object *view, t_rect *rect)
 {
-	int i, j, nbLed, tepidLimit, warmLimit, hotLimit;
-	long nLoudSpeak = x->f_meter->getNumberOfPlanewaves();
-	double deg1, deg2, rotateAngle, ledContainerSize, ledMargin, ledOffset, meter_dB, min_dB_to_display, channelWidth;
-	double tmpdeg1, tmpdeg2, tmprad;
-	t_jrgba ledColor;
-	t_jmatrix transform;
-	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_leds_layer, rect->width, rect->height);
-	
-	deg1 = HOA_PI2;
-	nbLed = x->f_numleds+1;
-	ledContainerSize = x->f_rayonExt - x->f_rayonInt - 4;
-	ledOffset = ledContainerSize / nbLed;
-	ledMargin = ledOffset * 0.50;
-	hotLimit = x->f_numleds - x->f_nhotleds;
-	warmLimit = hotLimit - x->f_nwarmleds;
-	tepidLimit = warmLimit - x->f_ntepidleds;
-	min_dB_to_display = -1 * ( (x->f_numleds * x->f_dbperled) - (x->f_dbperled * 0.5) );
-	
+    t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_leds_layer, rect->width, rect->height);
 	if (g)
 	{
+        int i, j, nbLed, tepidLimit, warmLimit, hotLimit;
+        long nLoudSpeak = x->f_meter->getNumberOfPlanewaves();
+        double deg1, deg2, rotateAngle, ledContainerSize, ledMargin, ledOffset, meter_dB, min_dB_to_display, channelWidth;
+        double tmpdeg1, tmpdeg2, tmprad;
+        t_jrgba ledColor;
+        t_jmatrix transform;
+
+        deg1 = HOA_PI2;
+        nbLed = x->f_numleds+1;
+        ledContainerSize = x->f_rayonExt - x->f_rayonInt - 4;
+        ledOffset = ledContainerSize / nbLed;
+        ledMargin = ledOffset * 0.50;
+        hotLimit = x->f_numleds - x->f_nhotleds;
+        warmLimit = hotLimit - x->f_nwarmleds;
+        tepidLimit = warmLimit - x->f_ntepidleds;
+        min_dB_to_display = -1 * ( (x->f_numleds * x->f_dbperled) - (x->f_dbperled * 0.5) );
+        
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
         
@@ -553,7 +552,7 @@ void draw_leds(t_meter *x, t_object *view, t_rect *rect)
             
             channelWidth = radToDeg(x->f_meter->getPlanewaveWidth(i));
             deg2 = degToRad(90+(channelWidth));
-            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i)) - (channelWidth*0.5);
+            rotateAngle = radToDeg(x->f_meter->getPlanewaveAzimuthMapped(i) + x->f_meter->getPlanewavesRotationX()) - (channelWidth*0.5);
             
             if(!x->f_rotation)
             {
@@ -673,7 +672,6 @@ void draw_leds(t_meter *x, t_object *view, t_rect *rect)
             
             jgraphics_rotate(g, degToRad(-rotateAngle));
 		}
-		
 		jbox_end_layer((t_object*)x, view, hoa_sym_leds_layer);
 	}
 	jbox_paint_layer((t_object *)x, view, hoa_sym_leds_layer, 0., 0.);
@@ -695,12 +693,11 @@ void draw_vectors(t_meter *x, t_object *view, t_rect *rect)
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
         
-        /*
+        
 		if (x->f_rotation)
-			jgraphics_rotate(g, radToDeg(x->f_meter->getPlanewavesRotationX()));
+			jgraphics_rotate(g, x->f_meter->getPlanewavesRotationX());
 		else
-			jgraphics_rotate(g, -radToDeg(x->f_meter->getPlanewavesRotationX()));
-		*/
+			jgraphics_rotate(g, -x->f_meter->getPlanewavesRotationX());
         
 		if (x->f_drawvector == VECTOR_BOTH || x->f_drawvector == VECTOR_ENERGY)
 		{
@@ -834,8 +831,8 @@ int C74_EXPORT main(void)
     
     hoa_initclass(c, (method)hoa_getinfos);
     
-    // @method signal @digest Array of signals to be visualize.
-    // @description Array of signals to be visualize.
+    // @method signal @digest Array of signals to visualize.
+    // @description Array of signals to visualize.
     // @marg 0 @name channel-signal @optional 0 @type signal
     class_addmethod(c, (method) meter_dsp64,		 "dsp64",		  A_CANT, 0);
     class_addmethod(c, (method) meter_assist,		 "assist",		  A_CANT, 0);
@@ -893,7 +890,7 @@ int C74_EXPORT main(void)
     CLASS_ATTR_ORDER                (c, "channels", 0, "1");
     CLASS_ATTR_LABEL                (c, "channels", 0, "Number of Channels");
     CLASS_ATTR_SAVE                 (c, "channels", 1);
-    CLASS_ATTR_DEFAULT              (c, "channels", 0, "8");
+    CLASS_ATTR_DEFAULT              (c, "channels", 0, "4");
     // @description The number of displayed channel and peak level indicators.
     
     CLASS_ATTR_DOUBLE_VARSIZE       (c, "angles", ATTR_SET_DEFER_LOW, t_meter, f_attrs, f_attrs, MAX_UI_CHANNELS);
@@ -901,14 +898,12 @@ int C74_EXPORT main(void)
     CLASS_ATTR_ORDER                (c, "angles", 0, "2");
     CLASS_ATTR_LABEL                (c, "angles", 0, "Angles of Channels");
     CLASS_ATTR_SAVE                 (c, "angles", 1);
-    //CLASS_ATTR_DEFAULT              (c, "angles", 0, "0 45 90 135 180 225 270 315");
     // @description The angles of the displayed channels and peak level indicators. Values are in degrees, wrapped between 0. and 360., so you can also set the angles with negative values.
     
     CLASS_ATTR_DOUBLE               (c, "offset", 0, t_meter, f_attrs);
     CLASS_ATTR_ACCESSORS            (c, "offset", offset_get, offset_set);
     CLASS_ATTR_ORDER                (c, "offset", 0, "3");
     CLASS_ATTR_LABEL                (c, "offset", 0, "Offset of Channels");
-    //CLASS_ATTR_FILTER_CLIP			(c, "offset", -180, 180);
     CLASS_ATTR_DEFAULT              (c, "offset", 0, "0");
     CLASS_ATTR_SAVE                 (c, "offset", 1);
     // @description Display offset of channels and peak level indicators. the value is in degree, clipped between -180. and 180.
