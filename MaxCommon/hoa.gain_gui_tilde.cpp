@@ -349,17 +349,23 @@ void hoa_gain_assign(t_hoa_gain *x, double f, long notify)
 /* Paint ------------------------------------- */
 void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 {
-    int zerodBpos;
-    zerodBpos = hoa_gain_dBvaltopos(x, 0, rect, isHoriz);
-    
     t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_background_layer, rect->width, rect->height);
     
     if (g)
     {
-        // background
+        int zerodBpos;
+        zerodBpos = hoa_gain_dBvaltopos(x, 0, rect, isHoriz);
+        
+        // Background
         jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
         jgraphics_set_source_jrgba(g, &x->j_brgba);
         jgraphics_fill(g);
+        
+        // Border :
+        jgraphics_rectangle(g, 0., 0., rect->width, rect->height);
+        jgraphics_set_source_jrgba(g, &x->j_knobcolor);
+        jgraphics_set_line_width(g, 1.);
+        jgraphics_stroke(g);
         
         jgraphics_set_source_jrgba(g, &x->j_knobcolor);
         
@@ -380,15 +386,13 @@ void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 }
 
 void draw_cursor(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
-{    
-	t_jgraphics *g;
-    
-	int pos = hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
-    
-    g = jbox_start_layer((t_object *)x, view, gensym("cursor_layer"), rect->width, rect->height);
+{
+    t_jgraphics *g = jbox_start_layer((t_object *)x, view, gensym("cursor_layer"), rect->width, rect->height);
     
 	if (g)
 	{
+        int pos = hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
+        
         // draw knob rect
         jgraphics_set_source_jrgba(g, &x->j_knobcolor);
         
@@ -406,32 +410,30 @@ void draw_cursor(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 
 void draw_valuerect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
 {
-    t_jgraphics *g;
-    t_rect layer;
-    
-    int pos = hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
-    
-    if (isHoriz)
-    {
-        layer.x = layer.y = knobMargin;
-        layer.width = pos - hoa_gain_DISPLAYINSET*0.5 - knobMargin*1.5;
-        layer.height = rect->height - (knobMargin*2);
-    }
-    else
-    {
-        layer.x = knobMargin;
-        layer.y = pos + hoa_gain_DISPLAYINSET*0.5 + knobMargin*0.5;
-        layer.width = rect->width - (knobMargin*2);
-        layer.height = rect->height - layer.y - knobMargin;
-    }
-    
-    if (max(layer.width, 0.) == 0 || max(layer.height, 0.) == 0)
-        return;
-    
-    g = jbox_start_layer((t_object *)x, view, gensym("valuerect_layer"), rect->width, rect->height);
+    t_jgraphics *g = jbox_start_layer((t_object *)x, view, gensym("valuerect_layer"), rect->width, rect->height);
     
     if (g)
     {
+        t_rect layer;
+        int pos = hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
+        
+        if (isHoriz)
+        {
+            layer.x = layer.y = knobMargin;
+            layer.width = pos - hoa_gain_DISPLAYINSET*0.5 - knobMargin*1.5;
+            layer.height = rect->height - (knobMargin*2);
+        }
+        else
+        {
+            layer.x = knobMargin;
+            layer.y = pos + hoa_gain_DISPLAYINSET*0.5 + knobMargin*0.5;
+            layer.width = rect->width - (knobMargin*2);
+            layer.height = rect->height - layer.y - knobMargin;
+        }
+        
+        if (max(layer.width, 0.) == 0 || max(layer.height, 0.) == 0)
+            return;
+        
         jgraphics_rectangle(g, layer.x, layer.y, layer.width, layer.height);
         jgraphics_set_source_jrgba(g, &x->j_barcolor);
         jgraphics_fill(g);

@@ -147,6 +147,14 @@ void draw_background(t_hoa_3d_scope *x,  t_object *view, t_rect *rect)
         jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
         jgraphics_set_source_jrgba(g, &x->f_color_bg);
         jgraphics_fill(g);
+        
+        // Border
+        jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
+        t_jrgba black = rgba_addContrast(x->f_color_bg, -contrast_black);
+        jgraphics_set_source_jrgba(g, &black);
+        jgraphics_set_line_width(g, 1.);
+        jgraphics_stroke(g);
+        
         jbox_end_layer((t_object*)x, view, hoa_sym_background_layer);
     }
     jbox_paint_layer((t_object *)x, view, hoa_sym_background_layer, 0., 0.);
@@ -154,22 +162,23 @@ void draw_background(t_hoa_3d_scope *x,  t_object *view, t_rect *rect)
 
 void draw_harmonics(t_hoa_3d_scope *x, t_object *view, t_rect *rect)
 {
-    char pathLength;
-    t_jmatrix transform;
-    t_jrgba color_pos;
-    t_jrgba color_neg;
 	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_harmonics_layer, rect->width, rect->height);
-    t_jrgba black = rgba_addContrast(x->f_color_bg, -contrast_black);
-    t_jrgba white = rgba_addContrast(x->f_color_bg, contrast_white);
     
 	if (g)
 	{
+        char pathLength;
+        t_jmatrix transform;
+        t_jrgba color_pos;
+        t_jrgba color_neg;
+        t_jrgba black = rgba_addContrast(x->f_color_bg, -contrast_black);
+        t_jrgba white = rgba_addContrast(x->f_color_bg, contrast_white);
+        
         jgraphics_rotate(g, HOA_PI);
         jgraphics_set_line_width(g, 1);
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
         
-        for(int j = 0; j < x->f_scope->getNumberOfRows() * 0.5; j++)
+        for(ulong j = 0; j < x->f_scope->getNumberOfRows() * 0.5; j++)
         {
             pathLength = 0;
             double constrast = (j - x->f_scope->getNumberOfRows() * 0.5) / (double)x->f_scope->getNumberOfRows();
@@ -342,9 +351,7 @@ t_max_err set_order(t_hoa_3d_scope *x, t_object *attr, long ac, t_atom *av)
         order = atom_getlong(av);
         if(order != x->f_scope->getDecompositionOrder() && order > 0)
         {
-            int dspState = sys_getdspobjdspstate((t_object*)x);
-            if(dspState)
-                object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
+            object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
             
             delete x->f_scope;
             delete [] x->f_signals;
@@ -352,13 +359,11 @@ t_max_err set_order(t_hoa_3d_scope *x, t_object *attr, long ac, t_atom *av)
             x->f_order      = x->f_scope->getDecompositionOrder();
             x->f_signals    = new double[x->f_scope->getNumberOfHarmonics() * SYS_MAXBLKSIZE];
             
-            object_obex_lookup(x, gensym("#B"), (t_object **)&b);
+            object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
+            
             object_method(b, hoa_sym_dynlet_begin);
             dsp_resize((t_pxobject*)x, x->f_scope->getNumberOfHarmonics());
             object_method(b, hoa_sym_dynlet_end);
-            
-            if(dspState)
-                object_method(hoa_sym_dsp->s_thing, hoa_sym_start);
         }
 	}
     

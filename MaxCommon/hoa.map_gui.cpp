@@ -1622,27 +1622,34 @@ t_max_err hoamap_notify(t_hoa_map *x, t_symbol *s, t_symbol *msg, void *sender, 
 
 void draw_background(t_hoa_map *x,  t_object *view, t_rect *rect)
 {
-    t_jgraphics *g;
-    t_jrgba black;
-    double w = rect->width;
-    double h = rect->height;
-    t_pt ctr = {w*0.5, h*0.5};
-    double maxctr = max(w, h)*0.5;
+	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_background_layer, rect->width, rect->height);
     
-    t_jrgba bgcolor = rgba_addContrast(x->f_color_bg, -0.1);
-    black = rgba_addContrast(x->f_color_bg, -0.12);
-	
-	g = jbox_start_layer((t_object *)x, view, hoa_sym_background_layer, w, h);
 	if (g)
     {
-        jgraphics_rectangle(g, 0., 0., rect->width, rect->height);
+        const double w = rect->width;
+        const double h = rect->height;
+        const t_pt ctr = {w*0.5, h*0.5};
+        const double maxctr = max(w, h)*0.5;
+        
+        t_jrgba bgcolor = rgba_addContrast(x->f_color_bg, -0.1);
+        t_jrgba black = rgba_addContrast(x->f_color_bg, -0.12);
+        
+        // Background :
+        jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
         jgraphics_set_source_jrgba(g, &bgcolor);
         jgraphics_fill(g);
         
+        // Grid bg :
         jgraphics_set_source_jrgba(g, &x->f_color_bg);
         jgraphics_set_line_width(g, 1);
         jgraphics_arc(g, ctr.x, ctr.y, maxctr * (1./MIN_ZOOM * x->f_zoom_factor),  0., HOA_2PI);
         jgraphics_fill(g);
+        
+        // Border :
+        jgraphics_set_source_jrgba(g, &black);
+        jgraphics_set_line_width(g, 1.);
+        jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
+        jgraphics_stroke(g);
         
         double ecart = x->f_zoom_factor * maxctr;
         if(ecart < 10 && ecart >= 5) ecart *= 4;
@@ -1653,7 +1660,7 @@ void draw_background(t_hoa_map *x,  t_object *view, t_rect *rect)
         jgraphics_set_source_jrgba(g, &black);
         jgraphics_set_line_width(g, 1);
         
-		for(double i = 0; i < maxctr; i += ecart)
+		for(double i = 0.; i < maxctr; i += ecart)
         {
             jgraphics_move_to(g, 0., ctr.y - i);
             jgraphics_line_to(g, w, ctr.y - i);
@@ -1667,7 +1674,7 @@ void draw_background(t_hoa_map *x,  t_object *view, t_rect *rect)
         }
         
         /* Circles */
-        double radius = x->f_zoom_factor * (maxctr*2) / 10.;
+        const double radius = x->f_zoom_factor * (maxctr*2) / 10.;
         for(int i = 5; i > 0; i--)
         {
             jgraphics_arc(g, ctr.x, ctr.y, (double)i * radius - 1,  0., HOA_2PI);
@@ -1681,31 +1688,27 @@ void draw_background(t_hoa_map *x,  t_object *view, t_rect *rect)
 
 void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
 {
-	int i;
-	double fontSize;
-	t_jtextlayout *jtl;
-	t_jrgba sourceColor;
-	char description[250];
-	
-	t_pt sourceDisplayPos, groupDisplayPos, textDisplayPos;
-	
-	double* color;
-    
-    double w = rect->width;
-    double h = rect->height;
-    t_pt ctr = {w*0.5, h*0.5};
-	
-    x->jfont = jfont_create(jbox_get_fontname((t_object *)x)->s_name, (t_jgraphics_font_slant)jbox_get_font_slant((t_object *)x), (t_jgraphics_font_weight)jbox_get_font_weight((t_object *)x), jbox_get_fontsize((t_object *)x));
-    x->f_size_source = jbox_get_fontsize((t_object *)x) / 2.;
-    fontSize = jbox_get_fontsize((t_object *)x);
-	
     t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_sources_layer, rect->width, rect->height);
     
 	if (g)
     {
-        jtl = jtextlayout_create();
+        t_jrgba sourceColor;
+        char description[250];
+        
+        t_pt sourceDisplayPos, groupDisplayPos, textDisplayPos;
+        
+        double* color;
+        
+        const double w = rect->width;
+        const double h = rect->height;
+        const t_pt ctr = {w*0.5, h*0.5};
+        
+        const double fontSize = jbox_get_fontsize((t_object *)x);
+        
+        t_jtextlayout *jtl = jtextlayout_create();
         jgraphics_set_line_width(g, x->f_size_source * 0.2);
-		for(i = 0; i <= x->f_source_manager->getMaximumIndexOfSource(); i++)
+        
+		for(ulong i = 0; i <= x->f_source_manager->getMaximumIndexOfSource(); i++)
         {
             if(x->f_source_manager->sourceGetExistence(i))
             {
@@ -1736,9 +1739,9 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
 				jrgba_set(&sourceColor, color[0], color[1], color[2], color[3]);
                 
                 if(!x->f_source_manager->sourceGetDescription(i).empty())
-                    sprintf(description,"%i : %s", i+1, x->f_source_manager->sourceGetDescription(i).c_str());
+                    sprintf(description,"%lu : %s", i+1, x->f_source_manager->sourceGetDescription(i).c_str());
                 else
-                    sprintf(description,"%i", i+1);
+                    sprintf(description,"%lu", i+1);
 				            
                 textDisplayPos.x = sourceDisplayPos.x - 2. * x->f_size_source;
                 textDisplayPos.y = sourceDisplayPos.y - x->f_size_source - fontSize - 1.;
@@ -1795,8 +1798,6 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
                     jgraphics_set_source_jrgba(g, &sourceColor);
 					jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_size_source * 0.7,  0., HOA_2PI);
                     jgraphics_fill(g);
-                    //jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_size_source,  0., HOA_2PI);
-                    //jgraphics_stroke(g);
                 }
                 if(x->f_source_manager->sourceGetMute(i))
                 {
@@ -1824,30 +1825,27 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
 
 void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
 {
-	int i;
-	double fontSize;
-	t_jtextlayout *jtl;
-	t_jrgba sourceColor;    
-	char description[250] = {0};
-	
-	t_pt sourceDisplayPos, groupDisplayPos, textDisplayPos;
-	
-	double* color;
-    
-    double w = rect->width;
-    double h = rect->height;
-    t_pt ctr = {w*0.5, h*0.5};
-	
-	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_groups_layer, w, h);
-	x->jfont = jfont_create(jbox_get_fontname((t_object *)x)->s_name, (t_jgraphics_font_slant)jbox_get_font_slant((t_object *)x), (t_jgraphics_font_weight)jbox_get_font_weight((t_object *)x), jbox_get_fontsize((t_object *)x));
-    x->f_size_source = jbox_get_fontsize((t_object *)x) / 2.;
-    fontSize = jbox_get_fontsize((t_object *)x);
+	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_groups_layer, rect->width, rect->height);
 	
 	if (g)
     {
-        jtl = jtextlayout_create();
+        t_jrgba sourceColor;
+        char description[250] = {0};
+        
+        t_pt sourceDisplayPos, groupDisplayPos, textDisplayPos;
+        
+        double* color;
+        
+        const double w = rect->width;
+        const double h = rect->height;
+        const t_pt ctr = {w*0.5, h*0.5};
+        
+        const double fontSize = jbox_get_fontsize((t_object *)x);
+        
+        t_jtextlayout *jtl = jtextlayout_create();
         jgraphics_set_line_width(g, x->f_size_source * 0.2);
-		for(i = 0; i <= x->f_source_manager->getMaximumIndexOfGroup(); i++)
+        
+		for(ulong i = 0; i <= x->f_source_manager->getMaximumIndexOfGroup(); i++)
         {
             if(x->f_source_manager->groupGetExistence(i))
             {
@@ -1878,9 +1876,9 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
 				jrgba_set(&sourceColor, color[0], color[1], color[2], color[3]);
                 
                 if(!x->f_source_manager->groupGetDescription(i).empty())
-                    sprintf(description,"%i : %s", i+1, x->f_source_manager->groupGetDescription(i).c_str());
+                    sprintf(description,"%lu : %s", i+1, x->f_source_manager->groupGetDescription(i).c_str());
                 else
-                    sprintf(description,"%i", i+1);
+                    sprintf(description,"%lu", i+1);
     
                 textDisplayPos.x = sourceDisplayPos.x - 2. * x->f_size_source;
                 textDisplayPos.y = sourceDisplayPos.y - x->f_size_source - fontSize - 1.;
@@ -1979,17 +1977,16 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
 
 void draw_rect_selection(t_hoa_map *x,  t_object *view, t_rect *rect)
 {
-	t_jgraphics *g;
-    t_jrgba strokecolor = x->f_color_selection;
-    strokecolor.alpha = 0.8;
-	t_rect sel;
-    
-    g = jbox_start_layer((t_object *)x, view, hoa_sym_rect_selection_layer, rect->width, rect->height);
+	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_rect_selection_layer, rect->width, rect->height);
     
 	if (g)
     {
 		if (x->f_rect_selection_exist)
         {
+            t_jrgba strokecolor = x->f_color_selection;
+            strokecolor.alpha = 0.8;
+            t_rect sel;
+            
 			sel.x = floor(x->f_rect_selection.x) + 0.5;
 			sel.y = floor(x->f_rect_selection.y) + 0.5;
 			sel.width = x->f_rect_selection.width;
@@ -2018,6 +2015,13 @@ void hoamap_paint(t_hoa_map *x, t_object *view)
     /* Pas de groupes avec un nombre de source inférieur à 2 et pas de doublons de groupes */
     
     x->f_source_manager->groupClean();
+    
+    x->jfont = jfont_create(jbox_get_fontname((t_object *)x)->s_name,
+                            (t_jgraphics_font_slant)jbox_get_font_slant((t_object *)x),
+                            (t_jgraphics_font_weight)jbox_get_font_weight((t_object *)x),
+                            jbox_get_fontsize((t_object *)x));
+    
+    x->f_size_source = jbox_get_fontsize((t_object *)x) / 2.;
     
     draw_background(x, view, &rect);
     draw_sources(x, view, &rect);

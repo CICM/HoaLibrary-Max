@@ -179,7 +179,7 @@ t_max_err angles_set(t_meter *x, t_object *attr, long ac, t_atom *av)
 {
     if(ac && av)
     {
-        object_method(hoa_sym_dsp->s_thing, gensym("stop"));
+        object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         
         for(long i = 0; i < ac && i < x->f_meter->getNumberOfPlanewaves(); i++)
         {
@@ -376,7 +376,12 @@ void draw_skeleton(t_meter *x,  t_object *view, t_rect *rect)
 		// Background :
         jgraphics_rectangle(g, 0., 0., rect->width, rect->height);
         jgraphics_set_source_jrgba(g, &x->f_color_bg);
-        jgraphics_fill(g);
+        jgraphics_fill_preserve(g);
+        
+        // Border :
+        jgraphics_set_source_jrgba(g, &black);
+        jgraphics_set_line_width(g, 1);
+        jgraphics_stroke(g);
         
         // Meter Background :
 		jgraphics_set_source_jrgba(g, &x->f_color_mbg);

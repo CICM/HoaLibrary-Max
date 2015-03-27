@@ -146,7 +146,7 @@ t_max_err angles_set(t_hoa_3d_vector *x, t_object *attr, long argc, t_atom *argv
         x->f_vector->computeRendering();
     }
     
-    for(int i = 1, j = 0; i < x->f_vector->getNumberOfPlanewaves() * 2 && i < argc; i+= 2, j++)
+    for(int i = 1, j = 0; i < x->f_vector->getNumberOfPlanewaves() * 2; i+= 2, j++)
     {
         x->f_angles_of_channels[i-1] = x->f_vector->getPlanewaveAzimuth(j) / HOA_2PI * 360;
         x->f_angles_of_channels[i] = x->f_vector->getPlanewaveElevation(j) / HOA_2PI * 360;
@@ -174,18 +174,17 @@ void *hoa_3d_vector_new(t_symbol *s, long argc, t_atom *argv)
     t_hoa_3d_vector *x = (t_hoa_3d_vector *)object_alloc(hoa_3d_vector_class);
     if (x)
     {
-        int	numberOfPlanewaves = 1;
-        int mode = 1;
+        int	channels = 4;
+        x->f_mode = 1;
         
         if(argc && atom_gettype(argv) == A_LONG)
-            numberOfPlanewaves = max<long>(atom_getlong(argv), 1);
+            channels = max<long>(atom_getlong(argv), 4);
         
-        if(argc > 1 && atom_gettype(argv+1) == A_SYM && atom_getsym(argv+1) == gensym("velocity"))
-            mode = 0;
+        if(argc > 1 && atom_gettype(argv+1) == A_SYM && atom_getsym(argv+1) == hoa_sym_velocity)
+            x->f_mode = 0;
         
-        x->f_mode = mode;
-        
-        x->f_vector = new Vector<Hoa3d, t_sample>(numberOfPlanewaves);
+        x->f_vector = new Vector<Hoa3d, t_sample>(channels);
+        x->f_vector->computeRendering();
         
         for (int i = 0; i < 3; i++)
             outlet_new(x, "signal");
@@ -196,10 +195,12 @@ void *hoa_3d_vector_new(t_symbol *s, long argc, t_atom *argv)
         
         x->f_number_of_angles = x->f_vector->getNumberOfPlanewaves() * 2;
         
-        for(int i = 1, j = 0; i < x->f_vector->getNumberOfPlanewaves() * 2 && i < argc; i+= 2, j++)
+        for(int i = 1, j = 0; i < x->f_vector->getNumberOfPlanewaves() * 2; i+= 2, j++)
         {
             x->f_angles_of_channels[i-1] = x->f_vector->getPlanewaveAzimuth(j) / HOA_2PI * 360;
             x->f_angles_of_channels[i] = x->f_vector->getPlanewaveElevation(j) / HOA_2PI * 360;
+            
+            post("angle %i: %f   %f", j, x->f_angles_of_channels[i-1], x->f_angles_of_channels[i]);
         }
         
         attr_args_process(x, argc, argv);
@@ -224,8 +225,8 @@ int C74_EXPORT main(void)
     
     // @method signal @digest Array of channels signals.
     // @description Array of channels signals.
-    class_addmethod(c, (method)hoa_3d_vector_dsp64,	"dsp64",	A_CANT, 0);
-    class_addmethod(c, (method)hoa_3d_vector_assist,   "assist",	A_CANT, 0);
+    class_addmethod(c, (method)hoa_3d_vector_dsp64,     "dsp64",	A_CANT, 0);
+    class_addmethod(c, (method)hoa_3d_vector_assist,    "assist",	A_CANT, 0);
     
     CLASS_ATTR_DOUBLE_VARSIZE	(c, "angles", ATTR_SET_DEFER_LOW, t_hoa_3d_vector, f_angles_of_channels, f_number_of_angles, HOA_MAX_PLANEWAVES*2);
     CLASS_ATTR_LABEL			(c, "angles", 0, "Angles of Planewaves");

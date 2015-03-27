@@ -36,7 +36,7 @@ typedef struct _hoa_3d_map
     t_sample*                       	f_sig_ins;
     t_sample*                       	f_sig_outs;
     t_sample*                           f_lines_vector;
-    float                               f_ramp;
+    double                              f_ramp;
     int                                 f_mode;
     
 } t_hoa_3d_map;
@@ -543,7 +543,7 @@ int C74_EXPORT main(void)
     // @method int @digest Set single source coordinate with messages depending on the mode.
     // @description Set single source coordinate with messages depending on the mode.
     // @marg 0 @name coord @optional 0 @type int
-    class_addmethod(c, (method)hoa_3d_map_int,         "int",		A_LONG, 0);
+    class_addmethod(c, (method)hoa_3d_map_int,          "int",		A_LONG, 0);
     
     // @method list @digest Send source messages (coordinates and mute state).
     // @description Send source messages like coordinates and mute state. The list must be formatted like this : source-index input-mode radius azimuth elevation to set source positions or like this : source-index 'mute' mute-state to set the mute state of a source.
@@ -552,17 +552,17 @@ int C74_EXPORT main(void)
     // marg 2 @name coord-1/mute-state @optional 0 @type float/int
     // marg 3 @name coord-2 @optional 0 @type float
     // marg 4 @name coord-3 @optional 0 @type float
-    class_addmethod(c, (method)hoa_3d_map_list,        "list",		A_GIMME, 0);
+    class_addmethod(c, (method)hoa_3d_map_list,         "list",		A_GIMME, 0);
     
     // @method signal @digest Sources signals to encode.
     // @description If you have a single source, the first signal inlet is for the source to encode, the three other ones are to control source position at signal rate. If you have more than one source to spatialize, all of the inputs represent a signal to encode and coordonates are given with messages.
-    class_addmethod(c, (method)hoa_3d_map_dsp64,		"dsp64",	A_CANT, 0);
-    class_addmethod(c, (method)hoa_3d_map_assist,      "assist",	A_CANT, 0);
+    class_addmethod(c, (method)hoa_3d_map_dsp64,        "dsp64",	A_CANT, 0);
+    class_addmethod(c, (method)hoa_3d_map_assist,       "assist",	A_CANT, 0);
     
     CLASS_ATTR_DOUBLE           (c, "ramp", 0, t_hoa_3d_map, f_ramp);
     CLASS_ATTR_CATEGORY			(c, "ramp", 0, "Behavior");
     CLASS_ATTR_LABEL			(c, "ramp", 0, "Ramp Time (ms)");
-    CLASS_ATTR_ORDER			(c, "ramp", 0, "2");
+    CLASS_ATTR_ORDER			(c, "ramp", 0, "1");
     CLASS_ATTR_ACCESSORS		(c, "ramp", NULL, ramp_set);
     // @description The ramp time in milliseconds.
     

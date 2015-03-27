@@ -469,12 +469,18 @@ void draw_background(t_hoa_meter_3d *x,  t_object *view, t_rect *rect)
 	if (g)
 	{
         t_jrgba black = rgba_addContrast(x->f_color_bg, -contrast_black);
+        
+        // Background :
         jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
         jgraphics_set_source_jrgba(g, &x->f_color_bg);
-        jgraphics_fill(g);
+        jgraphics_fill_preserve(g);
+        
+        // Border :
+        jgraphics_set_source_jrgba(g, &black);
+        jgraphics_set_line_width(g, 1.);
+        jgraphics_stroke(g);
         
 		jgraphics_set_line_width(g, 1.);
-		
 		if(x->f_view == hoa_sym_topnextbottom)
         {
             jgraphics_set_source_jrgba(g, &black);

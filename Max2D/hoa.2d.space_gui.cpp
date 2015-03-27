@@ -258,22 +258,27 @@ void hoa_2d_space_jsave(t_hoa_2d_space *x, t_dictionary *d)
 
 void draw_background(t_hoa_2d_space *x,  t_object *view, t_rect *rect)
 {
-    int i;
-	double y1, y2, rotateAngle, grid_rad, inner_radius, grid_range, grid_step;
-    t_jmatrix transform;
-	
-	long grid = x->f_grid;
-	inner_radius = (double) 1 / 5 * x->f_radius;
-	grid_range = x->f_radius - inner_radius;
-	grid_step = safediv(grid_range, grid);
-    
 	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_background_layer, rect->width, rect->height);
     
 	if (g)
 	{
+        double y1, y2, rotateAngle, grid_rad, inner_radius, grid_range, grid_step;
+        t_jmatrix transform;
+        
+        long grid = x->f_grid;
+        inner_radius = (double) 1. / 5. * x->f_radius;
+        grid_range = x->f_radius - inner_radius;
+        grid_step = safediv(grid_range, grid);
+        
         jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
         jgraphics_set_source_jrgba(g, &x->f_color_bg);
         jgraphics_fill(g);
+        
+        // Border
+        jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
+        jgraphics_set_source_jrgba(g, &x->f_color_lines);
+        jgraphics_set_line_width(g, 1.);
+        jgraphics_stroke(g);
         
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
@@ -281,7 +286,7 @@ void draw_background(t_hoa_2d_space *x,  t_object *view, t_rect *rect)
         jgraphics_set_source_jrgba(g, &x->f_color_lines);
         jgraphics_set_line_width(g, 1);
         
-        for(i = 0; i < x->f_number_of_channels ; i++)
+        for(long i = 0; i < x->f_number_of_channels ; i++)
 		{
             rotateAngle = ((double)i / (x->f_number_of_channels) * HOA_2PI ) - (0.5 / (x->f_number_of_channels) * HOA_2PI);
 			jgraphics_rotate(g, rotateAngle);
@@ -299,7 +304,7 @@ void draw_background(t_hoa_2d_space *x,  t_object *view, t_rect *rect)
         jgraphics_matrix_init(&transform, 1, 0, 0, 1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
 		
-		for(i = grid; i >= 0; i--)
+		for(long i = grid; i >= 0; i--)
 		{
 			grid_rad = grid_step * i + inner_radius;
             jgraphics_arc(g, 0, 0, grid_rad,  0., HOA_2PI);

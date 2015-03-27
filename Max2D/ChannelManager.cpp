@@ -23,7 +23,7 @@ namespace hoa
 	
 	void ChannelManager::setNumberOfChannels(long number_of_channels)
 	{
-        number_of_channels = Math<long>::clip(number_of_channels, 0, 3);
+        number_of_channels = max<long>(number_of_channels, 3);
 		
 		if(m_channels.size() > number_of_channels)
 		{

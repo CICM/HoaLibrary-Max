@@ -143,17 +143,22 @@ long hoa_2d_scope_oksize(t_hoa_2d_scope *x, t_rect *newrect)
 
 void draw_background(t_hoa_2d_scope *x,  t_object *view, t_rect *rect)
 {
-	int i;
-	double y1, y2, rotateAngle;
-    t_jmatrix transform;
-    
 	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_background_layer, rect->width, rect->height);
 
 	if (g) 
 	{
+        double y1, y2, rotateAngle;
+        t_jmatrix transform;
+        
         jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
         jgraphics_set_source_jrgba(g, &x->f_color_bg);
         jgraphics_fill(g);
+        
+        jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
+        jgraphics_set_source_jrgba(g, &x->f_color_lines);
+        jgraphics_set_line_width(g, 1);
+        jgraphics_stroke(g);
+        
         
 		jgraphics_matrix_init(&transform, 1, 0, 0, -1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
@@ -161,7 +166,7 @@ void draw_background(t_hoa_2d_scope *x,  t_object *view, t_rect *rect)
         jgraphics_set_source_jrgba(g, &x->f_color_lines);
         jgraphics_set_line_width(g, 1);
 
-        for(i = 0; i < (x->f_order * 2 + 2) ; i++)
+        for(int i = 0; i < (x->f_order * 2 + 2) ; i++)
 		{
             rotateAngle = ((double)i / (x->f_order * 2 + 2) * HOA_2PI ) - (0.5 / (x->f_order * 2 + 2) * HOA_2PI);
 			jgraphics_rotate(g, rotateAngle);
@@ -179,7 +184,7 @@ void draw_background(t_hoa_2d_scope *x,  t_object *view, t_rect *rect)
         jgraphics_matrix_init(&transform, 1, 0, 0, 1, x->f_center, x->f_center);
 		jgraphics_set_matrix(g, &transform);
         
-        for(i = 5; i > 0; i--)
+        for(int i = 5; i > 0; i--)
 		{
             jgraphics_arc(g, 0, 0, (double)i / 5.* x->f_radius,  0., HOA_2PI);
             jgraphics_stroke(g);
@@ -192,18 +197,18 @@ void draw_background(t_hoa_2d_scope *x,  t_object *view, t_rect *rect)
 
 void draw_harmonics(t_hoa_2d_scope *x, t_object *view, t_rect *rect)
 {
-	int pathLength = 0;
-	t_pt beginCoord;
-    t_jpath* posHarmPath = NULL;
-    t_jpath* negHarmPath = NULL;
-    t_jmatrix transform;
-    const ulong npoint = x->f_scope->getNumberOfPoints();
-    long posPathLen = 0, negPathLen = 0, precIndex = 0;
-
 	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_harmonics_layer, rect->width, rect->height);
     
 	if (g)
 	{
+        int pathLength = 0;
+        t_pt beginCoord;
+        t_jpath* posHarmPath = NULL;
+        t_jpath* negHarmPath = NULL;
+        t_jmatrix transform;
+        const ulong npoint = x->f_scope->getNumberOfPoints();
+        long posPathLen = 0, negPathLen = 0, precIndex = 0;
+        
 		jgraphics_set_line_join(g, JGRAPHICS_LINE_JOIN_ROUND);
         jgraphics_set_line_cap(g, JGRAPHICS_LINE_CAP_ROUND);
 		jgraphics_set_line_width(g, 1);
@@ -318,9 +323,7 @@ t_max_err set_order(t_hoa_2d_scope *x, t_object *attr, long ac, t_atom *av)
         
         if(order != x->f_scope->getDecompositionOrder() && order > 0)
         {
-            int dspState = sys_getdspobjdspstate((t_object*)x);
-            if(dspState)
-                object_method(hoa_sym_dsp->s_thing, hoa_sym_start);
+            object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
             
             delete x->f_scope;
             delete [] x->f_signals;
@@ -329,13 +332,10 @@ t_max_err set_order(t_hoa_2d_scope *x, t_object *attr, long ac, t_atom *av)
             x->f_signals    = new t_sample[x->f_scope->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
             
             t_object *b = NULL;
-            object_obex_lookup(x, gensym("#B"), (t_object **)&b);
+            object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
             object_method(b, hoa_sym_dynlet_begin);
             dsp_resize((t_pxobject*)x, x->f_scope->getNumberOfHarmonics());
             object_method(b, hoa_sym_dynlet_end);
-            
-            if(dspState)
-                object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         }
 	}
     

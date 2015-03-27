@@ -40,35 +40,6 @@ typedef struct _hoa_2d_vector
 
 t_class *hoa_2d_vector_class;
 
-void *hoa_2d_vector_new(t_symbol *s, long argc, t_atom *argv)
-{
-	// @arg 0 @name number-of-channels @optional 0 @type int @digest The number of channels
-	// @description First argument sets the number of channels.
-	
-	t_hoa_2d_vector *x = NULL;
-    x = (t_hoa_2d_vector *)object_alloc(hoa_2d_vector_class);
-    
-	if(x)
-	{
-        ulong channels = 4;
-        if (argc && atom_gettype(argv) == A_LONG)
-            channels = max<long>(atom_getlong(argv), 1);
-        
-        x->f_vector = new Vector<Hoa2d, t_sample>(channels);
-		
-		dsp_setup((t_pxobject *)x, x->f_vector->getNumberOfPlanewaves());
-		for (int i = 0; i < 4; i++)
-			outlet_new(x, "signal");
-        
-		x->f_ins = new t_sample[x->f_vector->getNumberOfPlanewaves() * HOA_MAXBLKSIZE];
-        x->f_outs = new t_sample[4 * HOA_MAXBLKSIZE];
-        
-        attr_args_process(x, argc, argv);
-	}
-
-	return (x);
-}
-
 t_hoa_err hoa_getinfos(t_hoa_2d_vector* x, t_hoa_boxinfos* boxinfos)
 {
 	boxinfos->object_type = HOA_OBJECT_2D;
@@ -87,7 +58,10 @@ void hoa_2d_vector_perform64(t_hoa_2d_vector *x, t_object *dsp64, double **ins, 
     }
 	for(int i = 0; i < sampleframes; i++)
     {
-        x->f_vector->process(x->f_ins + numins * i, x->f_outs + numouts * i);
+        //x->f_vector->process(x->f_ins + numins * i, x->f_outs + numouts * i);
+        
+        x->f_vector->process(x->f_ins + numins * i, x->f_outs + 2 * i);
+        x->f_vector->process(x->f_ins + numins * i, x->f_outs + 2 * i + 2);
     }
     for(int i = 0; i < numouts; i++)
     {
@@ -97,19 +71,31 @@ void hoa_2d_vector_perform64(t_hoa_2d_vector *x, t_object *dsp64, double **ins, 
 
 void hoa_2d_vector_dsp64(t_hoa_2d_vector *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
+    x->f_vector->computeRendering();
     object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_vector_perform64, 0, NULL);
 }
 
 void hoa_2d_vector_assist(t_hoa_2d_vector *x, void *b, long m, long a, char *s)
 {
     if(m == ASSIST_INLET)
+    {
         sprintf(s,"(signal) %s", x->f_vector->getPlanewaveName(a).c_str());
+    }
     else
-        sprintf(s,"(signal) %s", x->f_vector->getPlanewaveName(a).c_str());
+    {
+        if(a == 0)
+            sprintf(s,"(signal) Velocity Vector Abscissa");
+        else if(a == 1)
+            sprintf(s,"(signal) Velocity Vector Ordinate");
+        else if(a == 2)
+            sprintf(s,"(signal) Energy Vector Abscissa");
+        else if(a == 3)
+            sprintf(s,"(signal) Energy Vector Ordinate");
+    }
 }
 
 
-void hoa_2d_vector_free(t_hoa_2d_vector *x) 
+void hoa_2d_vector_free(t_hoa_2d_vector *x)
 {
 	dsp_free((t_pxobject *)x);
 	delete x->f_vector;
@@ -140,10 +126,10 @@ t_max_err channels_set(t_hoa_2d_vector *x, t_object *attr, long argc, t_atom *ar
             
             delete x->f_vector;
             x->f_vector = new Vector<Hoa2d, t_sample>(channels);
+            x->f_vector->computeRendering();
         
-            object_obex_lookup(x, gensym("#B"), (t_object **)&b);
+            object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
             object_method(b, hoa_sym_dynlet_begin);
-        
             dsp_resize((t_pxobject*)x, x->f_vector->getNumberOfPlanewaves());
             object_method(b, hoa_sym_dynlet_end);
         
@@ -205,8 +191,39 @@ t_max_err angles_set(t_hoa_2d_vector *x, t_object *attr, long argc, t_atom *argv
             if(atom_gettype(argv+i) == A_LONG || atom_gettype(argv+i) == A_FLOAT);
             x->f_vector->setPlanewaveAzimuth(i, Math<double>::clip(atom_getfloat(argv+i), -360., 360.) / 360. * HOA_2PI);
         }
+        x->f_vector->computeRendering();
     }
     return MAX_ERR_NONE;
+}
+
+void *hoa_2d_vector_new(t_symbol *s, long argc, t_atom *argv)
+{
+    // @arg 0 @name number-of-channels @optional 0 @type int @digest The number of channels
+    // @description First argument sets the number of channels.
+    
+    t_hoa_2d_vector *x = NULL;
+    x = (t_hoa_2d_vector *)object_alloc(hoa_2d_vector_class);
+    
+    if(x)
+    {
+        ulong channels = 4;
+        if (argc && atom_gettype(argv) == A_LONG)
+            channels = max<long>(atom_getlong(argv), 1);
+        
+        x->f_vector = new Vector<Hoa2d, t_sample>(channels);
+        x->f_vector->computeRendering();
+        
+        dsp_setup((t_pxobject *)x, x->f_vector->getNumberOfPlanewaves());
+        for (int i = 0; i < 4; i++)
+            outlet_new(x, "signal");
+        
+        x->f_ins = new t_sample[x->f_vector->getNumberOfPlanewaves() * HOA_MAXBLKSIZE];
+        x->f_outs = new t_sample[4 * HOA_MAXBLKSIZE];
+        
+        attr_args_process(x, argc, argv);
+    }
+    
+    return (x);
 }
 
 #ifdef HOA_PACKED_LIB
