@@ -294,13 +294,9 @@ void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, 
         object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         
         offset = Math<double>::wrap_twopi(wrap(offset, -180., 180.) / 360. * HOA_2PI);
-        const double rot = x->f_decoder->getPlanewavesRotationX();
-        if(offset != rot)
-        {
-            x->f_decoder->setPlanewavesRotation(offset, 0., 0.);
-            x->f_offset = wrap(rot / HOA_2PI * 360.f, -180, 180);
-            object_attr_touch((t_object*)x, hoa_sym_offset);
-        }
+        x->f_decoder->setPlanewavesRotation(offset, 0., 0.);
+        x->f_offset = wrap(x->f_decoder->getPlanewavesRotationX() / HOA_2PI * 360.f, -180, 180);
+        object_attr_touch((t_object*)x, hoa_sym_offset);
     }
     
     if(n_angles > 0 && mode == hoa_sym_irregular)
@@ -337,7 +333,6 @@ t_max_err offset_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *arg
     if(argc && argv && atom_isNumber(argv))
     {
         hoa_decoder_config(x, x->f_mode, x->f_number_of_channels, atom_getfloat(argv));
-        return MAX_ERR_NONE;
     }
     return MAX_ERR_NONE;
 }

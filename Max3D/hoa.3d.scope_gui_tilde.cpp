@@ -323,7 +323,6 @@ void draw_harmonics(t_hoa_3d_scope *x, t_object *view, t_rect *rect)
             if(pathLength)
                 jgraphics_fill(g);
         }
-
 		
 		jbox_end_layer((t_object*)x, view, hoa_sym_harmonics_layer);
 	}

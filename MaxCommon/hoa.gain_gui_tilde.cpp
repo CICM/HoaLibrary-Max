@@ -379,9 +379,10 @@ void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
             jgraphics_line_draw_fast(g, knobMargin*0.5, zerodBpos - hoa_gain_DISPLAYINSET*0.5-knobMargin, knobMargin*0.5, zerodBpos + hoa_gain_DISPLAYINSET, 1);
             jgraphics_line_draw_fast(g, rect->width - knobMargin*0.5, zerodBpos - hoa_gain_DISPLAYINSET*0.5-knobMargin, rect->width - knobMargin*0.5, zerodBpos + hoa_gain_DISPLAYINSET, 1);
         }
+        
+        jbox_end_layer((t_object*)x, view, hoa_sym_background_layer);
     }
-    
-    jbox_end_layer((t_object*)x, view, hoa_sym_background_layer);
+
     jbox_paint_layer((t_object *)x, view, hoa_sym_background_layer, 0, 0);
 }
 
@@ -402,9 +403,10 @@ void draw_cursor(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
             jgraphics_rectangle(g, knobMargin, pos - hoa_gain_DISPLAYINSET*0.5, rect->width - (knobMargin*2), hoa_gain_DISPLAYINSET);
         
         jgraphics_fill(g);
+        
+        jbox_end_layer((t_object*)x, view, gensym("cursor_layer"));
 	}
 
-    jbox_end_layer((t_object*)x, view, gensym("cursor_layer"));
 	jbox_paint_layer((t_object *)x, view, gensym("cursor_layer"), 0., 0.);
 }
 
@@ -437,9 +439,10 @@ void draw_valuerect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
         jgraphics_rectangle(g, layer.x, layer.y, layer.width, layer.height);
         jgraphics_set_source_jrgba(g, &x->j_barcolor);
         jgraphics_fill(g);
+        
+        jbox_end_layer((t_object*)x, view, gensym("valuerect_layer"));
     }
     
-    jbox_end_layer((t_object*)x, view, gensym("valuerect_layer"));
     jbox_paint_layer((t_object *)x, view, gensym("valuerect_layer"), 0., 0.);
 }
 
