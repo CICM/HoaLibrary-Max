@@ -254,7 +254,6 @@ void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, 
         {
             delete x->f_decoder;
             x->f_decoder = new Decoder<Hoa2d, t_sample>::Regular(order, Math<long>::clip(channels, order*2+1, HOA_MAX_PLANEWAVES));
-            x->f_decoder->computeRendering(sys_getblksize());
         }
         else if(mode == hoa_sym_irregular)
         {
@@ -293,7 +292,7 @@ void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, 
     {
         object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         
-        offset = Math<double>::wrap_twopi(wrap(offset, -180., 180.) / 360. * HOA_2PI);
+        offset = Math<double>::wrap_twopi(offset / 360. * HOA_2PI);
         x->f_decoder->setPlanewavesRotation(offset, 0., 0.);
         x->f_offset = wrap(x->f_decoder->getPlanewavesRotationX() / HOA_2PI * 360.f, -180, 180);
         object_attr_touch((t_object*)x, hoa_sym_offset);
@@ -341,7 +340,7 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
 {
     if(argc && argv && atom_gettype(argv) == A_LONG)
     {
-        hoa_decoder_config(x, x->f_mode, atom_getfloat(argv));
+        hoa_decoder_config(x, x->f_mode, atom_getfloat(argv), 0.);
     }
     return MAX_ERR_NONE;
 }
