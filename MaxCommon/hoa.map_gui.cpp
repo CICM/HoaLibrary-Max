@@ -73,7 +73,7 @@ typedef struct  _hoamap
     
     int         f_cartesian_drag;
     
-    double      f_size_source;
+    double      f_source_radius;
 	double		f_zoom_factor;
     
     t_rect		f_rect_selection;
@@ -1670,7 +1670,7 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
         const double fontSize = jbox_get_fontsize((t_object *)x);
         
         t_jtextlayout *jtl = jtextlayout_create();
-        jgraphics_set_line_width(g, x->f_size_source * 0.2);
+        jgraphics_set_line_width(g, x->f_source_radius * 0.2);
         
         for(Source::source_iterator it = x->f_manager->getFirstSource(); it != x->f_manager->getLastSource(); it++)
         {
@@ -1708,8 +1708,8 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
             else
                 sprintf(description, "%lu", index);
             
-            textDisplayPos.x = sourceDisplayPos.x - 2. * x->f_size_source;
-            textDisplayPos.y = sourceDisplayPos.y - x->f_size_source - fontSize - 1.;
+            textDisplayPos.x = sourceDisplayPos.x - 2. * x->f_source_radius;
+            textDisplayPos.y = sourceDisplayPos.y - x->f_source_radius - fontSize - 1.;
             
             jtextlayout_settextcolor(jtl, &sourceColor);
             jtextlayout_set(jtl, description, x->jfont, textDisplayPos.x, textDisplayPos.y, fontSize * 10., fontSize * 2., JGRAPHICS_TEXT_JUSTIFICATION_LEFT, JGRAPHICS_TEXTLAYOUT_USEELLIPSIS);
@@ -1718,7 +1718,7 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
             if (x->f_selected_source == src)
             {
                 jgraphics_set_source_jrgba(g, &x->f_color_selection);
-                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_size_source * 1.5,  0., HOA_2PI);
+                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius * 1.25,  0., HOA_2PI);
                 jgraphics_fill(g);
                 
                 if (x->f_showgroups)
@@ -1760,20 +1760,20 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
             if(!src->getMute())
             {
                 jgraphics_set_source_jrgba(g, &sourceColor);
-                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_size_source * 0.7,  0., HOA_2PI);
+                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius * 0.7,  0., HOA_2PI);
                 jgraphics_fill(g);
             }
             else
             {
                 jgraphics_set_source_jrgba(g, &sourceColor);
-                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_size_source * 0.6,  0., HOA_2PI);
+                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius * 0.6,  0., HOA_2PI);
                 jgraphics_fill(g);
                 t_jrgba red = {1., 0., 0., 1.};
                 jgraphics_set_source_jrgba(g, &red); 
-                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_size_source,  0., HOA_2PI);
+                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius,  0., HOA_2PI);
                 jgraphics_stroke(g);
-                jgraphics_move_to(g, sourceDisplayPos.x + Math<double>::abscissa(x->f_size_source, HOA_PI2 / 2.), sourceDisplayPos.y + Math<double>::ordinate(x->f_size_source, HOA_PI2 / 2.));
-                jgraphics_line_to(g, sourceDisplayPos.x + Math<double>::abscissa(x->f_size_source, HOA_PI2 * 5. / 2.), sourceDisplayPos.y + Math<double>::ordinate(x->f_size_source, HOA_PI * 5. / 4.));
+                jgraphics_move_to(g, sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_PI2 / 2.), sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_PI2 / 2.));
+                jgraphics_line_to(g, sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_PI2 * 5. / 2.), sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_PI * 5. / 4.));
                 jgraphics_stroke(g);
             }
         }
@@ -1801,7 +1801,7 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
         const double fontSize = jbox_get_fontsize((t_object *)x);
         
         t_jtextlayout *jtl = jtextlayout_create();
-        jgraphics_set_line_width(g, x->f_size_source * 0.2);
+        jgraphics_set_line_width(g, x->f_source_radius * 0.2);
         
         for(Source::group_iterator it = x->f_manager->getFirstGroup() ; it != x->f_manager->getLastGroup() ; it ++)
         {
@@ -1839,8 +1839,8 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
             else
                 sprintf(description,"%lu", index);
             
-            textDisplayPos.x = sourceDisplayPos.x - 2. * x->f_size_source;
-            textDisplayPos.y = sourceDisplayPos.y - x->f_size_source - fontSize - 1.;
+            textDisplayPos.x = sourceDisplayPos.x - 2. * x->f_source_radius;
+            textDisplayPos.y = sourceDisplayPos.y - x->f_source_radius - fontSize - 1.;
             
             jtextlayout_settextcolor(jtl, &sourceColor);
             jtextlayout_set(jtl, description, x->jfont, textDisplayPos.x, textDisplayPos.y, fontSize * 10., fontSize * 2., JGRAPHICS_TEXT_JUSTIFICATION_LEFT, JGRAPHICS_TEXTLAYOUT_USEELLIPSIS);
@@ -1849,7 +1849,7 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
             if (x->f_selected_group == grp)
             {
                 jgraphics_set_source_jrgba(g, &x->f_color_selection);
-                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_size_source * 1.5,  0., HOA_2PI);
+                jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius * 1.5,  0., HOA_2PI);
                 jgraphics_fill(g);
                 
                 map<ulong, Source*>& sourcesOfGroup = it->second->getSources();
@@ -1890,21 +1890,21 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
             {
                 jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
                 jgraphics_line_to(g,
-                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_size_source, HOA_2PI * j / 4. + HOA_PI2 / 2.),
-                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_size_source, HOA_2PI * j / 4. + HOA_PI2 / 2.));
+                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_2PI * j / 4. + HOA_PI2 / 2.),
+                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_2PI * j / 4. + HOA_PI2 / 2.));
             }
             jgraphics_stroke(g);
 
             jgraphics_set_source_jrgba(g, grp->getMute() ? &red : &sourceColor);
-            jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_size_source,  0., HOA_2PI);
+            jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius,  0., HOA_2PI);
             jgraphics_stroke(g);
             
             for(int j = 0; j < 2; j++)
             {
                 jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
                 jgraphics_line_to(g,
-                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_size_source, HOA_2PI * j / 2. + HOA_PI2 / 2.),
-                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_size_source, HOA_2PI * j / 2. + HOA_PI2 / 2.));
+                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_2PI * j / 2. + HOA_PI2 / 2.),
+                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_2PI * j / 2. + HOA_PI2 / 2.));
             }
             jgraphics_stroke(g);
         }
@@ -1962,7 +1962,7 @@ void hoamap_paint(t_hoa_map *x, t_object *view)
                             (t_jgraphics_font_weight)jbox_get_font_weight((t_object *)x),
                             jbox_get_fontsize((t_object *)x));
     
-    x->f_size_source = jbox_get_fontsize((t_object *)x) / 2.;
+    x->f_source_radius = jbox_get_fontsize((t_object *)x) / 2.;
     
     draw_background(x, view, &rect);
     draw_sources(x, view, &rect);
@@ -2354,7 +2354,7 @@ void hoamap_source_group_hit_test(t_hoa_map *x, t_pt pt)
     t_pt cursor;
     cursor.x = ((pt.x / x->rect.width * 2.) - 1.) / x->f_zoom_factor;
     cursor.y = ((-pt.y / x->rect.height * 2.) + 1.) / x->f_zoom_factor;
-    double maxwh = max(x->rect.width, x->rect.height);
+    const double maxwh = max(x->rect.width, x->rect.height);
     
     x->f_cursor_position.x = cursor.x;
     x->f_cursor_position.y = cursor.y;
@@ -2362,7 +2362,7 @@ void hoamap_source_group_hit_test(t_hoa_map *x, t_pt pt)
     x->f_selected_source = NULL;
     x->f_selected_group = NULL;
     
-    double distanceSelected = (x->f_size_source / maxwh * 2.) / x->f_zoom_factor;
+    double distanceSelected = (x->f_source_radius / maxwh * 2.) / x->f_zoom_factor;
     double distanceSelected_test;
     t_pt displayed_coords;
     
@@ -2398,10 +2398,11 @@ void hoamap_source_group_hit_test(t_hoa_map *x, t_pt pt)
         {
             distanceSelected = distanceSelected_test;
             x->f_selected_source = src;
+            break;
         }
     }
     
-    if(x->f_selected_source != NULL && x->f_showgroups)
+    if(!x->f_selected_source && x->f_showgroups)
     {
         for(Source::group_iterator it = x->f_manager->getFirstGroup(); it != x->f_manager->getLastGroup(); it++)
         {
@@ -2435,6 +2436,7 @@ void hoamap_source_group_hit_test(t_hoa_map *x, t_pt pt)
             {
                 distanceSelected = distanceSelected_test;
                 x->f_selected_group = grp;
+                break;
             }
         }
     }
