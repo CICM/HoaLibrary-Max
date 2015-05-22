@@ -65,6 +65,9 @@ typedef struct  _hoamap
     Source*             f_selected_source;
     Source::Group*      f_selected_group;
     
+    Source*             f_source_being_modified;
+    Source::Group*      f_group_being_modified;
+    
     t_pt        f_cursor_position;
 	int			f_mouse_was_dragging;
     
@@ -1503,16 +1506,16 @@ t_max_err hoamap_notify(t_hoa_map *x, t_symbol *s, t_symbol *msg, void *sender, 
     {
         if (sender == x->f_textfield)
         {
-            if(x->f_selected_source)
+            if(x->f_source_being_modified)
             {
-                x->f_selected_source->setDescription((char *)data);
+                x->f_source_being_modified->setDescription((char *)data);
                 jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
                 object_notify(x, hoa_sym_modified, NULL);
                 hoamap_send_binded_map_update(x, BMAP_NOTIFY);
             }
-            else if(x->f_selected_group)
+            else if(x->f_group_being_modified)
             {
-                x->f_selected_group->setDescription((char *)data);
+                x->f_group_being_modified->setDescription((char *)data);
                 jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
                 object_notify(x, hoa_sym_modified, NULL);
                 hoamap_send_binded_map_update(x, BMAP_NOTIFY);
@@ -1533,16 +1536,16 @@ t_max_err hoamap_notify(t_hoa_map *x, t_symbol *s, t_symbol *msg, void *sender, 
                 object_attr_getvalueof(sender, name, &ac, &av);
                 if (ac && av)
                 {
-                    if(x->f_selected_source)
+                    if(x->f_source_being_modified)
                     {
-                        x->f_selected_source->setColor(atom_getfloat(av), atom_getfloat(av+1), atom_getfloat(av+2), atom_getfloat(av+3));
+                        x->f_source_being_modified->setColor(atom_getfloat(av), atom_getfloat(av+1), atom_getfloat(av+2), atom_getfloat(av+3));
                         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
                         object_notify(x, hoa_sym_modified, NULL);
                         hoamap_send_binded_map_update(x, BMAP_NOTIFY | BMAP_REDRAW);
                     }
-                    else if(x->f_selected_group)
+                    else if(x->f_group_being_modified)
                     {
-                        x->f_selected_group->setColor(atom_getfloat(av), atom_getfloat(av+1), atom_getfloat(av+2), atom_getfloat(av+3));
+                        x->f_group_being_modified->setColor(atom_getfloat(av), atom_getfloat(av+1), atom_getfloat(av+2), atom_getfloat(av+3));
                         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
                         object_notify(x, hoa_sym_modified, NULL);
                         hoamap_send_binded_map_update(x, BMAP_NOTIFY | BMAP_REDRAW);
@@ -2452,6 +2455,9 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
 {
     hoamap_source_group_hit_test(x, pt);
     
+    x->f_source_being_modified = NULL;
+    x->f_group_being_modified = NULL;
+    
     x->f_rect_selection_exist = 0;
     x->f_rect_selection.width = x->f_rect_selection.height = 0.;
 	x->f_cartesian_drag = 0;
@@ -2473,12 +2479,13 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
        
         if(x->f_selected_group)
         {
-            const ulong selected_group_index = x->f_selected_group->getIndex();
+            x->f_group_being_modified = x->f_selected_group;
+            const ulong modified_group_index = x->f_group_being_modified->getIndex();
             jpopupmenu_additem(popup, 0, "Group Menu", NULL, 0, 1, NULL);
             jpopupmenu_addseperator(popup);
             jpopupmenu_additem(popup, 1, "Remove group", NULL, 0, 0, NULL);
             jpopupmenu_additem(popup, 2, "Remove group and sources", NULL, 0, 0, NULL);
-            jpopupmenu_additem(popup, 3, "Mute group", NULL, 0, x->f_selected_group->getMute(), NULL);
+            jpopupmenu_additem(popup, 3, "Mute group", NULL, 0, x->f_group_being_modified->getMute(), NULL);
             jpopupmenu_additem(popup, 4, "Unmute group", NULL, 0, 0, NULL);
             jpopupmenu_additem(popup, 5, "Set group color", NULL, 0, 0, NULL);
             jpopupmenu_additem(popup, 6, "Set group description", NULL, 0, 0, NULL);
@@ -2489,34 +2496,32 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
                 case 1:
                 {
                     t_atom av[3];
-                    atom_setlong(av, selected_group_index);
+                    atom_setlong(av, modified_group_index);
                     atom_setsym(av+1, hoa_sym_mute);
                     atom_setlong(av+2, 1);
                     outlet_list(x->f_out_groups, 0L, 3, av);
-                    x->f_manager->removeGroup(selected_group_index);
-                    x->f_selected_group = NULL;
+                    x->f_manager->removeGroup(modified_group_index);
 					causeOutput = causeRedraw = causeNotify = 1;
                     break;
                 }
                 case 2:
                 {
-					x->f_selected_group->setMute(true);
+					x->f_group_being_modified->setMute(true);
 					hoamap_output(x);
 					hoamap_send_binded_map_update(x, BMAP_OUTPUT);
-					x->f_manager->removeGroupWithSources(selected_group_index);
-                    x->f_selected_group = NULL;
+					x->f_manager->removeGroupWithSources(modified_group_index);
 					causeOutput = causeRedraw = causeNotify = 1;
                     break;
                 }
                 case 3: // Mute group
                 {
-                    x->f_selected_group->setMute(true);
+                    x->f_group_being_modified->setMute(true);
 					causeOutput = causeRedraw = causeNotify = 1;
                     break;
                 }
                 case 4: // Unmute group
                 {
-                    x->f_selected_group->setMute(false);
+                    x->f_group_being_modified->setMute(false);
 					causeOutput = causeRedraw = causeNotify = 1;
                     break;
                 }
@@ -2541,8 +2546,9 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
         }
         else if(x->f_selected_source)
         {
-            const bool muted = x->f_selected_source->getMute();
-            const ulong selected_source_index = x->f_selected_source->getIndex();
+            x->f_source_being_modified = x->f_selected_source;
+            const bool muted = x->f_source_being_modified->getMute();
+            const ulong modified_source_index = x->f_source_being_modified->getIndex();
             jpopupmenu_additem(popup, 0, "Source Menu", NULL, 0, 1, NULL);
             jpopupmenu_addseperator(popup);
             jpopupmenu_additem(popup, 1, "Remove source", NULL, 0, 0, NULL);
@@ -2555,18 +2561,17 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
                 case 1:
                 {
                     t_atom av[3];
-                    atom_setlong(av, selected_source_index);
+                    atom_setlong(av, modified_source_index);
                     atom_setsym(av+1, hoa_sym_mute);
                     atom_setlong(av+2, 1);
                     outlet_list(x->f_out_sources, 0L, 3, av);
-                    x->f_manager->removeSource(selected_source_index);
-                    x->f_selected_source = NULL;
+                    x->f_manager->removeSource(modified_source_index);
 					causeOutput = causeRedraw = causeNotify = 1;
                     break;
                 }
                 case 2:
                 {
-                    //x->f_selected_source->setMute(!muted);
+                    x->f_source_being_modified->setMute(!muted);
 					causeOutput = causeRedraw = causeNotify = 1;
                     break;
                 }
@@ -2682,7 +2687,7 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
 		x->f_cursor_position.y = mouse_pos.y;
 		jmouse_setposition_box(patcherview, (t_object*)x, mouse_pos.x, mouse_pos.y);
 	}
-	else if (x->f_selected_source != NULL)
+	else if (x->f_selected_source)
 	{
 		t_pt mouse_pos;
 		switch (x->f_coord_view)
@@ -2742,7 +2747,7 @@ void hoamap_mouseup(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifiers
                 break;
             indexOfNewGroup ++;
         }
-    
+        
         double x1 = ((x->f_rect_selection.x / x->rect.width * 2.) - 1.) / x->f_zoom_factor;
         double x2 = (((x->f_rect_selection.x + x->f_rect_selection.width) / x->rect.width * 2.) - 1.) / x->f_zoom_factor;
         double y1 = ((-x->f_rect_selection.y / x->rect.height * 2.) + 1.) / x->f_zoom_factor;
