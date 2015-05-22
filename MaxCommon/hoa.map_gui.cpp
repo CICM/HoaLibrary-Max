@@ -1577,6 +1577,18 @@ t_max_err hoamap_notify(t_hoa_map *x, t_symbol *s, t_symbol *msg, void *sender, 
                 jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
                 jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
             }
+            if(name == gensym("fontsize") || name == gensym("fontface") || name == gensym("fontname"))
+            {
+                const double fontsize = jbox_get_fontsize((t_object *)x);
+                x->jfont = jfont_create(jbox_get_fontname((t_object *)x)->s_name,
+                                        (t_jgraphics_font_slant)jbox_get_font_slant((t_object *)x),
+                                        (t_jgraphics_font_weight)jbox_get_font_weight((t_object *)x),
+                                        fontsize);
+                
+                x->f_source_radius = fontsize * 0.5;
+                jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
+                jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
+            }
         }
         jbox_redraw((t_jbox *)x);
     }
@@ -1957,15 +1969,9 @@ void hoamap_paint(t_hoa_map *x, t_object *view)
     x->f_manager->cleanDuplicatedGroup();
     x->f_manager->cleanEmptyGroup();
     
-    x->jfont = jfont_create(jbox_get_fontname((t_object *)x)->s_name,
-                            (t_jgraphics_font_slant)jbox_get_font_slant((t_object *)x),
-                            (t_jgraphics_font_weight)jbox_get_font_weight((t_object *)x),
-                            jbox_get_fontsize((t_object *)x));
-    
-    x->f_source_radius = jbox_get_fontsize((t_object *)x) / 2.;
-    
     draw_background(x, view, &rect);
     draw_sources(x, view, &rect);
+    
     if (x->f_showgroups)
     {
         draw_groups(x, view, &rect);
@@ -2822,10 +2828,7 @@ void hoamap_mousemove(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
 {
 	hoamap_source_group_hit_test(x, pt);
     
-    if(x->f_selected_source || x->f_selected_group)
-        jmouse_setcursor(patcherview, (t_object *)x, JMOUSE_CURSOR_POINTINGHAND);
-    else
-        jmouse_setcursor(patcherview, (t_object *)x, JMOUSE_CURSOR_ARROW);
+    jmouse_setcursor(patcherview, (t_object *)x, (x->f_selected_source || x->f_selected_group) ? JMOUSE_CURSOR_POINTINGHAND : JMOUSE_CURSOR_ARROW);
     
     jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
     jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
@@ -2916,7 +2919,13 @@ void *hoamap_new(t_symbol *s, int argc, t_atom *argv)
     x->f_out_groups     = listout(x);
     x->f_out_sources    = listout(x);
     
-    x->jfont = jfont_create(jbox_get_fontname((t_object *)x)->s_name, (t_jgraphics_font_slant)jbox_get_font_slant((t_object *)x), (t_jgraphics_font_weight)jbox_get_font_weight((t_object *)x), jbox_get_fontsize((t_object *)x));
+    const double fontsize = jbox_get_fontsize((t_object *)x);
+    x->jfont = jfont_create(jbox_get_fontname((t_object *)x)->s_name,
+                            (t_jgraphics_font_slant)jbox_get_font_slant((t_object *)x),
+                            (t_jgraphics_font_weight)jbox_get_font_weight((t_object *)x),
+                            fontsize);
+    
+    x->f_source_radius = fontsize * 0.5;
     
     x->f_patcher = NULL;
     x->f_colorpicker = NULL;
