@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -55,7 +55,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -201,7 +201,7 @@
 									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"fontname" : "Arial",
-									"fontsize" : 11.595187,
+									"fontsize" : 7.456885,
 									"gradient" : 1,
 									"id" : "obj-53",
 									"linecount" : 2,
@@ -209,7 +209,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 31.0, 647.0, 345.0, 34.0 ],
+									"patching_rect" : [ 31.0, 651.631897, 251.0, 25.0 ],
 									"style" : "",
 									"text" : "0 0 72 6 144 12 216 18 288 24 0 30 72 36 144 42 216 48 288 54 0 60 72 66 144 72 216 78 288 84 0 90 60 -33 180 -33 -60 -33",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -228,7 +228,7 @@
 									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"fontname" : "Arial",
-									"fontsize" : 11.595187,
+									"fontsize" : 8.270325,
 									"gradient" : 1,
 									"id" : "obj-51",
 									"linecount" : 4,
@@ -236,7 +236,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 31.0, 585.5, 377.0, 60.0 ],
+									"patching_rect" : [ 31.0, 592.980103, 283.0, 45.0 ],
 									"style" : "",
 									"text" : "180 69.094803 159.095001 0 90 20.905199 135 35.2644 135 -35.2644 180 -69.094803 20.905199 0 90 -20.905199 45 35.2644 45 -35.2644 0 69.094803 200.904999 0 270 20.905199 225 35.2644 225 -35.2644 0 -69.094803 339.095001 0 270 -20.905199 315 35.2644 315 -35.2644",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -636,7 +636,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1720,7 +1720,7 @@
 									"destination" : [ "obj-2", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 40.5, 708.0, 20.5, 708.0, 20.5, 287.582611, 40.5, 287.582611 ],
+									"midpoints" : [ 40.5, 709.0, 20.5, 709.0, 20.5, 287.582611, 40.5, 287.582611 ],
 									"source" : [ "obj-60", 0 ]
 								}
 
@@ -1819,7 +1819,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1853,7 +1853,54 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [  ],
-						"lines" : [  ]
+						"lines" : [  ],
+						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-1",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-1",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-1",
+								"default" : 								{
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+ ]
 					}
 ,
 					"patching_rect" : [ 88.0, 27.0, 50.0, 20.0 ],
@@ -1916,6 +1963,24 @@
  ],
 		"embedsnapshot" : 0,
 		"styles" : [ 			{
+				"name" : "AudioStatus_Menu",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
 				"name" : "newobjBlue-1",
 				"default" : 				{
 					"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
