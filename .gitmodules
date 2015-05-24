@@ -4,3 +4,6 @@
 [submodule "ThirdParty/Max"]
 	path = ThirdParty/Max
 	url = https://github.com/CICM/max6-sdk.git
+[submodule "ThirdParty/Max7-sdk"]
+	path = ThirdParty/Max7-sdk
+	url = https://github.com/Cycling74/max-sdk.git
