@@ -11,7 +11,7 @@ ARCHS = i386 x86_64
 
 
 // Paths
-C74SUPPORT = $(SRCROOT)/ThirdParty/Max/c74support
+C74SUPPORT = $(SRCROOT)/ThirdParty/Max7-sdk/source/c74support
 HEADER_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
 FRAMEWORK_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
 MAXPACKAGE = $(SRCROOT)/Package/HoaLibrary
