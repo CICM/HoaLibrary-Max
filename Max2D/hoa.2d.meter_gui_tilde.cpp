@@ -134,7 +134,7 @@ t_max_err channels_set(t_meter *x, t_object *attr, long argc, t_atom *argv)
             x->f_meter->computeRendering();
             x->f_vector->computeRendering();
             
-            object_obex_lookup(x, gensym("#B"), (t_object **)&b);
+            object_obex_lookup(x, hoa_sym_pound_B, (t_object **)&b);
 
             object_method(b, hoa_sym_dynlet_begin);
             dsp_resize((t_pxobject*)x, x->f_meter->getNumberOfPlanewaves());

@@ -37,27 +37,6 @@ typedef struct _hoa_pi
 
 t_class *hoa_pi_class;
 
-void *hoa_pi_new(t_symbol *s, int argc, t_atom *argv)
-{
-	t_hoa_pi *x = NULL;
-    x = (t_hoa_pi *)object_alloc(hoa_pi_class);
-    if (x)
-	{
-        // @arg 0 @name multiplier @optional 1 @type float @digest π multiplier
-		// @description First argument is the π multiplier
-        
-        x->f_value = 1.;
-        if (atom_isNumber(argv))
-            x->f_value = atom_getfloat(argv);
-        
-        x->f_outlet = floatout(x);
-        
-        attr_args_process(x, argc, argv);
-    }
-	
-	return(x);
-}
-
 t_hoa_err hoa_getinfos(t_hoa_pi* x, t_hoa_boxinfos* boxinfos)
 {
 	boxinfos->object_type = HOA_OBJECT_STANDARD;
@@ -96,6 +75,27 @@ void hoa_pi_float(t_hoa_pi *x, double n)
 {
 	x->f_value = n;
 	hoa_pi_bang(x);
+}
+
+void *hoa_pi_new(t_symbol *s, int argc, t_atom *argv)
+{
+    t_hoa_pi *x = NULL;
+    x = (t_hoa_pi *)object_alloc(hoa_pi_class);
+    if (x)
+    {
+        // @arg 0 @name multiplier @optional 1 @type float @digest π multiplier
+        // @description First argument is the π multiplier
+        
+        x->f_value = 1.;
+        if (atom_isNumber(argv))
+            x->f_value = atom_getfloat(argv);
+        
+        x->f_outlet = floatout(x);
+        
+        attr_args_process(x, argc, argv);
+    }
+    
+    return(x);
 }
 
 #ifdef HOA_PACKED_LIB

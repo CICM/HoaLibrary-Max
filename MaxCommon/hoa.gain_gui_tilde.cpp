@@ -163,7 +163,7 @@ void hoa_gain_perform64(t_hoa_gain *x, t_object *dsp64, double **ins, long numin
 	{
 		gain = x->f_amp->process();
 		
-		for (j=0; j < x->f_number_of_channels; j++)
+		for (j=0; j < numouts; j++)
 		{
 			outs[j][i] = gain * ins[j][i];
 		}
@@ -176,7 +176,7 @@ void hoa_gain_dsp64(t_hoa_gain *x, t_object *dsp64, short *count, double sampler
 }
 
 /* Utilities ------------------------------------- */
-double hoa_gain_getInputModeValue(t_hoa_gain *x)
+double hoa_gain_get_input_mode_value(t_hoa_gain *x)
 {
     switch (x->f_inputMode)
     {
@@ -289,7 +289,7 @@ double hoa_gain_valtodb(t_hoa_gain *x, double val)
     return scale(val, 0, x->j_size, x->f_range[0], x->f_range[1]);
 }
 
-void hoa_gain_setInputModeValue(t_hoa_gain *x, double value, bool notify)
+void hoa_gain_set_input_mode_value(t_hoa_gain *x, double value, bool notify)
 {
     double dBValue = x->j_valdB;
     
@@ -327,7 +327,7 @@ void hoa_gain_setInputModeValue(t_hoa_gain *x, double value, bool notify)
 void hoa_gain_contextValue(t_hoa_gain *x, long valueType, double value)
 {
     x->f_inputMode = Math<long>::clip(valueType, 0, 2);
-    hoa_gain_setInputModeValue(x, value, true);
+    hoa_gain_set_input_mode_value(x, value, true);
 }
 
 void hoa_gain_set_dB(t_hoa_gain *x, double dBValue)
@@ -343,7 +343,7 @@ void hoa_gain_set_dB(t_hoa_gain *x, double dBValue)
 
 void hoa_gain_assign(t_hoa_gain *x, double f, long notify)
 {
-    hoa_gain_setInputModeValue(x, f, notify);
+    hoa_gain_set_input_mode_value(x, f, notify);
 }
 
 /* Paint ------------------------------------- */
@@ -461,11 +461,11 @@ void hoa_gain_bang(t_hoa_gain *x)
 {
     if (x->f_inputMode == MIDI)
     {
-        outlet_int(x->f_outlet_infos, (long)hoa_gain_getInputModeValue(x));
+        outlet_int(x->f_outlet_infos, (long)hoa_gain_get_input_mode_value(x));
     }
     else
     {
-        outlet_float(x->f_outlet_infos, hoa_gain_getInputModeValue(x));
+        outlet_float(x->f_outlet_infos, hoa_gain_get_input_mode_value(x));
     }
 }
 
@@ -645,9 +645,7 @@ t_max_err hoa_gain_setattr_interp(t_hoa_gain *x, t_object *attr, long ac, t_atom
 }
 
 void hoa_gain_resize_io(t_hoa_gain *x, long newNumberOfChannel)
-//void hoa_gain_resize_io(t_hoa_gain *x, t_symbol *s, long ac, t_atom *av)
 {
-    //long newNumberOfChannel = atom_getlong(av);
     long lastNumberOfChannels = x->f_number_of_channels;
     newNumberOfChannel = Math<long>::clip(newNumberOfChannel, 1, MAX_IO);
     
@@ -658,18 +656,7 @@ void hoa_gain_resize_io(t_hoa_gain *x, long newNumberOfChannel)
         
         if (b)
         {
-            post("dsp was on : %i", sys_getdspobjdspstate((t_object*)x));
-            post("dsp global was on : %i", sys_getdspstate());
-            
-            dspmess(hoa_sym_stop);
-            
-            post("dsp is on : %i", sys_getdspobjdspstate((t_object*)x));
-            post("dsp global is on : %i", sys_getdspstate());
-            
             object_method(b, hoa_sym_dynlet_begin);
-            
-            post("dsp is on : %i", sys_getdspobjdspstate((t_object*)x));
-            post("dsp global is on : %i", sys_getdspstate());
             
             dsp_resize((t_pxobject*)x, newNumberOfChannel+1);
             
@@ -692,16 +679,16 @@ void hoa_gain_resize_io(t_hoa_gain *x, long newNumberOfChannel)
             
             x->f_outlet_infos = outlet_append((t_object*)x, NULL, NULL); // restore value out outlet
             
-            x->f_number_of_channels = newNumberOfChannel;
-            
             object_method(b, hoa_sym_dynlet_end);
+            
+            x->f_number_of_channels = newNumberOfChannel;
         }
     }
 }
 
 void hoa_gain_tometer(t_hoa_gain *x, t_symbol *s, long ac, t_atom *av)
 {
-    if(ac && av && (s == hoa_sym_angles || s == hoa_sym_offset || s == hoa_sym_channels))
+    if(ac && av)
     {
         t_object *patcher;
         t_object *gain;
@@ -745,7 +732,7 @@ void hoa_gain_tometer(t_hoa_gain *x, t_symbol *s, long ac, t_atom *av)
             }
         }
         
-        for (auto box : boxes)
+        for(auto box : boxes)
         {
             // re-connect patchlines
             for(int i = 0; jbox_getinlet(box, i) != NULL && i < x->f_number_of_channels; i++)
@@ -757,8 +744,15 @@ void hoa_gain_tometer(t_hoa_gain *x, t_symbol *s, long ac, t_atom *av)
                 object_method_typed(patcher , hoa_sym_connect, 4, msg, &rv);
             }
         }
-        
         boxes.clear();
+    }
+}
+
+void hoa_gain_anything(t_hoa_gain *x, t_symbol *s, long ac, t_atom *av)
+{
+    if(ac && av && (s == hoa_sym_angles || s == hoa_sym_offset))
+    {
+        hoa_gain_tometer(x, s, ac, av);
     }
 }
 
@@ -766,10 +760,6 @@ t_max_err hoa_gain_setattr_channels(t_hoa_gain *x, t_object *attr, long ac, t_at
 {
     if (ac && av && atom_gettype(av) == A_LONG)
     {
-        post("setchannel");
-        //dspmess(hoa_sym_stop);
-        //defer_low(x, (method)hoa_gain_resize_io, NULL, ac, av);
-        //defer_low(x, (method)hoa_gain_tometer, hoa_sym_channels, ac, av);
         hoa_gain_resize_io(x, atom_getlong(av));
         hoa_gain_tometer(x, hoa_sym_channels, ac, av);
     }
@@ -790,7 +780,7 @@ t_max_err hoa_gain_setvalueof(t_hoa_gain *x, long ac, t_atom *av)
         
         if (av+1 && atom_isNumber(av+1))
         {
-            hoa_gain_setInputModeValue(x, atom_getfloat(av+1), false);
+            hoa_gain_set_input_mode_value(x, atom_getfloat(av+1), false);
         }
         
         hoa_gain_bang(x);
@@ -807,11 +797,11 @@ t_max_err hoa_gain_getvalueof(t_hoa_gain *x, long *ac, t_atom **av)
             atom_setlong(*av+0, (long)x->f_inputMode);
             if (x->f_inputMode == MIDI)
             {
-                atom_setlong(*av+1, (long)hoa_gain_getInputModeValue(x));
+                atom_setlong(*av+1, (long)hoa_gain_get_input_mode_value(x));
             }
             else
             {
-                atom_setfloat(*av+1, hoa_gain_getInputModeValue(x));
+                atom_setfloat(*av+1, hoa_gain_get_input_mode_value(x));
             }
 		}
         else
@@ -824,11 +814,11 @@ t_max_err hoa_gain_getvalueof(t_hoa_gain *x, long *ac, t_atom **av)
         
         if (x->f_inputMode == MIDI)
         {
-            atom_setlong(*av+1, (long)hoa_gain_getInputModeValue(x));
+            atom_setlong(*av+1, (long)hoa_gain_get_input_mode_value(x));
         }
         else
         {
-            atom_setfloat(*av+1, hoa_gain_getInputModeValue(x));
+            atom_setfloat(*av+1, hoa_gain_get_input_mode_value(x));
         }
     }
 	return MAX_ERR_NONE;
@@ -844,7 +834,7 @@ t_max_err hoa_gain_notify(t_hoa_gain *x, t_symbol *s, t_symbol *msg, void *sende
             jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_background_layer);
             jbox_invalidate_layer((t_object *)x, NULL, gensym("cursor_layer"));
         }
-        else if(name == gensym("bgcolor"))
+        else if(name == hoa_sym_bgcolor)
 		{
             jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_background_layer);
 		}
@@ -872,11 +862,11 @@ long hoa_gain_oksize(t_hoa_gain *x, t_rect *newrect)
 
 void hoa_gain_preset(t_hoa_gain *x)
 {
-    void *z;
-    if (!(z = gensym("_preset")->s_thing))
-        return;
-    
-    binbuf_vinsert(z,(char*)"osslf", x, object_classname(x), gensym("contextvalue"), x->f_inputMode, hoa_gain_getInputModeValue(x));
+    void *z = gensym("_preset")->s_thing;
+    if (z)
+    {
+        binbuf_vinsert(z,(char*)"osslf", x, object_classname(x), gensym("contextvalue"), x->f_inputMode, hoa_gain_get_input_mode_value(x));
+    }
 }
 
 void hoa_gain_free(t_hoa_gain *x)
@@ -888,53 +878,52 @@ void hoa_gain_free(t_hoa_gain *x)
 
 void *hoa_gain_new(t_symbol *s, short argc, t_atom *argv)
 {
-    t_hoa_gain* x;
-    long flags;
-    t_dictionary *d=NULL;
-    
-    if (!(d=object_dictionaryarg(argc,argv)))
-        return NULL;
+    t_hoa_gain *x = NULL;
+    t_dictionary *d = NULL;
     
     x = (t_hoa_gain *) object_alloc(s_hoa_gain_class);
-    if (!x)
-        return NULL;
+    d = object_dictionaryarg(argc, argv);
     
-    flags = 0
-    | JBOX_DRAWFIRSTIN
-    | JBOX_NODRAWBOX
-    | JBOX_DRAWINLAST
-    | JBOX_GROWBOTH
-    | JBOX_DRAWBACKGROUND
-    | JBOX_MOUSEDRAGDELTA
-    ;
-    
-    x->j_val = 0;
-    x->j_defaultValuedB = 0;
-    x->j_valdB = x->j_defaultValuedB;
-    x->f_interp = 20;
-    x->f_number_of_channels = 8;
-    
-    jbox_new((t_jbox *)x, flags, argc, argv);
-    x->j_box.z_box.b_firstin = (t_object *)x;
-    
-    x->f_amp = new Line<t_sample>();
-    x->f_amp->setRamp(0.1 * sys_getsr());
-    x->f_amp->setValueDirect(1.f);
-    
-    // inputs
-    dsp_setupjbox((t_pxjbox *)x, x->f_number_of_channels + 1);
-    
-    // outputs
-    x->f_outlet_infos = outlet_new(x, NULL);
-    for (int i=0; i < x->f_number_of_channels; i++)
-        outlet_new(x,"signal");
-    
-    attr_dictionary_process(x,d); // handle attribute args
-    
-    hoa_gain_set_dB(x, x->j_defaultValuedB);
-    
-    jbox_ready((t_jbox *)x);
-    x->j_box.z_misc = Z_NO_INPLACE;
+    if (x && d)
+    {
+        long flags = 0
+        | JBOX_DRAWFIRSTIN
+        | JBOX_NODRAWBOX
+        | JBOX_DRAWINLAST
+        | JBOX_GROWBOTH
+        | JBOX_DRAWBACKGROUND
+        | JBOX_MOUSEDRAGDELTA
+        ;
+        
+        x->j_val = 0;
+        x->j_defaultValuedB = 0;
+        x->j_valdB = x->j_defaultValuedB;
+        x->f_interp = 20;
+        x->f_number_of_channels = 8;
+        
+        jbox_new((t_jbox *)x, flags, argc, argv);
+        x->j_box.z_box.b_firstin = (t_object *)x;
+        
+        x->f_amp = new Line<t_sample>();
+        x->f_amp->setRamp(0.1 * sys_getsr());
+        x->f_amp->setValueDirect(1.f);
+        
+        // inputs
+        dsp_setupjbox((t_pxjbox *)x, x->f_number_of_channels + 1);
+        
+        // outputs
+        x->f_outlet_infos = outlet_new(x, NULL);
+        for (int i=0; i < x->f_number_of_channels; i++)
+            outlet_new(x,"signal");
+        
+        x->j_box.z_misc = Z_NO_INPLACE;
+        
+        attr_dictionary_process(x,d); // handle attribute args
+        
+        hoa_gain_set_dB(x, x->j_defaultValuedB);
+        
+        jbox_ready((t_jbox *)x);
+    }
     
     return x;
 }
@@ -987,7 +976,8 @@ int C74_EXPORT main(void)
     // @description The word set, followed by a number, sets the value of the slider, ramps the output signal to the level corresponding to the new value over the specified ramp time, but does not output the slider's value out the right outlet.
     // @marg 1 @name value @optional 0 @type float @description The slider value
     class_addmethod (c, (method) hoa_gain_set,                 "set",                  A_GIMME, 0);
-    class_addmethod (c, (method) hoa_gain_tometer,             "anything",             A_GIMME, 0);
+    //class_addmethod (c, (method) hoa_gain_tometer,             "anything",             A_GIMME, 0);
+    class_addmethod (c, (method) hoa_gain_anything,            "anything",             A_GIMME, 0);
     
     // @method (mouse) @digest click and drag to set the slider outlet.
     // @description Clicking and dragging with the mouse sets the value of the slider, ramps the output signal to the level corresponding to the new value over the specified ramp time, and outputs the slider’s value out the right outlet. double-click to set the slider value to <m>defvaldb</m>
@@ -1075,7 +1065,7 @@ int C74_EXPORT main(void)
     
     CLASS_ATTR_CATEGORY			(c, "channels", 0, "Custom");
     CLASS_ATTR_LONG				(c, "channels", 0, t_hoa_gain, f_number_of_channels);
-    CLASS_ATTR_ACCESSORS        (c, "channels", (method)NULL,(method)hoa_gain_setattr_channels);
+    CLASS_ATTR_ACCESSORS        (c, "channels", NULL, hoa_gain_setattr_channels);
     CLASS_ATTR_ORDER			(c, "channels", 0, "1");
     CLASS_ATTR_LABEL			(c, "channels", 0, "Number of Channels");
     CLASS_ATTR_FILTER_CLIP		(c, "channels", 1, MAX_IO);
@@ -1084,7 +1074,7 @@ int C74_EXPORT main(void)
     
     CLASS_ATTR_CATEGORY			(c, "range", 0, "Value");
     CLASS_ATTR_FLOAT_ARRAY      (c, "range", 0, t_hoa_gain, f_range, 2);
-    CLASS_ATTR_ACCESSORS        (c, "range", (method)NULL,(method)hoa_gain_setattr_range);
+    CLASS_ATTR_ACCESSORS        (c, "range", NULL, hoa_gain_setattr_range);
     CLASS_ATTR_ORDER			(c, "range", 0, "2");
     CLASS_ATTR_LABEL			(c, "range", 0, "Range (dB)");
     CLASS_ATTR_DEFAULT			(c, "range", 0, "-70. 18.");
