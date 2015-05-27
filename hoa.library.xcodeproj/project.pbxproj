@@ -7277,7 +7277,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
 					/Developer/usr/include,
@@ -7423,7 +7423,7 @@
 				2C03265F1A9E13580076BE56 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C03267A1A9E196E0076BE56 /* Build configuration list for PBXNativeTarget "c.convolve~" */ = {
 			isa = XCConfigurationList;
@@ -7432,7 +7432,7 @@
 				2C03267C1A9E196E0076BE56 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C0326B61A9E1D300076BE56 /* Build configuration list for PBXNativeTarget "c.freeverb~" */ = {
 			isa = XCConfigurationList;
@@ -7441,7 +7441,7 @@
 				2C0326B81A9E1D300076BE56 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B396C1A9E1F2700E6921E /* Build configuration list for PBXNativeTarget "hoa.connect" */ = {
 			isa = XCConfigurationList;
@@ -7450,7 +7450,7 @@
 				2C9B396E1A9E1F2700E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B39871A9E22C400E6921E /* Build configuration list for PBXNativeTarget "hoa.dac~" */ = {
 			isa = XCConfigurationList;
@@ -7459,7 +7459,7 @@
 				2C9B39891A9E22C400E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B39A21A9E25E600E6921E /* Build configuration list for PBXNativeTarget "hoa.gain~" */ = {
 			isa = XCConfigurationList;
@@ -7468,7 +7468,7 @@
 				2C9B39A41A9E25E600E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B39BC1A9E30EA00E6921E /* Build configuration list for PBXNativeTarget "hoa.in" */ = {
 			isa = XCConfigurationList;
@@ -7477,7 +7477,7 @@
 				2C9B39BE1A9E30EA00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B39D81A9E31CC00E6921E /* Build configuration list for PBXNativeTarget "hoa.in~" */ = {
 			isa = XCConfigurationList;
@@ -7486,7 +7486,7 @@
 				2C9B39DA1A9E31CC00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B39F31A9E359D00E6921E /* Build configuration list for PBXNativeTarget "hoa.map" */ = {
 			isa = XCConfigurationList;
@@ -7495,7 +7495,7 @@
 				2C9B39F51A9E359D00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3A111A9E368700E6921E /* Build configuration list for PBXNativeTarget "hoa.out" */ = {
 			isa = XCConfigurationList;
@@ -7504,7 +7504,7 @@
 				2C9B3A131A9E368700E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3A2C1A9E372300E6921E /* Build configuration list for PBXNativeTarget "hoa.out~" */ = {
 			isa = XCConfigurationList;
@@ -7513,7 +7513,7 @@
 				2C9B3A2E1A9E372300E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3A471A9E38EC00E6921E /* Build configuration list for PBXNativeTarget "hoa.process~" */ = {
 			isa = XCConfigurationList;
@@ -7522,7 +7522,7 @@
 				2C9B3A491A9E38EC00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3A641A9E39E400E6921E /* Build configuration list for PBXNativeTarget "hoa.thisprocess~" */ = {
 			isa = XCConfigurationList;
@@ -7531,7 +7531,7 @@
 				2C9B3A661A9E39E400E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3A7F1A9E418A00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.decoder~" */ = {
 			isa = XCConfigurationList;
@@ -7540,7 +7540,7 @@
 				2C9B3A811A9E418A00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3A9A1A9E44F800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.encoder~" */ = {
 			isa = XCConfigurationList;
@@ -7549,7 +7549,7 @@
 				2C9B3A9C1A9E44F800E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3AB51A9E714B00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.map~" */ = {
 			isa = XCConfigurationList;
@@ -7558,7 +7558,7 @@
 				2C9B3AB71A9E714B00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3ACF1A9E71C800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.meter~" */ = {
 			isa = XCConfigurationList;
@@ -7567,7 +7567,7 @@
 				2C9B3AD11A9E71C800E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3AE91A9E722F00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.optim~" */ = {
 			isa = XCConfigurationList;
@@ -7576,7 +7576,7 @@
 				2C9B3AEB1A9E722F00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3B041A9E729800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.projector~" */ = {
 			isa = XCConfigurationList;
@@ -7585,7 +7585,7 @@
 				2C9B3B061A9E729800E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3B1E1A9E730900E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.recomposer" */ = {
 			isa = XCConfigurationList;
@@ -7594,7 +7594,7 @@
 				2C9B3B201A9E730900E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3B3A1A9E736900E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.recomposer~" */ = {
 			isa = XCConfigurationList;
@@ -7603,7 +7603,7 @@
 				2C9B3B3C1A9E736900E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3B541A9E73BD00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.rotate~" */ = {
 			isa = XCConfigurationList;
@@ -7612,7 +7612,7 @@
 				2C9B3B561A9E73BD00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3B6E1A9E740200E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.scope~" */ = {
 			isa = XCConfigurationList;
@@ -7621,7 +7621,7 @@
 				2C9B3B701A9E740200E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3B871A9E743100E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.space" */ = {
 			isa = XCConfigurationList;
@@ -7630,7 +7630,7 @@
 				2C9B3B891A9E743100E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3BA21A9E74AF00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.vector~" */ = {
 			isa = XCConfigurationList;
@@ -7639,7 +7639,7 @@
 				2C9B3BA41A9E74AF00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3BBC1A9E750300E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.wider~" */ = {
 			isa = XCConfigurationList;
@@ -7648,7 +7648,7 @@
 				2C9B3BBE1A9E750300E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3BD61A9E763100E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.decoder~" */ = {
 			isa = XCConfigurationList;
@@ -7657,7 +7657,7 @@
 				2C9B3BD81A9E763100E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3BF01A9E76B900E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.encoder~" */ = {
 			isa = XCConfigurationList;
@@ -7666,7 +7666,7 @@
 				2C9B3BF21A9E76B900E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3C0A1A9E776B00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.map~" */ = {
 			isa = XCConfigurationList;
@@ -7675,7 +7675,7 @@
 				2C9B3C0C1A9E776B00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3C241A9E77BD00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.meter~" */ = {
 			isa = XCConfigurationList;
@@ -7684,7 +7684,7 @@
 				2C9B3C261A9E77BD00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3C3D1A9E77ED00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.optim~" */ = {
 			isa = XCConfigurationList;
@@ -7693,7 +7693,7 @@
 				2C9B3C3F1A9E77ED00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3C561A9E781600E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.scope~" */ = {
 			isa = XCConfigurationList;
@@ -7702,7 +7702,7 @@
 				2C9B3C581A9E781600E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3C6F1A9E783B00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.vector~" */ = {
 			isa = XCConfigurationList;
@@ -7711,7 +7711,7 @@
 				2C9B3C711A9E783B00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3C881A9E787300E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.wider~" */ = {
 			isa = XCConfigurationList;
@@ -7720,7 +7720,7 @@
 				2C9B3C8A1A9E787300E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2C9B3C951A9E7F7700E6921E /* Build configuration list for PBXAggregateTarget "HoaExternals" */ = {
 			isa = XCConfigurationList;
@@ -7729,7 +7729,7 @@
 				2C9B3C971A9E7F7700E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2CCD1F7E1A9CCBB3001F137D /* Build configuration list for PBXNativeTarget "hoa.pi" */ = {
 			isa = XCConfigurationList;
@@ -7738,7 +7738,7 @@
 				2CCD1F801A9CCBB3001F137D /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2FBBEACF08F335010078DB84 /* Build configuration list for PBXProject "hoa.library" */ = {
 			isa = XCConfigurationList;
@@ -7747,7 +7747,7 @@
 				2FBBEAD108F335010078DB84 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 		2FBBEAE008F335360078DB84 /* Build configuration list for PBXNativeTarget "hoa.library" */ = {
 			isa = XCConfigurationList;
@@ -7756,7 +7756,7 @@
 				2FBBEAE208F335360078DB84 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Deployment;
+			defaultConfigurationName = Development;
 		};
 /* End XCConfigurationList section */
 	};
