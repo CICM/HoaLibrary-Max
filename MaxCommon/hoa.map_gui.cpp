@@ -472,7 +472,7 @@ void hoamap_infos(t_hoa_map *x)
     t_atom avMute[4];
     
     /* Sources */
-    long numberOfSource = x->f_manager->getSourcesSize();
+    long numberOfSource = x->f_manager->getNumberOfSources();
     atom_setsym(avNumber, hoa_sym_source);
     atom_setsym(avNumber+1, hoa_sym_number);
     atom_setlong(avNumber+2, numberOfSource);
@@ -501,7 +501,7 @@ void hoamap_infos(t_hoa_map *x)
     }
     
     /* Groups */
-    long numberOfGroups = x->f_manager->getGroupsSize();
+    long numberOfGroups = x->f_manager->getNumberOfGroups();
     atom_setsym(avNumber, hoa_sym_group);
     atom_setsym(avNumber+1, hoa_sym_number);
     atom_setlong(avNumber+2, numberOfGroups);
@@ -521,19 +521,19 @@ void hoamap_infos(t_hoa_map *x)
     
     for(Source::group_iterator it = x->f_manager->getFirstGroup() ; it != x->f_manager->getLastGroup(); it ++)
     {
-        avSource = new t_atom[it->second->getSourcesSize()+3];
+        avSource = new t_atom[it->second->getNumberOfSources()+3];
         atom_setsym(avSource, hoa_sym_group);
         atom_setsym(avSource+1, hoa_sym_source);
         atom_setlong(avSource+2, it->first);
         
         j = 0;
-        map<ulong, Source*> sourcesOfGroup = it->second->getSources();
+        map<ulong, Source*>& sourcesOfGroup = it->second->getSources();
         for(Source::source_iterator ti = sourcesOfGroup.begin() ; ti != sourcesOfGroup.end(); ti ++)
         {
             atom_setlong(avSource+3+j, ti->first);
             j ++;
         }
-        outlet_list(x->f_out_infos, NULL, it->second->getSourcesSize()+3, avSource);
+        outlet_list(x->f_out_infos, NULL, it->second->getNumberOfSources()+3, avSource);
         free(avSource);
     }
     
@@ -698,15 +698,13 @@ t_max_err bindname_set(t_hoa_map *x, t_object *attr, long argc, t_atom *argv)
 			if (x->f_binding_name != hoa_sym_nothing)
             {
                 defer_low(x, (method)linkmap_remove_with_binding_name, x->f_binding_name, NULL, NULL);
-                //linkmap_remove_with_binding_name(x, x->f_binding_name);
             }
 			
 			// add new one
 			if (new_binding_name != hoa_sym_nothing)
 			{
-				// use deferlow to have the good toppatcher pointer when the patch is being loaded
+				// use deferlow to have the valid toppatcher pointer when the patch is being loaded
 				defer_low(x, (method)linkmap_add_with_binding_name, new_binding_name, NULL, NULL);
-				//linkmap_add_with_binding_name(x, new_binding_name);
 				x->f_binding_name = new_binding_name;
 			}
 			else
@@ -783,13 +781,11 @@ t_hoa_err hoa_getinfos(t_hoa_map* x, t_hoa_boxinfos* boxinfos)
 
 void hoamap_free(t_hoa_map *x)
 {
-    //defer_low(x, (method)linkmap_remove_with_binding_name, x->f_binding_name, NULL, NULL);
 	linkmap_remove_with_binding_name(x, x->f_binding_name);
 	
 	jbox_free(&x->j_box);
     jfont_destroy(x->jfont);
 	
-    //delete x->f_manager;
 	delete x->f_self_manager;
 	
     if(x->f_patcher)
@@ -1024,9 +1020,12 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
 		long sources_ac;
 		t_atom* sources_av;
         
+        x->f_manager->clearGroups();
+        
+        /*
         for (ulong i = 1; i < MAX_NUMBER_OF_SOURCES + 1; i++)
             x->f_manager->removeGroup(i);
-        
+        */
         for(int i = 0; i < MAX_NUMBER_OF_SOURCES*9; i += 9)
         {
             if( (i <= ac-9) && atom_gettype(av+i) == A_SYM && atom_getsym(av+i) == hoa_sym_group)
@@ -1043,7 +1042,14 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
                        atom_gettype(av+i+6) == A_FLOAT && atom_gettype(av+i+7) == A_FLOAT &&
                        atom_gettype(av+i+8) == A_SYM)
                     {
-                        Source::Group* grp = x->f_manager->newGroup(index);
+                        Source::Group* grp = x->f_manager->getGroup(index);
+                        bool newGroupCreated = false;
+                        if(!grp)
+                        {
+                            grp = x->f_manager->createGroup(index);
+                            newGroupCreated = true;
+                        }
+                        
                         sources_ac = 0;
                         sources_av = NULL;
                         atom_setparse(&sources_ac, &sources_av, atom_getsym(av+i+3)->s_name);
@@ -1061,14 +1067,28 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
                                     }
                                 }
                             }
+                            
+                            bool groupAdded = false;
+                            
+                            if(newGroupCreated)
+                            {
+                                groupAdded = x->f_manager->addGroup(grp);
+                                if(!groupAdded)
+                                {
+                                    delete grp;
+                                }
+                            }
+                            
+                            if(!newGroupCreated || (newGroupCreated && groupAdded))
+                            {
+                                grp->setColor(atom_getfloat(av+i+4),
+                                              atom_getfloat(av+i+5),
+                                              atom_getfloat(av+i+6),
+                                              atom_getfloat(av+i+7));
+                                
+                                grp->setDescription(atom_getsym(av+i+8)->s_name);
+                            }
                         }
-                        
-                        grp->setColor(atom_getfloat(av+i+4),
-                                      atom_getfloat(av+i+5),
-                                      atom_getfloat(av+i+6),
-                                      atom_getfloat(av+i+7));
-                        
-                        grp->setDescription(atom_getsym(av+i+8)->s_name);
                     }
                 }
             }
@@ -1086,7 +1106,14 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
 		t_symbol* param = atom_getsym(av+1);
 		int causeOutput = 1;
         
-        Source::Group* tmp =x->f_manager->newGroup(index);
+        Source::Group* tmpgrp = x->f_manager->getGroup(index);
+        bool newGroupCreated = false;
+        if(!tmpgrp)
+        {
+            tmpgrp = x->f_manager->createGroup(index);
+            newGroupCreated = true;
+        }
+        
         if(param == hoa_sym_set)
         {
             for(int i = 2; i < ac; i++)
@@ -1095,56 +1122,56 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
                 if (ind > 0)
                 {
                     Source* src = x->f_manager->newSource(ind);
-                    tmp->addSource(src);
+                    tmpgrp->addSource(src);
                 }
             }
         }
         else if(param == hoa_sym_polar || param == hoa_sym_pol)
 		{
 			if (ac >= 5 && atom_isNumber(av+2) && atom_isNumber(av+3) && atom_isNumber(av+4))
-				tmp->setCoordinatesPolar(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4));
+				tmpgrp->setCoordinatesPolar(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4));
 			else if (ac >= 4 && atom_isNumber(av+2) && atom_isNumber(av+3))
-				tmp->setCoordinatesPolar(atom_getfloat(av+2), atom_getfloat(av+3));
+				tmpgrp->setCoordinatesPolar(atom_getfloat(av+2), atom_getfloat(av+3));
 		}
         else if(param == hoa_sym_azimuth)
-			tmp->setAzimuth(atom_getfloat(av+2));
+			tmpgrp->setAzimuth(atom_getfloat(av+2));
 		else if(param == hoa_sym_elevation)
-			tmp->setElevation(atom_getfloat(av+2));
+			tmpgrp->setElevation(atom_getfloat(av+2));
         else if(param == hoa_sym_cartesian || param == hoa_sym_car)
 		{
 			if (ac >= 5 && atom_isNumber(av+2) && atom_isNumber(av+3) && atom_isNumber(av+4))
-				tmp->setCoordinatesCartesian(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4));
+				tmpgrp->setCoordinatesCartesian(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4));
 			else if (ac >= 4 && atom_isNumber(av+2) && atom_isNumber(av+3))
-				tmp->setCoordinatesCartesian(atom_getfloat(av+2), atom_getfloat(av+3));
+				tmpgrp->setCoordinatesCartesian(atom_getfloat(av+2), atom_getfloat(av+3));
 		}
         else if(param == hoa_sym_abscissa)
-			tmp->setAbscissa(atom_getfloat(av+2));
+			tmpgrp->setAbscissa(atom_getfloat(av+2));
         else if(param == hoa_sym_ordinate)
-            tmp->setOrdinate(atom_getfloat(av+2));
+            tmpgrp->setOrdinate(atom_getfloat(av+2));
 		else if(param == hoa_sym_height)
-            tmp->setHeight(atom_getfloat(av+2));
+            tmpgrp->setHeight(atom_getfloat(av+2));
         else if(param == hoa_sym_relpolar)
 		{
 			if (ac >= 5 && atom_isNumber(av+2) && atom_isNumber(av+3) && atom_isNumber(av+4))
-				tmp->setRelativeCoordinatesPolar(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4));
+				tmpgrp->setRelativeCoordinatesPolar(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4));
 			else if (ac >= 4 && atom_isNumber(av+2) && atom_isNumber(av+3))
-				tmp->setRelativeCoordinatesPolar(atom_getfloat(av+2), atom_getfloat(av+3));
+				tmpgrp->setRelativeCoordinatesPolar(atom_getfloat(av+2), atom_getfloat(av+3));
 		}
         else if(param == hoa_sym_relradius)
 		{
-            tmp->setRelativeRadius(atom_getfloat(av+2));
+            tmpgrp->setRelativeRadius(atom_getfloat(av+2));
 		}
         else if(param == hoa_sym_relazimuth)
 		{
-            tmp->setRelativeAzimuth(atom_getfloat(av+2));
+            tmpgrp->setRelativeAzimuth(atom_getfloat(av+2));
 		}
 		else if(param == hoa_sym_relelevation)
 		{
-            tmp->setRelativeElevation(atom_getfloat(av+2));
+            tmpgrp->setRelativeElevation(atom_getfloat(av+2));
 		}
         else if(param == hoa_sym_mute)
 		{
-            tmp->setMute((bool)atom_getlong(av+2));
+            tmpgrp->setMute((bool)atom_getlong(av+2));
 		}
         else if(param == hoa_sym_remove)
         {
@@ -1166,7 +1193,7 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
                 strcat(description, " ");
                 if(atom_getsym(av+2) == hoa_sym_remove)
                 {
-                    tmp->setDescription("");
+                    tmpgrp->setDescription("");
                     object_notify(x, hoa_sym_modified, NULL);
                     jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
                     jbox_redraw((t_jbox *)x);
@@ -1191,17 +1218,25 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
                     strcat(description, number);
                 }
             }
-            tmp->setDescription(description);
+            tmpgrp->setDescription(description);
         }
         else if(param == hoa_sym_color && ac >= 6)
         {
 			causeOutput = 0;
-            tmp->setColor(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4), atom_getfloat(av+5));
+            tmpgrp->setColor(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4), atom_getfloat(av+5));
         }
 		else
 		{
 			causeOutput = 0;
 		}
+        
+        if(newGroupCreated)
+        {
+            if(!x->f_manager->addGroup(tmpgrp))
+            {
+                delete tmpgrp;
+            }
+        }
 		
 		object_notify(x, hoa_sym_modified, NULL);
 		jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
@@ -1305,7 +1340,7 @@ void hoamap_preset(t_hoa_map *x)
 		if(exist)
 		{
 			temp_str.clear();
-            map<ulong, Source*> sourcesOfGroup = grp->getSources();
+            map<ulong, Source*>& sourcesOfGroup = grp->getSources();
             temp_str.reserve(sourcesOfGroup.size()*2);
             
             for(Source::source_iterator ti = sourcesOfGroup.begin() ; ti != sourcesOfGroup.end() ; ti++)
@@ -1424,7 +1459,7 @@ t_max_err hoamap_getvalueof(t_hoa_map *x, long *ac, t_atom **av)
 			if(exist)
 			{
                 temp_str.clear();
-                map<ulong, Source*> sourcesOfGroup = grp->getSources();
+                map<ulong, Source*>& sourcesOfGroup = grp->getSources();
                 temp_str.reserve(sourcesOfGroup.size()*2);
                 
                 for(Source::source_iterator ti = sourcesOfGroup.begin() ; ti != sourcesOfGroup.end() ; ti++)
@@ -1697,7 +1732,7 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
         for(Source::source_iterator it = x->f_manager->getFirstSource(); it != x->f_manager->getLastSource(); it++)
         {
             const ulong index = it->first;
-            const Source* src = it->second;
+            Source* src = it->second;
             
             switch (x->f_coord_view)
             {
@@ -1729,7 +1764,7 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
             if(desc.empty())
                 sprintf(description, "%lu", index);
             else
-                sprintf(description, "%lu : %s", index, src->getDescription().c_str());
+                sprintf(description, "%lu : %s", index, desc.c_str());
             
             textDisplayPos.x = sourceDisplayPos.x - 2. * x->f_source_radius;
             textDisplayPos.y = sourceDisplayPos.y - x->f_source_radius - fontSize - 1.;
@@ -1746,7 +1781,7 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
                 
                 if (x->f_showgroups)
                 {
-                    map<ulong, Source::Group*> groupsOfSources = it->second->getGroups();
+                    map<ulong, Source::Group*>& groupsOfSources = src->getGroups();
                     for(Source::group_iterator ti = groupsOfSources.begin() ; ti != groupsOfSources.end() ; ti++)
                     {
                         Source::Group* grp = ti->second;
@@ -1858,8 +1893,10 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
             const double* color = grp->getColor();
             jrgba_set(&sourceColor, color[0], color[1], color[2], color[3]);
             
-            if(!grp->getDescription().empty())
-                sprintf(description,"%lu : %s", index, grp->getDescription().c_str());
+            const std::string desc = grp->getDescription();
+            
+            if(!desc.empty())
+                sprintf(description,"%lu : %s", index, desc.c_str());
             else
                 sprintf(description,"%lu", index);
             
@@ -1876,12 +1913,12 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
                 jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius * 1.5,  0., HOA_2PI);
                 jgraphics_fill(g);
                 
-                map<ulong, Source*> sourcesOfGroup = it->second->getSources();
+                map<ulong, Source*>& sourcesOfGroup = grp->getSources();
                 for(Source::source_iterator ti = sourcesOfGroup.begin() ; ti != sourcesOfGroup.end() ; ti ++)
                 {
-                    jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
-                    
                     Source* src = ti->second;
+                    
+                    jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
                     
                     switch (x->f_coord_view)
                     {
@@ -1979,10 +2016,6 @@ void hoamap_paint(t_hoa_map *x, t_object *view)
     jbox_get_rect_for_view((t_object *)x, view, &rect);
     x->rect = rect;
     
-    /* Pas de groupes avec un nombre de source inférieur à 2 et pas de doublons de groupes */
-    x->f_manager->cleanDuplicatedGroup();
-    x->f_manager->cleanEmptyGroup();
-    
     draw_background(x, view, &rect);
     draw_sources(x, view, &rect);
     
@@ -2017,7 +2050,9 @@ void hoamap_mousedrag(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
 #endif
     {
         if(x->f_cartesian_drag == 0)
+        {
             x->f_cartesian_drag = (fabs(mousedelta.x) >= fabs(mousedelta.y)) ? 1 : 2;
+        }
     }
     else
     {
@@ -2153,7 +2188,7 @@ void hoamap_mousedrag(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
                         mouse_azimuth = Math<double>::wrap_twopi(Math<double>::azimuth(cursor.x, cursor.y));
                         mouse_azimuth_prev = Math<double>::wrap_twopi(Math<double>::azimuth(x->f_cursor_position.x, x->f_cursor_position.y));
                         
-                        map<ulong, Source*> sourcesOfGroup = x->f_selected_group->getSources();
+                        map<ulong, Source*>& sourcesOfGroup = x->f_selected_group->getSources();
                         for(Source::source_iterator it = sourcesOfGroup.begin() ; it != sourcesOfGroup.end() ; it ++)
                         {
                             Source* src = it->second;
@@ -2178,7 +2213,7 @@ void hoamap_mousedrag(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
                         mouse_azimuth = Math<double>::wrap_twopi(Math<double>::azimuth(cursor.x, cursor.y));
                         mouse_azimuth_prev = Math<double>::wrap_twopi(Math<double>::azimuth(x->f_cursor_position.x, x->f_cursor_position.y));
                         
-                        map<ulong, Source*> sourcesOfGroup = x->f_selected_group->getSources();
+                        map<ulong, Source*>& sourcesOfGroup = x->f_selected_group->getSources();
                         for(Source::source_iterator it = sourcesOfGroup.begin(); it != sourcesOfGroup.end(); it++)
                         {
                             Source* src = it->second;
@@ -2235,7 +2270,7 @@ void hoamap_mousedrag(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
                         mouse_azimuth = Math<double>::wrap_twopi(Math<double>::azimuth(cursor.x, cursor.y));
                         mouse_azimuth_prev = Math<double>::wrap_twopi(Math<double>::azimuth(x->f_cursor_position.x, x->f_cursor_position.y));
                         
-                        map<ulong, Source*> sourcesOfGroup = x->f_selected_group->getSources();
+                        map<ulong, Source*>& sourcesOfGroup = x->f_selected_group->getSources();
                         for(Source::source_iterator it = sourcesOfGroup.begin(); it != sourcesOfGroup.end(); it++)
                         {
                             Source* src = it->second;
@@ -2263,7 +2298,7 @@ void hoamap_mousedrag(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
                         mouse_azimuth = Math<double>::wrap_twopi(Math<double>::azimuth(cursor.x, cursor.y));
                         mouse_azimuth_prev = Math<double>::wrap_twopi(Math<double>::azimuth(x->f_cursor_position.x, x->f_cursor_position.y));
                         
-                        map<ulong, Source*> sourcesOfGroup = x->f_selected_group->getSources();
+                        map<ulong, Source*>& sourcesOfGroup = x->f_selected_group->getSources();
                         for(Source::source_iterator it = sourcesOfGroup.begin(); it != sourcesOfGroup.end(); it++)
                         {
                             Source* src = it->second;
@@ -2756,8 +2791,10 @@ void hoamap_mouseup(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifiers
         {
             if (it->first != indexOfNewGroup)
                 break;
-            indexOfNewGroup ++;
+            indexOfNewGroup++;
         }
+        
+        Source::Group* tmpgrp = x->f_manager->createGroup(indexOfNewGroup);
         
         double x1 = ((x->f_rect_selection.x / x->rect.width * 2.) - 1.) / x->f_zoom_factor;
         double x2 = (((x->f_rect_selection.x + x->f_rect_selection.width) / x->rect.width * 2.) - 1.) / x->f_zoom_factor;
@@ -2793,10 +2830,18 @@ void hoamap_mouseup(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifiers
             
             if(((screen_source_coord.x > x1 && screen_source_coord.x < x2) || (screen_source_coord.x < x1 && screen_source_coord.x > x2)) && ((screen_source_coord.y > y1 && screen_source_coord.y < y2) || (screen_source_coord.y < y1 && screen_source_coord.y > y2)))
             {
-                x->f_selected_group = x->f_manager->newGroup(indexOfNewGroup);
-                x->f_selected_group->addSource(src);
-                causeOutput = causeRedraw = causeNotify = 1;
+                tmpgrp->addSource(src);
             }
+        }
+        
+        if(x->f_manager->addGroup(tmpgrp))
+        {
+            x->f_selected_group = tmpgrp;
+            causeOutput = causeRedraw = causeNotify = 1;
+        }
+        else
+        {
+            delete tmpgrp;
         }
     }
     
@@ -2873,7 +2918,7 @@ long hoamap_key(t_hoa_map *x, t_object *patcherview, long keycode, long modifier
 	if (keycode == 97 && modifiers == 1 && textcharacter == 0) //cmd+a
 #endif
     {
-		if (!x->f_showgroups)
+		if (!x->f_showgroups && x->f_manager->getNumberOfSources() > 1)
 			return 0;
         
         ulong indexOfNewGroup = 1;
@@ -2884,18 +2929,27 @@ long hoamap_key(t_hoa_map *x, t_object *patcherview, long keycode, long modifier
             indexOfNewGroup++;
         }
         
-        x->f_selected_group = x->f_manager->newGroup(indexOfNewGroup);
+        Source::Group* tmpgrp = x->f_manager->createGroup(indexOfNewGroup);
         
         for(Source::source_iterator it = x->f_manager->getFirstSource() ; it != x->f_manager->getLastSource() ; it ++)
         {
-            x->f_selected_group->addSource(it->second);
+            tmpgrp->addSource(it->second);
         }
         
-		object_notify(x, hoa_sym_modified, NULL);
-        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
-        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
-        jbox_redraw((t_jbox *)x);
-		hoamap_send_binded_map_update(x, BMAP_REDRAW | BMAP_OUTPUT | BMAP_NOTIFY);
+        if(x->f_manager->addGroup(tmpgrp))
+        {
+            x->f_selected_group = tmpgrp;
+            
+            object_notify(x, hoa_sym_modified, NULL);
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
+            jbox_redraw((t_jbox *)x);
+            hoamap_send_binded_map_update(x, BMAP_REDRAW | BMAP_OUTPUT | BMAP_NOTIFY);
+        }
+        else
+        {
+            delete tmpgrp;
+        }
         
         filter = 1;
 	}
