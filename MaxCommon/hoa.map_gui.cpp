@@ -653,25 +653,19 @@ void linkmap_remove_with_binding_name(t_hoa_map *x, t_symbol* binding_name)
 						name->s_thing = (t_object *)temp->next;
 						
 						// bind all object to the next Source::Manager (next becoming the new head of the t_linkmap)
-                        //head_map->f_manager->copyTo(temp->next->map->f_self_manager);
                         temp->next->map->f_self_manager = new Source::Manager(*head_map->f_manager);
 						temp->next->update_headptr((t_linkmap *)name->s_thing, temp->next->map->f_self_manager);
 					}
 					
-                    //if(x->f_listmap)
-                    //    sysmem_freeptr(x->f_listmap);
 					x->f_listmap = NULL;
-					
 					x->f_manager = x->f_self_manager; // not sure if this is necessary (normally it is the same pointer)
 				}
-                
 				else if(temp->next != NULL && temp->next->map == x)
 				{
 					// we restore the original pointer
 					temp->next->map->f_manager = temp->next->map->f_self_manager;
 					// then we copy the shared Source::Manager into the original one
-					//head_map->f_self_manager->copyTo(temp->next->map->f_manager);
-                    temp->next->map->f_self_manager = new Source::Manager(*head_map->f_self_manager);
+                    temp->next->map->f_manager = new Source::Manager(*head_map->f_self_manager);
 					
 					temp2 = temp->next->next;
 					sysmem_freeptr(temp->next);
@@ -683,7 +677,6 @@ void linkmap_remove_with_binding_name(t_hoa_map *x, t_symbol* binding_name)
 			}
 		}
 	}
-	
 }
 
 t_max_err bindname_set(t_hoa_map *x, t_object *attr, long argc, t_atom *argv)
@@ -1021,11 +1014,7 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
 		t_atom* sources_av;
         
         x->f_manager->clearGroups();
-        
-        /*
-        for (ulong i = 1; i < MAX_NUMBER_OF_SOURCES + 1; i++)
-            x->f_manager->removeGroup(i);
-        */
+
         for(int i = 0; i < MAX_NUMBER_OF_SOURCES*9; i += 9)
         {
             if( (i <= ac-9) && atom_gettype(av+i) == A_SYM && atom_getsym(av+i) == hoa_sym_group)
@@ -1222,8 +1211,8 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
         }
         else if(param == hoa_sym_color && ac >= 6)
         {
-			causeOutput = 0;
             tmpgrp->setColor(atom_getfloat(av+2), atom_getfloat(av+3), atom_getfloat(av+4), atom_getfloat(av+5));
+            causeOutput = 0;
         }
 		else
 		{
@@ -1734,6 +1723,11 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
             const ulong index = it->first;
             Source* src = it->second;
             
+            if(!src)
+            {
+                continue;
+            }
+            
             switch (x->f_coord_view)
             {
                 case 0 : // XY
@@ -1785,6 +1779,12 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
                     for(Source::group_iterator ti = groupsOfSources.begin() ; ti != groupsOfSources.end() ; ti++)
                     {
                         Source::Group* grp = ti->second;
+                        
+                        if(!grp)
+                        {
+                            continue;
+                        }
+                        
                         jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
                         
                         switch (x->f_coord_view)
@@ -1862,10 +1862,15 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
         t_jtextlayout *jtl = jtextlayout_create();
         jgraphics_set_line_width(g, x->f_source_radius * 0.2);
         
-        for(Source::group_iterator it = x->f_manager->getFirstGroup() ; it != x->f_manager->getLastGroup() ; it ++)
+        for(Source::group_iterator it = x->f_manager->getFirstGroup() ; it != x->f_manager->getLastGroup() ; it++)
         {
             const ulong index = it->first;
             Source::Group* grp = it->second;
+            
+            if(!grp)
+            {
+                continue;
+            }
             
             switch (x->f_coord_view)
             {
@@ -1896,9 +1901,9 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
             const std::string desc = grp->getDescription();
             
             if(!desc.empty())
-                sprintf(description,"%lu : %s", index, desc.c_str());
+                sprintf(description, "%lu : %s", index, desc.c_str());
             else
-                sprintf(description,"%lu", index);
+                sprintf(description, "%lu", index);
             
             textDisplayPos.x = sourceDisplayPos.x - 2. * x->f_source_radius;
             textDisplayPos.y = sourceDisplayPos.y - x->f_source_radius - fontSize - 1.;
@@ -1906,6 +1911,29 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
             jtextlayout_settextcolor(jtl, &sourceColor);
             jtextlayout_set(jtl, description, x->jfont, textDisplayPos.x, textDisplayPos.y, fontSize * 10., fontSize * 2., JGRAPHICS_TEXT_JUSTIFICATION_LEFT, JGRAPHICS_TEXTLAYOUT_USEELLIPSIS);
             jtextlayout_draw(jtl, g);
+            
+            jgraphics_set_source_jrgba(g, &sourceColor);
+            for(int j = 1; j < 4; j += 2)
+            {
+                jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
+                jgraphics_line_to(g,
+                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_2PI * j / 4. + HOA_PI2 / 2.),
+                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_2PI * j / 4. + HOA_PI2 / 2.));
+            }
+            jgraphics_stroke(g);
+            
+            jgraphics_set_source_jrgba(g, grp->getMute() ? &red : &sourceColor);
+            jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius,  0., HOA_2PI);
+            jgraphics_stroke(g);
+            
+            for(int j = 0; j < 2; j++)
+            {
+                jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
+                jgraphics_line_to(g,
+                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_2PI * j / 2. + HOA_PI2 / 2.),
+                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_2PI * j / 2. + HOA_PI2 / 2.));
+            }
+            jgraphics_stroke(g);
             
             if (x->f_selected_group == grp)
             {
@@ -1917,6 +1945,11 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
                 for(Source::source_iterator ti = sourcesOfGroup.begin() ; ti != sourcesOfGroup.end() ; ti ++)
                 {
                     Source* src = ti->second;
+                    
+                    if(!src)
+                    {
+                        continue;
+                    }
                     
                     jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
                     
@@ -1947,29 +1980,6 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
                     jgraphics_stroke(g);
                 }
             }
-            
-            jgraphics_set_source_jrgba(g, &sourceColor);
-            for(int j = 1; j < 4; j += 2)
-            {
-                jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
-                jgraphics_line_to(g,
-                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_2PI * j / 4. + HOA_PI2 / 2.),
-                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_2PI * j / 4. + HOA_PI2 / 2.));
-            }
-            jgraphics_stroke(g);
-
-            jgraphics_set_source_jrgba(g, grp->getMute() ? &red : &sourceColor);
-            jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius,  0., HOA_2PI);
-            jgraphics_stroke(g);
-            
-            for(int j = 0; j < 2; j++)
-            {
-                jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
-                jgraphics_line_to(g,
-                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_2PI * j / 2. + HOA_PI2 / 2.),
-                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_2PI * j / 2. + HOA_PI2 / 2.));
-            }
-            jgraphics_stroke(g);
         }
 		jtextlayout_destroy(jtl);
         
