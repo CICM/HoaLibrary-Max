@@ -102,6 +102,43 @@
 		2C0326B31A9E1D300076BE56 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
 		2C0326B41A9E1D300076BE56 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
 		2C0326BB1A9E1DDF0076BE56 /* c.freeverb_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE0CD4619720A0300217823 /* c.freeverb_tilde.cpp */; };
+		2C2C1C351B18D5FF00F116BF /* Processor.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C2C1C341B18D4D200F116BF /* Processor.hpp */; };
+		2C2C1C361B18D60300F116BF /* Exchanger.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C2C1C331B18D4D200F116BF /* Exchanger.hpp */; };
+		2C2C1C371B19015600F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C381B19015600F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C391B19015700F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C3A1B19015800F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C3B1B19015800F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C3C1B19015900F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C3D1B19015D00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C3E1B19015E00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C3F1B19015F00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C401B19015F00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C411B19016000F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C421B19016200F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C431B19016300F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C441B19016400F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C451B19016700F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C461B19016800F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C471B19016800F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C481B19016900F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C491B19016900F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C4A1B19016A00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C4B1B19016A00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C4C1B19016B00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C4D1B19016B00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C4E1B19016C00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C4F1B19016C00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C501B19016D00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C511B19016E00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C521B19016F00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C531B19016F00F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C541B19017000F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C551B19017100F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C561B19017100F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C571B19017200F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C581B19017200F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C2C1C591B19017300F116BF /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
 		2C39585F1A9ABDCD00C91175 /* Decoder.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958491A9ABDCD00C91175 /* Decoder.hpp */; };
 		2C3958601A9ABDCD00C91175 /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
 		2C3958611A9ABDCD00C91175 /* Encoder.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584B1A9ABDCD00C91175 /* Encoder.hpp */; };
@@ -896,6 +933,8 @@
 		2C0326601A9E13580076BE56 /* hoa.pi~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.pi~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C03267D1A9E196E0076BE56 /* c.convolve~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "c.convolve~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C0326B91A9E1D300076BE56 /* c.freeverb~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "c.freeverb~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C2C1C331B18D4D200F116BF /* Exchanger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Exchanger.hpp; sourceTree = "<group>"; };
+		2C2C1C341B18D4D200F116BF /* Processor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Processor.hpp; sourceTree = "<group>"; };
 		2C3958491A9ABDCD00C91175 /* Decoder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Decoder.hpp; sourceTree = "<group>"; };
 		2C39584A1A9ABDCD00C91175 /* Defs.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Defs.hpp; sourceTree = "<group>"; };
 		2C39584B1A9ABDCD00C91175 /* Encoder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Encoder.hpp; sourceTree = "<group>"; };
@@ -1400,13 +1439,14 @@
 		2C3958481A9ABDCD00C91175 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2C39584D1A9ABDCD00C91175 /* Hoa.hpp */,
 				2C39584A1A9ABDCD00C91175 /* Defs.hpp */,
 				2C3958581A9ABDCD00C91175 /* Signal.hpp */,
 				2C39584E1A9ABDCD00C91175 /* Math.hpp */,
 				2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */,
 				2C39585B1A9ABDCD00C91175 /* Tools.hpp */,
+				2C2C1C331B18D4D200F116BF /* Exchanger.hpp */,
 				2C39584C1A9ABDCD00C91175 /* Harmonics.hpp */,
+				2C2C1C341B18D4D200F116BF /* Processor.hpp */,
 				2C3958531A9ABDCD00C91175 /* Planewaves.hpp */,
 				2C39584B1A9ABDCD00C91175 /* Encoder.hpp */,
 				2C3958491A9ABDCD00C91175 /* Decoder.hpp */,
@@ -1420,6 +1460,7 @@
 				2C39585C1A9ABDCD00C91175 /* Vector.hpp */,
 				2C9AAEFC1AB9C8EE00B781A1 /* Voronoi.hpp */,
 				2C39585E1A9ABDCD00C91175 /* Wider.hpp */,
+				2C39584D1A9ABDCD00C91175 /* Hoa.hpp */,
 			);
 			name = Sources;
 			path = ThirdParty/HoaLibrary/Sources;
@@ -1500,6 +1541,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C381B19015600F116BF /* Signal.hpp in Headers */,
 				2C0326481A9E13580076BE56 /* HoaCommon.max.h in Headers */,
 				2C0326491A9E13580076BE56 /* Hoa3D.max.h in Headers */,
 				2C03264A1A9E13580076BE56 /* Math.hpp in Headers */,
@@ -1525,6 +1567,7 @@
 				2C03266A1A9E196E0076BE56 /* hoa.max_commonsyms.h in Headers */,
 				2C03266B1A9E196E0076BE56 /* hoa.max.math.h in Headers */,
 				2C03266C1A9E196E0076BE56 /* Hoa.hpp in Headers */,
+				2C2C1C391B19015700F116BF /* Signal.hpp in Headers */,
 				2C0326831A9E1B2C0076BE56 /* AudioFFT.h in Headers */,
 				2C03266D1A9E196E0076BE56 /* Tools.hpp in Headers */,
 				2C03266E1A9E196E0076BE56 /* hoa.max.h in Headers */,
@@ -1538,6 +1581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C0326A21A9E1D300076BE56 /* HoaCommon.max.h in Headers */,
+				2C2C1C3A1B19015800F116BF /* Signal.hpp in Headers */,
 				2C0326A31A9E1D300076BE56 /* Hoa3D.max.h in Headers */,
 				2C0326A51A9E1D300076BE56 /* Hoa2D.max.h in Headers */,
 				2C0326A71A9E1D300076BE56 /* hoa.max_commonsyms.h in Headers */,
@@ -1550,6 +1594,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C3B1B19015800F116BF /* Signal.hpp in Headers */,
 				2C9B39581A9E1F2700E6921E /* HoaCommon.max.h in Headers */,
 				2C9B39591A9E1F2700E6921E /* Hoa3D.max.h in Headers */,
 				2C9B395A1A9E1F2700E6921E /* Math.hpp in Headers */,
@@ -1567,6 +1612,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C3C1B19015900F116BF /* Signal.hpp in Headers */,
 				2C9B39741A9E22C400E6921E /* HoaCommon.max.h in Headers */,
 				2C9B39751A9E22C400E6921E /* Hoa3D.max.h in Headers */,
 				2C9B39761A9E22C400E6921E /* Math.hpp in Headers */,
@@ -1584,6 +1630,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C3D1B19015D00F116BF /* Signal.hpp in Headers */,
 				2C9B398F1A9E25E600E6921E /* HoaCommon.max.h in Headers */,
 				2C9B39901A9E25E600E6921E /* Hoa3D.max.h in Headers */,
 				2C9B39911A9E25E600E6921E /* Math.hpp in Headers */,
@@ -1601,6 +1648,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C3E1B19015E00F116BF /* Signal.hpp in Headers */,
 				2C9B39AA1A9E30EA00E6921E /* HoaCommon.max.h in Headers */,
 				2C9B39AB1A9E30EA00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B39AC1A9E30EA00E6921E /* Math.hpp in Headers */,
@@ -1618,6 +1666,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C3F1B19015F00F116BF /* Signal.hpp in Headers */,
 				2C9B39C51A9E31CC00E6921E /* HoaCommon.max.h in Headers */,
 				2C9B39C61A9E31CC00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B39C71A9E31CC00E6921E /* Math.hpp in Headers */,
@@ -1637,6 +1686,7 @@
 			files = (
 				2C9B39E01A9E359D00E6921E /* HoaCommon.max.h in Headers */,
 				2C9B39E11A9E359D00E6921E /* Hoa3D.max.h in Headers */,
+				2C2C1C401B19015F00F116BF /* Signal.hpp in Headers */,
 				2C9B39E21A9E359D00E6921E /* Math.hpp in Headers */,
 				2C9B39E31A9E359D00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B39E41A9E359D00E6921E /* Defs.hpp in Headers */,
@@ -1653,6 +1703,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C411B19016000F116BF /* Signal.hpp in Headers */,
 				2C9B39FE1A9E368700E6921E /* HoaCommon.max.h in Headers */,
 				2C9B39FF1A9E368700E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3A001A9E368700E6921E /* Math.hpp in Headers */,
@@ -1670,6 +1721,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C421B19016200F116BF /* Signal.hpp in Headers */,
 				2C9B3A191A9E372300E6921E /* HoaCommon.max.h in Headers */,
 				2C9B3A1A1A9E372300E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3A1B1A9E372300E6921E /* Math.hpp in Headers */,
@@ -1689,6 +1741,7 @@
 			files = (
 				2C9B3A341A9E38EC00E6921E /* HoaCommon.max.h in Headers */,
 				2C9B3A351A9E38EC00E6921E /* Hoa3D.max.h in Headers */,
+				2C2C1C431B19016300F116BF /* Signal.hpp in Headers */,
 				2C9B3A361A9E38EC00E6921E /* Math.hpp in Headers */,
 				2C9B3A371A9E38EC00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3A381A9E38EC00E6921E /* Defs.hpp in Headers */,
@@ -1707,6 +1760,7 @@
 			files = (
 				2C9B3A501A9E39E400E6921E /* HoaCommon.max.h in Headers */,
 				2C9B3A511A9E39E400E6921E /* Hoa3D.max.h in Headers */,
+				2C2C1C441B19016400F116BF /* Signal.hpp in Headers */,
 				2C9B3A521A9E39E400E6921E /* Math.hpp in Headers */,
 				2C9B3A531A9E39E400E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3A541A9E39E400E6921E /* Defs.hpp in Headers */,
@@ -1723,6 +1777,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C591B19017300F116BF /* Signal.hpp in Headers */,
 				2C9B3A6D1A9E418A00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3A6E1A9E418A00E6921E /* Math.hpp in Headers */,
 				2C9B3A6F1A9E418A00E6921E /* Hoa2D.max.h in Headers */,
@@ -1742,6 +1797,7 @@
 			files = (
 				2C9B3A881A9E44F800E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3A891A9E44F800E6921E /* Math.hpp in Headers */,
+				2C2C1C581B19017200F116BF /* Signal.hpp in Headers */,
 				2C9B3A8A1A9E44F800E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3A8B1A9E44F800E6921E /* Defs.hpp in Headers */,
 				2C9B3A8C1A9E44F800E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1758,6 +1814,7 @@
 			files = (
 				2C9B3AA31A9E714B00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3AA41A9E714B00E6921E /* Math.hpp in Headers */,
+				2C2C1C571B19017200F116BF /* Signal.hpp in Headers */,
 				2C9B3AA51A9E714B00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3AA61A9E714B00E6921E /* Defs.hpp in Headers */,
 				2C9B3AA71A9E714B00E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1774,6 +1831,7 @@
 			files = (
 				2C9B3ABD1A9E71C800E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3ABE1A9E71C800E6921E /* Math.hpp in Headers */,
+				2C2C1C561B19017100F116BF /* Signal.hpp in Headers */,
 				2C9B3ABF1A9E71C800E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3AC01A9E71C800E6921E /* Defs.hpp in Headers */,
 				2C9B3AC11A9E71C800E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1790,6 +1848,7 @@
 			files = (
 				2C9B3AD71A9E722F00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3AD81A9E722F00E6921E /* Math.hpp in Headers */,
+				2C2C1C551B19017100F116BF /* Signal.hpp in Headers */,
 				2C9B3AD91A9E722F00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3ADA1A9E722F00E6921E /* Defs.hpp in Headers */,
 				2C9B3ADB1A9E722F00E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1806,6 +1865,7 @@
 			files = (
 				2C9B3AF21A9E729800E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3AF31A9E729800E6921E /* Math.hpp in Headers */,
+				2C2C1C541B19017000F116BF /* Signal.hpp in Headers */,
 				2C9B3AF41A9E729800E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3AF51A9E729800E6921E /* Defs.hpp in Headers */,
 				2C9B3AF61A9E729800E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1820,6 +1880,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C531B19016F00F116BF /* Signal.hpp in Headers */,
 				2C9B3B0C1A9E730900E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3B0D1A9E730900E6921E /* Math.hpp in Headers */,
 				2C9B3B0E1A9E730900E6921E /* Hoa2D.max.h in Headers */,
@@ -1839,6 +1900,7 @@
 			files = (
 				2C9B3B281A9E736900E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3B291A9E736900E6921E /* Math.hpp in Headers */,
+				2C2C1C521B19016F00F116BF /* Signal.hpp in Headers */,
 				2C9B3B2A1A9E736900E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3B2B1A9E736900E6921E /* Defs.hpp in Headers */,
 				2C9B3B2C1A9E736900E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1855,6 +1917,7 @@
 			files = (
 				2C9B3B421A9E73BD00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3B431A9E73BD00E6921E /* Math.hpp in Headers */,
+				2C2C1C511B19016E00F116BF /* Signal.hpp in Headers */,
 				2C9B3B441A9E73BD00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3B451A9E73BD00E6921E /* Defs.hpp in Headers */,
 				2C9B3B461A9E73BD00E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1871,6 +1934,7 @@
 			files = (
 				2C9B3B5C1A9E740200E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3B5D1A9E740200E6921E /* Math.hpp in Headers */,
+				2C2C1C501B19016D00F116BF /* Signal.hpp in Headers */,
 				2C9B3B5E1A9E740200E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3B5F1A9E740200E6921E /* Defs.hpp in Headers */,
 				2C9B3B601A9E740200E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1887,6 +1951,7 @@
 			files = (
 				2C9B3B751A9E743100E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3B761A9E743100E6921E /* Math.hpp in Headers */,
+				2C2C1C4F1B19016C00F116BF /* Signal.hpp in Headers */,
 				2C9B3B771A9E743100E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3B781A9E743100E6921E /* Defs.hpp in Headers */,
 				2C9B3B791A9E743100E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1903,6 +1968,7 @@
 			files = (
 				2C9B3B901A9E74AF00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3B911A9E74AF00E6921E /* Math.hpp in Headers */,
+				2C2C1C4E1B19016C00F116BF /* Signal.hpp in Headers */,
 				2C9B3B921A9E74AF00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3B931A9E74AF00E6921E /* Defs.hpp in Headers */,
 				2C9B3B941A9E74AF00E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1919,6 +1985,7 @@
 			files = (
 				2C9B3BAA1A9E750300E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3BAB1A9E750300E6921E /* Math.hpp in Headers */,
+				2C2C1C4D1B19016B00F116BF /* Signal.hpp in Headers */,
 				2C9B3BAC1A9E750300E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3BAD1A9E750300E6921E /* Defs.hpp in Headers */,
 				2C9B3BAE1A9E750300E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1933,6 +2000,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C4C1B19016B00F116BF /* Signal.hpp in Headers */,
 				2C9B3BC41A9E763100E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3BC51A9E763100E6921E /* Math.hpp in Headers */,
 				2C9B3BC61A9E763100E6921E /* Hoa2D.max.h in Headers */,
@@ -1952,6 +2020,7 @@
 			files = (
 				2C9B3BDE1A9E76B900E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3BDF1A9E76B900E6921E /* Math.hpp in Headers */,
+				2C2C1C4B1B19016A00F116BF /* Signal.hpp in Headers */,
 				2C9B3BE01A9E76B900E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3BE11A9E76B900E6921E /* Defs.hpp in Headers */,
 				2C9B3BE21A9E76B900E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1968,6 +2037,7 @@
 			files = (
 				2C9B3BF81A9E776B00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3BF91A9E776B00E6921E /* Math.hpp in Headers */,
+				2C2C1C4A1B19016A00F116BF /* Signal.hpp in Headers */,
 				2C9B3BFA1A9E776B00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3BFB1A9E776B00E6921E /* Defs.hpp in Headers */,
 				2C9B3BFC1A9E776B00E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -1982,6 +2052,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C491B19016900F116BF /* Signal.hpp in Headers */,
 				2C9B3C121A9E77BD00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3C131A9E77BD00E6921E /* Math.hpp in Headers */,
 				2C9B3C141A9E77BD00E6921E /* Hoa2D.max.h in Headers */,
@@ -2001,6 +2072,7 @@
 			files = (
 				2C9B3C2B1A9E77ED00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3C2C1A9E77ED00E6921E /* Math.hpp in Headers */,
+				2C2C1C481B19016900F116BF /* Signal.hpp in Headers */,
 				2C9B3C2D1A9E77ED00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3C2E1A9E77ED00E6921E /* Defs.hpp in Headers */,
 				2C9B3C2F1A9E77ED00E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -2017,6 +2089,7 @@
 			files = (
 				2C9B3C441A9E781600E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3C451A9E781600E6921E /* Math.hpp in Headers */,
+				2C2C1C471B19016800F116BF /* Signal.hpp in Headers */,
 				2C9B3C461A9E781600E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3C471A9E781600E6921E /* Defs.hpp in Headers */,
 				2C9B3C481A9E781600E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -2033,6 +2106,7 @@
 			files = (
 				2C9B3C5D1A9E783B00E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3C5E1A9E783B00E6921E /* Math.hpp in Headers */,
+				2C2C1C461B19016800F116BF /* Signal.hpp in Headers */,
 				2C9B3C5F1A9E783B00E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3C601A9E783B00E6921E /* Defs.hpp in Headers */,
 				2C9B3C611A9E783B00E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -2049,6 +2123,7 @@
 			files = (
 				2C9B3C761A9E787300E6921E /* Hoa3D.max.h in Headers */,
 				2C9B3C771A9E787300E6921E /* Math.hpp in Headers */,
+				2C2C1C451B19016700F116BF /* Signal.hpp in Headers */,
 				2C9B3C781A9E787300E6921E /* Hoa2D.max.h in Headers */,
 				2C9B3C791A9E787300E6921E /* Defs.hpp in Headers */,
 				2C9B3C7A1A9E787300E6921E /* hoa.max_commonsyms.h in Headers */,
@@ -2063,6 +2138,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C1C371B19015600F116BF /* Signal.hpp in Headers */,
 				2CCD1F2E1A9CCBB3001F137D /* HoaCommon.max.h in Headers */,
 				2CCD1F341A9CCBB3001F137D /* Hoa3D.max.h in Headers */,
 				2CCD1F351A9CCBB3001F137D /* Math.hpp in Headers */,
@@ -2083,6 +2159,7 @@
 				2C3958741A9ABDCD00C91175 /* Wider.hpp in Headers */,
 				2CE0CD7E19720A0300217823 /* FFTConvolver.h in Headers */,
 				2CE0CD9119720A0300217823 /* HoaCommon.max.h in Headers */,
+				2C2C1C351B18D5FF00F116BF /* Processor.hpp in Headers */,
 				2C3958701A9ABDCD00C91175 /* Source.hpp in Headers */,
 				2C3958621A9ABDCD00C91175 /* Harmonics.hpp in Headers */,
 				2C39586B1A9ABDCD00C91175 /* Recomposer.hpp in Headers */,
@@ -2109,6 +2186,7 @@
 				2C3958691A9ABDCD00C91175 /* Planewaves.hpp in Headers */,
 				2C39585F1A9ABDCD00C91175 /* Decoder.hpp in Headers */,
 				2C39586A1A9ABDCD00C91175 /* Projector.hpp in Headers */,
+				2C2C1C361B18D60300F116BF /* Exchanger.hpp in Headers */,
 				2C8781881A9BE0B600BA0E2B /* ChannelManager.h in Headers */,
 				2C39586C1A9ABDCD00C91175 /* Rotate.hpp in Headers */,
 			);
@@ -3967,46 +4045,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4014,46 +4059,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4061,46 +4073,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4108,46 +4088,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4155,46 +4103,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4202,46 +4118,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4249,46 +4133,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4296,46 +4147,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4343,46 +4161,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4390,46 +4176,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4437,46 +4191,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4484,46 +4206,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4531,46 +4221,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4578,46 +4236,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4625,46 +4251,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4672,46 +4266,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4719,46 +4281,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4766,46 +4295,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4813,46 +4309,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4860,46 +4324,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -4907,46 +4339,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -4954,46 +4354,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5001,46 +4369,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5048,46 +4383,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5095,46 +4397,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5142,46 +4412,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5189,46 +4427,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5236,46 +4442,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5283,46 +4457,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5330,46 +4471,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5377,46 +4485,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5424,46 +4499,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5471,46 +4513,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5518,46 +4527,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5565,46 +4541,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5612,46 +4555,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5659,46 +4569,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5706,46 +4583,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5753,46 +4597,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5800,46 +4611,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5847,46 +4625,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5894,46 +4639,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -5941,46 +4653,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -5988,46 +4667,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6035,48 +4681,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_STYLE = "non-global";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6084,48 +4695,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_STYLE = "non-global";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6133,46 +4709,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6180,46 +4723,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6227,46 +4737,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6274,46 +4751,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6321,46 +4765,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6368,46 +4779,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6415,46 +4793,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6462,46 +4807,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6509,46 +4821,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6556,46 +4835,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6603,46 +4849,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6650,46 +4863,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6697,46 +4877,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6744,46 +4891,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6791,46 +4905,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6838,46 +4919,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6885,46 +4933,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -6932,46 +4947,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -6979,46 +4961,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -7026,46 +4975,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -7073,46 +4989,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -7120,51 +5003,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
 		2C9B3C961A9E7F7700E6921E /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -7172,6 +5023,7 @@
 		};
 		2C9B3C971A9E7F7700E6921E /* Deployment */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -7181,46 +5033,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -7228,46 +5047,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -7277,7 +5063,11 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_FAST_MATH = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_UNROLL_LOOPS = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
 					/Developer/usr/include,
@@ -7286,10 +5076,11 @@
 					/usr/local/lib,
 					Developer/usr/lib,
 				);
-				OTHER_LDFLAGS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
 				SDKROOT = macosx;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
-				USER_HEADER_SEARCH_PATHS = /usr/local/include;
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
@@ -7300,7 +5091,11 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_DYNAMIC_NO_PIC = YES;
+				GCC_FAST_MATH = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_UNROLL_LOOPS = YES;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
 					/Developer/usr/include,
@@ -7309,10 +5104,11 @@
 					/usr/local/lib,
 					Developer/usr/lib,
 				);
-				OTHER_LDFLAGS = "";
+				LLVM_LTO = YES;
+				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
 				SDKROOT = macosx;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
-				USER_HEADER_SEARCH_PATHS = /usr/local/include;
+				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
@@ -7321,47 +5117,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C0326451A9DFEAD0076BE56 /* MaxHoaLibraryPacked.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-					HOA_PACKED_LIB,
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = hoa.library;
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -7369,47 +5131,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C0326451A9DFEAD0076BE56 /* MaxHoaLibraryPacked.xcconfig */;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = $DSTROOT;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_DYNAMIC_NO_PIC = YES;
-				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = YES;
-				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				GCC_ENABLE_SSE41_EXTENSIONS = YES;
 				GCC_ENABLE_SSE42_EXTENSIONS = YES;
 				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
-				GCC_FAST_MATH = YES;
 				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"\"DENORM_WANT_FIX = 1\"",
-					"\"NO_TRANSLATION_SUPPORT = 1\"",
-					HOA_PACKED_LIB,
-				);
-				GCC_UNROLL_LOOPS = YES;
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					"\"$(C74SUPPORT)/max-includes\"",
-					"\"$(C74SUPPORT)/msp-includes\"",
-					"\"$(C74SUPPORT)/jit-includes\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				INSTALL_PATH = /;
-				LIBRARY_SEARCH_PATHS = "";
-				LLVM_LTO = YES;
-				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
-				PRODUCT_NAME = hoa.library;
-				USER_HEADER_SEARCH_PATHS = "/usr/local/include /Developer/usr/include";
-				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -7423,7 +5151,7 @@
 				2C03265F1A9E13580076BE56 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C03267A1A9E196E0076BE56 /* Build configuration list for PBXNativeTarget "c.convolve~" */ = {
 			isa = XCConfigurationList;
@@ -7432,7 +5160,7 @@
 				2C03267C1A9E196E0076BE56 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C0326B61A9E1D300076BE56 /* Build configuration list for PBXNativeTarget "c.freeverb~" */ = {
 			isa = XCConfigurationList;
@@ -7441,7 +5169,7 @@
 				2C0326B81A9E1D300076BE56 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B396C1A9E1F2700E6921E /* Build configuration list for PBXNativeTarget "hoa.connect" */ = {
 			isa = XCConfigurationList;
@@ -7450,7 +5178,7 @@
 				2C9B396E1A9E1F2700E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B39871A9E22C400E6921E /* Build configuration list for PBXNativeTarget "hoa.dac~" */ = {
 			isa = XCConfigurationList;
@@ -7459,7 +5187,7 @@
 				2C9B39891A9E22C400E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B39A21A9E25E600E6921E /* Build configuration list for PBXNativeTarget "hoa.gain~" */ = {
 			isa = XCConfigurationList;
@@ -7468,7 +5196,7 @@
 				2C9B39A41A9E25E600E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B39BC1A9E30EA00E6921E /* Build configuration list for PBXNativeTarget "hoa.in" */ = {
 			isa = XCConfigurationList;
@@ -7477,7 +5205,7 @@
 				2C9B39BE1A9E30EA00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B39D81A9E31CC00E6921E /* Build configuration list for PBXNativeTarget "hoa.in~" */ = {
 			isa = XCConfigurationList;
@@ -7486,7 +5214,7 @@
 				2C9B39DA1A9E31CC00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B39F31A9E359D00E6921E /* Build configuration list for PBXNativeTarget "hoa.map" */ = {
 			isa = XCConfigurationList;
@@ -7495,7 +5223,7 @@
 				2C9B39F51A9E359D00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3A111A9E368700E6921E /* Build configuration list for PBXNativeTarget "hoa.out" */ = {
 			isa = XCConfigurationList;
@@ -7504,7 +5232,7 @@
 				2C9B3A131A9E368700E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3A2C1A9E372300E6921E /* Build configuration list for PBXNativeTarget "hoa.out~" */ = {
 			isa = XCConfigurationList;
@@ -7513,7 +5241,7 @@
 				2C9B3A2E1A9E372300E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3A471A9E38EC00E6921E /* Build configuration list for PBXNativeTarget "hoa.process~" */ = {
 			isa = XCConfigurationList;
@@ -7522,7 +5250,7 @@
 				2C9B3A491A9E38EC00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3A641A9E39E400E6921E /* Build configuration list for PBXNativeTarget "hoa.thisprocess~" */ = {
 			isa = XCConfigurationList;
@@ -7531,7 +5259,7 @@
 				2C9B3A661A9E39E400E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3A7F1A9E418A00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.decoder~" */ = {
 			isa = XCConfigurationList;
@@ -7540,7 +5268,7 @@
 				2C9B3A811A9E418A00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3A9A1A9E44F800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.encoder~" */ = {
 			isa = XCConfigurationList;
@@ -7549,7 +5277,7 @@
 				2C9B3A9C1A9E44F800E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3AB51A9E714B00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.map~" */ = {
 			isa = XCConfigurationList;
@@ -7558,7 +5286,7 @@
 				2C9B3AB71A9E714B00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3ACF1A9E71C800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.meter~" */ = {
 			isa = XCConfigurationList;
@@ -7567,7 +5295,7 @@
 				2C9B3AD11A9E71C800E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3AE91A9E722F00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.optim~" */ = {
 			isa = XCConfigurationList;
@@ -7576,7 +5304,7 @@
 				2C9B3AEB1A9E722F00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3B041A9E729800E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.projector~" */ = {
 			isa = XCConfigurationList;
@@ -7585,7 +5313,7 @@
 				2C9B3B061A9E729800E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3B1E1A9E730900E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.recomposer" */ = {
 			isa = XCConfigurationList;
@@ -7594,7 +5322,7 @@
 				2C9B3B201A9E730900E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3B3A1A9E736900E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.recomposer~" */ = {
 			isa = XCConfigurationList;
@@ -7603,7 +5331,7 @@
 				2C9B3B3C1A9E736900E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3B541A9E73BD00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.rotate~" */ = {
 			isa = XCConfigurationList;
@@ -7612,7 +5340,7 @@
 				2C9B3B561A9E73BD00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3B6E1A9E740200E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.scope~" */ = {
 			isa = XCConfigurationList;
@@ -7621,7 +5349,7 @@
 				2C9B3B701A9E740200E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3B871A9E743100E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.space" */ = {
 			isa = XCConfigurationList;
@@ -7630,7 +5358,7 @@
 				2C9B3B891A9E743100E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3BA21A9E74AF00E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.vector~" */ = {
 			isa = XCConfigurationList;
@@ -7639,7 +5367,7 @@
 				2C9B3BA41A9E74AF00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3BBC1A9E750300E6921E /* Build configuration list for PBXNativeTarget "hoa.2d.wider~" */ = {
 			isa = XCConfigurationList;
@@ -7648,7 +5376,7 @@
 				2C9B3BBE1A9E750300E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3BD61A9E763100E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.decoder~" */ = {
 			isa = XCConfigurationList;
@@ -7657,7 +5385,7 @@
 				2C9B3BD81A9E763100E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3BF01A9E76B900E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.encoder~" */ = {
 			isa = XCConfigurationList;
@@ -7666,7 +5394,7 @@
 				2C9B3BF21A9E76B900E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3C0A1A9E776B00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.map~" */ = {
 			isa = XCConfigurationList;
@@ -7675,7 +5403,7 @@
 				2C9B3C0C1A9E776B00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3C241A9E77BD00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.meter~" */ = {
 			isa = XCConfigurationList;
@@ -7684,7 +5412,7 @@
 				2C9B3C261A9E77BD00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3C3D1A9E77ED00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.optim~" */ = {
 			isa = XCConfigurationList;
@@ -7693,7 +5421,7 @@
 				2C9B3C3F1A9E77ED00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3C561A9E781600E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.scope~" */ = {
 			isa = XCConfigurationList;
@@ -7702,7 +5430,7 @@
 				2C9B3C581A9E781600E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3C6F1A9E783B00E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.vector~" */ = {
 			isa = XCConfigurationList;
@@ -7711,7 +5439,7 @@
 				2C9B3C711A9E783B00E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3C881A9E787300E6921E /* Build configuration list for PBXNativeTarget "hoa.3d.wider~" */ = {
 			isa = XCConfigurationList;
@@ -7720,7 +5448,7 @@
 				2C9B3C8A1A9E787300E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2C9B3C951A9E7F7700E6921E /* Build configuration list for PBXAggregateTarget "HoaExternals" */ = {
 			isa = XCConfigurationList;
@@ -7729,7 +5457,7 @@
 				2C9B3C971A9E7F7700E6921E /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2CCD1F7E1A9CCBB3001F137D /* Build configuration list for PBXNativeTarget "hoa.pi" */ = {
 			isa = XCConfigurationList;
@@ -7738,7 +5466,7 @@
 				2CCD1F801A9CCBB3001F137D /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2FBBEACF08F335010078DB84 /* Build configuration list for PBXProject "hoa.library" */ = {
 			isa = XCConfigurationList;
@@ -7747,7 +5475,7 @@
 				2FBBEAD108F335010078DB84 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 		2FBBEAE008F335360078DB84 /* Build configuration list for PBXNativeTarget "hoa.library" */ = {
 			isa = XCConfigurationList;
@@ -7756,7 +5484,7 @@
 				2FBBEAE208F335360078DB84 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Development;
+			defaultConfigurationName = Deployment;
 		};
 /* End XCConfigurationList section */
 	};
