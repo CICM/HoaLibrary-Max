@@ -651,10 +651,11 @@ void linkmap_remove_with_binding_name(t_hoa_map *x, t_symbol* binding_name)
 					else
 					{
 						name->s_thing = (t_object *)temp->next;
-						
+
 						// bind all object to the next Source::Manager (next becoming the new head of the t_linkmap)
+                        delete temp->next->map->f_self_manager;
                         temp->next->map->f_self_manager = new Source::Manager(*head_map->f_manager);
-						temp->next->update_headptr((t_linkmap *)name->s_thing, temp->next->map->f_self_manager);
+                        temp->next->update_headptr((t_linkmap *)name->s_thing, temp->next->map->f_self_manager);
 					}
 					
 					x->f_listmap = NULL;
@@ -662,10 +663,10 @@ void linkmap_remove_with_binding_name(t_hoa_map *x, t_symbol* binding_name)
 				}
 				else if(temp->next != NULL && temp->next->map == x)
 				{
-					// we restore the original pointer
-					temp->next->map->f_manager = temp->next->map->f_self_manager;
-					// then we copy the shared Source::Manager into the original one
-                    temp->next->map->f_manager = new Source::Manager(*head_map->f_self_manager);
+					// copy current self manager into next
+                    delete temp->next->map->f_self_manager;
+                    temp->next->map->f_self_manager = new Source::Manager(*head_map->f_self_manager);
+                    temp->next->map->f_manager = temp->next->map->f_self_manager;
 					
 					temp2 = temp->next->next;
 					sysmem_freeptr(temp->next);
@@ -687,21 +688,53 @@ t_max_err bindname_set(t_hoa_map *x, t_object *attr, long argc, t_atom *argv)
 		
 		if(new_binding_name != x->f_binding_name)
 		{
+            vector<ulong> lastNonMutedSourcesIndex;
+            for(Source::source_iterator it = x->f_manager->getFirstSource(); it != x->f_manager->getLastSource(); it++)
+            {
+                if(!it->second->getMute())
+                {
+                    lastNonMutedSourcesIndex.push_back(it->first);
+                }
+            }
+            
 			// remove previous binding
 			if (x->f_binding_name != hoa_sym_nothing)
             {
-                defer_low(x, (method)linkmap_remove_with_binding_name, x->f_binding_name, NULL, NULL);
+                //defer_low(x, (method)linkmap_remove_with_binding_name, x->f_binding_name, NULL, NULL);
+                linkmap_remove_with_binding_name(x, x->f_binding_name);
             }
 			
 			// add new one
 			if (new_binding_name != hoa_sym_nothing)
 			{
 				// use deferlow to have the valid toppatcher pointer when the patch is being loaded
-				defer_low(x, (method)linkmap_add_with_binding_name, new_binding_name, NULL, NULL);
+				//defer_low(x, (method)linkmap_add_with_binding_name, new_binding_name, NULL, NULL);
+                linkmap_add_with_binding_name(x, new_binding_name);
 				x->f_binding_name = new_binding_name;
 			}
 			else
+            {
 				x->f_binding_name = hoa_sym_nothing;
+            }
+            
+            // output appropriate mute messages
+            t_atom out_av[3];
+            atom_setsym(out_av+1, hoa_sym_mute);
+            atom_setlong(out_av+2, 1);
+            for(auto i : lastNonMutedSourcesIndex)
+            {
+                if(x->f_manager->getSource(i) == NULL)
+                {
+                    atom_setlong(out_av, i);
+                    outlet_list(x->f_out_sources, 0L, 3, out_av);
+                }
+            }
+            
+            object_notify(x, hoa_sym_modified, NULL);
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
+            jbox_redraw((t_jbox *)x);
+            hoamap_output(x);
 		}
 	}
 	else
@@ -711,12 +744,6 @@ t_max_err bindname_set(t_hoa_map *x, t_object *attr, long argc, t_atom *argv)
 		
 		x->f_binding_name = hoa_sym_nothing;
 	}
-	
-	object_notify(x, hoa_sym_modified, NULL);
-    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
-    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
-    jbox_redraw((t_jbox *)x);
-    hoamap_output(x);
 	
 	return MAX_ERR_NONE;
 }
@@ -880,7 +907,7 @@ void hoamap_source(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
                     {
                         x->f_manager->removeSource(index);
                         t_atom out_av[3];
-                        atom_setlong(out_av, index + 1);
+                        atom_setlong(out_av, index);
                         atom_setsym(out_av+1, hoa_sym_mute);
                         atom_setlong(out_av+2, 1);
                         outlet_list(x->f_out_sources, 0L, 3, out_av);
