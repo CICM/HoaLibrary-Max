@@ -44,12 +44,11 @@ void *hoa_dac_new(t_symbol *s, int argc, t_atom *argv)
     // If a symbol is provided as the first argument to a dac~ object, then it will get an independent control section in the Max mixer. If two dac~ instances in a patcher hierarchy have the same name they will be on the same "bus" and share controls.
     
 	int i, j, count = 0;
-	t_hoa_dac *x;
 	t_atom channels[512];
 	int min, max;
     int symPrepend = 0;
     
-    x = (t_hoa_dac *)object_alloc(hoa_dac_class);
+    t_hoa_dac *x = (t_hoa_dac *)object_alloc(hoa_dac_class);
     
     if (x)
     {
@@ -100,9 +99,11 @@ void *hoa_dac_new(t_symbol *s, int argc, t_atom *argv)
         x->f_number_of_channels = count;
         dsp_setup((t_pxobject *)x, x->f_number_of_channels);
         x->f_dac = (t_object *)object_new_typed(CLASS_BOX, gensym("dac~"), count + symPrepend, channels);
+        
+        return x->f_dac;
     }
-	
-    return x->f_dac;
+    
+    return NULL;
 }
 
 t_hoa_err hoa_getinfos(t_hoa_dac* x, t_hoa_boxinfos* boxinfos)

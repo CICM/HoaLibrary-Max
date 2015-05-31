@@ -323,7 +323,7 @@ void convolve_fill_inner_buffer(t_convolve *x)
     float* temp;
     float *buffer_samples;
     long frames, nc, chan, buffer_size;
-    float buffer_sr;
+    //float buffer_sr;
     float sr = sys_getsr();
     
     if ( (x->f_buffer_name == hoa_sym_nothing) || !x->f_buffer_ref)
@@ -339,7 +339,7 @@ void convolve_fill_inner_buffer(t_convolve *x)
     
     frames = buffer_getframecount(buffer);
 	nc = buffer_getchannelcount(buffer);
-    buffer_sr = buffer_getsamplerate(buffer);
+    //buffer_sr = buffer_getsamplerate(buffer);
     chan = (long) Math<long>::clip(x->f_channel_offset-1, 0, nc);
     
     if (atom_gettype(&x->f_crop_size) == A_FLOAT)

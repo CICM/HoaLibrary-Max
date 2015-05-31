@@ -33,7 +33,6 @@
 
 t_class *hoa_processor_class;
 
-#define SIG_SIZE sizeof(double)
 #define MAX_NUM_PATCHES 4096
 #define MAX_ARGS 50
 
@@ -974,10 +973,8 @@ t_hoa_err hoa_processor_loadpatch(t_hoa_processor *x, long index, t_symbol *patc
 	{
 		if (x->f_object_type == HOA_OBJECT_2D)
 		{
-			harmonic_hdegree = x->f_ambi2D->getHarmonicDegree(index);
 			harmonic_argument = x->f_ambi2D->getHarmonicOrder(index);
 			sprintf(windowname, "%s [%ld]", patch_name_in->s_name, harmonic_argument);
-			//snprintf(windowname, 256, "%s [%ld]", patch_name_in->s_name, harmonic_argument);
 		}
 		else if (x->f_object_type == HOA_OBJECT_3D)
 		{
@@ -1383,7 +1380,7 @@ void hoa_processor_perform64 (t_hoa_processor *x, t_object *dsp64, double **ins,
 	
 	// Zero Outputs
 	for (int i = 0; i < x->declared_sig_outs; i++)
-		memset(outs[i], 0, SIG_SIZE * vec_size);
+		memset(outs[i], 0, sizeof(double) * vec_size);
 	
 	if (x->x_obj.z_disabled)
 		return;

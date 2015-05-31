@@ -53,10 +53,12 @@ void *hoa_sig_out_new(t_symbol *s, long ac, t_atom *av)
     t_hoa_sig_out *x = (t_hoa_sig_out *)object_alloc(hoa_sig_out_class);
 	void *hoaprocessor_parent = Get_HoaProcessor_Object();
 	
+    /*
 	long outlet_num = 0;
 	if (ac && av && atom_gettype(av) == A_LONG)
 		outlet_num = atom_getlong(av);
-
+    */
+    
 	x->extra = 0;
 	x->comment = gensym("");
 	

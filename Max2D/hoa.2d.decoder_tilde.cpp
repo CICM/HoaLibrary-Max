@@ -172,7 +172,7 @@ void send_configuration(t_hoa_2d_decoder *x)
         }
         
         boxes.clear();
-        free(argv);
+        delete [] argv;
     }
 }
 

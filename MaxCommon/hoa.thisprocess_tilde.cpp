@@ -298,11 +298,7 @@ void hoa_thisprocess_dobang(t_hoa_thisprocess *x)
     if (!x->hoaProcessor_parent || x->index <= 0)
         return;
     
-    t_symbol*	mode = HoaProcessor_Get_Mode(x->hoaProcessor_parent);
-    int			is_2D;
-    
     // output mute state first
-    
     outlet_int(x->out_mute, !HoaProcessor_Get_Patch_On (x->hoaProcessor_parent, x->index));
     
     long ac = 0;
@@ -388,8 +384,8 @@ void hoa_thisprocess_dobang(t_hoa_thisprocess *x)
         if (av) free(av);
     }
     
-    mode = HoaProcessor_Get_Mode(x->hoaProcessor_parent);
-    is_2D = HoaProcessor_Is_2D(x->hoaProcessor_parent);
+    t_symbol* mode = HoaProcessor_Get_Mode(x->hoaProcessor_parent);
+    long is_2D = HoaProcessor_Is_2D(x->hoaProcessor_parent);
     
     // output process mode info (ambisonics/planewave + 2d/3d)
     

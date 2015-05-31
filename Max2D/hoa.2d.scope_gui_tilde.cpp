@@ -207,7 +207,7 @@ void draw_harmonics(t_hoa_2d_scope *x, t_object *view, t_rect *rect)
         t_jpath* negHarmPath = NULL;
         t_jmatrix transform;
         const ulong npoint = x->f_scope->getNumberOfPoints();
-        long posPathLen = 0, negPathLen = 0, precIndex = 0;
+        long posPathLen = 0, negPathLen = 0;
         
 		jgraphics_set_line_join(g, JGRAPHICS_LINE_JOIN_ROUND);
         jgraphics_set_line_cap(g, JGRAPHICS_LINE_CAP_ROUND);
@@ -215,10 +215,6 @@ void draw_harmonics(t_hoa_2d_scope *x, t_object *view, t_rect *rect)
         
         for(ulong i = 0; i < npoint; i++)
         {
-            precIndex = i-1;
-            if(precIndex < 0)
-                precIndex += npoint;
-            
             if(i == npoint - 1)
             {
                 jgraphics_line_to(g, beginCoord.x, beginCoord.y );
@@ -248,9 +244,6 @@ void draw_harmonics(t_hoa_2d_scope *x, t_object *view, t_rect *rect)
         jgraphics_new_path(g);
         for(int i = 0; i < npoint; i++)
         {
-            precIndex = i-1;
-            if (precIndex < 0) precIndex += npoint;
-            
             if(i == x->f_scope->getNumberOfPoints()-1)
             {
                 jgraphics_line_to(g, beginCoord.x, beginCoord.y );
