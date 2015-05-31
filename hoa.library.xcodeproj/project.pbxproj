@@ -2885,7 +2885,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				TargetAttributes = {
 					2C9B3C941A9E7F7700E6921E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -5063,6 +5063,8 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_X86_VECTOR_INSTRUCTIONS = sse4.2;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_FAST_MATH = YES;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
@@ -5072,10 +5074,7 @@
 					/usr/local/include,
 					/Developer/usr/include,
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib,
-					Developer/usr/lib,
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				LLVM_LTO = YES;
 				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
 				SDKROOT = macosx;
@@ -5091,6 +5090,8 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_X86_VECTOR_INSTRUCTIONS = sse4.2;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_FAST_MATH = YES;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
@@ -5100,10 +5101,7 @@
 					/usr/local/include,
 					/Developer/usr/include,
 				);
-				LIBRARY_SEARCH_PATHS = (
-					/usr/local/lib,
-					Developer/usr/lib,
-				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				LLVM_LTO = YES;
 				OTHER_LDFLAGS = "\"$(C74_SYM_LINKER_FLAGS)\"";
 				SDKROOT = macosx;
