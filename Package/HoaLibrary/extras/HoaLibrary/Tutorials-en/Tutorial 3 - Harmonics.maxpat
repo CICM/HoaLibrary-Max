@@ -39,6 +39,20 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"attr" : "view",
+					"id" : "obj-1",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 726.0, 560.940063, 258.0, 22.0 ],
+					"style" : "",
+					"text_width" : 51.0
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-39",
@@ -50,7 +64,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 921.125, 230.440063, 56.0, 22.0 ],
+					"patching_rect" : [ 906.125, 203.440063, 56.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -63,7 +77,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 979.125, 205.440063, 20.0, 22.0 ],
+					"patching_rect" : [ 964.125, 178.440063, 20.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -80,7 +94,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 921.125, 205.440063, 56.0, 22.0 ],
+					"patching_rect" : [ 906.125, 178.440063, 56.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -93,7 +107,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 741.0, 231.440063, 137.0, 19.0 ],
+					"patching_rect" : [ 726.0, 204.440063, 137.0, 19.0 ],
 					"style" : "",
 					"text" : "Order of the harmonic"
 				}
@@ -109,7 +123,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 741.0, 231.440063, 137.0, 19.0 ],
+					"patching_rect" : [ 726.0, 204.440063, 137.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"shadow" : -1,
@@ -125,7 +139,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 979.125, 230.440063, 20.0, 22.0 ],
+					"patching_rect" : [ 964.125, 203.440063, 20.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -198,7 +212,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 111.0, 277.0, 25.0, 25.0 ],
-									"presentation_rect" : [ 112.0, 277.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -530,7 +543,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 888.625, 230.440063, 45.0, 21.0 ],
+					"patching_rect" : [ 873.625, 203.440063, 45.0, 21.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -550,13 +563,13 @@
 					"fontsize" : 12.0,
 					"id" : "obj-45",
 					"maxclass" : "number",
-					"maximum" : 0,
+					"maximum" : 4,
 					"minimum" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 921.125, 230.440063, 56.0, 22.0 ],
+					"patching_rect" : [ 906.125, 203.440063, 56.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -569,7 +582,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 741.0, 206.940063, 137.0, 19.0 ],
+					"patching_rect" : [ 726.0, 179.940063, 137.0, 19.0 ],
 					"style" : "",
 					"text" : "Degree of the harmonic"
 				}
@@ -584,7 +597,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 741.0, 258.440063, 42.0, 21.0 ],
+					"patching_rect" : [ 726.0, 231.440063, 42.0, 21.0 ],
 					"style" : "",
 					"text" : "sig~ 1"
 				}
@@ -842,7 +855,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 921.125, 258.440063, 78.0, 21.0 ],
+					"patching_rect" : [ 906.125, 231.440063, 78.0, 21.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -866,7 +879,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 64,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 741.0, 293.440063, 258.125, 21.0 ],
+					"patching_rect" : [ 726.0, 266.440063, 258.125, 21.0 ],
 					"style" : "",
 					"text" : "hoa.3d.process~ 7 hoa.syn.gain~ harmonics 0."
 				}
@@ -882,7 +895,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 741.0, 206.940063, 137.0, 19.0 ],
+					"patching_rect" : [ 726.0, 179.940063, 137.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"shadow" : -1,
@@ -898,7 +911,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 734.049988, 173.940063, 272.899963, 19.0 ],
+					"patching_rect" : [ 719.049988, 146.940063, 272.899963, 19.0 ],
 					"style" : "",
 					"text" : "Representation of the spherical harmonics",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -916,7 +929,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 734.049988, 173.940063, 272.899963, 19.0 ],
+					"patching_rect" : [ 719.049988, 146.940063, 272.899963, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -953,35 +966,6 @@
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj-7",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 591.0, 163.440063, 20.0, 20.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 11.595187,
-					"hidden" : 1,
-					"id" : "obj-8",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "int", "float", "int", "int" ],
-					"patching_rect" : [ 591.0, 134.440063, 61.0, 21.0 ],
-					"style" : "",
-					"text" : "dspstate~"
 				}
 
 			}
@@ -1854,7 +1838,7 @@
 					"numinlets" : 64,
 					"numoutlets" : 0,
 					"order" : 7,
-					"patching_rect" : [ 741.0, 324.940063, 258.0, 258.0 ]
+					"patching_rect" : [ 726.0, 297.940063, 258.0, 258.0 ]
 				}
 
 			}
@@ -1935,7 +1919,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 201.440063, 364.0, 84.0 ],
+					"patching_rect" : [ 7.0, 201.440063, 366.0, 84.0 ],
 					"style" : "",
 					"text" : "The harmonics depends on a degree l and an (azimuthal) order m. For the circular harmonics, each degree l includes 2 harmonics witch the orders are m = -l and m = l (the degree 0 has 1 harmonic with the order 0). For the spherical harmonics, each degree l has 2l+1 harmonics witch the orders go from -l to l. In fact, the circular harmonics are particular cases of the spherical harmonics.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -1969,7 +1953,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 102.940063, 364.0, 71.0 ],
+					"patching_rect" : [ 7.0, 102.940063, 367.0, 71.0 ],
 					"style" : "",
 					"text" : "This functions are circular in 2d and spherical in 3d. That means their takes angles as variables and the result of the functions differs according to the value of the angles. These angles are the azimuth θ for the circular harmonics or the azimuth θ and the elevation φ for the spherical harmonics.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -2095,7 +2079,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 734.049988, 200.440063, 272.899963, 390.059937 ],
+					"patching_rect" : [ 719.049988, 173.440063, 272.899963, 417.059937 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -2123,6 +2107,15 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-63", 0 ],
 					"disabled" : 0,
@@ -2396,7 +2389,7 @@
 					"destination" : [ "obj-51", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 930.625, 285.940063, 750.5, 285.940063 ],
+					"midpoints" : [ 915.625, 258.940063, 735.5, 258.940063 ],
 					"source" : [ "obj-50", 0 ]
 				}
 
@@ -3097,24 +3090,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-7", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"disabled" : 0,
 					"hidden" : 1,
@@ -3216,6 +3191,24 @@
  ],
 		"embedsnapshot" : 0,
 		"styles" : [ 			{
+				"name" : "AudioStatus_Menu",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
 				"name" : "newobjBlue-1",
 				"default" : 				{
 					"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -3236,8 +3229,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

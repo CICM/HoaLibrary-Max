@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x86",
+			"revision" : 3,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 79.0, 637.0, 735.0 ],
+		"rect" : [ 100.0, 100.0, 637.0, 735.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -55,12 +55,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 105.0, 637.0, 709.0 ],
+						"rect" : [ 100.0, 126.0, 637.0, 709.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -90,6 +90,20 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"attr" : "view",
+									"id" : "obj-10",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 418.25, 470.25, 177.0, 22.0 ],
+									"style" : "",
+									"text_width" : 51.0
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
@@ -167,7 +181,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 418.25, 524.0, 70.0, 21.0 ],
+									"patching_rect" : [ 418.25, 539.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 1"
 								}
@@ -186,12 +200,11 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 507.0, 552.0, 78.0, 18.0 ],
+									"patching_rect" : [ 507.0, 567.0, 78.0, 18.0 ],
 									"readonly" : 1,
 									"style" : "",
 									"text" : "Front",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"textjustification" : 0
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -202,7 +215,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "preset", "int", "preset", "int" ],
-									"patching_rect" : [ 418.25, 552.0, 78.0, 17.0 ],
+									"patching_rect" : [ 418.25, 567.0, 78.0, 17.0 ],
 									"preset_data" : [ 										{
 											"number" : 1,
 											"data" : [ 5, "obj-13", "textedit", "set", "Front", 5, "obj-28", "number~", "list", 0.0, 5, "obj-9", "number~", "list", 0.0 ]
@@ -240,7 +253,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 513.0, 177.0, 20.0 ],
+									"patching_rect" : [ 418.25, 539.0, 177.0, 20.0 ],
 									"style" : "",
 									"text" : "View from the top of the sphere",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -259,7 +272,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 513.0, 177.0, 20.0 ],
+									"patching_rect" : [ 418.25, 539.0, 177.0, 20.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -518,8 +531,6 @@
 							}
 , 							{
 								"box" : 								{
-									"fontface" : 0,
-									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-27",
 									"items" : [ "basic", ",", "maxRe", ",", "inPhase" ],
@@ -618,8 +629,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -914,7 +925,7 @@
 									"numinlets" : 26,
 									"numoutlets" : 25,
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 31.0, 270.0, 356.5, 21.0 ],
+									"patching_rect" : [ 31.0, 265.0, 356.5, 21.0 ],
 									"style" : "",
 									"text" : "hoa.3d.wider~ 4"
 								}
@@ -1054,6 +1065,16 @@
 									"disabled" : 0,
 									"hidden" : 1,
 									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"midpoints" : [ 427.75, 502.0, 406.125, 502.0, 406.125, 292.0, 40.5, 292.0 ],
+									"source" : [ "obj-10", 0 ]
 								}
 
 							}
@@ -2038,8 +2059,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -2125,21 +2146,21 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1

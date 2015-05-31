@@ -45,6 +45,7 @@ typedef struct  _hoa_3d_scope
     
 	t_atom_long             f_order;
     float                   f_gain;
+    double                  f_view[3];
 	
 	t_jrgba                 f_color_bg;
 	t_jrgba                 f_color_nh;
@@ -363,10 +364,42 @@ t_max_err set_order(t_hoa_3d_scope *x, t_object *attr, long ac, t_atom *av)
             object_method(b, hoa_sym_dynlet_begin);
             dsp_resize((t_pxobject*)x, x->f_scope->getNumberOfHarmonics());
             object_method(b, hoa_sym_dynlet_end);
+            
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_background_layer);
+            jbox_redraw((t_jbox *)x);
         }
 	}
     
 	return MAX_ERR_NONE;
+}
+
+t_max_err view_set(t_hoa_3d_scope *x, t_object *attr, long ac, t_atom *av)
+{
+    if(ac && av && atom_isNumber(av))
+    {
+        //object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
+        
+        if(atom_gettype(av) == A_FLOAT)
+            x->f_view[0] = atom_getfloat(av);
+        else
+            x->f_view[0] = x->f_scope->getViewRotationX() * 360. / HOA_2PI;
+        if(ac > 1 && atom_gettype(av+1) == A_FLOAT)
+            x->f_view[1] = atom_getfloat(av+1);
+        else
+            x->f_view[1] = x->f_scope->getViewRotationY() * 360. / HOA_2PI;
+        if(ac > 2 && atom_isNumber(av+2))
+            x->f_view[2] = atom_getfloat(av+2);
+        else
+            x->f_view[2] = x->f_scope->getViewRotationZ() * 360. / HOA_2PI;
+        
+        x->f_scope->setViewRotation(x->f_view[0] / 360. * HOA_2PI, x->f_view[1] / 360. * HOA_2PI, x->f_view[2] / 360. * HOA_2PI);
+        x->f_scope->computeRendering();
+        
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_harmonics_layer);
+        jbox_redraw((t_jbox *)x);
+    }
+    
+    return MAX_ERR_NONE;
 }
 
 void *hoa_3d_scope_new(t_symbol *s, int argc, t_atom *argv)
@@ -402,6 +435,7 @@ void *hoa_3d_scope_new(t_symbol *s, int argc, t_atom *argv)
         x->f_scope      = new Scope<Hoa3d, t_sample>(x->f_order, HOA_DISPLAY_NPOINTS * 0.25, HOA_DISPLAY_NPOINTS * 0.5);
         x->f_order      = x->f_scope->getDecompositionOrder();
         x->f_signals    = new t_sample[x->f_scope->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
+        x->f_view[0] = x->f_view[1] = x->f_view[2] = 0.;
         
         dsp_setupjbox((t_pxjbox *)x, x->f_scope->getNumberOfHarmonics());
         
@@ -471,6 +505,15 @@ int C74_EXPORT main(void)
     CLASS_ATTR_DEFAULT              (c, "interval", 0, "100");
     CLASS_ATTR_SAVE                 (c, "interval", 1);
     // @description The refresh interval time in milliseconds.
+    
+    CLASS_ATTR_DOUBLE_ARRAY         (c, "view", 0, t_hoa_3d_scope, f_view, 3);
+    CLASS_ATTR_CATEGORY             (c, "view", 0, "Behavior");
+    CLASS_ATTR_ORDER                (c, "view", 0, "3");
+    CLASS_ATTR_LABEL                (c, "view", 0, "Offset of the View");
+    CLASS_ATTR_ACCESSORS            (c, "view", NULL, view_set);
+    CLASS_ATTR_DEFAULT              (c, "view", 0, "0. 0. 0.");
+    CLASS_ATTR_SAVE                 (c, "view", 1);
+    // @description Set the offset of the view with a list of 3 double values corresponding to the x y z offset, in degrees between 0. and 360.
     
     CLASS_ATTR_RGBA                 (c, "bgcolor", 0, t_hoa_3d_scope, f_color_bg);
     CLASS_ATTR_CATEGORY             (c, "bgcolor", 0, "Color");
