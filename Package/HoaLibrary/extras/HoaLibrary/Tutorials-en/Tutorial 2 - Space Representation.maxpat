@@ -47,7 +47,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1089.775024, 365.700287, 61.0, 19.0 ],
-					"presentation_rect" : [ 1036.724976, 364.010254, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Side view",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -66,7 +65,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1065.724976, 365.700287, 85.050049, 19.0 ],
-					"presentation_rect" : [ 1036.724976, 364.010254, 0.0, 0.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -83,7 +81,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 425.724976, 519.010254, 61.0, 19.0 ],
-					"presentation_rect" : [ 428.0, 526.940063, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Top view",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -102,7 +99,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 425.724976, 519.010254, 145.0, 19.0 ],
-					"presentation_rect" : [ 428.0, 526.940063, 0.0, 0.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -118,7 +114,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1148.100098, 515.260254, 39.0, 22.0 ],
-					"presentation_rect" : [ 1132.824951, 528.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "180°",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -134,7 +129,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 974.975098, 668.0, 79.0, 22.0 ],
-					"presentation_rect" : [ 1006.224976, 680.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "270° (-90°)",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -150,7 +144,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 998.974976, 365.700287, 32.0, 22.0 ],
-					"presentation_rect" : [ 1031.474976, 380.510254, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "90°",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -706,7 +699,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 3,
-					"outlettype" : [ "float", "", "float" ],
+					"outlettype" : [ "", "", "float" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -1603,42 +1596,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 3,
-					"fontname" : "Arial",
-					"fontsize" : 20.871338,
-					"id" : "obj-13",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 78.825012, 6.0, 255.0, 53.0 ],
-					"style" : "",
-					"text" : "Hoa Tutorial 1 - Basics : Space representation",
-					"textcolor" : [ 0.999903, 1.0, 0.99983, 1.0 ],
-					"varname" : "autohelp_top_title[1]"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 3,
-					"fontname" : "Arial",
-					"fontsize" : 20.871338,
-					"id" : "obj-2",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 80.825012, 8.0, 255.0, 53.0 ],
-					"style" : "",
-					"text" : "Hoa Tutorial 1 - Basics : Space representation",
-					"textcolor" : [ 0.0, 0.0, 0.0, 0.5 ],
-					"varname" : "autohelp_top_title[2]"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"hidden" : 1,
@@ -2007,7 +1964,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@obj-name", " ", "@obj-desc", " " ],
+					"args" : [ "@obj-name", "Tutorial 2", "@obj-desc", "Space representation" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,

@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 31.0, 117.0, 925.0, 755.0 ],
+		"rect" : [ 59.0, 90.0, 925.0, 755.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -1949,8 +1949,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4395,8 +4395,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7202,8 +7202,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7247,7 +7247,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 31.0, 143.0, 925.0, 729.0 ],
+						"rect" : [ 59.0, 116.0, 925.0, 729.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -9923,6 +9923,7 @@
 									"destination" : [ "obj-33", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
+									"midpoints" : [ 768.543823, 365.0, 604.453613, 365.0 ],
 									"source" : [ "obj-178", 0 ]
 								}
 
@@ -9968,6 +9969,7 @@
 									"destination" : [ "obj-33", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
+									"midpoints" : [ 632.953613, 353.5, 604.453613, 353.5 ],
 									"source" : [ "obj-25", 0 ]
 								}
 
@@ -10191,6 +10193,7 @@
 									"destination" : [ "obj-33", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
+									"midpoints" : [ 816.453613, 365.0, 604.453613, 365.0 ],
 									"source" : [ "obj-40", 0 ]
 								}
 
@@ -10200,6 +10203,7 @@
 									"destination" : [ "obj-33", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
+									"midpoints" : [ 881.09021, 365.0, 604.453613, 365.0 ],
 									"source" : [ "obj-41", 0 ]
 								}
 
@@ -10417,8 +10421,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -14199,8 +14203,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -14299,15 +14303,15 @@
 		"parameters" : 		{
 			"obj-5::obj-7::obj-35" : [ "[7]", "Level", 0 ],
 			"obj-13::obj-3::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-4::obj-56" : [ "hoa.2d.space", "hoa.2d.space", 0 ],
-			"obj-5::obj-3::obj-21::obj-6" : [ "live.tab[6]", "live.tab[1]", 0 ],
-			"obj-4::obj-3::obj-35" : [ "[1]", "Level", 0 ],
-			"obj-5::obj-3::obj-35" : [ "[6]", "Level", 0 ],
+			"obj-5::obj-3::obj-21::obj-6" : [ "live.tab[5]", "live.tab[1]", 0 ],
 			"obj-13::obj-3::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-4::obj-4::obj-21::obj-6" : [ "live.tab[5]", "live.tab[1]", 0 ],
-			"obj-4::obj-3::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
-			"obj-5::obj-7::obj-21::obj-6" : [ "live.tab[7]", "live.tab[1]", 0 ],
-			"obj-4::obj-4::obj-35" : [ "[2]", "Level", 0 ]
+			"obj-4::obj-3::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
+			"obj-4::obj-4::obj-35" : [ "[2]", "Level", 0 ],
+			"obj-5::obj-3::obj-35" : [ "[6]", "Level", 0 ],
+			"obj-4::obj-4::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
+			"obj-4::obj-56" : [ "hoa.2d.space", "hoa.2d.space", 0 ],
+			"obj-4::obj-3::obj-35" : [ "[1]", "Level", 0 ],
+			"obj-5::obj-7::obj-21::obj-6" : [ "live.tab[6]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
