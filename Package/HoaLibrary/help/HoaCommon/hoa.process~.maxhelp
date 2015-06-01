@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 59.0, 90.0, 925.0, 755.0 ],
+		"rect" : [ 100.0, 100.0, 925.0, 755.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -1949,8 +1949,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4395,8 +4395,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4441,7 +4441,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 925.0, 729.0 ],
+						"rect" : [ 100.0, 126.0, 925.0, 729.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -4598,7 +4598,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1027.5, 158.0, 225.0, 20.0 ],
+									"patching_rect" : [ 1027.5, 158.0, 225.0, 22.0 ],
 									"style" : "",
 									"text_width" : 58.0
 								}
@@ -4739,7 +4739,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 816.5, 345.5, 42.0, 21.0 ],
+									"patching_rect" : [ 832.5, 348.5, 42.0, 21.0 ],
 									"style" : "",
 									"text" : "hoa.pi"
 								}
@@ -4755,7 +4755,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 816.5, 272.5, 75.0, 22.0 ],
+									"patching_rect" : [ 832.5, 275.5, 75.0, 22.0 ],
 									"style" : "",
 									"text" : "loadmess 0."
 								}
@@ -4821,7 +4821,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 55.0, 248.0, 235.0, 303.0 ],
+										"rect" : [ -173.0, 348.0, 235.0, 303.0 ],
 										"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
@@ -5414,7 +5414,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 753.25, 305.0, 58.75, 19.0 ],
+									"patching_rect" : [ 769.25, 308.0, 58.75, 19.0 ],
 									"style" : "",
 									"text" : "azimuth :",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
@@ -5432,7 +5432,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 753.25, 305.0, 54.25, 19.0 ],
+									"patching_rect" : [ 769.25, 308.0, 54.25, 19.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -5450,7 +5450,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 816.5, 305.0, 50.0, 21.0 ],
+									"patching_rect" : [ 832.5, 308.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -5493,6 +5493,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-48",
@@ -5500,9 +5501,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 15,
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 576.5, 390.0, 259.0, 21.0 ],
+									"patching_rect" : [ 576.5, 390.0, 275.0, 21.0 ],
 									"style" : "",
-									"text" : "hoa.2d.process~ 7 hoa.syn.encoder~ harmonics"
+									"text" : "hoa.2d.process~ 7 hoa.syn.2d.encoder~ harmonics"
 								}
 
 							}
@@ -7202,8 +7203,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7247,7 +7248,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 59.0, 116.0, 925.0, 729.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 729.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -10421,8 +10422,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -14203,8 +14204,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -14301,17 +14302,17 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-5::obj-7::obj-35" : [ "[7]", "Level", 0 ],
-			"obj-13::obj-3::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
 			"obj-5::obj-3::obj-21::obj-6" : [ "live.tab[5]", "live.tab[1]", 0 ],
-			"obj-13::obj-3::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-4::obj-3::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
+			"obj-13::obj-3::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
 			"obj-4::obj-4::obj-35" : [ "[2]", "Level", 0 ],
-			"obj-5::obj-3::obj-35" : [ "[6]", "Level", 0 ],
-			"obj-4::obj-4::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
 			"obj-4::obj-56" : [ "hoa.2d.space", "hoa.2d.space", 0 ],
+			"obj-5::obj-3::obj-35" : [ "[6]", "Level", 0 ],
+			"obj-4::obj-3::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
+			"obj-4::obj-4::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
 			"obj-4::obj-3::obj-35" : [ "[1]", "Level", 0 ],
-			"obj-5::obj-7::obj-21::obj-6" : [ "live.tab[6]", "live.tab[1]", 0 ]
+			"obj-5::obj-7::obj-21::obj-6" : [ "live.tab[6]", "live.tab[1]", 0 ],
+			"obj-13::obj-3::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-5::obj-7::obj-35" : [ "[7]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -14435,7 +14436,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "hoa.syn.encoder~.maxpat",
+				"name" : "hoa.syn.2d.encoder~.maxpat",
 				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/synth",
 				"patcherrelativepath" : "../../patchers/synth",
 				"type" : "JSON",
