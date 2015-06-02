@@ -199,7 +199,7 @@ void hoa_map_tilde_perform_multisources(t_hoa_map_tilde *x, t_object *dsp64, t_s
     long nsources = x->f_map->getNumberOfSources();
     for(long i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
     }
     for(long i = 0; i < sampleframes; i++)
     {
@@ -213,7 +213,7 @@ void hoa_map_tilde_perform_multisources(t_hoa_map_tilde *x, t_object *dsp64, t_s
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -228,7 +228,7 @@ void hoa_map_tilde_perform(t_hoa_map_tilde *x, t_object *dsp64, t_sample **ins, 
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -256,7 +256,7 @@ void hoa_map_tilde_perform_in1(t_hoa_map_tilde *x, t_object *dsp64, t_sample **i
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -284,7 +284,7 @@ void hoa_map_tilde_perform_in2(t_hoa_map_tilde *x, t_object *dsp64, t_sample **i
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -311,7 +311,7 @@ void hoa_map_tilde_perform_in1_in2(t_hoa_map_tilde *x, t_object *dsp64, t_sample
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 

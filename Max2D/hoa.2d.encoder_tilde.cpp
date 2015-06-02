@@ -92,7 +92,7 @@ void hoa_encoder_2D_perform_azimuth(t_hoa_encoder_2D *x, t_object *dsp64, double
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_signals+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_signals+i, numouts, outs[i], 1);
     }
 }
 
@@ -104,7 +104,7 @@ void hoa_encoder_2D_perform(t_hoa_encoder_2D *x, t_object *dsp64, double **ins, 
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_signals+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_signals+i, numouts, outs[i], 1);
     }
 }
 

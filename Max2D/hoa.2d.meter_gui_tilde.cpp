@@ -269,7 +269,7 @@ void meter_perform64(t_meter *x, t_object *dsp64, double **ins, long numins, dou
 {
 	for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_signals+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_signals+i, numins);
     }
     for(x->f_ramp = 0; x->f_ramp < sampleframes; x->f_ramp++)
     {

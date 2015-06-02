@@ -87,7 +87,7 @@ void hoa_2d_wider_perform(t_hoa_2d_wider *x, t_object *dsp64, double **ins, long
 {
     for(int i = 0; i < numins - 1; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins - 1);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins - 1);
     }
 	for(int i = 0; i < sampleframes; i++)
     {
@@ -96,7 +96,7 @@ void hoa_2d_wider_perform(t_hoa_2d_wider *x, t_object *dsp64, double **ins, long
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -104,7 +104,7 @@ void hoa_2d_wider_perform_offset(t_hoa_2d_wider *x, t_object *dsp64, double **in
 {
     for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
     }
 	for(int i = 0; i < sampleframes; i++)
     {
@@ -112,7 +112,7 @@ void hoa_2d_wider_perform_offset(t_hoa_2d_wider *x, t_object *dsp64, double **in
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 

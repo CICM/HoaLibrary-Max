@@ -58,11 +58,11 @@ void hoa_3d_optim_perform_basic(t_hoa_3d_optim *x, t_object *dsp64, t_sample **i
 {
     for(long i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins + i * sampleframes, 1);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins + i * sampleframes, 1);
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_ins + i * sampleframes, 1, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_ins + i * sampleframes, 1, outs[i], 1);
     }
 }
 
@@ -70,7 +70,7 @@ void hoa_3d_optim_perform_maxRe(t_hoa_3d_optim *x, t_object *dsp64, t_sample **i
 {
     for(long i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
     }
     for(long i = 0; i < sampleframes; i++)
     {
@@ -78,7 +78,7 @@ void hoa_3d_optim_perform_maxRe(t_hoa_3d_optim *x, t_object *dsp64, t_sample **i
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -86,7 +86,7 @@ extern void hoa_3d_optim_perform_inPhase(t_hoa_3d_optim *x, t_object *dsp64, t_s
 {
     for(long i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
     }
     for(long i = 0; i < sampleframes; i++)
     {
@@ -94,7 +94,7 @@ extern void hoa_3d_optim_perform_inPhase(t_hoa_3d_optim *x, t_object *dsp64, t_s
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 

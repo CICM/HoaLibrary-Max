@@ -136,7 +136,7 @@ void hoa_recomposer_perform_fixe(t_hoa_recomposer *x, t_object *dsp64, t_sample 
 {
     for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
     }
     for(int i = 0; i < sampleframes; i++)
     {
@@ -144,7 +144,7 @@ void hoa_recomposer_perform_fixe(t_hoa_recomposer *x, t_object *dsp64, t_sample 
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -153,7 +153,7 @@ void hoa_recomposer_perform_fisheye(t_hoa_recomposer *x, t_object *dsp64, t_samp
     ulong numberOfPlanewaves = x->f_fisheye->getNumberOfPlanewaves();
     for(ulong i = 0; i < numberOfPlanewaves; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numberOfPlanewaves);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numberOfPlanewaves);
     }
     for(ulong i = 0; i < sampleframes; i++)
     {
@@ -162,7 +162,7 @@ void hoa_recomposer_perform_fisheye(t_hoa_recomposer *x, t_object *dsp64, t_samp
     }
     for(ulong i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -171,7 +171,7 @@ void hoa_recomposer_perform_fisheye_offset(t_hoa_recomposer *x, t_object *dsp64,
     ulong numberOfPlanewaves = x->f_fisheye->getNumberOfPlanewaves();
     for(ulong i = 0; i < numberOfPlanewaves; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numberOfPlanewaves);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numberOfPlanewaves);
     }
     for(ulong i = 0; i < sampleframes; i++)
     {
@@ -180,7 +180,7 @@ void hoa_recomposer_perform_fisheye_offset(t_hoa_recomposer *x, t_object *dsp64,
     }
     for(ulong i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -190,7 +190,7 @@ void hoa_recomposer_perform_free(t_hoa_recomposer *x, t_object *dsp64, t_sample 
     
     for(ulong i = 0; i < numberOfPlanewaves && i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numberOfPlanewaves);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numberOfPlanewaves);
     }
     for(ulong i = 0; i < sampleframes; i++)
     {
@@ -203,7 +203,7 @@ void hoa_recomposer_perform_free(t_hoa_recomposer *x, t_object *dsp64, t_sample 
     }
     for(ulong i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 

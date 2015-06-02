@@ -56,7 +56,7 @@ void hoa_3d_vector_perform64_energy(t_hoa_3d_vector *x, t_object *dsp64, double 
 {
     for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
     }
     for(int i = 0; i < sampleframes; i++)
     {
@@ -64,7 +64,7 @@ void hoa_3d_vector_perform64_energy(t_hoa_3d_vector *x, t_object *dsp64, double 
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -72,7 +72,7 @@ void hoa_3d_vector_perform64_velocity(t_hoa_3d_vector *x, t_object *dsp64, doubl
 {
     for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
     }
     for(int i = 0; i < sampleframes; i++)
     {
@@ -80,7 +80,7 @@ void hoa_3d_vector_perform64_velocity(t_hoa_3d_vector *x, t_object *dsp64, doubl
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 

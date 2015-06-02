@@ -71,10 +71,10 @@ void hoa_2d_scope_perform64(t_hoa_2d_scope *x, t_object *dsp64, t_sample **ins, 
 {
     for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_signals+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_signals+i, numins);
     }
 
-    cblas_dscal(numins * sampleframes, x->f_gain, x->f_signals, 1);
+    Signal<t_sample>::scale(numins * sampleframes, x->f_gain, x->f_signals);
     
     if(x->f_startclock)
     {

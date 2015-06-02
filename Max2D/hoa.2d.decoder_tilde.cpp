@@ -66,7 +66,7 @@ void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins
     shared_ptr<Decoder<Hoa2d, t_sample>> decoder = x->f_decoder;
     for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
     }
 	for(int i = 0; i < sampleframes; i++)
     {
@@ -74,7 +74,7 @@ void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 

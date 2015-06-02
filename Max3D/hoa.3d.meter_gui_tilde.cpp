@@ -392,7 +392,7 @@ void hoa_meter_3d_perform64(t_hoa_meter_3d *x, t_object *dsp, double **ins, long
 {
 	for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_signals+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_signals+i, numins);
     }
     for(x->f_ramp = 0; x->f_ramp < sampleframes; x->f_ramp++)
     {

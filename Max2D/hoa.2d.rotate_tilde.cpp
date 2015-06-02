@@ -90,7 +90,7 @@ void hoa_rotate_perform64_yaw(t_hoa_rotate *x, t_object *dsp64, double **ins, lo
 {
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numouts);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numouts);
     }
 	for(int i = 0; i < sampleframes; i++)
     {
@@ -99,7 +99,7 @@ void hoa_rotate_perform64_yaw(t_hoa_rotate *x, t_object *dsp64, double **ins, lo
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -107,7 +107,7 @@ void hoa_rotate_perform64(t_hoa_rotate *x, t_object *dsp64, double **ins, long n
 {
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numouts);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numouts);
     }
 	for(int i = 0; i < sampleframes; i++)
     {
@@ -115,7 +115,7 @@ void hoa_rotate_perform64(t_hoa_rotate *x, t_object *dsp64, double **ins, long n
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 

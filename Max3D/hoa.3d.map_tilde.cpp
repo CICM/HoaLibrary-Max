@@ -256,7 +256,7 @@ void hoa_3d_map_perform64_multisources(t_hoa_3d_map *x, t_object *dsp64, double 
 	int nsources = x->f_map->getNumberOfSources();
     for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
     }
     for(int i = 0; i < sampleframes; i++)
     {
@@ -272,7 +272,7 @@ void hoa_3d_map_perform64_multisources(t_hoa_3d_map *x, t_object *dsp64, double 
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -296,7 +296,7 @@ void hoa_3d_map_perform_in1_in2_in3(t_hoa_3d_map *x, t_object *dsp64, double **i
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -321,7 +321,7 @@ void hoa_3d_map_perform_in1_in2(t_hoa_3d_map *x, t_object *dsp64, double **ins, 
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -346,7 +346,7 @@ void hoa_3d_map_perform_in1_in3(t_hoa_3d_map *x, t_object *dsp64, double **ins, 
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -371,7 +371,7 @@ void hoa_3d_map_perform_in2_in3(t_hoa_3d_map *x, t_object *dsp64, double **ins, 
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -396,7 +396,7 @@ void hoa_3d_map_perform_in1(t_hoa_3d_map *x, t_object *dsp64, double **ins, long
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -421,7 +421,7 @@ void hoa_3d_map_perform_in2(t_hoa_3d_map *x, t_object *dsp64, double **ins, long
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -446,7 +446,7 @@ void hoa_3d_map_perform_in3(t_hoa_3d_map *x, t_object *dsp64, double **ins, long
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -462,7 +462,7 @@ void hoa_3d_map_perform(t_hoa_3d_map *x, t_object *dsp64, double **ins, long num
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -471,7 +471,7 @@ void hoa_3d_map_perform_multisources(t_hoa_3d_map *x, t_object *dsp64, double **
 	int nsources = x->f_map->getNumberOfSources();
     for(int i = 0; i < numins; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
     }
     for(int i = 0; i < sampleframes; i++)
     {
@@ -487,7 +487,7 @@ void hoa_3d_map_perform_multisources(t_hoa_3d_map *x, t_object *dsp64, double **
     }
     for(int i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
     }
 }
 

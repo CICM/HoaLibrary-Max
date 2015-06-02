@@ -88,7 +88,7 @@ extern void hoa_wider_3D_perform(t_hoa_3d_wider *x, t_object *dsp, t_sample **in
 {
     for(long i = 0; i < numins - 1; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins - 1);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins - 1);
     }
     for(long i = 0; i < sampleframes; i++)
     {
@@ -97,7 +97,7 @@ extern void hoa_wider_3D_perform(t_hoa_3d_wider *x, t_object *dsp, t_sample **in
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 
@@ -105,7 +105,7 @@ void hoa_wider_3D_perform_offset(t_hoa_3d_wider *x, t_object *dsp, t_sample **in
 {
     for(long i = 0; i < numins - 1; i++)
     {
-        cblas_dcopy(sampleframes, ins[i], 1, x->f_ins+i, numins - 1);
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins - 1);
     }
     for(long i = 0; i < sampleframes; i++)
     {
@@ -113,7 +113,7 @@ void hoa_wider_3D_perform_offset(t_hoa_3d_wider *x, t_object *dsp, t_sample **in
     }
     for(long i = 0; i < numouts; i++)
     {
-        cblas_dcopy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
 }
 
