@@ -2,10 +2,11 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 6,
-			"minor" : 1,
-			"revision" : 6,
-			"architecture" : "x64"
+			"major" : 7,
+			"minor" : 0,
+			"revision" : 3,
+			"architecture" : "x64",
+			"modernui" : 1
 		}
 ,
 		"rect" : [ 426.0, 238.0, 516.0, 149.0 ],
@@ -14,19 +15,27 @@
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
-		"gridonopen" : 0,
+		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 0,
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
-		"imprint" : 0,
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
 		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -36,7 +45,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 242.0, 61.0, 54.0, 18.0 ],
+					"patching_rect" : [ 242.0, 61.0, 54.0, 22.0 ],
+					"style" : "",
 					"text" : "mute $1"
 				}
 
@@ -49,7 +59,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 242.0, 32.0, 20.0, 20.0 ]
+					"patching_rect" : [ 242.0, 32.0, 20.0, 20.0 ],
+					"style" : ""
 				}
 
 			}
@@ -63,7 +74,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "list", "list", "list", "list", "int" ],
-					"patching_rect" : [ 242.0, 89.0, 102.0, 20.0 ],
+					"patching_rect" : [ 242.0, 89.0, 102.0, 22.0 ],
+					"style" : "",
 					"text" : "hoa.thisprocess~"
 				}
 
@@ -72,13 +84,15 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"format" : 6,
 					"id" : "obj-7",
 					"maxclass" : "flonum",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "float", "bang" ],
+					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 40.0, 69.0, 50.0, 20.0 ]
+					"patching_rect" : [ 40.0, 69.0, 50.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -91,18 +105,27 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 90.0, 45.0, 119.0, 18.0 ]
+					"patching_rect" : [ 90.0, 45.0, 119.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
 					"id" : "obj-67",
+					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "hoa.help.process.infos.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 367.0, 32.0, 128.0, 62.0 ]
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 367.0, 32.0, 128.0, 62.0 ],
+					"viewvisibility" : 1
 				}
 
 			}
@@ -111,12 +134,12 @@
 					"fontface" : 2,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-4",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1.0, 392.0, 115.0, 20.0 ],
+					"style" : "",
 					"text" : "silentium est aurum"
 				}
 
@@ -130,12 +153,13 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 97.0, 51.0, 20.0 ],
+					"patching_rect" : [ 26.0, 97.0, 51.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"comment" : "",
 						"extra" : 0
 					}
 ,
+					"style" : "",
 					"text" : "hoa.out"
 				}
 
@@ -150,12 +174,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 15.0, 95.0, 20.0 ],
+					"patching_rect" : [ 26.0, 15.0, 95.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"comment" : "",
 						"extra" : 1
 					}
 ,
+					"style" : "",
 					"text" : "hoa.in @extra 1"
 				}
 
@@ -170,7 +195,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 242.0, 32.0, 74.0, 20.0 ],
+					"patching_rect" : [ 242.0, 32.0, 74.0, 22.0 ],
+					"style" : "",
 					"text" : "prepend set"
 				}
 
@@ -239,40 +265,6 @@
 					"source" : [ "obj-8", 4 ]
 				}
 
-			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "hoa.help.process.infos.maxpat",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/helputility",
-				"patcherrelativepath" : "../helputility",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "hoa.args.map.maxpat",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
-				"patcherrelativepath" : "../../misc/others",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "hoa.mode.sel.maxpat",
-				"bootpath" : "/Users/elioton/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
-				"patcherrelativepath" : "../../misc/others",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "hoa.in.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "hoa.out.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "hoa.thisprocess~.mxo",
-				"type" : "iLaX"
 			}
  ]
 	}
