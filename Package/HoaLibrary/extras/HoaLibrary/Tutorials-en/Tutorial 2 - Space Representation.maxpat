@@ -1104,7 +1104,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 119.940063, 364.0, 84.0 ],
 					"style" : "",
-					"text" : "The coordinate system used within the library is similar to the geographics coordinates. We arbitrarily define the direction of rotation as counterclockwise for the azimuth and from the bottom to the top for the elevation. The 0° of the azimuth is 90° phase shifted relative to a mathematical representation of a circle. The 0° of elevation matches with the equatorial plan",
+					"text" : "The coordinate system used within the library is similar to the geographic coordinates. We arbitrarily define the direction of rotation as counterclockwise for the azimuth and from the bottom to the top for the elevation. The 0° of the azimuth is 90° phase shifted relative to a mathematical representation of a circle. The 0° of elevation matches with the equatorial plan",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 

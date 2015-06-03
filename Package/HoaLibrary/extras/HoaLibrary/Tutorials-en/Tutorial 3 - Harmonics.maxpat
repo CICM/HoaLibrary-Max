@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 86.0, 201.0, 1018.0, 612.0 ],
+		"rect" : [ 545.0, 112.0, 1018.0, 612.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -738,7 +738,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 633.18335, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 667.75, 232.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "N"
 												}
@@ -752,7 +751,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 592.116638, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 632.25, 228.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "L"
 												}
@@ -766,7 +764,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 551.049988, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 597.25, 229.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "K"
 												}
@@ -780,7 +777,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 509.983337, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 560.25, 228.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "M"
 												}
@@ -820,7 +816,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 304.649994, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 347.516663, 227.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "R"
 												}
@@ -834,7 +829,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 263.583344, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 306.516663, 227.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "T"
 												}
@@ -848,7 +842,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 140.383331, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 185.25, 228.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "Z"
 												}
@@ -862,7 +855,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 99.25, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 140.25, 228.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "Y"
 												}
@@ -1601,13 +1593,14 @@
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-42",
+									"linecount" : 6,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 507.5, 185.0, 208.5, 21.0 ],
 									"style" : "",
-									"text" : "0 1 2 3 4 5 6 7 8 9"
+									"text" : "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64"
 								}
 
 							}
@@ -2042,7 +2035,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "set" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -2881,13 +2874,14 @@
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-23",
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 247.5, 477.0, 208.5, 21.0 ],
 									"style" : "",
-									"text" : "0 -1 0 1 -2 -1 0 1 2 -3 -2 -1 0 1 2 3"
+									"text" : "0 -1 0 1 -2 -1 0 1 2 -3 -2 -1 0 1 2 3 -4 -3 -2 -1 0 1 2 3 4 -5 -4 -3 -2 -1 0 1 2 3 4 5 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7"
 								}
 
 							}
@@ -4032,7 +4026,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 19.5, 477.0, 208.5, 21.0 ],
 									"style" : "",
-									"text" : "0 1 1 1"
+									"text" : "0 1 1 1 2 2 2 2 2 3 3 3 3 3 3 3"
 								}
 
 							}
@@ -4436,7 +4430,6 @@
 					}
 ,
 					"patching_rect" : [ 893.949951, 117.440063, 98.0, 22.0 ],
-					"presentation_rect" : [ 718.049988, 116.940063, 0.0, 0.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4639,7 +4632,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 99.25, 228.0, 29.5, 22.0 ],
-													"presentation_rect" : [ 159.0, 228.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "Y"
 												}
@@ -5869,7 +5861,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 247.5, 477.0, 208.5, 21.0 ],
 									"style" : "",
-									"text" : "0 -1 1 -2 2 -3 3"
+									"text" : "0 -1 1 -2 2 -3 3 -4 4 -5 5 -6 6 -7 7"
 								}
 
 							}
@@ -7564,6 +7556,109 @@
 								}
 
 							}
+ ],
+						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-1",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-2",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-3",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-1",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-2",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-3",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-1",
+								"default" : 								{
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-2",
+								"default" : 								{
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-3",
+								"default" : 								{
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
  ]
 					}
 ,
@@ -8943,9 +9038,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 201.440063, 366.0, 84.0 ],
+					"patching_rect" : [ 7.0, 201.440063, 364.0, 84.0 ],
 					"style" : "",
-					"text" : "The harmonics depends on a degree l and an (azimuthal) order m. For the circular harmonics, each degree l includes 2 harmonics witch the orders are m = -l and m = l (the degree 0 has 1 harmonic with the order 0). For the spherical harmonics, each degree l has 2l+1 harmonics witch the orders go from -l to l. In fact, the circular harmonics are particular cases of the spherical harmonics.",
+					"text" : "The harmonics depend on a degree l and an (azimuthal) order m. \nFor the circular harmonics, each degree l includes 2 harmonics which orders are m = -l and m = l (the degree 0 has 1 harmonic with the order 0). For the spherical harmonics, each degree l has 2l+1 harmonics witch the orders go from -l to l. In fact, the circular harmonics are particular cases of the spherical harmonics.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -8977,9 +9072,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 102.940063, 367.0, 71.0 ],
+					"patching_rect" : [ 7.0, 102.940063, 364.0, 71.0 ],
 					"style" : "",
-					"text" : "This functions are circular in 2d and spherical in 3d. That means their takes angles as variables and the result of the functions differs according to the value of the angles. These angles are the azimuth θ for the circular harmonics or the azimuth θ and the elevation φ for the spherical harmonics.",
+					"text" : "These functions are circular in 2d and spherical in 3d. That means they take angles as variables and the result of the functions differs according to the value of the angles. These angles are the azimuth θ for the circular harmonics or the azimuth θ and the elevation φ for the spherical harmonics.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 

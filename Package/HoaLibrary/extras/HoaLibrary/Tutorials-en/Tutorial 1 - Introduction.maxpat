@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 33.0, 79.0, 1171.0, 756.0 ],
+		"rect" : [ 457.0, 102.0, 1171.0, 756.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -82,7 +82,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 123.058365, 329.0, 21.0 ],
-					"presentation_rect" : [ 5.0, 154.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Ambisonics offers several advantages :",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -100,7 +99,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 478.525024, 329.0, 253.0 ],
 					"style" : "",
-					"text" : "• With Ambisonics, the auditor should be ideally placed at the center of the loudspeakers array otherwise the sound field resitution will be distorted. \nHowever, the use of the maxRe or inPhase optimizations (see hoa.optim~ object) can make up this artefact (to the detriment of the spatial resolution) and offers the possibility of an audience spread all over the circle.\n\n• The restitution system is restricted by the order of decomposition. \nThe number of loudspeakers must be higher than or equal to the number of harmonics. Futhermore, the loudspeakers must be placed on a circle or a sphere at equal distance from each other. However, these restrictions can be bypassed to the detriment of the quality of the sound field restitution. Thus, in practise, it is, in fact, possible to project the sound field on many loudspeakers systems from stereo to an infinity of loudspeakers through all irregular configurations such as 5.1, 7.1 and headphones (see hoa.decoder~ object).",
+					"text" : "• With Ambisonics, the auditor should ideally be placed at the center of the loudspeakers array otherwise the sound field resitution will be distorted. \nHowever, the use of the maxRe or inPhase optimizations (see hoa.optim~ object) can make up this artefact (to the detriment of the spatial resolution) and offers the possibility of an audience spread all over the circle.\n\n• The restitution system is restricted by the order of decomposition. \nThe number of loudspeakers must be higher than or equal to the number of harmonics. Futhermore, the loudspeakers must be placed on a circle or a sphere at equal distance from each other. However, these restrictions can be bypassed to the detriment of the quality of the sound field restitution. Thus, in practise, it is, in fact, possible to project the sound field on many loudspeakers systems from stereo to an infinity of loudspeakers through all irregular configurations such as 5.1, 7.1 and headphones (see hoa.decoder~ object).",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -110,13 +109,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-8",
-					"linecount" : 21,
+					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 149.0, 329.0, 279.0 ],
+					"patching_rect" : [ 21.0, 149.0, 329.0, 266.0 ],
 					"style" : "",
-					"text" : "• Ambisonics allows to synthesize several sound fields and to decodes them with only a one operation offering, reducing the CPU usage. \nThe separation of these two operations allows to perform many operations between them, in the circular harmonics domain, and also to record the sound field in this domain. Thus, it is possible to adapt the sound field to the speakers arrengement.\n\n• Ambisonics offers a homogeneous rendering of the sound field. Unlike other techniques where the angular resolution varies depending on the sources directions, Ambisonics provides a constant angular resolution across the circle.\n\n• Ambisonics offers a wide range of \"classical\" sound field transformations like rotation or distorsion.\n\n• The harmonics domain and the planewaves models give representations of the sound field that allows to explore new techniques of sound field synthesis and transformations with a high musical potential.",
+					"text" : "• Ambisonics allows to synthesize several sound fields and to decode them with only a one operation offering, reducing the CPU usage. \nThe separation of these two operations allows to perform many operations between them, in the circular harmonics domain, and also to record the sound field in this domain. Thus, it is possible to adapt the sound field to the speakers arrangement.\n\n• Ambisonics offers a homogeneous rendering of the sound field. Unlike other techniques where the angular resolution varies depending on the sources directions, Ambisonics provides a constant angular resolution.\n\n• Ambisonics offers a wide range of \"classical\" sound field transformations like rotation or distorsion.\n\n• This model models gives representations of the sound field that also allows to explore new techniques of sound field synthesis and transformations with a high musical potential.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -611,7 +610,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1047.0, 225.0, 89.0, 45.0 ],
+					"patching_rect" : [ 1047.0, 225.0, 90.0, 45.0 ],
 					"style" : "",
 					"text" : "Representation of the circular harmonics",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -925,7 +924,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 149.0, 329.0, 279.0 ],
+					"patching_rect" : [ 21.0, 149.0, 329.0, 266.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""

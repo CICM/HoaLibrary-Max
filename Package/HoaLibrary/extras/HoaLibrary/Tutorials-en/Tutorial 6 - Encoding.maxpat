@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 933.0, 783.0 ],
+		"rect" : [ 81.0, 106.0, 1200.0, 735.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -39,6 +39,31 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 949.166687, 338.0, 61.0, 22.0 ],
+					"style" : "",
+					"text" : "open 3 -1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 1092.0, 355.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-48",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -58,7 +83,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1120.375, 370.5, 69.0, 19.0 ],
-					"presentation_rect" : [ 1117.666626, 370.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Elevation φ",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -77,7 +101,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1124.375, 392.5, 50.0, 21.0 ],
-					"presentation_rect" : [ 1121.666626, 392.5, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -91,7 +114,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 946.150024, 371.5, 60.0, 19.0 ],
-					"presentation_rect" : [ 945.0, 370.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Source",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -107,7 +129,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1030.81665, 371.5, 62.0, 19.0 ],
-					"presentation_rect" : [ 1029.666626, 370.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Azimuth θ",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -126,7 +147,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1033.81665, 392.5, 50.0, 21.0 ],
-					"presentation_rect" : [ 1032.666626, 391.5, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -141,7 +161,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 949.150024, 392.5, 42.0, 21.0 ],
-					"presentation_rect" : [ 948.0, 391.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "sig~ 1"
 				}
@@ -191,7 +210,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 698.0, 103.0, 137.0, 239.0 ],
+						"rect" : [ 863.0, 230.0, 120.0, 221.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2380,9 +2399,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 902.0, 73.940063, 288.0, 240.0 ],
+					"patching_rect" : [ 902.0, 73.940063, 291.0, 240.0 ],
 					"style" : "",
-					"text" : "In 3d, for high orders of decomposition, the harmonics Y are defined by\nY[l, m] = k(l, m) * P'[l, |m|](cos(φ)) * e^i|m|θ * S\nWith k the normalization, P' the associated Legendre polynomial, e^i is the complex exponential, S the signal, l the degree, m the order, θ azimuth and φ elevation.\nThe associated Legendre polynomial is defined by\nP'[0, 0](x) = 1\nP'[l, l](x) = −(2l+1)√(1−x^2)P[l, l](x)\nP'[l, l-1](x) = x(2l+1)P[l, l](x)\nP'[l, m](x) = (x(2l+1)P[l-1, |m|](x)−(l+|m|)P[l−2, |m|](x)) / (l−|m|+1)\nThe normalization k is defined by\nk(l, m) = sqrt((l - |m|)! / (l + |m|)!) * sqrt((2-σ)/ 4π)\nwith σ = 1 if m = 0 else σ = 0\nNote that the complex exponential e^i is similar to the 2d encoding operation.",
+					"text" : "In 3d, for high orders of decomposition, the harmonics Y are defined by\nY[l, m] = k(l, m) * P'[l, |m|](cos(φ)) * e^i|m|θ * S\nWith k the normalization, P' the associated Legendre polynomial, e^i is the complex exponential, S the signal, l the degree, m the order, θ azimuth and φ elevation.\nThe associated Legendre polynomial is defined by\nP'[0, 0](x) = 1\nP'[l, l](x) = −(2l+1)√(1−x^2)P[l, l](x)\nP'[l, l-1](x) = x(2l+1)P[l, l](x)\nP'[l, m](x) = (x(2l+1)P[l-1, |m|](x)−(l+|m|)P[l−2, |m|](x)) / (l−|m|+1)\nThe normalization k is defined by\nk(l, m) = sqrt((l - |m|)! / (l + |m|)!) * sqrt((2-σ) / 4π)\nwith σ = 1 if m = 0 else σ = 0\nNote that the complex exponential e^i is similar to the 2d encoding operation.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2416,7 +2435,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 600.0, 138.940063, 307.0, 110.0 ],
 					"style" : "",
-					"text" : "For an order of decomposition 1, the sound field is composed by 4 spherical harmonics. The harmonics depends on the azimuth θ, the elevation φ and the signal S:\nThe harmonic 0 0 : S\nThe harmonic 1 -1 : sin(θ) * -√(1−cos(φ)^2) * -√(1/4π) * S\nThe harmonic 1 0 : cos(φ) * S\nThe harmonic 1 1 : cos(θ) * -√(1−cos(φ)^2) * -√(1/4π) * S",
+					"text" : "For an order of decomposition 1, the sound field is composed by 4 spherical harmonics. The harmonic depends on the azimuth θ, the elevation φ and the signal S:\nThe harmonic 0 0 : S\nThe harmonic 1 -1 : sin(θ) * -√(1−cos(φ)^2) * -√(1/4π) * S\nThe harmonic 1 0 : cos(φ) * S\nThe harmonic 1 1 : cos(θ) * -√(1−cos(φ)^2) * -√(1/4π) * S",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2450,7 +2469,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 600.0, 73.940063, 300.0, 58.0 ],
 					"style" : "",
-					"text" : "Encoding a source in the spherical harmonics domain amounts to synthesize the spherical harmonics Y depending on the azimuth θ and the elevation φ and an order of decomposition N :",
+					"text" : "Encoding a source in the spherical harmonics domain consists in synthesizing the spherical harmonics Y depending on the azimuth θ and the elevation φ and an order of decomposition N :",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2545,48 +2564,14 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
-					"id" : "obj-16",
-					"linecount" : 3,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 255.440063, 288.0, 45.0 ],
-					"style" : "",
-					"text" : "The harmonic 0 0 : S\nThe harmonic 1 -1 : sin(θ) * S\nThe harmonic 1 1 : cos(θ) * S",
-					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
-					"border" : 1,
-					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
-					"id" : "obj-23",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 255.440063, 288.0, 45.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 11.595187,
 					"id" : "obj-13",
-					"linecount" : 3,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 198.440063, 288.0, 45.0 ],
+					"patching_rect" : [ 7.0, 198.440063, 288.0, 84.0 ],
 					"style" : "",
-					"text" : "For an order of decomposition 1, the sound field is composed by 3 circular harmonics. The harmonics depends on the azimuth θ and the signal S:",
+					"text" : "For an order of decomposition 1, the sound field is composed by 3 circular harmonics. The harmonics depends on the azimuth θ and the signal S:\nThe harmonic 0 0 : S\nThe harmonic 1 -1 : sin(θ) * S\nThe harmonic 1 1 : cos(θ) * S",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2602,7 +2587,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 198.440063, 288.0, 45.0 ],
+					"patching_rect" : [ 7.0, 198.440063, 288.0, 84.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -2620,7 +2605,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 126.940063, 288.0, 58.0 ],
 					"style" : "",
-					"text" : "Encoding a source in the circular harmonics domain amounts to synthesize the circular harmonics Y depending on an azimuth θ and an order of decomposition N.",
+					"text" : "Encoding a source in the circular harmonics domain consists in synthesizing the circular harmonics Y depending on an azimuth θ and an order of decomposition N.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2987,7 +2972,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 73.940063, 288.0, 45.0 ],
 					"style" : "",
-					"text" : "With Ambisonics, the encoding operation gives the spatials informations to a sound. Thus, the sound can be listened as coming from a point of the space.",
+					"text" : "With Ambisonics, the encoding operation gives the spatial informations to a sound. Thus, the sound can be listened as coming from a point of the space.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -3098,6 +3083,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-23", 0 ]
 				}
 
 			}
@@ -3811,6 +3805,15 @@
 					"hidden" : 1,
 					"midpoints" : [ 862.0, 32.0, 862.0, 32.0 ],
 					"source" : [ "obj-46", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-50", 0 ]
 				}
 
 			}
