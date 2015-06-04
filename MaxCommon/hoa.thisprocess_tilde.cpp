@@ -252,7 +252,9 @@ void hoa_args_setup(short ac, t_atom *av, long *nAttr, t_args_struct *args, t_at
     {
         args[0].argv = (t_atom *) malloc( attrOffset * sizeof(t_atom));
         for (int i = 0; i < attrOffset; i++)
+        {
             args[0].argv[i] = av[i];
+        }
     }
     
     // init attributes
@@ -368,6 +370,9 @@ void hoa_thisprocess_dobang(t_hoa_thisprocess *x)
                 
                 else if (atom_gettype(args_processed.argv) == A_LONG)
                     outlet_int(x->out_patcherArgs, atom_getlong(args_processed.argv));
+                
+                else if (atom_gettype(args_processed.argv) == A_SYM)
+                    outlet_anything(x->out_patcherArgs, atom_getsym(args_processed.argv), 0, NULL);
             }
             else
                 outlet_list(x->out_patcherArgs, NULL, args_processed.argc, args_processed.argv);
@@ -506,7 +511,7 @@ int C74_EXPORT main(void)
     // <ul>
     // <li> In <b>planewaves</b> mode (2d/3d). It will be (number-of-channels, instance-channel)</li>
     // <li> In 2d <b>harmonics</b> mode, it will be a list with (ambisonic-order, harmonic-index) </li>
-    // <li> In 3d <b>harmonics</b> mode, it will be a list with (ambisonic-order, harmonic-band, harmonic-index) </li>
+    // <li> In 3d <b>harmonics</b> mode, it will be a list with (ambisonic-order, harmonic-degree, harmonic-order) </li>
     // </ul>
     // </li>
     // </ul>
