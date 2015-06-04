@@ -1,14 +1,14 @@
 ------------------------------------------------------------------------------------------
-HoaLibrary by Julien Colafrancesco, Pierre Guillot & Eliott Paris at CICM / Universite Paris 8 - 2012-2013
+HoaLibrary by Julien Colafrancesco, Pierre Guillot & Eliott Paris at CICM / Universite Paris 8 - 2012-2015
 -----------------
 The HoaLibrary (high order ambisonics library) is a two dimensional high order ambisonics processing set of externals and patches for Max/MSP. It allows you to synthesize, transform and modulate sound fields.
 It has been elaborated to facilitate the use of the sphericals harmonics and the routing in the ambisonic domain for musicians and composers.  
 Thus, they should be able to let their creativity run free.
 ------------------------------------------------------------------------------------------
 
-TO GET THE HOA SOURCE-CODE PLEASE DOWNLOAD IT AT : 
+YOU CAN GET THE HOA SOURCE-CODE AT : 
 
-https://github.com/CICM/HoaLibrary
+https://github.com/CICM/HoaLibrary-Max
 
 -----------------
 Feedback are welcome.
