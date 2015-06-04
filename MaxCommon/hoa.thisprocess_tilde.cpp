@@ -328,10 +328,6 @@ void hoa_thisprocess_dobang(t_hoa_thisprocess *x)
                 for (i = 0; i < nAttrs_processed; i++)
                     outlet_anything(x->out_patcherAttr, attrs_processed[i].msg, attrs_processed[i].argc, attrs_processed[i].argv);
             
-            // output done message to indicate that the attributes have been processed
-            
-            //outlet_anything(x->out_patcherAttr, hoa_sym_done, 0, NULL);
-            
             // free patcher_attrs
             
             for (int i = 0; i < patcher_nAttrs; i++)
@@ -394,11 +390,10 @@ void hoa_thisprocess_dobang(t_hoa_thisprocess *x)
     
     // output process mode info (ambisonics/planewave + 2d/3d)
     
-    av = new t_atom[2];
+    av = new t_atom[3];
     atom_setsym(av, is_2D ? hoa_sym_2d : hoa_sym_3d);
     atom_setsym(av+1, mode);
     outlet_list(x->out_mode, NULL, 2, av);
-    delete [] av;
     
     // output process instance info
     
@@ -406,33 +401,30 @@ void hoa_thisprocess_dobang(t_hoa_thisprocess *x)
     {
         if (is_2D)
         {
-            av = new t_atom[2];
             atom_setlong( av , x->f_order);									// Ambisonic Order
-            atom_setlong(av+1, x->f_ambi2D->getHarmonicOrder(x->index-1));	// Harmonic Order
-            outlet_list(x->out_instance_infos, NULL, 2, av);
-            delete [] av;
+            atom_setlong(av+1, x->f_ambi2D->getHarmonicDegree(x->index-1));	// Harmonic Degree
+            atom_setlong(av+2, x->f_ambi2D->getHarmonicOrder(x->index-1));	// Harmonic Order
+            outlet_list(x->out_instance_infos, NULL, 3, av);
         }
         else
         {
-            av = new t_atom[3];
             atom_setlong( av , x->f_order);									// Ambisonic Order
             atom_setlong(av+1, x->f_ambi3D->getHarmonicDegree(x->index-1));	// Harmonic Degree
             atom_setlong(av+2, x->f_ambi3D->getHarmonicOrder(x->index-1));	// Harmonic Order
             outlet_list(x->out_instance_infos, NULL, 3, av);
-            delete [] av;
         }
     }
     else if (mode == hoa_sym_planewaves)
     {
-        av = new t_atom[2];
-        atom_setlong( av , x->f_order);											// Number of Channel
-        atom_setlong(av+1, x->index);											// Channel Index
-        outlet_list(x->out_instance_infos, NULL, 2, av);
-        delete [] av;
+        atom_setlong( av , x->f_order);                                     // Number of Channel
+        atom_setlong(av+1, x->index);										// Channel Index
+        atom_setlong(av+2, x->index);										// Channel Index
+        outlet_list(x->out_instance_infos, NULL, 3, av);
     }
     
+    delete [] av;
     
-    // output done message to indicate that all values have been sent
+    // outputs done message to indicate that all values have been sent
     
     outlet_anything(x->out_patcherAttr, hoa_sym_done, 0, NULL);
 }
@@ -440,11 +432,6 @@ void hoa_thisprocess_dobang(t_hoa_thisprocess *x)
 void hoa_thisprocess_bang(t_hoa_thisprocess *x)
 {
     defer_low(x, (method)hoa_thisprocess_dobang, NULL, 0, NULL);
-}
-
-void hoa_thisprocess_loadbang(t_hoa_thisprocess *x)
-{
-    hoa_thisprocess_bang(x);
 }
 
 void *hoa_thisprocess_new(t_symbol *s, short argc, t_atom *argv)
@@ -488,7 +475,6 @@ int C74_EXPORT main(void)
     hoa_initclass(c, (method)NULL);
     
     class_addmethod(c, (method)hoa_thisprocess_assist,			"assist",	A_CANT, 0);
-    //class_addmethod(c, (method)hoa_thisprocess_loadbang,		"loadbang", A_CANT, 0);
     
     // @method mute @digest Disable DSP processing for this patcher instance.
     // @description Turns off signal processing for this specific instance. Argument is the mute state, 0 means unmuted, others value means muted
@@ -497,26 +483,27 @@ int C74_EXPORT main(void)
     
     // @method getmute @digest Report mute state.
     // @description Report mute state only.
-    class_addmethod(c, (method)hoa_thisprocess_mutechange,			"getmute",		A_NOTHING, 0);
+    class_addmethod(c, (method)hoa_thisprocess_mutechange,		"getmute",		A_NOTHING, 0);
     
     // @method bang @digest Report the instance informations in a right to left outputting order.
-    // @description Output instance informations in a right to left outputting order. <br/><br/>
+    // @description Output instance informations in a right to left outputting order. <br/>
+    // At the very end, it will output a "done" message in the patcher attribute's outlet to indicate that all values have been sent<br/><br/>
     // <ul>
     // <li> mute state (0/1). </li>
     // <li> patcher attributes. </li>
     // <li> patcher arguments. </li>
-    // <li> process context and mode. ex : "2d harmonics". </li>
+    // <li> process context and mode. ex : "2d harmonics", "3d planewaves" </li>
     // <li>
     // process instance informations depending on the current mode. <br/><br/>
     // <ul>
-    // <li> In <b>planewaves</b> mode (2d/3d). It will be (number-of-channels, instance-channel)</li>
-    // <li> In 2d <b>harmonics</b> mode, it will be a list with (ambisonic-order, harmonic-index) </li>
-    // <li> In 3d <b>harmonics</b> mode, it will be a list with (ambisonic-order, harmonic-degree, harmonic-order) </li>
+    // <li> In <b>harmonics</b> mode (2d/3d), it will be a list with (decomposition-order, harmonic-degree, harmonic-order) </li>
+    // <li> In <b>planewaves</b> mode (2d/3d), it will be a list with (number-of-channels, channel-index, channel-index)</li>
     // </ul>
     // </li>
     // </ul>
     class_addmethod(c, (method)hoa_thisprocess_bang,			"bang",		0);
     
+    //@internal
     class_addmethod(c, (method)hoa_thisprocess_mutechange,		"mutechange", A_CANT, 0);
     
     class_register(CLASS_BOX, c);
