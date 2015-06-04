@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x86",
+			"revision" : 3,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -55,12 +55,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 702.0, 625.0 ],
+						"rect" : [ 0.0, 26.0, 702.0, 625.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -251,8 +251,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -991,21 +991,21 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@module", 0, "@file", 5, "@loop", 1 ],
+									"args" : [ "@module", 0, "@file", "brushes.aif", "@loop", 1 ],
 									"bgmode" : 0,
-									"border" : 1,
+									"border" : 0,
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
 									"id" : "obj-81",
 									"lockeddragscroll" : 0,
 									"maxclass" : "bpatcher",
-									"name" : "hoa.helpaudio.maxpat",
+									"name" : "demosound.maxpat",
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 30.0, 128.0, 218.0, 87.0 ],
+									"patching_rect" : [ 30.0, 128.0, 221.0, 93.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1615,7 +1615,7 @@
 									"destination" : [ "obj-1", 14 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 297.597778, 450.0, 384.0, 450.0, 384.0, 402.0, 541.50415, 402.0 ],
+									"midpoints" : [ 297.59777, 450.0, 384.0, 450.0, 384.0, 402.0, 541.504167, 402.0 ],
 									"source" : [ "obj-55", 14 ]
 								}
 
@@ -1626,7 +1626,7 @@
 									"destination" : [ "obj-1", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 279.162201, 450.0, 384.0, 450.0, 384.0, 402.0, 532.070862, 402.0 ],
+									"midpoints" : [ 279.162215, 450.0, 384.0, 450.0, 384.0, 402.0, 532.070833, 402.0 ],
 									"source" : [ "obj-55", 13 ]
 								}
 
@@ -1637,7 +1637,7 @@
 									"destination" : [ "obj-1", 12 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 260.726654, 450.0, 384.0, 450.0, 384.0, 402.0, 522.637512, 402.0 ],
+									"midpoints" : [ 260.72666, 450.0, 384.0, 450.0, 384.0, 402.0, 522.6375, 402.0 ],
 									"source" : [ "obj-55", 12 ]
 								}
 
@@ -1648,7 +1648,7 @@
 									"destination" : [ "obj-1", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 242.291107, 450.0, 384.0, 450.0, 384.0, 402.0, 513.204163, 402.0 ],
+									"midpoints" : [ 242.291105, 450.0, 384.0, 450.0, 384.0, 402.0, 513.204167, 402.0 ],
 									"source" : [ "obj-55", 11 ]
 								}
 
@@ -1659,7 +1659,7 @@
 									"destination" : [ "obj-1", 10 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 223.855545, 450.0, 384.0, 450.0, 384.0, 402.0, 503.770844, 402.0 ],
+									"midpoints" : [ 223.85555, 450.0, 384.0, 450.0, 384.0, 402.0, 503.770833, 402.0 ],
 									"source" : [ "obj-55", 10 ]
 								}
 
@@ -1670,7 +1670,7 @@
 									"destination" : [ "obj-1", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 205.419998, 450.0, 384.0, 450.0, 384.0, 402.0, 494.337494, 402.0 ],
+									"midpoints" : [ 205.419995, 450.0, 384.0, 450.0, 384.0, 402.0, 494.3375, 402.0 ],
 									"source" : [ "obj-55", 9 ]
 								}
 
@@ -1681,7 +1681,7 @@
 									"destination" : [ "obj-1", 8 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 186.984436, 450.0, 384.0, 450.0, 384.0, 402.0, 484.904175, 402.0 ],
+									"midpoints" : [ 186.98444, 450.0, 384.0, 450.0, 384.0, 402.0, 484.904167, 402.0 ],
 									"source" : [ "obj-55", 8 ]
 								}
 
@@ -1692,7 +1692,7 @@
 									"destination" : [ "obj-1", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 168.548889, 450.0, 384.0, 450.0, 384.0, 402.0, 475.470825, 402.0 ],
+									"midpoints" : [ 168.548885, 450.0, 384.0, 450.0, 384.0, 402.0, 475.470833, 402.0 ],
 									"source" : [ "obj-55", 7 ]
 								}
 
@@ -1703,7 +1703,7 @@
 									"destination" : [ "obj-1", 6 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 150.113327, 450.0, 384.0, 450.0, 384.0, 402.0, 466.037506, 402.0 ],
+									"midpoints" : [ 150.11333, 450.0, 384.0, 450.0, 384.0, 402.0, 466.0375, 402.0 ],
 									"source" : [ "obj-55", 6 ]
 								}
 
@@ -1714,7 +1714,7 @@
 									"destination" : [ "obj-1", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 131.67778, 450.0, 384.0, 450.0, 384.0, 402.0, 456.604156, 402.0 ],
+									"midpoints" : [ 131.677775, 450.0, 384.0, 450.0, 384.0, 402.0, 456.604167, 402.0 ],
 									"source" : [ "obj-55", 5 ]
 								}
 
@@ -1725,7 +1725,7 @@
 									"destination" : [ "obj-1", 4 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 113.242218, 450.0, 384.0, 450.0, 384.0, 402.0, 447.170837, 402.0 ],
+									"midpoints" : [ 113.24222, 450.0, 384.0, 450.0, 384.0, 402.0, 447.170833, 402.0 ],
 									"source" : [ "obj-55", 4 ]
 								}
 
@@ -1736,7 +1736,7 @@
 									"destination" : [ "obj-1", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 94.806664, 450.0, 384.0, 450.0, 384.0, 402.0, 437.737488, 402.0 ],
+									"midpoints" : [ 94.806665, 450.0, 384.0, 450.0, 384.0, 402.0, 437.7375, 402.0 ],
 									"source" : [ "obj-55", 3 ]
 								}
 
@@ -1747,7 +1747,7 @@
 									"destination" : [ "obj-1", 2 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 76.371109, 450.0, 384.0, 450.0, 384.0, 402.0, 428.304169, 402.0 ],
+									"midpoints" : [ 76.37111, 450.0, 384.0, 450.0, 384.0, 402.0, 428.304167, 402.0 ],
 									"source" : [ "obj-55", 2 ]
 								}
 
@@ -1758,7 +1758,7 @@
 									"destination" : [ "obj-1", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 57.935555, 450.0, 384.0, 450.0, 384.0, 403.0, 418.870819, 403.0 ],
+									"midpoints" : [ 57.935555, 450.0, 384.0, 450.0, 384.0, 403.0, 418.870833, 403.0 ],
 									"source" : [ "obj-55", 1 ]
 								}
 
@@ -2064,12 +2064,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 702.0, 625.0 ],
+						"rect" : [ 100.0, 126.0, 702.0, 625.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -2113,8 +2113,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -2886,7 +2886,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@module", 0, "@file", "cello-f2.aif", "@loop", 1 ],
+									"args" : [ "@module", 0, "@file", "brushes.aif", "@loop", 1 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -3131,7 +3131,7 @@
 									"destination" : [ "obj-4", 15 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 409.4375, 373.25, 349.499939, 373.25 ],
+									"midpoints" : [ 409.4375, 382.25, 349.499949, 382.25 ],
 									"source" : [ "obj-13", 0 ]
 								}
 
@@ -3141,7 +3141,7 @@
 									"destination" : [ "obj-4", 15 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 498.4375, 266.5, 349.499939, 266.5 ],
+									"midpoints" : [ 498.4375, 266.5, 349.499949, 266.5 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -3366,7 +3366,7 @@
 									"destination" : [ "obj-4", 15 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 507.4375, 373.25, 349.499939, 373.25 ],
+									"midpoints" : [ 507.4375, 382.25, 349.499949, 382.25 ],
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -3535,7 +3535,7 @@
 									"destination" : [ "obj-4", 15 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 591.4375, 266.5, 349.499939, 266.5 ],
+									"midpoints" : [ 591.4375, 266.5, 349.499949, 266.5 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -3563,7 +3563,7 @@
 									"destination" : [ "obj-4", 15 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 594.816345, 373.25, 349.499939, 373.25 ],
+									"midpoints" : [ 594.816345, 382.25, 349.499949, 382.25 ],
 									"source" : [ "obj-64", 0 ]
 								}
 
@@ -3609,7 +3609,7 @@
 									"destination" : [ "obj-4", 15 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 409.4375, 266.5, 349.499939, 266.5 ],
+									"midpoints" : [ 409.4375, 266.5, 349.499949, 266.5 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -3679,8 +3679,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -3737,103 +3737,93 @@
 		"lines" : [  ],
 		"parameters" : 		{
 			"obj-24::obj-81::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-24::obj-81::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
+			"obj-24::obj-81::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-1::obj-81::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
+			"obj-1::obj-81::obj-35" : [ "[1]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "hoa.fx.freeverb~.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/effects",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/effects",
 				"patcherrelativepath" : "../../patchers/effects",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.args.map.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.mode.sel.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.help.process.infos.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/helputility",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/helputility",
 				"patcherrelativepath" : "../../patchers/helputility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "demosound.maxpat",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/help/msp",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/help/msp",
+				"bootpath" : "C74:/help/msp",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sine.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "saw.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "square.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "random.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpout_7.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others/hoa.helpout",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others/hoa.helpout",
 				"patcherrelativepath" : "../../misc/others/hoa.helpout",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
-				"patcherrelativepath" : "../../misc/others",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "hoa.helpaudio.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1

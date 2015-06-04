@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x86",
+			"revision" : 3,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -55,8 +55,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -268,7 +268,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 7.0, 68.0, 486.0, 33.0 ],
 									"style" : "",
-									"text" : "hoa.fx.ringmod~ creates a diffuse soundfield by modulating the amplitude of the spherical harmonics signal depending on their number.",
+									"text" : "hoa.fx.ringmod~ creates a diffuse soundfield by modulating the amplitude of the spherical harmonics signal.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[5]"
 								}
@@ -513,8 +513,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -704,7 +704,7 @@
 									"destination" : [ "obj-1", 14 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 280.899994, 456.0, 345.0, 456.0, 345.0, 366.0, 545.766663, 366.0 ],
+									"midpoints" : [ 280.9, 456.0, 345.0, 456.0, 345.0, 366.0, 545.766667, 366.0 ],
 									"source" : [ "obj-14", 14 ]
 								}
 
@@ -715,7 +715,7 @@
 									"destination" : [ "obj-1", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 263.799988, 456.0, 345.0, 456.0, 345.0, 366.0, 533.033325, 366.0 ],
+									"midpoints" : [ 263.8, 456.0, 345.0, 456.0, 345.0, 366.0, 533.033333, 366.0 ],
 									"source" : [ "obj-14", 13 ]
 								}
 
@@ -726,7 +726,7 @@
 									"destination" : [ "obj-1", 12 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 246.699997, 456.0, 345.0, 456.0, 345.0, 366.0, 520.299988, 366.0 ],
+									"midpoints" : [ 246.7, 456.0, 345.0, 456.0, 345.0, 366.0, 520.3, 366.0 ],
 									"source" : [ "obj-14", 12 ]
 								}
 
@@ -737,7 +737,7 @@
 									"destination" : [ "obj-1", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 229.600006, 456.0, 345.0, 456.0, 345.0, 366.0, 507.566681, 366.0 ],
+									"midpoints" : [ 229.6, 456.0, 345.0, 456.0, 345.0, 366.0, 507.566667, 366.0 ],
 									"source" : [ "obj-14", 11 ]
 								}
 
@@ -748,7 +748,7 @@
 									"destination" : [ "obj-1", 10 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 212.5, 456.0, 345.0, 456.0, 345.0, 366.0, 494.833344, 366.0 ],
+									"midpoints" : [ 212.5, 456.0, 345.0, 456.0, 345.0, 366.0, 494.833333, 366.0 ],
 									"source" : [ "obj-14", 10 ]
 								}
 
@@ -759,7 +759,7 @@
 									"destination" : [ "obj-1", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 195.399994, 456.0, 345.0, 456.0, 345.0, 366.0, 482.100006, 366.0 ],
+									"midpoints" : [ 195.4, 456.0, 345.0, 456.0, 345.0, 366.0, 482.1, 366.0 ],
 									"source" : [ "obj-14", 9 ]
 								}
 
@@ -770,7 +770,7 @@
 									"destination" : [ "obj-1", 8 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 178.300003, 456.0, 345.0, 456.0, 345.0, 366.0, 469.366669, 366.0 ],
+									"midpoints" : [ 178.3, 456.0, 345.0, 456.0, 345.0, 366.0, 469.366667, 366.0 ],
 									"source" : [ "obj-14", 8 ]
 								}
 
@@ -781,7 +781,7 @@
 									"destination" : [ "obj-1", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 161.199997, 456.0, 345.0, 456.0, 345.0, 366.0, 456.633331, 366.0 ],
+									"midpoints" : [ 161.2, 456.0, 345.0, 456.0, 345.0, 366.0, 456.633333, 366.0 ],
 									"source" : [ "obj-14", 7 ]
 								}
 
@@ -792,7 +792,7 @@
 									"destination" : [ "obj-1", 6 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 144.100006, 456.0, 345.0, 456.0, 345.0, 366.0, 443.899994, 366.0 ],
+									"midpoints" : [ 144.1, 456.0, 345.0, 456.0, 345.0, 366.0, 443.9, 366.0 ],
 									"source" : [ "obj-14", 6 ]
 								}
 
@@ -803,7 +803,7 @@
 									"destination" : [ "obj-1", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 127.0, 456.0, 345.0, 456.0, 345.0, 366.0, 431.166656, 366.0 ],
+									"midpoints" : [ 127.0, 456.0, 345.0, 456.0, 345.0, 366.0, 431.166667, 366.0 ],
 									"source" : [ "obj-14", 5 ]
 								}
 
@@ -814,7 +814,7 @@
 									"destination" : [ "obj-1", 4 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 109.900002, 456.0, 345.0, 456.0, 345.0, 366.0, 418.433319, 366.0 ],
+									"midpoints" : [ 109.9, 456.0, 345.0, 456.0, 345.0, 366.0, 418.433333, 366.0 ],
 									"source" : [ "obj-14", 4 ]
 								}
 
@@ -825,7 +825,7 @@
 									"destination" : [ "obj-1", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 92.800003, 456.0, 345.0, 456.0, 345.0, 366.0, 405.700012, 366.0 ],
+									"midpoints" : [ 92.8, 456.0, 345.0, 456.0, 345.0, 366.0, 405.7, 366.0 ],
 									"source" : [ "obj-14", 3 ]
 								}
 
@@ -836,7 +836,7 @@
 									"destination" : [ "obj-1", 2 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 75.699997, 456.0, 345.0, 456.0, 345.0, 366.0, 392.966675, 366.0 ],
+									"midpoints" : [ 75.7, 456.0, 345.0, 456.0, 345.0, 366.0, 392.966667, 366.0 ],
 									"source" : [ "obj-14", 2 ]
 								}
 
@@ -847,7 +847,7 @@
 									"destination" : [ "obj-1", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 58.599998, 456.0, 345.0, 456.0, 345.0, 366.0, 380.233337, 366.0 ],
+									"midpoints" : [ 58.6, 456.0, 345.0, 456.0, 345.0, 366.0, 380.233333, 366.0 ],
 									"source" : [ "obj-14", 1 ]
 								}
 
@@ -1510,8 +1510,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -1915,8 +1915,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -2880,8 +2880,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -2989,13 +2989,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-6",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 7.0, 68.0, 486.0, 33.0 ],
+									"patching_rect" : [ 7.0, 68.0, 483.0, 47.0 ],
 									"style" : "",
-									"text" : "hoa.fx.ringmod~ creates a diffuse soundfield by modulating the amplitude of the spherical harmonics signal depending on their number.",
+									"text" : "hoa.fx.ringmod~ synthesize a diffuse soundfield by modulating the amplitude of the spherical harmonics signal.\nThe frequency is mapped depending on the orders and degrees of the harmonics.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[5]"
 								}
@@ -3012,7 +3012,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 7.0, 68.0, 483.0, 33.0 ],
+									"patching_rect" : [ 7.0, 68.0, 483.0, 47.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -3110,7 +3110,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 7.0, 114.0, 291.0, 33.0 ],
+									"patching_rect" : [ 7.0, 134.0, 291.0, 33.0 ],
 									"style" : "",
 									"text" : "@freq set the initial amplitude modulation frequency.\n@factor set the initial factor between 0 and 1.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -3129,7 +3129,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 7.0, 114.0, 291.0, 33.0 ],
+									"patching_rect" : [ 7.0, 134.0, 291.0, 33.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -3302,8 +3302,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -3938,8 +3938,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -3996,101 +3996,96 @@
 		"lines" : [  ],
 		"parameters" : 		{
 			"obj-1::obj-1::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-3::obj-11::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
 			"obj-3::obj-11::obj-35" : [ "[2]", "Level", 0 ],
 			"obj-1::obj-1::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-3::obj-11::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
-			"obj-2::obj-2::obj-35" : [ "[1]", "Level", 0 ],
-			"obj-2::obj-2::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ]
+			"obj-2::obj-2::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
+			"obj-2::obj-2::obj-35" : [ "[1]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.fx.ringmod~.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/effects",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/effects",
 				"patcherrelativepath" : "../../patchers/effects",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.help.process.infos.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/helputility",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/helputility",
 				"patcherrelativepath" : "../../patchers/helputility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.args.map.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.mode.sel.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpout_7.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others/hoa.helpout",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others/hoa.helpout",
 				"patcherrelativepath" : "../../misc/others/hoa.helpout",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "demosound.maxpat",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/help/msp",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/help/msp",
+				"bootpath" : "C74:/help/msp",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sine.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "saw.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "square.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "random.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
