@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-HoaLibrary by Julien Colafrancesco, Pierre Guillot & Eliott Paris at CICM / University Paris 8 - 2012-2014
+HoaLibrary by Julien Colafrancesco, Pierre Guillot & Eliott Paris at CICM / University Paris 8 - 2012-2015
 http://www.mshparisnord.fr/hoalibrary/en/
 ------------------------------------------------------------------------------------------
 
