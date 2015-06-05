@@ -244,7 +244,7 @@ void color_patchline(t_connect *x)
 				// ambisonics colors (zero | neg | pos) (ex: hoa.encoder~ => hoa.optim~)
 				if (startobj_infos->autoconnect_outputs_type == HOA_CONNECT_TYPE_AMBISONICS)
 				{
-					inletnum = jpatchline_get_inletnum(line);
+					inletnum = jpatchline_get_outletnum(line);
                     
                     sign = 0;
 					
