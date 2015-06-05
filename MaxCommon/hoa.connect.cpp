@@ -226,7 +226,7 @@ void color_patchline(t_connect *x)
 	t_object *line, *startobj;
 	t_hoa_err err;
 	t_jrgba* linecolor = NULL;
-	int inletnum, sign;
+	long outletnum, sign;
 	t_hoa_boxinfos* startobj_infos = (t_hoa_boxinfos*) malloc( sizeof(t_hoa_boxinfos));
 	line = jpatcher_get_firstline(x->f_patcher);
     
@@ -244,14 +244,14 @@ void color_patchline(t_connect *x)
 				// ambisonics colors (zero | neg | pos) (ex: hoa.encoder~ => hoa.optim~)
 				if (startobj_infos->autoconnect_outputs_type == HOA_CONNECT_TYPE_AMBISONICS)
 				{
-					inletnum = jpatchline_get_outletnum(line);
+					outletnum = jpatchline_get_outletnum(line);
                     
                     sign = 0;
 					
 					if (startobj_infos->object_type == HOA_OBJECT_2D)
-						sign = x->f_ambi2D->getHarmonicOrder(inletnum);
+						sign = x->f_ambi2D->getHarmonicOrder(outletnum);
 					if (startobj_infos->object_type == HOA_OBJECT_3D)
-						sign = x->f_ambi3D->getHarmonicOrder(inletnum);
+						sign = x->f_ambi3D->getHarmonicOrder(outletnum);
 					
 					if (sign > 0)
 						linecolor = &x->f_color_positiv;
