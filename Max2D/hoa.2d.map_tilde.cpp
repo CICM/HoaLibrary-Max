@@ -47,7 +47,7 @@ t_class *hoa_map_tilde_class;
 
 void *hoa_map_tilde_new(t_symbol *s, long argc, t_atom *argv)
 {
-	// @arg 0 @name ambisonic-order @optional 0 @type int @digest The ambisonic order of decomposition
+	// @arg 0 @name decomposition-order @optional 0 @type int @digest The ambisonic order of decomposition
 	// @description First argument is the ambisonic order of decomposition.
 	
 	// @arg 1 @name number-of-sources @optional 0 @type int @digest The number of sources

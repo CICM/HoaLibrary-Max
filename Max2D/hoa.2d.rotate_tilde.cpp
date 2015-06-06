@@ -41,7 +41,7 @@ t_class *hoa_rotate_class;
 
 void *hoa_rotate_new(t_symbol *s, long argc, t_atom *argv)
 {
-	// @arg 0 @name ambisonic-order @optional 0 @type int @digest The ambisonic order of decomposition
+	// @arg 0 @name decomposition-order @optional 0 @type int @digest The ambisonic order of decomposition
 	// @description First argument is the ambisonic order of decomposition.
 	
 	t_hoa_rotate *x = NULL;
