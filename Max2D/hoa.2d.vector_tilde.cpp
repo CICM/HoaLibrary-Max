@@ -23,7 +23,7 @@
  
  @category ambisonics, hoa objects, audio, MSP
  
- @seealso hoa.2d.meter~, hoa.2d.scope~, hoa.2d.decoder~
+ @seealso hoa.2d.meter~, hoa.2d.scope~, hoa.2d.decoder~, hoa.3d.vector~
  */
 
 #include "Hoa2D.max.h"
@@ -34,6 +34,7 @@ typedef struct _hoa_2d_vector
     Vector<Hoa2d, t_sample>*    f_vector;
     t_sample*                   f_ins;
     t_sample*                   f_outs;
+    t_symbol*                   f_mode;
     void*                       f_attrs;
     
 } t_hoa_2d_vector;
@@ -50,20 +51,49 @@ t_hoa_err hoa_getinfos(t_hoa_2d_vector* x, t_hoa_boxinfos* boxinfos)
 	return HOA_ERR_NONE;
 }
 
-void hoa_2d_vector_perform64(t_hoa_2d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+void hoa_2d_vector_perform(t_hoa_2d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
-    for(int i = 0; i < numins; i++)
+    for(long i = 0; i < numins; i++)
     {
         Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
     }
-	for(int i = 0; i < sampleframes; i++)
+	for(long i = 0; i < sampleframes; i++)
     {
-        //x->f_vector->process(x->f_ins + numins * i, x->f_outs + numouts * i);
-        
-        x->f_vector->process(x->f_ins + numins * i, x->f_outs + 2 * i);
-        x->f_vector->process(x->f_ins + numins * i, x->f_outs + 2 * i + 2);
+        x->f_vector->process(x->f_ins + numins * i, x->f_outs + numouts * i);
     }
-    for(int i = 0; i < numouts; i++)
+    for(long i = 0; i < numouts; i++)
+    {
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+    }
+}
+
+void hoa_2d_vector_perform_velocity(t_hoa_2d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+{
+    for(long i = 0; i < numins; i++)
+    {
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+    }
+    for(long i = 0; i < sampleframes; i++)
+    {
+        x->f_vector->processVelocity(x->f_ins + numins * i, x->f_outs + numouts * i);
+    }
+    for(long i = 0; i < numouts; i++)
+    {
+        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+    }
+}
+
+void hoa_2d_vector_perform_energy(t_hoa_2d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+{
+    for(long i = 0; i < numins; i++)
+    {
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+    }
+    for(long i = 0; i < sampleframes; i++)
+    {
+        x->f_vector->processEnergy(x->f_ins + numins * i, x->f_outs + numouts * i);
+    }
+    for(long i = 0; i < numouts; i++)
     {
         Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
     }
@@ -72,7 +102,13 @@ void hoa_2d_vector_perform64(t_hoa_2d_vector *x, t_object *dsp64, double **ins, 
 void hoa_2d_vector_dsp64(t_hoa_2d_vector *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
     x->f_vector->computeRendering();
-    object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_vector_perform64, 0, NULL);
+    
+    if(x->f_mode == hoa_sym_both)
+        object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_vector_perform, 0, NULL);
+    if(x->f_mode == hoa_sym_velocity)
+        object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_vector_perform_velocity, 0, NULL);
+    else
+        object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_vector_perform_energy, 0, NULL);
 }
 
 void hoa_2d_vector_assist(t_hoa_2d_vector *x, void *b, long m, long a, char *s)
@@ -83,14 +119,23 @@ void hoa_2d_vector_assist(t_hoa_2d_vector *x, void *b, long m, long a, char *s)
     }
     else
     {
-        if(a == 0)
-            sprintf(s,"(signal) Velocity Vector Abscissa");
-        else if(a == 1)
-            sprintf(s,"(signal) Velocity Vector Ordinate");
-        else if(a == 2)
-            sprintf(s,"(signal) Energy Vector Abscissa");
-        else if(a == 3)
-            sprintf(s,"(signal) Energy Vector Ordinate");
+        const int both = (x->f_mode == hoa_sym_both) ? 2 : 0;
+        
+        if(both || x->f_mode == hoa_sym_velocity)
+        {
+            if(a == 0)
+                sprintf(s,"(signal) Velocity Vector Abscissa");
+            else if(a == 1)
+                sprintf(s,"(signal) Velocity Vector Ordinate");
+        }
+        
+        if(both || x->f_mode == hoa_sym_energy)
+        {
+            if(a == 0 + both)
+                sprintf(s,"(signal) Energy Vector Abscissa");
+            else if(a == 1 + both)
+                sprintf(s,"(signal) Energy Vector Ordinate");
+        }
     }
 }
 
@@ -201,24 +246,42 @@ void *hoa_2d_vector_new(t_symbol *s, long argc, t_atom *argv)
     // @arg 0 @name number-of-channels @optional 0 @type int @digest The number of channels
     // @description First argument sets the number of channels.
     
+    // @arg 1 @name vector-type @optional 1 @type symbol @digest The vector type.
+    // @description second argument sets the type of vector to compute (velocity or energy)
+    
     t_hoa_2d_vector *x = NULL;
     x = (t_hoa_2d_vector *)object_alloc(hoa_2d_vector_class);
     
     if(x)
     {
-        ulong channels = 4;
+        x->f_mode = hoa_sym_both;
+        ulong nouts = 4ul;
+        ulong channels = 4ul;
+        
         if (argc && atom_gettype(argv) == A_LONG)
+        {
             channels = max<long>(atom_getlong(argv), 1);
+        }
+        
+        if(argc > 1 && atom_gettype(argv+1) == A_SYM)
+        {
+            t_symbol* mode = atom_getsym(argv+1);
+            if(mode == hoa_sym_velocity || mode == hoa_sym_energy)
+            {
+                x->f_mode = mode;
+                nouts = 2ul;
+            }
+        }
         
         x->f_vector = new Vector<Hoa2d, t_sample>(channels);
         x->f_vector->computeRendering();
         
         dsp_setup((t_pxobject *)x, x->f_vector->getNumberOfPlanewaves());
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < nouts; i++)
             outlet_new(x, "signal");
         
         x->f_ins = new t_sample[x->f_vector->getNumberOfPlanewaves() * HOA_MAXBLKSIZE];
-        x->f_outs = new t_sample[4 * HOA_MAXBLKSIZE];
+        x->f_outs = new t_sample[nouts * HOA_MAXBLKSIZE];
         
         attr_args_process(x, argc, argv);
     }

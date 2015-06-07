@@ -34,7 +34,7 @@ typedef struct _hoa_3d_vector
     Vector<Hoa3d, t_sample>*f_vector;
     t_sample*               f_sig_ins;
     t_sample*               f_sig_outs;
-    int                     f_mode;
+    t_symbol*               f_mode;
 	double					f_angles_of_channels[HOA_MAX_PLANEWAVES * 2];
 	long					f_number_of_angles;
     
@@ -52,7 +52,7 @@ t_hoa_err hoa_getinfos(t_hoa_3d_vector* x, t_hoa_boxinfos* boxinfos)
 	return HOA_ERR_NONE;
 }
 
-void hoa_3d_vector_perform64_energy(t_hoa_3d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+void hoa_3d_vector_perform(t_hoa_3d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
     for(int i = 0; i < numins; i++)
     {
@@ -60,7 +60,7 @@ void hoa_3d_vector_perform64_energy(t_hoa_3d_vector *x, t_object *dsp64, double 
     }
     for(int i = 0; i < sampleframes; i++)
     {
-        x->f_vector->processEnergy(x->f_sig_ins + i * numins, x->f_sig_outs + i * numouts);
+        x->f_vector->process(x->f_sig_ins + i * numins, x->f_sig_outs + i * numouts);
     }
     for(int i = 0; i < numouts; i++)
     {
@@ -68,7 +68,7 @@ void hoa_3d_vector_perform64_energy(t_hoa_3d_vector *x, t_object *dsp64, double 
     }
 }
 
-void hoa_3d_vector_perform64_velocity(t_hoa_3d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+void hoa_3d_vector_perform_velocity(t_hoa_3d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
     for(int i = 0; i < numins; i++)
     {
@@ -84,13 +84,30 @@ void hoa_3d_vector_perform64_velocity(t_hoa_3d_vector *x, t_object *dsp64, doubl
     }
 }
 
+void hoa_3d_vector_perform_energy(t_hoa_3d_vector *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+{
+    for(int i = 0; i < numins; i++)
+    {
+        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_sig_ins+i, numins);
+    }
+    for(int i = 0; i < sampleframes; i++)
+    {
+        x->f_vector->processEnergy(x->f_sig_ins + i * numins, x->f_sig_outs + i * numouts);
+    }
+    for(int i = 0; i < numouts; i++)
+    {
+        Signal<t_sample>::copy(sampleframes, x->f_sig_outs+i, numouts, outs[i], 1);
+    }
+}
+
 void hoa_3d_vector_dsp64(t_hoa_3d_vector *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
-    if(x->f_mode)
-        object_method(dsp64, gensym("dsp_add64"), x, hoa_3d_vector_perform64_energy, 0, NULL);
+    if(x->f_mode == hoa_sym_both)
+        object_method(dsp64, gensym("dsp_add64"), x, hoa_3d_vector_perform, 0, NULL);
+    if(x->f_mode == hoa_sym_velocity)
+        object_method(dsp64, gensym("dsp_add64"), x, hoa_3d_vector_perform_velocity, 0, NULL);
     else
-        object_method(dsp64, gensym("dsp_add64"), x, hoa_3d_vector_perform64_velocity, 0, NULL);
-    
+        object_method(dsp64, gensym("dsp_add64"), x, hoa_3d_vector_perform_energy, 0, NULL);
 }
 
 void hoa_3d_vector_assist(t_hoa_3d_vector *x, void *b, long m, long a, char *s)
@@ -101,16 +118,9 @@ void hoa_3d_vector_assist(t_hoa_3d_vector *x, void *b, long m, long a, char *s)
     }
     else
     {
-        if(x->f_mode)
-        {
-            if(a == 0)
-                sprintf(s,"(signal) Energy Vector Abscissa");
-            else if(a == 1)
-                sprintf(s,"(signal) Energy Vector Ordinate");
-            else if(a == 2)
-                sprintf(s,"(signal) Energy Vector Height");
-        }
-        else
+        const int both = (x->f_mode == hoa_sym_both) ? 3 : 0;
+        
+        if(both || x->f_mode == hoa_sym_velocity)
         {
             if(a == 0)
                 sprintf(s,"(signal) Velocity Vector Abscissa");
@@ -118,6 +128,16 @@ void hoa_3d_vector_assist(t_hoa_3d_vector *x, void *b, long m, long a, char *s)
                 sprintf(s,"(signal) Velocity Vector Ordinate");
             else if(a == 2)
                 sprintf(s,"(signal) Velocity Vector Height");
+        }
+        
+        if(both || x->f_mode == hoa_sym_energy)
+        {
+            if(a == 0 + both)
+                sprintf(s,"(signal) Energy Vector Abscissa");
+            else if(a == 1 + both)
+                sprintf(s,"(signal) Energy Vector Ordinate");
+            else if(a == 2 + both)
+                sprintf(s,"(signal) Energy Vector Height");
         }
     }
 }
@@ -168,30 +188,39 @@ void *hoa_3d_vector_new(t_symbol *s, long argc, t_atom *argv)
     // @arg 0 @name number-of-channels @optional 0 @type int @digest The number of channels
     // @description First argument sets the number of channels.
     
-    // @arg 1 @name vector-type @optional 1 @type symbol @digest The number of channels
-    // @description second argument sets the type of vector to compute (energy or velocity)
+    // @arg 1 @name vector-type @optional 1 @type symbol @digest The vector type.
+    // @description second argument sets the type of vector to compute (velocity or energy)
     
     t_hoa_3d_vector *x = (t_hoa_3d_vector *)object_alloc(hoa_3d_vector_class);
     if (x)
     {
         int	channels = 4;
-        x->f_mode = 1;
+        
+        x->f_mode = hoa_sym_both;
+        ulong nouts = 6ul;
         
         if(argc && atom_gettype(argv) == A_LONG)
             channels = max<long>(atom_getlong(argv), 4);
         
-        if(argc > 1 && atom_gettype(argv+1) == A_SYM && atom_getsym(argv+1) == hoa_sym_velocity)
-            x->f_mode = 0;
+        if(argc > 1 && atom_gettype(argv+1) == A_SYM)
+        {
+            t_symbol* mode = atom_getsym(argv+1);
+            if(mode == hoa_sym_velocity || mode == hoa_sym_energy)
+            {
+                x->f_mode = mode;
+                nouts = 3ul;
+            }
+        }
         
         x->f_vector = new Vector<Hoa3d, t_sample>(channels);
         x->f_vector->computeRendering();
         
-        for (int i = 0; i < 3; i++)
+        for (ulong i = 0; i < nouts; i++)
             outlet_new(x, "signal");
         
         dsp_setup((t_pxobject *)x, x->f_vector->getNumberOfPlanewaves());
         x->f_sig_ins =  new t_sample[x->f_vector->getNumberOfPlanewaves() * SYS_MAXBLKSIZE];
-        x->f_sig_outs = new t_sample[3 * SYS_MAXBLKSIZE];
+        x->f_sig_outs = new t_sample[nouts * SYS_MAXBLKSIZE];
         
         x->f_number_of_angles = x->f_vector->getNumberOfPlanewaves() * 2;
         
@@ -199,8 +228,6 @@ void *hoa_3d_vector_new(t_symbol *s, long argc, t_atom *argv)
         {
             x->f_angles_of_channels[i-1] = x->f_vector->getPlanewaveAzimuth(j) / HOA_2PI * 360;
             x->f_angles_of_channels[i] = x->f_vector->getPlanewaveElevation(j) / HOA_2PI * 360;
-            
-            post("angle %i: %f   %f", j, x->f_angles_of_channels[i-1], x->f_angles_of_channels[i]);
         }
         
         attr_args_process(x, argc, argv);
