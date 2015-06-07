@@ -160,6 +160,38 @@
 		2C396D341AB11FC500FAA1F0 /* Hrtf.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */; };
 		2C396D351AB11FC500FAA1F0 /* Hrtf.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */; };
 		2C396D361AB11FC500FAA1F0 /* Hrtf.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */; };
+		2C4CA24C1B249B630032DF41 /* hoa.3d.exchanger_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CA24B1B249B630032DF41 /* hoa.3d.exchanger_tilde.cpp */; };
+		2C4CA24E1B249C8D0032DF41 /* hoa.2d.exchanger_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CA24D1B249C8D0032DF41 /* hoa.2d.exchanger_tilde.cpp */; };
+		2C4CA2511B249E5D0032DF41 /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C4CA2521B249E5D0032DF41 /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C4CA2531B249E5D0032DF41 /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C4CA2541B249E5D0032DF41 /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C4CA2551B249E5D0032DF41 /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C4CA2561B249E5D0032DF41 /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C4CA2571B249E5D0032DF41 /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C4CA2581B249E5D0032DF41 /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C4CA2591B249E5D0032DF41 /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C4CA25A1B249E5D0032DF41 /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C4CA25E1B249E5D0032DF41 /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C4CA25F1B249E5D0032DF41 /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C4CA2611B249E5D0032DF41 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C4CA2621B249E5D0032DF41 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C4CA26B1B24A17B0032DF41 /* Hoa3D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD4019720A0300217823 /* Hoa3D.max.h */; };
+		2C4CA26C1B24A17B0032DF41 /* Math.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584E1A9ABDCD00C91175 /* Math.hpp */; };
+		2C4CA26D1B24A17B0032DF41 /* Signal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3958581A9ABDCD00C91175 /* Signal.hpp */; };
+		2C4CA26E1B24A17B0032DF41 /* Hoa2D.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE0CD3519720A0300217823 /* Hoa2D.max.h */; };
+		2C4CA26F1B24A17B0032DF41 /* Defs.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584A1A9ABDCD00C91175 /* Defs.hpp */; };
+		2C4CA2701B24A17B0032DF41 /* hoa.max_commonsyms.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE9332E196EB9B60079A368 /* hoa.max_commonsyms.h */; };
+		2C4CA2711B24A17B0032DF41 /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
+		2C4CA2721B24A17B0032DF41 /* Hoa.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39584D1A9ABDCD00C91175 /* Hoa.hpp */; };
+		2C4CA2731B24A17B0032DF41 /* Tools.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C39585B1A9ABDCD00C91175 /* Tools.hpp */; };
+		2C4CA2741B24A17B0032DF41 /* hoa.max.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CE93330196EB9B60079A368 /* hoa.max.h */; };
+		2C4CA2781B24A17B0032DF41 /* hoa.max.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9332F196EB9B60079A368 /* hoa.max.cpp */; };
+		2C4CA2791B24A17B0032DF41 /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
+		2C4CA27B1B24A17B0032DF41 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18A8BD17287341005FD621 /* Accelerate.framework */; };
+		2C4CA27C1B24A17B0032DF41 /* MaxAudioAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE93334196EBA530079A368 /* MaxAudioAPI.framework */; };
+		2C4CA2831B24A22F0032DF41 /* hoa.3d.exchanger_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CA24B1B249B630032DF41 /* hoa.3d.exchanger_tilde.cpp */; };
+		2C4CA2851B24B1C20032DF41 /* hoa.2d.exchanger_tilde.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CA24D1B249C8D0032DF41 /* hoa.2d.exchanger_tilde.cpp */; };
 		2C874C94196EB76900659F07 /* hoa.library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C874C93196EB76900659F07 /* hoa.library.cpp */; };
 		2C8781841A9B72F200BA0E2B /* hoa.max.math.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C8781831A9B72F200BA0E2B /* hoa.max.math.h */; };
 		2C8781871A9BE0B600BA0E2B /* ChannelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8781851A9BE0B600BA0E2B /* ChannelManager.cpp */; };
@@ -954,6 +986,10 @@
 		2C39585C1A9ABDCD00C91175 /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
 		2C39585E1A9ABDCD00C91175 /* Wider.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Wider.hpp; sourceTree = "<group>"; };
 		2C396D331AB11FC500FAA1F0 /* Hrtf.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Hrtf.hpp; sourceTree = "<group>"; };
+		2C4CA24B1B249B630032DF41 /* hoa.3d.exchanger_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.3d.exchanger_tilde.cpp; sourceTree = "<group>"; };
+		2C4CA24D1B249C8D0032DF41 /* hoa.2d.exchanger_tilde.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.2d.exchanger_tilde.cpp; sourceTree = "<group>"; };
+		2C4CA2671B249E5D0032DF41 /* hoa.2d.exchanger~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.2d.exchanger~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4CA2811B24A17B0032DF41 /* hoa.3d.exchanger~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hoa.3d.exchanger~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C874C93196EB76900659F07 /* hoa.library.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hoa.library.cpp; sourceTree = "<group>"; };
 		2C8781831A9B72F200BA0E2B /* hoa.max.math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hoa.max.math.h; sourceTree = "<group>"; };
 		2C8781851A9BE0B600BA0E2B /* ChannelManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChannelManager.cpp; sourceTree = "<group>"; };
@@ -1070,6 +1106,24 @@
 			files = (
 				2C0326B31A9E1D300076BE56 /* Accelerate.framework in Frameworks */,
 				2C0326B41A9E1D300076BE56 /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA2601B249E5D0032DF41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4CA2611B249E5D0032DF41 /* Accelerate.framework in Frameworks */,
+				2C4CA2621B249E5D0032DF41 /* MaxAudioAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA27A1B24A17B0032DF41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4CA27B1B24A17B0032DF41 /* Accelerate.framework in Frameworks */,
+				2C4CA27C1B24A17B0032DF41 /* MaxAudioAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1432,6 +1486,8 @@
 				2C9B3C591A9E781600E6921E /* hoa.3d.scope~.mxo */,
 				2C9B3C721A9E783B00E6921E /* hoa.3d.vector~.mxo */,
 				2C9B3C8B1A9E787300E6921E /* hoa.3d.wider~.mxo */,
+				2C4CA2671B249E5D0032DF41 /* hoa.2d.exchanger~.mxo */,
+				2C4CA2811B24A17B0032DF41 /* hoa.3d.exchanger~.mxo */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1471,6 +1527,7 @@
 			children = (
 				2CE0CD2919720A0300217823 /* hoa.2d.encoder_tilde.cpp */,
 				2CE0CD2819720A0300217823 /* hoa.2d.decoder_tilde.cpp */,
+				2C4CA24D1B249C8D0032DF41 /* hoa.2d.exchanger_tilde.cpp */,
 				2CE0CD2A19720A0300217823 /* hoa.2d.map_tilde.cpp */,
 				2CE0CD2B19720A0300217823 /* hoa.2d.meter_gui_tilde.cpp */,
 				2CE0CD3119720A0300217823 /* hoa.2d.scope_gui_tilde.cpp */,
@@ -1494,6 +1551,7 @@
 			children = (
 				2CE0CD3919720A0300217823 /* hoa.3d.encoder_tilde.cpp */,
 				2CE0CD3819720A0300217823 /* hoa.3d.decoder_tilde.cpp */,
+				2C4CA24B1B249B630032DF41 /* hoa.3d.exchanger_tilde.cpp */,
 				2CE0CD3A19720A0300217823 /* hoa.3d.map_tilde.cpp */,
 				2CE0CD3B19720A0300217823 /* hoa.3d.meter_gui_tilde.cpp */,
 				2CE0CD3C19720A0300217823 /* hoa.3d.optim_tilde.cpp */,
@@ -1587,6 +1645,40 @@
 				2C0326A71A9E1D300076BE56 /* hoa.max_commonsyms.h in Headers */,
 				2C0326A81A9E1D300076BE56 /* hoa.max.math.h in Headers */,
 				2C0326AB1A9E1D300076BE56 /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA2501B249E5D0032DF41 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4CA2511B249E5D0032DF41 /* Hoa3D.max.h in Headers */,
+				2C4CA2521B249E5D0032DF41 /* Math.hpp in Headers */,
+				2C4CA2531B249E5D0032DF41 /* Signal.hpp in Headers */,
+				2C4CA2541B249E5D0032DF41 /* Hoa2D.max.h in Headers */,
+				2C4CA2551B249E5D0032DF41 /* Defs.hpp in Headers */,
+				2C4CA2561B249E5D0032DF41 /* hoa.max_commonsyms.h in Headers */,
+				2C4CA2571B249E5D0032DF41 /* hoa.max.math.h in Headers */,
+				2C4CA2581B249E5D0032DF41 /* Hoa.hpp in Headers */,
+				2C4CA2591B249E5D0032DF41 /* Tools.hpp in Headers */,
+				2C4CA25A1B249E5D0032DF41 /* hoa.max.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA26A1B24A17B0032DF41 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4CA26B1B24A17B0032DF41 /* Hoa3D.max.h in Headers */,
+				2C4CA26C1B24A17B0032DF41 /* Math.hpp in Headers */,
+				2C4CA26D1B24A17B0032DF41 /* Signal.hpp in Headers */,
+				2C4CA26E1B24A17B0032DF41 /* Hoa2D.max.h in Headers */,
+				2C4CA26F1B24A17B0032DF41 /* Defs.hpp in Headers */,
+				2C4CA2701B24A17B0032DF41 /* hoa.max_commonsyms.h in Headers */,
+				2C4CA2711B24A17B0032DF41 /* hoa.max.math.h in Headers */,
+				2C4CA2721B24A17B0032DF41 /* Hoa.hpp in Headers */,
+				2C4CA2731B24A17B0032DF41 /* Tools.hpp in Headers */,
+				2C4CA2741B24A17B0032DF41 /* hoa.max.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2250,6 +2342,44 @@
 			name = "c.freeverb~";
 			productName = iterator;
 			productReference = 2C0326B91A9E1D300076BE56 /* c.freeverb~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C4CA24F1B249E5D0032DF41 /* hoa.2d.exchanger~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C4CA2641B249E5D0032DF41 /* Build configuration list for PBXNativeTarget "hoa.2d.exchanger~" */;
+			buildPhases = (
+				2C4CA2501B249E5D0032DF41 /* Headers */,
+				2C4CA25B1B249E5D0032DF41 /* Resources */,
+				2C4CA25C1B249E5D0032DF41 /* Sources */,
+				2C4CA2601B249E5D0032DF41 /* Frameworks */,
+				2C4CA2631B249E5D0032DF41 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.2d.exchanger~";
+			productName = iterator;
+			productReference = 2C4CA2671B249E5D0032DF41 /* hoa.2d.exchanger~.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2C4CA2691B24A17B0032DF41 /* hoa.3d.exchanger~ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C4CA27E1B24A17B0032DF41 /* Build configuration list for PBXNativeTarget "hoa.3d.exchanger~" */;
+			buildPhases = (
+				2C4CA26A1B24A17B0032DF41 /* Headers */,
+				2C4CA2751B24A17B0032DF41 /* Resources */,
+				2C4CA2761B24A17B0032DF41 /* Sources */,
+				2C4CA27A1B24A17B0032DF41 /* Frameworks */,
+				2C4CA27D1B24A17B0032DF41 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hoa.3d.exchanger~";
+			productName = iterator;
+			productReference = 2C4CA2811B24A17B0032DF41 /* hoa.3d.exchanger~.mxo */;
 			productType = "com.apple.product-type.bundle";
 		};
 		2C9B39561A9E1F2700E6921E /* hoa.connect */ = {
@@ -2924,6 +3054,7 @@
 				2C9B3A4E1A9E39E400E6921E /* hoa.thisprocess~ */,
 				2C9B3A6A1A9E418A00E6921E /* hoa.2d.decoder~ */,
 				2C9B3A851A9E44F800E6921E /* hoa.2d.encoder~ */,
+				2C4CA24F1B249E5D0032DF41 /* hoa.2d.exchanger~ */,
 				2C9B3AA11A9E714B00E6921E /* hoa.2d.map~ */,
 				2C9B3ABB1A9E71C800E6921E /* hoa.2d.meter~ */,
 				2C9B3AD51A9E722F00E6921E /* hoa.2d.optim~ */,
@@ -2937,6 +3068,7 @@
 				2C9B3BA81A9E750300E6921E /* hoa.2d.wider~ */,
 				2C9B3BC21A9E763100E6921E /* hoa.3d.decoder~ */,
 				2C9B3BDC1A9E76B900E6921E /* hoa.3d.encoder~ */,
+				2C4CA2691B24A17B0032DF41 /* hoa.3d.exchanger~ */,
 				2C9B3BF61A9E776B00E6921E /* hoa.3d.map~ */,
 				2C9B3C101A9E77BD00E6921E /* hoa.3d.meter~ */,
 				2C9B3C291A9E77ED00E6921E /* hoa.3d.optim~ */,
@@ -2963,6 +3095,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C0326AC1A9E1D300076BE56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA25B1B249E5D0032DF41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA2751B24A17B0032DF41 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3218,6 +3364,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C0326B51A9E1D300076BE56 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA2631B249E5D0032DF41 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA27D1B24A17B0032DF41 /* Rez */ = {
 			isa = PBXRezBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3488,6 +3648,26 @@
 				2C0326BB1A9E1DDF0076BE56 /* c.freeverb_tilde.cpp in Sources */,
 				2C0326AF1A9E1D300076BE56 /* hoa.max.cpp in Sources */,
 				2C0326B01A9E1D300076BE56 /* hoa.library.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA25C1B249E5D0032DF41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4CA25E1B249E5D0032DF41 /* hoa.max.cpp in Sources */,
+				2C4CA25F1B249E5D0032DF41 /* hoa.library.cpp in Sources */,
+				2C4CA2851B24B1C20032DF41 /* hoa.2d.exchanger_tilde.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C4CA2761B24A17B0032DF41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C4CA2831B24A22F0032DF41 /* hoa.3d.exchanger_tilde.cpp in Sources */,
+				2C4CA2781B24A17B0032DF41 /* hoa.max.cpp in Sources */,
+				2C4CA2791B24A17B0032DF41 /* hoa.library.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3816,6 +3996,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4CA24E1B249C8D0032DF41 /* hoa.2d.exchanger_tilde.cpp in Sources */,
 				2CE93332196EB9B60079A368 /* hoa.max.cpp in Sources */,
 				2CE0CD6319720A0300217823 /* hoa.2d.meter_gui_tilde.cpp in Sources */,
 				2CE0CD6119720A0300217823 /* hoa.2d.encoder_tilde.cpp in Sources */,
@@ -3854,6 +4035,7 @@
 				2CE0CD8A19720A0300217823 /* hoa.process_tilde.cpp in Sources */,
 				2CE0CD6919720A0300217823 /* hoa.2d.scope_gui_tilde.cpp in Sources */,
 				2CE0CD8719720A0300217823 /* hoa.pi.cpp in Sources */,
+				2C4CA24C1B249B630032DF41 /* hoa.3d.exchanger_tilde.cpp in Sources */,
 				2C8781871A9BE0B600BA0E2B /* ChannelManager.cpp in Sources */,
 				2CE0CD7319720A0300217823 /* hoa.3d.optim_tilde.cpp in Sources */,
 				2CE0CD7D19720A0300217823 /* FFTConvolver.cpp in Sources */,
@@ -4126,6 +4308,62 @@
 				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
 				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
 				LIBRARY_SEARCH_PATHS = "";
+			};
+			name = Deployment;
+		};
+		2C4CA2651B249E5D0032DF41 /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+			};
+			name = Development;
+		};
+		2C4CA2661B249E5D0032DF41 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+			};
+			name = Deployment;
+		};
+		2C4CA27F1B24A17B0032DF41 /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
+			};
+			name = Development;
+		};
+		2C4CA2801B24A17B0032DF41 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CE9332C196EB7A30079A368 /* MaxHoaLibrary.xcconfig */;
+			buildSettings = {
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SSE41_EXTENSIONS = YES;
+				GCC_ENABLE_SSE42_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_FEEDBACK_DIRECTED_OPTIMIZATION = GenerateProfile;
+				GCC_USE_INDIRECT_FUNCTION_CALLS = YES;
+				GCC_USE_REGISTER_FUNCTION_CALLS = YES;
 			};
 			name = Deployment;
 		};
@@ -5165,6 +5403,24 @@
 			buildConfigurations = (
 				2C0326B71A9E1D300076BE56 /* Development */,
 				2C0326B81A9E1D300076BE56 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C4CA2641B249E5D0032DF41 /* Build configuration list for PBXNativeTarget "hoa.2d.exchanger~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C4CA2651B249E5D0032DF41 /* Development */,
+				2C4CA2661B249E5D0032DF41 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Deployment;
+		};
+		2C4CA27E1B24A17B0032DF41 /* Build configuration list for PBXNativeTarget "hoa.3d.exchanger~" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C4CA27F1B24A17B0032DF41 /* Development */,
+				2C4CA2801B24A17B0032DF41 /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Deployment;

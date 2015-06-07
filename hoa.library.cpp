@@ -30,6 +30,7 @@ int C74_EXPORT main(void)
     // HOA 2D //
     hoa_2d_decoder_main();
     hoa_2d_encoder_main();
+    hoa_2d_exchanger_main();
     hoa_2d_map_main();
     hoa_2d_meter_main();
     hoa_2d_optim_main();
@@ -45,6 +46,7 @@ int C74_EXPORT main(void)
     // HOA 3D //
     hoa_3d_decoder_main();
     hoa_3d_encoder_main();
+    hoa_3d_exchanger_main();
     hoa_3d_map_main();
     hoa_3d_meter_main();
     hoa_3d_optim_main();
