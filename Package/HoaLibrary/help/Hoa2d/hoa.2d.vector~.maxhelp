@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 106.0, 867.0, 756.0 ],
+						"rect" : [ 0.0, 26.0, 867.0, 756.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -146,7 +146,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 643.0, 334.0, 103.0, 22.0 ],
+									"patching_rect" : [ 682.0, 247.0, 103.0, 22.0 ],
 									"style" : "",
 									"text" : "0 30 110 250 330"
 								}
@@ -161,7 +161,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 601.0, 367.0, 93.0, 22.0 ],
+									"patching_rect" : [ 640.0, 280.0, 93.0, 22.0 ],
 									"style" : "",
 									"text" : "prepend angles"
 								}
@@ -176,7 +176,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 601.0, 310.0, 121.0, 22.0 ],
+									"patching_rect" : [ 640.0, 223.0, 121.0, 22.0 ],
 									"style" : "",
 									"text" : "0. 72. 144. 216. 288."
 								}
@@ -545,7 +545,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 39.748627, 440.0, 240.0, 21.0 ],
+									"patching_rect" : [ 13.748627, 442.0, 240.0, 21.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1186,16 +1186,18 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-2",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 5,
-									"numoutlets" : 4,
-									"outlettype" : [ "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 40.09494, 383.5, 239.540085, 21.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "signal" ],
+									"patching_rect" : [ 40.09494, 382.5, 239.540085, 34.0 ],
 									"style" : "",
-									"text" : "hoa.2d.vector~ 5"
+									"text" : "hoa.2d.vector~ 5 energy @angles 0 30 110 250 330"
 								}
 
 							}
@@ -1252,6 +1254,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-12",
@@ -1262,7 +1265,7 @@
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal" ],
 									"patching_rect" : [ 40.09494, 334.0, 239.540085, 34.0 ],
 									"style" : "",
-									"text" : "hoa.2d.decoder~ 7 @mode irregular @channels 5"
+									"text" : "hoa.2d.decoder~ 7 @mode irregular @channels 5 @angles 0 30 110 250 330"
 								}
 
 							}
@@ -1454,7 +1457,7 @@
 							}
 , 							{
 								"box" : 								{
-									"angles" : [ 0.0, 72.0, 144.0, 216.0, 288.0 ],
+									"angles" : [ 0.0, 30.0, 110.0, 250.0, 330.0 ],
 									"channels" : 5.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-53",
@@ -1491,7 +1494,7 @@
 									"destination" : [ "obj-66", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 270.59494, 222.0, 291.0, 222.0, 291.0, 426.0, 49.248627, 426.0 ],
+									"midpoints" : [ 270.59494, 222.0, 23.0, 222.0, 23.0, 426.0, 23.248627, 426.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1507,10 +1510,10 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-12", 14 ],
+									"destination" : [ "obj-12", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 610.5, 396.0, 555.317505, 396.0, 555.317505, 329.0, 270.135025, 329.0 ],
+									"midpoints" : [ 649.5, 330.5, 49.59494, 330.5 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -1607,10 +1610,10 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-12", 14 ],
+									"destination" : [ "obj-12", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 454.0, 274.0, 291.0, 274.0, 291.0, 330.0, 270.135025, 330.0 ],
+									"midpoints" : [ 454.0, 274.0, 334.0, 274.0, 334.0, 330.0, 49.59494, 330.0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -1629,7 +1632,7 @@
 									"destination" : [ "obj-5", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 123.108302, 417.75, 460.5, 417.75 ],
+									"midpoints" : [ 270.135025, 426.75, 460.5, 426.75 ],
 									"source" : [ "obj-2", 1 ]
 								}
 
@@ -1639,7 +1642,7 @@
 									"destination" : [ "obj-5", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 49.59494, 417.75, 350.344971, 417.75 ],
+									"midpoints" : [ 49.59494, 434.75, 350.344971, 434.75 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -1649,7 +1652,6 @@
 									"destination" : [ "obj-6", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 123.108302, 464.5, 270.248627, 464.5 ],
 									"source" : [ "obj-2", 1 ]
 								}
 
@@ -1995,7 +1997,7 @@
 									"destination" : [ "obj-3", 14 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 494.5, 244.0, 291.0, 244.0, 291.0, 285.0, 270.135025, 285.0 ],
+									"midpoints" : [ 494.5, 244.0, 310.0, 244.0, 310.0, 281.0, 270.135025, 281.0 ],
 									"source" : [ "obj-45", 1 ]
 								}
 
@@ -2069,23 +2071,41 @@
 									"destination" : [ "obj-11", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 652.5, 360.0, 610.5, 360.0 ],
+									"midpoints" : [ 691.5, 273.0, 649.5, 273.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-12", 14 ],
+									"destination" : [ "obj-12", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 454.0, 308.0, 291.0, 308.0, 291.0, 330.0, 270.135025, 330.0 ],
+									"midpoints" : [ 454.0, 330.0, 291.0, 330.0, 291.0, 330.0, 49.59494, 330.0 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
 							}
  ],
 						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjBlue-1",
 								"default" : 								{
 									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -2116,7 +2136,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 206.0, 27.0, 84.0, 20.0 ],
+					"patching_rect" : [ 206.0, 27.0, 84.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2397,7 +2417,7 @@
 									"maxclass" : "scope~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 40.258362, 503.5, 240.0, 240.0 ],
+									"patching_rect" : [ 40.450012, 506.5, 240.0, 240.0 ],
 									"style" : "",
 									"triglevel" : 1.99
 								}
@@ -2413,7 +2433,7 @@
 									"maxclass" : "scope~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 40.258362, 503.5, 240.0, 240.0 ],
+									"patching_rect" : [ 40.013229, 506.5, 240.0, 240.0 ],
 									"style" : "",
 									"triglevel" : 1.99
 								}
@@ -2473,7 +2493,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 40.258362, 414.5, 94.725014, 19.0 ],
+									"patching_rect" : [ 40.258362, 414.5, 92.0, 19.0 ],
 									"style" : "",
 									"text" : "Velocity vector :",
 									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
@@ -2520,7 +2540,7 @@
 									"maxclass" : "scope~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 39.764282, 503.5, 240.0, 240.0 ],
+									"patching_rect" : [ 40.258362, 506.5, 240.0, 240.0 ],
 									"style" : "",
 									"triglevel" : 1.99
 								}
@@ -2808,9 +2828,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 465.75, 580.0, 260.0, 87.0 ],
+									"patching_rect" : [ 465.75, 580.0, 261.0, 87.0 ],
 									"style" : "",
-									"text" : "The velocity vector (blue) caracterize th phase propagation.\nThe energy vector (red) gives the \"perceptive\" direction of the source.\nThe signal vector (green) gives the \"ideal\" direction of the source.",
+									"text" : "The velocity vector (red) caracterize the phase propagation.\nThe energy vector (blue) gives the \"perceptive\" direction of the source.\nThe signal vector (green) gives the \"ideal\" direction of the source.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[2]"
 								}
@@ -3051,7 +3071,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 554.0, 109.0, 51.0, 21.0 ],
+									"patching_rect" : [ 716.0, 161.0, 51.0, 21.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3074,7 +3094,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 554.0, 135.0, 99.0, 21.0 ],
+									"patching_rect" : [ 716.0, 187.0, 99.0, 21.0 ],
 									"saved_object_attributes" : 									{
 										"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
 										"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
@@ -3147,7 +3167,7 @@
 									"destination" : [ "obj-43", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 409.0, 488.0, 270.758362, 488.0 ],
+									"midpoints" : [ 409.0, 488.0, 270.950012, 488.0 ],
 									"source" : [ "obj-42", 1 ]
 								}
 
@@ -3157,7 +3177,7 @@
 									"destination" : [ "obj-43", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 329.0, 489.0, 49.758362, 489.0 ],
+									"midpoints" : [ 329.0, 489.0, 49.950012, 489.0 ],
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -3176,7 +3196,7 @@
 									"destination" : [ "obj-39", 0 ],
 									"disabled" : 0,
 									"hidden" : 1,
-									"midpoints" : [ 563.5, 126.0, 563.5, 126.0 ],
+									"midpoints" : [ 725.5, 178.0, 725.5, 178.0 ],
 									"source" : [ "obj-46", 0 ]
 								}
 
@@ -3802,7 +3822,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 79.0, 27.0, 119.0, 20.0 ],
+					"patching_rect" : [ 79.0, 27.0, 124.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3813,7 +3833,7 @@
 					}
 ,
 					"style" : "",
-					"text" : "p angular_resolution",
+					"text" : "p \"angular resolution\"",
 					"textcolor" : [ 0.209184, 0.209184, 0.209184, 1.0 ]
 				}
 
@@ -3839,7 +3859,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 867.0, 756.0 ],
+						"rect" : [ 100.0, 106.0, 867.0, 756.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -3869,6 +3889,40 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-14",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 537.428589, 454.0, 229.571411, 47.0 ],
+									"style" : "",
+									"text" : "by default both vectors are computed. To compute only one vector, pass \"velocity\" or \"energy\" symbol as second argument.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[3]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-15",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "hoa.2d.vector~", 0 ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 515.0, 397.0, 172.269485, 39.0 ],
+									"presentation_rect" : [ 515.0, 397.0, 172.269485, 39.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
@@ -3990,7 +4044,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 479.5, 192.0, 264.0, 87.0 ],
+									"patching_rect" : [ 416.0, 580.0, 261.0, 87.0 ],
 									"style" : "",
 									"text" : "The velocity vector (red) caracterize the phase propagation.\nThe energy vector (blue) gives the \"perceptive\" direction of the source.\nThe signal vector (green) gives the \"ideal\" direction of the source.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -4009,7 +4063,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 479.5, 192.0, 260.0, 87.0 ],
+									"patching_rect" : [ 416.0, 580.0, 260.0, 87.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -5344,7 +5398,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 22.0, 27.0, 51.0, 20.0 ],
+					"patching_rect" : [ 22.0, 27.0, 51.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -5413,7 +5467,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 341.0, 28.0, 50.0, 20.0 ],
+					"patching_rect" : [ 341.0, 28.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -5451,6 +5505,12 @@
 				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpargs.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

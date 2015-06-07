@@ -384,7 +384,7 @@ t_max_err angles_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *arg
 
 void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
 {
-    // @arg 0 @name ambisonic-order @optional 0 @type int @digest The ambisonic order of decomposition
+    // @arg 0 @name decomposition-order @optional 0 @type int @digest The ambisonic order of decomposition
     // @description First argument is the ambisonic order of decomposition.
     
     t_hoa_2d_decoder *x = (t_hoa_2d_decoder *)object_alloc(hoa_2d_decoder_class);

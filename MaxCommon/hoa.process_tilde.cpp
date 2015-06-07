@@ -343,11 +343,11 @@ int C74_EXPORT main(void)
 
 void *hoa_processor_new(t_symbol *s, short argc, t_atom *argv)
 {
-    // @arg 0 @name ambisonic-order/number-of-channels @optional 0 @type int @digest the ambisonic order or the number of channels.
+    // @arg 0 @name decomposition-order/number-of-channels @optional 0 @type int @digest the ambisonic order or the number of channels.
     // @description First argument is the ambisonic order or the number of channels depending on the third argument (process mode : harmonics/planewaves).
     // In planewaves mode (2d/3d) the number of instances will be equal to the number of channel specified by this argument.
     // In harmonics mode, the number of instances will be equal to the number of harmonics depending on the order of decomposition.
-    // In 2d it will be equal to (ambisonic-order*2 + 1), in 2d to ((ambisonic-order+1)*(ambisonic-order+1))
+    // In 2d it will be equal to (decomposition-order*2 + 1), in 2d to ((decomposition-order+1)*(decomposition-order+1))
     
     // @arg 1 @name patcher-name @optional 0 @type symbol @digest Name of a patcher to be loaded.
     // @description The second argument must specify the name of a patcher to be loaded which already exists and is in the Max search path.

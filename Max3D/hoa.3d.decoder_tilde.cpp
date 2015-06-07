@@ -272,7 +272,7 @@ void hoa_3d_decoder_free(t_hoa_3d_decoder *x)
 
 void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
 {
-    // @arg 0 @name ambisonic-order @optional 0 @type int @digest The ambisonic order of decomposition
+    // @arg 0 @name decomposition-order @optional 0 @type int @digest The ambisonic order of decomposition
     // @description First argument is the ambisonic order of decomposition.
     
     t_hoa_3d_decoder *x = (t_hoa_3d_decoder *)object_alloc((t_class*)hoa_3d_decoder_class);
