@@ -28,12 +28,41 @@
 
 #include "Hoa2D.max.h"
 
-typedef struct _hoa_2d_decoder 
+template<class T> class SharedPtr
+{
+private:
+    T* p;
+    unsigned* c;
+    template<class U> friend class SharedPtr;
+public:
+    inline SharedPtr() noexcept : p(), c() {}
+    inline explicit SharedPtr(T* s) noexcept :p(s), c(new unsigned(1)) {}
+    inline SharedPtr(const SharedPtr& s) noexcept :p(s.p), c(s.c) { if(c) ++*c; }
+    inline SharedPtr& operator=(const SharedPtr& s)  noexcept
+    { if(this!=&s) { clear(); p=s.p; c=s.c; if(c) ++*c; } return *this; }
+    template<class U> inline SharedPtr(const SharedPtr<U>& s) noexcept : p(s.p), c(s.c) { if(c) ++*c; }
+    inline ~SharedPtr() noexcept {clear();}
+    inline void clear() noexcept
+    {
+        if(c)
+        {
+            if(*c==1) delete p;
+            if(!--*c) delete c;
+        }
+        c=0; p=0;
+    }
+    
+    inline T* get() const noexcept {return c ? p: 0;}
+    inline T* operator->() const noexcept {return c ? p: 0;}
+    inline T& operator*() const noexcept {return *get();}
+};
+
+typedef struct _hoa_2d_decoder
 {
 	t_pxobject                              f_ob;
-    shared_ptr<Decoder<Hoa2d, t_sample>>    f_decoder;
-    t_sample*                               f_ins;
-    t_sample*                               f_outs;
+    SharedPtr<Decoder<Hoa2d, float>>     f_decoder;
+    float*                               f_ins;
+    float*                               f_outs;
     long                                    f_number_of_channels;
     double                                  f_angles_of_channels[HOA_MAX_PLANEWAVES];
     double                                  f_offset;
@@ -63,18 +92,53 @@ t_hoa_err hoa_getinfos(t_hoa_2d_decoder* x, t_hoa_boxinfos* boxinfos)
 
 void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins, long numins, t_sample **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
-    shared_ptr<Decoder<Hoa2d, t_sample>> decoder = x->f_decoder;
-    for(int i = 0; i < numins; i++)
+    SharedPtr<Decoder<Hoa2d, float>> decoder = x->f_decoder;
+    if(decoder->getMode() == typeid(Decoder<Hoa2d, t_sample>::Binaural))
     {
-        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+        for(int i = 0; i < numins; i++)
+        {
+            ulong is = 0ul;
+            ulong id = 0ul;
+            float* dest = x->f_ins+i;
+            for(ulong j = 0ul; j < sampleframes; j++)
+            {
+                dest[id] = ins[i][is];
+                is += 1;
+                id += numins;
+            }
+        }
+        (static_cast<Decoder<Hoa2d, float>::Binaural*>(decoder.get()))->processBlock(x->f_ins, x->f_outs);
+        for(int i = 0; i < sampleframes; i++)
+        {
+            outs[0][i] = x->f_outs[i];
+        }
+        for(int i = 0; i < sampleframes; i++)
+        {
+            outs[1][i] = x->f_outs[i+sampleframes];
+        }
     }
-	for(int i = 0; i < sampleframes; i++)
+    else
     {
-        decoder->process(x->f_ins + numins * i, x->f_outs + numouts * i);
-    }
-    for(int i = 0; i < numouts; i++)
-    {
-        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        for(int i = 0; i < numins; i++)
+        {
+            ulong is = 0ul;
+            ulong id = 0ul;
+            float* dest = x->f_ins+i;
+            for(ulong j = 0ul; j < sampleframes; j++)
+            {
+                dest[id] = ins[i][is];
+                is += 1;
+                id += numins;
+            }
+        }
+        for(int i = 0; i < sampleframes; i++)
+        {
+            decoder->process(x->f_ins + numins * i, x->f_outs + numouts * i);
+        }
+        for(int i = 0; i < numouts; i++)
+        {
+            //Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        }
     }
 }
 
@@ -223,15 +287,15 @@ void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, 
         object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
         if(mode == hoa_sym_ambisonic)
         {
-            x->f_decoder = make_shared<Decoder<Hoa2d, t_sample>::Regular>(order, Math<long>::clip(channels, order*2+1, HOA_MAX_PLANEWAVES));
+            x->f_decoder = SharedPtr<Decoder<Hoa2d, float>>(new Decoder<Hoa2d, float>::Regular(order, Math<long>::clip(channels, order*2+1, HOA_MAX_PLANEWAVES)));
         }
         else if(mode == hoa_sym_irregular)
         {
-            x->f_decoder = make_shared<Decoder<Hoa2d, t_sample>::Irregular>(order, Math<long>::clip(channels, 2, HOA_MAX_PLANEWAVES));
+            x->f_decoder = SharedPtr<Decoder<Hoa2d, float>>(new Decoder<Hoa2d, float>::Irregular(order, Math<long>::clip(channels, 2, HOA_MAX_PLANEWAVES)));
         }
         else if(modeChanged && mode == hoa_sym_binaural)
         {
-            x->f_decoder = make_shared<Decoder<Hoa2d, t_sample>::Binaural>(order);
+            x->f_decoder = SharedPtr<Decoder<Hoa2d, float>>(new Decoder<Hoa2d, float>::Binaural(order));
             x->f_decoder->computeRendering(sys_getblksize());
         }
         
@@ -343,7 +407,7 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         x->f_send_config = 1;
         x->f_mode = hoa_sym_ambisonic;
         
-        x->f_decoder = make_shared<Decoder<Hoa2d, t_sample>::Regular>(order, number_of_channels);
+        x->f_decoder = SharedPtr<Decoder<Hoa2d, float>>(new Decoder<Hoa2d, float>::Regular(order, number_of_channels));
         x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
         
         dsp_setup((t_pxobject *)x, x->f_decoder->getNumberOfHarmonics());
@@ -351,8 +415,8 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
             outlet_new(x, "signal");
         
         x->f_ob.z_misc = Z_NO_INPLACE;
-        x->f_ins  = new t_sample[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
-        x->f_outs = new t_sample[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
+        x->f_ins  = new float[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
+        x->f_outs = new float[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
         
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
         {
