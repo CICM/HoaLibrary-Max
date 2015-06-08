@@ -1,8 +1,8 @@
 /*
- // Copyright (c) 2012-2013 Eliott Paris & Pierre Guillot, CICM, Universite Paris 8.
- // For information on usage and redistribution, and for a DISCLAIMER OF ALL
- // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
- */
+// Copyright (c) 2012-2015 Eliott Paris, Julien Colafrancesco & Pierre Guillot, CICM, Universite Paris 8.
+// For information on usage and redistribution, and for a DISCLAIMER OF ALL
+// WARRANTIES, see the file, "LICENSE.txt," in this distribution.
+*/
 
 /**
  @file      hoa.3d.exchanger~.cpp
@@ -103,13 +103,13 @@ void *hoa_3d_exchanger_new(t_symbol *s, long argc, t_atom *argv)
     t_hoa_3d_exchanger *x = (t_hoa_3d_exchanger *)object_alloc((t_class*)hoa_3d_exchanger_class);
     if(x)
     {
-        Exchanger<Hoa3d, t_sample>::Normalization   norm = Exchanger<Hoa3d, t_sample>::SN3D;
-        Exchanger<Hoa3d, t_sample>::Numbering       numb = Exchanger<Hoa3d, t_sample>::ACN;
-        
         long order = 1l;
         
         if(argc && argv && atom_gettype(argv) == A_LONG)
             order = Math<long>::clip(atom_getlong(argv), 1l, 10l);
+        
+        Exchanger<Hoa3d, t_sample>::Normalization   norm = Exchanger<Hoa3d, t_sample>::SN3D;
+        Exchanger<Hoa3d, t_sample>::Numbering       numb = Exchanger<Hoa3d, t_sample>::ACN;
         
         for(int i = 1; i < 3; i++)
         {
@@ -169,7 +169,7 @@ void *hoa_3d_exchanger_new(t_symbol *s, long argc, t_atom *argv)
                 }
                 else
                 {
-                    object_error((t_object*)x, "%s : wrong symbol.", atom_getsym(argv+1)->s_name);
+                    object_error((t_object*)x, "%s : wrong symbol.", atom_getsym(argv+i)->s_name);
                 }
             }
         }
