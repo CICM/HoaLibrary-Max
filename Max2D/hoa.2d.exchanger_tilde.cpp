@@ -50,6 +50,12 @@ t_hoa_err hoa_getinfos(t_hoa_2d_exchanger* x, t_hoa_boxinfos* boxinfos)
     return HOA_ERR_NONE;
 }
 
+t_hoa_err hoa_get_output_harmonic_order(t_hoa_2d_exchanger* x, ulong index, long* order)
+{
+    *order = x->f_exchanger->getOutputHarmonicOrder(index);
+    return HOA_ERR_NONE;
+}
+
 void hoa_2d_exchanger_assist(t_hoa_2d_exchanger *x, void *b, long m, long a, char *s)
 {
     if(m == ASSIST_INLET)
@@ -204,6 +210,9 @@ int C74_EXPORT main(void)
     // @description Array of circular harmonic signals.
     class_addmethod(c, (method)hoa_2d_exchanger_dsp,		"dsp64",	A_CANT, 0);
     class_addmethod(c, (method)hoa_2d_exchanger_assist,		"assist",	A_CANT, 0);
+    
+    // @internal : used by hoa.connect object to color patchlines depending on exchanger numbering config.
+    class_addmethod(c, (method)hoa_get_output_harmonic_order, "hoa_get_output_harmonic_order", A_CANT, 0);
     
     class_dspinit(c);
     class_register(CLASS_BOX, c);
