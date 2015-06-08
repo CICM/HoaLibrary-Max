@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 545.0, 112.0, 1018.0, 612.0 ],
+		"rect" : [ 388.0, 112.0, 1018.0, 612.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -706,6 +706,19 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "int" ],
+													"patching_rect" : [ 72.25, 107.201172, 29.5, 22.0 ],
+													"style" : "",
+													"text" : "- 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
@@ -1196,6 +1209,15 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-32", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
@@ -1368,7 +1390,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-32", 0 ],
+													"destination" : [ "obj-3", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-42", 0 ]
@@ -1584,7 +1606,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 507.5, 85.5, 70.0, 21.0 ],
 									"style" : "",
-									"text" : "loadmess 7"
+									"text" : "loadmess 3"
 								}
 
 							}
@@ -1593,14 +1615,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-42",
-									"linecount" : 6,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 507.5, 185.0, 208.5, 21.0 ],
+									"patching_rect" : [ 507.5, 185.0, 252.5, 21.0 ],
 									"style" : "",
-									"text" : "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64"
+									"text" : "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"
 								}
 
 							}
@@ -1649,6 +1670,19 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "int" ],
+													"patching_rect" : [ 75.5, 107.201172, 29.5, 22.0 ],
+													"style" : "",
+													"text" : "- 1"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-2",
 													"maxclass" : "newobj",
@@ -1786,6 +1820,15 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-32", 0 ],
+													"disabled" : 0,
+													"hidden" : 0,
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-37", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
@@ -1814,7 +1857,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-32", 0 ],
+													"destination" : [ "obj-3", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
 													"source" : [ "obj-42", 0 ]
@@ -2874,19 +2917,19 @@
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-23",
-									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 247.5, 477.0, 208.5, 21.0 ],
 									"style" : "",
-									"text" : "0 -1 0 1 -2 -1 0 1 2 -3 -2 -1 0 1 2 3 -4 -3 -2 -1 0 1 2 3 4 -5 -4 -3 -2 -1 0 1 2 3 4 5 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7"
+									"text" : "0 -1 0 1 -2 -1 0 1 2 -3 -2 -1 0 1 2 3"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"hidden" : 1,
@@ -2897,7 +2940,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 247.5, 384.5, 70.0, 21.0 ],
 									"style" : "",
-									"text" : "loadmess 7"
+									"text" : "loadmess 3"
 								}
 
 							}
@@ -9038,7 +9081,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 201.440063, 364.0, 84.0 ],
+					"patching_rect" : [ 7.0, 201.440063, 367.0, 84.0 ],
 					"style" : "",
 					"text" : "The harmonics depend on a degree l and an (azimuthal) order m. \nFor the circular harmonics, each degree l includes 2 harmonics which orders are m = -l and m = l (the degree 0 has 1 harmonic with the order 0). For the spherical harmonics, each degree l has 2l+1 harmonics witch the orders go from -l to l. In fact, the circular harmonics are particular cases of the spherical harmonics.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -9072,7 +9115,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 102.940063, 364.0, 71.0 ],
+					"patching_rect" : [ 7.0, 102.940063, 367.0, 71.0 ],
 					"style" : "",
 					"text" : "These functions are circular in 2d and spherical in 3d. That means they take angles as variables and the result of the functions differs according to the value of the angles. These angles are the azimuth θ for the circular harmonics or the azimuth θ and the elevation φ for the spherical harmonics.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]

@@ -53,9 +53,9 @@ t_hoa_err hoa_getinfos(t_hoa_2d_exchanger* x, t_hoa_boxinfos* boxinfos)
 void hoa_2d_exchanger_assist(t_hoa_2d_exchanger *x, void *b, long m, long a, char *s)
 {
     if(m == ASSIST_INLET)
-        sprintf(s,"(signal) %s", x->f_exchanger->getHarmonicName(a).c_str());
+        sprintf(s,"(signal) %s", x->f_exchanger->getHarmonicName(a, true).c_str());
     else
-        sprintf(s,"(signal) %s", x->f_exchanger->getHarmonicName(a).c_str());
+        sprintf(s,"(signal) %s", x->f_exchanger->getHarmonicName(a, false).c_str());
 }
 
 void hoa_2d_exchanger_perform(t_hoa_2d_exchanger *x, t_object *dsp, t_sample **ins, long nins, t_sample **outs, long numouts, long sampleframes, long f,void *up)

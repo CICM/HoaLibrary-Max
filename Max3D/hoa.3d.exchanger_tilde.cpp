@@ -53,9 +53,9 @@ t_hoa_err hoa_getinfos(t_hoa_3d_exchanger* x, t_hoa_boxinfos* boxinfos)
 void hoa_3d_exchanger_assist(t_hoa_3d_exchanger *x, void *b, long m, long a, char *s)
 {
     if(m == ASSIST_INLET)
-        sprintf(s,"(signal) %s", x->f_exchanger->getHarmonicName(a).c_str());
+        sprintf(s,"(signal) %s", x->f_exchanger->getHarmonicName(a, true).c_str());
     else
-        sprintf(s,"(signal) %s", x->f_exchanger->getHarmonicName(a).c_str());
+        sprintf(s,"(signal) %s", x->f_exchanger->getHarmonicName(a, false).c_str());
 }
 
 void hoa_3d_exchanger_perform(t_hoa_3d_exchanger *x, t_object *dsp, t_sample **ins, long numins, t_sample **outs, long numouts, long sampleframes, long f, void *up)
@@ -92,6 +92,13 @@ void *hoa_3d_exchanger_new(t_symbol *s, long argc, t_atom *argv)
 {
     // @arg 0 @name decomposition-order @optional 0 @type int @digest The ambisonic order of decomposition
     // @description First argument is the ambisonic order of decomposition.
+    
+    // @arg 1 @name numbering @optional 1 @type symbol @digest The numbering format.
+    // @description numbering format can be "toFurseMalham", "toSID", "fromFurseMalham", "fromSID"
+    
+    // @arg 2 @name normalisation @optional 1 @type symbol @digest The normalisation format.
+    // @description numbering format can be "toMaxN", "toN3D", "fromMaxN", "fromN3D".
+    // Numbering and Normalisation args can be combined into a single as follows : "toBFormat" (aka. toFurseMalham & toMaxN), "toDaniel" (aka. toSID & toN3D), "fromBFormat" (aka. fromFurseMalham & fromMaxN), "fromDaniel" (aka. fromSID & fromN3D).
     
     t_hoa_3d_exchanger *x = (t_hoa_3d_exchanger *)object_alloc((t_class*)hoa_3d_exchanger_class);
     if(x)
