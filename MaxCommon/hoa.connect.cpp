@@ -451,7 +451,7 @@ void *connect_new(t_symbol *s, long argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_connect_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -497,6 +497,4 @@ int C74_EXPORT main(void)
     
     class_register(CLASS_BOX, c);
     connect_class = c;
-    hoa_print_credit();
-    return 0;
 }

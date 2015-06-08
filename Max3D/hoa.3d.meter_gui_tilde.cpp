@@ -893,7 +893,7 @@ void *hoa_meter_3d_new(t_symbol *s, int argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_3d_meter_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -1034,8 +1034,6 @@ int C74_EXPORT main(void)
     CLASS_STICKY_CATEGORY_CLEAR(c);
     
     class_register(CLASS_BOX, c);
-    hoa_meter_3d_class = c;
-    
-    return 0;
+    hoa_meter_3d_class = c;    
 }
 

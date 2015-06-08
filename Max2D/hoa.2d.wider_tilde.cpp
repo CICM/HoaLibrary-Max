@@ -148,7 +148,7 @@ void hoa_2d_wider_free(t_hoa_2d_wider *x)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_wider_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     
@@ -176,8 +176,4 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.wider~"));
     hoa_2d_wider_class = c;
-    
-    return 0;
 }
-
-

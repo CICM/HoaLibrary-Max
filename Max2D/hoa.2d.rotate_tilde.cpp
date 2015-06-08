@@ -151,7 +151,7 @@ void hoa_rotate_free(t_hoa_rotate *x)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_rotate_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -178,6 +178,4 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.rotate~"));
     hoa_rotate_class = c;
-    
-    return 0;
 }

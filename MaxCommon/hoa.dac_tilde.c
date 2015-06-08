@@ -176,7 +176,7 @@ void hoa_dac_free(t_hoa_dac *x)
 #ifdef HOA_PACKED_LIB
 int hoa_dac_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -228,5 +228,4 @@ int C74_EXPORT main(void)
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     hoa_dac_class = c;
-    return 0;
 }

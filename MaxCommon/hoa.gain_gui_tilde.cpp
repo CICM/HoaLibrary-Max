@@ -931,7 +931,7 @@ void *hoa_gain_new(t_symbol *s, short argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_gain_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -1081,7 +1081,5 @@ int C74_EXPORT main(void)
     CLASS_ATTR_SAVE             (c, "range", 1);
     
     class_register(CLASS_BOX, c);
-    s_hoa_gain_class = c;
-    
-    return 0;
+    s_hoa_gain_class = c;    
 }

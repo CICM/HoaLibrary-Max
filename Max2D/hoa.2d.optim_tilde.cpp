@@ -194,7 +194,7 @@ void *hoa_optim_new(t_symbol *s, long argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_optim_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     
@@ -226,7 +226,5 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.optim~"));
     hoa_optim_class = c;
-    
-    return 0;
 }
 

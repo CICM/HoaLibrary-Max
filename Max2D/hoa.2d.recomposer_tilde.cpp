@@ -341,7 +341,7 @@ void *hoa_recomposer_new(t_symbol *s, long argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_recomposer_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -380,6 +380,5 @@ int C74_EXPORT main(void)
     class_alias(c, gensym("hoa.recomposer~"));
     
     hoa_recomposer_class = c;
-    return 0;
 }
 

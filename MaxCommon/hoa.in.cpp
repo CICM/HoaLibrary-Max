@@ -143,7 +143,7 @@ void hoa_in_assist(t_hoa_in *x, void *b, long m, long a, char *s)
 #ifdef HOA_PACKED_LIB
 int hoa_in_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class* c;
@@ -175,5 +175,4 @@ int C74_EXPORT main(void)
     
     class_register(CLASS_BOX, c);
     hoa_in_class = c;
-    return 0;
 }

@@ -243,7 +243,7 @@ void freeverb_freeze(t_freeverb *x, long n);
 #ifdef HOA_PACKED_LIB
 int c_freeverb_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
 	t_class *c;
@@ -274,7 +274,6 @@ int C74_EXPORT main(void)
     class_dspinit(c);
     class_register(CLASS_BOX, c);
 	freeverb_class = c;
-    return 0;
 }
 
 void *freeverb_new(t_symbol *s, int argc, t_atom *argv)

@@ -392,7 +392,7 @@ void hoa_map_tilde_free(t_hoa_map_tilde *x)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_map_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -444,5 +444,4 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.map~"));
     hoa_map_tilde_class = c;
-    return 0;
 }

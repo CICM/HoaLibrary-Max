@@ -800,7 +800,7 @@ void *hoa_2d_space_new(t_symbol *s, int argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_space_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -962,6 +962,4 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.space"));
     hoa_2d_space_class = c;
-    
-    return 0;
 }
