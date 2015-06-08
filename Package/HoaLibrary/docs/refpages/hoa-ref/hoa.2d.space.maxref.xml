@@ -61,21 +61,6 @@
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-		<attribute name="bdcolor" get="1" set="1" type="" size="1">
-			<digest>
-				Border Color
-			</digest>
-			<description>
-				Sets the RGBA values for the border color of the <o>hoa.2d.space</o> object
-			</description>
-			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.7 0.7 0.7 1." />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Border Color" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
-			</attributelist>
-		</attribute>
 		<attribute name="bgcolor" get="1" set="1" type="" size="1">
 			<digest>
 				Background Color
@@ -101,6 +86,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="int" size="1" value="4" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Number of Channels" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
@@ -116,6 +102,7 @@
 				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Style" />
 				<attribute name="default" get="1" set="1" type="int" size="1" value="0" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Draw Text Value" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="onoff" />
 			</attributelist>
@@ -130,6 +117,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Float Output" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="onoff" />
 			</attributelist>
@@ -145,8 +133,24 @@
 				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Value" />
 				<attribute name="default" get="1" set="1" type="int" size="1" value="4" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Grid Size" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
+			</attributelist>
+		</attribute>
+		<attribute name="linescolor" get="1" set="1" type="" size="1">
+			<digest>
+				Lines Color
+			</digest>
+			<description>
+				Sets the RGBA values for the border color of the <o>hoa.2d.space</o> object
+			</description>
+			<attributelist>
+				<attribute name="default" get="1" set="1" type="" size="1" value="0.65098 0.666667 0.662745 1." />
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Lines Color" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
+				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
+				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
 			</attributelist>
 		</attribute>
 		<attribute name="minmax" get="1" set="1" type="float_array" size="0">
@@ -159,6 +163,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="float_array" size="0" value="0. 1." />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Range" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
@@ -188,6 +193,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Save Object State with Patcher" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="onoff" />
 			</attributelist>
@@ -222,6 +228,7 @@
 				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Style" />
 				<attribute name="default" get="1" set="1" type="symbol" size="1" value="Blob" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Slider Style" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
@@ -236,6 +243,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="int" size="1" value="0" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Snap to Grid" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="onoff" />
 			</attributelist>

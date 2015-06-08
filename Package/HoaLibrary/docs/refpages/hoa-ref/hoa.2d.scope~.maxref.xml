@@ -42,22 +42,6 @@
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-		<attribute name="bdcolor" get="1" set="1" type="" size="1">
-			<digest>
-				Border Color
-			</digest>
-			<description>
-				Sets the RGBA values for the border color of the <o>hoa.2d.scope~</o> object
-			</description>
-			<attributelist>
-				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Color" />
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.7 0.7 0.7 1." />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Border Color" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
-			</attributelist>
-		</attribute>
 		<attribute name="bgcolor" get="1" set="1" type="" size="1">
 			<digest>
 				Background Color
@@ -95,6 +79,7 @@
 				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Behavior" />
 				<attribute name="default" get="1" set="1" type="float" size="1" value="1." />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Gain" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
@@ -110,8 +95,25 @@
 				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Behavior" />
 				<attribute name="default" get="1" set="1" type="int" size="1" value="100" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Refresh Interval in Milliseconds" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
+			</attributelist>
+		</attribute>
+		<attribute name="linescolor" get="1" set="1" type="" size="1">
+			<digest>
+				Lines Color
+			</digest>
+			<description>
+				Sets the RGBA values for the lines color of the <o>hoa.2d.scope~</o> object
+			</description>
+			<attributelist>
+				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Color" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0.65098 0.666667 0.662745 1." />
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Lines Color" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
+				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
+				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
 			</attributelist>
 		</attribute>
 		<attribute name="nhcolor" get="1" set="1" type="" size="1">
@@ -141,6 +143,7 @@
 				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Ambisonic" />
 				<attribute name="default" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Ambisonic Order" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
@@ -152,7 +155,7 @@
 			<description>
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 225 225" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 150 150" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>

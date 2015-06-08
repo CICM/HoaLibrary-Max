@@ -133,16 +133,18 @@
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-		<attribute name="bdcolor" get="1" set="1" type="" size="1">
+		<attribute name="barcolor" get="1" set="1" type="" size="1">
 			<digest>
-				Border Color
+				Value Bar Color
 			</digest>
 			<description>
-				Sets the RGBA values for the border color of the <o>hoa.gain~</o> object
+				Sets the RGBA values for the value bar color of the <o>hoa.gain~</o> object
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.2 0.2 0.2 1." />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Border Color" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0.396078 0.396078 0.396078 0.6" />
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Value Bar Color" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
+				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
 			</attributelist>
 		</attribute>
@@ -154,7 +156,7 @@
 				Sets the RGBA values for the background color of the <o>hoa.gain~</o> object
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.35 0.35 0.35 1." />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0.611765 0.611765 0.611765 1." />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Background Color" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
 			</attributelist>
@@ -225,31 +227,16 @@
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>
-		<attribute name="intknobcolor" get="1" set="1" type="" size="1">
-			<digest>
-				Interior Knob Color
-			</digest>
-			<description>
-				Sets the RGBA values for the interior knob color of the <o>hoa.gain~</o> object
-			</description>
-			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.9 0.9 0.9 1" />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Interior Knob Color" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
-			</attributelist>
-		</attribute>
 		<attribute name="knobcolor" get="1" set="1" type="" size="1">
 			<digest>
-				Knob Background Color
+				Knob Color
 			</digest>
 			<description>
 				Sets the RGBA values for the knob color of the <o>hoa.gain~</o> object
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.16 0.16 0.16 1" />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Knob Background Color" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0.396078 0.396078 0.396078 1." />
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Knob Color" />
 				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
@@ -300,7 +287,7 @@
 			<description>
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0. 0. 200. 30." />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0. 0. 140. 22." />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>
@@ -359,6 +346,32 @@
 		<seealso name="hoa.process~" />
 		<seealso name="hoa.fx.gain~" />
 	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlets 1, 2, 3... (signal)">
+			<description>
+				input signals to be scaled..
+			</description>
+		</entry>
+		<entry name ="The last Inlet (float)">
+			<description>
+				slider value..
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlets 1, 2, 3... (signal)">
+			<description>
+				output corresponding input scaled signal..
+			</description>
+		</entry>
+		<entry name ="The last Outlet (float)">
+			<description>
+				output slider value..
+			</description>
+		</entry>
+	</misc>
 
 	<misc name = "Discussion">
 		<entry name ="More details">

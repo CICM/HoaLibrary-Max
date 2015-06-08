@@ -13,7 +13,7 @@
  @author    Julien Colafrancesco, Pierre Guillot, Eliott Paris.
  
  @digest
- A circular array of visual peak level indicators
+ A circular array of visual peak level indicators.
  
  @description
  The <o>hoa.2d.meter~</o> object displays the peak levels for a circular array of loudspeakers. It computes and displays the energy and velocity vectors.

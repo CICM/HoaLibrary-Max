@@ -115,6 +115,14 @@
 		<seealso name="hoa.process~" />
 	</seealsolist>
 
+	<misc name = "Input">
+		<entry name ="Inlet 1 (bang)">
+			<description>
+				bang to connect objects and color patchlines.
+			</description>
+		</entry>
+	</misc>
+
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>

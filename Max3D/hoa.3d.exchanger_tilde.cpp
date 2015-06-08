@@ -20,10 +20,6 @@
  
  @discussion
  The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard.
- The exchanger can take one or two arguments for the numbering and the normalization.
- Numbering : toFurseMalham/toSID/fromFurseMalham/fromSID
- Normaliaztion : toMaxN/toN3D/fromMaxN/fromN3D
- The standards : toBFormat (aka. toFurseMalham & toMaxN)/toDaniel (aka. toSID & toN3D)/fromBFormat (aka. fromFurseMalham & fromMaxN)/fromDaniel (aka. fromSID & fromN3D)
  
  @category ambisonics, hoa objects, audio, MSP
  
@@ -104,7 +100,7 @@ void *hoa_3d_exchanger_new(t_symbol *s, long argc, t_atom *argv)
     
     // @arg 2 @name normalisation @optional 1 @type symbol @digest The normalisation format.
     // @description numbering format can be "toMaxN", "toN3D", "fromMaxN", "fromN3D".
-    // Numbering and Normalisation args can be combined into a single as follows : "toBFormat" (aka. toFurseMalham & toMaxN), "toDaniel" (aka. toSID & toN3D), "fromBFormat" (aka. fromFurseMalham & fromMaxN), "fromDaniel" (aka. fromSID & fromN3D).
+    // Numbering and Normalisation args can be combined into a single as follows : "toBFormat" (aka. toFurseMalham toMaxN), "toDaniel" (aka. toSID toN3D), "fromBFormat" (aka. fromFurseMalham fromMaxN), "fromDaniel" (aka. fromSID fromN3D).
     
     t_hoa_3d_exchanger *x = (t_hoa_3d_exchanger *)object_alloc((t_class*)hoa_3d_exchanger_class);
     if(x)

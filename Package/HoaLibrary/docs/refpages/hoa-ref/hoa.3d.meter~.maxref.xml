@@ -32,10 +32,10 @@
 		<method name="signal">
 			<arglist />
 			<digest>
-				Array of signals to be visualize.
+				Array of signals to be visualized.
 			</digest>
 			<description>
-				Array of signals to be visualize.
+				Array of signals to visualized.
 			</description>
 		</method>
 	</methodlist>
@@ -50,25 +50,10 @@
 				The angles of displayed channels and peak level indicators. Values are in degrees, wrapped between 0. and 360. The list lenght must be equal to 2*<m>channels</m> : interleaved azimuth and elevation value for each channels.
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="float_array" size="0" value="0 45 90 45 180 45 270 45 0 -45 90 -45 180 -45 270 -45" />
+				<attribute name="default" get="1" set="1" type="float_array" size="0" value="45 35.2644 135 35.2644 225 35.2644 315 35.2644 45 -35.2644 135 -35.2644 225 -35.2644 315 -35.2644" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Angles of Channels" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
-			</attributelist>
-		</attribute>
-		<attribute name="bdcolor" get="1" set="1" type="" size="1">
-			<digest>
-				Border Color
-			</digest>
-			<description>
-				Sets the RGBA values for the border color of the <o>hoa.3d.meter~</o> object
-			</description>
-			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.7 0.7 0.7 1." />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Border Color" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
 			</attributelist>
 		</attribute>
 		<attribute name="bgcolor" get="1" set="1" type="" size="1">
@@ -177,14 +162,14 @@
 				Sets the RGBA values for the off signal color of the <o>hoa.2d.meter~</o> object
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0. 0. 0. 0.2" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0. 0. 0. 0.1" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Off Signal Color" />
 				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
 			</attributelist>
 		</attribute>
-		<attribute name="offset" get="1" set="1" type="float" size="1">
+		<attribute name="offset" get="1" set="1" type="float_array" size="0">
 			<digest>
 				Offset of Channels
 			</digest>
@@ -192,7 +177,7 @@
 				Offset of channels and peak level indicators. The 3 values, corresponding to a rotation of the sphere over the (X, Y, Z) axis are in degree.
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="float" size="1" value="0. 0. 0." />
+				<attribute name="default" get="1" set="1" type="float_array" size="0" value="0. 0. 0." />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Offset of Channels" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
@@ -220,7 +205,7 @@
 			<description>
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 225 225" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 150 150" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>

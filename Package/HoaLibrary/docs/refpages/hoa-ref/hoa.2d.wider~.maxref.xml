@@ -24,7 +24,7 @@
 
 	<!--ARGUMENTS-->
 	<objarglist>
-		<objarg name="ambisonic-order" optional="0" type="int">
+		<objarg name="decomposition-order" optional="0" type="int">
 			<digest>
 				The ambisonic order of decomposition
 			</digest>

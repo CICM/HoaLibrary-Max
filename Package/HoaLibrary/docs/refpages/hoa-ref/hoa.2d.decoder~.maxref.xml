@@ -24,7 +24,7 @@
 
 	<!--ARGUMENTS-->
 	<objarglist>
-		<objarg name="ambisonic-order" optional="0" type="int">
+		<objarg name="decomposition-order" optional="0" type="int">
 			<digest>
 				The ambisonic order of decomposition
 			</digest>
@@ -79,10 +79,9 @@
 				Number of Channels
 			</digest>
 			<description>
-				The number of Channels. In <b>ambisonic</b> <m>mode</m>, the number of channels must be equal or higher to the number of harmonics : (order *2 + 1), (default : order * 2 + 2).
+				The number of Channels. NB : in <b>ambisonic</b> <m>mode</m>, the number of channels must be equal or higher to the number of harmonics : (order *2 + 1), (default : order * 2 + 2).
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="int" size="1" value="4" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Number of Channels" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
@@ -94,9 +93,9 @@
 			<description>
 				There is three decoding <m>mode</m> :
 				<ul>
-				<li><b>Ambisonics</b> : for a regular loudspeakers repartition over a circular array.</li>
-				<li><b>Binaural</b> : for headphones.</li>
-				<li><b>Irregular</b> : for an irregular loudspeakers repartition over a circular array.</li>
+				<li>- <b>Ambisonics</b> : for a regular loudspeakers repartition over a circular array.</li>
+				<li>- <b>Binaural</b> : for headphones.</li>
+				<li>- <b>Irregular</b> : for an irregular loudspeakers repartition over a circular array.</li>
 				</ul>
 			</description>
 			<attributelist>
@@ -106,26 +105,13 @@
 		</attribute>
 		<attribute name="offset" get="1" set="1" type="float" size="1">
 			<digest>
-				Offsets of Channels
+				Offset of Channels
 			</digest>
 			<description>
 				The offset of channels, in degrees between 0. and 360.
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="float" size="1" value="0" />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Offsets of Channels" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
-			</attributelist>
-		</attribute>
-		<attribute name="pinna" get="1" set="1" type="symbol" size="1">
-			<digest>
-				Pinna Size
-			</digest>
-			<description>
-				The pinna size to use for the binaural restitution. The <m>pinna</m> message followed by the <b>symbol</b> <b>small</b> or <b>large</b> set the pinna size of the HRTF responses for the binaural restitution. Choose the one that suits you best.
-			</description>
-			<attributelist>
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Pinna Size" />
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Offset of Channels" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>
@@ -141,7 +127,7 @@
 		<seealso name="hoa.2d.meter~" />
 		<seealso name="hoa.2d.scope~" />
 		<seealso name="hoa.dac~" />
-		<seealso name="hoa.vector~" />
+		<seealso name="hoa.2d.vector~" />
 		<seealso name="hoa.2d.optim~" />
 		<seealso name="hoa.2d.map~" />
 		<seealso name="hoa.2d.encoder~" />

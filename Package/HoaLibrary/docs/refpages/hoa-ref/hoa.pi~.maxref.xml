@@ -99,6 +99,27 @@
 		<seealso name="hoa.pi" />
 	</seealsolist>
 
+	<misc name = "Input">
+		<entry name ="Inlet 1 (signal/float)">
+			<description>
+				set π multiplier.
+			</description>
+		</entry>
+		<entry name ="Inlet 2 (signal/float)">
+			<description>
+				set phase (wrapped between 0. and 1.).
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (signal)">
+			<description>
+				output result.
+			</description>
+		</entry>
+	</misc>
+
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>

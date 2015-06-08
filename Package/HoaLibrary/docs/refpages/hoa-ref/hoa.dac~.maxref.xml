@@ -146,6 +146,14 @@
 		<seealso name="ezdac~" />
 	</seealsolist>
 
+	<misc name = "Input">
+		<entry name ="Inlets 1, 2, 3... (signal)">
+			<description>
+				input channel and incoming messages..
+			</description>
+		</entry>
+	</misc>
+
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
