@@ -487,6 +487,12 @@
     "category": [
     ]
   },
+  "hoa.fx.dephaser~": {
+    "digest": "A fft dephaser.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
   "hoa.fx.freeverb~": {
     "digest": "A freeverb reverberation for sound fields.",
     "module": "hoa",

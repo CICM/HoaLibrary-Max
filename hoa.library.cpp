@@ -9,7 +9,7 @@
 #include "MaxCommon/HoaCommon.max.h"
 
 #ifdef HOA_PACKED_LIB
-int C74_EXPORT main(void)
+void ext_main(void *r)
 {
     // HOA COMMON //
     c_convolve_main();

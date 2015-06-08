@@ -19,7 +19,7 @@
 		"hoa.2d.vector~",
 		"hoa.2d.wider~"
     	],
-    	"description" : "The 2-D ambisonic and planewaves objects."
+    	"description" : "The 2d ambisonic and planewaves objects."
     },
 
     "3d": 
@@ -37,7 +37,7 @@
 		"hoa.3d.vector~",
 		"hoa.3d.wider~"
     	],
-    	"description" : "The 3-D ambisonic and planewaves objects."
+    	"description" : "The 3d ambisonic and planewaves objects."
     },
 
     "Common": 
@@ -68,6 +68,7 @@
     	"hoa.syn.decorrelation~",
     	"hoa.fx.delay~",
     	"hoa.syn.delay~",
+    	"hoa.fx.dephaser~",
     	"hoa.fx.freeverb~",
     	"hoa.fx.gain~",
 		"hoa.fx.grain~",

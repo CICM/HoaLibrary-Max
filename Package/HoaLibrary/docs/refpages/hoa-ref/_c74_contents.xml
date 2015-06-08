@@ -42,6 +42,7 @@
 <refpage name='hoa.fx.convolve~.maxref.xml'/>
 <refpage name='hoa.fx.decorrelation~.maxref.xml'/>
 <refpage name='hoa.fx.delay~.maxref.xml'/>
+<refpage name='hoa.fx.dephaser~.maxref.xml'/>
 <refpage name='hoa.fx.freeverb~.maxref.xml'/>
 <refpage name='hoa.fx.gain~.maxref.xml'/>
 <refpage name='hoa.fx.grain~.maxref.xml'/>
