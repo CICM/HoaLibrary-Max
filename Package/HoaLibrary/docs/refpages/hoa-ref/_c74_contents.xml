@@ -46,6 +46,7 @@
 <refpage name='hoa.fx.freeverb~.maxref.xml'/>
 <refpage name='hoa.fx.gain~.maxref.xml'/>
 <refpage name='hoa.fx.grain~.maxref.xml'/>
+<refpage name='hoa.fx.hiss.convolve~.maxref.xml'/>
 <refpage name='hoa.fx.mirror~.maxref.xml'/>
 <refpage name='hoa.fx.mixer~.maxref.xml'/>
 <refpage name='hoa.fx.ringmod~.maxref.xml'/>

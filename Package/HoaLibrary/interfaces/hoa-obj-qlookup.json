@@ -511,6 +511,12 @@
     "category": [
     ]
   },
+  "hoa.fx.hiss.convolve~": {
+    "digest": "A multichannel zero latency and high optimized convolution processor (thanks to the use of the multiconvolve~ object by Alex Harker and Pierre Alexandre Tremblay).",
+    "module": "hoa",
+    "category": [
+    ]
+  },
   "hoa.fx.mirror~": {
     "digest": "An ambisonic sound field mirror processor.",
     "module": "hoa",

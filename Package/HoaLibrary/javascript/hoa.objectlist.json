@@ -73,6 +73,7 @@
     	"hoa.fx.gain~",
 		"hoa.fx.grain~",
 		"hoa.syn.grain~",
+		"hoa.fx.hiss.convolve~",
 		"hoa.fx.mirror~",
 		"hoa.fx.mixer~",
 		"hoa.fx.ringmod~",

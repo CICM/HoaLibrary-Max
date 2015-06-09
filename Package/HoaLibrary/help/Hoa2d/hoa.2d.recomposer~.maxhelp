@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 751.0, 669.0 ],
+						"rect" : [ 100.0, 126.0, 751.0, 669.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -90,6 +90,23 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.595187,
+									"hidden" : 1,
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 514.0, 245.0, 58.0, 21.0 ],
+									"presentation_rect" : [ 565.0, 245.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
@@ -1287,6 +1304,15 @@
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
 									"disabled" : 0,
+									"hidden" : 1,
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-5", 0 ]
 								}
@@ -1371,7 +1397,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 751.0, 669.0 ],
+						"rect" : [ 0.0, 26.0, 751.0, 669.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1489,8 +1515,7 @@
 									"numinlets" : 15,
 									"numoutlets" : 0,
 									"order" : 7,
-									"patching_rect" : [ 539.5, 466.0, 150.0, 150.0 ],
-									"presentation_rect" : [ 375.0, 451.5, 0.0, 0.0 ]
+									"patching_rect" : [ 539.5, 466.0, 150.0, 150.0 ]
 								}
 
 							}
@@ -4701,11 +4726,11 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-2::obj-9" : [ "hoa.2d.map[2]", "hoa.2d.map", 0 ],
-			"obj-41::obj-21" : [ "hoa.2d.space[1]", "hoa.2d.space[1]", 0 ],
 			"obj-41::obj-1" : [ "hoa.2d.space", "hoa.2d.space", 0 ],
-			"obj-41::obj-11" : [ "hoa.2d.map", "hoa.2d.map", 0 ],
-			"obj-1::obj-11" : [ "hoa.2d.map[1]", "hoa.2d.map", 0 ]
+			"obj-1::obj-11" : [ "hoa.2d.map[1]", "hoa.2d.map", 0 ],
+			"obj-41::obj-21" : [ "hoa.2d.space[1]", "hoa.2d.space[1]", 0 ],
+			"obj-2::obj-9" : [ "hoa.2d.map[2]", "hoa.2d.map", 0 ],
+			"obj-41::obj-11" : [ "hoa.2d.map", "hoa.2d.map", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

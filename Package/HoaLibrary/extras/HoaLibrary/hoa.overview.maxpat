@@ -422,7 +422,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 314.5625, 10.75, 262.0, 32.0 ],
 					"style" : "",
-					"text" : "Julien Colafrancesco, Pierre Guillot & Eliott Paris © 2012 - 2014 CICM / University of Paris 8",
+					"text" : "Julien Colafrancesco, Pierre Guillot & Eliott Paris © 2012 - 2015 CICM / University of Paris 8",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -439,7 +439,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 314.5625, 10.75, 259.5, 32.0 ],
 					"proportion" : 0.39,
-					"rounded" : 6,
+					"rounded" : 0,
 					"shadow" : -1,
 					"style" : ""
 				}
@@ -683,7 +683,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 568.0, 696.0, 150.0, 18.0 ],
 									"style" : "",
-									"text" : "hoa.fx.dephaser~"
+									"text" : "hoa.2d.exchanger~"
 								}
 
 							}
@@ -1117,7 +1117,7 @@
 									"spacing_y" : 5.0,
 									"style" : "",
 									"tabcolor" : [ 0.85098, 0.85098, 0.85098, 0.9 ],
-									"tabs" : [ "hoa.fx.convolve~", "hoa.fx.decorrelation~", "hoa.syn.decorrelation~", "hoa.fx.delay~", "hoa.syn.delay~", "hoa.fx.dephaser~", "hoa.fx.freeverb~", "hoa.fx.gain~", "hoa.fx.grain~", "hoa.syn.grain~", "hoa.fx.mirror~", "hoa.fx.mixer~", "hoa.fx.ringmod~", "hoa.syn.ringmod~" ],
+									"tabs" : [ "hoa.2d.decoder~", "hoa.2d.encoder~", "hoa.2d.exchanger~", "hoa.2d.map~", "hoa.2d.map", "hoa.2d.meter~", "hoa.2d.optim~", "hoa.2d.projector~", "hoa.2d.process~", "hoa.2d.recomposer~", "hoa.2d.recomposer", "hoa.2d.rotate~", "hoa.2d.scope~", "hoa.2d.space", "hoa.2d.vector~", "hoa.2d.wider~" ],
 									"textcolor" : [ 0.15, 0.15, 0.15, 1.0 ]
 								}
 
