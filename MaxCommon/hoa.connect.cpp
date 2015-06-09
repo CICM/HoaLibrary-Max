@@ -237,7 +237,7 @@ void color_patchline(t_connect *x)
 		if(object_is_hoa(startobj) || is_obj_hoa_exotic(startobj))
 		{
 			hoa_boxinfos_init(startobj_infos);
-			err = (t_hoa_err) object_method(startobj, hoa_sym_hoa_getinfos, startobj_infos, NULL);
+			err = (t_hoa_err) object_method(startobj, hoa_sym_hoa_getinfos, startobj_infos);
 			
 			if (err == HOA_ERR_NONE)
 			{

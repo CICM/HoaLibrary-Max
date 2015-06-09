@@ -51,8 +51,23 @@ t_class *hoa_recomposer_class;
 t_hoa_err hoa_getinfos(t_hoa_recomposer* x, t_hoa_boxinfos* boxinfos)
 {
 	boxinfos->object_type = HOA_OBJECT_2D;
-	boxinfos->autoconnect_inputs = x->f_fixe->getNumberOfPlanewaves();
-	boxinfos->autoconnect_outputs = x->f_fixe->getNumberOfPlanewaves();
+    
+    if(x->f_mode == hoa_sym_fixe)
+    {
+        boxinfos->autoconnect_inputs = x->f_fixe->getNumberOfPlanewaves();
+        boxinfos->autoconnect_outputs = x->f_fixe->getNumberOfHarmonics();
+    }
+    else if(x->f_mode == hoa_sym_fisheye)
+    {
+        boxinfos->autoconnect_inputs = x->f_fisheye->getNumberOfPlanewaves();
+        boxinfos->autoconnect_outputs = x->f_fisheye->getNumberOfHarmonics();
+    }
+    else if(x->f_mode == hoa_sym_free)
+    {
+        boxinfos->autoconnect_inputs = x->f_free->getNumberOfPlanewaves();
+        boxinfos->autoconnect_outputs = x->f_free->getNumberOfHarmonics();
+    }
+    
 	boxinfos->autoconnect_inputs_type = HOA_CONNECT_TYPE_PLANEWAVES;
 	boxinfos->autoconnect_outputs_type = HOA_CONNECT_TYPE_AMBISONICS;
 	return HOA_ERR_NONE;
