@@ -201,9 +201,9 @@
 					"autofit" : 1,
 					"id" : "hoa.2d.scope~",
 					"instance_attributes" : 					{
+						"palette_caption" : "hoa.2d.scope~",
 						"palette_category" : [ "HoaLib", "Interface", "Recent" ],
-						"palette_action" : "hoa.2d.scope~",
-						"palette_caption" : "hoa.2d.scope~"
+						"palette_action" : "hoa.2d.scope~"
 					}
 ,
 					"maxclass" : "fpic",
@@ -218,7 +218,7 @@
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.160198,
+					"fontsize" : 5.869351,
 					"hidden" : 1,
 					"id" : "obj-15",
 					"linecount" : 2,
@@ -226,7 +226,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 82.875, 242.0, 29.0 ],
+					"patching_rect" : [ 691.729187, 86.76963, 177.0, 22.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser https://www.gnu.org/copyleft/gpl.html"
 				}
@@ -497,11 +497,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 14.0,
 					"id" : "obj-18",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.6875, 477.5, 629.8125, 22.0 ],
+					"patching_rect" : [ 31.6875, 477.5, 629.8125, 38.0 ],
 					"style" : "",
+					"text" : "Examples of processing patches effects that can be loaded by a hoa.process~ object. \nYou can obviously create your own too.",
 					"textcolor" : [ 0.192668, 0.192697, 0.192653, 1.0 ]
 				}
 
@@ -573,7 +575,7 @@
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.160198,
+					"fontsize" : 6.67862,
 					"hidden" : 1,
 					"id" : "obj-11",
 					"linecount" : 2,
@@ -581,7 +583,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 44.75, 318.0, 29.0 ],
+					"patching_rect" : [ 691.729187, 47.713837, 253.0, 23.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/contacts/"
 				}
@@ -1470,7 +1472,7 @@
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.160198,
+					"fontsize" : 6.165891,
 					"hidden" : 1,
 					"id" : "obj-65",
 					"linecount" : 2,
@@ -1478,7 +1480,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 10.75, 261.5, 29.0 ],
+					"patching_rect" : [ 691.729187, 14.354206, 196.5, 22.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/"
 				}
