@@ -63,11 +63,13 @@ typedef struct _hoa_2d_decoder
     SharedPtr<Decoder<Hoa2d, float>>     f_decoder;
     float*                               f_ins;
     float*                               f_outs;
-    long                                    f_number_of_channels;
-    double                                  f_angles_of_channels[HOA_MAX_PLANEWAVES];
-    double                                  f_offset;
-    t_symbol*                               f_mode;
-    char                                    f_send_config;
+    float**                              f_ins_bin;
+    float*                               f_outs_bin[2];
+    long                                 f_number_of_channels;
+    double                               f_angles_of_channels[HOA_MAX_PLANEWAVES];
+    double                               f_offset;
+    t_symbol*                            f_mode;
+    char                                 f_send_config;
     
 } t_hoa_2d_decoder;
 
@@ -78,6 +80,7 @@ void hoa_2d_decoder_free(t_hoa_2d_decoder *x)
     dsp_free((t_pxobject *)x);
     delete [] x->f_ins;
     delete [] x->f_outs;
+    delete [] x->f_ins_bin;
 }
 
 t_hoa_err hoa_getinfos(t_hoa_2d_decoder* x, t_hoa_boxinfos* boxinfos)
@@ -93,28 +96,23 @@ t_hoa_err hoa_getinfos(t_hoa_2d_decoder* x, t_hoa_boxinfos* boxinfos)
 void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins, long numins, t_sample **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
     SharedPtr<Decoder<Hoa2d, float>> decoder = x->f_decoder;
-    if(decoder->getMode() == typeid(Decoder<Hoa2d, t_sample>::Binaural))
+    if(decoder->getMode() == Decoder<Hoa2d, float>::BinauralMode)
     {
         for(int i = 0; i < numins; i++)
         {
-            ulong is = 0ul;
-            ulong id = 0ul;
-            float* dest = x->f_ins+i;
             for(ulong j = 0ul; j < sampleframes; j++)
             {
-                dest[id] = ins[i][is];
-                is += 1;
-                id += numins;
+                x->f_ins_bin[i][j] = ins[i][j];
             }
         }
-        (static_cast<Decoder<Hoa2d, float>::Binaural*>(decoder.get()))->processBlock(x->f_ins, x->f_outs);
+        (static_cast<Decoder<Hoa2d, float>::Binaural*>(decoder.get()))->processBlock((float const**)x->f_ins_bin, (float **)x->f_outs_bin);
         for(int i = 0; i < sampleframes; i++)
         {
-            outs[0][i] = x->f_outs[i];
+            outs[0][i] = x->f_outs_bin[0][i];
         }
         for(int i = 0; i < sampleframes; i++)
         {
-            outs[1][i] = x->f_outs[i+sampleframes];
+            outs[1][i] = x->f_outs_bin[1][i];
         }
     }
     else
@@ -153,6 +151,12 @@ void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins
 void hoa_2d_decoder_dsp64(t_hoa_2d_decoder *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
     x->f_decoder->computeRendering(maxvectorsize);
+    for(ulong i = 0; i < x->f_decoder->getNumberOfHarmonics(); i++)
+    {
+        x->f_ins_bin[i] = x->f_ins+i*maxvectorsize;
+    }
+    x->f_outs_bin[0] = x->f_outs;
+    x->f_outs_bin[1] = x->f_outs+maxvectorsize;
     object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_2d_decoder_perform, 0, NULL);
 }
 
@@ -425,7 +429,7 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         x->f_ob.z_misc = Z_NO_INPLACE;
         x->f_ins  = new float[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
         x->f_outs = new float[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
-        
+        x->f_ins_bin = new float*[x->f_decoder->getNumberOfHarmonics()];
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
         {
             x->f_angles_of_channels[i] = x->f_decoder->getPlanewaveAzimuth(i) / HOA_2PI * 360.;
