@@ -137,7 +137,15 @@ void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins
         }
         for(int i = 0; i < numouts; i++)
         {
-            //Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+            ulong is = 0ul;
+            ulong id = 0ul;
+            const float* src = x->f_outs+i;
+            for(ulong j = 0ul; j < sampleframes; j++)
+            {
+                outs[i][id] = src[is];
+                is += numouts;
+                id += 1;
+            }
         }
     }
 }
