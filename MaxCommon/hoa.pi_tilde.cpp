@@ -145,7 +145,7 @@ void hoa_pi_sig_float(t_hoa_pi_sig *x, double n)
 #ifdef HOA_PACKED_LIB
 int hoa_pi_sig_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -171,5 +171,4 @@ int C74_EXPORT main(void)
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     hoa_pi_sig_class = c;
-    return 0;
 }

@@ -109,6 +109,22 @@
 		<seealso name="hoa.pi~" />
 	</seealsolist>
 
+	<misc name = "Input">
+		<entry name ="Inlet 1 (bang/int/float)">
+			<description>
+				bang to output π, set the π multiplier.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (float)">
+			<description>
+				output result.
+			</description>
+		</entry>
+	</misc>
+
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>

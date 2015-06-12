@@ -12,11 +12,6 @@ max objectfile hoa.space hoa.2d.space;
 max objectfile hoa.vector~ hoa.2d.vector~;
 max objectfile hoa.wider~ hoa.2d.wider~;
 
-max objectfile hoa.2d.play~ hoa.play~;
-max objectfile hoa.3d.play~ hoa.play~;
-max objectfile hoa.2d.record~ hoa.record~;
-max objectfile hoa.3d.record~ hoa.record~;
-
 max objectfile hoa.2d.process~ hoa.process~;
 max objectfile hoa.3d.process~ hoa.process~;
 

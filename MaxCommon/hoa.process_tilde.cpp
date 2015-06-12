@@ -223,7 +223,7 @@ t_hoa_err hoa_getinfos(t_hoa_processor* x, t_hoa_boxinfos* boxinfos);
 #ifdef HOA_PACKED_LIB
 int hoa_process_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
 	t_class* c;
@@ -331,8 +331,6 @@ int C74_EXPORT main(void)
     class_alias(c, gensym("hoa.2d.process~"));
     class_alias(c, gensym("hoa.3d.process~"));
     hoa_processor_class = c;
-    
-	return 0;
 }
 
 

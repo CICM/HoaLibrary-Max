@@ -93,6 +93,14 @@
 		<seealso name="hoa.in" />
 	</seealsolist>
 
+	<misc name = "Input">
+		<entry name ="Inlet 1 (signal)">
+			<description>
+				output signal to a hoa.process~ object's signal outlet.
+			</description>
+		</entry>
+	</misc>
+
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>

@@ -19,6 +19,16 @@
       "MSP"
     ]
   },
+  "hoa.2d.exchanger~": {
+    "digest": "Renumbers and normalizes the channels.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
   "hoa.2d.map~": {
     "digest": "A 2d ambisonic multisource spatializer.",
     "module": "hoa",
@@ -30,7 +40,7 @@
     ]
   },
   "hoa.2d.meter~": {
-    "digest": "A circular array of visual peak level indicators",
+    "digest": "A circular array of visual peak level indicators.",
     "module": "hoa",
     "category": [
       "planewaves",
@@ -181,6 +191,16 @@
   },
   "hoa.3d.encoder~": {
     "digest": "A 3d ambisonic encoder.",
+    "module": "hoa",
+    "category": [
+      "ambisonics",
+      "hoa objects",
+      "audio",
+      "MSP"
+    ]
+  },
+  "hoa.3d.exchanger~": {
+    "digest": "Renumbers and normalizes the channels.",
     "module": "hoa",
     "category": [
       "ambisonics",
@@ -467,6 +487,12 @@
     "category": [
     ]
   },
+  "hoa.fx.dephaser~": {
+    "digest": "A fft dephaser.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
   "hoa.fx.freeverb~": {
     "digest": "A freeverb reverberation for sound fields.",
     "module": "hoa",
@@ -481,6 +507,12 @@
   },
   "hoa.fx.grain~": {
     "digest": "A multichannel granulator processor.",
+    "module": "hoa",
+    "category": [
+    ]
+  },
+  "hoa.fx.hiss.convolve~": {
+    "digest": "A multichannel zero latency and high optimized convolution processor (thanks to the use of the multiconvolve~ object by Alex Harker and Pierre Alexandre Tremblay).",
     "module": "hoa",
     "category": [
     ]

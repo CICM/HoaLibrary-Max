@@ -148,7 +148,7 @@ void hoa_3d_wider_free(t_hoa_3d_wider *x)
 #ifdef HOA_PACKED_LIB
 int hoa_3d_wider_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -174,5 +174,4 @@ int C74_EXPORT main(void)
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     hoa_3d_wider_class = c;
-    return 0;
 }

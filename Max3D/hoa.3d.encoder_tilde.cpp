@@ -191,7 +191,7 @@ void *hoa_3d_encoder_new(t_symbol *s, long argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_3d_encoder_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -223,6 +223,4 @@ int C74_EXPORT main(void)
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     hoa_3d_encoder_class = c;
-    
-    return 0;
 }

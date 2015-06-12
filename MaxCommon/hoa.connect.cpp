@@ -226,8 +226,8 @@ void color_patchline(t_connect *x)
 	t_object *line, *startobj;
 	t_hoa_err err;
 	t_jrgba* linecolor = NULL;
-	long outletnum, sign;
-	t_hoa_boxinfos* startobj_infos = (t_hoa_boxinfos*) malloc( sizeof(t_hoa_boxinfos));
+	long outletnum, horder;
+	t_hoa_boxinfos* startobj_infos = (t_hoa_boxinfos*) malloc(sizeof(t_hoa_boxinfos));
 	line = jpatcher_get_firstline(x->f_patcher);
     
 	while (line)
@@ -237,25 +237,32 @@ void color_patchline(t_connect *x)
 		if(object_is_hoa(startobj) || is_obj_hoa_exotic(startobj))
 		{
 			hoa_boxinfos_init(startobj_infos);
-			err = (t_hoa_err) object_method(startobj, hoa_sym_hoa_getinfos, startobj_infos, NULL);
+			err = (t_hoa_err) object_method(startobj, hoa_sym_hoa_getinfos, startobj_infos);
 			
 			if (err == HOA_ERR_NONE)
 			{
 				// ambisonics colors (zero | neg | pos) (ex: hoa.encoder~ => hoa.optim~)
 				if (startobj_infos->autoconnect_outputs_type == HOA_CONNECT_TYPE_AMBISONICS)
 				{
+                    horder = 0;
 					outletnum = jpatchline_get_outletnum(line);
                     
-                    sign = 0;
-					
-					if (startobj_infos->object_type == HOA_OBJECT_2D)
-						sign = x->f_ambi2D->getHarmonicOrder(outletnum);
-					if (startobj_infos->object_type == HOA_OBJECT_3D)
-						sign = x->f_ambi3D->getHarmonicOrder(outletnum);
-					
-					if (sign > 0)
+                    if(object_classname(startobj) == gensym("hoa.2d.exchanger~") ||
+                       object_classname(startobj) == gensym("hoa.3d.exchanger~"))
+                    {
+                        object_method(startobj, gensym("hoa_get_output_harmonic_order"), outletnum, &horder);
+                    }
+                    else
+                    {
+                        if(startobj_infos->object_type == HOA_OBJECT_2D)
+                            horder = x->f_ambi2D->getHarmonicOrder(outletnum);
+                        if(startobj_infos->object_type == HOA_OBJECT_3D)
+                            horder = x->f_ambi3D->getHarmonicOrder(outletnum);
+                    }
+                    
+					if(horder > 0)
 						linecolor = &x->f_color_positiv;
-					else if (sign < 0)
+					else if(horder < 0)
 						linecolor = &x->f_color_negativ;
 					else
 						linecolor = &x->f_color_zero;
@@ -444,7 +451,7 @@ void *connect_new(t_symbol *s, long argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_connect_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -490,6 +497,4 @@ int C74_EXPORT main(void)
     
     class_register(CLASS_BOX, c);
     connect_class = c;
-    hoa_print_credit();
-    return 0;
 }

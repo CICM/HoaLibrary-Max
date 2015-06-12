@@ -32,6 +32,14 @@
 				First argument sets the number of channels.
 			</description>
 		</objarg>
+		<objarg name="vector-type" optional="1" type="symbol">
+			<digest>
+				The vector type.
+			</digest>
+			<description>
+				second argument sets the type of vector to compute (velocity or energy)
+			</description>
+		</objarg>
 	</objarglist>
 
 	<!--MESSAGES-->
@@ -85,6 +93,7 @@
 			<attributelist>
 				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Planewaves" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Offset of Channels" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>
@@ -100,6 +109,7 @@
 		<seealso name="hoa.2d.meter~" />
 		<seealso name="hoa.2d.scope~" />
 		<seealso name="hoa.2d.decoder~" />
+		<seealso name="hoa.3d.vector~" />
 	</seealsolist>
 
 	<misc name = "Discussion">

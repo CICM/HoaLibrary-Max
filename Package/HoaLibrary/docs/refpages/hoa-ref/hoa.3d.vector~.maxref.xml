@@ -34,10 +34,10 @@
 		</objarg>
 		<objarg name="vector-type" optional="1" type="symbol">
 			<digest>
-				The number of channels
+				The vector type.
 			</digest>
 			<description>
-				second argument sets the type of vector to compute (energy or velocity)
+				second argument sets the type of vector to compute (velocity or energy)
 			</description>
 		</objarg>
 	</objarglist>
@@ -59,13 +59,13 @@
 	<attributelist>
 		<attribute name="angles" get="1" set="1" type="float_array" size="0">
 			<digest>
-				Angles of Channels
+				Angles of Planewaves
 			</digest>
 			<description>
 				Set the angles of each channels in degrees. Each angles are in degrees, wrapped between 0. and 360. You must specify 2 values per channel corresponding to the azimuth value followed by the elevation value.
 			</description>
 			<attributelist>
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Angles of Channels" />
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Angles of Planewaves" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>

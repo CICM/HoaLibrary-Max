@@ -42,22 +42,6 @@
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-		<attribute name="bdcolor" get="1" set="1" type="" size="1">
-			<digest>
-				Border Color
-			</digest>
-			<description>
-				Sets the RGBA values for the border color of the <o>hoa.3d.scope~</o> object
-			</description>
-			<attributelist>
-				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Color" />
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.7 0.7 0.7 1." />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Border Color" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
-			</attributelist>
-		</attribute>
 		<attribute name="bgcolor" get="1" set="1" type="" size="1">
 			<digest>
 				Background Color
@@ -110,6 +94,7 @@
 				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Behavior" />
 				<attribute name="default" get="1" set="1" type="int" size="1" value="100" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Refresh Interval in Milliseconds" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
@@ -152,7 +137,7 @@
 			<description>
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 225 225" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 150 150" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>
@@ -179,6 +164,22 @@
 			<description>
 			</description>
 			<attributelist>
+				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
+			</attributelist>
+		</attribute>
+		<attribute name="view" get="1" set="1" type="float_array" size="0">
+			<digest>
+				Offset of the View
+			</digest>
+			<description>
+				Set the offset of the view with a list of 3 double values corresponding to the x y z offset, in degrees between 0. and 360.
+			</description>
+			<attributelist>
+				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Behavior" />
+				<attribute name="default" get="1" set="1" type="float_array" size="0" value="0. 0. 0." />
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Offset of the View" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
+				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>

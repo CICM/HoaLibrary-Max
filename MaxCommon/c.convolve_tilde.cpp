@@ -84,7 +84,7 @@ inline long next_power_of_two (long x);
 #ifdef HOA_PACKED_LIB
 int c_convolve_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
 	t_class *c;
@@ -157,7 +157,6 @@ int C74_EXPORT main(void)
     
     class_register(CLASS_BOX, c);
 	convolve_class = c;
-    return 0;
 }
 
 void *convolve_new(t_symbol *s, int ac, t_atom *av)

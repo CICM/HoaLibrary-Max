@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 402.0, 147.0, 700.0, 575.0 ],
+		"rect" : [ 297.0, 138.0, 700.0, 575.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -218,7 +218,7 @@
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.160198,
+					"fontsize" : 5.869351,
 					"hidden" : 1,
 					"id" : "obj-15",
 					"linecount" : 2,
@@ -226,7 +226,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 82.875, 242.0, 29.0 ],
+					"patching_rect" : [ 691.729187, 86.76963, 177.0, 22.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser https://www.gnu.org/copyleft/gpl.html"
 				}
@@ -265,7 +265,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 210.78125, 20.75, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "Beta 2.0.3",
+					"text" : "Beta 2.0.4",
 					"textcolor" : [ 0.9404, 0.940544, 0.940332, 1.0 ],
 					"textjustification" : 1,
 					"varname" : "autohelp_top_title[4]"
@@ -283,7 +283,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 211.78125, 21.75, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "Beta 2.0.3",
+					"text" : "Beta 2.0.4",
 					"textcolor" : [ 0.424631, 0.424696, 0.4246, 0.21 ],
 					"textjustification" : 1,
 					"varname" : "autohelp_top_title[5]"
@@ -422,7 +422,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 314.5625, 10.75, 262.0, 32.0 ],
 					"style" : "",
-					"text" : "Julien Colafrancesco, Pierre Guillot & Eliott Paris © 2012 - 2014 CICM / University of Paris 8",
+					"text" : "Julien Colafrancesco, Pierre Guillot & Eliott Paris © 2012 - 2015 CICM / University of Paris 8",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -439,7 +439,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 314.5625, 10.75, 259.5, 32.0 ],
 					"proportion" : 0.39,
-					"rounded" : 6,
+					"rounded" : 0,
 					"shadow" : -1,
 					"style" : ""
 				}
@@ -497,11 +497,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 14.0,
 					"id" : "obj-18",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.6875, 477.5, 629.8125, 22.0 ],
+					"patching_rect" : [ 31.6875, 477.5, 629.8125, 38.0 ],
 					"style" : "",
+					"text" : "Examples of processing patches effects that can be loaded by a hoa.process~ object. \nYou can obviously create your own too.",
 					"textcolor" : [ 0.192668, 0.192697, 0.192653, 1.0 ]
 				}
 
@@ -573,7 +575,7 @@
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.160198,
+					"fontsize" : 6.67862,
 					"hidden" : 1,
 					"id" : "obj-11",
 					"linecount" : 2,
@@ -581,7 +583,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 44.75, 318.0, 29.0 ],
+					"patching_rect" : [ 691.729187, 47.713837, 253.0, 23.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/contacts/"
 				}
@@ -639,12 +641,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 690.0, 318.0, 665.0, 285.0 ],
+						"rect" : [ 315.0, 309.0, 665.0, 285.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -683,7 +685,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 568.0, 696.0, 150.0, 18.0 ],
 									"style" : "",
-									"text" : "hoa.fx.decorrelation~"
+									"text" : "hoa.2d.exchanger~"
 								}
 
 							}
@@ -1117,7 +1119,7 @@
 									"spacing_y" : 5.0,
 									"style" : "",
 									"tabcolor" : [ 0.85098, 0.85098, 0.85098, 0.9 ],
-									"tabs" : [ "hoa.2d.decoder~", "hoa.2d.encoder~", "hoa.2d.map~", "hoa.2d.map", "hoa.2d.meter~", "hoa.2d.optim~", "hoa.2d.projector~", "hoa.2d.process~", "hoa.2d.recomposer~", "hoa.2d.recomposer", "hoa.2d.rotate~", "hoa.2d.scope~", "hoa.2d.space", "hoa.2d.vector~", "hoa.2d.wider~" ],
+									"tabs" : [ "hoa.2d.decoder~", "hoa.2d.encoder~", "hoa.2d.exchanger~", "hoa.2d.map~", "hoa.2d.map", "hoa.2d.meter~", "hoa.2d.optim~", "hoa.2d.projector~", "hoa.2d.process~", "hoa.2d.recomposer~", "hoa.2d.recomposer", "hoa.2d.rotate~", "hoa.2d.scope~", "hoa.2d.space", "hoa.2d.vector~", "hoa.2d.wider~" ],
 									"textcolor" : [ 0.15, 0.15, 0.15, 1.0 ]
 								}
 
@@ -1470,7 +1472,7 @@
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.160198,
+					"fontsize" : 6.165891,
 					"hidden" : 1,
 					"id" : "obj-65",
 					"linecount" : 2,
@@ -1478,7 +1480,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 10.75, 261.5, 29.0 ],
+					"patching_rect" : [ 691.729187, 14.354206, 196.5, 22.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/"
 				}
@@ -1510,7 +1512,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 15.9375, 85.25, 666.6875, 74.0 ],
 					"style" : "",
-					"text" : "HoaLibrary allows musicians and composers to synthesize, transform and render sound fields in a creative and artistic way. This library facilitates the understanding and the appropriation of key concepts of ambisonics. A lot of new signal processing are allowed like diffuse sound field synthesis, perspective distorsion or spatial filtering...",
+					"text" : "HoaLibrary allows musicians and composers to synthesize, transform and render sound fields in a creative and artistic way. This library facilitates the understanding and the appropriation of key concepts of ambisonics. A lot of new signal processings are allowed like diffuse sound field synthesis, perspective distorsion or spatial filtering...",
 					"textcolor" : [ 0.27596, 0.276002, 0.27594, 1.0 ],
 					"varname" : "autohelp_top_description"
 				}

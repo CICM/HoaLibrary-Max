@@ -13,7 +13,7 @@
  @author    Julien Colafrancesco, Pierre Guillot, Eliott Paris.
  
  @digest
- A circular array of visual peak level indicators
+ A circular array of visual peak level indicators.
  
  @description
  The <o>hoa.2d.meter~</o> object displays the peak levels for a circular array of loudspeakers. It computes and displays the energy and velocity vectors.
@@ -817,7 +817,7 @@ void *meter_new(t_symbol *s, int argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_meter_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -1053,5 +1053,4 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.meter~"));
     meter_class = c;
-    return 0;
 }

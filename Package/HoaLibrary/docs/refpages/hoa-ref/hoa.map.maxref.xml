@@ -103,22 +103,6 @@
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-		<attribute name="bdcolor" get="1" set="1" type="" size="1">
-			<digest>
-				Border Color
-			</digest>
-			<description>
-				Sets the RGBA values for the border color of the <o>hoa.3d.map</o> object
-			</description>
-			<attributelist>
-				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Color" />
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.5 0.5 0.5 1." />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Border Color" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
-			</attributelist>
-		</attribute>
 		<attribute name="bgcolor" get="1" set="1" type="" size="1">
 			<digest>
 				Background Color
@@ -235,6 +219,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Use and show group" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="onoff" />
 			</attributelist>
@@ -273,6 +258,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="float" size="1" value="0.35" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Zoom" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>

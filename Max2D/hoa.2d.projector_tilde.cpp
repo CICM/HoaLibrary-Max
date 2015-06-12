@@ -124,7 +124,7 @@ void hoa_projector_free(t_hoa_projector *x)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_projector_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -143,6 +143,4 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.projector~"));
     hoa_projector_class = c;
-    
-    return 0;
 }

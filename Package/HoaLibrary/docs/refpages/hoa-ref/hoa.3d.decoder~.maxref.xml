@@ -24,20 +24,12 @@
 
 	<!--ARGUMENTS-->
 	<objarglist>
-		<objarg name="ambisonic-order" optional="0" type="int">
+		<objarg name="decomposition-order" optional="0" type="int">
 			<digest>
 				The ambisonic order of decomposition
 			</digest>
 			<description>
 				First argument is the ambisonic order of decomposition.
-			</description>
-		</objarg>
-		<objarg name="number-of-channels" optional="0" type="int">
-			<digest>
-				The number of channels
-			</digest>
-			<description>
-				Second argument is the number of channels
 			</description>
 		</objarg>
 	</objarglist>
@@ -106,18 +98,6 @@
 			</description>
 			<attributelist>
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Offset of Channels" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
-			</attributelist>
-		</attribute>
-		<attribute name="pinna" get="1" set="1" type="symbol" size="1">
-			<digest>
-				Pinna Size
-			</digest>
-			<description>
-				The pinna size to use for the binaural restitution. The <m>pinna</m> message followed by the <b>symbol</b> <b>small</b> or <b>large</b> set the pinna size of the HRTF responses for the binaural restitution. Choose the one that suits you best.
-			</description>
-			<attributelist>
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Pinna Size" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>

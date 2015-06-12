@@ -2,6 +2,7 @@
 <root>
 <refpage name='hoa.2d.decoder~.maxref.xml'/>
 <refpage name='hoa.2d.encoder~.maxref.xml'/>
+<refpage name='hoa.2d.exchanger~.maxref.xml'/>
 <refpage name='hoa.2d.map~.maxref.xml'/>
 <refpage name='hoa.2d.meter~.maxref.xml'/>
 <refpage name='hoa.2d.optim~.maxref.xml'/>
@@ -15,6 +16,7 @@
 <refpage name='hoa.2d.wider~.maxref.xml'/>
 <refpage name='hoa.3d.decoder~.maxref.xml'/>
 <refpage name='hoa.3d.encoder~.maxref.xml'/>
+<refpage name='hoa.3d.exchanger~.maxref.xml'/>
 <refpage name='hoa.3d.map~.maxref.xml'/>
 <refpage name='hoa.3d.meter~.maxref.xml'/>
 <refpage name='hoa.3d.optim~.maxref.xml'/>
@@ -40,9 +42,11 @@
 <refpage name='hoa.fx.convolve~.maxref.xml'/>
 <refpage name='hoa.fx.decorrelation~.maxref.xml'/>
 <refpage name='hoa.fx.delay~.maxref.xml'/>
+<refpage name='hoa.fx.dephaser~.maxref.xml'/>
 <refpage name='hoa.fx.freeverb~.maxref.xml'/>
 <refpage name='hoa.fx.gain~.maxref.xml'/>
 <refpage name='hoa.fx.grain~.maxref.xml'/>
+<refpage name='hoa.fx.hiss.convolve~.maxref.xml'/>
 <refpage name='hoa.fx.mirror~.maxref.xml'/>
 <refpage name='hoa.fx.mixer~.maxref.xml'/>
 <refpage name='hoa.fx.ringmod~.maxref.xml'/>

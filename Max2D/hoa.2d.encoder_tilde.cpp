@@ -142,7 +142,7 @@ void hoa_encoder_2D_free(t_hoa_encoder_2D *x)
 #ifdef HOA_PACKED_LIB
 int hoa_2d_encoder_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class *c;
@@ -171,6 +171,4 @@ int C74_EXPORT main(void)
     class_register(CLASS_BOX, c);
     class_alias(c, gensym("hoa.encoder~"));
     hoa_encoder_2D_class = c;
-    
-    return 0;
 }

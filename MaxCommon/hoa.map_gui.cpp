@@ -3061,7 +3061,7 @@ void *hoamap_new(t_symbol *s, int argc, t_atom *argv)
 #ifdef HOA_PACKED_LIB
 int hoa_map_gui_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     hoa_textfield_init();
@@ -3211,5 +3211,4 @@ int C74_EXPORT main(void)
     class_alias(c, gensym("hoa.3d.map"));
     
     hoamap_class = c;
-    return 0;
 }

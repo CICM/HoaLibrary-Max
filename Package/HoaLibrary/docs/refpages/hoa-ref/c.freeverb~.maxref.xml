@@ -119,6 +119,27 @@
 		<seealso name="hoa.process~" />
 	</seealsolist>
 
+	<misc name = "Input">
+		<entry name ="Inlet 1">
+			<description>
+				.
+			</description>
+		</entry>
+		<entry name ="Inlet 2 (signal)">
+			<description>
+				Input signal, freeverb messages.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (signal)">
+			<description>
+				Output signal.
+			</description>
+		</entry>
+	</misc>
+
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>

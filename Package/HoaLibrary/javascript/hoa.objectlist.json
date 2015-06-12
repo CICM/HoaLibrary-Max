@@ -4,6 +4,7 @@
     	"objects": [ 
     	"hoa.2d.decoder~",
 		"hoa.2d.encoder~",
+		"hoa.2d.exchanger~",
 		"hoa.2d.map~",
 		"hoa.2d.map",
 		"hoa.2d.meter~",
@@ -18,7 +19,7 @@
 		"hoa.2d.vector~",
 		"hoa.2d.wider~"
     	],
-    	"description" : "The 2-D ambisonic and planewaves objects."
+    	"description" : "The 2d ambisonic and planewaves objects."
     },
 
     "3d": 
@@ -26,6 +27,7 @@
     	"objects": [ 
     	"hoa.3d.decoder~",
 		"hoa.3d.encoder~",
+		"hoa.3d.exchanger~",
 		"hoa.3d.map~",
 		"hoa.3d.map",
 		"hoa.3d.meter~",
@@ -35,7 +37,7 @@
 		"hoa.3d.vector~",
 		"hoa.3d.wider~"
     	],
-    	"description" : "The 3-D ambisonic and planewaves objects."
+    	"description" : "The 3d ambisonic and planewaves objects."
     },
 
     "Common": 
@@ -66,10 +68,12 @@
     	"hoa.syn.decorrelation~",
     	"hoa.fx.delay~",
     	"hoa.syn.delay~",
+    	"hoa.fx.dephaser~",
     	"hoa.fx.freeverb~",
     	"hoa.fx.gain~",
 		"hoa.fx.grain~",
 		"hoa.syn.grain~",
+		"hoa.fx.hiss.convolve~",
 		"hoa.fx.mirror~",
 		"hoa.fx.mixer~",
 		"hoa.fx.ringmod~",

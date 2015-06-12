@@ -6,6 +6,12 @@ HoaLibrary for MaxMSP, Pure Data, Faust and VST
 ------------------------ ------------------------
 
 ------------------------
+version Beta 2.0.4
+------------------------
+ - hoa.play~ and hoa.record~ removed
+ - new hoa.2d.exchanger~ & hoa.3d.exchanger~ objects.
+
+------------------------
 version Beta 2.0.2
 ------------------------
  - hoa.map : fix crash on Max 6.1.8

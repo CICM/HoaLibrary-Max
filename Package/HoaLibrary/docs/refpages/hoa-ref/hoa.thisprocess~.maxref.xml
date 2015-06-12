@@ -21,6 +21,17 @@
 		<metadata name="tag">msp</metadata>
 	</metadatalist>
 
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="INLET_TYPE">
+			<digest>
+				
+			</digest>
+			<description>
+			</description>
+		</inlet>
+	</inletlist>
+
 	<!--ARGUMENTS-->
 	<objarglist>
 		<objarg name="arguments" optional="1" type="int/float/symbol">
@@ -49,18 +60,18 @@
 				Report the instance informations in a right to left outputting order.
 			</digest>
 			<description>
-				Output instance informations in a right to left outputting order. <br/><br/>
+				Output instance informations in a right to left outputting order. <br/>
+				At the very end, it will output a "done" message in the patcher attribute's outlet to indicate that all values have been sent<br/><br/>
 				<ul>
 				<li> mute state (0/1). </li>
 				<li> patcher attributes. </li>
 				<li> patcher arguments. </li>
-				<li> process context and mode. ex : "2d harmonics". </li>
+				<li> process context and mode. ex : "2d harmonics", "3d planewaves" </li>
 				<li>
 				process instance informations depending on the current mode. <br/><br/>
 				<ul>
-				<li> In <b>planewaves</b> mode (2d/3d). It will be (number-of-channels, instance-channel)</li>
-				<li> In 2d <b>harmonics</b> mode, it will be a list with (ambisonic-order, harmonic-index) </li>
-				<li> In 3d <b>harmonics</b> mode, it will be a list with (ambisonic-order, harmonic-band, harmonic-index) </li>
+				<li> In <b>harmonics</b> mode (2d/3d), it will be a list with (decomposition-order, harmonic-degree, harmonic-order) </li>
+				<li> In <b>planewaves</b> mode (2d/3d), it will be a list with (number-of-channels, channel-index, channel-index)</li>
 				</ul>
 				</li>
 				</ul>
@@ -108,6 +119,14 @@
 		<seealso name="thispatcher" />
 		<seealso name="patcher" />
 	</seealsolist>
+
+	<misc name = "Input">
+		<entry name ="Inlet 1">
+			<description>
+				.
+			</description>
+		</entry>
+	</misc>
 
 	<misc name = "Discussion">
 		<entry name ="More details">

@@ -6,7 +6,7 @@
 <c74object name="hoa.2d.meter~" module="hoa">
 
 	<digest>
-		A circular array of visual peak level indicators
+		A circular array of visual peak level indicators.
 	</digest>
 
 	<description>
@@ -32,10 +32,10 @@
 		<method name="signal">
 			<arg name="channel-signal" optional="0" type="signal" />
 			<digest>
-				Array of signals to be visualize.
+				Array of signals to visualize.
 			</digest>
 			<description>
-				Array of signals to be visualize.
+				Array of signals to visualize.
 			</description>
 		</method>
 	</methodlist>
@@ -47,28 +47,12 @@
 				Angles of Channels
 			</digest>
 			<description>
-				The angles of displayed channels and peak level indicators. Values are in degrees, wrapped between 0. and 360., so you can also set the angles with negative values.
+				The angles of the displayed channels and peak level indicators. Values are in degrees, wrapped between 0. and 360., so you can also set the angles with negative values.
 			</description>
 			<attributelist>
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Angles of Channels" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
-			</attributelist>
-		</attribute>
-		<attribute name="bdcolor" get="1" set="1" type="" size="1">
-			<digest>
-				Border Color
-			</digest>
-			<description>
-				Sets the RGBA values for the border color of the <o>hoa.2d.meter~</o> object
-			</description>
-			<attributelist>
-				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Color" />
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.7 0.7 0.7 1." />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Border Color" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
 			</attributelist>
 		</attribute>
 		<attribute name="bgcolor" get="1" set="1" type="" size="1">
@@ -186,6 +170,22 @@
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Refresh Interval in Milliseconds" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
+			</attributelist>
+		</attribute>
+		<attribute name="ledbgcolor" get="1" set="1" type="" size="1">
+			<digest>
+				Leds Background Color
+			</digest>
+			<description>
+				Sets the RGBA values for leds background color of the <o>hoa.2d.meter~</o> object
+			</description>
+			<attributelist>
+				<attribute name="category" get="1" set="1" type="symbol" size="1" value="Color" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0. 0. 0. 0.05" />
+				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Leds Background Color" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
+				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
+				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
 			</attributelist>
 		</attribute>
 		<attribute name="ledsbg" get="1" set="1" type="int" size="1">
@@ -358,7 +358,7 @@
 			<description>
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 225 225" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 150 150" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>

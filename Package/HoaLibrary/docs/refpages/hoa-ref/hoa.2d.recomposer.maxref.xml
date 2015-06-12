@@ -109,21 +109,6 @@
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-		<attribute name="bdcolor" get="1" set="1" type="" size="1">
-			<digest>
-				Border Color
-			</digest>
-			<description>
-				Sets the RGBA values for the border color of the <o>hoa.2d.recomposer</o> object
-			</description>
-			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.2 0.2 0.2 1." />
-				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Border Color" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="rgba" />
-			</attributelist>
-		</attribute>
 		<attribute name="bgcolor" get="1" set="1" type="" size="1">
 			<digest>
 				Background Color
@@ -132,7 +117,7 @@
 				Sets the RGBA values for the background color of the <o>hoa.2d.recomposer</o> object
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.35 0.35 0.35 1." />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0.760784 0.760784 0.760784 1.0" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Background Color" />
 				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
@@ -147,7 +132,7 @@
 				Sets the RGBA values for the channel point color of the <o>hoa.2d.recomposer</o> object
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.5 0.5 0.5 1." />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0.396078 0.396078 0.396078 0.2" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Channels Color" />
 				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
@@ -208,7 +193,7 @@
 				Sets the RGBA values for the inner circle color of the <o>hoa.2d.recomposer</o> object
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0.2 0.2 0.2 1." />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0.396078 0.396078 0.396078 0.2" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Circle Inner Color" />
 				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
@@ -247,7 +232,7 @@
 			<description>
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 300 300" />
+				<attribute name="default" get="1" set="1" type="" size="1" value="0 0 150 150" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>

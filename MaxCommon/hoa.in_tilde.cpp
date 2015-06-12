@@ -154,7 +154,7 @@ void hoa_sig_in_dsp64(t_hoa_sig_in *x, t_object *dsp64, short *count, double sr,
 #ifdef HOA_PACKED_LIB
 int hoa_in_sig_main(void)
 #else
-int C74_EXPORT main(void)
+void ext_main(void *r)
 #endif
 {
     t_class* c;
@@ -183,5 +183,4 @@ int C74_EXPORT main(void)
     class_dspinit(c);
     class_register(CLASS_BOX, c);
     hoa_sig_in_class = c;
-    return 0;
 }

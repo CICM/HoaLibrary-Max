@@ -96,6 +96,22 @@
 		<seealso name="hoa.out" />
 	</seealsolist>
 
+	<misc name = "Input">
+		<entry name ="Inlet 1 (nothing)">
+			<description>
+				useless input.
+			</description>
+		</entry>
+	</misc>
+
+	<misc name = "Output">
+		<entry name ="Outlet 1 (messages)">
+			<description>
+				output messages received from a hoa.process~ input.
+			</description>
+		</entry>
+	</misc>
+
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
