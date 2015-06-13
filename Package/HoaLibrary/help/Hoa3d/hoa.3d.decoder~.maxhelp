@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 65.0, 79.0, 1142.0, 775.0 ],
+		"rect" : [ 100.0, 87.0, 1145.0, 775.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -55,12 +55,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 65.0, 105.0, 1142.0, 749.0 ],
+						"rect" : [ 0.0, 26.0, 1145.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -521,7 +521,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@module", 0, "@file", "rainstick.aif", "@loop", 1 ],
+									"args" : [ "@module", 0, "@file", "brushes.aif", "@loop", 1 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -555,7 +555,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1325,8 +1325,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1367,12 +1367,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1142.0, 749.0 ],
+						"rect" : [ 100.0, 113.0, 1145.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1553,8 +1553,8 @@
 							}
 , 							{
 								"box" : 								{
-									"angles" : [ 180.0, 69.094843, -200.905157, -0.0, 90.0, 20.905157, -225.0, 35.26439, -225.0, -35.26439, -180.0, -69.094843, 20.905157, -0.0, 90.0, -20.905157, 45.0, 35.26439, 45.0, -35.26439 ],
-									"channels" : 20,
+									"angles" : [ 180.0, 69.1, 159.1, 0.0, 90.0, 20.9, 135.0, 35.3, 135.0, -35.3, 180.0, -69.1, 20.9, 0.0, 90.0, -20.9, 45.0, 35.3, 45.0, -35.3, 0.0, 69.1, 200.9, 0.0, 270.0, 20.9, 225.0, 35.3, 225.0, -35.3, 0.0, -69.1, 339.1, 0.0, 270.0, -20.9, 315.0, 35.3, 315.0, -35.3 ],
+									"channels" : 20.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-21",
 									"interval" : 100,
@@ -1880,14 +1880,14 @@
 									"filename" : "helpargs.js",
 									"id" : "obj-17",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "hoa.3d.decoder~", 30 ],
+									"jsarguments" : [ "hoa.3d.decoder~", 20 ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 344.0, 589.0, 172.269485, 54.0 ],
-									"presentation_rect" : [ 344.0, 589.0, 172.269485, 54.0 ]
+									"patching_rect" : [ 344.0, 597.5, 176.618362, 39.0 ],
+									"presentation_rect" : [ 344.0, 589.0, 176.618362, 39.0 ]
 								}
 
 							}
@@ -1959,7 +1959,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 6.25, 67.5, 483.0, 47.0 ],
 									"style" : "",
-									"text" : "hoa.3d.decoder~ decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the order of the ambisonic soundfield, the second one is the number of channels to decode to.",
+									"text" : "hoa.3d.decoder~ decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. The only argument is the decomposition order of soundfield, you can set the channels, angles, offset and mode with attributes.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[3]"
 								}
@@ -2075,7 +2075,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2418,7 +2418,7 @@
 									"destination" : [ "obj-21", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 823.5, 562.0, 750.0, 562.0, 750.0, 378.0, 596.5, 378.0 ],
+									"midpoints" : [ 823.5, 717.0, 750.0, 717.0, 750.0, 378.0, 596.5, 378.0 ],
 									"source" : [ "obj-20", 0 ]
 								}
 
@@ -2438,7 +2438,7 @@
 									"destination" : [ "obj-21", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 850.5, 671.0, 750.0, 671.0, 750.0, 378.0, 596.5, 378.0 ],
+									"midpoints" : [ 850.5, 717.0, 750.0, 717.0, 750.0, 378.0, 596.5, 378.0 ],
 									"source" : [ "obj-27", 0 ]
 								}
 
@@ -3265,8 +3265,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3307,12 +3307,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1142.0, 749.0 ],
+						"rect" : [ 0.0, 26.0, 1145.0, 749.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3364,10 +3364,10 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-11::obj-55::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-11::obj-55::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-1::obj-55::obj-35" : [ "[1]", "Level", 0 ],
-			"obj-1::obj-55::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ]
+			"obj-1::obj-55::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
+			"obj-11::obj-55::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-1::obj-55::obj-35" : [ "[1]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

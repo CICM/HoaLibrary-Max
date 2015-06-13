@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -55,7 +55,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -93,13 +93,49 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
+									"id" : "obj-17",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 338.0, 249.0, 33.0 ],
+									"presentation_rect" : [ 288.0, 333.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "if no optimization-mode is specified, the optimization will be inPhase.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[5]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-18",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 338.0, 249.0, 33.0 ],
+									"presentation_rect" : [ 288.0, 333.0, 0.0, 0.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
 									"id" : "obj-10",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 287.0, 518.0, 249.0, 33.0 ],
-									"presentation_rect" : [ 286.0, 512.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "NB : This is theoretical, the best choice is to trust your ears.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -119,7 +155,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 287.0, 518.0, 249.0, 33.0 ],
-									"presentation_rect" : [ 286.0, 512.0, 0.0, 0.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -136,7 +171,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 287.0, 446.0, 249.0, 60.0 ],
-									"presentation_rect" : [ 277.0, 398.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "inPhase optimization could be used when an\naudience is confined to the center of the restitution area or when an audience covers all of the restitution area.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -154,7 +188,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 287.0, 388.0, 249.0, 47.0 ],
-									"presentation_rect" : [ 277.25, 353.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "maxRe optimization could be used when a listener is ideally placed at the center of the loudspeaker arrangement.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -379,7 +412,7 @@
 							}
 , 							{
 								"box" : 								{
-									"angles" : [ 0.0, 22.5, 45.0, 67.5, 90.0, 112.5, 135.0, 157.5, 180.0, 202.5, 225.0, 247.5, 270.0, 292.5, 315.0, 337.5 ],
+									"angles" : [ 0.0, 22.500001, 45.000001, 67.5, 90.000003, 112.499998, 135.0, 157.499996, 180.000005, 202.500001, 224.999996, 247.499992, 270.000001, 292.50001, 314.999992, 337.500001 ],
 									"channels" : 16.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-19",
@@ -482,7 +515,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 2,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1410,8 +1443,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1451,7 +1484,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1507,8 +1540,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1537,8 +1570,8 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-35::obj-30::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-35::obj-30::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
+			"obj-35::obj-30::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-35::obj-30::obj-35" : [ "[5]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

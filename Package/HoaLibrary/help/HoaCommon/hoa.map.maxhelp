@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 105.0, 925.0, 757.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 757.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -825,8 +825,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4938,8 +4938,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7983,7 +7983,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 925.0, 757.0 ],
+						"rect" : [ 100.0, 105.0, 925.0, 757.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -8074,7 +8074,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 427.25, 493.5, 32.5, 21.0 ],
+									"patching_rect" : [ 427.25, 479.5, 32.5, 21.0 ],
 									"style" : "",
 									"text" : "stop"
 								}
@@ -8124,7 +8124,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 620.0, 582.0, 146.0, 21.0 ],
+									"patching_rect" : [ 620.0, 575.0, 146.0, 21.0 ],
 									"style" : "",
 									"text" : "prepend interp map_help1"
 								}
@@ -8139,7 +8139,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 620.0, 523.5, 39.0, 21.0 ],
+									"patching_rect" : [ 620.0, 516.5, 39.0, 21.0 ],
 									"style" : "",
 									"text" : "linear"
 								}
@@ -8153,7 +8153,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 668.5, 523.5, 209.0, 20.0 ],
+									"patching_rect" : [ 668.5, 516.5, 209.0, 20.0 ],
 									"style" : "",
 									"text" : "you can also change the interpolation",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -8172,7 +8172,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 668.5, 523.5, 209.0, 20.0 ],
+									"patching_rect" : [ 668.5, 516.5, 209.0, 20.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -8192,7 +8192,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 484.0, 554.5, 50.0, 21.0 ],
+									"patching_rect" : [ 484.0, 547.5, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -8206,7 +8206,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 484.0, 582.0, 87.0, 21.0 ],
+									"patching_rect" : [ 484.0, 575.0, 87.0, 21.0 ],
 									"style" : "",
 									"text" : "recall 12 14 $1"
 								}
@@ -8256,7 +8256,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 376.0, 555.5, 72.0, 21.0 ],
+									"patching_rect" : [ 376.0, 548.5, 72.0, 21.0 ],
 									"style" : "",
 									"text" : "prepend set"
 								}
@@ -8271,7 +8271,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 351.5, 493.5, 72.0, 21.0 ],
+									"patching_rect" : [ 351.5, 479.5, 72.0, 21.0 ],
 									"style" : "",
 									"text" : "1, 15 20000"
 								}
@@ -8286,7 +8286,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 351.5, 523.5, 46.0, 21.0 ],
+									"patching_rect" : [ 351.5, 516.5, 46.0, 21.0 ],
 									"style" : "",
 									"text" : "line 0."
 								}
@@ -8304,7 +8304,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 376.0, 582.0, 50.0, 21.0 ],
+									"patching_rect" : [ 376.0, 575.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -8325,7 +8325,7 @@
 ,
 									"style" : "",
 									"text" : "autopattr",
-									"varname" : "u351001257"
+									"varname" : "u256002203"
 								}
 
 							}
@@ -8423,7 +8423,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 4,
 									"numoutlets" : 0,
-									"patching_rect" : [ 419.5, 22.5, 52.0, 23.0 ],
+									"patching_rect" : [ 419.5, 22.5, 52.0, 25.0 ],
 									"style" : "",
 									"text" : "bgcolor 0.93 0.93 0.92 1."
 								}
@@ -8440,7 +8440,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 5.5, 69.0, 468.0, 47.0 ],
 									"style" : "",
-									"text" : "hoa.map works with the pattrstorage and preset system. It allows you to create, recall, make interpolation between different presets. Only groups and sources are saved (limited to 64)",
+									"text" : "hoa.map works with the pattrstorage and preset system. It allows you to create, recall, make interpolation between differents presets. Only groups and sources are saved (limited to 64)",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -8473,7 +8473,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 647.0, 554.5, 58.0, 21.0 ],
+									"patching_rect" : [ 647.0, 547.5, 58.0, 21.0 ],
 									"style" : "",
 									"text" : "pow 0.25"
 								}
@@ -8501,7 +8501,7 @@
 									"destination" : [ "obj-7", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 436.75, 516.5, 361.0, 516.5 ],
+									"midpoints" : [ 436.75, 509.5, 361.0, 509.5 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -10065,6 +10065,39 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.595187,
+									"id" : "obj-12",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 15.0, 237.0, 300.0, 19.0 ],
+									"style" : "",
+									"text" : "Note that the source's size is dependant of the font size",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-13",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 15.0, 237.0, 300.0, 19.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
@@ -14320,8 +14353,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -14420,13 +14453,13 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-45::obj-18" : [ "hoa.2d.map", "hoa.2d.map", 0 ],
-			"obj-5::obj-18" : [ "hoa.2d.map[5]", "hoa.2d.map", 0 ],
-			"obj-5::obj-3" : [ "hoa.map[1]", "hoa.map[1]", 0 ],
-			"obj-5::obj-2" : [ "hoa.map", "hoa.map", 0 ],
-			"obj-3::obj-1" : [ "hoa.2d.map[3]", "hoa.2d.map[3]", 0 ],
+			"obj-4::obj-1" : [ "hoa.2d.map[4]", "hoa.2d.map[4]", 0 ],
 			"obj-2::obj-1" : [ "hoa.2d.map[2]", "hoa.2d.map[2]", 0 ],
-			"obj-4::obj-1" : [ "hoa.2d.map[4]", "hoa.2d.map[4]", 0 ]
+			"obj-5::obj-2" : [ "hoa.map", "hoa.map", 0 ],
+			"obj-5::obj-18" : [ "hoa.2d.map[5]", "hoa.2d.map", 0 ],
+			"obj-45::obj-18" : [ "hoa.2d.map", "hoa.2d.map", 0 ],
+			"obj-3::obj-1" : [ "hoa.2d.map[3]", "hoa.2d.map[3]", 0 ],
+			"obj-5::obj-3" : [ "hoa.map[1]", "hoa.map[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
