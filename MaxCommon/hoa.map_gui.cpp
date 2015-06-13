@@ -92,6 +92,9 @@ typedef struct  _hoamap
 	t_symbol*	f_binding_name;
 	t_linkmap*	f_listmap;
 	int			f_output_enabled;
+    
+    t_systhread_mutex f_mutex;
+    t_systhread_mutex f_self_mutex;
 } t_hoa_map;
 
 t_class *hoamap_class;
@@ -100,12 +103,14 @@ typedef struct _linkmap
 {
 	t_linkmap *next;
 	t_hoa_map *map;
-	void update_headptr(t_linkmap *linkmap_headptr, Source::Manager* sourcesManager)
+	//void update_headptr(t_linkmap *linkmap_headptr, Source::Manager* sourcesManager)
+    void update_headptr(t_linkmap *linkmap_headptr, t_hoa_map *newmap)
 	{
 		map->f_listmap = linkmap_headptr;
-		map->f_manager = sourcesManager;
+		map->f_manager = newmap->f_self_manager;
+        map->f_mutex = newmap->f_self_mutex;
 		if(next != NULL)
-			next->update_headptr(linkmap_headptr, sourcesManager);
+			next->update_headptr(linkmap_headptr, newmap);
 	}
 } t_linkmap;
 
@@ -403,6 +408,8 @@ void hoamap_output(t_hoa_map *x)
     t_atom av[5];
     atom_setsym(av+1, hoa_sym_mute);
     
+    systhread_mutex_lock(x->f_mutex);
+    
     // output group mute state
     for(Source::group_iterator it = x->f_manager->getFirstGroup() ; it != x->f_manager->getLastGroup(); it ++)
     {
@@ -410,6 +417,7 @@ void hoamap_output(t_hoa_map *x)
         atom_setfloat(av+2, it->second->getMute());
         outlet_list(x->f_out_groups, 0L, 3, av);
     }
+    
     // output source mute state
     for(Source::source_iterator it = x->f_manager->getFirstSource() ; it != x->f_manager->getLastSource(); it ++)
     {
@@ -417,6 +425,7 @@ void hoamap_output(t_hoa_map *x)
         atom_setlong(av+2, it->second->getMute());
         outlet_list(x->f_out_sources, 0L, 3, av);
     }
+    
     if(x->f_output_mode == 0)
     {
         atom_setsym(av+1, hoa_sym_polar);
@@ -457,6 +466,8 @@ void hoamap_output(t_hoa_map *x)
             outlet_list(x->f_out_sources, 0L, 5, av);
         }
     }
+    
+    systhread_mutex_unlock(x->f_mutex);
 }
 
 void hoamap_bang(t_hoa_map *x)
@@ -470,6 +481,8 @@ void hoamap_infos(t_hoa_map *x)
     t_atom* avIndex;
     t_atom* avSource;
     t_atom avMute[4];
+    
+    systhread_mutex_lock(x->f_mutex);
     
     /* Sources */
     long numberOfSource = x->f_manager->getNumberOfSources();
@@ -546,6 +559,8 @@ void hoamap_infos(t_hoa_map *x)
         atom_setlong(avMute+3, it->second->getMute());
         outlet_list(x->f_out_infos, NULL, 4, avMute);
     }
+    
+    systhread_mutex_unlock(x->f_mutex);
 }
 
 /**********************************************************/
@@ -574,6 +589,7 @@ void linkmap_add_with_binding_name(t_hoa_map *x, t_symbol* binding_name)
 				x->f_listmap->next = NULL;
 				name->s_thing = (t_object *)x->f_listmap;
 				x->f_manager = x->f_self_manager;
+                x->f_mutex = x->f_self_mutex;
 			}
 		}
 		else // t_listmap exist => add our object in it
@@ -610,6 +626,7 @@ void linkmap_add_with_binding_name(t_hoa_map *x, t_symbol* binding_name)
 						temp2->next = NULL;
 						temp->next = temp2;
 						temp->next->map->f_manager = head_map->f_self_manager;
+                        temp->next->map->f_mutex = head_map->f_self_mutex;
 					}
 					break;
 				}
@@ -655,11 +672,12 @@ void linkmap_remove_with_binding_name(t_hoa_map *x, t_symbol* binding_name)
 						// bind all object to the next Source::Manager (next becoming the new head of the t_linkmap)
                         delete temp->next->map->f_self_manager;
                         temp->next->map->f_self_manager = new Source::Manager(*head_map->f_manager);
-                        temp->next->update_headptr((t_linkmap *)name->s_thing, temp->next->map->f_self_manager);
+                        temp->next->update_headptr((t_linkmap *)name->s_thing, temp->next->map);
 					}
 					
 					x->f_listmap = NULL;
 					x->f_manager = x->f_self_manager; // not sure if this is necessary (normally it is the same pointer)
+                    x->f_mutex = x->f_self_mutex;
 				}
 				else if(temp->next != NULL && temp->next->map == x)
 				{
@@ -667,6 +685,7 @@ void linkmap_remove_with_binding_name(t_hoa_map *x, t_symbol* binding_name)
                     delete temp->next->map->f_self_manager;
                     temp->next->map->f_self_manager = new Source::Manager(*head_map->f_self_manager);
                     temp->next->map->f_manager = temp->next->map->f_self_manager;
+                    temp->next->map->f_mutex = temp->next->map->f_self_mutex;
 					
 					temp2 = temp->next->next;
 					sysmem_freeptr(temp->next);
@@ -689,6 +708,8 @@ t_max_err bindname_set(t_hoa_map *x, t_object *attr, long argc, t_atom *argv)
 		if(new_binding_name != x->f_binding_name)
 		{
             vector<ulong> lastNonMutedSourcesIndex;
+            
+            systhread_mutex_lock(x->f_mutex);
             for(Source::source_iterator it = x->f_manager->getFirstSource(); it != x->f_manager->getLastSource(); it++)
             {
                 if(!it->second->getMute())
@@ -696,6 +717,7 @@ t_max_err bindname_set(t_hoa_map *x, t_object *attr, long argc, t_atom *argv)
                     lastNonMutedSourcesIndex.push_back(it->first);
                 }
             }
+            systhread_mutex_unlock(x->f_mutex);
             
 			// remove previous binding
 			if (x->f_binding_name != hoa_sym_nothing)
@@ -807,6 +829,8 @@ void hoamap_free(t_hoa_map *x)
     jfont_destroy(x->jfont);
 	
 	delete x->f_self_manager;
+    
+    systhread_mutex_free(x->f_self_mutex);
 	
     if(x->f_patcher)
         object_free(x->f_patcher);
@@ -837,9 +861,13 @@ void hoamap_assist(t_hoa_map *x, void *b, long m, long a, char *s)
 
 void hoamap_clear_all(t_hoa_map *x)
 {
+    systhread_mutex_lock(x->f_mutex);
+    
 	// mute all source and output before clearing them to notify hoa.#.map~
     for(Source::source_iterator it = x->f_manager->getFirstSource() ; it != x->f_manager->getLastSource() ; it ++)
         it->second->setMute(true);
+    
+    systhread_mutex_unlock(x->f_mutex);
 	
 	hoamap_output(x);
 	hoamap_send_binded_map_update(x, BMAP_OUTPUT);
@@ -855,7 +883,7 @@ void hoamap_clear_all(t_hoa_map *x)
 	hoamap_send_binded_map_update(x, BMAP_REDRAW | BMAP_OUTPUT | BMAP_NOTIFY);
 }
 
-void hoamap_set(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
+void hoamap_set(t_hoa_map *x, t_symbol *s, long ac, t_atom *av)
 {
 	x->f_output_enabled = 0;
 	if (ac && av && atom_gettype(av) == A_SYM)
@@ -870,7 +898,7 @@ void hoamap_set(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
 	x->f_output_enabled = 1;
 }
 
-void hoamap_source(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
+void hoamap_source(t_hoa_map *x, t_symbol *s, long ac, t_atom *av)
 {
 	int index;
 	int exist;
@@ -881,6 +909,7 @@ void hoamap_source(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
 		
 		// source / index / exist / abscissa / ordinate / height / mutestate / r / g / b / a / description
         
+        systhread_mutex_lock(x->f_mutex);
         for(int i = 0; i < MAX_NUMBER_OF_SOURCES*12; i += 12)
         {
             if( (i <= ac-12) && atom_gettype(av+i) == A_SYM && atom_getsym(av+i) == hoa_sym_source)
@@ -915,6 +944,7 @@ void hoamap_source(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
                 }
             }
         }
+        systhread_mutex_unlock(x->f_mutex);
 		
 		// no need to (repaint | notify | output) here => group will do this just after
 	}
@@ -1027,7 +1057,7 @@ void hoamap_source(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
     }
 }
 
-void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
+void hoamap_group(t_hoa_map *x, t_symbol *s, long ac, t_atom *av)
 {
 	if ( ac && av && atom_gettype(av) == A_SYM && atom_getsym(av) == hoa_sym_group_preset_data)
 	{
@@ -1039,6 +1069,8 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
 		int exist;
 		long sources_ac;
 		t_atom* sources_av;
+        
+        systhread_mutex_lock(x->f_mutex);
         
         x->f_manager->clearGroups();
 
@@ -1109,11 +1141,13 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, short ac, t_atom *av)
                 }
             }
         }
+        systhread_mutex_unlock(x->f_mutex);
         
         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
         jbox_redraw((t_jbox *)x);
         hoamap_output(x);
+        hoamap_send_binded_map_update(x, BMAP_REDRAW | BMAP_NOTIFY);
         return;
 	}
     else if(ac > 1 && av && atom_gettype(av) == A_LONG && atom_getlong(av) > 0 && atom_gettype(av+1) == A_SYM)
@@ -1735,6 +1769,7 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
 	if (g)
     {
         t_jrgba sourceColor;
+        t_jrgba red = {1., 0., 0., 1.};
         char description[250];
         t_pt sourceDisplayPos, groupDisplayPos, textDisplayPos;
         const double w = rect->width;
@@ -1745,6 +1780,7 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
         t_jtextlayout *jtl = jtextlayout_create();
         jgraphics_set_line_width(g, x->f_source_radius * 0.2);
         
+        systhread_mutex_lock(x->f_mutex);
         for(Source::source_iterator it = x->f_manager->getFirstSource(); it != x->f_manager->getLastSource(); it++)
         {
             const ulong index = it->first;
@@ -1854,7 +1890,6 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
                 jgraphics_set_source_jrgba(g, &sourceColor);
                 jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius * 0.6,  0., HOA_2PI);
                 jgraphics_fill(g);
-                t_jrgba red = {1., 0., 0., 1.};
                 jgraphics_set_source_jrgba(g, &red); 
                 jgraphics_arc(g, sourceDisplayPos.x, sourceDisplayPos.y, x->f_source_radius,  0., HOA_2PI);
                 jgraphics_stroke(g);
@@ -1863,6 +1898,8 @@ void draw_sources(t_hoa_map *x,  t_object *view, t_rect *rect)
                 jgraphics_stroke(g);
             }
         }
+        systhread_mutex_unlock(x->f_mutex);
+
 		jtextlayout_destroy(jtl);
 
 		jbox_end_layer((t_object*)x, view, hoa_sym_sources_layer);
@@ -1889,6 +1926,7 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
         t_jtextlayout *jtl = jtextlayout_create();
         jgraphics_set_line_width(g, x->f_source_radius * 0.2);
         
+        systhread_mutex_lock(x->f_mutex);
         for(Source::group_iterator it = x->f_manager->getFirstGroup() ; it != x->f_manager->getLastGroup() ; it++)
         {
             const ulong index = it->first;
@@ -1942,10 +1980,11 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
             jgraphics_set_source_jrgba(g, &sourceColor);
             for(int j = 1; j < 4; j += 2)
             {
+                const double azimuth = HOA_2PI * j * 0.25 + HOA_PI4;
                 jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
                 jgraphics_line_to(g,
-                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_2PI * j / 4. + HOA_PI4),
-                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_2PI * j / 4. + HOA_PI4));
+                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, azimuth),
+                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, azimuth));
             }
             jgraphics_stroke(g);
             
@@ -1955,10 +1994,11 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
             
             for(int j = 0; j < 2; j++)
             {
+                const double azimuth = HOA_2PI * j * 0.5 + HOA_PI4;
                 jgraphics_move_to(g, sourceDisplayPos.x, sourceDisplayPos.y);
                 jgraphics_line_to(g,
-                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, HOA_2PI * j / 2. + HOA_PI4),
-                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, HOA_2PI * j / 2. + HOA_PI4));
+                                  sourceDisplayPos.x + Math<double>::abscissa(x->f_source_radius, azimuth),
+                                  sourceDisplayPos.y + Math<double>::ordinate(x->f_source_radius, azimuth));
             }
             jgraphics_stroke(g);
             
@@ -2008,6 +2048,8 @@ void draw_groups(t_hoa_map *x,  t_object *view, t_rect *rect)
                 }
             }
         }
+        systhread_mutex_unlock(x->f_mutex);
+        
 		jtextlayout_destroy(jtl);
         
 		jbox_end_layer((t_object*)x, view, hoa_sym_groups_layer);
@@ -3018,6 +3060,9 @@ void *hoamap_new(t_symbol *s, int argc, t_atom *argv)
     x->f_self_manager = new Source::Manager(1./MIN_ZOOM - 5.);
     x->f_manager = x->f_self_manager;
     
+    systhread_mutex_new(&x->f_self_mutex, SYSTHREAD_MUTEX_RECURSIVE);
+    x->f_mutex = x->f_self_mutex;
+    
     x->j_box.b_firstin = (t_object*) x;
     
     x->f_out_infos      = listout(x);
@@ -3087,7 +3132,7 @@ void ext_main(void *r)
     
     // @method bang @digest Output current sources values.
     // @description The <m>bang</m> Output current sources values.
-    class_addmethod(c, (method) hoamap_bang,             "bang",			A_CANT, 0);
+    class_addmethod(c, (method) hoamap_bang,             "bang",                    0);
     
     // @method getinfo @digest Report informations in the rightmost outlet.
     // @description The <m>getinfo</m> message report informations in the rightmost outlet.
