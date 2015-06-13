@@ -466,7 +466,7 @@ void ext_main(void *r)
     
     // @method bang @digest trigger autoconnection and color
     // @description The <m>bang</m> message connect all of the appropriate selected hoa objects together
-    class_addmethod(c, (method)connect_bang,	"bang",		A_CANT,	0);
+    class_addmethod(c, (method)connect_bang,	"bang",             0);
     
     CLASS_STICKY_ATTR		(c, "category", 0, "Behavior");
     CLASS_ATTR_RGBA			(c, "zhcolor", 0, t_connect, f_color_zero);

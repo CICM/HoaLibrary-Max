@@ -59,7 +59,7 @@ public:
 
 typedef struct _hoa_2d_decoder
 {
-	t_pxobject                              f_ob;
+	t_pxobject                           f_ob;
     SharedPtr<Decoder<Hoa2d, float>>     f_decoder;
     float*                               f_ins;
     float*                               f_outs;

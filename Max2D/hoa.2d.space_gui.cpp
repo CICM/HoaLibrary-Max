@@ -814,11 +814,11 @@ void ext_main(void *r)
     hoa_initclass(c, (method)hoa_getinfos);
     class_addmethod(c, (method)hoa_2d_space_assist,          "assist",         A_CANT,	0);
     class_addmethod(c, (method)hoa_2d_space_paint,           "paint",          A_CANT,	0);
-    class_addmethod(c, (method)hoa_2d_space_notify,          "notify",         A_CANT, 0);
+    class_addmethod(c, (method)hoa_2d_space_notify,          "notify",         A_CANT,  0);
     
     // @method bang @digest Output current values.
     // @description The <m>bang</m> message report current values.
-    class_addmethod(c, (method)hoa_2d_space_output,          "bang",           A_CANT, 0);
+    class_addmethod(c, (method)hoa_2d_space_output,          "bang",                    0);
     
     // @method list @digest set slider values.
     // @description Sets slider values with a <m>list</m>.

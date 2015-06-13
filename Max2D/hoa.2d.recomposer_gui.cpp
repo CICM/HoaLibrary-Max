@@ -1150,7 +1150,7 @@ void ext_main(void *r)
     
     // @method bang @digest Output current values.
     // @description The <m>bang</m> message report current values.
-    class_addmethod(c, (method) hoa_2d_recomposer_gui_bang,            "bang",                 0L,0);
+    class_addmethod(c, (method) hoa_2d_recomposer_gui_bang,            "bang",                  0);
     
     // @method set @digest Set angle or widening value for one or more channels without output.
     // @description The word <m>set</m> followed by the symbol <b>wide</b> sets the widening value.
