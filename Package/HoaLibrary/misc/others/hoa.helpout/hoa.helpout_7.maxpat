@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 240.0, 188.0, 1025.0, 509.0 ],
+		"rect" : [ 418.0, 183.0, 342.0, 509.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -615,7 +615,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 794.0, 234.0, 182.0, 112.0 ],
+						"rect" : [ 422.0, 210.0, 166.0, 102.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -1904,7 +1904,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 617.0, 234.0, 166.0, 81.0 ],
+						"rect" : [ 422.0, 210.0, 166.0, 102.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -2157,7 +2157,7 @@
 			}
 , 			{
 				"box" : 				{
-					"angles" : [ 0.0, 22.5, 45.0, 67.5, 90.0, 112.5, 135.0, 157.5, 180.0, 202.5, 225.0, 247.5, 270.0, 292.5, 315.0, 337.5 ],
+					"angles" : [ 0.0, 22.500001, 45.000001, 67.5, 90.000003, 112.499998, 135.0, 157.499996, 180.000005, 202.500001, 224.999996, 247.499992, 270.000001, 292.50001, 314.999992, 337.500001 ],
 					"channels" : 16.0,
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"id" : "obj-2",
@@ -2166,7 +2166,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 52.75, 494.049988, 108.949997, 108.949997 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 199.018219, 2.0, 126.950531, 126.950531 ],
+					"presentation_rect" : [ 199.0, 2.0, 128.0, 128.0 ],
 					"varname" : "meter_object"
 				}
 
@@ -2191,6 +2191,13 @@
 , 			{
 				"box" : 				{
 					"allowdrag" : 0,
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0,
+					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+					"bgfillcolor_color1" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"bgfillcolor_color2" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "gradient",
 					"id" : "obj-6",
 					"items" : [ "Decoder:", "Ambisonic", ",", "Decoder:", "Binaural", ",", "Decoder:", "Irregular" ],
 					"maxclass" : "umenu",
@@ -2252,7 +2259,7 @@
 					"order" : 7,
 					"patching_rect" : [ 238.050003, 494.049988, 108.949997, 108.949997 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 199.018219, 2.0, 126.950531, 126.950531 ],
+					"presentation_rect" : [ 199.0, 2.0, 128.0, 128.0 ],
 					"varname" : "scope_object"
 				}
 

@@ -13,7 +13,7 @@
  @author    Julien Colafrancesco, Pierre Guillot, Eliott Paris.
  
  @digest
- A Graphical User Interface to manipulate channels in 2d.
+ A Graphical User Interface to manipulate 2d plane waves.
  
  @description
  <o>hoa.2d.recomposer</o> helps you to set angle and widening value of channels to warp the sound field. It is mainly dedicated to the control of the <o>hoa.2d.recomposer~</o> processor object.
@@ -78,6 +78,7 @@ typedef struct  _hoa_2d_recomposer_gui
     t_pt		f_last_mouseDrag;
     double		f_last_mouseDragAngle;
     double      f_last_mouseDragRadius;
+    bool        f_was_dragging;
     
     // draw utility
     double      f_channel_radius;
@@ -732,7 +733,7 @@ void hoa_2d_recomposer_gui_paint(t_hoa_2d_recomposer_gui *x, t_object *view)
 
 /* ---- Utilities ---- */
 
-int isPointOverAChannel(t_hoa_2d_recomposer_gui *x, t_pt *pt)
+int channel_hit_test(t_hoa_2d_recomposer_gui *x, t_pt *pt)
 {
     double w = x->rect.width;
     double abscissa, ordinate, azimuth, radius, chanSize;
@@ -754,7 +755,7 @@ int isPointOverAChannel(t_hoa_2d_recomposer_gui *x, t_pt *pt)
     return -1;
 }
 
-bool isChannelInsideRect(t_hoa_2d_recomposer_gui *x, int micIndex, t_rect rectSelection)
+bool channel_hit_test_rect(t_hoa_2d_recomposer_gui *x, int micIndex, t_rect rectSelection)
 {
     double w = x->rect.width;
     t_pt micPoint;
@@ -777,7 +778,7 @@ void end_rect_selection(t_hoa_2d_recomposer_gui *x, t_pt pt)
 {
     for (int i=0; i < x->f_number_of_channels; i++)
     {
-        if (isChannelInsideRect(x, i, x->f_rectSelection))
+        if (channel_hit_test_rect(x, i, x->f_rectSelection))
         {
             x->f_manager->setSelected(i, -1); // toggle selection state
         }
@@ -822,18 +823,18 @@ void hoa_2d_recomposer_gui_mousedown(t_hoa_2d_recomposer_gui *x, t_object *patch
 {
     double w = x->rect.width;
     x->f_last_mouseDown = pt;
+    x->f_was_dragging = false;
 
-    int isMouseDownOverAChannel = -1;
-    isMouseDownOverAChannel = isPointOverAChannel(x, &pt);
+    int channelHitTest = -1;
+    channelHitTest = channel_hit_test(x, &pt);
     
     if (x->f_rectSelectionExist) 
 	{
         end_rect_selection(x, pt);
     }
-    
 	// Start fish eye
 #ifdef _WINDOWS
-   else if (modifiers == 8 || x->f_fisheye_show)  // Alt
+    else if (modifiers == 8 || x->f_fisheye_show)  // Alt
 #else
 	else if (modifiers == 148 || x->f_fisheye_show)  // ctrl
 #endif
@@ -843,43 +844,74 @@ void hoa_2d_recomposer_gui_mousedown(t_hoa_2d_recomposer_gui *x, t_object *patch
         x->f_manager->setFisheyeStartAzimuth(-2);
 		x->f_manager->setFisheyeDestAzimuth(x->f_fisheye_azimuth);
     }
-    else if (isMouseDownOverAChannel == -1 )
+    
+    x->f_last_mouseDownOverChannel = channelHitTest;
+    jmouse_setcursor(patcherview, (t_object *)x, (x->f_last_mouseMoveOverChannel != -1) ? JMOUSE_CURSOR_POINTINGHAND : JMOUSE_CURSOR_ARROW);
+	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_harmonics_layer);
+    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_channels_layer);
+    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_text_layer);
+    jbox_redraw((t_jbox *)x);
+}
+
+void hoa_2d_recomposer_gui_mouseup(t_hoa_2d_recomposer_gui *x, t_object *patcherview, t_pt pt, long modifiers)
+{
+    x->f_last_mouseDragRadius = x->f_channel_radius;
+    x->f_last_mouseUp = pt;
+    int channelHitTest = -1;
+    channelHitTest = channel_hit_test(x, &pt);
+    
+    if(x->f_fisheye_show)
     {
-#ifdef _WINDOWS
-		if (modifiers == 21)  // Control
-#else
-		if (modifiers == 17)  // Cmd
-#endif
-        {
-            begin_rect_selection(x, pt);
-        }
-        else if (modifiers == 16) // Nothing
-		{
-            x->f_manager->setSelected(-1, 0); // tout deselectionné
-        }
+        x->f_fisheye_show = 0;
+        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_fisheye_layer);
     }
-    else
+    
+    if (x->f_rectSelectionExist) {
+        end_rect_selection(x, pt);
+    }
+    
+    if(!x->f_was_dragging)
     {
-        if (modifiers == 16) // Nothing
+        if (x->f_last_mouseDownOverChannel == -1)
         {
-            if (!x->f_manager->isSelected(isMouseDownOverAChannel)) {
+#ifdef _WINDOWS
+            if (modifiers == 21)  // Control
+#else
+            if (modifiers == 17)  // Cmd
+#endif
+            {
+                begin_rect_selection(x, pt);
+            }
+            else if (modifiers == 16) // Nothing
+            {
                 x->f_manager->setSelected(-1, 0); // tout deselectionné
-                x->f_manager->setSelected(isMouseDownOverAChannel, 1);
             }
         }
-#ifdef _WINDOWS
-		else if (modifiers == 21)  // Control
-#else
-		else if (modifiers == 17 || modifiers == 18)  // Cmd / shift
-#endif
+        else if(x->f_last_mouseDownOverChannel == channelHitTest)
         {
-            x->f_manager->setSelected(isMouseDownOverAChannel, -1);
+            if (modifiers == 16) // Nothing
+            {
+                if (!x->f_manager->isSelected(x->f_last_mouseDownOverChannel))
+                {
+                    x->f_manager->setSelected(-1, 0); // tout deselectionné
+                    x->f_manager->setSelected(x->f_last_mouseDownOverChannel, 1);
+                }
+            }
+#ifdef _WINDOWS
+            else if (modifiers == 21)  // Control
+#else
+            else if (modifiers == 17)  // Cmd / shift
+#endif
+            {
+                x->f_manager->setSelected(x->f_last_mouseDownOverChannel, -1);
+            }
         }
     }
     
-    x->f_last_mouseDownOverChannel = isMouseDownOverAChannel;
+    x->f_last_mouseUpOverChannel = channelHitTest;
+    x->f_was_dragging = false;
     jmouse_setcursor(patcherview, (t_object *)x, (x->f_last_mouseMoveOverChannel != -1) ? JMOUSE_CURSOR_POINTINGHAND : JMOUSE_CURSOR_ARROW);
-	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_harmonics_layer);
+    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_harmonics_layer);
     jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_channels_layer);
     jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_text_layer);
     jbox_redraw((t_jbox *)x);
@@ -891,6 +923,7 @@ void hoa_2d_recomposer_gui_mousedrag(t_hoa_2d_recomposer_gui *x, t_object *patch
     t_pt ptCart = {pt.x-(w*0.5), (w - pt.y)-(w*0.5)};
 	double radiusDrag = Math<double>::radius(ptCart.x, ptCart.y);
 	double angleDrag  = Math<double>::azimuth(ptCart.x, ptCart.y);
+    x->f_was_dragging = true;
 
     if (x->f_rectSelectionExist)
     {
@@ -921,6 +954,8 @@ void hoa_2d_recomposer_gui_mousedrag(t_hoa_2d_recomposer_gui *x, t_object *patch
             double micAngle = x->f_manager->getAzimuth(x->f_last_mouseDownOverChannel);
             double factor = isInsideRad(angleDrag, micAngle-HOA_PI2, micAngle+HOA_PI2) ? 1 : -1;
             double radiusDelta = (x->f_last_mouseDragRadius - radiusDrag) * factor / x->f_channel_radius;
+            
+            x->f_manager->setSelected(x->f_last_mouseDownOverChannel, 1);
 			
 			for (int i=0; i < x->f_number_of_channels; i++)
 			{
@@ -935,7 +970,8 @@ void hoa_2d_recomposer_gui_mousedrag(t_hoa_2d_recomposer_gui *x, t_object *patch
 			#else
 				int magnet = (modifiers == 17) ? 1 : 0;  // ctrl
 			#endif
-
+            
+            x->f_manager->setSelected(x->f_last_mouseDownOverChannel, 1);
             x->f_manager->rotateSelectedChannels(angleDrag, x->f_last_mouseDownOverChannel, magnet);
         }
         
@@ -951,37 +987,12 @@ void hoa_2d_recomposer_gui_mousedrag(t_hoa_2d_recomposer_gui *x, t_object *patch
     x->f_last_mouseDragRadius = radiusDrag;
 }
 
-void hoa_2d_recomposer_gui_mouseup(t_hoa_2d_recomposer_gui *x, t_object *patcherview, t_pt pt, long modifiers)
-{
-    x->f_last_mouseDragRadius = x->f_channel_radius;
-    x->f_last_mouseUp = pt;
-    int isMouseUpOverAChannel = -1;
-    isMouseUpOverAChannel = isPointOverAChannel(x, &pt);
-    
-    if(x->f_fisheye_show)
-    {
-        x->f_fisheye_show = 0;
-        jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_fisheye_layer);
-    }
-    
-    if (x->f_rectSelectionExist) {
-        end_rect_selection(x, pt);
-    }
-    
-    x->f_last_mouseUpOverChannel = isMouseUpOverAChannel;
-    jmouse_setcursor(patcherview, (t_object *)x, (x->f_last_mouseMoveOverChannel != -1) ? JMOUSE_CURSOR_POINTINGHAND : JMOUSE_CURSOR_ARROW);
-	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_harmonics_layer);
-    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_channels_layer);
-    jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_text_layer);
-    jbox_redraw((t_jbox *)x);    
-}
-
 void hoa_2d_recomposer_gui_mousemove(t_hoa_2d_recomposer_gui *x, t_object *patcherview, t_pt pt, long modifiers)
 {
     double w = x->rect.width;
     if ( (x->f_last_mouseMove.x != pt.x) || (x->f_last_mouseMove.y != pt.y) ) 
 	{
-        x->f_last_mouseMoveOverChannel = isPointOverAChannel(x, &pt);
+        x->f_last_mouseMoveOverChannel = channel_hit_test(x, &pt);
         x->f_last_mouseMove = pt;
         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_channels_layer);
         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_text_layer);
@@ -1052,7 +1063,7 @@ long hoa_2d_recomposer_gui_key(t_hoa_2d_recomposer_gui *x, t_object *patcherview
 
 	// Select all
 #ifdef _WINDOWS
-   if (keycode == 97 && modifiers == 5 && textcharacter == 1) // Control + a
+    if (keycode == 97 && modifiers == 5 && textcharacter == 1) // Control + a
 #else
 	if (keycode == 97 && modifiers == 1 && textcharacter == 0)  // cmd + a
 #endif
