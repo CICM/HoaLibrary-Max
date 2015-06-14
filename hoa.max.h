@@ -109,4 +109,33 @@ t_hoa_err hoa_not_implemented_method();
 t_hoa_err hoa_initclass(t_class* c, method hoabox_getinfos);
 t_jrgba rgba_addContrast(t_jrgba color, double contrast);
 
+template<class T> class SharedPtr
+{
+private:
+    T* p;
+    unsigned* c;
+    template<class U> friend class SharedPtr;
+public:
+    inline SharedPtr() noexcept : p(), c() {}
+    inline explicit SharedPtr(T* s) noexcept :p(s), c(new unsigned(1)) {}
+    inline SharedPtr(const SharedPtr& s) noexcept :p(s.p), c(s.c) { if(c) ++*c; }
+    inline SharedPtr& operator=(const SharedPtr& s)  noexcept
+    { if(this!=&s) { clear(); p=s.p; c=s.c; if(c) ++*c; } return *this; }
+    template<class U> inline SharedPtr(const SharedPtr<U>& s) noexcept : p(s.p), c(s.c) { if(c) ++*c; }
+    inline ~SharedPtr() noexcept {clear();}
+    inline void clear() noexcept
+    {
+        if(c)
+        {
+            if(*c==1) delete p;
+            if(!--*c) delete c;
+        }
+        c=0; p=0;
+    }
+    
+    inline T* get() const noexcept {return c ? p: 0;}
+    inline T* operator->() const noexcept {return c ? p: 0;}
+    inline T& operator*() const noexcept {return *get();}
+};
+
 #endif

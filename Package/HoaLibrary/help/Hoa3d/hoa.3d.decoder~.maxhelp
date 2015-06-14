@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 87.0, 1145.0, 775.0 ],
+		"rect" : [ 100.0, 87.0, 925.0, 775.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1145.0, 749.0 ],
+						"rect" : [ 100.0, 113.0, 925.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -126,6 +126,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"hidden" : 1,
@@ -136,7 +137,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 177.625, 210.0, 79.0, 21.0 ],
 									"style" : "",
-									"text" : "loadmess 0.2"
+									"text" : "loadmess 0.4"
 								}
 
 							}
@@ -158,6 +159,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-15",
@@ -165,9 +167,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 318.25, 244.0, 72.0, 21.0 ],
+									"patching_rect" : [ 318.25, 244.0, 79.0, 21.0 ],
 									"style" : "",
-									"text" : "phasor~ 0.1"
+									"text" : "phasor~ 0.05"
 								}
 
 							}
@@ -274,6 +276,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"hidden" : 1,
@@ -282,9 +285,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 318.25, 185.0, 79.0, 21.0 ],
+									"patching_rect" : [ 318.25, 185.0, 86.0, 21.0 ],
 									"style" : "",
-									"text" : "loadmess 0.1"
+									"text" : "loadmess 0.05"
 								}
 
 							}
@@ -374,6 +377,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-37",
@@ -383,7 +387,7 @@
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 177.625, 286.0, 72.0, 21.0 ],
 									"style" : "",
-									"text" : "phasor~ 0.2"
+									"text" : "phasor~ 0.4"
 								}
 
 							}
@@ -1325,8 +1329,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1372,7 +1376,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 113.0, 1145.0, 749.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1886,8 +1890,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 344.0, 597.5, 176.618362, 39.0 ],
-									"presentation_rect" : [ 344.0, 589.0, 176.618362, 39.0 ]
+									"patching_rect" : [ 344.0, 597.0, 176.618362, 39.0 ],
+									"presentation_rect" : [ 344.0, 597.0, 176.618362, 39.0 ]
 								}
 
 							}
@@ -2041,7 +2045,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@module", 0, "@file", "drumLoop.aif", "@loop", 1 ],
+									"args" : [ "@module", 0, "@file", "duduk.aif", "@loop", 1, "@vol", 0 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -3265,8 +3269,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3312,7 +3316,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1145.0, 749.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 749.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,

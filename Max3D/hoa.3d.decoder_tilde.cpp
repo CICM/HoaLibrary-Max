@@ -16,10 +16,10 @@
  A 3d ambisonic decoder.
  
  @description
- <o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition, the second one is the number of channels.
+ <o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition. The number of channels, the offset, the angles can be set with attributes.
  
  @discussion
- <o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition, the second one is the number of channels.
+ <o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition. The number of channels, the offset, the angles can be set with attributes.
  
  @category ambisonics, hoa objects, audio, MSP
  
@@ -31,9 +31,11 @@
 typedef struct _hoa_3d_decoder 
 {
 	t_pxobject                  f_ob;
-    Decoder<Hoa3d, t_sample>*   f_decoder;
-    t_sample*                   f_ins;
-    t_sample*                   f_outs;
+    SharedPtr<Decoder<Hoa3d, float>>     f_decoder;
+    float*                      f_ins;
+    float*                      f_outs;
+    float**                     f_ins_bin;
+    float*                      f_outs_bin[2];
     long                        f_number_of_channels;
     double                      f_angles_of_channels[HOA_MAX_PLANEWAVES * 2];
     long                        f_number_of_angles;
@@ -56,23 +58,66 @@ t_hoa_err hoa_getinfos(t_hoa_3d_decoder* x, t_hoa_boxinfos* boxinfos)
 
 void hoa_3d_decoder_3D_perform64(t_hoa_3d_decoder *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
 {
-    for(int i = 0; i < numins; i++)
+    SharedPtr<Decoder<Hoa3d, float>> decoder = x->f_decoder;
+    if(decoder->getMode() == Decoder<Hoa3d, float>::BinauralMode)
     {
-        Signal<t_sample>::copy(sampleframes, ins[i], 1, x->f_ins+i, numins);
+        for(int i = 0; i < numins; i++)
+        {
+            for(ulong j = 0ul; j < sampleframes; j++)
+            {
+                x->f_ins_bin[i][j] = ins[i][j];
+            }
+        }
+        (static_cast<Decoder<Hoa3d, float>::Binaural*>(decoder.get()))->processBlock((float const**)x->f_ins_bin, (float **)x->f_outs_bin);
+        for(int i = 0; i < sampleframes; i++)
+        {
+            outs[0][i] = x->f_outs_bin[0][i];
+            outs[1][i] = x->f_outs_bin[1][i];
+        }
     }
-	for(int i = 0; i < sampleframes; i++)
+    else
     {
-        x->f_decoder->process(x->f_ins + numins * i, x->f_outs + numouts * i);
-    }
-    for(int i = 0; i < numouts; i++)
-    {
-        Signal<t_sample>::copy(sampleframes, x->f_outs+i, numouts, outs[i], 1);
+        for(int i = 0; i < numins; i++)
+        {
+            ulong is = 0ul;
+            ulong id = 0ul;
+            float* dest = x->f_ins+i;
+            for(ulong j = 0ul; j < sampleframes; j++)
+            {
+                dest[id] = ins[i][is];
+                is += 1;
+                id += numins;
+            }
+        }
+        for(int i = 0; i < sampleframes; i++)
+        {
+            decoder->process(x->f_ins + numins * i, x->f_outs + numouts * i);
+        }
+        for(int i = 0; i < numouts; i++)
+        {
+            ulong is = 0ul;
+            ulong id = 0ul;
+            const float* src = x->f_outs+i;
+            for(ulong j = 0ul; j < sampleframes; j++)
+            {
+                outs[i][id] = src[is];
+                is += numouts;
+                id += 1;
+            }
+        }
     }
 }
 
 void hoa_3d_decoder_dsp64(t_hoa_3d_decoder *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
     x->f_decoder->computeRendering(maxvectorsize);
+    for(ulong i = 0; i < x->f_decoder->getNumberOfHarmonics(); i++)
+    {
+        x->f_ins_bin[i] = x->f_ins+i*maxvectorsize;
+    }
+    x->f_outs_bin[0] = x->f_outs;
+    x->f_outs_bin[1] = x->f_outs+maxvectorsize;
+    
     object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_3d_decoder_3D_perform64, 0, NULL);
 }
 
@@ -131,8 +176,7 @@ t_max_err mode_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
                 object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
                 
                 ulong order = x->f_decoder->getDecompositionOrder();
-                delete x->f_decoder;
-                x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, (order+1)*(order+1));
+                x->f_decoder = SharedPtr<Decoder<Hoa3d, float>>(new Decoder<Hoa3d, float>::Regular(order, (order+1)*(order+1)));
                 
                 x->f_mode = mode;
                 object_attr_setdisabled((t_object *)x, hoa_sym_angles, 0);
@@ -150,8 +194,7 @@ t_max_err mode_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
                 object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
                 
                 ulong order = x->f_decoder->getDecompositionOrder();
-                delete x->f_decoder;
-                x->f_decoder = new Decoder<Hoa3d, t_sample>::Binaural(order);
+                x->f_decoder = SharedPtr<Decoder<Hoa3d, float>>(new Decoder<Hoa3d, float>::Binaural(order));
                 
                 x->f_mode = mode;
                 object_attr_setdisabled((t_object *)x, hoa_sym_angles, 1);
@@ -178,8 +221,7 @@ t_max_err channel_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *ar
             object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
             long channels = Math<long>::clip(atom_getlong(argv), 4, HOA_MAX_PLANEWAVES);
             ulong order = x->f_decoder->getDecompositionOrder();
-            delete x->f_decoder;
-            x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, channels);
+            x->f_decoder = SharedPtr<Decoder<Hoa3d, float>>(new Decoder<Hoa3d, float>::Regular(order, channels));
             x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
         }
         
@@ -265,9 +307,9 @@ t_max_err offset_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
 void hoa_3d_decoder_free(t_hoa_3d_decoder *x)
 {
 	dsp_free((t_pxobject *)x);
-	delete x->f_decoder;
     delete [] x->f_ins;
     delete [] x->f_outs;
+    delete [] x->f_ins_bin;
 }
 
 void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
@@ -290,7 +332,7 @@ void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
             number_of_channels = (order+1)*(order+1);
         
         x->f_mode = hoa_sym_ambisonic;
-        x->f_decoder = new Decoder<Hoa3d, t_sample>::Regular(order, number_of_channels);
+        x->f_decoder = SharedPtr<Decoder<Hoa3d, float>>(new Decoder<Hoa3d, float>::Regular(order, number_of_channels));
         
         x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
         x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
@@ -299,8 +341,9 @@ void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         for (int i = 0; i < x->f_decoder->getNumberOfPlanewaves(); i++)
             outlet_new(x, "signal");
         
-        x->f_ins = new t_sample[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
-        x->f_outs= new t_sample[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
+        x->f_ins  = new float[x->f_decoder->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
+        x->f_outs = new float[HOA_MAX_PLANEWAVES * HOA_MAXBLKSIZE];
+        x->f_ins_bin = new float*[x->f_decoder->getNumberOfHarmonics()];
         
         for(int i = 0; i < x->f_decoder->getNumberOfPlanewaves() * 2; i+= 2)
         {
@@ -327,8 +370,8 @@ void ext_main(void *r)
     
     hoa_initclass(c, (method)hoa_getinfos);
     
-    // @method signal @digest Array of spherical harmonic signals to decode for a set of loudspeakers
-    // @description Array of spherical harmonic signals to decode for a set of loudspeakers
+    // @method signal @digest Array of spherical harmonic signals to decode for a set of loudspeakers.
+    // @description Array of spherical harmonic signals to decode for a set of loudspeakers.
     class_addmethod(c, (method)hoa_3d_decoder_dsp64,             "dsp64",      A_CANT, 0);
     class_addmethod(c, (method)hoa_3d_decoder_assist,            "assist",     A_CANT, 0);
     
@@ -339,8 +382,8 @@ void ext_main(void *r)
     CLASS_ATTR_ORDER            (c, "mode", 0, "1");
     // @description There is two decoding <m>mode</m> :
     // <ul>
-    // <li><b>Ambisonics</b> : for a standard or irregular loudspeakers repartition over a sphere.</li>
-    // <li><b>Binaural</b> : for headphones.</li>
+    // <li><b>ambisonic</b> : for a regular or irregular loudspeakers repartition over a sphere.</li>
+    // <li><b>binaural</b> : for headphones.</li>
     // </ul>
     
     CLASS_ATTR_DOUBLE_VARSIZE	(c, "angles", ATTR_SET_DEFER_LOW, t_hoa_3d_decoder, f_angles_of_channels, f_number_of_angles, HOA_MAX_PLANEWAVES*2);
@@ -359,7 +402,7 @@ void ext_main(void *r)
     CLASS_ATTR_LABEL            (c, "channels", 0, "Number of Channels");
     CLASS_ATTR_ACCESSORS		(c, "channels", NULL, channel_set);
     CLASS_ATTR_ORDER            (c, "channels", 0, "2");
-    // @description The number of Channels.
+    // @description The number of channels.
     
     class_dspinit(c);
     class_register(CLASS_BOX, c);	
