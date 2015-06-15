@@ -49,13 +49,20 @@ t_hoa_err hoa_getinfos(t_hoa_pi* x, t_hoa_boxinfos* boxinfos)
 
 void hoa_pi_assist(t_hoa_pi *x, void *b, long m, long a, char *s)
 {
+
     // @in 0 @type bang/int/float @digest bang to output π, set the π multiplier
 	if (m == ASSIST_INLET)
 		sprintf(s,"(bang/int/float) Compute");
     
+#ifdef MAC_VERSION
     // @out 0 @type float @digest output result
 	else
 		sprintf(s,"(float) \u03C0 * %.2f", x->f_value);
+#else
+	// @out 0 @type float @digest output result
+	else
+		sprintf(s, "(float) pi * %.2f", x->f_value);
+#endif
 }
 
 void hoa_pi_bang(t_hoa_pi *x) 
@@ -63,13 +70,11 @@ void hoa_pi_bang(t_hoa_pi *x)
 	outlet_float(x->f_outlet, PI * x->f_value);
 }
 
-
 void hoa_pi_int(t_hoa_pi *x, long n)
 {
 	x->f_value = n;
 	hoa_pi_bang(x);
 }
-
 
 void hoa_pi_float(t_hoa_pi *x, double n) 
 {
