@@ -49,9 +49,7 @@ void *hoa_pi_sig_new(t_symbol *s, int argc, t_atom *argv)
         x->f_value = 1.0f;
         x->f_phase = 1.0f;
         
-        if (atom_gettype(argv) == A_LONG)
-            x->f_value = atom_getlong(argv);
-        else if (atom_gettype(argv) == A_FLOAT)
+        if (atom_isNumber(argv))
             x->f_value = atom_getfloat(argv);
         
         dsp_setup((t_pxobject *)x, 2);
@@ -108,8 +106,9 @@ void hoa_pi_sig_dsp64(t_hoa_pi_sig *x, t_object *dsp64, short *count, double sam
 void hoa_pi_sig_assist(t_hoa_pi_sig *x, void *b, long m, long a, char *s)
 {
     // @out 0 @type signal @digest output result
+#ifdef MAC_VERSION
 	if (m == ASSIST_OUTLET)
-		sprintf(s,"(signal) \u03C0 Result");
+		sprintf(s,"(signal) \u03C0 Result" );
 	else
     {
         if(a)
@@ -117,6 +116,17 @@ void hoa_pi_sig_assist(t_hoa_pi_sig *x, void *b, long m, long a, char *s)
         else
             sprintf(s,"(signal/float) \u03C0 Multiplier");  // @in 0 @type signal/float @digest set π multiplier
     }
+#else
+	if (m == ASSIST_OUTLET)
+		sprintf(s, "(signal) pi Result");
+	else
+	{
+		if (a)
+			sprintf(s, "(signal/float) pi Phase");       // @in 1 @type signal/float @digest set phase (wrapped between 0. and 1.)
+		else
+			sprintf(s, "(signal/float) pi Multiplier");  // @in 0 @type signal/float @digest set π multiplier
+	}
+#endif
 }
 
 void hoa_pi_sig_int(t_hoa_pi_sig *x, long n)
