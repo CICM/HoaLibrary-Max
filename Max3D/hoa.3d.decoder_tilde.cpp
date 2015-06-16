@@ -169,9 +169,15 @@ t_max_err mode_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
 	if(argc && argv && atom_gettype(argv) == A_SYM)
 	{
         t_symbol* mode = atom_getsym(argv);
+        
+        if(mode == hoa_sym_ambisonic) // retro-compatibility
+        {
+            mode = hoa_sym_regular;
+        }
+        
         if (mode != x->f_mode)
         {
-            if(mode == hoa_sym_ambisonic)
+            if(mode == hoa_sym_regular)
             {
                 object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
                 
@@ -216,7 +222,7 @@ t_max_err channel_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *ar
 {
 	if(argc && argv && atom_isNumber(argv))
 	{
-        if (x->f_mode == hoa_sym_ambisonic)
+        if (x->f_mode == hoa_sym_regular)
         {
             object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
             long channels = Math<long>::clip(atom_getlong(argv), 4, HOA_MAX_PLANEWAVES);
@@ -249,7 +255,7 @@ t_max_err angles_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
         }
     }
     
-    if (x->f_mode == hoa_sym_ambisonics)
+    if (x->f_mode == hoa_sym_regular)
     {
         for(int i = 1, j = 0; i < x->f_decoder->getNumberOfPlanewaves() * 2 && i < argc; i+= 2, j++)
         {
@@ -331,7 +337,7 @@ void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         else
             number_of_channels = (order+1)*(order+1);
         
-        x->f_mode = hoa_sym_ambisonic;
+        x->f_mode = hoa_sym_regular;
         x->f_decoder = SharedPtr<Decoder<Hoa3d, float>>(new Decoder<Hoa3d, float>::Regular(order, number_of_channels));
         
         x->f_number_of_angles = x->f_decoder->getNumberOfPlanewaves() * 2;
@@ -382,7 +388,7 @@ void ext_main(void *r)
     CLASS_ATTR_ORDER            (c, "mode", 0, "1");
     // @description There is two decoding <m>mode</m> :
     // <ul>
-    // <li><b>ambisonic</b> : for a regular or irregular loudspeakers repartition over a sphere.</li>
+    // <li><b>regular</b> : for a regular or irregular loudspeakers repartition over a sphere.</li>
     // <li><b>binaural</b> : for headphones.</li>
     // </ul>
     

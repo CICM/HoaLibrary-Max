@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 113.0, 925.0, 749.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1329,8 +1329,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1339,7 +1339,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 22.0, 57.0, 63.0, 20.0 ],
+					"patching_rect" : [ 22.0, 57.0, 63.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1376,7 +1376,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 925.0, 749.0 ],
+						"rect" : [ 100.0, 113.0, 925.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -3269,8 +3269,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3279,7 +3279,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 22.0, 27.0, 51.0, 20.0 ],
+					"patching_rect" : [ 22.0, 27.0, 49.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3348,7 +3348,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 73.0, 27.0, 50.0, 20.0 ],
+					"patching_rect" : [ 118.0, 27.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

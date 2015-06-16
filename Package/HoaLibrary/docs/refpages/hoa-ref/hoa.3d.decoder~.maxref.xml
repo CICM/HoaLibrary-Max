@@ -10,7 +10,7 @@
 	</digest>
 
 	<description>
-		<o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition, the second one is the number of channels.
+		<o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition. The number of channels, the offset, the angles can be set with attributes.
 	</description>
 
 	<!--METADATA-->
@@ -39,10 +39,10 @@
 		<method name="signal">
 			<arglist />
 			<digest>
-				Array of spherical harmonic signals to decode for a set of loudspeakers
+				Array of spherical harmonic signals to decode for a set of loudspeakers.
 			</digest>
 			<description>
-				Array of spherical harmonic signals to decode for a set of loudspeakers
+				Array of spherical harmonic signals to decode for a set of loudspeakers.
 			</description>
 		</method>
 	</methodlist>
@@ -66,7 +66,7 @@
 				Number of Channels
 			</digest>
 			<description>
-				The number of Channels.
+				The number of channels.
 			</description>
 			<attributelist>
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Number of Channels" />
@@ -80,8 +80,8 @@
 			<description>
 				There is two decoding <m>mode</m> :
 				<ul>
-				<li><b>Ambisonics</b> : for a standard or irregular loudspeakers repartition over a sphere.</li>
-				<li><b>Binaural</b> : for headphones.</li>
+				<li><b>regular</b> : for a regular or irregular loudspeakers repartition over a sphere.</li>
+				<li><b>binaural</b> : for headphones.</li>
 				</ul>
 			</description>
 			<attributelist>
@@ -105,7 +105,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition, the second one is the number of channels.
+		<o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition. The number of channels, the offset, the angles can be set with attributes.
 	</discussion>
 
 	<!--SEEALSO-->
@@ -122,7 +122,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition, the second one is the number of channels.
+		<o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition. The number of channels, the offset, the angles can be set with attributes.
 			</description>
 		</entry>
 		<entry name ="Keywords">

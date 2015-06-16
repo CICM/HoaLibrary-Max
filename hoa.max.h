@@ -78,8 +78,8 @@ typedef enum {
  */
 typedef enum {
 	HOA_OBJECT_STANDARD =			0, ///< a standard object type
-	HOA_OBJECT_2D		=			1, ///< a 2D dedicated object type
-	HOA_OBJECT_3D		=			2, ///< a 3D dedicated object type
+	HOA_OBJECT_2D		=			1, ///< a 2d object type
+	HOA_OBJECT_3D		=			2, ///< a 3d object type
 } e_hoa_object_type;
 
 /**
@@ -88,7 +88,7 @@ typedef enum {
  */
 typedef struct _hoa_boxinfos
 {
-	e_hoa_object_type object_type;					///< is the object a 3D dedicated one ?
+	e_hoa_object_type object_type;					///< is the object a 2d/3d one ?
 	int autoconnect_inputs;							///< number of inputs that can be autoconnected
 	int autoconnect_outputs;						///< number of outputs that can be autoconnected
 	e_hoa_connect_type autoconnect_inputs_type;		///< the type of inputs (planewaves, ambisonic2D, ambisonic3D..)

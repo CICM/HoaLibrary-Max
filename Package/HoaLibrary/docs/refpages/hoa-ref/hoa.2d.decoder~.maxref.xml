@@ -93,9 +93,9 @@
 			<description>
 				There is three decoding <m>mode</m> :
 				<ul>
-				<li>- <b>Ambisonics</b> : for a regular loudspeakers repartition over a circular array.</li>
-				<li>- <b>Binaural</b> : for headphones.</li>
-				<li>- <b>Irregular</b> : for an irregular loudspeakers repartition over a circular array.</li>
+				<li>- <b>regular</b> : for a regular loudspeakers repartition over a circular array.</li>
+				<li>- <b>irregular</b> : for an irregular loudspeakers repartition over a circular array.</li>
+				<li>- <b>binaural</b> : for headphones.</li>
 				</ul>
 			</description>
 			<attributelist>

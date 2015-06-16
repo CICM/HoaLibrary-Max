@@ -41,17 +41,7 @@ namespace hoa
     {
         return degree / 360. * HOA_2PI;
     }
-
-	inline long mstosamps(const double ms, const double samplerate = 44100.)
-    {
-        return (long)(samplerate * ms * 0.001);
-    }
-
-    inline double sampstoms(const double s, const double samplerate=44100.)
-    {
-        return 1000. * s / samplerate;
-    }
-
+    
     inline double atodb(const double amp)
     {
         return (amp <= 0.) ? -999.f : (20. * log10(amp));

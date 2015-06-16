@@ -475,7 +475,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 750.0, 222.0, 182.0, 112.0 ],
+						"rect" : [ 200.0, 106.0, 166.0, 102.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -1762,7 +1762,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 573.0, 222.0, 166.0, 81.0 ],
+						"rect" : [ 200.0, 106.0, 166.0, 102.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -2015,8 +2015,7 @@
 			}
 , 			{
 				"box" : 				{
-					"angles" : [ 0.0, 90.0, 180.0, 270.0 ],
-					"channels" : 4.0,
+					"angles" : [ 0.0, 90.000003, 180.000005, 270.000001 ],
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"id" : "obj-2",
 					"maxclass" : "hoa.2d.meter~",
@@ -2049,8 +2048,15 @@
 , 			{
 				"box" : 				{
 					"allowdrag" : 0,
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0,
+					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+					"bgfillcolor_color1" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"bgfillcolor_color2" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "gradient",
 					"id" : "obj-6",
-					"items" : [ "Decoder:", "Ambisonic", ",", "Decoder:", "Binaural", ",", "Decoder:", "Irregular" ],
+					"items" : [ "Decoder:", "Regular", ",", "Decoder:", "Binaural", ",", "Decoder:", "Irregular" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,

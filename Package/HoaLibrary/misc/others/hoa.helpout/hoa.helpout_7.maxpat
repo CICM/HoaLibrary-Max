@@ -1507,7 +1507,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 259.0, 32.5, 18.0 ],
+									"patching_rect" : [ 500.0, 259.0, 32.5, 22.0 ],
 									"style" : "",
 									"text" : "5"
 								}
@@ -1522,7 +1522,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.0, 320.875366, 108.0, 17.0 ],
+									"patching_rect" : [ 340.0, 320.875366, 108.0, 21.0 ],
 									"style" : "",
 									"text" : "script hide sub_irre"
 								}
@@ -1537,7 +1537,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 143.0, 234.875366, 114.0, 17.0 ],
+									"patching_rect" : [ 143.0, 234.875366, 114.0, 21.0 ],
 									"style" : "",
 									"text" : "script show sub_irre"
 								}
@@ -1552,7 +1552,7 @@
 									"numinlets" : 4,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 104.0, 183.875366, 68.0, 20.0 ],
+									"patching_rect" : [ 104.0, 183.875366, 68.0, 22.0 ],
 									"style" : "",
 									"text" : "route 0 1 2"
 								}
@@ -1567,7 +1567,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.0, 273.875366, 117.0, 17.0 ],
+									"patching_rect" : [ 340.0, 273.875366, 117.0, 21.0 ],
 									"style" : "",
 									"text" : "script hide sub_ambi"
 								}
@@ -1582,7 +1582,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.0, 241.875366, 114.0, 17.0 ],
+									"patching_rect" : [ 340.0, 241.875366, 114.0, 21.0 ],
 									"style" : "",
 									"text" : "script hide sub_bina"
 								}
@@ -1597,7 +1597,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 66.0, 296.875366, 122.0, 17.0 ],
+									"patching_rect" : [ 66.0, 296.875366, 122.0, 21.0 ],
 									"style" : "",
 									"text" : "script show sub_ambi"
 								}
@@ -1612,7 +1612,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 266.875366, 119.0, 17.0 ],
+									"patching_rect" : [ 93.0, 266.875366, 119.0, 21.0 ],
 									"style" : "",
 									"text" : "script show sub_bina"
 								}
@@ -2199,7 +2199,7 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "gradient",
 					"id" : "obj-6",
-					"items" : [ "Decoder:", "Ambisonic", ",", "Decoder:", "Binaural", ",", "Decoder:", "Irregular" ],
+					"items" : [ "Decoder:", "Regular", ",", "Decoder:", "Binaural", ",", "Decoder:", "Irregular" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,

@@ -255,7 +255,12 @@ void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, 
     const t_symbol* lastMode = x->f_mode;
     const long order = x->f_decoder->getDecompositionOrder();
     
-    if(lastMode != mode && (mode == hoa_sym_ambisonic || mode == hoa_sym_irregular || mode == hoa_sym_binaural))
+    if(mode == hoa_sym_ambisonic)
+    {
+        mode = hoa_sym_regular;
+    }
+    
+    if(lastMode != mode && (mode == hoa_sym_regular || mode == hoa_sym_irregular || mode == hoa_sym_binaural))
     {
         x->f_mode = mode;
         channels = order*2+2;
@@ -265,7 +270,7 @@ void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, 
     if (modeChanged || channels != x->f_decoder->getNumberOfPlanewaves())
     {
         object_method(hoa_sym_dsp->s_thing, hoa_sym_stop);
-        if(mode == hoa_sym_ambisonic)
+        if(mode == hoa_sym_regular)
         {
             x->f_decoder = SharedPtr<Decoder<Hoa2d, float>>(new Decoder<Hoa2d, float>::Regular(order, Math<long>::clip(channels, order*2+1, HOA_MAX_PLANEWAVES)));
         }
@@ -385,7 +390,7 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         }
         
         x->f_send_config = 1;
-        x->f_mode = hoa_sym_ambisonic;
+        x->f_mode = hoa_sym_regular;
         
         x->f_decoder = SharedPtr<Decoder<Hoa2d, float>>(new Decoder<Hoa2d, float>::Regular(order, number_of_channels));
         x->f_number_of_channels = x->f_decoder->getNumberOfPlanewaves();
@@ -441,14 +446,14 @@ void ext_main(void *r)
     
     CLASS_ATTR_SYM              (c, "mode", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_mode);
     CLASS_ATTR_LABEL            (c, "mode", 0, "Mode");
-    CLASS_ATTR_ENUM             (c, "mode", 0, "ambisonic binaural irregular");
+    CLASS_ATTR_ENUM             (c, "mode", 0, "regular irregular binaural");
     CLASS_ATTR_ACCESSORS		(c, "mode", NULL, mode_set);
     CLASS_ATTR_ORDER            (c, "mode", 0, "1");
     // @description There is three decoding <m>mode</m> :
     // <ul>
-    // <li>- <b>Ambisonics</b> : for a regular loudspeakers repartition over a circular array.</li>
-    // <li>- <b>Binaural</b> : for headphones.</li>
-    // <li>- <b>Irregular</b> : for an irregular loudspeakers repartition over a circular array.</li>
+    // <li>- <b>regular</b> : for a regular loudspeakers repartition over a circular array.</li>
+    // <li>- <b>irregular</b> : for an irregular loudspeakers repartition over a circular array.</li>
+    // <li>- <b>binaural</b> : for headphones.</li>
     // </ul>
     
     CLASS_ATTR_LONG             (c, "channels", ATTR_SET_DEFER_LOW, t_hoa_2d_decoder, f_number_of_channels);

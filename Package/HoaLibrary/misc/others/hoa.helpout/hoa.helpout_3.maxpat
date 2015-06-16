@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 176.0, 147.0, 697.0, 648.0 ],
+		"rect" : [ 665.0, 147.0, 697.0, 648.0 ],
 		"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -527,7 +527,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 733.0, 369.0, 182.0, 112.0 ],
+						"rect" : [ 669.0, 174.0, 166.0, 102.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -1816,7 +1816,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 553.0, 369.0, 166.0, 81.0 ],
+						"rect" : [ 669.0, 174.0, 166.0, 102.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -2069,7 +2069,7 @@
 			}
 , 			{
 				"box" : 				{
-					"angles" : [ 0.0, 45.0, 90.0, 135.0, 180.0, 225.0, 270.0, 315.0 ],
+					"angles" : [ 0.0, 45.000001, 90.000003, 135.0, 180.000005, 224.999996, 270.000001, 314.999992 ],
 					"channels" : 8.0,
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"id" : "obj-2",
@@ -2078,7 +2078,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 52.75, 494.049988, 108.949997, 108.949997 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 199.018219, 2.0, 126.950531, 126.950531 ],
+					"presentation_rect" : [ 199.0, 2.0, 128.0, 128.0 ],
 					"varname" : "meter_object"
 				}
 
@@ -2104,8 +2104,15 @@
 , 			{
 				"box" : 				{
 					"allowdrag" : 0,
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0,
+					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+					"bgfillcolor_color1" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"bgfillcolor_color2" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "gradient",
 					"id" : "obj-6",
-					"items" : [ "Decoder:", "Ambisonic", ",", "Decoder:", "Binaural", ",", "Decoder:", "Irregular" ],
+					"items" : [ "Decoder:", "Regular", ",", "Decoder:", "Binaural", ",", "Decoder:", "Irregular" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -2164,7 +2171,7 @@
 					"order" : 3,
 					"patching_rect" : [ 238.050003, 494.049988, 108.949997, 108.949997 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 199.018219, 2.0, 126.950531, 126.950531 ],
+					"presentation_rect" : [ 199.0, 2.0, 128.0, 128.0 ],
 					"varname" : "scope_object"
 				}
 
