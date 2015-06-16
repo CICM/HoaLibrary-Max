@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 13.0, 79.0, 1018.0, 612.0 ],
+		"rect" : [ 180.0, 150.0, 1018.0, 612.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 501.0, 239.0, 864.0, 568.0 ],
+						"rect" : [ 362.0, 134.0, 864.0, 568.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -82,6 +82,74 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-36",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 507.5, 294.0, 237.5, 47.0 ],
+									"style" : "",
+									"text" : "Les caractères utilisés pour représenter les harmoniques ne sont pas dans l'ordre alphabétique",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[12]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-37",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 507.5, 294.0, 237.5, 47.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.595187,
+									"id" : "obj-55",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 507.5, 511.0, 169.0, 32.0 ],
+									"style" : "",
+									"text" : "Caractères associés aux harmoniques"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-56",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 507.5, 511.0, 169.0, 32.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bgcolor" : [ 0.916653, 0.916653, 0.916653, 1.0 ],
 									"fontname" : "Arial",
@@ -1485,7 +1553,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 507.5, 376.0, 149.0, 20.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[14]"
 								}
@@ -1529,38 +1597,6 @@
 , 							{
 								"box" : 								{
 									"fontname" : "Arial",
-									"fontsize" : 11.595187,
-									"id" : "obj-55",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 511.0, 169.0, 19.0 ],
-									"style" : "",
-									"text" : "Letter codes of the harmonics"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"angle" : 0.0,
-									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
-									"border" : 1,
-									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
-									"id" : "obj-56",
-									"maxclass" : "panel",
-									"mode" : 0,
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 511.0, 169.0, 20.0 ],
-									"proportion" : 0.39,
-									"rounded" : 0,
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-38",
 									"linecount" : 2,
@@ -1569,7 +1605,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 507.5, 79.5, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[13]"
 								}
@@ -1927,7 +1963,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 505.0, 212.0, 127.0, 19.0 ],
 									"style" : "",
-									"text" : "ACN of the harmonics"
+									"text" : "ACN des harmoniques"
 								}
 
 							}
@@ -1969,49 +2005,14 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
-									"id" : "obj-36",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 294.0, 252.5, 33.0 ],
-									"style" : "",
-									"text" : "The letter codes of the harmonics are not in the alphabetic order :",
-									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
-									"varname" : "autohelp_top_description[12]"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"angle" : 0.0,
-									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
-									"border" : 1,
-									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
-									"id" : "obj-37",
-									"maxclass" : "panel",
-									"mode" : 0,
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 294.0, 252.5, 33.0 ],
-									"proportion" : 0.39,
-									"rounded" : 0,
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
 									"id" : "obj-32",
 									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 13.0, 252.5, 47.0 ],
+									"patching_rect" : [ 507.5, 13.0, 275.5, 47.0 ],
 									"style" : "",
-									"text" : "The numbering of the harmonics channels is similar to the ACN even if the use of the degrees and the orders is preferred :",
+									"text" : "La numérotation des canaux d'harmoniques est similaire à la norme ACN, même si l'utilisation des degrés et des ordres est préférée:",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[11]"
 								}
@@ -2028,7 +2029,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 13.0, 252.5, 47.0 ],
+									"patching_rect" : [ 507.5, 13.0, 275.5, 47.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -2046,7 +2047,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 247.5, 376.0, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[8]"
 								}
@@ -2971,7 +2972,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 245.0, 511.0, 92.5, 33.0 ],
 									"style" : "",
-									"text" : "Orders of the harmonics m",
+									"text" : "Ordre des harmoniques m",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[9]"
 								}
@@ -3006,7 +3007,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.0, 294.0, 257.5, 33.0 ],
 									"style" : "",
-									"text" : "An harmonic is defined by a degree l and an order m thus it can be noted h[l, m] :",
+									"text" : "Une harmonique est définie par un degré l et un ordre m et peut être notée [l, m].",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[2]"
 								}
@@ -3041,7 +3042,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 19.5, 376.0, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[7]"
 								}
@@ -3076,7 +3077,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 17.5, 13.0, 257.5, 33.0 ],
 									"style" : "",
-									"text" : "The number of harmonics depends on the order of decomposition N :",
+									"text" : "Le nombre d'harmoniques dépend de l'ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -3111,7 +3112,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 152.25, 185.0, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[5]"
 								}
@@ -3180,7 +3181,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 17.5, 52.0, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[6]"
 								}
@@ -4117,7 +4118,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 17.0, 511.0, 92.5, 33.0 ],
 									"style" : "",
-									"text" : "Degrees of the harmonics l",
+									"text" : "Degrés des harmoniques l",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[3]"
 								}
@@ -4169,7 +4170,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 149.75, 52.0, 92.5, 33.0 ],
 									"style" : "",
-									"text" : "Number of harmonics",
+									"text" : "Nombre d'harmoniques",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[4]"
 								}
@@ -4250,7 +4251,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.0, 185.0, 108.0, 58.0 ],
 									"style" : "",
-									"text" : "Number of harmonics / minimum number of loudspeakers"
+									"text" : "Nombre d'harmoniques / nombre minimum de haut-parleurs"
 								}
 
 							}
@@ -4503,7 +4504,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 145.0, 159.0, 859.0, 614.0 ],
+						"rect" : [ 281.0, 208.0, 859.0, 614.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4541,7 +4542,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 507.5, 477.0, 208.5, 21.0 ],
 									"style" : "",
-									"text" : "W Y X V U Q P ?"
+									"text" : "W Y X V U Q P"
 								}
 
 							}
@@ -4708,25 +4709,12 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-8",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "int" ],
-													"patching_rect" : [ 28.5, 78.0, 29.5, 22.0 ],
-													"style" : "",
-													"text" : "+ 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-9",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 28.5, 47.0, 29.5, 22.0 ],
+													"patching_rect" : [ 28.5, 68.0, 29.5, 22.0 ],
 													"style" : "",
 													"text" : "* 2"
 												}
@@ -4812,7 +4800,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 28.5, 11.0, 25.0, 25.0 ],
+													"patching_rect" : [ 28.5, 32.0, 25.0, 25.0 ],
 													"style" : ""
 												}
 
@@ -5013,15 +5001,6 @@
 													"destination" : [ "obj-42", 0 ],
 													"disabled" : 0,
 													"hidden" : 0,
-													"source" : [ "obj-8", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-8", 0 ],
-													"disabled" : 0,
-													"hidden" : 0,
 													"source" : [ "obj-9", 0 ]
 												}
 
@@ -5069,7 +5048,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 507.5, 376.0, 149.0, 20.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[14]"
 								}
@@ -5115,12 +5094,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-55",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 511.0, 169.0, 19.0 ],
+									"patching_rect" : [ 507.5, 511.0, 169.0, 32.0 ],
 									"style" : "",
-									"text" : "Letter codes of the harmonics"
+									"text" : "Caractères associés aux harmoniques"
 								}
 
 							}
@@ -5135,7 +5115,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 511.0, 169.0, 20.0 ],
+									"patching_rect" : [ 507.5, 511.0, 169.0, 32.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -5153,7 +5133,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 507.5, 79.5, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[13]"
 								}
@@ -5489,7 +5469,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 505.0, 212.0, 127.0, 19.0 ],
 									"style" : "",
-									"text" : "ACN of the harmonics"
+									"text" : "ACN des harmoniques"
 								}
 
 							}
@@ -5532,13 +5512,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-36",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 294.0, 252.5, 33.0 ],
+									"patching_rect" : [ 507.5, 294.0, 237.5, 47.0 ],
 									"style" : "",
-									"text" : "The letter codes of the harmonics are not in the alphabetic order :",
+									"text" : "Les caractères utilisés pour représenter les harmoniques ne sont pas dans l'ordre alphabétique",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[12]"
 								}
@@ -5555,7 +5535,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 294.0, 252.5, 33.0 ],
+									"patching_rect" : [ 507.5, 294.0, 237.5, 47.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -5571,9 +5551,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 13.0, 252.5, 47.0 ],
+									"patching_rect" : [ 507.5, 13.0, 274.5, 47.0 ],
 									"style" : "",
-									"text" : "The numbering of the harmonics channels is similar to the ACN even if the use of the degrees and the orders is preferred :",
+									"text" : "La numérotation des canaux d'harmoniques est similaire à la norme ACN, même si l'utilisation des degrés et des ordres est préférée:",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[11]"
 								}
@@ -5590,7 +5570,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.5, 13.0, 252.5, 47.0 ],
+									"patching_rect" : [ 507.5, 13.0, 274.5, 47.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -5608,7 +5588,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 247.5, 376.0, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[8]"
 								}
@@ -5951,7 +5931,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 245.0, 511.0, 92.5, 33.0 ],
 									"style" : "",
-									"text" : "Orders of the harmonics m",
+									"text" : "Ordre des harmoniques m",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[9]"
 								}
@@ -5986,7 +5966,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.0, 294.0, 257.5, 60.0 ],
 									"style" : "",
-									"text" : "An harmonic is defined by a degree l and an order m thus it can be noted h[l, m]. In 2d, the degree l is rarely used because it is equal to the absolute value of the order m :",
+									"text" : "Une harmonique est définie par un degré l et un ordre m et peut être notée [l, m]. En 2d, le degré l est rarement utilisé, car il est égal à la valeur absolue de l'ordre m:",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[2]"
 								}
@@ -6021,7 +6001,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 19.5, 376.0, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[7]"
 								}
@@ -6056,7 +6036,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 17.5, 13.0, 257.5, 33.0 ],
 									"style" : "",
-									"text" : "The number of harmonics depends on the order of decomposition N :",
+									"text" : "Le nombre d'harmoniques dépend de l'ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -6091,7 +6071,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 152.25, 185.0, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[5]"
 								}
@@ -6160,7 +6140,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 17.5, 52.0, 99.0, 33.0 ],
 									"style" : "",
-									"text" : "Order of decomposition N",
+									"text" : "Ordre de décomposition N",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[6]"
 								}
@@ -6682,7 +6662,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 17.0, 511.0, 92.5, 33.0 ],
 									"style" : "",
-									"text" : "Degrees of the harmonics l",
+									"text" : "Degrés des harmoniques l",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[3]"
 								}
@@ -6709,22 +6689,6 @@
 , 							{
 								"box" : 								{
 									"fontname" : "Arial",
-									"fontsize" : 11.595187,
-									"hidden" : 1,
-									"id" : "obj-24",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 152.25, 58.5, 76.0, 21.0 ],
-									"style" : "",
-									"text" : "loadmess 15"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-16",
 									"linecount" : 2,
@@ -6733,7 +6697,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 149.75, 52.0, 92.5, 33.0 ],
 									"style" : "",
-									"text" : "Number of harmonics",
+									"text" : "Nombre d'harmoniques",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[4]"
 								}
@@ -6860,7 +6824,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.0, 185.0, 108.0, 58.0 ],
 									"style" : "",
-									"text" : "Number of harmonics / minimum number of loudspeakers"
+									"text" : "Nombre d'harmoniques / nombre minimum de haut-parleurs"
 								}
 
 							}
@@ -6895,6 +6859,22 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 17.5, 95.0, 50.0, 21.0 ],
 									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.595187,
+									"hidden" : 1,
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 152.25, 58.5, 76.0, 21.0 ],
+									"style" : "",
+									"text" : "loadmess 15"
 								}
 
 							}
@@ -7166,9 +7146,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 726.0, 204.440063, 137.0, 19.0 ],
+					"patching_rect" : [ 726.0, 204.440063, 132.0, 19.0 ],
 					"style" : "",
-					"text" : "Order of the harmonic"
+					"text" : "Ordre de l'harmonique"
 				}
 
 			}
@@ -7746,7 +7726,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 726.0, 179.940063, 137.0, 19.0 ],
 					"style" : "",
-					"text" : "Degree of the harmonic"
+					"text" : "Degré de l'harmonique"
 				}
 
 			}
@@ -8075,7 +8055,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 719.049988, 146.940063, 272.899963, 19.0 ],
 					"style" : "",
-					"text" : "Representation of the spherical harmonics",
+					"text" : "Representation des harmoniques sphériques",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -8108,7 +8088,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 404.049988, 201.440063, 272.899963, 19.0 ],
 					"style" : "",
-					"text" : "Representation of the circular harmonics",
+					"text" : "Representation des harmoniques circulaires",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -8431,9 +8411,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 411.0, 232.940063, 129.0, 19.0 ],
+					"patching_rect" : [ 411.0, 232.940063, 132.0, 19.0 ],
 					"style" : "",
-					"text" : "Order of the harmonics"
+					"text" : "Ordre de l'harmonique"
 				}
 
 			}
@@ -9015,7 +8995,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 480.5, 364.0, 110.0 ],
 					"style" : "",
-					"text" : "Examples :\nIn 2d, for an order of decomposition N = 7, there are 15 harmonics sorted by their degrees and their orders : [degree, order]\n[0, 0], [1, -1], [1, 1], [2, -2], [2, 2], ...[7, -7], [7, 7]\nIn 3d, for an order of decomposition N = 3, there are 12 harmonics sorted by their degrees and their orders : [degree, order]\n[0, 0], [1, -1], [1, 0], [1, 1], [2, -2], [2, -1], [2, 0], [2, 1], [2, 2], ...[3, -1], [3, 0], [3, 1], [3, 2], [3, 3]",
+					"text" : "Exemples :\nEn 2d, pour un ordre de décomposition N = 7, il y a 15 harmoniques triés selon leurs degrés et leurs ordres: [degré, ordre]\n[0, 0], [1, -1], [1, 1], [2, -2], [2, 2], ...[7, -7], [7, 7]\nEn 3d, pour un ordre de décomposition N = 3, il y a 12 harmoniques triés selon leurs degrés et leurs ordres: [degré, ordre]\n[0, 0], [1, -1], [1, 0], [1, 1], [2, -2], [2, -1], [2, 0], [2, 1], [2, 2], ...[3, -1], [3, 0], [3, 1], [3, 2], [3, 3]",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -9043,13 +9023,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-37",
-					"linecount" : 5,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 372.970032, 364.0, 71.0 ],
+					"patching_rect" : [ 7.0, 357.970032, 364.0, 84.0 ],
 					"style" : "",
-					"text" : "The decomposition of a sound field in the harmonics domain is performed according to an order of decomposition N. A given decomposition order N includes all the degrees from 0 to N. Thus, in 2d, the sound field is composed by 2N+1 circular harmonics and in 3d the sound field is composed by (N+1)^2 spherical harmonics.",
+					"text" : "La décomposition d'un champ sonore dans le domaine des harmoniques est effectuée conformément à un ordre de décomposition N. Un ordre de décomposition donné N comprend tous les degrés de 0 à N. Ainsi, en 2D, le champ sonore est composé de 2N + 1 harmoniques circulaires et en 3D le champ sonore est composée de (N + 1) ^ 2 harmoniques sphériques.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -9065,7 +9045,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 372.970032, 364.0, 71.0 ],
+					"patching_rect" : [ 7.0, 357.970032, 364.0, 84.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -9083,7 +9063,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 201.440063, 364.0, 97.0 ],
 					"style" : "",
-					"text" : "The harmonics depend on a degree l and an (azimuthal) order m. \nFor the circular harmonics, each degree l includes 2 harmonics which orders are m = -l and m = l (the degree 0 has 1 harmonic with the order 0).\nFor the spherical harmonics, each degree l has 2l+1 harmonics which the orders go from -l to l. In fact, the circular harmonics are particular cases of the spherical harmonics.",
+					"text" : "Les harmoniques dépendent d'un degré l et d'un ordre (azimutal) m.\nPour les harmoniques circulaires, chaque degré l comprend 2 harmoniques dont les ordres sont m = -l et m = l (le degré 0 a 1 harmonique d'ordre 0).\nPour les harmoniques sphériques, chaque degré l a 2l+1 harmoniques dont les ordres vont de -l à l. En fait, les harmoniques circulaires sont des cas particuliers d'harmoniques sphériques.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -9117,7 +9097,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 102.940063, 364.0, 71.0 ],
 					"style" : "",
-					"text" : "These functions are circular in 2d and spherical in 3d. That means they take angles as variables and the result of the functions differs according to the value of the angles. These angles are the azimuth θ for the circular harmonics or the azimuth θ and the elevation φ for the spherical harmonics.",
+					"text" : "Ces fonctions sont circulaires en 2d et sphériques en 3d. Cela signifie qu'elles prennent des angles comme variables et que le résultat de ces fonctions diffère selon la valeur de ces angles. Ces variables sont l'azimut θ pour des harmoniques circulaires ou l'azimut θ et l'élévation φ pour des harmoniques sphériques.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -9150,7 +9130,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 68.0, 815.650024, 19.0 ],
 					"style" : "",
-					"text" : "In Ambisonics, the harmonics are the functions used to decompose the space and thus to represent the sounds and their spatial informations.",
+					"text" : "En ambisonie, les harmoniques sont les fonctions utilisées pour décomposer l'espace et donc représenter les sons et leurs informations spatiales.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -9195,7 +9175,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@obj-name", "Tutorial 3", "@obj-desc", "Harmonics" ],
+					"args" : [ "@obj-name", "Tutoriel 3", "@obj-desc", "Harmoniques" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
