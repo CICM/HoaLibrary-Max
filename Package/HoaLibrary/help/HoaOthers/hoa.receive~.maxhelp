@@ -288,7 +288,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 694.0, 73.5, 54.0, 32.0 ],
+					"patching_rect" : [ 688.5, 68.5, 54.0, 32.0 ],
 					"style" : "",
 					"text" : "Audio\nOn/Off",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -304,7 +304,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 641.5, 67.0, 45.0, 45.0 ],
+					"patching_rect" : [ 636.0, 62.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -319,7 +319,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 638.5, 64.0, 120.0, 51.0 ],
+					"patching_rect" : [ 633.0, 59.0, 120.0, 51.0 ],
 					"proportion" : 0.39,
 					"rounded" : 6,
 					"shadow" : -1,
@@ -923,13 +923,13 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"bgcolor2" : [ 0.908759, 0.908759, 0.908759, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"bgcolor2" : [ 0.908759, 0.908759, 0.908759, 0.0 ],
 					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_autogradient" : 0,
 					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-					"bgfillcolor_color1" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"bgfillcolor_color2" : [ 0.908759, 0.908759, 0.908759, 1.0 ],
+					"bgfillcolor_color1" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"bgfillcolor_color2" : [ 0.908759, 0.908759, 0.908759, 0.0 ],
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "gradient",
 					"fontname" : "Arial",
@@ -940,10 +940,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 405.875, 92.0, 50.0, 20.0 ],
+					"patching_rect" : [ 403.875, 90.0, 50.0, 20.0 ],
 					"style" : "",
 					"text" : "receive~",
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor" : [ 0.011765, 0.396078, 0.752941, 1.0 ]
 				}
 
 			}
@@ -1171,6 +1171,7 @@
 					"destination" : [ "obj-5", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 490.5, 274.0, 409.5, 274.0 ],
 					"source" : [ "obj-19", 0 ]
 				}
 

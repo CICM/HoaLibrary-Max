@@ -99,7 +99,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 287.0, 338.0, 249.0, 33.0 ],
-									"presentation_rect" : [ 288.0, 333.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "if no optimization-mode is specified, the optimization will be inPhase.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -119,7 +118,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 287.0, 338.0, 249.0, 33.0 ],
-									"presentation_rect" : [ 288.0, 333.0, 0.0, 0.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -1443,8 +1441,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1540,8 +1538,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1570,8 +1568,8 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-35::obj-30::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-35::obj-30::obj-35" : [ "[5]", "Level", 0 ]
+			"obj-35::obj-30::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-35::obj-30::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

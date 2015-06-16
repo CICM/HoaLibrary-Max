@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x86",
+			"revision" : 3,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -55,8 +55,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -97,9 +97,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 249.25, 634.0, 233.0, 20.0 ],
+									"patching_rect" : [ 318.25, 634.0, 165.0, 20.0 ],
 									"style" : "",
-									"text" : "currently dragged or mouse over value =>",
+									"text" : "dragged or hovered slider =>",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[16]"
 								}
@@ -116,7 +116,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 249.25, 634.0, 233.0, 19.0 ],
+									"patching_rect" : [ 318.25, 634.0, 165.0, 20.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -1258,8 +1258,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1301,8 +1301,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -1678,8 +1678,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1739,8 +1739,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -2204,8 +2204,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -2669,8 +2669,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -3134,8 +3134,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -3665,8 +3665,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"fontsize" : [ 12.059008 ],
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+													"fontsize" : [ 12.059008 ]
 												}
 ,
 												"parentstyle" : "",
@@ -3991,12 +3991,12 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 46.400009, 119.0, 59.5, 21.0 ],
 									"restore" : 									{
-										"hoaspace" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+										"hoaspace" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]
 									}
 ,
 									"style" : "",
 									"text" : "autopattr",
-									"varname" : "u297022575"
+									"varname" : "u458018226"
 								}
 
 							}
@@ -4031,7 +4031,7 @@
 									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
-									"hoa_2d_space_saved_state" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"hoa_2d_space_saved_state" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-2",
 									"maxclass" : "hoa.2d.space",
 									"numinlets" : 1,
@@ -4163,8 +4163,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -5815,7 +5815,43 @@
 							}
  ],
 						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjBlue-1",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-2",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-3",
 								"default" : 								{
 									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
 								}
@@ -5833,10 +5869,48 @@
 								"multi" : 0
 							}
 , 							{
+								"name" : "newobjGreen-2",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-3",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-2",
+								"default" : 								{
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-3",
+								"default" : 								{
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5878,8 +5952,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -6292,7 +6366,7 @@
 									"maxclass" : "number",
 									"maximum" : 125,
 									"minimum" : 1,
-									"mouseup" : 1,
+									"mousefilter" : 1,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
@@ -6678,8 +6752,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -6739,8 +6813,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -7204,8 +7278,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -7669,8 +7743,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -8134,8 +8208,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -8698,7 +8772,7 @@
 									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
-									"hoa_2d_space_saved_state" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"hoa_2d_space_saved_state" : [ 0.55, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.305 ],
 									"id" : "obj-2",
 									"maxclass" : "hoa.2d.space",
 									"numinlets" : 1,
@@ -8967,8 +9041,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -10861,8 +10935,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10904,8 +10978,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -11251,8 +11325,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -11312,8 +11386,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -11777,8 +11851,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -12242,8 +12316,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -12707,8 +12781,8 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 0,
-															"architecture" : "x86",
+															"revision" : 3,
+															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
@@ -13553,8 +13627,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -15178,8 +15252,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -15221,8 +15295,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -15278,90 +15352,89 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-3::obj-2" : [ "hoa.2d.space[1]", "hoa.2d.space[1]", 0 ],
-			"obj-45::obj-2" : [ "hoa.2d.space", "hoa.2d.space", 0 ]
+			"obj-45::obj-2" : [ "hoa.2d.space", "hoa.2d.space", 0 ],
+			"obj-3::obj-2" : [ "hoa.2d.space[1]", "hoa.2d.space[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.fx.gain~.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/effects",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/effects",
 				"patcherrelativepath" : "../../patchers/effects",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.list.sel.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.args.map.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.mode.sel.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.send~.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/others",
 				"patcherrelativepath" : "../../patchers/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.syn.grain~.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/synth",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/synth",
 				"patcherrelativepath" : "../../patchers/synth",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.help.process.infos.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/helputility",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/helputility",
 				"patcherrelativepath" : "../../patchers/helputility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "littlefilter~.maxpat",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/docs/tutorial-patchers/msp-tut",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/docs/tutorial-patchers/msp-tut",
+				"bootpath" : "C74:/docs/tutorial-patchers/msp-tut",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.receive~.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/patchers/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/patchers/others",
 				"patcherrelativepath" : "../../patchers/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "space.json",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/Presets",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/Presets",
 				"patcherrelativepath" : "../../misc/Presets",
 				"type" : "JSON",
 				"implicit" : 1

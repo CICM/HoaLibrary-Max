@@ -6,7 +6,7 @@
 <c74object name="hoa.2d.recomposer" module="hoa">
 
 	<digest>
-		A Graphical User Interface to manipulate channels in 2d.
+		A Graphical User Interface to manipulate 2d plane waves.
 	</digest>
 
 	<description>

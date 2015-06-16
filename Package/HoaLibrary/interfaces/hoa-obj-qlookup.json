@@ -82,7 +82,7 @@
     ]
   },
   "hoa.2d.recomposer": {
-    "digest": "A Graphical User Interface to manipulate channels in 2d.",
+    "digest": "A Graphical User Interface to manipulate 2d plane waves.",
     "module": "hoa",
     "category": [
       "ambisonics",
