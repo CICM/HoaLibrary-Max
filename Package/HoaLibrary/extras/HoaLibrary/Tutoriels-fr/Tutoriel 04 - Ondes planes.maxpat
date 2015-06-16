@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 35.0, 115.0, 842.0, 689.0 ],
+		"rect" : [ 338.0, 114.0, 872.0, 692.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -38,6 +38,76 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 11.595187,
+					"id" : "obj-8",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 692.0, 381.940063, 108.0, 32.0 ],
+					"style" : "",
+					"text" : "Domaine des harmoniques",
+					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 0.0,
+					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+					"border" : 1,
+					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+					"id" : "obj-11",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 692.0, 381.940063, 108.0, 32.0 ],
+					"proportion" : 0.39,
+					"rounded" : 0,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 11.595187,
+					"id" : "obj-2",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 559.949951, 342.470032, 108.0, 32.0 ],
+					"presentation_rect" : [ 560.0, 345.940063, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "Domaine des ondes planes",
+					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 0.0,
+					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+					"border" : 1,
+					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+					"id" : "obj-7",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 559.949951, 342.470032, 108.0, 32.0 ],
+					"presentation_rect" : [ 560.0, 345.940063, 0.0, 0.0 ],
+					"proportion" : 0.39,
+					"rounded" : 0,
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "comment",
@@ -70,7 +140,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 251.970032, 12.0, 5.0 ]
+					"patching_rect" : [ 7.0, 281.970032, 12.0, 5.0 ]
 				}
 
 			}
@@ -82,7 +152,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1.0, 218.970032, 13.0, 36.0 ]
+					"patching_rect" : [ 1.0, 248.970032, 13.0, 36.0 ]
 				}
 
 			}
@@ -95,7 +165,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 214.410095, 14.0, 12.0 ]
+					"patching_rect" : [ 7.0, 244.410095, 14.0, 12.0 ]
 				}
 
 			}
@@ -105,9 +175,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 244.470032, 87.0, 20.0 ],
+					"patching_rect" : [ 21.0, 274.470032, 87.0, 20.0 ],
 					"style" : "",
-					"text" : "Sound Source"
+					"text" : "Source sonore"
 				}
 
 			}
@@ -120,7 +190,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 176.970032, 13.0, 16.0 ]
+					"patching_rect" : [ 15.0, 206.970032, 13.0, 16.0 ]
 				}
 
 			}
@@ -133,7 +203,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 364.0, 176.970032, 13.0, 16.0 ]
+					"patching_rect" : [ 364.0, 206.970032, 13.0, 16.0 ]
 				}
 
 			}
@@ -143,9 +213,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 330.0, 156.970032, 73.0, 20.0 ],
+					"patching_rect" : [ 330.0, 186.970032, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "Plane wave"
+					"text" : "Onde plane"
 				}
 
 			}
@@ -158,7 +228,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 93.0, 156.970032, 232.0, 20.0 ]
+					"patching_rect" : [ 93.0, 186.970032, 232.0, 20.0 ]
 				}
 
 			}
@@ -168,9 +238,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 4.0, 156.970032, 83.0, 20.0 ],
+					"patching_rect" : [ 4.0, 186.970032, 89.0, 20.0 ],
 					"style" : "",
-					"text" : "Circular wave"
+					"text" : "onde circulaire"
 				}
 
 			}
@@ -182,7 +252,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "list", "list", "int", "" ],
-					"patching_rect" : [ 21.0, 194.910095, 350.0, 50.0 ]
+					"patching_rect" : [ 21.0, 224.910095, 350.0, 50.0 ]
 				}
 
 			}
@@ -204,7 +274,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 614.0, 238.0, 509.0, 639.0 ],
+						"rect" : [ 751.0, 471.0, 509.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -299,7 +369,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -696,6 +766,25 @@
 													"source" : [ "obj-85", 0 ]
 												}
 
+											}
+ ],
+										"styles" : [ 											{
+												"name" : "AudioStatus_Menu",
+												"default" : 												{
+													"bgfillcolor" : 													{
+														"type" : "color",
+														"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+														"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+														"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+														"angle" : 270.0,
+														"proportion" : 0.39,
+														"autogradient" : 0
+													}
+
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
 											}
  ]
 									}
@@ -1417,7 +1506,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 21.0, 185.5, 49.0, 22.0 ],
+					"patching_rect" : [ 21.0, 215.5, 49.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1439,7 +1528,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 21.0, 185.5, 60.0, 22.0 ],
+					"patching_rect" : [ 21.0, 215.5, 60.0, 22.0 ],
 					"style" : "",
 					"text" : "loadbang"
 				}
@@ -1903,72 +1992,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 11.595187,
-					"id" : "obj-30",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 559.949951, 343.0, 114.050049, 19.0 ],
-					"style" : "",
-					"text" : "Planewaves domain",
-					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
-					"border" : 1,
-					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
-					"id" : "obj-32",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 559.949951, 343.0, 114.050049, 19.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 11.595187,
-					"id" : "obj-28",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 692.0, 384.0, 108.0, 19.0 ],
-					"style" : "",
-					"text" : "Harmonics domain",
-					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
-					"border" : 1,
-					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
-					"id" : "obj-29",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 692.0, 384.0, 108.0, 19.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 9.054946,
@@ -2356,12 +2379,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-18",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 430.0, 306.940063, 108.0, 19.0 ],
+					"patching_rect" : [ 430.0, 305.940063, 108.0, 32.0 ],
 					"style" : "",
-					"text" : "Harmonics domain",
+					"text" : "Domaine des harmoniques",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2377,7 +2401,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 430.0, 306.940063, 108.0, 19.0 ],
+					"patching_rect" : [ 430.0, 305.940063, 108.0, 32.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -2746,13 +2770,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-37",
-					"linecount" : 10,
+					"linecount" : 12,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 529.470032, 364.0, 136.0 ],
+					"patching_rect" : [ 7.0, 499.470032, 364.0, 162.0 ],
 					"style" : "",
-					"text" : "In the Ambisonics model, we assume that the loudspeakers generate planewaves and the microphones record planewaves. This approximation allows to use the recordings to generate harmonics and to use the planewaves signals after a decoding as the signals of the loudspeakers. Nevertheless, this approach brings artefacts because the underlying models of the planewaves and the harmonics don't match exactly with the reality. To make up the distorsions of the sound field, it is common to optimize the sound field (cf optim) and/or to change the decoding method depending on the loudspeakers arrangement (cf decoder).",
+					"text" : "Dans le modèle ambisonique, nous supposons que les haut-parleurs génèrent des ondes planes et les microphones enregistrent des ondes planes. Cette approximation permet d'utiliser les enregistrements pour produire des harmoniques et d'utiliser les signaux des ondes planes après un décodage comme les signaux des haut-parleurs. Néanmoins, cette approche génère des artefacts dans la mesure ou les modèles sous-jacents aux ondes planes et aux harmoniques ne correspondent pas exactement à la réalité. Pour compenser les distorsions du champ sonore, il est commun d'optimiser le champ sonore (cf tutoriel 8) et / ou de changer la méthode de décodage en fonction de la disposition des haut-parleurs (cf décodeur).",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2768,7 +2792,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 529.470032, 364.0, 136.0 ],
+					"patching_rect" : [ 7.0, 499.470032, 364.0, 162.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -2780,13 +2804,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-34",
-					"linecount" : 11,
+					"linecount" : 13,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 278.440063, 364.0, 149.0 ],
+					"patching_rect" : [ 7.0, 308.440063, 364.0, 175.0 ],
 					"style" : "",
-					"text" : "One of the main advantage of this model lies in its interoperabilty with the harmonics model. Indeed, a sound field represented by a set of harmonics can also be represented by a set of planewaves without loss of informations. This allows to permute the representation of the sound field indefinitely from a representation in the harmonics domain to a representation in the planewaves. Thus, you can decode or project a sound field in the harmonics domain to the planewave domain and come back to harmonics domain. The only limitation is the angular direction of the planewaves and their number. There must be at least as many plane waves as there are harmonics and the planewaves must be \"equally spaced\" (cf decoder).",
+					"text" : "Un des principaux avantages de ce modèle réside dans son interopérabilité avec le modèle des harmoniques. En effet, un champ sonore représenté par un ensemble d'harmoniques peut également être représenté par un ensemble d'ondes planes sans perte d'informations. Ceci permet de permuter la représentation du champ acoustique indéfiniment d'une représentation dans le domaine des harmoniques à une représentation dans le domaine des ondes planes. Ainsi, on peut décoder ou projeter un champ sonore dans le domaine des harmoniques puis passer dans le domaine des ondes planes pour revenir ensuite au domaine des harmoniques. La seule limitation est la direction angulaire des ondes planes et leur nombre. Il doit y avoir au moins autant d'ondes planes que d'harmoniques et les ondes planes doivent être \"équidistantes\" (cf décodeur).",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2802,7 +2826,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 278.440063, 364.0, 149.0 ],
+					"patching_rect" : [ 7.0, 308.440063, 364.0, 175.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -2814,13 +2838,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-31",
-					"linecount" : 3,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 102.940063, 365.0, 45.0 ],
+					"patching_rect" : [ 7.0, 102.940063, 364.0, 58.0 ],
 					"style" : "",
-					"text" : "This wave model has wavefronts which are infinite parralel planes. In practice such waves do not exist but in acoustic when the source of the wave is far away, the wavefront is considered as a plane.",
+					"text" : "Ce modèle d'onde a des fronts d'onde qui sont des plans parallèles infinis. Dans la réalité, ces ondes n'existent pas, mais en acoustique lorsque la source de l'onde est loin, le front d'onde est considéré comme un plan.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2836,7 +2860,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 102.940063, 364.0, 45.0 ],
+					"patching_rect" : [ 7.0, 102.940063, 364.0, 58.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0,
 					"style" : ""
@@ -2853,7 +2877,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 68.0, 815.650024, 19.0 ],
 					"style" : "",
-					"text" : "In Ambisonics, the planewave is the wave model which underlies the projection and the decomposition of the sound field.",
+					"text" : "En ambisonie, l'onde plane est le modèle d'onde qui sous-tend la projection et de la décomposition du champ sonore.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2898,7 +2922,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@obj-name", "Tutorial 4", "@obj-desc", "Planewaves" ],
+					"args" : [ "@obj-name", "Tutoriel 4", "@obj-desc", "Ondes", "planes" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
