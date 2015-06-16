@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ -6.0, 124.0, 1209.0, 709.0 ],
+		"rect" : [ 179.0, 124.0, 1193.0, 709.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -46,9 +46,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1089.775024, 365.700287, 61.0, 19.0 ],
+					"patching_rect" : [ 1075.775024, 365.700287, 75.0, 19.0 ],
 					"style" : "",
-					"text" : "Side view",
+					"text" : "Vue de côté",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -80,9 +80,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 425.724976, 519.010254, 61.0, 19.0 ],
+					"patching_rect" : [ 425.724976, 519.010254, 92.0, 19.0 ],
 					"style" : "",
-					"text" : "Top view",
+					"text" : "Vue du dessus",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -1002,7 +1002,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 531.940063, 364.0, 45.0 ],
 					"style" : "",
-					"text" : "In the representations, the listener and its point of view are represented by the green arrows, the 0° azimuth and elevation and their rotation direction are represented by the blue arrows.",
+					"text" : "Dans les représentations, l'auditeur et son point de vue sont représentés par les flèches vertes, le 0° azimut, l'élévation et le sens de rotation sont représentés par les flèches bleues.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -1036,7 +1036,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 377.940063, 364.0, 110.0 ],
 					"style" : "",
-					"text" : "Assuming that the listener is directed to 0°, it is customary to define :\nThe \"front\" of the sound field at 0° or 0 rad azimuth.\nThe \"left\" of the sound field at 90 ° or π/2 rad azimuth.\nThe \"back\" of the sound field at 180° or π rad azimuth.\nThe \"right\" of the sound field at 270° or 3/2π rad azimuth.\nThe \"horizon\" of the sound field at 0° or 0 rad elevation.\nThe \"top\" of the sound field at 90° or π/2 rad elevation.\nThe \"bottom\" of the sound field at -90° or -π/2 rad elevation.",
+					"text" : "En supposant que l'auditeur est dirigée à 0 °, on définit :\nL' \"avant\" du champ sonore à 0 ° ou 0 rad azimut.\nLa \"gauche\" du champ sonore à 90 ° ou π / 2 rad azimut.\nL' \"arrière\" du champ sonore à 180 ° ou π rad azimut.\nLa \"droite\" du champ sonore à 270 ° ou 3 / 2π rad azimut.\nL' \"horizon\" du champ sonore à 0 ° ou 0 rad élévation.\nLe \"haut\" du champ sonore à 90 ° ou π / 2 rad élévation.\nLe \"bas\" du champ sonore à -90 ° ou -π / 2 rad élévation.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -1070,7 +1070,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 251.440063, 364.0, 97.0 ],
 					"style" : "",
-					"text" : "The angles are usually defined in radians for a representation of space in the circular or spherical harmonics domain (between 0 and 2π rad for the azimuth and between -π/2 and π/2 for the elevation). For a representation of space in the planewaves domain (or for a set of loudspeakers) the angles are usually defined in degrees (between 0° and 360° for the azimuth and between -90° and 90° for the elevation).",
+					"text" : "Les angles sont généralement défini en radian pour une représentation de l'espace dans le domaine des harmoniques circulaires ou sphériques (entre 0 et 2π rad pour l'azimut et entre -π/2 et π/2 pour l'élévation). Les angles sont généralement défini en degrés pour une représentation de l'espace dans le domaine des ondes planes ou pour des haut-parleurs (entre 0° et 360° pour l'azimut et entre -90° et 90° pour l'élévation)",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -1104,7 +1104,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 119.940063, 364.0, 84.0 ],
 					"style" : "",
-					"text" : "The coordinate system used within the library is similar to the geographic coordinates. We arbitrarily define the direction of rotation as counterclockwise for the azimuth and from the bottom to the top for the elevation. The 0° of the azimuth is 90° phase shifted relative to a mathematical representation of a circle. The 0° of elevation matches with the equatorial plan",
+					"text" : "Le système de coordonnées utilisé dans la bibliothèque est similaire au système de coordonnées géographique. Nous définissons arbitrairement que le sens de rotation est anti-horaire pour l'azimut et de bas en haut pour l'élevation. L'azimut 0° est décalé de 90° par rapport à la représentation mathématique d'un cercle. Le 0° d'élévation correspond au plan équatorial.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -1149,9 +1149,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1045.100098, 169.0, 19.0, 20.0 ],
+					"patching_rect" : [ 1045.100098, 169.0, 24.0, 20.0 ],
 					"style" : "",
-					"text" : "or"
+					"text" : "ou"
 				}
 
 			}
@@ -1225,7 +1225,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 839.049988, 169.0, 54.0, 20.0 ],
 					"style" : "",
-					"text" : "degrees"
+					"text" : "degrés"
 				}
 
 			}
@@ -1285,9 +1285,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1045.100098, 128.0, 19.0, 20.0 ],
+					"patching_rect" : [ 1045.100098, 128.0, 24.0, 20.0 ],
 					"style" : "",
-					"text" : "or"
+					"text" : "ou"
 				}
 
 			}
@@ -1361,7 +1361,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 839.049988, 128.0, 54.0, 20.0 ],
 					"style" : "",
-					"text" : "degrees"
+					"text" : "degrés"
 				}
 
 			}
@@ -1919,7 +1919,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 68.0, 815.650024, 32.0 ],
 					"style" : "",
-					"text" : "The ambisonic model is based on a polar or spherical representation of space in adequacy with a listener placed at the center of a circle or a sphere of loudspeakers.",
+					"text" : "Le modèle ambisonique est basé sur une représentation polaire ou sphérique de l'espace dans laquelle l'auditeur est placé au centre d'un cercle ou d'une sphere de haut-parleurs",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -1964,7 +1964,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@obj-name", "Tutorial 2", "@obj-desc", "Space representation" ],
+					"args" : [ "@obj-name", "Tutoriel 2", "@obj-desc", "Représentation de l'espace" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
