@@ -214,12 +214,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-64",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 468.5, 116.0, 19.0 ],
+					"patching_rect" : [ 7.0, 468.5, 116.0, 32.0 ],
 					"style" : "",
-					"text" : "decomposition order",
+					"text" : "ordre de décomposition",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -229,12 +230,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-66",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 238.0, 468.5, 98.0, 19.0 ],
+					"patching_rect" : [ 238.0, 468.5, 98.0, 32.0 ],
 					"style" : "",
-					"text" : "harmonic degree",
+					"text" : "degré de l'harmonique",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2186,12 +2188,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-30",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 273.5, 116.0, 19.0 ],
+					"patching_rect" : [ 7.0, 273.5, 116.0, 32.0 ],
 					"style" : "",
-					"text" : "decomposition order",
+					"text" : "ordre de décomposition",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2201,12 +2204,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
 					"id" : "obj-29",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 238.0, 273.5, 98.0, 19.0 ],
+					"patching_rect" : [ 238.0, 273.5, 98.0, 32.0 ],
 					"style" : "",
-					"text" : "harmonic degree",
+					"text" : "degré de l'harmonique",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -3197,7 +3201,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 129.0, 364.0, 45.0 ],
+					"patching_rect" : [ 7.0, 129.0, 365.0, 45.0 ],
 					"style" : "",
 					"text" : "• L'optimisation \"basic\" ne fait rien. ce n'est pas le choix optimal pour la spatialisation de sources ponctuelles, elle devrait être préféré pour des champs sonores diffus.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -3231,9 +3235,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 68.0, 843.650024, 45.0 ],
+					"patching_rect" : [ 7.0, 68.0, 846.0, 45.0 ],
 					"style" : "",
-					"text" : "L'ambisonie part du principe que l'auditeur se situe au centre d'un cercle ou d'une sphère parfaite. Cette situation est très rare, en fait, le dispositif de haut-parleurs n'est jamais optimal et le public n'est généralement réparti partout dans l'espace sonore. Pour compenser les artefacts dus à ces restrictions, plusieurs optimisations sont proposés:",
+					"text" : "L'ambisonie part du principe que l'auditeur se situe au centre d'un cercle ou d'une sphère parfaite. Cette situation est très rare, en fait, le dispositif de haut-parleurs n'est jamais optimal et le public n'est généralement réparti partout dans l'espace sonore. Pour compenser les artefacts dus à ces restrictions, plusieurs optimisations sont proposées :",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
