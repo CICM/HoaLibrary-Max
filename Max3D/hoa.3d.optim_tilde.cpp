@@ -174,7 +174,7 @@ void *hoa_3d_optim_new(t_symbol *s, long argc, t_atom *argv)
         {
             if(atom_getsym(argv+1) == hoa_sym_maxRe)
                 hoa_3d_optim_maxre(x);
-            else if(atom_getsym(argv+1) != hoa_sym_inPhase)
+            else if(atom_getsym(argv+1) != hoa_sym_basic)
                 hoa_3d_optim_basic(x);
         }
         
