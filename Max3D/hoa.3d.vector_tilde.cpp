@@ -104,7 +104,7 @@ void hoa_3d_vector_dsp64(t_hoa_3d_vector *x, t_object *dsp64, short *count, doub
 {
     if(x->f_mode == hoa_sym_both)
         object_method(dsp64, gensym("dsp_add64"), x, hoa_3d_vector_perform, 0, NULL);
-    if(x->f_mode == hoa_sym_velocity)
+    else if(x->f_mode == hoa_sym_velocity)
         object_method(dsp64, gensym("dsp_add64"), x, hoa_3d_vector_perform_velocity, 0, NULL);
     else
         object_method(dsp64, gensym("dsp_add64"), x, hoa_3d_vector_perform_energy, 0, NULL);
