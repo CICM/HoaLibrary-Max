@@ -32,6 +32,13 @@ static inline double round(double val)
 */
 namespace hoa
 {
+#ifdef _MSC_VER
+	inline double round(double val)
+	{
+		return floor(val + 0.5);
+	}
+#endif
+
 	inline double radToDeg(const double radian)
     {
         return radian * 360. / HOA_2PI;
