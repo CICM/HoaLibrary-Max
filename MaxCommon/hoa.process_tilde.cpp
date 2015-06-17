@@ -1417,11 +1417,13 @@ void hoa_processor_dsp64 (t_hoa_processor *x, t_object *dsp64, short *count, dou
 	{
 		patch_space_ptr = x->patch_space_ptrs[i];
 		if (patch_space_ptr->patch_valid)
-			hoa_processor_dsp_internal (patch_space_ptr, maxvectorsize, samplerate);
+		{
+			hoa_processor_dsp_internal(patch_space_ptr, maxvectorsize, (long)samplerate);
+		}
 	}
 	
 	x->last_vec_size = maxvectorsize;
-	x->last_samp_rate = samplerate;
+	x->last_samp_rate = (long)samplerate;
 	
 	object_method(dsp64, gensym("dsp_add64"), x, hoa_processor_perform64, 0, NULL);
 }
