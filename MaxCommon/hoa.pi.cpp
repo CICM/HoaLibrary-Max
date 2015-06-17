@@ -49,7 +49,6 @@ t_hoa_err hoa_getinfos(t_hoa_pi* x, t_hoa_boxinfos* boxinfos)
 
 void hoa_pi_assist(t_hoa_pi *x, void *b, long m, long a, char *s)
 {
-
     // @in 0 @type bang/int/float @digest bang to output π, set the π multiplier
 	if (m == ASSIST_INLET)
 		sprintf(s,"(bang/int/float) Compute");
