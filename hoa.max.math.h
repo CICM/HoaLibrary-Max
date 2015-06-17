@@ -100,14 +100,14 @@ namespace hoa
         return ( (in - inlow) * safediv(1., inhigh - inlow) * (outhigh - outlow) ) + outlow;
     }
 
-	inline bool isInside(const double val, const double v1, const double v2)
+	template <typename T> inline bool isInside(const T val, const T v1, const T v2)
 	{
         return (v1 <= v2) ? (val >= v1 && val <= v2) : (val >= v2 && val <= v1);
 	}
 
 	inline bool isInsideRad(const double radian, const double loRad, const double hiRad)
 	{
-        return isInside(Math<double>::wrap_twopi(radian-loRad), 0, Math<double>::wrap_twopi(hiRad-loRad));
+        return isInside<double>(Math<double>::wrap_twopi(radian-loRad), 0, Math<double>::wrap_twopi(hiRad-loRad));
 	}
     
     inline double distance(double x1, double y1, double x2, double y2)

@@ -334,7 +334,7 @@ namespace hoa
          */
 		inline bool   isSelected(const int index)	const
 		{
-			if (!isInside(index, 0, m_channels.size()))
+			if (!isInside<int>(index, 0, m_channels.size()))
 				return 0;
 			return m_channels[index]->isSelected();
 		}
@@ -347,7 +347,7 @@ namespace hoa
          */
 		inline double getWidening(const int index)	const
 		{
-			if (!isInside(index, 0, m_channels.size()))
+			if (!isInside<int>(index, 0, m_channels.size()))
 				return 0;
             
 			return m_channels[index]->getWidening();
@@ -361,7 +361,7 @@ namespace hoa
          */
 		inline double getFisheyeStartAzimuth(const int index) const
 		{
-			if (!isInside(index, 0, m_channels.size()))
+			if (!isInside<int>(index, 0, m_channels.size()))
 				return 0;
 			return m_channels[index]->getFisheyeStartAzimuth();
 		}
@@ -373,7 +373,7 @@ namespace hoa
          */
 		inline double getAbscissa(const int index)		const
 		{
-			if (!isInside(index, 0, m_channels.size()))
+			if (!isInside<int>(index, 0, m_channels.size()))
 				return 0;
 			return m_channels[index]->getAbscissa();
 		}
@@ -385,7 +385,7 @@ namespace hoa
          */
 		inline double getOrdinate(const int index)		const
 		{
-			if (!isInside(index, 0, m_channels.size()))
+			if (!isInside<int>(index, 0, m_channels.size()))
 				return 0;
 			return m_channels[index]->getOrdinate();
 		}
@@ -398,7 +398,7 @@ namespace hoa
          */
 		inline double getAzimuth(const int index)		const
 		{
-			if (!isInside(index, 0, m_channels.size()))
+			if (!isInside<int>(index, 0, m_channels.size()))
 				return 0;
             
 			return m_channels[index]->getAzimuth();

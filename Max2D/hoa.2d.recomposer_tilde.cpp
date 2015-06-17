@@ -105,7 +105,7 @@ t_max_err ramp_set(t_hoa_recomposer *x, t_object *attr, long argc, t_atom *argv)
     if(argc && argv && atom_isNumber(argv))
     {
         x->f_ramp = max<t_sample>(atom_getfloat(argv), 0);
-        x->f_lines->setRamp(x->f_ramp / 1000. * sys_getsr());
+        x->f_lines->setRamp((ulong)(x->f_ramp / 1000. * sys_getsr()));
     }
     
     return MAX_ERR_NONE;
@@ -230,7 +230,7 @@ void hoa_recomposer_dsp(t_hoa_recomposer *x, t_object *dsp64, short *count, doub
     }
     else if(x->f_mode == hoa_sym_fisheye)
     {
-        x->f_line.setRamp(x->f_ramp / 1000. * samplerate);
+		x->f_line.setRamp((ulong)(x->f_ramp / 1000. * samplerate));
         if(count[x->f_fisheye->getNumberOfPlanewaves()])
             object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_recomposer_perform_fisheye, 0, NULL);
         else
@@ -238,7 +238,7 @@ void hoa_recomposer_dsp(t_hoa_recomposer *x, t_object *dsp64, short *count, doub
     }
     else if(x->f_mode == hoa_sym_free)
     {
-        x->f_lines->setRamp(x->f_ramp / 1000. * samplerate);
+		x->f_lines->setRamp((ulong)(x->f_ramp / 1000. * samplerate));
         object_method(dsp64, gensym("dsp_add64"), x, (method)hoa_recomposer_perform_free, 0, NULL);
     }
 }
@@ -312,7 +312,7 @@ void *hoa_recomposer_new(t_symbol *s, long argc, t_atom *argv)
             x->f_fisheye    = new Recomposer<Hoa2d, t_sample, Fisheye>(order, numberOfPlanewaves);
             x->f_ins        = new t_sample[x->f_fisheye->getNumberOfPlanewaves() * HOA_MAXBLKSIZE];
             x->f_outs       = new t_sample[x->f_fisheye->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
-            x->f_line.setRamp(0.1 * sys_getsr());
+			x->f_line.setRamp((ulong)(0.1 * sys_getsr()));
             x->f_line.setValue(0.f);
             numins = x->f_fisheye->getNumberOfPlanewaves() + 1;
             numouts = x->f_fisheye->getNumberOfHarmonics();
@@ -323,7 +323,7 @@ void *hoa_recomposer_new(t_symbol *s, long argc, t_atom *argv)
             x->f_lines      = new PolarLines<Hoa2d,t_sample>(x->f_free->getNumberOfPlanewaves());
             x->f_ins        = new t_sample[x->f_free->getNumberOfPlanewaves() * HOA_MAXBLKSIZE];
             x->f_outs       = new t_sample[x->f_free->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
-            x->f_lines->setRamp(0.1 * sys_getsr());
+			x->f_lines->setRamp((ulong)(0.1 * sys_getsr()));
             for(ulong i = 0; i < x->f_free->getNumberOfPlanewaves(); i++)
             {
                 x->f_lines->setRadiusDirect(i, x->f_free->getWidening(i));

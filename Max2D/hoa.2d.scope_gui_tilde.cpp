@@ -97,7 +97,7 @@ void hoa_2d_scope_tick(t_hoa_2d_scope *x)
 	jbox_redraw((t_jbox *)x);
     
 	if (sys_getdspstate())
-		clock_fdelay(x->f_clock, x->f_interval);
+		clock_delay(x->f_clock, x->f_interval);
 }
 
 void hoa_2d_scope_free(t_hoa_2d_scope *x)

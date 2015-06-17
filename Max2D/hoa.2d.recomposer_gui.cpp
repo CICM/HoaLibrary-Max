@@ -287,8 +287,10 @@ void hoa_2d_recomposer_gui_set(t_hoa_2d_recomposer_gui *x, t_symbol *s, long ac,
         {
             if (atom_gettype(av+isSet) == A_LONG) // index + angle
             {
-                long index;
-                if (!isInside(index = atom_getlong(av+isSet) - 1, -1, x->f_manager->getNumberOfChannels() - 1 )) return;
+				long index = atom_getlong(av + isSet) - 1;
+				if (!isInside<long>(index, -1, x->f_manager->getNumberOfChannels() - 1)) 
+					return;
+
                 if ( ac >= 2+isSet )
                     x->f_manager->setAzimuth(index, atom_getfloat(av+1+isSet));
             }

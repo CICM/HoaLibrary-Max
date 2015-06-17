@@ -55,7 +55,7 @@ namespace hoa
 	
 	void ChannelManager::resetAzimuth(const int index)
 	{
-		if (!isInside(index, -1, m_channels.size()))
+		if (!isInside<int>(index, -1, m_channels.size()))
 			return;
 			
 		if(index == -1)
@@ -69,7 +69,7 @@ namespace hoa
 	
 	void ChannelManager::resetWideningValue(const int index)
 	{
-		if (!isInside(index, -1, m_channels.size()))
+		if (!isInside<int>(index, -1, m_channels.size()))
 			return;
 		
 		if(index == -1)
@@ -89,7 +89,7 @@ namespace hoa
 	
 	void ChannelManager::setAzimuth(const int index, double angle)
 	{
-		if (!isInside(index, -1, m_channels.size()))
+		if (!isInside<int>(index, -1, m_channels.size()))
 			return;
 		
 		if(index == -1)
@@ -109,7 +109,7 @@ namespace hoa
 	
 	void ChannelManager::setWideningValue(const int index, double widerValue)
 	{
-		if (!isInside(index, -1, m_channels.size()))
+		if (!isInside<int>(index, -1, m_channels.size()))
 			return;
 		
 		if (index == -1)
@@ -123,7 +123,7 @@ namespace hoa
 	
 	void ChannelManager::setSelected(const int index, int _selectedState)
 	{
-		if (!isInside(index, -1, m_channels.size()))
+		if (!isInside<int>(index, -1, m_channels.size()))
 			return;
 		
 		if (index == -1)
@@ -137,7 +137,7 @@ namespace hoa
 	
 	void ChannelManager::rotateSelectedChannels(double newRadian, int channelBeingDragged, int magnet)
 	{
-		if (!isInside(channelBeingDragged, 0, m_channels.size()))
+		if (!isInside<int>(channelBeingDragged, 0, m_channels.size()))
 			return;
 		
 		double deltaAngle;
@@ -179,7 +179,7 @@ namespace hoa
 	
 	void ChannelManager::setFisheyeStepDirect(const int index, double fisheyeStep)
 	{
-		if (!isInside(index, -2, m_channels.size()))
+		if (!isInside<int>(index, -2, m_channels.size()))
 			return;
 				
 		m_fisheyeStep = Math<double>::clip(fisheyeStep, 0, 1);
@@ -201,7 +201,7 @@ namespace hoa
 	
 	void ChannelManager::setFisheyeStartAzimuth(const int index)
 	{
-		if (!isInside(index, -2, m_channels.size()))
+		if (!isInside<int>(index, -2, m_channels.size()))
 			return;
 		
 		if (index == -2)
@@ -221,7 +221,7 @@ namespace hoa
 	
 	void ChannelManager::setFisheyeStartAzimuth(const int index, double azimuth)
 	{
-		if (!isInside(index, -2, m_channels.size()))
+		if (!isInside<int>(index, -2, m_channels.size()))
 			return;
 		
 		if (index == -2) {
@@ -307,7 +307,7 @@ namespace hoa
 	
 	void ChannelManager::setAzimuthToClosestDefChannelAzimuth(const int index)
 	{
-		if (!isInside(index, 0, m_channels.size()))
+		if (!isInside<int>(index, 0, m_channels.size()))
             return;
         
 		m_channels[index]->setAzimuth(getClosestDefChannelAzimuth(index));
