@@ -57,6 +57,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hoa.process~", "VisualStudi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hoa.thisprocess~", "VisualStudioProjects\hoa.thisprocess~.vcxproj", "{4B36C048-AB92-489D-8B9F-D852B85CC7E2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hoa.map", "VisualStudioProjects\hoa.map.vcxproj", "{D1C11F22-78CA-4E3B-88C6-35881AE3994B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -169,6 +171,14 @@ Global
 		{4B36C048-AB92-489D-8B9F-D852B85CC7E2}.Release|Win32.Build.0 = Release|Win32
 		{4B36C048-AB92-489D-8B9F-D852B85CC7E2}.Release|x64.ActiveCfg = Release|x64
 		{4B36C048-AB92-489D-8B9F-D852B85CC7E2}.Release|x64.Build.0 = Release|x64
+		{D1C11F22-78CA-4E3B-88C6-35881AE3994B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D1C11F22-78CA-4E3B-88C6-35881AE3994B}.Debug|Win32.Build.0 = Debug|Win32
+		{D1C11F22-78CA-4E3B-88C6-35881AE3994B}.Debug|x64.ActiveCfg = Debug|x64
+		{D1C11F22-78CA-4E3B-88C6-35881AE3994B}.Debug|x64.Build.0 = Debug|x64
+		{D1C11F22-78CA-4E3B-88C6-35881AE3994B}.Release|Win32.ActiveCfg = Release|Win32
+		{D1C11F22-78CA-4E3B-88C6-35881AE3994B}.Release|Win32.Build.0 = Release|Win32
+		{D1C11F22-78CA-4E3B-88C6-35881AE3994B}.Release|x64.ActiveCfg = Release|x64
+		{D1C11F22-78CA-4E3B-88C6-35881AE3994B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

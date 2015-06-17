@@ -1582,9 +1582,9 @@ t_max_err hoamap_notify(t_hoa_map *x, t_symbol *s, t_symbol *msg, void *sender, 
     {
 		if (sender == x->f_patcher)
         {
-			x->f_patcher = NULL;
             x->f_textfield = NULL;
             x->f_colorpicker = NULL;
+			x->f_patcher = NULL;
         }
 	}
     else if (msg == hoa_sym_endeditbox)
@@ -1598,14 +1598,14 @@ t_max_err hoamap_notify(t_hoa_map *x, t_symbol *s, t_symbol *msg, void *sender, 
     {
         if (sender == x->f_textfield)
         {
-            if(x->f_source_being_modified)
+            if(x->f_source_being_modified && data)
             {
                 x->f_source_being_modified->setDescription((char *)data);
                 jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
                 object_notify(x, hoa_sym_modified, NULL);
                 hoamap_send_binded_map_update(x, BMAP_NOTIFY);
             }
-            else if(x->f_group_being_modified)
+            else if(x->f_group_being_modified && data)
             {
                 x->f_group_being_modified->setDescription((char *)data);
                 jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
