@@ -142,9 +142,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ -165.0, 159.0, 74.0, 22.0 ],
+					"patching_rect" : [ -165.0, 159.0, 64.0, 22.0 ],
 					"style" : "",
-					"text" : "\"Beta 2.0.4\""
+					"text" : "\"Beta 2.2\""
 				}
 
 			}
@@ -265,7 +265,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 210.78125, 20.75, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "Beta 2.0.4",
+					"text" : "Beta 2.2",
 					"textcolor" : [ 0.9404, 0.940544, 0.940332, 1.0 ],
 					"textjustification" : 1,
 					"varname" : "autohelp_top_title[4]"
@@ -283,7 +283,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 211.78125, 21.75, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "Beta 2.0.4",
+					"text" : "Beta 2.2",
 					"textcolor" : [ 0.424631, 0.424696, 0.4246, 0.21 ],
 					"textjustification" : 1,
 					"varname" : "autohelp_top_title[5]"
@@ -497,13 +497,11 @@
 					"fontname" : "Arial",
 					"fontsize" : 14.0,
 					"id" : "obj-18",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.6875, 477.5, 629.8125, 38.0 ],
+					"patching_rect" : [ 31.6875, 477.5, 629.8125, 22.0 ],
 					"style" : "",
-					"text" : "Examples of processing patches effects that can be loaded by a hoa.process~ object. \nYou can obviously create your own too.",
 					"textcolor" : [ 0.192668, 0.192697, 0.192653, 1.0 ]
 				}
 
@@ -685,7 +683,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 568.0, 696.0, 150.0, 18.0 ],
 									"style" : "",
-									"text" : "hoa.2d.exchanger~"
+									"text" : "hoa.2d.decoder~"
 								}
 
 							}
