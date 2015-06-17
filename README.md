@@ -13,7 +13,7 @@ Julien Colafrancesco, Pierre Guillot, Eliott Paris
 
 ##### Dependencies : 
 
-<a title="Cblas" href="http://www.netlib.org/clapack/cblas/" target="_blank">Cblas</a>, <a title="MaxSDK" href="https://github.com/Cycling74/max-sdk" target="_blank">Max-sdk</a>
+<a title="HoaLibrary" href="https://github.com/CICM/HoaLibrary-Light">HoaLibrary</a>, <a title="MaxSDK" href="https://github.com/Cycling74/max-sdk">Max-sdk</a>
 
 ##### Licence : 
 
