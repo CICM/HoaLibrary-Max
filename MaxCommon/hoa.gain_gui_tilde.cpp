@@ -171,7 +171,7 @@ void hoa_gain_perform64(t_hoa_gain *x, t_object *dsp64, double **ins, long numin
 }
 void hoa_gain_dsp64(t_hoa_gain *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
-    x->f_amp->setRamp(x->f_interp / 1000. * samplerate);
+    x->f_amp->setRamp((const ulong)(x->f_interp / 1000. * samplerate));
     object_method(dsp64, gensym("dsp_add64"), x, hoa_gain_perform64, 0, NULL);
 }
 
@@ -353,8 +353,7 @@ void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
     
     if (g)
     {
-        int zerodBpos;
-        zerodBpos = hoa_gain_dBvaltopos(x, 0, rect, isHoriz);
+        long zerodBpos = (long)hoa_gain_dBvaltopos(x, 0, rect, isHoriz);
         
         // Background
         jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
@@ -392,7 +391,7 @@ void draw_cursor(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
     
 	if (g)
 	{
-        int pos = hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
+        long pos = (long)hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
         
         // draw knob rect
         jgraphics_set_source_jrgba(g, &x->j_knobcolor);
@@ -417,7 +416,7 @@ void draw_valuerect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
     if (g)
     {
         t_rect layer;
-        int pos = hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
+		long pos = (long)hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
         
         if (isHoriz)
         {
@@ -638,7 +637,7 @@ t_max_err hoa_gain_setattr_interp(t_hoa_gain *x, t_object *attr, long ac, t_atom
 {
 	if (ac && av && atom_isNumber(av))
     {
-        x->f_amp->setRamp(atom_getfloat(av) / 1000. * sys_getsr());
+        x->f_amp->setRamp((const ulong)(atom_getfloat(av) / 1000. * sys_getsr()));
         x->f_interp = x->f_amp->getRamp() / sys_getsr() * 1000;
 	}
 	return MAX_ERR_NONE;
@@ -905,7 +904,7 @@ void *hoa_gain_new(t_symbol *s, short argc, t_atom *argv)
         x->j_box.z_box.b_firstin = (t_object *)x;
         
         x->f_amp = new Line<t_sample>();
-        x->f_amp->setRamp(0.1 * sys_getsr());
+        x->f_amp->setRamp((const ulong)(0.1 * sys_getsr()));
         x->f_amp->setValueDirect(1.f);
         
         // inputs

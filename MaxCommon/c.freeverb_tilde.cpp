@@ -250,6 +250,8 @@ void ext_main(void *r)
     
 	c = class_new("c.freeverb~", (method)freeverb_new, (method)freeverb_free, (short)sizeof(t_freeverb), 0L, A_GIMME, 0);
     class_setname((char *)"c.freeverb~", (char *)"c.freeverb~");
+
+	hoa_initclass(c, (method)NULL);
     
     // @method signal @digest Signal to reverberate
 	// @description Signal to reverberate
