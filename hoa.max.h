@@ -7,6 +7,8 @@
 #ifndef __DEF_HOA_MAX__
 #define __DEF_HOA_MAX__
 
+#include "ThirdParty/HoaLibrary/Sources/Hoa.hpp"
+
 extern "C"
 {
 #include <ext.h>
@@ -24,7 +26,6 @@ extern "C"
 #include <jpatcher_syms.h>
 }
 
-#include "ThirdParty/HoaLibrary/Sources/Hoa.hpp"
 #include "hoa.max_commonsyms.h"
 #include "hoa.max.math.h"
 
