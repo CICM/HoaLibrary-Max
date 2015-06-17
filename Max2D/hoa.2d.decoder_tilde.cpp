@@ -356,7 +356,7 @@ t_max_err channel_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *ar
 {
     if(argc && argv && atom_gettype(argv) == A_LONG)
     {
-        hoa_decoder_config(x, x->f_mode, atom_getfloat(argv), 0.);
+        hoa_decoder_config(x, x->f_mode, atom_getlong(argv), 0.);
     }
     return MAX_ERR_NONE;
 }
