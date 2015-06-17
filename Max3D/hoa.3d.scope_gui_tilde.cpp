@@ -95,7 +95,7 @@ void hoa_3d_scope_tick(t_hoa_3d_scope *x)
 	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_harmonics_layer);
 	jbox_redraw((t_jbox *)x);
 	if (sys_getdspstate())
-		clock_fdelay(x->f_clock, x->f_interval);
+		clock_delay(x->f_clock, x->f_interval);
 }
 
 void hoa_3d_scope_free(t_hoa_3d_scope *x)
@@ -268,7 +268,7 @@ void draw_harmonics(t_hoa_3d_scope *x, t_object *view, t_rect *rect)
             jgraphics_stroke(g);
 		}
         
-        for(int j = x->f_scope->getNumberOfRows() * 0.5; j < x->f_scope->getNumberOfRows(); j++)
+        for(ulong j = (ulong)(x->f_scope->getNumberOfRows() * 0.5); j < x->f_scope->getNumberOfRows(); j++)
         {
             // positive harmonics
             pathLength = 0;
@@ -355,7 +355,7 @@ t_max_err set_order(t_hoa_3d_scope *x, t_object *attr, long ac, t_atom *av)
             
             delete x->f_scope;
             delete [] x->f_signals;
-            x->f_scope      =  new Scope<Hoa3d, t_sample>(order, HOA_DISPLAY_NPOINTS * 0.25, HOA_DISPLAY_NPOINTS * 0.5);
+            x->f_scope      =  new Scope<Hoa3d, t_sample>(order, (ulong)(HOA_DISPLAY_NPOINTS * 0.25), (ulong)(HOA_DISPLAY_NPOINTS * 0.5));
             x->f_order      = x->f_scope->getDecompositionOrder();
             x->f_signals    = new double[x->f_scope->getNumberOfHarmonics() * SYS_MAXBLKSIZE];
             
@@ -432,7 +432,7 @@ void *hoa_3d_scope_new(t_symbol *s, int argc, t_atom *argv)
         
         x->f_order      = 1;
         x->f_startclock = 0;
-        x->f_scope      = new Scope<Hoa3d, t_sample>(x->f_order, HOA_DISPLAY_NPOINTS * 0.25, HOA_DISPLAY_NPOINTS * 0.5);
+        x->f_scope      = new Scope<Hoa3d, t_sample>(x->f_order, (ulong)(HOA_DISPLAY_NPOINTS * 0.25), (ulong)(HOA_DISPLAY_NPOINTS * 0.5));
         x->f_order      = x->f_scope->getDecompositionOrder();
         x->f_signals    = new t_sample[x->f_scope->getNumberOfHarmonics() * HOA_MAXBLKSIZE];
         x->f_view[0] = x->f_view[1] = x->f_view[2] = 0.;

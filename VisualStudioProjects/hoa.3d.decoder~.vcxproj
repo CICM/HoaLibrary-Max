@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CEA15C6E-7305-4732-B9A5-EB35DEA746E9}</ProjectGuid>
+    <ProjectGuid>{62C88EC9-1AFC-409A-9F04-276BC48AB6FD}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -268,7 +268,7 @@
     <ClCompile Include="$(C74SUPPORT)\max-includes\common\dllmain_win.c" />
     <ClCompile Include="..\hoa.library.cpp" />
     <ClCompile Include="..\hoa.max.cpp" />
-    <ClCompile Include="..\Max2D\hoa.2d.wider_tilde.cpp" />
+    <ClCompile Include="..\Max3D\hoa.3d.decoder_tilde.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\hoa.max.h" />

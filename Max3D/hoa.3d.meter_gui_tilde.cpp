@@ -421,7 +421,7 @@ void hoa_meter_3d_tick(t_hoa_meter_3d *x)
     else if(x->f_vector_type == hoa_sym_energy)
         x->f_vector->processEnergy(x->f_signals, x->f_vector_coords + 3);
     
-    x->f_meter->tick(1000. / x->f_interval);
+    x->f_meter->tick((ulong)(1000. / x->f_interval));
 	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_leds_layer);
 	jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_vectors_layer);
   	jbox_redraw((t_jbox *)x);

@@ -125,7 +125,7 @@ void *hoa_3d_map_new(t_symbol *s, long argc, t_atom *argv)
 		x->f_ramp       = 100;
         x->f_map        = new Encoder<Hoa3d, t_sample>::Multi(order, numberOfSources);
         x->f_lines      = new PolarLines<Hoa3d, t_sample>(x->f_map->getNumberOfSources());
-        x->f_lines->setRamp(0.1 * sys_getsr());
+        x->f_lines->setRamp((ulong)(0.1 * sys_getsr()));
         
 		for (int i = 0; i < x->f_map->getNumberOfSources(); i++)
 		{
@@ -218,7 +218,7 @@ t_max_err ramp_set(t_hoa_3d_map *x, t_object *attr, long argc, t_atom *argv)
     if(argc && argv && atom_isNumber(argv))
     {
         x->f_ramp = max<double>(atom_getfloat(argv), 0);
-        x->f_lines->setRamp(x->f_ramp / 1000. * sys_getsr());
+		x->f_lines->setRamp((ulong)(x->f_ramp / 1000. * sys_getsr()));
     }
     
     return MAX_ERR_NONE;
@@ -494,7 +494,7 @@ void hoa_3d_map_perform_multisources(t_hoa_3d_map *x, t_object *dsp64, double **
 void hoa_3d_map_dsp64(t_hoa_3d_map *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
     
-    x->f_lines->setRamp(x->f_ramp / 1000. * samplerate);
+	x->f_lines->setRamp((ulong)(x->f_ramp / 1000. * samplerate));
     
     if(x->f_map->getNumberOfSources() == 1)
     {
