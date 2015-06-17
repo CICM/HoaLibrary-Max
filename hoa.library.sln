@@ -7,6 +7,36 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hoa.pi~", "VisualStudioProj
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hoa.pi", "VisualStudioProjects\hoa.pi.vcxproj", "{BA6B1A8F-5511-4325-9258-DD3E1E4E600C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hoa.connect", "VisualStudioProjects\hoa.connect.vcxproj", "{549CAB16-C5DC-4998-8523-906338ACCFF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hoa", "Hoa", "{550E75BA-079C-41A1-B8ED-C95D3850B0AB}"
+	ProjectSection(SolutionItems) = preProject
+		ThirdParty\HoaLibrary\Sources\Decoder.hpp = ThirdParty\HoaLibrary\Sources\Decoder.hpp
+		ThirdParty\HoaLibrary\Sources\Defs.hpp = ThirdParty\HoaLibrary\Sources\Defs.hpp
+		ThirdParty\HoaLibrary\Sources\Encoder.hpp = ThirdParty\HoaLibrary\Sources\Encoder.hpp
+		ThirdParty\HoaLibrary\Sources\Exchanger.hpp = ThirdParty\HoaLibrary\Sources\Exchanger.hpp
+		ThirdParty\HoaLibrary\Sources\Harmonics.hpp = ThirdParty\HoaLibrary\Sources\Harmonics.hpp
+		ThirdParty\HoaLibrary\Sources\Hoa.hpp = ThirdParty\HoaLibrary\Sources\Hoa.hpp
+		ThirdParty\HoaLibrary\Sources\Hrir.hpp = ThirdParty\HoaLibrary\Sources\Hrir.hpp
+		ThirdParty\HoaLibrary\Sources\HrirIrc1002C2D.hpp = ThirdParty\HoaLibrary\Sources\HrirIrc1002C2D.hpp
+		ThirdParty\HoaLibrary\Sources\HrirIrc1002C3D.hpp = ThirdParty\HoaLibrary\Sources\HrirIrc1002C3D.hpp
+		ThirdParty\HoaLibrary\Sources\Math.hpp = ThirdParty\HoaLibrary\Sources\Math.hpp
+		ThirdParty\HoaLibrary\Sources\Meter.hpp = ThirdParty\HoaLibrary\Sources\Meter.hpp
+		ThirdParty\HoaLibrary\Sources\Optim.hpp = ThirdParty\HoaLibrary\Sources\Optim.hpp
+		ThirdParty\HoaLibrary\Sources\Planewaves.hpp = ThirdParty\HoaLibrary\Sources\Planewaves.hpp
+		ThirdParty\HoaLibrary\Sources\Processor.hpp = ThirdParty\HoaLibrary\Sources\Processor.hpp
+		ThirdParty\HoaLibrary\Sources\Projector.hpp = ThirdParty\HoaLibrary\Sources\Projector.hpp
+		ThirdParty\HoaLibrary\Sources\Recomposer.hpp = ThirdParty\HoaLibrary\Sources\Recomposer.hpp
+		ThirdParty\HoaLibrary\Sources\Rotate.hpp = ThirdParty\HoaLibrary\Sources\Rotate.hpp
+		ThirdParty\HoaLibrary\Sources\Scope.hpp = ThirdParty\HoaLibrary\Sources\Scope.hpp
+		ThirdParty\HoaLibrary\Sources\Signal.hpp = ThirdParty\HoaLibrary\Sources\Signal.hpp
+		ThirdParty\HoaLibrary\Sources\Source.hpp = ThirdParty\HoaLibrary\Sources\Source.hpp
+		ThirdParty\HoaLibrary\Sources\Tools.hpp = ThirdParty\HoaLibrary\Sources\Tools.hpp
+		ThirdParty\HoaLibrary\Sources\Vector.hpp = ThirdParty\HoaLibrary\Sources\Vector.hpp
+		ThirdParty\HoaLibrary\Sources\Voronoi.hpp = ThirdParty\HoaLibrary\Sources\Voronoi.hpp
+		ThirdParty\HoaLibrary\Sources\Wider.hpp = ThirdParty\HoaLibrary\Sources\Wider.hpp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -31,6 +61,14 @@ Global
 		{BA6B1A8F-5511-4325-9258-DD3E1E4E600C}.Release|Win32.Build.0 = Release|Win32
 		{BA6B1A8F-5511-4325-9258-DD3E1E4E600C}.Release|x64.ActiveCfg = Release|x64
 		{BA6B1A8F-5511-4325-9258-DD3E1E4E600C}.Release|x64.Build.0 = Release|x64
+		{549CAB16-C5DC-4998-8523-906338ACCFF9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{549CAB16-C5DC-4998-8523-906338ACCFF9}.Debug|Win32.Build.0 = Debug|Win32
+		{549CAB16-C5DC-4998-8523-906338ACCFF9}.Debug|x64.ActiveCfg = Debug|x64
+		{549CAB16-C5DC-4998-8523-906338ACCFF9}.Debug|x64.Build.0 = Debug|x64
+		{549CAB16-C5DC-4998-8523-906338ACCFF9}.Release|Win32.ActiveCfg = Release|Win32
+		{549CAB16-C5DC-4998-8523-906338ACCFF9}.Release|Win32.Build.0 = Release|Win32
+		{549CAB16-C5DC-4998-8523-906338ACCFF9}.Release|x64.ActiveCfg = Release|x64
+		{549CAB16-C5DC-4998-8523-906338ACCFF9}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

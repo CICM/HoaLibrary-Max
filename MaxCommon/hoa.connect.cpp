@@ -430,8 +430,8 @@ void *connect_new(t_symbol *s, long argc, t_atom *argv)
     if (x)
     {
         // load Ambisonic instances to query harmonics band or argument in 2D or 3D
-        x->f_ambi2D = new Processor<Hoa2d, t_sample>::Harmonics(HOA_MAX_PLANEWAVES*0.5 -1);
-        x->f_ambi3D = new Processor<Hoa3d, t_sample>::Harmonics(sqrt((long double)HOA_MAX_PLANEWAVES)-1);
+        x->f_ambi2D = new Processor<Hoa2d, t_sample>::Harmonics((ulong)(HOA_MAX_PLANEWAVES*0.5 -1));
+		x->f_ambi3D = new Processor<Hoa3d, t_sample>::Harmonics((ulong)(sqrt((long double)HOA_MAX_PLANEWAVES) - 1));
         
         x->f_objects = new t_object*[CONNECT_MAX_TAB];
         
