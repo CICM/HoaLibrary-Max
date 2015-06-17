@@ -30,15 +30,15 @@
 
 const int	numcombs		= 8;
 const int	numallpasses	= 4;
-const float	muted           = 0;
-const float	fixedgain       = 0.015;
-const float scaledamp		= 0.4;
-const float scaleroom		= 0.28;
-const float offsetroom		= 0.7;
-const float initialroom     = 0.5;
-const float initialdamp     = 0.5;
-const float initialmode     = 0;
-const float freezemode		= 0.5;
+const float	muted           = 0.f;
+const float	fixedgain       = 0.015f;
+const float scaledamp		= 0.4f;
+const float scaleroom		= 0.28f;
+const float offsetroom		= 0.7f;
+const float initialroom     = 0.5f;
+const float initialdamp     = 0.5f;
+const float initialmode     = 0.f;
+const float freezemode		= 0.5f;
 const int	stereospread	= 23;
 
 // These values assume 44.1KHz sample rate

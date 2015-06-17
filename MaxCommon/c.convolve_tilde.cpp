@@ -92,6 +92,7 @@ void ext_main(void *r)
 	c = class_new("c.convolve~", (method)convolve_new, (method)convolve_free, (short)sizeof(t_convolve), 0L, A_GIMME, 0);
     class_setname((char *)"c.convolve~", (char *)"c.convolve~");
     
+	hoa_initclass(c, (method)NULL);
     class_dspinit(c);
 	
     // @method signal @digest Signal to reverberate
