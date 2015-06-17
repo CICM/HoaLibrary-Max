@@ -310,7 +310,7 @@ void meter_tick(t_meter *x)
 	jbox_redraw((t_jbox *)x);
 	
 	if (sys_getdspstate())
-		clock_fdelay(x->f_clock, x->f_interval);
+		clock_delay(x->f_clock, x->f_interval);
 }
 
 void meter_assist(t_meter *x, void *b, long m, long a, char *s)
@@ -319,7 +319,7 @@ void meter_assist(t_meter *x, void *b, long m, long a, char *s)
         sprintf(s,"(signal) %s", x->f_meter->getPlanewaveName(a).c_str());
 }
 
-t_max_err meter_notify(t_meter *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
+t_max_err meter_notify(t_meter *x, t_symbol *s, t_symbol *msg, void *sender, void *data) 
 {
 	t_symbol *name;
 	if (msg == hoa_sym_attr_modified)
