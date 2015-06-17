@@ -66,7 +66,7 @@ typedef struct _hoa_gain
     // gain
     Line<t_sample>*		f_amp;
     char                f_inputMode;
-    float               f_range[2];
+    double              f_range[2];
     double              j_valdB;
     double              j_defaultValuedB;
 	
@@ -326,7 +326,7 @@ void hoa_gain_set_input_mode_value(t_hoa_gain *x, double value, bool notify)
 
 void hoa_gain_contextValue(t_hoa_gain *x, long valueType, double value)
 {
-    x->f_inputMode = Math<long>::clip(valueType, 0, 2);
+    x->f_inputMode = (char)Math<long>::clip(valueType, 0, 2);
     hoa_gain_set_input_mode_value(x, value, true);
 }
 
@@ -341,7 +341,7 @@ void hoa_gain_set_dB(t_hoa_gain *x, double dBValue)
     jbox_redraw((t_jbox *)x);
 }
 
-void hoa_gain_assign(t_hoa_gain *x, double f, long notify)
+void hoa_gain_assign(t_hoa_gain *x, t_atom_float f, bool notify)
 {
     hoa_gain_set_input_mode_value(x, f, notify);
 }
@@ -483,13 +483,13 @@ void hoa_gain_float_dB(t_hoa_gain *x, double dBValue)
 
 void hoa_gain_int(t_hoa_gain *x, long n)
 {
-    hoa_gain_assign(x, double(n), true);
+    hoa_gain_assign(x, t_atom_float(n), true);
 	hoa_gain_bang(x);
 }
 
 void hoa_gain_float(t_hoa_gain *x, double f)
 {
-    hoa_gain_assign(x, f, true);
+	hoa_gain_assign(x, t_atom_float(f), true);
 	hoa_gain_bang(x);
 }
 
@@ -775,7 +775,7 @@ t_max_err hoa_gain_setvalueof(t_hoa_gain *x, long ac, t_atom *av)
 {
     if (ac >= 2 && av && atom_isNumber(av))
     {
-        x->f_inputMode = Math<char>::clip(atom_getlong(av), 0, 2);
+        x->f_inputMode = Math<char>::clip((char)atom_getlong(av), 0, 2);
         
         if (av+1 && atom_isNumber(av+1))
         {

@@ -73,7 +73,7 @@ void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins
         {
             for(ulong j = 0ul; j < sampleframes; j++)
             {
-                x->f_ins_bin[i][j] = ins[i][j];
+                x->f_ins_bin[i][j] = (float)ins[i][j];
             }
         }
         (static_cast<Decoder<Hoa2d, float>::Binaural*>(decoder.get()))->processBlock((float const**)x->f_ins_bin, (float **)x->f_outs_bin);
@@ -92,7 +92,7 @@ void hoa_2d_decoder_perform(t_hoa_2d_decoder *x, t_object *dsp64, t_sample **ins
             float* dest = x->f_ins+i;
             for(ulong j = 0ul; j < sampleframes; j++)
             {
-                dest[id] = ins[i][is];
+                dest[id] = (float)ins[i][is];
                 is += 1;
                 id += numins;
             }

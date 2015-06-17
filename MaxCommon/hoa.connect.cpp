@@ -157,7 +157,7 @@ void make_patchline(t_connect *x)
 	t_hoa_err err[2];
 	t_hoa_boxinfos* startobj_infos;
 	t_hoa_boxinfos* endobj_infos;
-	short startobj_type, endobj_type;
+	long startobj_type, endobj_type;
 	long outlets, inlets;
 	
 	if (x->f_nbSelected > 1)

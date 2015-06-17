@@ -240,7 +240,7 @@ t_max_err convolve_setattr_normalize(t_convolve *x, t_symbol *s, long ac, t_atom
 {
     if (ac && av && atom_gettype(av) == A_LONG)
 	{
-		x->f_normalize = atom_getlong(av);
+		x->f_normalize = (char)atom_getlong(av);
         if(x->f_normalize < 1)
             x->f_normalize = 0;
         else
@@ -408,7 +408,7 @@ void convolve_perform64(t_convolve *x, t_object *d, double **ins, long ni, doubl
     vDSP_vdpsp(ins[0], 1, x->f_sig_ins, 1, sampleframes);
 #else
     for (int i = 0; i < sampleframes; i++)
-        x->f_sig_ins[i] = ins[0][i];
+        x->f_sig_ins[i] = (float)ins[0][i];
 #endif
     
     x->f_convolver->process(x->f_sig_ins, x->f_sig_outs, sampleframes);

@@ -318,17 +318,17 @@ void *freeverb_new(t_symbol *s, int argc, t_atom *argv)
 
 void freeverb_roomsize(t_freeverb *x, double f)
 {
-    x->f_freeverb->setroomsize(f);
+    x->f_freeverb->setroomsize((float)f);
 }
 
 void freeverb_damp(t_freeverb *x, double f)
 {
-    x->f_freeverb->setdamp(f);
+	x->f_freeverb->setdamp((float)f);
 }
 
 void freeverb_freeze(t_freeverb *x, long n)
 {
-    x->f_freeverb->setmode(n);
+	x->f_freeverb->setmode((float)n);
 }
 
 void freeverb_free(t_freeverb *x)
@@ -360,7 +360,7 @@ void freeverb_perform(t_freeverb *x, t_object *d, double **ins, long ni, double 
 {
     for(int i = 0; i < sampleframes; i++)
     {
-        outs[0][i] = x->f_freeverb->process(ins[0][i]);
+		outs[0][i] = x->f_freeverb->process((float)ins[0][i]);
     }
 }
 
@@ -501,7 +501,7 @@ int CombFilter::getBufferSize()
 void CombFilter::setDamp(float aDampValue)
 {
 	m_damp1 = aDampValue;
-	m_damp2 = 1. - aDampValue;
+	m_damp2 = 1.f - aDampValue;
 }
 
 float CombFilter::getDamp()
