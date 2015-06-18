@@ -2,14 +2,13 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 0,
-			"revision" : 3,
-			"architecture" : "x64",
-			"modernui" : 1
+			"major" : 6,
+			"minor" : 1,
+			"revision" : 9,
+			"architecture" : "x64"
 		}
 ,
-		"rect" : [ 457.0, 102.0, 1171.0, 756.0 ],
+		"rect" : [ 269.0, 102.0, 1171.0, 756.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -19,35 +18,27 @@
 		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
+		"imprint" : 0,
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
 		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontface" : 3,
 					"fontname" : "Arial",
 					"fontsize" : 13.036499,
+					"frgb" : 0.0,
 					"id" : "obj-40",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 453.0, 329.0, 21.0 ],
-					"style" : "",
 					"text" : "Ambisonics also implies some restrictions :",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -55,20 +46,16 @@
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"background" : 1,
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.187636, 0.74902, 0.121902, 1.0 ],
 					"id" : "obj-30",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 123.058365, 329.0, 21.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
+					"rounded" : 0
 				}
 
 			}
@@ -77,12 +64,12 @@
 					"fontface" : 3,
 					"fontname" : "Arial",
 					"fontsize" : 13.036499,
+					"frgb" : 0.0,
 					"id" : "obj-19",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 123.058365, 329.0, 21.0 ],
-					"style" : "",
 					"text" : "Ambisonics offers several advantages :",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -92,13 +79,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-13",
 					"linecount" : 19,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 478.525024, 329.0, 253.0 ],
-					"style" : "",
 					"text" : "• With Ambisonics, the auditor should ideally be placed at the center of the loudspeakers array otherwise the sound field resitution will be distorted. \nHowever, the use of the maxRe or inPhase optimizations (see hoa.optim~ object) can make up this artefact (to the detriment of the spatial resolution) and offers the possibility of an audience spread all over the circle.\n\n• The restitution system is restricted by the order of decomposition. \nThe number of loudspeakers must be higher than or equal to the number of harmonics. Futhermore, the loudspeakers must be placed on a circle or a sphere at equal distance from each other. However, these restrictions can be bypassed to the detriment of the quality of the sound field restitution. Thus, in practise, it is, in fact, possible to project the sound field on many loudspeakers systems from stereo to an infinity of loudspeakers through all irregular configurations such as 5.1, 7.1 and headphones (see hoa.decoder~ object).",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -108,13 +95,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-8",
 					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 149.0, 329.0, 266.0 ],
-					"style" : "",
 					"text" : "• Ambisonics allows to synthesize several sound fields and to decode them with only a one operation offering, reducing the CPU usage. \nThe separation of these two operations allows to perform many operations between them, in the circular harmonics domain, and also to record the sound field in this domain. Thus, it is possible to adapt the sound field to the speakers arrangement.\n\n• Ambisonics offers a homogeneous rendering of the sound field. Unlike other techniques where the angular resolution varies depending on the sources directions, Ambisonics provides a constant angular resolution.\n\n• Ambisonics offers a wide range of \"classical\" sound field transformations like rotation or distorsion.\n\n• This model models gives representations of the sound field that also allows to explore new techniques of sound field synthesis and transformations with a high musical potential.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -133,11 +120,10 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 0,
-							"revision" : 3,
-							"architecture" : "x64",
-							"modernui" : 1
+							"major" : 6,
+							"minor" : 1,
+							"revision" : 9,
+							"architecture" : "x64"
 						}
 ,
 						"rect" : [ 413.0, 101.0, 204.0, 214.0 ],
@@ -149,24 +135,16 @@
 						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
 						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
 						"boxanimatetime" : 200,
+						"imprint" : 0,
 						"enablehscroll" : 1,
 						"enablevscroll" : 1,
 						"devicewidth" : 0.0,
 						"description" : "",
 						"digest" : "",
 						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -177,7 +155,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "int" ],
 									"patching_rect" : [ 85.0, 78.0, 49.0, 20.0 ],
-									"style" : "",
 									"text" : "unpack"
 								}
 
@@ -192,7 +169,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 85.0, 9.0, 60.0, 20.0 ],
-									"style" : "",
 									"text" : "loadbang"
 								}
 
@@ -205,10 +181,9 @@
 									"maxclass" : "number",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
+									"outlettype" : [ "int", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 145.0, 119.0, 50.0, 20.0 ],
-									"style" : ""
+									"patching_rect" : [ 145.0, 119.0, 50.0, 20.0 ]
 								}
 
 							}
@@ -222,7 +197,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 85.0, 41.0, 74.0, 20.0 ],
-									"style" : "",
 									"text" : "patcherargs"
 								}
 
@@ -234,8 +208,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 16.5, 149.0, 20.0, 20.0 ],
-									"style" : ""
+									"patching_rect" : [ 16.5, 149.0, 20.0, 20.0 ]
 								}
 
 							}
@@ -249,7 +222,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 16.5, 119.0, 117.5, 19.0 ],
-									"style" : "",
 									"text" : "sel 32"
 								}
 
@@ -264,7 +236,6 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "int", "int", "int" ],
 									"patching_rect" : [ 16.5, 78.0, 59.5, 19.0 ],
-									"style" : "",
 									"text" : "key"
 								}
 
@@ -276,8 +247,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 16.5, 178.0, 25.0, 25.0 ],
-									"style" : ""
+									"patching_rect" : [ 16.5, 178.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -349,16 +319,20 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1027.0, 524.0, 69.0, 21.0 ],
+					"patching_rect" : [ 1027.0, 524.0, 69.0, 19.0 ],
 					"saved_object_attributes" : 					{
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"default_fontsize" : 12.0,
 						"description" : "",
 						"digest" : "",
+						"fontface" : 0,
+						"fontname" : "Arial",
+						"fontsize" : 12.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p keysel 32"
 				}
 
@@ -372,7 +346,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1027.0, 555.0, 74.0, 21.0 ],
+					"patching_rect" : [ 1027.0, 555.0, 74.0, 19.0 ],
 					"saved_object_attributes" : 					{
 						"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
 						"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
@@ -380,14 +354,12 @@
 						"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
 					}
 ,
-					"style" : "",
 					"text" : "hoa.connect"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-7",
@@ -396,9 +368,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 767.599976, 167.5, 56.0, 22.0 ],
-					"sig" : 0.0,
-					"style" : ""
+					"patching_rect" : [ 767.599976, 167.5, 56.0, 20.0 ],
+					"sig" : 0.0
 				}
 
 			}
@@ -412,8 +383,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 767.150024, 147.5, 60.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 767.150024, 147.5, 60.0, 20.0 ],
 					"text" : "hoa.pi~ 2"
 				}
 
@@ -428,8 +398,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 808.150024, 116.0, 74.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 808.150024, 116.0, 74.0, 20.0 ],
 					"text" : "phasor~ 0.1"
 				}
 
@@ -438,13 +407,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-36",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1081.5, 694.5, 54.0, 32.0 ],
-					"style" : "",
 					"text" : "Audio\nOn/Off",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -453,14 +422,12 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.853045, 0.853045, 0.853045, 1.0 ],
-					"color" : [ 0.92549, 0.364706, 0.341176, 1.0 ],
 					"id" : "obj-65",
 					"local" : 1,
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1029.0, 688.0, 45.0, 45.0 ],
-					"style" : ""
+					"patching_rect" : [ 1029.0, 688.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -468,13 +435,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-14",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 68.5, 822.0, 32.0 ],
-					"style" : "",
 					"text" : "Ambisonics is a set of techniques for the recording, synthesis, transformation and restitution of sound field based on a physical representation of the sound space in the spherical or circular harmonics domain or in the planewaves domain that allows a wide range of sound and space processings.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -482,59 +449,39 @@
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"id" : "obj-15",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 68.5, 822.0, 32.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
+					"rounded" : 0
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"args" : [ "@size", 1 ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
 					"id" : "obj-10",
-					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "hoa.helpcredit.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 495.0, 15.0, 332.0, 35.0 ],
-					"viewvisibility" : 1
+					"patching_rect" : [ 495.0, 15.0, 332.0, 35.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"args" : [ "@obj-name", "Tutorial 1 : ", "@obj-desc", "Introduction" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
 					"id" : "obj-56",
-					"lockeddragscroll" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "hoa.helpheader.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 5.0, 5.0, 483.0, 56.0 ],
-					"viewvisibility" : 1
+					"patching_rect" : [ 5.0, 5.0, 483.0, 56.0 ]
 				}
 
 			}
@@ -548,8 +495,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 4,
 					"numoutlets" : 0,
-					"patching_rect" : [ 417.0, 21.5, 52.0, 25.0 ],
-					"style" : "",
+					"patching_rect" : [ 417.0, 21.5, 52.0, 23.0 ],
 					"text" : "bgcolor 0.93 0.93 0.92 1."
 				}
 
@@ -558,13 +504,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-31",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 827.650024, 161.0, 126.25, 32.0 ],
-					"style" : "",
 					"text" : "Encoding angle in Radian.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -574,12 +520,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-28",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 421.25, 167.5, 102.0, 19.0 ],
-					"style" : "",
 					"text" : "Source synthesis.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -589,14 +535,14 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-25",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 800.650024, 503.525024, 123.0, 45.0 ],
-					"style" : "",
-					"text" : "Representation of the contribution of 16 loudspeakers",
+					"text" : "Representation of the contribution of 16 planewaves",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -605,13 +551,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-23",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1047.0, 225.0, 90.0, 45.0 ],
-					"style" : "",
 					"text" : "Representation of the circular harmonics",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -621,33 +567,29 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-21",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 415.150024, 450.0, 161.0, 32.0 ],
-					"style" : "",
-					"text" : "Signals to be sent to the loudspeakers.",
+					"text" : "Planewaves dependant signals.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-22",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 415.150024, 450.0, 379.850006, 32.0 ],
-					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
@@ -655,13 +597,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-16",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 415.150024, 301.0, 161.0, 32.0 ],
-					"style" : "",
 					"text" : "Circular harmonics dependant signals.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -669,19 +611,15 @@
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-18",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 415.150024, 301.0, 379.850006, 32.0 ],
-					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
@@ -689,14 +627,14 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-9",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 374.0, 408.0, 193.5, 32.0 ],
-					"style" : "",
-					"text" : "2 - Decoding for a set of loudspeakers.",
+					"text" : "2 - Decoding for a set of  planewaves.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -705,13 +643,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
+					"frgb" : 0.0,
 					"id" : "obj-2",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 374.0, 211.5, 161.0, 32.0 ],
-					"style" : "",
 					"text" : "1 - Encoding in the circular harmonics domain.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
@@ -719,7 +657,7 @@
 			}
 , 			{
 				"box" : 				{
-					"angles" : [ 0.0, 22.5, 45.0, 67.5, 90.0, 112.5, 135.0, 157.5, 180.0, 202.5, 225.0, 247.5, 270.0, 292.5, 315.0, 337.5 ],
+					"angles" : [ 0.0, 22.500001, 45.000001, 67.5, 90.000003, 112.499998, 135.0, 157.499996, 180.000005, 202.500001, 224.999996, 247.499992, 270.000001, 292.50001, 314.999992, 337.500001 ],
 					"channels" : 16.0,
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"id" : "obj-1",
@@ -739,8 +677,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 564.400024, 166.0, 43.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 564.400024, 166.0, 43.0, 20.0 ],
 					"text" : "sig~ 1"
 				}
 
@@ -766,8 +703,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 15,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 564.400024, 218.0, 221.75, 21.0 ],
-					"style" : "",
+					"patching_rect" : [ 564.400024, 218.0, 221.75, 19.0 ],
 					"text" : "hoa.2d.encoder~ 7"
 				}
 
@@ -781,189 +717,148 @@
 					"numinlets" : 15,
 					"numoutlets" : 16,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 564.650024, 414.0, 221.5, 21.0 ],
-					"style" : "",
+					"patching_rect" : [ 564.650024, 414.0, 221.5, 19.0 ],
 					"text" : "hoa.2d.decoder~ 7"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-11",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 374.0, 408.0, 421.0, 32.0 ],
-					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-4",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 374.0, 211.5, 421.0, 33.5 ],
-					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-26",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 546.650024, 490.525024, 381.0, 246.0 ],
-					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-29",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 415.150024, 161.0, 223.850006, 32.0 ],
-					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-24",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 802.650024, 212.0, 343.350006, 247.0 ],
-					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-32",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 759.049988, 161.0, 194.850006, 32.0 ],
-					"proportion" : 0.39,
 					"rounded" : 0,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.74902, 0.0, 0.0, 0.5 ],
 					"id" : "obj-39",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 453.0, 329.0, 21.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
+					"rounded" : 0
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"id" : "obj-38",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 149.0, 329.0, 266.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
+					"rounded" : 0
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
 					"border" : 1,
 					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"id" : "obj-41",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 478.525024, 329.0, 253.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
+					"rounded" : 0
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
 					"bgcolor" : [ 0.0, 0.0, 0.0, 0.05 ],
 					"bordercolor" : [ 0.235294, 0.235294, 0.235294, 0.2 ],
 					"id" : "obj-37",
 					"maxclass" : "panel",
-					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1026.0, 685.0, 120.0, 51.0 ],
-					"proportion" : 0.39,
 					"rounded" : 6,
-					"shadow" : -1,
-					"style" : ""
+					"shadow" : -1
 				}
 
 			}
@@ -1461,21 +1356,21 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "/Users/Pierre/GitHub/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "/Users/Pierre/GitHub/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "/Users/Pierre/GitHub/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
@@ -1503,36 +1398,6 @@
 , 			{
 				"name" : "hoa.connect.mxo",
 				"type" : "iLaX"
-			}
- ],
-		"embedsnapshot" : 0,
-		"styles" : [ 			{
-				"name" : "newobjBlue-1",
-				"default" : 				{
-					"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
-				}
-,
-				"parentstyle" : "",
-				"multi" : 0
-			}
-, 			{
-				"name" : "newobjGreen-1",
-				"default" : 				{
-					"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
-				}
-,
-				"parentstyle" : "",
-				"multi" : 0
-			}
-, 			{
-				"name" : "newobjYellow-1",
-				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
-				}
-,
-				"parentstyle" : "",
-				"multi" : 0
 			}
  ]
 	}
