@@ -120,17 +120,9 @@ void *hoa_2d_exchanger_new(t_symbol *s, long argc, t_atom *argv)
                 {
                     norm = Exchanger<Hoa2d, t_sample>::toMaxN;
                 }
-                else if(atom_getsym(argv+i) == gensym("toN2D"))
-                {
-                    norm = Exchanger<Hoa2d, t_sample>::toN2D;
-                }
                 else if(atom_getsym(argv+i) == gensym("fromMaxN"))
                 {
                     norm = Exchanger<Hoa2d, t_sample>::fromMaxN;
-                }
-                else if(atom_getsym(argv+i) == gensym("fromN2D"))
-                {
-                    norm = Exchanger<Hoa2d, t_sample>::fromN2D;
                 }
                 else if(atom_getsym(argv+i) == gensym("toFurseMalham"))
                 {
@@ -157,16 +149,6 @@ void *hoa_2d_exchanger_new(t_symbol *s, long argc, t_atom *argv)
                 {
                     norm = Exchanger<Hoa2d, t_sample>::fromMaxN;
                     numb = Exchanger<Hoa2d, t_sample>::fromFurseMalham;
-                }
-                else if(atom_getsym(argv+i) == gensym("toDaniel"))
-                {
-                    norm = Exchanger<Hoa2d, t_sample>::toN2D;
-                    numb = Exchanger<Hoa2d, t_sample>::toSID;
-                }
-                else if(atom_getsym(argv+i) == gensym("fromDaniel"))
-                {
-                    norm = Exchanger<Hoa2d, t_sample>::fromN2D;
-                    numb = Exchanger<Hoa2d, t_sample>::fromSID;
                 }
                 else
                 {
