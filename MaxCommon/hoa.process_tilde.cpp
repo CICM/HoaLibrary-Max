@@ -23,7 +23,7 @@
  @discussion
   <o>hoa.process~</o> helps the modularization of patches for ambisonic or plane waves processing. <o>hoa.process~</o> is a kind of <o>poly~</o> object particulary suitable for multichannel ambisonic or plane wave processing. Create a patch/effect/operator, then parallelize it with the <o>hoa.process~</o>
  
- @category ambisonics, hoa objects, msp
+ @category 2d, 3d, Process, Utility, Ambisonics, Planewaves, Patching, MSP
  
  @seealso hoa.in~, hoa.in, hoa.out, hoa.out~, hoa.thisprocess~, poly~, patcher
  */

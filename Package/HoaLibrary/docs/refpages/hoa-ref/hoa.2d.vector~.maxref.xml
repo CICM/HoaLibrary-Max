@@ -10,15 +10,14 @@
 	</digest>
 
 	<description>
-		<o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information : Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.
+		<o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information see <b>Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.</b>
 	</description>
 
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">audio</metadata>
+		<metadata name="tag">2d</metadata>
+		<metadata name="tag">Planewaves</metadata>
 		<metadata name="tag">MSP</metadata>
 	</metadatalist>
 
@@ -101,7 +100,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information : Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.
+		<o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information see <b>Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.</b>
 	</discussion>
 
 	<!--SEEALSO-->
@@ -115,7 +114,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information : Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.
+		<o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information see <b>Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.</b>
 			</description>
 		</entry>
 		<entry name ="Keywords">

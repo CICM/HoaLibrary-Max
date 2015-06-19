@@ -6,19 +6,20 @@
 <c74object name="hoa.connect" module="hoa">
 
 	<digest>
-		automatically connect several hoa objects together.
+		Automatically connect several hoa objects together.
 	</digest>
 
 	<description>
-		<o>hoa.connect</o> could be used to automatically connect several hoa objects together and to color patchlines
+		<o>hoa.connect</o> automatically connects several hoa objects together and colors patchlines.
 	</description>
 
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">script</metadata>
+		<metadata name="tag">2d</metadata>
+		<metadata name="tag">3d</metadata>
+		<metadata name="tag">Utility</metadata>
+		<metadata name="tag">Patching</metadata>
 	</metadatalist>
 
 	<!--INLETS-->
@@ -107,7 +108,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>hoa.connect</o> could be used to automatically connect several hoa objects together and to color patchlines
+		<o>hoa.connect</o> automatically connects several hoa objects together and colors patchlines.
 	</discussion>
 
 	<!--SEEALSO-->
@@ -126,7 +127,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>hoa.connect</o> could be used to automatically connect several hoa objects together and to color patchlines
+		<o>hoa.connect</o> automatically connects several hoa objects together and colors patchlines.
 			</description>
 		</entry>
 		<entry name ="Keywords">

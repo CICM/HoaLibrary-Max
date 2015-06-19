@@ -20,7 +20,7 @@
  <o>hoa.fx.decorrelation~</o> allows you to generate a diffuse sound field with signal decorrelation.
  This patcher requires to be loaded by a <o>hoa.process~</o> object to work.
  
- @keywords ambisonics, hoa objects, audio, MSP, abstraction
+ @category Process, MSP, abstraction
  
  @seealso hoa.process~, hoa.syn.decorrelation~, hoa.fx.delay~, hoa.fx.gain~, hoa.fx.grain~, hoa.fx.mirror~, hoa.fx.mixer~, hoa.fx.ringmod~
  */

@@ -16,9 +16,8 @@
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">audio</metadata>
+		<metadata name="tag">2d</metadata>
+		<metadata name="tag">Ambisonics</metadata>
 		<metadata name="tag">MSP</metadata>
 	</metadatalist>
 
@@ -56,8 +55,8 @@
 				The normalisation format.
 			</digest>
 			<description>
-				numbering format can be "toMaxN", "toN2D", "fromMaxN", "fromN2D".
-				Numbering and Normalisation args can be combined into a single as follows : "toBFormat" (aka. toFurseMalham toMaxN), "toDaniel" (aka. toSID toN2D), "fromBFormat" (aka. fromFurseMalham fromMaxN), "fromDaniel" (aka. fromSID fromN2D).
+				numbering format can be "toMaxN", "fromMaxN".
+				Numbering and Normalisation args can be combined into a single as follows : "toBFormat" (aka. toFurseMalham toMaxN), "fromBFormat" (aka. fromFurseMalham fromMaxN).
 			</description>
 		</objarg>
 	</objarglist>
@@ -81,7 +80,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization.
+		The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization. for further information <a href="http://en.wikipedia.org/wiki/Ambisonic_data_exchange_formats">click here</a>
 	</discussion>
 
 	<!--SEEALSO-->
@@ -102,7 +101,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization.
+		The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization. for further information <a href="http://en.wikipedia.org/wiki/Ambisonic_data_exchange_formats">click here</a>
 			</description>
 		</entry>
 		<entry name ="Keywords">

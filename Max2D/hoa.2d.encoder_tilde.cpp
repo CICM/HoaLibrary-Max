@@ -16,12 +16,12 @@
  A 2d ambisonic encoder.
  
  @description
- <o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending of a given order (arg 1) and a position on a circle given in radians (right inlet).
+ <o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending on a given order (arg 1) and a position on a circle given in radians (right inlet).
  
  @discussion
- <o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending of a given order (arg 1) and a position on a circle given in radians (right inlet).
+ <o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending on a given order (arg 1) and a position on a circle given in radians (right inlet).
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 2d, Ambisonics, MSP
  
  @seealso hoa.2d.map~, hoa.2d.decoder~, hoa.3d.encoder~
  */

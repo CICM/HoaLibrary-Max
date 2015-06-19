@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.3d.encoder~</o> encodes a signal into the spherical harmonics domain depending on a given order of decomposition, an azimuth and an elevation value given in radians
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 3d, Ambisonics, MSP
  
  @seealso hoa.2d.encoder~, hoa.3d.decoder~, hoa.3d.map~, hoa.3d.optim~, hoa.3d.scope~, hoa.3d.wider~, hoa.pi, hoa.pi~
  */

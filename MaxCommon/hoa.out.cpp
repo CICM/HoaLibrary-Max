@@ -18,12 +18,12 @@
  message outlet for a patcher loaded by hoa.process~
  
  @description
- <o>hoa.out</o> defines a message outlet for a patcher loaded by hoa.process~
+ <o>hoa.out</o> defines a message outlet for a patcher loaded by a <o>hoa.process~</o> object.
  
  @discussion
- <o>hoa.out</o> defines a message outlet for a patcher loaded by hoa.process~
+ <o>hoa.out</o> defines a message outlet for a patcher loaded by a <o>hoa.process~</o> object.
  
- @category ambisonics, hoa objects, audio, msp
+ @category Process, Utility, Patching, IO
  
  @seealso hoa.process~, hoa.out~, hoa.in~, hoa.in
  */

@@ -13,15 +13,15 @@
  @author    Julien Colafrancesco, Pierre Guillot, Eliott Paris.
  
  @digest
- A graphic user interface to design 2d ambisonic space
+ A graphic user interface to design plane waves
  
  @description
- <o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your ambisonic soundfields mainly in the plane wave domain.
+ <o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your soundfields mainly in the plane wave domain.
  
  @discussion
- <o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your ambisonic soundfields mainly in the plane wave domain.
+ <o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your soundfields mainly in the plane wave domain.
  
- @category ambisonics, hoa objects, GUI
+ @category 2d, Planewaves, GUI
  
  @seealso  hoa.2d.process~, hoa.fx.gain~, hoa.fx.delay~, hoa.gain~, hoa.2d.recomposer, hoa.2d.projector~, hoa.2d.recomposer~, hoa.2d.meter~, hoa.2d.map, hoa.2d.decoder~, hoa.2d.encoder~
  

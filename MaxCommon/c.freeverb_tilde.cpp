@@ -21,7 +21,7 @@
  @discussion
  <o>c.freeverb~</o> is a freeverb reverberation processor implementation
  
- @category hoa objects, audio, MSP
+ @category Other, MSP
  
  @seealso hoa.fx.freeverb~, c.convolve~, hoa.fx.convolve~, hoa.process~
  */

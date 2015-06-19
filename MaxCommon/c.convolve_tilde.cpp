@@ -16,12 +16,12 @@
  A zero latency convolution reverberation processor
  
  @description
- <o>c.convolve~</o> is a zero latency convolution reverberation processor
+ <o>c.convolve~</o> is a zero latency convolution reverberation processor.
  
  @discussion
- <o>c.convolve~</o> is a zero latency convolution reverberation processor
+ <o>c.convolve~</o> is a zero latency convolution reverberation processor.
  
- @category hoa objects, audio, MSP
+ @category Other, MSP
  
  @seealso hoa.fx.convolve~, c.freeverb~, hoa.fx.freeverb~, hoa.process~
  */

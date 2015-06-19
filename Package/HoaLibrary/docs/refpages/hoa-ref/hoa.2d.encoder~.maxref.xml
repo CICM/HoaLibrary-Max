@@ -10,15 +10,14 @@
 	</digest>
 
 	<description>
-		<o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending of a given order (arg 1) and a position on a circle given in radians (right inlet).
+		<o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending on a given order (arg 1) and a position on a circle given in radians (right inlet).
 	</description>
 
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">audio</metadata>
+		<metadata name="tag">2d</metadata>
+		<metadata name="tag">Ambisonics</metadata>
 		<metadata name="tag">MSP</metadata>
 	</metadatalist>
 
@@ -71,7 +70,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending of a given order (arg 1) and a position on a circle given in radians (right inlet).
+		<o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending on a given order (arg 1) and a position on a circle given in radians (right inlet).
 	</discussion>
 
 	<!--SEEALSO-->
@@ -84,7 +83,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending of a given order (arg 1) and a position on a circle given in radians (right inlet).
+		<o>hoa.2d.encoder~</o> creates the circular harmonics of a signal depending on a given order (arg 1) and a position on a circle given in radians (right inlet).
 			</description>
 		</entry>
 		<entry name ="Keywords">

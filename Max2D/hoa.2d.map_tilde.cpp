@@ -16,12 +16,12 @@
  A 2d ambisonic multisource spatializer.
  
  @description
- <o>hoa.2d.map~</o> is a tool that encodes several sources in the circular harmonics domain with distance compensation and muting system. It's easy to use and works with <o>hoa.2d.map</o>. You could look at <o>hoa.2d.map</o>'s help for futher informations.
+ <o>hoa.2d.map~</o> is a tool that encodes several sources in the circular harmonics domain with distance compensation and muting system. It's easy to use and works with <o>hoa.2d.map</o>. You could look at <o>hoa.2d.map</o>'s help for further informations.
  
  @discussion
- <o>hoa.2d.map~</o> is a tool that encodes several sources in the circular harmonics domain with distance compensation and muting system. It's easy to use and works with <o>hoa.2d.map</o>. You could look at <o>hoa.2d.map</o>'s help for futher informations.
+ <o>hoa.2d.map~</o> is a tool that encodes several sources in the circular harmonics domain with distance compensation and muting system. It's easy to use and works with <o>hoa.2d.map</o>. You could look at <o>hoa.2d.map</o>'s help for further informations.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 2d, Ambisonics, MSP
  
  @seealso hoa.2d.map, hoa.2d.encoder~, hoa.2d.wider~, hoa.2d.scope~, hoa.2d.decoder~
  */
@@ -52,7 +52,7 @@ void *hoa_map_tilde_new(t_symbol *s, long argc, t_atom *argv)
 	
 	// @arg 1 @name number-of-sources @optional 0 @type int @digest The number of sources
 	// @description Second argument is the number of sources to spatialize.
-	// If there is a single source, <o>hoa.2d.map~</o> object owns 3 inlets, the first one correspond to the signal to encode, the two other ones are usefull  to control source position at signal rate. If you have more than one source to spatialize, the number of signal inlets will be equal to the number of sources to encode, and coordinates will be given with list messages.
+	// If there is a single source, <o>hoa.2d.map~</o> object has 3 inlets, the first one correspond to the signal to encode, the two others an be used to control source position at signal rate. If you have more than one source to spatialize, the number of signal inlets will be equal to the number of sources to encode, and coordinates must be given with list messages.
 	
     t_hoa_map_tilde *x = (t_hoa_map_tilde *)object_alloc(hoa_map_tilde_class);
 	if (x)
@@ -416,12 +416,12 @@ void ext_main(void *r)
     // @marg 0 @name coord @optional 0 @type float
     class_addmethod(c, (method)hoa_map_tilde_int,       "int",		A_LONG, 0);
     
-    // @method cartesian @digest Swith the input mode to cartesian (default).
-    // @description The <m>cartesian</m> message swith the input mode to cartesian
+    // @method cartesian @digest Set the input mode to cartesian (default).
+    // @description The <m>cartesian</m> message sets the input mode to cartesian
     class_addmethod(c, (method)hoa_map_tilde_cartesian, "cartesian",A_NOTHING, 0);
     
-    // @method polar @digest Swith the input mode to polar.
-    // @description The <m>polar</m> message swith the input mode to polar
+    // @method polar @digest Set the input mode to polar.
+    // @description The <m>polar</m> message sets the input mode to polar
     class_addmethod(c, (method)hoa_map_tilde_polar,     "polar",	A_NOTHING, 0);
     
     // @method list @digest Send source messages like coordinates and mute state.

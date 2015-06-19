@@ -16,9 +16,8 @@
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">maths</metadata>
+		<metadata name="tag">Utility</metadata>
+		<metadata name="tag">Maths</metadata>
 	</metadatalist>
 
 	<!--INLETS-->

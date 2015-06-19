@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.2d.rotate~</o> applies a rotation on the ambisonic sound field.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 2d, Ambisonics, MSP
  
  @seealso hoa.2d.wider~, hoa.2d.encoder~, hoa.2d.decoder~, hoa.process~, hoa.mirror~, hoa.2d.space, hoa.2d.recomposer, hoa.2d.meter~, hoa.2d.scope~
  */

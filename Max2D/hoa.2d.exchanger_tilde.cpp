@@ -19,9 +19,9 @@
  <o>hoa.2d.exchanger~</o> renumbers and normalizes the channels.
  
  @discussion
- The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization.
+ The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization. For further information <a href="http://en.wikipedia.org/wiki/Ambisonic_data_exchange_formats">click here</a>.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 2d, Ambisonics, MSP
  
  @seealso hoa.3d.exchanger~, hoa.2d.decoder~, hoa.2d.encoder~
  */
@@ -98,8 +98,8 @@ void *hoa_2d_exchanger_new(t_symbol *s, long argc, t_atom *argv)
     // @description numbering format can be "toFurseMalham", "toSID", "fromFurseMalham", "fromSID"
     
     // @arg 2 @name normalisation @optional 1 @type symbol @digest The normalisation format.
-    // @description numbering format can be "toMaxN", "toN2D", "fromMaxN", "fromN2D".
-    // Numbering and Normalisation args can be combined into a single as follows : "toBFormat" (aka. toFurseMalham toMaxN), "toDaniel" (aka. toSID toN2D), "fromBFormat" (aka. fromFurseMalham fromMaxN), "fromDaniel" (aka. fromSID fromN2D).
+    // @description numbering format can be "toMaxN", "fromMaxN".
+    // Numbering and Normalisation args can be combined into a single as follows : "toBFormat" (aka. toFurseMalham toMaxN), "fromBFormat" (aka. fromFurseMalham fromMaxN).
     
     t_hoa_2d_exchanger *x = (t_hoa_2d_exchanger *)object_alloc(hoa_2d_exchanger_class);
     if (x)

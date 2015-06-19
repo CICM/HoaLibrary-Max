@@ -19,9 +19,9 @@
  <o>hoa.3d.exchanger~</o> renumbers and normalizes the channels.
  
  @discussion
- The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard.
+ The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization. For further information <a href="http://en.wikipedia.org/wiki/Ambisonic_data_exchange_formats">click here</a>.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 3d, Ambisonics, MSP
  
  @seealso hoa.2d.exchanger~, hoa.3d.decoder~, hoa.3d.encoder~
  */

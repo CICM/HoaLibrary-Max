@@ -20,7 +20,7 @@
  <o>hoa.fx.dephaser~</o> is a fft dephaser.
  This patcher needs to be loaded by a <o>hoa.process~</o> object to work.
  
- @keywords ambisonics, hoa objects, audio, MSP, abstraction
+ @category Process, MSP, abstraction
  
  @seealso hoa.process~, hoa.fx.decorrelation~, hoa.fx.delay~, hoa.fx.grain~, hoa.fx.mirror~, hoa.fx.mixer~, hoa.fx.ringmod~
  */

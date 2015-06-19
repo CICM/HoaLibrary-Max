@@ -16,12 +16,12 @@
  message inlet for a patcher loaded by hoa.process~
  
  @description
- <o>hoa.in</o> defines a message inlet for a patcher loaded by hoa.process~
+ <o>hoa.in</o> defines a message inlet for a patcher loaded by a <o>hoa.process~</o> object.
  
  @discussion
- <o>hoa.in</o> defines a message inlet for a patcher loaded by hoa.process~
+ <o>hoa.in</o> defines a message inlet for a patcher loaded by a <o>hoa.process~</o> object.
  
- @category ambisonics, hoa objects, audio, msp
+ @category Process, Utility, Patching, IO
  
  @seealso hoa.process~, hoa.in~, hoa.out~, hoa.out
  */

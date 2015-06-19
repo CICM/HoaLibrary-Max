@@ -20,7 +20,7 @@
  <o>hoa.syn.ringmod~</o> creates a diffuse sound field by modulating the amplitude of circular, spherical or plane waves signals depending on their number.
  This patcher requires to be loaded by a <o>hoa.process~</o> object to work.
  
- @keywords ambisonics, hoa objects, audio, MSP, abstraction
+ @category Process, MSP, abstraction
  
  @seealso hoa.process~, hoa.fx.ringmod~, hoa.syn.decorrelation~, hoa.syn.delay~, hoa.syn.grain~
  */

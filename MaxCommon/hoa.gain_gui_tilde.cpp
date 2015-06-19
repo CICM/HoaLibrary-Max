@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.gain~</o> is a multichannel exponential scaling volume slider. hoa.gain~ is a slider that scales signals. it can also make a smooth transition as you move from one value of the slider to the next.
  
- @category ambisonics, hoa objects, GUI, msp
+ @category Utility, MSP, GUI
  
  @seealso gain~, hoa.process~, hoa.fx.gain~
  

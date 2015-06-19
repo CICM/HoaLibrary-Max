@@ -23,7 +23,7 @@
  @discussion
  Use the <o>hoa.thisprocess~</o> object to control <o>hoa.process~</o> voice allocation, muting, argument and attributes. When placed inside a patcher loaded by a <o>hoa.process~</o> object, it send and receive messages from the <o>hoa.process~</o> object that loads it.
  
- @category ambisonics, hoa objects, msp
+ @category 2d, 3d, Process, Utility, Patching, MSP
  
  @seealso hoa.process~, hoa.in~, hoa.in, hoa.out, hoa.out~, thispoly~, poly~, thispatcher, patcher
  */

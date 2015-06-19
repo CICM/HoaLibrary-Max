@@ -13,7 +13,7 @@
  @author    Julien Colafrancesco, Pierre Guillot, Eliott Paris.
  
  @digest
- A 3d fractional ambisonic orders simulator
+ A 3d fractional ambisonic order simulator
  
  @description
  <o>hoa.3d.wider~</o> can be used to wide the diffusion of a localised sound. The order depending signals are weighted and appear in a logarithmic way to have linear changes.
@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.3d.wider~</o> can be used to wide the diffusion of a localised sound. The order depending signals are weighted and appear in a logarithmic way to have linear changes.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 3d, Ambisonics, MSP
  
  @seealso hoa.2d.wider~, hoa.3d.encoder~, hoa.3d.decoder~, hoa.3d.map~, hoa.3d.optim~, hoa.3d.scope~
  */

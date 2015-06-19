@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.map</o> allows you to spatialize several sources in a 2d or 3d context. You can add and remove sources, change coordinates, add description and create groups. <o>hoa.map</o> is dedicated to control a <o>hoa.2d.map~</o> or a <o>hoa.3d.map~</o> object.
  
- @category ambisonics, hoa objects, audio, GUI, MSP
+ @category 2d, 3d, GUI
  
  @seealso hoa.2d.map, hoa.3d.map~, hoa.2d.space, hoa.2d.meter~, hoa.2d.scope~, hoa.2d.encoder~, hoa.2d.wider~, hoa.2d.decoder~, hoa.3d.encoder~, hoa.3d.scope~, hoa.3d.wider~, hoa.3d.decoder~
  

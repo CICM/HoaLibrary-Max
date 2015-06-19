@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.2d.optim~</o> weights the circular harmonics signals depending on the ambisonic optimization. It can be <b>basic</b> for no optimization, <b>maxRe</b> or <b>inPhase</b>.
  
- @category ambisonics, hoa objects, audio, msp
+ @category 2d, Ambisonics, MSP
  
  @seealso hoa.2d.decoder~, hoa.2d.map~, hoa.2d.scope~, hoa.2d.meter~, hoa.2d.wider~
  */

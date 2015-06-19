@@ -18,6 +18,9 @@
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
+		<metadata name="tag">Process</metadata>
+		<metadata name="tag">MSP</metadata>
+		<metadata name="tag">abstraction</metadata>
 	</metadatalist>
 
 	<!--ARGUMENTS-->
@@ -118,7 +121,6 @@
 		</entry>
 		<entry name ="Keywords">
 			<description>
-ambisonics, hoa objects, audio, MSP, abstraction.
 			</description>
 		</entry>
 	</misc>

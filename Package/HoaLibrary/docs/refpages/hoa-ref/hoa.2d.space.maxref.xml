@@ -6,18 +6,18 @@
 <c74object name="hoa.2d.space" module="hoa">
 
 	<digest>
-		A graphic user interface to design 2d ambisonic space
+		A graphic user interface to design plane waves
 	</digest>
 
 	<description>
-		<o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your ambisonic soundfields mainly in the plane wave domain.
+		<o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your soundfields mainly in the plane wave domain.
 	</description>
 
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
+		<metadata name="tag">2d</metadata>
+		<metadata name="tag">Planewaves</metadata>
 		<metadata name="tag">GUI</metadata>
 	</metadatalist>
 
@@ -272,7 +272,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your ambisonic soundfields mainly in the plane wave domain.
+		<o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your soundfields mainly in the plane wave domain.
 	</discussion>
 
 	<!--SEEALSO-->
@@ -293,7 +293,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your ambisonic soundfields mainly in the plane wave domain.
+		<o>hoa.2d.space</o> is a circular array of slider allowing you to draw and set channel dependant coefficients that can transform your soundfields mainly in the plane wave domain.
 			</description>
 		</entry>
 		<entry name ="Keywords">

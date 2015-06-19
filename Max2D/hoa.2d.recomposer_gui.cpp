@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.2d.recomposer</o> helps you to set angle and widening value of channels to warp the sound field. It is mainly dedicated to the control of the <o>hoa.2d.recomposer~</o> processor object.
  
- @category ambisonics, hoa objects, GUI
+ @category 2d, Ambisonics, Planewaves, GUI
  
  @seealso  hoa.2d.projector~, hoa.2d.recomposer~, hoa.2d.process~, hoa.fx.gain~, hoa.fx.delay~, hoa.gain~, hoa.2d.meter~, hoa.2d.map, hoa.2d.decoder~, hoa.2d.encoder~, hoa.2d.wider~
  

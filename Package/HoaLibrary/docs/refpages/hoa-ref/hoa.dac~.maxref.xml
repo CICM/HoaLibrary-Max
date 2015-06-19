@@ -16,10 +16,10 @@
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">audio</metadata>
-		<metadata name="tag">msp</metadata>
+		<metadata name="tag">Utility</metadata>
+		<metadata name="tag">Patching</metadata>
+		<metadata name="tag">MSP</metadata>
+		<metadata name="tag">IO</metadata>
 	</metadatalist>
 
 	<!--INLETS-->

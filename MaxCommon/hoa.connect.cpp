@@ -13,15 +13,15 @@
  @author    Julien Colafrancesco, Pierre Guillot, Eliott Paris.
  
  @digest
- automatically connect several hoa objects together.
+ Automatically connect several hoa objects together.
  
  @description
- <o>hoa.connect</o> could be used to automatically connect several hoa objects together and to color patchlines
+ <o>hoa.connect</o> automatically connects several hoa objects together and colors patchlines.
  
  @discussion
- <o>hoa.connect</o> could be used to automatically connect several hoa objects together and to color patchlines
+ <o>hoa.connect</o> automatically connects several hoa objects together and colors patchlines.
  
- @category ambisonics, hoa objects, script
+ @category 2d, 3d, Utility, Patching
  
  @seealso hoa.process~
  */

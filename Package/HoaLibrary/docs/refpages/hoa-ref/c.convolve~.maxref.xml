@@ -10,14 +10,13 @@
 	</digest>
 
 	<description>
-		<o>c.convolve~</o> is a zero latency convolution reverberation processor
+		<o>c.convolve~</o> is a zero latency convolution reverberation processor.
 	</description>
 
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">audio</metadata>
+		<metadata name="tag">Other</metadata>
 		<metadata name="tag">MSP</metadata>
 	</metadatalist>
 
@@ -143,7 +142,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>c.convolve~</o> is a zero latency convolution reverberation processor
+		<o>c.convolve~</o> is a zero latency convolution reverberation processor.
 	</discussion>
 
 	<!--SEEALSO-->
@@ -157,7 +156,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>c.convolve~</o> is a zero latency convolution reverberation processor
+		<o>c.convolve~</o> is a zero latency convolution reverberation processor.
 			</description>
 		</entry>
 		<entry name ="Keywords">

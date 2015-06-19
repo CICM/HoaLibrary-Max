@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 297.0, 138.0, 700.0, 575.0 ],
+		"rect" : [ 282.0, 220.0, 700.0, 575.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -50,7 +50,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 691.729187, 50.354206, 157.0, 29.0 ],
-					"presentation_rect" : [ 693.729187, 50.354206, 0.0, 0.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/publications/"
 				}
@@ -262,9 +261,9 @@
 					"autofit" : 1,
 					"id" : "hoa.2d.scope~",
 					"instance_attributes" : 					{
+						"palette_action" : "hoa.2d.scope~",
 						"palette_caption" : "hoa.2d.scope~",
-						"palette_category" : [ "HoaLib", "Interface", "Recent" ],
-						"palette_action" : "hoa.2d.scope~"
+						"palette_category" : [ "HoaLib", "Interface", "Recent" ]
 					}
 ,
 					"maxclass" : "fpic",
@@ -705,7 +704,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 113.0, 309.0, 665.0, 285.0 ],
+						"rect" : [ 300.0, 391.0, 665.0, 285.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -1571,7 +1570,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 15.9375, 85.25, 666.6875, 74.0 ],
 					"style" : "",
-					"text" : "HoaLibrary allows musicians and composers to synthesize, transform and render sound fields in a creative and artistic way. This library facilitates the understanding and the appropriation of key concepts of ambisonics. A lot of new signal processings are allowed like diffuse sound field synthesis, perspective distorsion or spatial filtering...",
+					"text" : "HoaLibrary allows musicians and composers to synthesize, transform and render sound fields in a creative and artistic way. This library facilitates the understanding and the appropriation of key concepts of Ambisonics. A lot of new signal processings are allowed like diffuse sound field synthesis, perspective distorsion or spatial filtering.",
 					"textcolor" : [ 0.27596, 0.276002, 0.27594, 1.0 ],
 					"varname" : "autohelp_top_description"
 				}

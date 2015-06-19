@@ -20,7 +20,7 @@
  <o>hoa.fx.convolve~</o> is a multichannel zero latency convolution reverberation processor.
  This patcher requires to be loaded by a <o>hoa.process~</o> object to work.
  
- @keywords ambisonics, hoa objects, audio, MSP, abstraction
+ @category Process, MSP, abstraction
  
  @seealso c.convolve~, hoa.process~, hoa.fx.freeverb~, hoa.fx.decorrelation~, hoa.fx.delay~, hoa.fx.gain~, hoa.fx.grain~, hoa.fx.mirror~, hoa.fx.mixer~
  */

@@ -20,7 +20,7 @@
  <o>hoa.receive~</o> is a multichannel version of the <o>receive~</o> object.
  This patcher requires to be loaded by a <o>hoa.process~</o> object to work.
  
- @keywords ambisonics, hoa objects, audio, MSP, abstraction
+ @category Process, MSP, abstraction
  
  @seealso receive~, hoa.receive~~, hoa.send~, hoa.send
  */

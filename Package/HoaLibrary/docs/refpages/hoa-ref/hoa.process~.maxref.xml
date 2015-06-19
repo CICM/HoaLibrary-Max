@@ -16,9 +16,14 @@
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">msp</metadata>
+		<metadata name="tag">2d</metadata>
+		<metadata name="tag">3d</metadata>
+		<metadata name="tag">Process</metadata>
+		<metadata name="tag">Utility</metadata>
+		<metadata name="tag">Ambisonics</metadata>
+		<metadata name="tag">Planewaves</metadata>
+		<metadata name="tag">Patching</metadata>
+		<metadata name="tag">MSP</metadata>
 	</metadatalist>
 
 	<!--ARGUMENTS-->

@@ -16,12 +16,12 @@
  π constant.
  
  @description
- <o>hoa.pi</o> is for people that never remember more than 4 decimals or want to initialize a good Pi number.
+ <o>hoa.pi</o> is for people that never remember more than 4 decimals or want to initialize a good π number.
  
  @discussion
- <o>hoa.pi</o> is for people that never remember more than 4 decimals or want to initialize a good Pi number.
+ <o>hoa.pi</o> is for people that never remember more than 4 decimals or want to initialize a good π number.
  
- @category ambisonics, hoa objects, maths
+ @category Utility, Maths
  
  @seealso hoa.pi~
  */

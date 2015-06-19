@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.pi~</o> is for people that never remember more than 4 decimals or want to initialize a good π number.
  
- @category ambisonics, hoa objects, maths, msp
+ @category Utility, Maths, MSP
  
  @seealso hoa.pi
  */

@@ -16,12 +16,12 @@
  A 3d soundfield energy and velocity vectors calculator.
  
  @description
- <o>hoa.3d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information : Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.
+ <o>hoa.3d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information see <b>Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.</b>
  
  @discussion
- <o>hoa.3d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information : Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.
+ <o>hoa.3d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information see <b>Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.</b>
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 3d, Planewaves, MSP
  
  @seealso hoa.2d.vector~, hoa.3d.meter~, hoa.3d.scope~, hoa.3d.optim~, hoa.3d.map~, hoa.3d.encoder~, hoa.3d.decoder~, hoa.3d.wider~
  */

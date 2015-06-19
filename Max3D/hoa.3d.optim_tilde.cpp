@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.3d.optim~</o> weigths the spherical harmonics signals depending on the ambisonic optimization. It can be "basic", for no optimization, "maxRe" or "inPhase".
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 3d, Ambisonics, MSP
  
  @seealso hoa.2d.optim~, hoa.3d.map~, hoa.3d.encoder~, hoa.3d.decoder~, hoa.3d.scope~, hoa.3d.wider~, hoa.3d.meter~
  */

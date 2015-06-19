@@ -6,7 +6,7 @@
 <c74object name="hoa.3d.wider~" module="hoa">
 
 	<digest>
-		A 3d fractional ambisonic orders simulator
+		A 3d fractional ambisonic order simulator
 	</digest>
 
 	<description>
@@ -16,9 +16,8 @@
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">audio</metadata>
+		<metadata name="tag">3d</metadata>
+		<metadata name="tag">Ambisonics</metadata>
 		<metadata name="tag">MSP</metadata>
 	</metadatalist>
 

@@ -20,7 +20,7 @@
  <o>hoa.fx.hiss.convolve~</o> is a multichannel zero latency and high optimized convolution processor (thanks to the use of the multiconvolve~ object by Alex Harker and Pierre Alexandre Tremblay).
  This patcher requires to be loaded by a <o>hoa.process~</o> object to work.
  
- @keywords ambisonics, hoa objects, audio, MSP, abstraction
+ @category Process, MSP, abstraction
  
  @seealso multiconvolve~, hoa.fx.convolve~ c.convolve~, hoa.process~, hoa.fx.freeverb~, hoa.fx.decorrelation~, hoa.fx.delay~, hoa.fx.gain~, hoa.fx.grain~, hoa.fx.mirror~, hoa.fx.mixer~
  */

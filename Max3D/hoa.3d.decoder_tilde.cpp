@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.3d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition. The number of channels, the offset, the angles can be set with attributes.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 3d, Ambisonics, Planewaves, MSP
  
  @seealso hoa.2d.decoder~, hoa.3d.encoder~, hoa.3d.map~, hoa.3d.optim~, hoa.3d.scope~, hoa.3d.wider~, hoa.dac~
  */

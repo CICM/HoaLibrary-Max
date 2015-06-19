@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.3d.meter~</o> is a spherical version of the <o>hoa.2d.meter~</o>. It computes and displays the peak level indicators for a spherical array of loudspeakers, and the energy and velocity vectors.
  
- @category planewaves, hoa objects, audio, GUI, MSP
+ @category 3d, Planewaves, GUI, MSP
  
  @seealso meter~, hoa.2d.meter~, hoa.3d.scope~, hoa.3d.decoder~, hoa.3d.encoder~, hoa.3d.map~, hoa.3d.optim~, hoa.3d.vector~, hoa.3d.wider~, hoa.dac~
  

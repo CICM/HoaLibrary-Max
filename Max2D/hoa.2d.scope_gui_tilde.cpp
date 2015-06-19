@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.2d.scope~</o> displays the circular harmonics of an ambisonic sound field.
  
- @category ambisonics, hoa objects, audio, GUI, MSP
+ @category 2d, Ambisonics, GUI, MSP
  
  @seealso hoa.2d.meter~, hoa.2d.map, hoa.2d.decoder~, hoa.2d.encoder~, hoa.2d.process~
  

@@ -13,15 +13,15 @@
  @author    Julien Colafrancesco, Pierre Guillot, Eliott Paris.
  
  @digest
- A 2d ambisonic projection external
+ A plane waves decomposer from circular harmonics domain
  
  @description
- <o>hoa.2d.projector~</o> discretizes the ambisonic soundfield into an array of channels and gives an access to a new sound domain.
+ <o>hoa.2d.projector~</o> discretizes the ambisonic sound field into the plane waves domain. Use <o>hoa.2d.recomposer~</o> object to come back to the harmonics domain.
  
  @discussion
- <o>hoa.2d.projector~</o> discretizes the ambisonic soundfield into an array of channels and gives an access to a new sound domain.
+ <o>hoa.2d.projector~</o> discretizes the ambisonic sound field into the plane waves domain. Use <o>hoa.2d.recomposer~</o> object to come back to the harmonics domain.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 2d, Ambisonics, Planewaves, MSP
  
  @seealso hoa.2d.recomposer~, hoa.2d.recomposer, hoa.2d.space, hoa.fx.gain~, hoa.fx.delay~, hoa.2d.wider~, hoa.2d.encoder~, hoa.2d.decoder~, hoa.process~, hoa.2d.meter~, hoa.2d.scope~
  */

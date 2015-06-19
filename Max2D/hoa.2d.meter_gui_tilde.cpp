@@ -21,7 +21,7 @@
  @discussion
  The <o>hoa.2d.meter~</o> object displays the peak levels for a circular array of loudspeakers. It computes and displays the energy and velocity vectors.
  
- @category planewaves, hoa objects, audio, GUI, MSP
+ @category 2d, Planewaves, GUI, MSP
  
  @seealso meter~, live.gain~, hoa.gain~, hoa.2d.scope~, hoa.2d.map, hoa.2d.space, hoa.2d.recomposer, hoa.2d.encoder~, hoa.2d.decoder~
  

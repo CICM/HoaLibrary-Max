@@ -21,7 +21,7 @@
  @discussion
 <o>hoa.2d.decoder~</o> decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 2d, Ambisonics, Planewaves, MSP
  
  @seealso hoa.2d.meter~, hoa.2d.scope~, hoa.dac~, hoa.2d.vector~, hoa.2d.optim~, hoa.2d.map~, hoa.2d.encoder~, hoa.3d.decoder~
  */

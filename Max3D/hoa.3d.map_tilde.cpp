@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.3d.map~</o> is a tool that encodes several sources in the spherical harmonics domain, it's easy to use and work with the GUI <o>hoa.3d.map</o>. With a single source's configuration you can manage coordinates at signal rate
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 3d, Ambisonics, MSP
  
  @seealso hoa.2d.map~, hoa.3d.map, hoa.3d.encoder~, hoa.3d.decoder~, hoa.3d.optim~, hoa.3d.scope~, hoa.3d.wider~
  */

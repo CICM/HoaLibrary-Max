@@ -6,19 +6,19 @@
 <c74object name="hoa.2d.projector~" module="hoa">
 
 	<digest>
-		A 2d ambisonic projection external
+		A plane waves decomposer from circular harmonics domain
 	</digest>
 
 	<description>
-		<o>hoa.2d.projector~</o> discretizes the ambisonic soundfield into an array of channels and gives an access to a new sound domain.
+		<o>hoa.2d.projector~</o> discretizes the ambisonic sound field into the plane waves domain. Use <o>hoa.2d.recomposer~</o> object to come back to the harmonics domain.
 	</description>
 
 	<!--METADATA-->
 	<metadatalist>
 		<metadata name="author">Julien Colafrancesco, Pierre Guillot, Eliott Paris.</metadata>
-		<metadata name="tag">ambisonics</metadata>
-		<metadata name="tag">hoa objects</metadata>
-		<metadata name="tag">audio</metadata>
+		<metadata name="tag">2d</metadata>
+		<metadata name="tag">Ambisonics</metadata>
+		<metadata name="tag">Planewaves</metadata>
 		<metadata name="tag">MSP</metadata>
 	</metadatalist>
 
@@ -61,7 +61,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>hoa.2d.projector~</o> discretizes the ambisonic soundfield into an array of channels and gives an access to a new sound domain.
+		<o>hoa.2d.projector~</o> discretizes the ambisonic sound field into the plane waves domain. Use <o>hoa.2d.recomposer~</o> object to come back to the harmonics domain.
 	</discussion>
 
 	<!--SEEALSO-->
@@ -82,7 +82,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>hoa.2d.projector~</o> discretizes the ambisonic soundfield into an array of channels and gives an access to a new sound domain.
+		<o>hoa.2d.projector~</o> discretizes the ambisonic sound field into the plane waves domain. Use <o>hoa.2d.recomposer~</o> object to come back to the harmonics domain.
 			</description>
 		</entry>
 		<entry name ="Keywords">

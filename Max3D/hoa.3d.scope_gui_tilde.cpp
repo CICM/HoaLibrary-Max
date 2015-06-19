@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.3d.scope~</o> displays spherical harmonics of an ambisonic sound field
  
- @category ambisonics, hoa objects, audio, GUI, MSP
+ @category 3d, Ambisonics, GUI, MSP
  
  @seealso hoa.3d.meter~, hoa.2d.scope~, hoa.3d.decoder~, hoa.3d.encoder~, hoa.3d.map~, hoa.3d.optim~, hoa.3d.vector~, hoa.3d.wider~, hoa.dac~
  

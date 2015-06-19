@@ -21,7 +21,7 @@
  @discussion
  <o>hoa.2d.recomposer~</o> recomposes a plane wave decomposition into circular harmonics. There's three modes, <b>fixe</b> (default), <b>fisheye</b> and <b>free</b>. The <o>hoa.2d.recomposer~</o> can be controlled either by message or with the help of its dedicated graphical user interface <o>hoa.2d.recomposer</o>.
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 2d, Ambisonics, planewaves, MSP
  
  @seealso hoa.2d.projector~, hoa.2d.recomposer, hoa.2d.space, hoa.fx.gain~, hoa.fx.delay~, hoa.2d.encoder~, hoa.2d.wider~, hoa.2d.decoder~, hoa.process~, hoa.2d.meter~, hoa.2d.scope~
  */
