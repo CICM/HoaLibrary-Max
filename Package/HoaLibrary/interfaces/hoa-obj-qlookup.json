@@ -371,7 +371,7 @@
     ]
   },
   "hoa.map": {
-    "digest": "A graphic user interface to spatialize sources on a plane.",
+    "digest": "A graphic user interface to spatialize sources.",
     "module": "hoa",
     "category": [
       "ambisonics",
@@ -431,32 +431,12 @@
       "msp"
     ]
   },
-  "hoa.play~": {
-    "digest": "an ambisonic sfplay~ object",
-    "module": "hoa",
-    "category": [
-      "ambisonics",
-      "hoa objects",
-      "audio",
-      "msp"
-    ]
-  },
   "hoa.process~": {
     "digest": "patcher loader for multichannel processing.",
     "module": "hoa",
     "category": [
       "ambisonics",
       "hoa objects",
-      "msp"
-    ]
-  },
-  "hoa.record~": {
-    "digest": "an ambisonic sfrecord~ object",
-    "module": "hoa",
-    "category": [
-      "ambisonics",
-      "hoa objects",
-      "audio",
       "msp"
     ]
   },

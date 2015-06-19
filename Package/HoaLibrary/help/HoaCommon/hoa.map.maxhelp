@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 79.0, 949.0, 783.0 ],
+		"rect" : [ 100.0, 79.0, 969.0, 783.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 105.0, 949.0, 757.0 ],
+						"rect" : [ 0.0, 26.0, 969.0, 757.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -344,6 +344,13 @@
 							}
 , 							{
 								"box" : 								{
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0,
+									"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+									"bgfillcolor_color1" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+									"bgfillcolor_color2" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"bgfillcolor_proportion" : 0.39,
+									"bgfillcolor_type" : "gradient",
 									"fontsize" : 12.0,
 									"id" : "obj-84",
 									"items" : [ "radius", ",", "azimuth", ",", "elevation", ",", "abscissa", ",", "ordinate", ",", "height" ],
@@ -405,6 +412,13 @@
 							}
 , 							{
 								"box" : 								{
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0,
+									"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+									"bgfillcolor_color1" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+									"bgfillcolor_color2" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"bgfillcolor_proportion" : 0.39,
+									"bgfillcolor_type" : "gradient",
 									"fontsize" : 12.0,
 									"id" : "obj-80",
 									"items" : [ "azimuth", ",", "elevation", ",", "abscissa", ",", "ordinate", ",", "height", ",", "relradius", ",", "relazimuth" ],
@@ -459,7 +473,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 18.0, 559.625, 70.0, 21.0 ],
+									"patching_rect" : [ 18.0, 555.625, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 2"
 								}
@@ -467,6 +481,13 @@
 							}
 , 							{
 								"box" : 								{
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0,
+									"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+									"bgfillcolor_color1" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+									"bgfillcolor_color2" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+									"bgfillcolor_proportion" : 0.39,
+									"bgfillcolor_type" : "gradient",
 									"id" : "obj-34",
 									"items" : [ "basic", ",", "maxRe", ",", "inPhase" ],
 									"maxclass" : "umenu",
@@ -474,7 +495,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 18.0, 589.625, 100.0, 21.0 ],
+									"patching_rect" : [ 18.0, 585.625, 100.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -518,9 +539,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 667.799988, 210.0, 255.200012, 45.0 ],
+									"patching_rect" : [ 667.799988, 210.0, 257.0, 45.0 ],
 									"style" : "",
-									"text" : "To deassociate a hoa.map to the others, simply send the \"mapname\" message (or clear the mapname attribute in the object inspector)",
+									"text" : "To dissociate a hoa.map from the others, simply send the \"mapname\" message (or clear the mapname attribute in the object's inspector)",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -552,9 +573,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 419.5, 117.0, 300.0, 84.0 ],
+									"patching_rect" : [ 419.5, 117.0, 296.5, 84.0 ],
 									"style" : "",
-									"text" : "These three hoa.map objects share the same \"mapname\" attribute so they are linked together and react to the change of each others. So, sources and groups position, description and colors modifications will affect all linked hoa.map objects to control a hoa.3d.map~.",
+									"text" : "These three hoa.map objects share the same \"mapname\" attribute so they are linked together and react to the changes of the others. So, position changes of the sources and groups, modifications of the description or color will affect all linked hoa.map objects.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -825,8 +846,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -882,7 +903,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 5.5, 117.0, 401.0, 32.0 ],
 									"style" : "",
-									"text" : "• Change the coordinate system to change the point of view and interact differently with sources and groups",
+									"text" : "Change the coordinate system to change the point of view and interact differently with sources and groups.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -907,30 +928,33 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-55",
 									"maxclass" : "newobj",
-									"numinlets" : 8,
+									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 168.0, 683.625, 167.0, 21.0 ],
+									"patching_rect" : [ 168.0, 698.625, 167.0, 21.0 ],
 									"style" : "",
-									"text" : "hoa.dac~ 1:8"
+									"text" : "hoa.dac~ 1 2"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-54",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 4,
-									"numoutlets" : 8,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 168.0, 651.625, 167.0, 21.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "signal" ],
+									"patching_rect" : [ 168.0, 651.625, 167.0, 34.0 ],
 									"style" : "",
-									"text" : "hoa.3d.decoder~ 1 8"
+									"text" : "hoa.3d.decoder~ 1 @mode binaural"
 								}
 
 							}
@@ -1456,6 +1480,35 @@
 																	"source" : [ "obj-29", 0 ]
 																}
 
+															}
+ ],
+														"styles" : [ 															{
+																"name" : "newobjBlue-1",
+																"default" : 																{
+																	"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+																}
+,
+																"parentstyle" : "",
+																"multi" : 0
+															}
+, 															{
+																"name" : "newobjGreen-1",
+																"default" : 																{
+																	"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+																}
+,
+																"parentstyle" : "",
+																"multi" : 0
+															}
+, 															{
+																"name" : "newobjYellow-1",
+																"default" : 																{
+																	"fontsize" : [ 12.059008 ],
+																	"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+																}
+,
+																"parentstyle" : "",
+																"multi" : 0
 															}
  ]
 													}
@@ -4139,6 +4192,7 @@
 									"format" : 6,
 									"id" : "obj-33",
 									"maxclass" : "flonum",
+									"minimum" : 0.0,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
@@ -4385,9 +4439,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.5, 69.0, 801.0, 33.0 ],
+									"patching_rect" : [ 5.5, 69.0, 806.0, 33.0 ],
 									"style" : "",
-									"text" : "hoa.map allows you to control the position of the sources in a 3d context too and can be used to control the hoa.3d.map~ object, as it is shown below. hoa.map support three different coordinate system view and can be linked together to offer different point of view of the same scene.",
+									"text" : "hoa.map allows you to control the position of the sources in a 3d context too, and so can be used to control the hoa.3d.map~ object, as shown below. hoa.map support 3 differents coordinate system view and can be linked together to offer different point of view of the same scene.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -4688,60 +4742,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-55", 7 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-54", 7 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-55", 6 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-54", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-55", 5 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-54", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-55", 4 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-54", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-55", 3 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-54", 3 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-55", 2 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-54", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-55", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -4938,8 +4938,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4986,7 +4986,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 949.0, 757.0 ],
+						"rect" : [ 0.0, 26.0, 969.0, 757.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -5017,17 +5017,150 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 11.595187,
 									"hidden" : 1,
-									"id" : "obj-22",
+									"id" : "obj-27",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 709.625, 89.5, 32.5, 19.0 ],
+									"outlettype" : [ "bang", "bang" ],
+									"patching_rect" : [ 174.0, 104.0, 33.0, 21.0 ],
 									"style" : "",
-									"text" : "t l b"
+									"text" : "t b b"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-15",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 174.0, 92.0, 58.0, 21.0 ],
+									"style" : "",
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 174.0, 134.0, 107.0, 21.0 ],
+									"style" : "",
+									"text" : "group 1 set 1 2 3 4"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-35",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 174.0, 199.5, 88.0, 21.0 ],
+									"style" : "",
+									"text" : "group 3 set 1 2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-28",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 174.0, 165.5, 88.0, 21.0 ],
+									"style" : "",
+									"text" : "group 2 set 3 4"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.595187,
+									"id" : "obj-53",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 375.25, 690.5, 181.0, 32.0 ],
+									"style" : "",
+									"text" : "If the messages are prepended by \"set\" it will not cause output.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[7]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-61",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 375.25, 690.5, 181.0, 32.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-41",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 223.0, 664.0, 50.0, 21.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 223.0, 696.0, 133.0, 21.0 ],
+									"style" : "",
+									"text" : "set group 1 abscissa $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"args" : [ "@size", 1 ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-23",
+									"lockeddragscroll" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "hoa.helpcredit.maxpat",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 500.625, 16.0, 327.0, 36.0 ],
+									"viewvisibility" : 1
 								}
 
 							}
@@ -5036,12 +5169,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"hidden" : 1,
-									"id" : "obj-15",
+									"id" : "obj-22",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 193.875, 89.5, 32.5, 19.0 ],
+									"patching_rect" : [ 709.625, 89.5, 32.5, 21.0 ],
 									"style" : "",
 									"text" : "t l b"
 								}
@@ -5058,7 +5191,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 743.125, 521.0, 146.0, 58.0 ],
 									"style" : "",
-									"text" : "When the \"showgroup\" attribute is off, groups aren't displayed, and can't be created anymore.",
+									"text" : "When the \"showgroup\" attribute is off, groups aren't displayed, and can't be created.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -5119,26 +5252,6 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@size", 0 ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-2",
-									"lockeddragscroll" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "hoa.helpcredit.maxpat",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 235.0, 659.5, 548.0, 23.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"hidden" : 1,
@@ -5147,7 +5260,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 879.125, 343.0, 70.0, 19.0 ],
+									"patching_rect" : [ 854.125, 343.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 1"
 								}
@@ -5177,7 +5290,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 653.625, 375.0, 106.0, 58.0 ],
 									"style" : "",
-									"text" : "Mute all sources contained by the group with the \"mute\" message\".",
+									"text" : "Mute all sources contained by the group with the \"mute\" message.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[5]"
 								}
@@ -5226,7 +5339,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 793.458313, 343.0, 70.0, 19.0 ],
+									"patching_rect" : [ 793.458313, 343.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 1"
 								}
@@ -5270,7 +5383,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 541.375, 471.0, 70.0, 19.0 ],
+									"patching_rect" : [ 541.375, 471.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 1"
 								}
@@ -5317,9 +5430,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 364.625, 480.5, 145.0, 123.0 ],
+									"patching_rect" : [ 364.625, 480.5, 149.0, 123.0 ],
 									"style" : "",
-									"text" : "Set group color with \"group\" \"message followed by an integer for the source index, the \"color\" message and four floating values for red, green, blue and alpha.. \nExemple : \"group 1 color 1. 0.2 0.6 1\".",
+									"text" : "Set group color with \"group\" \"message followed by an integer for the source index, the \"color\" message and four float values for red, green, blue and alpha.. \nExemple : \"group 1 color 1. 0.2 0.6 1\".",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[3]"
 								}
@@ -5368,7 +5481,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 709.625, 67.5, 88.0, 19.0 ],
+									"patching_rect" : [ 709.625, 67.5, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 1"
 								}
@@ -5464,7 +5577,7 @@
 									"patching_rect" : [ 798.125, 116.0, 85.0, 18.0 ],
 									"style" : "",
 									"text" : "The Band",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 
 							}
@@ -5493,7 +5606,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 564.375, 344.0, 88.0, 19.0 ],
+									"patching_rect" : [ 564.375, 344.0, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 0"
 								}
@@ -5558,7 +5671,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 556.0, 76.0, 88.0, 19.0 ],
+									"patching_rect" : [ 556.0, 76.0, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 0"
 								}
@@ -5574,7 +5687,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 489.625, 164.5, 85.375, 22.0 ],
+									"patching_rect" : [ 466.3125, 167.0, 85.375, 22.0 ],
 									"style" : ""
 								}
 
@@ -5589,7 +5702,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 533.0, 89.5, 88.0, 19.0 ],
+									"patching_rect" : [ 533.0, 89.5, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 0"
 								}
@@ -5605,7 +5718,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 591.125, 43.0, 88.0, 19.0 ],
+									"patching_rect" : [ 583.708313, 81.0, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 1"
 								}
@@ -5621,7 +5734,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 471.25, 89.5, 88.0, 19.0 ],
+									"patching_rect" : [ 471.25, 89.5, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 1"
 								}
@@ -5763,100 +5876,6 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
-									"id" : "obj-60",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 153.125, 254.5, 114.0, 21.0 ],
-									"style" : "",
-									"text" : "prepend group 1 set"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 11.595187,
-									"id" : "obj-57",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 153.125, 141.0, 68.0, 21.0 ],
-									"style" : "",
-									"text" : "append set"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 11.595187,
-									"id" : "obj-58",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 153.125, 116.0, 50.0, 21.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 11.595187,
-									"id" : "obj-59",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 153.125, 164.0, 105.0, 21.0 ],
-									"style" : "",
-									"text" : "prepend set group"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 11.595187,
-									"id" : "obj-50",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 231.5, 134.0, 55.0, 21.0 ],
-									"style" : "",
-									"text" : "zl.slice 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 0,
-									"fontname" : "Arial",
-									"fontsize" : 11.595187,
-									"id" : "obj-52",
-									"lines" : 1,
-									"maxclass" : "textedit",
-									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "int", "", "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 231.5, 110.0, 85.0, 18.0 ],
-									"style" : "",
-									"text" : "1 2 3 4",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 11.595187,
 									"id" : "obj-32",
 									"linecount" : 11,
 									"maxclass" : "comment",
@@ -5866,22 +5885,6 @@
 									"style" : "",
 									"text" : "Create a group with the \"group\" message followed by an integer for the group index, \"set\" message and a list of intergers, the index of source to put in the group.\nExample : \"group 1 set 1 2 3 4\".",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 11.595187,
-									"hidden" : 1,
-									"id" : "obj-35",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 153.125, 76.0, 88.0, 19.0 ],
-									"style" : "",
-									"text" : "loadmess set 1"
 								}
 
 							}
@@ -5947,9 +5950,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.5, 665.5, 151.0, 34.0 ],
+									"patching_rect" : [ 30.5, 665.5, 153.0, 34.0 ],
 									"style" : "",
-									"text" : "1 polar 0.096148 2.553589 0."
+									"text" : "1 polar 0.096148 0.982792 0."
 								}
 
 							}
@@ -6014,7 +6017,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 4,
 									"numoutlets" : 0,
-									"patching_rect" : [ 419.5, 22.5, 52.0, 23.0 ],
+									"patching_rect" : [ 419.5, 22.5, 52.0, 25.0 ],
 									"style" : "",
 									"text" : "bgcolor 0.93 0.93 0.92 1."
 								}
@@ -6135,16 +6138,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-52", 0 ],
-									"disabled" : 0,
-									"hidden" : 1,
-									"source" : [ "obj-15", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-58", 0 ],
+									"destination" : [ "obj-27", 0 ],
 									"disabled" : 0,
 									"hidden" : 1,
 									"source" : [ "obj-15", 0 ]
@@ -6183,6 +6177,16 @@
 									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
+									"midpoints" : [ 183.5, 298.75, 31.5, 298.75 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
 									"midpoints" : [ 527.208313, 613.0, 333.0, 613.0, 333.0, 298.0, 31.5, 298.0 ],
 									"source" : [ "obj-20", 0 ]
 								}
@@ -6203,6 +6207,44 @@
 									"disabled" : 0,
 									"hidden" : 1,
 									"source" : [ "obj-22", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"midpoints" : [ 232.5, 726.0, 11.5, 726.0, 11.5, 298.5, 31.5, 298.5 ],
+									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"disabled" : 0,
+									"hidden" : 1,
+									"source" : [ "obj-27", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-67", 0 ],
+									"disabled" : 0,
+									"hidden" : 1,
+									"source" : [ "obj-27", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"midpoints" : [ 183.5, 298.5, 31.5, 298.5 ],
+									"source" : [ "obj-28", 0 ]
 								}
 
 							}
@@ -6236,56 +6278,20 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
+									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
-									"hidden" : 1,
+									"hidden" : 0,
+									"midpoints" : [ 183.5, 298.5, 31.5, 298.5 ],
 									"source" : [ "obj-35", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-60", 0 ],
+									"destination" : [ "obj-26", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 277.0, 209.0, 162.625, 209.0 ],
-									"source" : [ "obj-50", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-50", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-52", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-59", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-57", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-57", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-58", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-60", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"source" : [ "obj-59", 0 ]
+									"source" : [ "obj-41", 0 ]
 								}
 
 							}
@@ -6296,16 +6302,6 @@
 									"hidden" : 0,
 									"midpoints" : [ 752.625, 613.5, 333.0625, 613.5, 333.0625, 298.5, 31.5, 298.5 ],
 									"source" : [ "obj-6", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"disabled" : 0,
-									"hidden" : 0,
-									"midpoints" : [ 162.625, 298.0, 31.5, 298.0 ],
-									"source" : [ "obj-60", 0 ]
 								}
 
 							}
@@ -6332,7 +6328,7 @@
 									"destination" : [ "obj-88", 2 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 532.3125, 192.5, 509.0, 192.5, 509.0, 242.5, 509.0, 242.5 ],
+									"midpoints" : [ 509.0, 192.5, 509.0, 192.5, 509.0, 242.5, 509.0, 242.5 ],
 									"source" : [ "obj-7", 1 ]
 								}
 
@@ -6360,7 +6356,7 @@
 									"destination" : [ "obj-80", 0 ],
 									"disabled" : 0,
 									"hidden" : 1,
-									"midpoints" : [ 600.625, 119.5, 480.75, 119.5 ],
+									"midpoints" : [ 593.208313, 119.5, 480.75, 119.5 ],
 									"source" : [ "obj-78", 0 ]
 								}
 
@@ -6470,7 +6466,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 949.0, 757.0 ],
+						"rect" : [ 0.0, 26.0, 969.0, 757.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -6638,7 +6634,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 504.75, 16.0, 327.0, 36.0 ],
+									"patching_rect" : [ 500.75, 16.0, 327.0, 36.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -6881,7 +6877,7 @@
 									"patching_rect" : [ 756.75, 471.0, 75.0, 19.0 ],
 									"style" : "",
 									"text" : "1 2 3",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 
 							}
@@ -6899,7 +6895,7 @@
 									"patching_rect" : [ 679.138916, 471.0, 75.0, 19.0 ],
 									"style" : "",
 									"text" : "1 2",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 
 							}
@@ -7043,7 +7039,7 @@
 									"patching_rect" : [ 486.333344, 471.0, 75.0, 19.0 ],
 									"style" : "",
 									"text" : "1 2",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 
 							}
@@ -7058,7 +7054,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 486.333344, 497.0, 75.0, 33.0 ],
 									"style" : "",
-									"text" : "Index of groups",
+									"text" : "Indexes of groups",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[7]"
 								}
@@ -7299,7 +7295,7 @@
 									"patching_rect" : [ 486.333344, 314.0, 75.0, 19.0 ],
 									"style" : "",
 									"text" : "1 2 3",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 
 							}
@@ -7983,7 +7979,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 949.0, 757.0 ],
+						"rect" : [ 0.0, 26.0, 969.0, 757.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -8325,7 +8321,7 @@
 ,
 									"style" : "",
 									"text" : "autopattr",
-									"varname" : "u931000910"
+									"varname" : "u282005640"
 								}
 
 							}
@@ -8434,13 +8430,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-43",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.5, 69.0, 468.0, 47.0 ],
+									"patching_rect" : [ 5.5, 69.0, 483.0, 33.0 ],
 									"style" : "",
-									"text" : "hoa.map works with the pattrstorage and preset system. It allows you to create, recall, make interpolation between differents presets. Only groups and sources are saved (limited to 64)",
+									"text" : "hoa.map works with the pattrstorage and preset system. It allows you to create, recall, make interpolation between differents presets. (limited to the first 64 groups and sources)",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -8457,7 +8453,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.5, 69.0, 483.0, 47.0 ],
+									"patching_rect" : [ 5.5, 69.0, 483.0, 33.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -8658,7 +8654,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 949.0, 757.0 ],
+						"rect" : [ 0.0, 26.0, 969.0, 757.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -8691,13 +8687,75 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
+									"id" : "obj-53",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 366.25, 701.5, 181.0, 32.0 ],
+									"style" : "",
+									"text" : "If the messages are prepended by \"set\" it will not cause output.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[7]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-61",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 366.25, 701.5, 181.0, 32.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-41",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 214.0, 675.0, 50.0, 21.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 214.0, 707.0, 134.0, 21.0 ],
+									"style" : "",
+									"text" : "set source 2 azimuth $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 11.595187,
 									"hidden" : 1,
 									"id" : "obj-10",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 774.0, 476.5, 33.0, 21.0 ],
+									"patching_rect" : [ 789.0, 476.5, 33.0, 21.0 ],
 									"style" : "",
 									"text" : "t b b"
 								}
@@ -8713,7 +8771,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 644.625, 89.0, 58.0, 21.0 ],
+									"patching_rect" : [ 674.625, 89.0, 58.0, 21.0 ],
 									"style" : "",
 									"text" : "loadbang"
 								}
@@ -8729,7 +8787,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 774.0, 447.5, 58.0, 21.0 ],
+									"patching_rect" : [ 789.0, 447.5, 58.0, 21.0 ],
 									"style" : "",
 									"text" : "loadbang"
 								}
@@ -8738,12 +8796,12 @@
 , 							{
 								"box" : 								{
 									"bgcolor" : [ 0.867, 0.867, 0.867, 1.0 ],
-									"bgcolor2" : [ 0.685, 0.685, 0.685, 1.0 ],
+									"bgcolor2" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 									"bgfillcolor_angle" : 270.0,
 									"bgfillcolor_autogradient" : 0.0,
 									"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 									"bgfillcolor_color1" : [ 0.867, 0.867, 0.867, 1.0 ],
-									"bgfillcolor_color2" : [ 0.685, 0.685, 0.685, 1.0 ],
+									"bgfillcolor_color2" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "gradient",
 									"fontname" : "Arial",
@@ -8755,7 +8813,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 788.0, 500.5, 130.0, 60.0 ],
+									"patching_rect" : [ 803.0, 500.5, 130.0, 60.0 ],
 									"style" : "",
 									"text" : ";\rmap_msg source 1 car -1 1, source 3 car 1 -1, source 4 car -1 -1",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -8771,7 +8829,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 22.0, 277.5, 68.0, 21.0 ],
+									"patching_rect" : [ 22.0, 272.5, 68.0, 21.0 ],
 									"style" : "",
 									"text" : "r map_msg"
 								}
@@ -8785,7 +8843,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 788.0, 649.0, 70.0, 21.0 ],
+									"patching_rect" : [ 803.0, 649.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "s map_msg"
 								}
@@ -8800,7 +8858,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 788.0, 586.5, 83.375, 19.0 ],
+									"patching_rect" : [ 803.0, 586.5, 83.375, 19.0 ],
 									"style" : "",
 									"text" : "Clear all",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -8819,7 +8877,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 788.0, 586.5, 83.375, 20.0 ],
+									"patching_rect" : [ 803.0, 586.5, 83.375, 20.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -8835,7 +8893,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 788.0, 616.0, 36.0, 21.0 ],
+									"patching_rect" : [ 803.0, 616.0, 36.0, 21.0 ],
 									"style" : "",
 									"text" : "clear"
 								}
@@ -8856,7 +8914,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 523.625, 22.5, 327.0, 36.0 ],
+									"patching_rect" : [ 500.5, 16.0, 327.0, 36.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -8871,7 +8929,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 689.5, 456.0, 70.0, 21.0 ],
+									"patching_rect" : [ 719.5, 456.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 1"
 								}
@@ -8885,7 +8943,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 689.5, 485.0, 20.0, 20.0 ],
+									"patching_rect" : [ 719.5, 485.0, 20.0, 20.0 ],
 									"style" : ""
 								}
 
@@ -8898,7 +8956,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 639.5, 361.0, 128.0, 32.0 ],
+									"patching_rect" : [ 669.5, 361.0, 128.0, 32.0 ],
 									"saturation" : 1.0
 								}
 
@@ -8912,9 +8970,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 506.0, 145.0, 32.0 ],
+									"patching_rect" : [ 433.25, 506.0, 145.0, 32.0 ],
 									"style" : "",
-									"text" : " Mute a source with the \"mute\" message\". ",
+									"text" : "Mute a source with the \"mute\" message\". ",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[5]"
 								}
@@ -8931,7 +8989,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 506.0, 145.0, 32.0 ],
+									"patching_rect" : [ 433.25, 506.0, 145.0, 32.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -8948,7 +9006,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 615.166687, 485.0, 50.0, 21.0 ],
+									"patching_rect" : [ 645.166687, 485.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -8963,7 +9021,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 615.166687, 456.0, 70.0, 21.0 ],
+									"patching_rect" : [ 645.166687, 456.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 3"
 								}
@@ -8978,7 +9036,7 @@
 									"numinlets" : 4,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 578.0, 519.0, 130.5, 21.0 ],
+									"patching_rect" : [ 608.0, 519.0, 130.5, 21.0 ],
 									"style" : "",
 									"text" : "pak source 3 mute 1"
 								}
@@ -8993,7 +9051,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 570.5, 196.0, 108.0, 21.0 ],
+									"patching_rect" : [ 600.5, 196.0, 108.0, 21.0 ],
 									"style" : "",
 									"text" : "append description"
 								}
@@ -9008,7 +9066,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 558.0, 149.0, 110.0 ],
+									"patching_rect" : [ 433.25, 558.0, 149.0, 110.0 ],
 									"style" : "",
 									"text" : "Remove a source with the \"remove\" message\". Note that remove will also remove coordinates, descriptions, color of the source and send a message to hoa.2d.map~ to mute the source.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -9027,7 +9085,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 558.0, 145.0, 110.0 ],
+									"patching_rect" : [ 433.25, 558.0, 145.0, 110.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -9044,7 +9102,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 593.5, 306.0, 70.0, 21.0 ],
+									"patching_rect" : [ 623.5, 306.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 4"
 								}
@@ -9060,7 +9118,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 570.5, 83.0, 70.0, 21.0 ],
+									"patching_rect" : [ 600.5, 83.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 1"
 								}
@@ -9078,7 +9136,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 593.5, 333.5, 50.0, 21.0 ],
+									"patching_rect" : [ 623.5, 333.5, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -9092,7 +9150,7 @@
 									"numinlets" : 7,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 570.5, 419.5, 157.0, 21.0 ],
+									"patching_rect" : [ 600.5, 419.5, 157.0, 21.0 ],
 									"style" : "",
 									"text" : "pak source 4 color 0. 0. 1. 1."
 								}
@@ -9107,9 +9165,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 315.5, 145.0, 123.0 ],
+									"patching_rect" : [ 433.25, 315.5, 149.0, 123.0 ],
 									"style" : "",
-									"text" : "Set source color with \"source\" \"message followed by an integer for the source index, the \"color\" message and four floating values for red, green, blue and alpha.. \nExemple : \"source 4 color 1. 0.2 0.6 1.",
+									"text" : "Set source color with \"source\" \"message followed by an integer for the source index, the \"color\" message and four float values for red, green, blue and alpha.. \nExemple : \"source 4 color 1. 0.2 0.6 1.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[3]"
 								}
@@ -9125,7 +9183,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 344.0, 117.5, 70.0, 21.0 ],
+									"patching_rect" : [ 354.0, 117.5, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 0"
 								}
@@ -9141,7 +9199,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 297.625, 154.0, 85.375, 22.0 ],
+									"patching_rect" : [ 284.3125, 153.5, 85.375, 22.0 ],
 									"style" : ""
 								}
 
@@ -9156,7 +9214,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 335.75, 102.0, 83.0, 21.0 ],
+									"patching_rect" : [ 345.75, 102.0, 83.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess -0.8"
 								}
@@ -9171,9 +9229,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.5, 111.0, 201.75, 32.0 ],
+									"patching_rect" : [ 600.5, 111.0, 246.0, 32.0 ],
 									"style" : "",
-									"text" : "Note that descriptions or color won't display the source.",
+									"text" : "Note that unlike other messages, descriptions or color won't create a source.",
 									"textcolor" : [ 0.25098, 0.25098, 0.25098, 1.0 ]
 								}
 
@@ -9187,9 +9245,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 12.0, 111.5, 239.0, 162.0 ],
+									"patching_rect" : [ 12.0, 106.5, 239.0, 162.0 ],
 									"style" : "",
-									"text" : "Display source and set source coordinates with \"source\" message followed by an integer for the source index (begining at 1), the type of coordinates and one/two/three floating values for coordinates depending on the context. The coordinates types accepted are \"polar\" (or  \"pol\"), \"cartesian\" (or \"car\"), \"radius\", \"azimuth\", \"elevation\" \"abscissa\", \"ordinate\", height.\nEx : the message \"source 1 car -1. 1.\" will set the abscissa of the source n°1 to -1 and its ordinate to 1. ",
+									"text" : "Display source and set source coordinates with \"source\" message followed by an integer for the source index (begining at 1), the type of coordinates and one/two/three float values for coordinates depending on the context. The coordinate types accepted are \"polar\" (or  \"pol\"), \"cartesian\" (or \"car\"), \"radius\", \"azimuth\", \"elevation\" \"abscissa\", \"ordinate\", height.\nEx : the message \"source 1 car -1. 1.\" will set the abscissa of the source n°1 to -1 and its ordinate to 1. ",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -9204,7 +9262,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 279.25, 102.0, 88.0, 21.0 ],
+									"patching_rect" : [ 289.25, 102.0, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 2"
 								}
@@ -9220,7 +9278,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 304.375, 102.0, 88.0, 21.0 ],
+									"patching_rect" : [ 314.375, 102.0, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 1"
 								}
@@ -9238,7 +9296,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 279.25, 124.0, 50.0, 21.0 ],
+									"patching_rect" : [ 289.25, 124.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -9254,7 +9312,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 364.0, 217.0, 50.0, 21.0 ],
+									"patching_rect" : [ 374.0, 217.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -9270,7 +9328,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 335.75, 189.0, 50.0, 21.0 ],
+									"patching_rect" : [ 345.75, 189.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -9284,7 +9342,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 251.0, 244.0, 132.0, 21.0 ],
+									"patching_rect" : [ 261.0, 244.0, 132.0, 21.0 ],
 									"style" : "",
 									"text" : "pak source 2 polar 1. 0."
 								}
@@ -9300,7 +9358,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 620.5, 615.0, 50.0, 21.0 ],
+									"patching_rect" : [ 650.5, 615.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -9315,7 +9373,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 620.5, 584.0, 88.0, 21.0 ],
+									"patching_rect" : [ 650.5, 584.0, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess set 5"
 								}
@@ -9330,7 +9388,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 570.5, 649.0, 119.0, 21.0 ],
+									"patching_rect" : [ 600.5, 649.0, 119.0, 21.0 ],
 									"style" : "",
 									"text" : "pak source 1 remove"
 								}
@@ -9345,7 +9403,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 732.0, 154.5, 49.0, 21.0 ],
+									"patching_rect" : [ 768.0, 196.0, 49.0, 21.0 ],
 									"style" : "",
 									"text" : "remove"
 								}
@@ -9360,9 +9418,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 117.5, 145.0, 162.0 ],
+									"patching_rect" : [ 433.25, 117.5, 145.0, 162.0 ],
 									"style" : "",
-									"text" : "Set source descriptions with \"source\" \"message followed by an integer for the source index, the \"description\" message and everything you want for the description. Set \"remove\" instead of the description to remove the description.\nExemple : \"source 1 description Jimi Hendrix\".",
+									"text" : "Set source's description with \"source\" \"message followed by an integer for the source index, the \"description\" message and everything you want for the description. Set \"remove\" instead of the description to remove the description.\nExemple : \"source 1 description Jimi Hendrix\".",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[4]"
 								}
@@ -9377,7 +9435,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 644.625, 170.0, 55.0, 21.0 ],
+									"patching_rect" : [ 674.625, 170.0, 55.0, 21.0 ],
 									"style" : "",
 									"text" : "zl.slice 1"
 								}
@@ -9393,7 +9451,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 570.5, 153.5, 50.0, 21.0 ],
+									"patching_rect" : [ 600.5, 153.5, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -9407,7 +9465,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 570.5, 219.0, 110.0, 21.0 ],
+									"patching_rect" : [ 600.5, 219.0, 110.0, 21.0 ],
 									"style" : "",
 									"text" : "prepend set source"
 								}
@@ -9422,7 +9480,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 570.5, 260.5, 227.0, 21.0 ],
+									"patching_rect" : [ 600.5, 260.5, 227.0, 21.0 ],
 									"style" : "",
 									"text" : "prepend source 1 description Jimi Hendrix"
 								}
@@ -9441,10 +9499,10 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 644.625, 146.0, 85.0, 18.0 ],
+									"patching_rect" : [ 674.625, 146.0, 85.0, 18.0 ],
 									"style" : "",
 									"text" : "Jimi hendrix\n\n\n",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 								}
 
 							}
@@ -9459,7 +9517,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 12.0, 111.5, 237.0, 162.0 ],
+									"patching_rect" : [ 12.0, 106.5, 237.0, 162.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -9477,7 +9535,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 117.5, 145.0, 162.0 ],
+									"patching_rect" : [ 433.25, 117.5, 145.0, 162.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -9495,7 +9553,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.25, 315.5, 145.0, 123.0 ],
+									"patching_rect" : [ 433.25, 315.5, 145.0, 123.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -9617,7 +9675,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 5.5, 69.0, 483.0, 33.0 ],
 									"style" : "",
-									"text" : "hoa.map allows you to define the sources coordinates, color and description with messages. Here, we show you how to format them.",
+									"text" : "hoa.map allows you to define the source's coordinates, color and description with messages. Here, we show you how to format them.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -9711,7 +9769,7 @@
 									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 580.0, 458.0, 333.0, 458.0, 333.0, 300.0, 31.5, 300.0 ],
+									"midpoints" : [ 610.0, 458.0, 333.0, 458.0, 333.0, 300.0, 31.5, 300.0 ],
 									"source" : [ "obj-13", 0 ]
 								}
 
@@ -9722,6 +9780,16 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"midpoints" : [ 223.5, 738.0, 8.0, 738.0, 8.0, 302.5, 31.5, 302.5 ],
+									"source" : [ "obj-17", 0 ]
 								}
 
 							}
@@ -9739,7 +9807,7 @@
 									"destination" : [ "obj-39", 0 ],
 									"disabled" : 0,
 									"hidden" : 1,
-									"midpoints" : [ 288.75, 109.0, 288.75, 109.0 ],
+									"midpoints" : [ 298.75, 109.0, 298.75, 109.0 ],
 									"source" : [ "obj-20", 0 ]
 								}
 
@@ -9749,7 +9817,7 @@
 									"destination" : [ "obj-49", 2 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 340.3125, 182.0, 317.0, 182.0, 317.0, 232.0, 317.0, 232.0 ],
+									"midpoints" : [ 327.0, 182.0, 327.0, 182.0, 327.0, 232.0, 327.0, 232.0 ],
 									"source" : [ "obj-23", 1 ]
 								}
 
@@ -9777,7 +9845,7 @@
 									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 580.0, 678.0, 333.0, 678.0, 333.0, 300.0, 31.5, 300.0 ],
+									"midpoints" : [ 610.0, 678.0, 333.0, 678.0, 333.0, 300.0, 31.5, 300.0 ],
 									"source" : [ "obj-30", 0 ]
 								}
 
@@ -9787,7 +9855,7 @@
 									"destination" : [ "obj-40", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 741.5, 255.0, 580.0, 255.0 ],
+									"midpoints" : [ 777.5, 255.0, 610.0, 255.0 ],
 									"source" : [ "obj-32", 0 ]
 								}
 
@@ -9842,8 +9910,17 @@
 									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 580.0, 300.0, 31.5, 300.0 ],
+									"midpoints" : [ 610.0, 300.0, 31.5, 300.0 ],
 									"source" : [ "obj-40", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-41", 0 ]
 								}
 
 							}
@@ -9888,7 +9965,7 @@
 									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 260.5, 300.0, 31.5, 300.0 ],
+									"midpoints" : [ 270.5, 300.0, 31.5, 300.0 ],
 									"source" : [ "obj-49", 0 ]
 								}
 
@@ -9907,7 +9984,7 @@
 									"destination" : [ "obj-40", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 690.125, 255.0, 580.0, 255.0 ],
+									"midpoints" : [ 720.125, 255.0, 610.0, 255.0 ],
 									"source" : [ "obj-51", 1 ]
 								}
 
@@ -9953,7 +10030,7 @@
 									"destination" : [ "obj-1", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 587.5, 549.0, 333.0, 549.0, 333.0, 300.0, 31.5, 300.0 ],
+									"midpoints" : [ 617.5, 549.0, 333.0, 549.0, 333.0, 300.0, 31.5, 300.0 ],
 									"source" : [ "obj-59", 0 ]
 								}
 
@@ -9993,6 +10070,35 @@
 									"source" : [ "obj-7", 0 ]
 								}
 
+							}
+ ],
+						"styles" : [ 							{
+								"name" : "newobjBlue-1",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-1",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-1",
+								"default" : 								{
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
 							}
  ]
 					}
@@ -10035,7 +10141,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 949.0, 757.0 ],
+						"rect" : [ 100.0, 105.0, 969.0, 757.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -10069,12 +10175,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-12",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 237.0, 300.0, 19.0 ],
+									"patching_rect" : [ 15.0, 224.0, 300.0, 32.0 ],
 									"style" : "",
-									"text" : "Note that the source's size is dependant of the font size",
+									"text" : "Note that the source's size is dependant of the object's font size.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -10090,7 +10197,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 237.0, 300.0, 19.0 ],
+									"patching_rect" : [ 15.0, 224.0, 300.0, 32.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -10289,7 +10396,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 646.200012, 127.5, 300.0, 45.0 ],
 									"style" : "",
-									"text" : "To change source or group color or description, right click on it and select \"Set color\" or \"Set description\". A picker color or a textfield will appear to edit it.",
+									"text" : "To change source or group color or description, right click on it then select \"Set color\" or \"Set description\". A color picker or a textfield will appear to edit it.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -10357,7 +10464,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 333.200012, 198.0, 300.0, 58.0 ],
 									"style" : "",
-									"text" : "To create group, drag select a set of sources, when mouse up the group will be created. To remove group, right click on the group then select \"Remove group\".\n• press cmd+a to create a group containing all sources",
+									"text" : "To create a group, drag to select a set of sources, when mouse is up the group will be created. To remove a group, right click the group then select \"Remove group\".\n• press cmd+a to create a group with all sources.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -10391,7 +10498,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 333.200012, 127.5, 300.0, 45.0 ],
 									"style" : "",
-									"text" : "To create source, right click on a \"free\" zone then select \"Add source\" in the popup menu. To remove source , right click on a source then select \"Remove source\".",
+									"text" : "To create source, right click on a \"free\" zone then select \"Add source\" in the popup menu. To remove a source, right click on a source then select \"Remove source\".",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -10423,7 +10530,7 @@
 									}
 ,
 									"varname" : "hoa.2d.map",
-									"zoom" : 0.522812
+									"zoom" : 0.572734
 								}
 
 							}
@@ -13824,7 +13931,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.0, 127.5, 300.0, 58.0 ],
 									"style" : "",
-									"text" : "To move a source or a group, click and drag it. \n• shift key : change only radius.\n• ctrl (alt for win) : change azimuth.\n• cmd to do a cartesian constrain move",
+									"text" : "To move a source or a group, click and drag it. \n• shift key : change only radius.\n• ctrl (alt for win) : change azimuth.\n• cmd to do a cartesian constrained move",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
 								}
 
@@ -14353,8 +14460,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -14401,7 +14508,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 949.0, 757.0 ],
+						"rect" : [ 0.0, 26.0, 969.0, 757.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -14453,12 +14560,12 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
+			"obj-4::obj-1" : [ "hoa.2d.map[4]", "hoa.2d.map[4]", 0 ],
 			"obj-45::obj-18" : [ "hoa.2d.map", "hoa.2d.map", 0 ],
+			"obj-5::obj-2" : [ "hoa.map", "hoa.map", 0 ],
+			"obj-2::obj-1" : [ "hoa.2d.map[2]", "hoa.2d.map[2]", 0 ],
 			"obj-5::obj-3" : [ "hoa.map[1]", "hoa.map[1]", 0 ],
 			"obj-5::obj-18" : [ "hoa.2d.map[5]", "hoa.2d.map", 0 ],
-			"obj-5::obj-2" : [ "hoa.map", "hoa.map", 0 ],
-			"obj-4::obj-1" : [ "hoa.2d.map[4]", "hoa.2d.map[4]", 0 ],
-			"obj-2::obj-1" : [ "hoa.2d.map[2]", "hoa.2d.map[2]", 0 ],
 			"obj-3::obj-1" : [ "hoa.2d.map[3]", "hoa.2d.map[3]", 0 ]
 		}
 ,
@@ -14573,7 +14680,54 @@
 				"type" : "iLaX"
 			}
  ],
-		"embedsnapshot" : 0
+		"embedsnapshot" : 0,
+		"styles" : [ 			{
+				"name" : "AudioStatus_Menu",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "newobjBlue-1",
+				"default" : 				{
+					"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "newobjGreen-1",
+				"default" : 				{
+					"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "newobjYellow-1",
+				"default" : 				{
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

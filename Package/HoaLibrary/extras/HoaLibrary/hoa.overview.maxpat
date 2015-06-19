@@ -41,6 +41,67 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
+					"fontsize" : 6.165891,
+					"hidden" : 1,
+					"id" : "obj-35",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 691.729187, 50.354206, 157.0, 29.0 ],
+					"presentation_rect" : [ 693.729187, 50.354206, 0.0, 0.0 ],
+					"style" : "",
+					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/publications/"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-34",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 465.0, 47.0, 19.0, 20.0 ],
+					"style" : "",
+					"text" : "|",
+					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-16",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 420.0625, 46.75, 46.0, 20.0 ],
+					"style" : "",
+					"text" : "papers",
+					"textcolor" : [ 0.392157, 0.494118, 0.666667, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"handoff" : "",
+					"hilite" : 0,
+					"id" : "obj-33",
+					"maxclass" : "ubutton",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "bang", "bang", "", "int" ],
+					"patching_rect" : [ 420.0625, 46.75, 46.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"hidden" : 1,
 					"id" : "obj-32",
@@ -226,7 +287,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 86.76963, 177.0, 22.0 ],
+					"patching_rect" : [ 691.729187, 131.769623, 177.0, 22.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser https://www.gnu.org/copyleft/gpl.html"
 				}
@@ -550,7 +611,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 420.0625, 46.75, 65.0, 20.0 ],
+					"patching_rect" : [ 475.0625, 46.75, 65.0, 20.0 ],
 					"style" : "",
 					"text" : "contact us",
 					"textcolor" : [ 0.392157, 0.494118, 0.666667, 1.0 ]
@@ -566,7 +627,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "bang", "bang", "", "int" ],
-					"patching_rect" : [ 420.0625, 46.75, 65.0, 20.0 ]
+					"patching_rect" : [ 475.0625, 46.75, 65.0, 20.0 ]
 				}
 
 			}
@@ -581,7 +642,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 691.729187, 47.713837, 253.0, 23.0 ],
+					"patching_rect" : [ 691.729187, 92.713837, 253.0, 23.0 ],
 					"style" : "",
 					"text" : ";\rmax launchbrowser http://www.mshparisnord.fr/hoalibrary/en/contacts/"
 				}
@@ -644,7 +705,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 315.0, 309.0, 665.0, 285.0 ],
+						"rect" : [ 113.0, 309.0, 665.0, 285.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -1691,6 +1752,15 @@
 					"hidden" : 1,
 					"midpoints" : [ -142.0, 450.0, -28.0, 450.0, -28.0, 468.0, 36.0, 468.0, 36.0, 474.0, 41.1875, 474.0 ],
 					"source" : [ "obj-32", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-35", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-33", 1 ]
 				}
 
 			}

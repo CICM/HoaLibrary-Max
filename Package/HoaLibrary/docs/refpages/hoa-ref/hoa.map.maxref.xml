@@ -6,7 +6,7 @@
 <c74object name="hoa.map" module="hoa">
 
 	<digest>
-		A graphic user interface to spatialize sources on a plane.
+		A graphic user interface to spatialize sources.
 	</digest>
 
 	<description>
@@ -184,7 +184,7 @@
 				Save Object State with Patcher
 			</digest>
 			<description>
-				Check this to save object' state with patcher. Warning : if Parameter Mode and Initial are enable, this <m>save</m> method is no longer effective.
+				Check this to save object's state with patcher. Warning : if Parameter Mode and Initial are enable, this <m>save</m> method is no longer effective.
 			</description>
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="int" size="1" value="1" />

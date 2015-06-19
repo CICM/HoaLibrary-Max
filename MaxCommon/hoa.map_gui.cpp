@@ -13,7 +13,7 @@
  @author    Julien Colafrancesco, Pierre Guillot, Eliott Paris.
  
  @digest
- A graphic user interface to spatialize sources on a plane.
+ A graphic user interface to spatialize sources.
  
  @description
  <o>hoa.map</o> allows you to spatialize several sources in a 2d or 3d context. You can add and remove sources, change coordinates, add description and create groups. <o>hoa.map</o> is dedicated to control a <o>hoa.2d.map~</o> or a <o>hoa.3d.map~</o> object.
@@ -1039,6 +1039,7 @@ void hoamap_source(t_hoa_map *x, t_symbol *s, long ac, t_atom *av)
         }
 		else
 		{
+            object_warn((t_object*)x, "unknown command : %s", param);
 			causeOutput = 0;
 		}
 		
@@ -1277,6 +1278,7 @@ void hoamap_group(t_hoa_map *x, t_symbol *s, long ac, t_atom *av)
         }
 		else
 		{
+            object_warn((t_object*)x, "unknown command : %s", param);
 			causeOutput = 0;
 		}
         
@@ -3237,7 +3239,7 @@ void ext_main(void *r)
     CLASS_ATTR_DEFAULT          (c, "save", 0, "1");
     CLASS_ATTR_SAVE             (c, "save", 1);
     CLASS_ATTR_ORDER            (c, "save", 0, "6");
-    // @description Check this to save object' state with patcher. Warning : if Parameter Mode and Initial are enable, this <m>save</m> method is no longer effective.
+    // @description Check this to save object's state with patcher. Warning : if Parameter Mode and Initial are enable, this <m>save</m> method is no longer effective.
     CLASS_STICKY_CATEGORY_CLEAR(c);
     
     CLASS_ATTR_SYM				(c, "mapname", 0, t_hoa_map, f_binding_name);
