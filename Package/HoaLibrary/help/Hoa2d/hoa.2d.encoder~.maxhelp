@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x86",
+			"revision" : 3,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -55,8 +55,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -90,6 +90,19 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 401.5, 155.0, 58.0, 21.0 ],
+									"style" : "",
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
@@ -149,8 +162,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 273.0, 285.0, 149.478455, 39.0 ],
-									"presentation_rect" : [ 273.0, 285.0, 149.478455, 39.0 ]
+									"patching_rect" : [ 273.0, 285.0, 176.618362, 39.0 ],
+									"presentation_rect" : [ 273.0, 285.0, 176.618362, 39.0 ]
 								}
 
 							}
@@ -420,8 +433,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 0,
-											"architecture" : "x86",
+											"revision" : 3,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1073,7 +1086,7 @@
 									"destination" : [ "obj-20", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 237.935715, 347.0, 484.285706, 347.0 ],
+									"midpoints" : [ 237.935711, 347.0, 484.285714, 347.0 ],
 									"source" : [ "obj-34", 13 ]
 								}
 
@@ -1084,7 +1097,7 @@
 									"destination" : [ "obj-20", 12 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 223.421432, 347.0, 469.571442, 347.0 ],
+									"midpoints" : [ 223.421426, 347.0, 469.571429, 347.0 ],
 									"source" : [ "obj-34", 12 ]
 								}
 
@@ -1095,7 +1108,7 @@
 									"destination" : [ "obj-20", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 208.907135, 347.0, 454.857147, 347.0 ],
+									"midpoints" : [ 208.90714, 347.0, 454.857143, 347.0 ],
 									"source" : [ "obj-34", 11 ]
 								}
 
@@ -1106,7 +1119,7 @@
 									"destination" : [ "obj-20", 10 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 194.392853, 347.0, 440.142853, 347.0 ],
+									"midpoints" : [ 194.392855, 347.0, 440.142857, 347.0 ],
 									"source" : [ "obj-34", 10 ]
 								}
 
@@ -1117,7 +1130,7 @@
 									"destination" : [ "obj-20", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 179.878571, 347.0, 425.428558, 347.0 ],
+									"midpoints" : [ 179.878569, 347.0, 425.428571, 347.0 ],
 									"source" : [ "obj-34", 9 ]
 								}
 
@@ -1128,7 +1141,7 @@
 									"destination" : [ "obj-20", 8 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 165.364288, 347.0, 410.714294, 347.0 ],
+									"midpoints" : [ 165.364284, 347.0, 410.714286, 347.0 ],
 									"source" : [ "obj-34", 8 ]
 								}
 
@@ -1139,7 +1152,7 @@
 									"destination" : [ "obj-20", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 150.850006, 347.0, 396.0, 347.0 ],
+									"midpoints" : [ 150.849998, 347.0, 396.0, 347.0 ],
 									"source" : [ "obj-34", 7 ]
 								}
 
@@ -1150,7 +1163,7 @@
 									"destination" : [ "obj-20", 6 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 136.335709, 347.0, 381.285706, 347.0 ],
+									"midpoints" : [ 136.335713, 347.0, 381.285714, 347.0 ],
 									"source" : [ "obj-34", 6 ]
 								}
 
@@ -1161,7 +1174,7 @@
 									"destination" : [ "obj-20", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 121.821426, 347.0, 366.571442, 347.0 ],
+									"midpoints" : [ 121.821427, 347.0, 366.571429, 347.0 ],
 									"source" : [ "obj-34", 5 ]
 								}
 
@@ -1172,7 +1185,7 @@
 									"destination" : [ "obj-20", 4 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 107.307144, 347.0, 351.857147, 347.0 ],
+									"midpoints" : [ 107.307142, 347.0, 351.857143, 347.0 ],
 									"source" : [ "obj-34", 4 ]
 								}
 
@@ -1183,7 +1196,7 @@
 									"destination" : [ "obj-20", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 92.792854, 347.0, 337.142853, 347.0 ],
+									"midpoints" : [ 92.792856, 347.0, 337.142857, 347.0 ],
 									"source" : [ "obj-34", 3 ]
 								}
 
@@ -1194,7 +1207,7 @@
 									"destination" : [ "obj-20", 2 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 78.278572, 347.0, 322.428558, 347.0 ],
+									"midpoints" : [ 78.278571, 347.0, 322.428571, 347.0 ],
 									"source" : [ "obj-34", 2 ]
 								}
 
@@ -1205,7 +1218,7 @@
 									"destination" : [ "obj-20", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 63.764286, 347.0, 307.714294, 347.0 ],
+									"midpoints" : [ 63.764285, 347.0, 307.714286, 347.0 ],
 									"source" : [ "obj-34", 1 ]
 								}
 
@@ -1246,6 +1259,15 @@
 									"disabled" : 0,
 									"hidden" : 0,
 									"source" : [ "obj-55", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -1293,8 +1315,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -1379,70 +1401,64 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-11::obj-55::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-11::obj-55::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
+			"obj-11::obj-55::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-11::obj-55::obj-35" : [ "[5]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "demosound.maxpat",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/help/msp",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/help/msp",
+				"bootpath" : "C74:/help/msp",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "sine.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "saw.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "square.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "random.svg",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/media/max/picts/m4l-picts",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "helpargs.js",
-				"bootpath" : "/Applications/Max.app/Contents/Resources/C74/help/resources",
-				"patcherrelativepath" : "../../../../../../../../../../../../Applications/Max.app/Contents/Resources/C74/help/resources",
+				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

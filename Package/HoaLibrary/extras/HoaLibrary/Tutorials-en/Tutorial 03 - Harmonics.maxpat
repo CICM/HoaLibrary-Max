@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 13.0, 79.0, 1018.0, 612.0 ],
+		"rect" : [ 34.0, 79.0, 1018.0, 612.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -38,6 +38,20 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 661.0, 127.440063, 56.0, 22.0 ],
+					"style" : "",
+					"text" : "deferlow"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"color" : [ 0.900537, 0.724439, 0.391741, 1.0 ],
 					"id" : "obj-27",
@@ -8417,7 +8431,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 591.0, 187.440063, 70.0, 21.0 ],
+					"patching_rect" : [ 661.0, 95.440063, 70.0, 21.0 ],
 					"style" : "",
 					"text" : "loadmess 0"
 				}
@@ -9081,7 +9095,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 201.440063, 364.0, 97.0 ],
+					"patching_rect" : [ 7.0, 201.440063, 367.0, 97.0 ],
 					"style" : "",
 					"text" : "The harmonics depend on a degree l and an (azimuthal) order m. \nFor the circular harmonics, each degree l includes 2 harmonics which orders are m = -l and m = l (the degree 0 has 1 harmonic with the order 0).\nFor the spherical harmonics, each degree l has 2l+1 harmonics which the orders go from -l to l. In fact, the circular harmonics are particular cases of the spherical harmonics.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -9115,7 +9129,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 102.940063, 364.0, 71.0 ],
+					"patching_rect" : [ 7.0, 102.940063, 367.0, 71.0 ],
 					"style" : "",
 					"text" : "These functions are circular in 2d and spherical in 3d. That means they take angles as variables and the result of the functions differs according to the value of the angles. These angles are the azimuth θ for the circular harmonics or the azimuth θ and the elevation φ for the spherical harmonics.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -9279,16 +9293,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-63", 0 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-11", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-7", 0 ],
 					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-11", 0 ]
@@ -10247,6 +10252,24 @@
 					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-63", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-63", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}

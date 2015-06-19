@@ -39,6 +39,27 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 0.862745, 0.862745, 0.862745, 0.0 ],
+					"degrees" : 360,
+					"floatoutput" : 1,
+					"id" : "obj-29",
+					"maxclass" : "dial",
+					"mode" : 1,
+					"needlecolor" : [ 0.373563, 0.36008, 0.662745, 1.0 ],
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"outlinecolor" : [ 0.780392, 0.780392, 0.780392, 0.0 ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 433.724976, 127.0, 380.0, 380.0 ],
+					"size" : 360.0,
+					"style" : "",
+					"vtracking" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontface" : 3,
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
@@ -383,8 +404,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1102,7 +1123,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 119.940063, 364.0, 84.0 ],
+					"patching_rect" : [ 7.0, 119.940063, 366.0, 84.0 ],
 					"style" : "",
 					"text" : "Le système de coordonnées utilisé dans la bibliothèque est similaire au système de coordonnées géographique. Nous définissons arbitrairement que le sens de rotation est anti-horaire pour l'azimut et de bas en haut pour l'élevation. L'azimut 0° est décalé de 90° par rapport à la représentation mathématique d'un cercle. Le 0° d'élévation correspond au plan équatorial.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -1378,27 +1399,6 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 889.825012, 128.0, 50.0, 22.0 ],
 					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.862745, 0.862745, 0.862745, 0.0 ],
-					"degrees" : 360,
-					"floatoutput" : 1,
-					"id" : "obj-29",
-					"maxclass" : "dial",
-					"mode" : 1,
-					"needlecolor" : [ 0.373563, 0.36008, 0.662745, 1.0 ],
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"outlinecolor" : [ 0.780392, 0.780392, 0.780392, 0.0 ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 433.724976, 127.0, 380.0, 380.0 ],
-					"size" : 360.0,
-					"style" : "",
-					"vtracking" : 0
 				}
 
 			}
@@ -2250,8 +2250,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",

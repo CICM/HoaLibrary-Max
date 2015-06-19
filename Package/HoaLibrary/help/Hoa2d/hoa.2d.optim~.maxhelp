@@ -201,7 +201,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 319.5, 127.0, 60.0, 22.0 ],
+									"patching_rect" : [ 319.5, 134.0, 60.0, 22.0 ],
 									"style" : "",
 									"text" : "loadbang"
 								}
@@ -240,6 +240,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"hidden" : 1,
@@ -250,7 +251,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 312.0, 216.0, 70.0, 21.0 ],
 									"style" : "",
-									"text" : "loadmess 0"
+									"text" : "loadmess 2"
 								}
 
 							}
@@ -395,6 +396,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-16",
@@ -404,7 +406,7 @@
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 									"patching_rect" : [ 24.0, 274.0, 242.0, 21.0 ],
 									"style" : "",
-									"text" : "hoa.2d.optim~ 7"
+									"text" : "hoa.2d.optim~ 7 inPhase"
 								}
 
 							}
@@ -1430,6 +1432,15 @@
 								"multi" : 0
 							}
 , 							{
+								"name" : "newobjBlue-2",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjGreen-1",
 								"default" : 								{
 									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
@@ -1439,7 +1450,26 @@
 								"multi" : 0
 							}
 , 							{
+								"name" : "newobjGreen-2",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjYellow-1",
+								"default" : 								{
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-2",
 								"default" : 								{
 									"fontsize" : [ 12.059008 ],
 									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
@@ -1568,8 +1598,8 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-35::obj-30::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-35::obj-30::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
+			"obj-35::obj-30::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-35::obj-30::obj-35" : [ "[5]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -1654,7 +1684,36 @@
 				"type" : "iLaX"
 			}
  ],
-		"embedsnapshot" : 0
+		"embedsnapshot" : 0,
+		"styles" : [ 			{
+				"name" : "newobjBlue-1",
+				"default" : 				{
+					"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "newobjGreen-1",
+				"default" : 				{
+					"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "newobjYellow-1",
+				"default" : 				{
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

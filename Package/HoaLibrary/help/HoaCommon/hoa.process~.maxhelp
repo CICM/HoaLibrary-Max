@@ -1949,8 +1949,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4759,8 +4759,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7567,8 +7567,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10786,8 +10786,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -13567,7 +13567,7 @@
 													"spacing_y" : 3.0,
 													"style" : "",
 													"tabcolor" : [ 0.85098, 0.85098, 0.85098, 0.9 ],
-													"tabs" : [ "hoa.fx.convolve~", "hoa.fx.decorrelation~", "hoa.syn.decorrelation~", "hoa.fx.delay~", "hoa.syn.delay~", "hoa.fx.freeverb~", "hoa.fx.gain~", "hoa.fx.grain~", "hoa.syn.grain~", "hoa.fx.mirror~", "hoa.fx.mixer~", "hoa.fx.ringmod~", "hoa.syn.ringmod~" ],
+													"tabs" : [ "hoa.fx.convolve~", "hoa.fx.decorrelation~", "hoa.syn.decorrelation~", "hoa.fx.delay~", "hoa.syn.delay~", "hoa.fx.dephaser~", "hoa.fx.freeverb~", "hoa.fx.gain~", "hoa.fx.grain~", "hoa.syn.grain~", "hoa.fx.hiss.convolve~", "hoa.fx.mirror~", "hoa.fx.mixer~", "hoa.fx.ringmod~", "hoa.syn.ringmod~" ],
 													"textcolor" : [ 0.15, 0.15, 0.15, 1.0 ]
 												}
 
@@ -13874,9 +13874,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 73.5, 687.0, 74.0 ],
+									"patching_rect" : [ 10.0, 73.5, 688.0, 74.0 ],
 									"style" : "",
-									"text" : "hoa.process~, working both for 2D and 3D, allows you to create your own process in the circular/spherical harmonics and plane waves domains by instantiating several instances of a same patcher in a single object.\n\nYou will find here a list of \"ready made\" patcher examples dedicated to synthesizing (\"syn\" prepend)\nor apply effects (\"fx\" prepend) to a soundfield in different way :",
+									"text" : "hoa.process~, working both for 2d and 3d, allows you to create your own process in the circular/spherical harmonics and plane waves domains by instantiating several instances of a same patcher in a single object.\n\nYou will find here a list of \"ready made\" patcher examples dedicated to synthesizing a soundfield (\"syn\" prepend)\nor apply effects (\"fx\" prepend) to a soundfield in different way :",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -14569,8 +14569,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -14667,17 +14667,17 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-4::obj-4::obj-35" : [ "[2]", "Level", 0 ],
-			"obj-4::obj-56" : [ "hoa.2d.space", "hoa.2d.space", 0 ],
-			"obj-5::obj-3::obj-35" : [ "[6]", "Level", 0 ],
-			"obj-4::obj-3::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
-			"obj-4::obj-4::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
+			"obj-13::obj-3::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
 			"obj-4::obj-3::obj-35" : [ "[1]", "Level", 0 ],
 			"obj-5::obj-7::obj-21::obj-6" : [ "live.tab[6]", "live.tab[1]", 0 ],
+			"obj-4::obj-3::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
 			"obj-13::obj-3::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-5::obj-7::obj-35" : [ "[7]", "Level", 0 ],
-			"obj-13::obj-3::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-5::obj-3::obj-21::obj-6" : [ "live.tab[5]", "live.tab[1]", 0 ]
+			"obj-5::obj-3::obj-21::obj-6" : [ "live.tab[5]", "live.tab[1]", 0 ],
+			"obj-4::obj-56" : [ "hoa.2d.space", "hoa.2d.space", 0 ],
+			"obj-4::obj-4::obj-35" : [ "[2]", "Level", 0 ],
+			"obj-5::obj-3::obj-35" : [ "[6]", "Level", 0 ],
+			"obj-4::obj-4::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

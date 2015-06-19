@@ -39,6 +39,20 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 655.0, 136.0, 56.0, 22.0 ],
+					"style" : "",
+					"text" : "deferlow"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"color" : [ 0.900537, 0.724439, 0.391741, 1.0 ],
 					"id" : "obj-27",
 					"maxclass" : "newobj",
@@ -7059,6 +7073,53 @@
 								}
 
 							}
+ ],
+						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-1",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-1",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-1",
+								"default" : 								{
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
  ]
 					}
 ,
@@ -8397,7 +8458,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 591.0, 187.440063, 70.0, 21.0 ],
+					"patching_rect" : [ 655.0, 105.940063, 70.0, 21.0 ],
 					"style" : "",
 					"text" : "loadmess 0"
 				}
@@ -9027,7 +9088,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 357.970032, 364.0, 84.0 ],
+					"patching_rect" : [ 7.0, 357.970032, 367.0, 84.0 ],
 					"style" : "",
 					"text" : "La décomposition d'un champ sonore dans le domaine des harmoniques est effectuée conformément à un ordre de décomposition N. Un ordre de décomposition donné N comprend tous les degrés de 0 à N. Ainsi, en 2D, le champ sonore est composé de 2N + 1 harmoniques circulaires et en 3D le champ sonore est composée de (N + 1) ^ 2 harmoniques sphériques.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -9095,7 +9156,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 102.940063, 364.0, 71.0 ],
+					"patching_rect" : [ 7.0, 102.940063, 367.0, 71.0 ],
 					"style" : "",
 					"text" : "Ces fonctions sont circulaires en 2d et sphériques en 3d. Cela signifie qu'elles prennent des angles comme variables et que le résultat de ces fonctions diffère selon la valeur de ces angles. Ces variables sont l'azimut θ pour des harmoniques circulaires ou l'azimut θ et l'élévation φ pour des harmoniques sphériques.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -9259,16 +9320,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-63", 0 ],
-					"disabled" : 0,
-					"hidden" : 1,
-					"source" : [ "obj-11", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-7", 0 ],
 					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-11", 0 ]
@@ -10227,6 +10279,24 @@
 					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-63", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-63", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"disabled" : 0,
+					"hidden" : 1,
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
