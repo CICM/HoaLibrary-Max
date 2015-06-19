@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 113.0, 925.0, 749.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1434,7 +1434,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 925.0, 749.0 ],
+						"rect" : [ 100.0, 113.0, 925.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1589,7 +1589,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 587.0, 206.0, 342.0, 127.0 ],
 									"style" : "",
-									"text" : "Important : To avoid artefacts, you should prefer to discretize perfectly the sphere with the 5 platonic solids (tetrahedron (4 channels), octahedron (6 channels), cube (8 channels), icosahedron (12), dodecahedron (20 channels)). Of course, a perfect sphere of loudspeakers is rare and you would certainly have an irregular discretization. For the moment we don't offset this case automatically, thus you have to try several decomposition orders with \"inPhase\" optimization to find the best rendering.",
+									"text" : "Important : To avoid artefacts, you should prefer to discretize perfectly the sphere with the 5 platonic solids : tetrahedron (4 channels), octahedron (6 channels), cube (8 channels), icosahedron (12), dodecahedron (20 channels). Of course, a perfect sphere of loudspeakers is rare and you would certainly have an irregular discretization. For the moment we don't offset this case automatically, thus you have to try several decomposition orders with \"inPhase\" optimization to find the best rendering.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[6]"
 								}
@@ -1687,7 +1687,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 587.0, 150.0, 342.0, 33.0 ],
 									"style" : "",
-									"text" : "Ambisonic decoding is used for a set loudspeakers spread over a sphere.",
+									"text" : "Ambisonic decoding is used for a set of loudspeakers spread over a sphere.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[5]"
 								}
@@ -3426,10 +3426,10 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-11::obj-55::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-11::obj-55::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
 			"obj-1::obj-55::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
-			"obj-1::obj-55::obj-35" : [ "[1]", "Level", 0 ]
+			"obj-1::obj-55::obj-35" : [ "[1]", "Level", 0 ],
+			"obj-11::obj-55::obj-35" : [ "[5]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
