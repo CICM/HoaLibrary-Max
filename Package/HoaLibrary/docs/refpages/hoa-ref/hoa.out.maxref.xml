@@ -10,7 +10,7 @@
 	</digest>
 
 	<description>
-		<o>hoa.out</o> defines a message outlet for a patcher loaded by hoa.process~
+		<o>hoa.out</o> defines a message outlet for a patcher loaded by a <o>hoa.process~</o> object.
 	</description>
 
 	<!--METADATA-->
@@ -119,7 +119,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>hoa.out</o> defines a message outlet for a patcher loaded by hoa.process~
+		<o>hoa.out</o> defines a message outlet for a patcher loaded by a <o>hoa.process~</o> object.
 	</discussion>
 
 	<!--SEEALSO-->
@@ -141,7 +141,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>hoa.out</o> defines a message outlet for a patcher loaded by hoa.process~
+		<o>hoa.out</o> defines a message outlet for a patcher loaded by a <o>hoa.process~</o> object.
 			</description>
 		</entry>
 		<entry name ="Keywords">

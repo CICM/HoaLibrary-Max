@@ -80,7 +80,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization. for further information <a href="http://en.wikipedia.org/wiki/Ambisonic_data_exchange_formats">click here</a>
+		The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization. For further information <a href="http://en.wikipedia.org/wiki/Ambisonic_data_exchange_formats">click here</a>.
 	</discussion>
 
 	<!--SEEALSO-->
@@ -101,7 +101,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization. for further information <a href="http://en.wikipedia.org/wiki/Ambisonic_data_exchange_formats">click here</a>
+		The library default normalization is SN3D and the numbering is ACN (cf tutorials). The exchangers will always convert from or to the standard. The exchanger can take one or two arguments for the numbering and the normalization. For further information <a href="http://en.wikipedia.org/wiki/Ambisonic_data_exchange_formats">click here</a>.
 			</description>
 		</entry>
 		<entry name ="Keywords">

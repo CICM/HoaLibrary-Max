@@ -10,7 +10,7 @@
 	</digest>
 
 	<description>
-		<o>hoa.in~</o> defines a signal inlet for a patcher loaded by hoa.process~
+		<o>hoa.in~</o> defines a signal inlet for a patcher loaded by a <o>hoa.process~</o> object.
 	</description>
 
 	<!--METADATA-->
@@ -75,7 +75,7 @@
 
 	<!--DISCUSSION-->
 	<discussion>
-		<o>hoa.in~</o> defines a signal inlet for a patcher loaded by hoa.process~
+		<o>hoa.in~</o> defines a signal inlet for a patcher loaded by a <o>hoa.process~</o> object.
 	</discussion>
 
 	<!--SEEALSO-->
@@ -97,7 +97,7 @@
 	<misc name = "Discussion">
 		<entry name ="More details">
 			<description>
-		<o>hoa.in~</o> defines a signal inlet for a patcher loaded by hoa.process~
+		<o>hoa.in~</o> defines a signal inlet for a patcher loaded by a <o>hoa.process~</o> object.
 			</description>
 		</entry>
 		<entry name ="Keywords">
