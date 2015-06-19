@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x86",
+			"revision" : 3,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -54,12 +54,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 744.0, 536.0 ],
+						"rect" : [ 100.0, 126.0, 744.0, 536.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -147,7 +147,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 228.785706, 129.0, 210.4375, 33.0 ],
 									"style" : "",
-									"text" : "bang the hoa.connect to apply custom color on patchline",
+									"text" : "bang the hoa.connect to apply custom color on patcher's patchlines.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[7]"
 								}
@@ -270,13 +270,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 478.4375, 219.0, 74.0, 21.0 ],
-									"saved_object_attributes" : 									{
-										"nhcolor" : [ 0.0, 0.174444, 1.0, 1.0 ],
-										"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-										"planecolor" : [ 0.992898, 0.985695, 1.0, 1.0 ],
-										"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-									}
-,
 									"style" : "",
 									"text" : "hoa.connect"
 								}
@@ -310,9 +303,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 499.183044, 422.0, 106.0, 20.0 ],
+									"patching_rect" : [ 499.183044, 422.0, 111.0, 20.0 ],
 									"style" : "",
-									"text" : "plane wave signal",
+									"text" : "plane waves signal",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[5]"
 								}
@@ -419,7 +412,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 4.4375, 64.5, 519.5625, 33.0 ],
 									"style" : "",
-									"text" : "You can change the defaults colors for each patchlines (positives harmonics, negatives harmonics, and plane wave signal",
+									"text" : "You can change the default colors of each patchline's category (positives harmonics, negatives harmonics, and plane waves signal)",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -473,7 +466,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 4,
 									"numoutlets" : 0,
-									"patching_rect" : [ 418.4375, 19.5, 52.0, 23.0 ],
+									"patching_rect" : [ 418.4375, 19.5, 52.0, 25.0 ],
 									"style" : "",
 									"text" : "bgcolor 0.93 0.93 0.92 1."
 								}
@@ -629,7 +622,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 499.183044, 422.0, 106.0, 20.0 ],
+									"patching_rect" : [ 499.183044, 422.0, 111.0, 20.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -673,7 +666,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 15 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -683,7 +676,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 14 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -693,7 +686,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -703,7 +696,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 12 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -713,7 +706,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -723,7 +716,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 10 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -733,7 +726,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -743,7 +736,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 8 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -753,7 +746,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -763,7 +756,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 6 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -773,7 +766,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -783,7 +776,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 4 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -793,7 +786,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -803,7 +796,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 2 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -813,7 +806,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -823,7 +816,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.992898, 0.985695, 1.0, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"destination" : [ "obj-27", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -870,7 +863,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-1", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -890,7 +883,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-1", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -910,7 +903,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-1", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -930,7 +923,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-1", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -950,7 +943,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-1", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -970,7 +963,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-1", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -990,7 +983,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-1", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1020,7 +1013,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-22", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1040,7 +1033,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-22", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1060,7 +1053,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-22", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1080,7 +1073,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-22", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1100,7 +1093,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-22", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1120,7 +1113,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-22", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1140,7 +1133,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-22", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1179,7 +1172,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1199,7 +1192,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1219,7 +1212,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1239,7 +1232,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1259,7 +1252,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1279,7 +1272,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1299,7 +1292,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1329,7 +1322,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1349,7 +1342,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1369,7 +1362,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1389,7 +1382,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1409,7 +1402,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1429,7 +1422,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1449,7 +1442,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"color" : [ 0.0, 0.174444, 1.0, 1.0 ],
+									"color" : [ 0.0, 0.0, 1.0, 1.0 ],
 									"destination" : [ "obj-4", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
@@ -1638,6 +1631,81 @@
 								}
 
 							}
+ ],
+						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-1",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjBlue-2",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-1",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-2",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-1",
+								"default" : 								{
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-2",
+								"default" : 								{
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
  ]
 					}
 ,
@@ -1670,12 +1738,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 744.0, 536.0 ],
+						"rect" : [ 0.0, 26.0, 744.0, 536.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1768,31 +1836,33 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-24",
 									"maxclass" : "newobj",
-									"numinlets" : 17,
-									"numoutlets" : 16,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
+									"numinlets" : 37,
+									"numoutlets" : 36,
+									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 									"patching_rect" : [ 497.9375, 357.0, 235.0, 21.0 ],
 									"style" : "",
-									"text" : "hoa.3d.wider~ 3"
+									"text" : "hoa.3d.wider~ 5"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 11.595187,
 									"id" : "obj-6",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
-									"numoutlets" : 16,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 497.9375, 297.0, 221.5, 21.0 ],
+									"numoutlets" : 36,
+									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
+									"patching_rect" : [ 497.9375, 297.0, 235.0, 21.0 ],
 									"style" : "",
-									"text" : "hoa.3d.encoder~ 3"
+									"text" : "hoa.3d.encoder~ 5"
 								}
 
 							}
@@ -1825,9 +1895,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 292.5625, 158.0, 210.4375, 33.0 ],
+									"patching_rect" : [ 292.5625, 158.0, 251.4375, 33.0 ],
 									"style" : "",
-									"text" : "Tip : to delete a group of patchline use alt + drag-select then backspace.",
+									"text" : "Tip : to delete several patchlines at once use alt + drag-select then backspace.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[2]"
 								}
@@ -1844,7 +1914,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 292.5625, 158.0, 210.4375, 33.0 ],
+									"patching_rect" : [ 292.5625, 158.0, 251.4375, 33.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -1862,7 +1932,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 4.4375, 64.5, 522.0, 47.0 ],
 									"style" : "",
-									"text" : "hoa.connect helps to connect the hoa externals together. You must \"drag-select\" or \"click-select\" the objects in order then bang the hoa.connect to connect the objects together. 1st argument is the ambisonic order and the 2nd is the number of decoder outputs and dac inlets. ",
+									"text" : "hoa.connect is a patching utility that helps to connect the hoa objects and abstraction together. To do so you must \"drag-select\" or \"click-select\" the objects in the order then bang the hoa.connect to connect the objects together. It will create patchlines and color them.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[1]"
 								}
@@ -2071,13 +2141,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 13.0, 223.0, 74.0, 21.0 ],
-									"saved_object_attributes" : 									{
-										"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-										"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-										"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-									}
-,
 									"style" : "",
 									"text" : "hoa.connect"
 								}
@@ -2255,6 +2318,25 @@
 								}
 
 							}
+ ],
+						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
  ]
 					}
 ,
@@ -2287,8 +2369,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 0,
-							"architecture" : "x86",
+							"revision" : 3,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -2321,7 +2403,36 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [  ],
-						"lines" : [  ]
+						"lines" : [  ],
+						"styles" : [ 							{
+								"name" : "newobjBlue-1",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-1",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-1",
+								"default" : 								{
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+ ]
 					}
 ,
 					"patching_rect" : [ 65.25, 14.5, 50.0, 20.0 ],
@@ -2344,28 +2455,28 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "lock.js",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/javascript",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary/Max/Package/HoaLibrary/misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
@@ -2403,7 +2514,26 @@
 				"type" : "iLaX"
 			}
  ],
-		"embedsnapshot" : 0
+		"embedsnapshot" : 0,
+		"styles" : [ 			{
+				"name" : "AudioStatus_Menu",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

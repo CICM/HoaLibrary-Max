@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -55,7 +55,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -393,6 +393,7 @@
 , 							{
 								"box" : 								{
 									"channels" : 1,
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-3",
 									"maxclass" : "hoa.gain~",
 									"numinlets" : 2,
@@ -659,12 +660,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 672.0, 623.0 ],
+						"rect" : [ 100.0, 126.0, 672.0, 623.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -701,7 +702,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 166.0, 195.0, 99.0, 22.0 ],
+									"patching_rect" : [ 166.0, 195.0, 119.0, 22.0 ],
 									"style" : "",
 									"text_width" : 68.0
 								}
@@ -879,6 +880,7 @@
 , 							{
 								"box" : 								{
 									"channels" : 2,
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-48",
 									"maxclass" : "hoa.gain~",
 									"numinlets" : 3,
@@ -1001,6 +1003,7 @@
 , 							{
 								"box" : 								{
 									"channels" : 2,
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"defvaldb" : 2.0,
 									"id" : "obj-3",
 									"maxclass" : "hoa.gain~",
@@ -1211,7 +1214,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1352,7 +1355,7 @@
 ,
 									"style" : "",
 									"text" : "autopattr",
-									"varname" : "u776000738"
+									"varname" : "u283000494"
 								}
 
 							}
@@ -1386,6 +1389,7 @@
 							}
 , 							{
 								"box" : 								{
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-3",
 									"maxclass" : "hoa.gain~",
 									"numinlets" : 9,
@@ -1559,7 +1563,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2036,6 +2040,7 @@
 							}
 , 							{
 								"box" : 								{
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-40",
 									"inputmode" : 2,
 									"maxclass" : "hoa.gain~",
@@ -2127,6 +2132,7 @@
 							}
 , 							{
 								"box" : 								{
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-32",
 									"inputmode" : 1,
 									"maxclass" : "hoa.gain~",
@@ -2218,6 +2224,7 @@
 							}
 , 							{
 								"box" : 								{
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-3",
 									"maxclass" : "hoa.gain~",
 									"numinlets" : 9,
@@ -2576,7 +2583,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2762,6 +2769,7 @@
 , 							{
 								"box" : 								{
 									"bgcolor" : [ 0.880169, 0.755396, 0.471904, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-47",
 									"knobcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 									"maxclass" : "hoa.gain~",
@@ -2777,6 +2785,7 @@
 								"box" : 								{
 									"barcolor" : [ 0.343013, 0.446666, 0.685947, 1.0 ],
 									"bgcolor" : [ 0.96875, 0.0, 0.363281, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-2",
 									"knobcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"maxclass" : "hoa.gain~",
@@ -2791,6 +2800,7 @@
 , 							{
 								"box" : 								{
 									"bgcolor" : [ 0.213077, 0.189184, 0.235294, 1.0 ],
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-3",
 									"maxclass" : "hoa.gain~",
 									"numinlets" : 9,
@@ -2899,12 +2909,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 672.0, 623.0 ],
+						"rect" : [ 0.0, 26.0, 672.0, 623.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -3017,7 +3027,7 @@
 							}
 , 							{
 								"box" : 								{
-									"angles" : [ 0.0, 22.5, 45.0, 67.5, 90.0, 112.5, 135.0, 157.5, 180.0, 202.5, 225.0, 247.5, 270.0, 292.5, 315.0, 337.5 ],
+									"angles" : [ 0.0, 22.500001, 45.000001, 67.5, 90.000003, 112.499998, 135.0, 157.499996, 180.000005, 202.500001, 224.999996, 247.499992, 270.000001, 292.50001, 314.999992, 337.500001 ],
 									"channels" : 16.0,
 									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-45",
@@ -3042,7 +3052,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 1,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3225,6 +3235,7 @@
 , 							{
 								"box" : 								{
 									"channels" : 16,
+									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-1",
 									"interp" : 400.0,
 									"maxclass" : "hoa.gain~",
@@ -3377,7 +3388,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 1,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3520,13 +3531,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 505.0, 43.0, 74.0, 21.0 ],
-									"saved_object_attributes" : 									{
-										"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-										"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-										"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-									}
-,
 									"style" : "",
 									"text" : "hoa.connect"
 								}
@@ -4288,7 +4292,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}

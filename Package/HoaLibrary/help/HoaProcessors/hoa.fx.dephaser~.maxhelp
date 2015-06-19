@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 74.0, 84.0, 589.0, 768.0 ],
+		"rect" : [ 100.0, 94.0, 589.0, 768.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 589.0, 742.0 ],
+						"rect" : [ 100.0, 120.0, 589.0, 742.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -192,7 +192,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@module", 1, "@wave", 3, "@vol", -90 ],
+									"args" : [ "@module", 0, "@file", "duduk.aif", "@wave", 0, "@vol", -20, "@loop", 1 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -380,6 +380,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-42",
@@ -389,7 +390,7 @@
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 									"patching_rect" : [ 84.906395, 636.0, 275.40213, 22.0 ],
 									"style" : "",
-									"text" : "hoa.3d.decoder~ 4 16"
+									"text" : "hoa.3d.decoder~ 4 @channels 16"
 								}
 
 							}
@@ -694,13 +695,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 512.0, 42.0, 74.0, 21.0 ],
-									"saved_object_attributes" : 									{
-										"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-										"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-										"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-									}
-,
 									"style" : "",
 									"text" : "hoa.connect"
 								}
@@ -1748,6 +1742,24 @@
 							}
  ],
 						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjBlue-1",
 								"default" : 								{
 									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -1768,8 +1780,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1815,7 +1827,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 74.0, 110.0, 589.0, 742.0 ],
+						"rect" : [ 0.0, 26.0, 589.0, 742.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -1873,7 +1885,6 @@
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
 									"patching_rect" : [ 20.891846, 718.0, 545.0, 21.0 ],
-									"presentation_rect" : [ 375.891846, 518.0, 0.0, 0.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1962,7 +1973,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@module", 1, "@wave", 3, "@vol", -90 ],
+									"args" : [ "@module", 0, "@file", "duduk.aif", "@wave", 0, "@vol", -20, "@loop", 1 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -2071,7 +2082,7 @@
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 									"patching_rect" : [ 80.891838, 632.0, 251.985443, 22.0 ],
 									"style" : "",
-									"text" : "hoa.2d.decoder~ 7 16"
+									"text" : "hoa.2d.decoder~ 7 @channels 16"
 								}
 
 							}
@@ -2376,13 +2387,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 512.0, 42.0, 74.0, 21.0 ],
-									"saved_object_attributes" : 									{
-										"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-										"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-										"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-									}
-,
 									"style" : "",
 									"text" : "hoa.connect"
 								}
@@ -3085,6 +3089,24 @@
 							}
  ],
 						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjBlue-1",
 								"default" : 								{
 									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -3105,8 +3127,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3204,10 +3226,10 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-24::obj-51::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-24::obj-51::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-1::obj-51::obj-35" : [ "[1]", "Level", 0 ],
-			"obj-1::obj-51::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
-			"obj-24::obj-51::obj-35" : [ "[5]", "Level", 0 ]
+			"obj-24::obj-51::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-1::obj-51::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -3339,7 +3361,26 @@
 				"type" : "iLaX"
 			}
  ],
-		"embedsnapshot" : 0
+		"embedsnapshot" : 0,
+		"styles" : [ 			{
+				"name" : "AudioStatus_Menu",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

@@ -39,27 +39,6 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"bgcolor" : [ 0.862745, 0.862745, 0.862745, 0.0 ],
-					"degrees" : 360,
-					"floatoutput" : 1,
-					"id" : "obj-29",
-					"maxclass" : "dial",
-					"mode" : 1,
-					"needlecolor" : [ 0.373563, 0.36008, 0.662745, 1.0 ],
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"outlinecolor" : [ 0.780392, 0.780392, 0.780392, 0.0 ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 433.724976, 127.0, 380.0, 380.0 ],
-					"size" : 360.0,
-					"style" : "",
-					"vtracking" : 0
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"fontface" : 3,
 					"fontname" : "Arial",
 					"fontsize" : 11.595187,
@@ -1524,25 +1503,6 @@
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.666667, 0.666667, 0.666667, 0.0 ],
-					"border" : 2,
-					"bordercolor" : [ 0.25, 0.25, 0.25, 1.0 ],
-					"id" : "obj-16",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 444.324951, 137.0, 360.0, 360.0 ],
-					"proportion" : 0.39,
-					"rounded" : 20,
-					"shape" : 1,
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"arrows" : 1,
 					"border" : 3.0,
 					"id" : "obj-4",
@@ -1552,45 +1512,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 614.824951, 288.0, 19.0, 28.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgtransparent" : 1,
-					"id" : "obj-3",
-					"ignoreclick" : 1,
-					"maxclass" : "lcd",
-					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "list", "list", "int", "" ],
-					"patching_rect" : [ 434.324951, 127.0, 380.0, 380.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"border" : 2.0,
-					"id" : "obj-11",
-					"justification" : 4,
-					"linecolor" : [ 0.25, 0.25, 0.25, 1.0 ],
-					"maxclass" : "live.line",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 492.324951, 185.0, 265.0, 264.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"border" : 2.0,
-					"id" : "obj-9",
-					"justification" : 3,
-					"linecolor" : [ 0.25, 0.25, 0.25, 1.0 ],
-					"maxclass" : "live.line",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 492.324951, 185.0, 265.0, 264.0 ]
 				}
 
 			}
@@ -2000,35 +1921,6 @@
 			}
 , 			{
 				"box" : 				{
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"id" : "obj-20",
-					"maxclass" : "hoa.2d.scope~",
-					"numinlets" : 3,
-					"numoutlets" : 0,
-					"patching_rect" : [ 435.324951, 128.0, 379.0, 379.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
-					"border" : 1,
-					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
-					"id" : "obj-24",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 425.724976, 119.940063, 395.899994, 395.059937 ],
-					"proportion" : 0.39,
-					"rounded" : 0,
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"angle" : 0.0,
 					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
 					"border" : 1,
@@ -2058,6 +1950,114 @@
 					"patching_rect" : [ 433.724976, 99.940063, 85.0, 22.0 ],
 					"style" : "",
 					"text" : "loadmess 180"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.862745, 0.862745, 0.862745, 0.0 ],
+					"degrees" : 360,
+					"floatoutput" : 1,
+					"id" : "obj-29",
+					"maxclass" : "dial",
+					"mode" : 1,
+					"needlecolor" : [ 0.373563, 0.36008, 0.662745, 1.0 ],
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"outlinecolor" : [ 0.780392, 0.780392, 0.780392, 0.0 ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 433.724976, 127.0, 380.0, 380.0 ],
+					"size" : 360.0,
+					"style" : "",
+					"vtracking" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 0.0,
+					"bgcolor" : [ 0.666667, 0.666667, 0.666667, 0.0 ],
+					"border" : 2,
+					"bordercolor" : [ 0.25, 0.25, 0.25, 1.0 ],
+					"id" : "obj-16",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 444.324951, 137.0, 360.0, 360.0 ],
+					"proportion" : 0.39,
+					"rounded" : 20,
+					"shape" : 1,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgtransparent" : 1,
+					"id" : "obj-3",
+					"ignoreclick" : 1,
+					"maxclass" : "lcd",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "list", "list", "int", "" ],
+					"patching_rect" : [ 434.324951, 127.0, 380.0, 380.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 2.0,
+					"id" : "obj-11",
+					"justification" : 4,
+					"linecolor" : [ 0.25, 0.25, 0.25, 1.0 ],
+					"maxclass" : "live.line",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 492.324951, 185.0, 265.0, 264.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 2.0,
+					"id" : "obj-9",
+					"justification" : 3,
+					"linecolor" : [ 0.25, 0.25, 0.25, 1.0 ],
+					"maxclass" : "live.line",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 492.324951, 185.0, 265.0, 264.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"id" : "obj-20",
+					"maxclass" : "hoa.2d.scope~",
+					"numinlets" : 3,
+					"numoutlets" : 0,
+					"patching_rect" : [ 435.324951, 128.0, 379.0, 379.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 0.0,
+					"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+					"border" : 1,
+					"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+					"id" : "obj-24",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 425.724976, 119.940063, 395.899994, 395.059937 ],
+					"proportion" : 0.39,
+					"rounded" : 0,
+					"style" : ""
 				}
 
 			}

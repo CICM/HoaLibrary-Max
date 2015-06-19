@@ -8082,9 +8082,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 64,
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 726.0, 266.440063, 258.125, 21.0 ],
+					"patching_rect" : [ 726.0, 266.440063, 259.25, 21.0 ],
 					"style" : "",
-					"text" : "hoa.3d.process~ 7 hoa.syn.gain~ harmonics 0."
+					"text" : "hoa.3d.process~ 7 hoa.syn.gain~ harmonics 0 0"
 				}
 
 			}
@@ -8684,7 +8684,7 @@
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 					"patching_rect" : [ 411.0, 293.440063, 258.0, 21.0 ],
 					"style" : "",
-					"text" : "hoa.2d.process~ 7 hoa.syn.gain~ harmonics 0."
+					"text" : "hoa.2d.process~ 7 hoa.syn.gain~ harmonics 0 0"
 				}
 
 			}
@@ -8972,13 +8972,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 567.949951, 141.0, 74.0, 21.0 ],
-					"saved_object_attributes" : 					{
-						"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-						"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-						"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-					}
-,
 					"style" : "",
 					"text" : "hoa.connect"
 				}
@@ -9156,7 +9149,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 102.940063, 367.0, 71.0 ],
+					"patching_rect" : [ 7.0, 102.940063, 370.0, 71.0 ],
 					"style" : "",
 					"text" : "Ces fonctions sont circulaires en 2d et sphériques en 3d. Cela signifie qu'elles prennent des angles comme variables et que le résultat de ces fonctions diffère selon la valeur de ces angles. Ces variables sont l'azimut θ pour des harmoniques circulaires ou l'azimut θ et l'élévation φ pour des harmoniques sphériques.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]

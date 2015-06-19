@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 91.0, 100.0, 934.0, 588.0 ],
+		"rect" : [ 100.0, 100.0, 925.0, 588.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -59,7 +59,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 91.0, 126.0, 934.0, 562.0 ],
+						"rect" : [ 100.0, 126.0, 925.0, 562.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -89,18 +89,6 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "newobj",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"patching_rect" : [ 943.0, 312.0, 128.0, 22.0 ],
-									"style" : "",
-									"text" : "hoa.help.thisprocess~"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -988,7 +976,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 583.0, 150.0, 312.0, 20.0 ],
+									"patching_rect" : [ 583.0, 510.0, 312.0, 20.0 ],
 									"style" : "",
 									"text" : "Only works in a patcher loaded by a hoa.process~ object",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -1007,7 +995,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 583.0, 151.0, 312.0, 19.0 ],
+									"patching_rect" : [ 583.0, 511.0, 312.0, 19.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -1136,13 +1124,13 @@
 									"filename" : "helpargs.js",
 									"id" : "obj-4",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "hoa.thisprocess~" ],
+									"jsarguments" : [ "hoa.thisprocess~", 200 ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 735.0, 213.0, 251.576553, 54.0 ],
+									"patching_rect" : [ 647.5, 126.5, 251.576553, 54.0 ],
 									"presentation_rect" : [ 735.0, 213.0, 251.576553, 54.0 ]
 								}
 
@@ -2126,7 +2114,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 934.0, 562.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 562.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
