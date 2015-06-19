@@ -16,12 +16,12 @@
  A 2d soundfield energy and velocity vectors calculator.
  
  @description
- <o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information : Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.
+ <o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information see <b>Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.</b>
  
  @discussion
- <o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information : Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.
+ <o>hoa.2d.vector~</o> computes the coordinates of the velocity vector and the energy vector that characterize a sound field. It's an useful tool to analyse restitution quality. For futher information see <b>Michael A. Gerzon, General metatheorie of auditory localisation. Audio Engineering Society Preprint, 3306, 1992.</b>
  
- @category ambisonics, hoa objects, audio, MSP
+ @category 2d, Planewaves, MSP
  
  @seealso hoa.2d.meter~, hoa.2d.scope~, hoa.2d.decoder~, hoa.3d.vector~
  */
@@ -105,7 +105,7 @@ void hoa_2d_vector_dsp64(t_hoa_2d_vector *x, t_object *dsp64, short *count, doub
     
     if(x->f_mode == hoa_sym_both)
         object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_vector_perform, 0, NULL);
-    if(x->f_mode == hoa_sym_velocity)
+    else if(x->f_mode == hoa_sym_velocity)
         object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_vector_perform_velocity, 0, NULL);
     else
         object_method(dsp64, gensym("dsp_add64"), x, hoa_2d_vector_perform_energy, 0, NULL);
