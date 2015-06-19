@@ -32,22 +32,23 @@
 
 typedef struct  _connect
 {
-	t_object	f_ob;
+	t_object    f_ob;
 	
-	t_patcher*	f_patcher;
-	t_object*	f_patcherview;
+	t_patcher*  f_patcher;
+	t_object*   f_patcherview;
 	
-	t_object**	f_objects;
+	t_object**  f_objects;
 	
     Processor<Hoa2d, t_sample>::Harmonics* f_ambi2D;
     Processor<Hoa3d, t_sample>::Harmonics* f_ambi3D;
 	
-	t_jrgba		f_color_zero;
-	t_jrgba		f_color_positiv;
-	t_jrgba		f_color_negativ;
-	t_jrgba		f_color_plane;
+	t_jrgba     f_color_zero;
+	t_jrgba     f_color_positiv;
+	t_jrgba     f_color_negativ;
+	t_jrgba     f_color_plane;
 	
-	int			f_nbSelected;
+	int         f_nbSelected;
+    bool        f_isMax7;
 } t_connect;
 
 static t_class *connect_class;
@@ -74,19 +75,6 @@ void connect_assist(t_connect *x, void *b, long m, long a, char *s)
 {
     // @in 0 @type bang @digest bang to connect objects and color patchlines
     sprintf(s, "(bang) Select objects you want to connect, then bang me to connect them");
-}
-
-// custom attr setter to change patchlines colors
-t_max_err connect_setattr_zerocolor(t_connect *x, void *attr, long argc, t_atom *argv)
-{
-	if (argc >= 4 && argv)
-	{
-		x->f_color_zero.red = atom_getfloat(argv);
-		x->f_color_zero.green = atom_getfloat(argv + 1);
-		x->f_color_zero.blue = atom_getfloat(argv + 2);
-		x->f_color_zero.alpha = atom_getfloat(argv + 3);
-	}
-	return MAX_ERR_NONE;
 }
 
 void connect_connect(t_patcher *p, t_object *send, int outlet, t_object *receive, int inlet)
@@ -267,13 +255,26 @@ void color_patchline(t_connect *x)
 					else
 						linecolor = &x->f_color_zero;
 					
-                    object_attr_setcolor(line, hoa_sym_patchlinecolor, linecolor);
+                    if(x->f_isMax7)
+                    {
+                        object_attr_setcolor(line, hoa_sym_patchlinecolor, linecolor);
+                    }
+                    else
+                    {
+                        jpatchline_set_color(line, linecolor);
+                    }
 				}
-                
 				// planewave color (ex: hoa.projector~ => hoa.recomposer~)
 				else if (startobj_infos->autoconnect_outputs_type == HOA_CONNECT_TYPE_PLANEWAVES)
 				{
-                    object_attr_setcolor(line, hoa_sym_patchlinecolor, &x->f_color_plane);
+                    if(x->f_isMax7)
+                    {
+                        object_attr_setcolor(line, hoa_sym_patchlinecolor, &x->f_color_plane);
+                    }
+                    else
+                    {
+                        jpatchline_set_color(line, &x->f_color_plane);
+                    }
 				}
 			}
 		}
@@ -288,6 +289,20 @@ void connect_bang(t_connect *x)
 {
     make_patchline(x);
     color_patchline(x);
+}
+
+// custom attr setter to change patchlines colors
+t_max_err connect_setattr_zerocolor(t_connect *x, void *attr, long argc, t_atom *argv)
+{
+    if (argc >= 4 && argv)
+    {
+        x->f_color_zero.red = atom_getfloat(argv);
+        x->f_color_zero.green = atom_getfloat(argv + 1);
+        x->f_color_zero.blue = atom_getfloat(argv + 2);
+        x->f_color_zero.alpha = atom_getfloat(argv + 3);
+        connect_bang(x);
+    }
+    return MAX_ERR_NONE;
 }
 
 t_max_err connect_setattr_poscolor(t_connect *x, void *attr, long argc, t_atom *argv)
@@ -435,6 +450,8 @@ void *connect_new(t_symbol *s, long argc, t_atom *argv)
         
         x->f_objects = new t_object*[CONNECT_MAX_TAB];
         
+        x->f_isMax7 = (maxversion() / 256 > 6);
+        
         // colors setup
         x->f_color_zero.green = x->f_color_positiv.red = x->f_color_negativ.blue = 1.;
         x->f_color_plane.red = x->f_color_plane.green = x->f_color_plane.blue = 1.;
@@ -442,6 +459,8 @@ void *connect_new(t_symbol *s, long argc, t_atom *argv)
         x->f_color_zero.alpha = x->f_color_positiv.alpha = x->f_color_negativ.alpha = x->f_color_plane.alpha = 1.;
         
         x->f_nbSelected = 0;
+        attr_args_process(x, argc, argv);
+        
         defer_low(x, (method)connect_attach, NULL, 0, NULL);
     }
     
@@ -471,26 +490,22 @@ void ext_main(void *r)
     CLASS_STICKY_ATTR		(c, "category", 0, "Behavior");
     CLASS_ATTR_RGBA			(c, "zhcolor", 0, t_connect, f_color_zero);
     CLASS_ATTR_ACCESSORS	(c, "zhcolor", NULL, connect_setattr_zerocolor);
-    CLASS_ATTR_SAVE			(c, "zhcolor", 1);
     CLASS_ATTR_STYLE_LABEL	(c, "zhcolor", 0, "rgba", "zero harmonics color");
     // @description Sets the RGBA values for the zero harmonics color of the ambisonic domain patchlines
     
     CLASS_ATTR_RGBA			(c, "phcolor", 0, t_connect, f_color_positiv);
     CLASS_ATTR_ACCESSORS	(c, "phcolor", NULL, connect_setattr_poscolor);
-    CLASS_ATTR_SAVE			(c, "phcolor", 1);
     CLASS_ATTR_STYLE_LABEL	(c, "phcolor", 0, "rgba", "positive harmonics color");
     // @description Sets the RGBA values for the positive harmonics color of the ambisonic domain patchlines
     
     CLASS_ATTR_RGBA			(c, "nhcolor", 0, t_connect, f_color_negativ);
     CLASS_ATTR_ACCESSORS	(c, "nhcolor", NULL, connect_setattr_negcolor);
-    CLASS_ATTR_SAVE			(c, "nhcolor", 1);
     CLASS_ATTR_STYLE_LABEL	(c, "nhcolor", 0, "rgba", "negative harmonics color");
     // @description Sets the RGBA values for the negative harmonics color of the ambisonic domain patchlines
     
     CLASS_ATTR_RGBA			(c, "planecolor", 0, t_connect, f_color_plane);
     CLASS_ATTR_ACCESSORS	(c, "planecolor", NULL, connect_setattr_planecolor);
     CLASS_ATTR_STYLE_LABEL	(c, "planecolor", 0, "rgba", "planewaves signals color");
-    CLASS_ATTR_SAVE			(c, "planecolor", 1);
     // @description Sets the RGBA values for the planewaves signals color of the planewaves domain patchlines
     
     CLASS_STICKY_ATTR_CLEAR	(c, "category");
