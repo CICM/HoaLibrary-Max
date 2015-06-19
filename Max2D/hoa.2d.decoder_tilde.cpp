@@ -36,11 +36,12 @@ typedef struct _hoa_2d_decoder
     float*                               f_outs;
     float**                              f_ins_bin;
     float*                               f_outs_bin[2];
-    long                                 f_number_of_channels;
+    t_atom_long                          f_number_of_channels;
     double                               f_angles_of_channels[HOA_MAX_PLANEWAVES];
     double                               f_offset;
     t_symbol*                            f_mode;
     char                                 f_send_config;
+    t_atom_long                          f_cropsize;
     
 } t_hoa_2d_decoder;
 
@@ -296,10 +297,12 @@ void hoa_decoder_config(t_hoa_2d_decoder *x, t_symbol* mode, long channels = 0, 
         object_attr_touch((t_object*)x, hoa_sym_angles);
         object_attr_touch((t_object*)x, hoa_sym_offset);
         object_attr_touch((t_object*)x, hoa_sym_channels);
+        object_attr_touch((t_object*)x, hoa_sym_crop);
         
         object_attr_setdisabled((t_object *)x, hoa_sym_angles, (mode != hoa_sym_irregular));
         object_attr_setdisabled((t_object *)x, hoa_sym_channels, (mode == hoa_sym_binaural));
         object_attr_setdisabled((t_object *)x, hoa_sym_offset, (mode == hoa_sym_binaural));
+        object_attr_setdisabled((t_object *)x, hoa_sym_crop, (mode != hoa_sym_binaural));
         
         hoa_decoder_resize_outlets(x);
     }
@@ -367,6 +370,17 @@ t_max_err angles_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *arg
     return MAX_ERR_NONE;
 }
 
+t_max_err crop_set(t_hoa_2d_decoder *x, t_object *attr, long argc, t_atom *argv)
+{
+    if(argc && atom_isNumber(argv) && x->f_decoder->getMode() == Decoder<Hoa2d, float>::BinauralMode)
+    {
+        Decoder<Hoa2d, float>::Binaural* bino = static_cast<Decoder<Hoa2d, float>::Binaural*>(x->f_decoder.get());
+        bino->setCropSize((ulong)atom_getlong(argv));
+        x->f_cropsize = (t_atom_long)bino->getCropSize();
+    }
+    return MAX_ERR_NONE;
+}
+
 void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
 {
     // @arg 0 @name decomposition-order @optional 0 @type int @digest The ambisonic order of decomposition
@@ -389,6 +403,7 @@ void *hoa_2d_decoder_new(t_symbol *s, long argc, t_atom *argv)
             number_of_channels = order*2+2;
         }
         
+        x->f_cropsize = 0;
         x->f_send_config = 1;
         x->f_mode = hoa_sym_regular;
         
@@ -473,6 +488,12 @@ void ext_main(void *r)
     CLASS_ATTR_ACCESSORS		(c, "angles", NULL, angles_set);
     CLASS_ATTR_ORDER            (c, "angles", 0, "4");
     // @description Angles of each channels. The angles of channels are only settable in <b>irregular</b> <m>mode</m>. Each angle are in degrees and is wrapped between 0. and 360. So you can also set an angle with a negative value. ex : angles for a 5.1 loudspeakers restitution system can be setted either by the "angles 0 30 110 250 330" or by "angles 0 30 110 -110 -30".
+    
+    CLASS_ATTR_LONG             (c, "crop", 0, t_hoa_2d_decoder, f_cropsize);
+    CLASS_ATTR_ACCESSORS		(c, "crop", NULL, crop_set);
+    CLASS_ATTR_LABEL            (c, "crop", 0, "Crop of the Responses");
+    CLASS_ATTR_ORDER            (c, "crop", 0, "5");
+    // @description The crop attribute can be used in binaural mode to reduce the CPU usage by cropping the impulse responses (between 0 and 512) 0 means no crop
 
     class_dspinit(c);
     class_register(CLASS_BOX, c);

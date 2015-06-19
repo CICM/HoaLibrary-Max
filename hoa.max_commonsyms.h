@@ -148,9 +148,7 @@ static t_symbol* hoa_sym_regular                    = gensym("regular");
 static t_symbol* hoa_sym_irregular                  = gensym("irregular");
 static t_symbol* hoa_sym_binaural                   = gensym("binaural");
 static t_symbol* hoa_sym_offset                     = gensym("offset");
-static t_symbol* hoa_sym_pinna                      = gensym("pinna");
-static t_symbol* hoa_sym_small                      = gensym("small");
-static t_symbol* hoa_sym_large                      = gensym("large");
+static t_symbol* hoa_sym_crop                       = gensym("crop");
 
 // Layers
 static t_symbol* hoa_sym_background_layer           = gensym("background_layer");

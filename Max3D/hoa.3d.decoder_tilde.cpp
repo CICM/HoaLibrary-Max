@@ -41,6 +41,7 @@ typedef struct _hoa_3d_decoder
     long                        f_number_of_angles;
     double                      f_offsets[3];
     t_symbol*                   f_mode;
+    t_atom_long                 f_cropsize;
     
 } t_hoa_3d_decoder;
 
@@ -310,6 +311,17 @@ t_max_err offset_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *arg
     return MAX_ERR_NONE;
 }
 
+t_max_err crop_set(t_hoa_3d_decoder *x, t_object *attr, long argc, t_atom *argv)
+{
+    if(argc && atom_isNumber(argv) && x->f_decoder->getMode() == Decoder<Hoa3d, float>::BinauralMode)
+    {
+        Decoder<Hoa3d, float>::Binaural* bino = static_cast<Decoder<Hoa3d, float>::Binaural*>(x->f_decoder.get());
+        bino->setCropSize((ulong)atom_getlong(argv));
+        x->f_cropsize = (t_atom_long)bino->getCropSize();
+    }
+    return MAX_ERR_NONE;
+}
+
 void hoa_3d_decoder_free(t_hoa_3d_decoder *x)
 {
 	dsp_free((t_pxobject *)x);
@@ -337,6 +349,7 @@ void *hoa_3d_decoder_new(t_symbol *s, long argc, t_atom *argv)
         else
             number_of_channels = (order+1)*(order+1);
         
+        x->f_cropsize = 0;
         x->f_mode = hoa_sym_regular;
         x->f_decoder = SharedPtr<Decoder<Hoa3d, float>>(new Decoder<Hoa3d, float>::Regular(order, number_of_channels));
         
@@ -407,8 +420,14 @@ void ext_main(void *r)
     CLASS_ATTR_LONG             (c, "channels", ATTR_SET_DEFER_LOW, t_hoa_3d_decoder, f_number_of_channels);
     CLASS_ATTR_LABEL            (c, "channels", 0, "Number of Channels");
     CLASS_ATTR_ACCESSORS		(c, "channels", NULL, channel_set);
-    CLASS_ATTR_ORDER            (c, "channels", 0, "2");
+    CLASS_ATTR_ORDER            (c, "channels", 0, "4");
     // @description The number of channels.
+    
+    CLASS_ATTR_LONG             (c, "crop", 0, t_hoa_3d_decoder, f_cropsize);
+    CLASS_ATTR_ACCESSORS		(c, "crop", NULL, crop_set);
+    CLASS_ATTR_LABEL            (c, "crop", 0, "Crop of the Responses");
+    CLASS_ATTR_ORDER            (c, "crop", 0, "5");
+    // @description The crop attribute can be used in binaural mode to reduce the CPU usage by cropping the impulse responses (between 0 and 512) 0 means no crop
     
     class_dspinit(c);
     class_register(CLASS_BOX, c);	

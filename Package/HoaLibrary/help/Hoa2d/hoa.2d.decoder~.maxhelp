@@ -3357,7 +3357,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 771.0, 668.0 ],
+						"rect" : [ 100.0, 126.0, 771.0, 668.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -3387,6 +3387,57 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-2",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 454.5, 537.5, 244.5, 60.0 ],
+									"presentation_rect" : [ 254.4375, 533.5, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "The crop attribute can be usefull in binaural mode to reduce the CPU usage by cropping the impulse responses (between 0 and 512) 0 means no crop.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[2]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-7",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 454.5, 537.5, 244.5, 60.0 ],
+									"presentation_rect" : [ 254.4375, 533.5, 0.0, 0.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "crop",
+									"id" : "obj-6",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 450.5, 481.0, 101.0, 21.0 ],
+									"style" : "",
+									"text_width" : 47.5625
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"args" : [ "@module", 0, "@loop", 1, "@file", "brushes.aif" ],
 									"bgmode" : 0,
@@ -4454,6 +4505,16 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 14 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"midpoints" : [ 460.0, 512.0, 421.266143, 512.0, 421.266143, 283.0, 382.532287, 283.0 ],
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
  ]
 					}
 ,
@@ -5386,7 +5447,7 @@
 									"destination" : [ "obj-38", 14 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 382.532288, 238.0, 382.532288, 238.0 ],
+									"midpoints" : [ 382.532287, 238.0, 382.532287, 238.0 ],
 									"source" : [ "obj-32", 14 ]
 								}
 
@@ -5408,7 +5469,7 @@
 									"destination" : [ "obj-38", 12 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 352.808777, 238.0, 352.808777, 238.0 ],
+									"midpoints" : [ 352.808776, 238.0, 352.808776, 238.0 ],
 									"source" : [ "obj-32", 12 ]
 								}
 
@@ -5441,7 +5502,7 @@
 									"destination" : [ "obj-38", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 308.223511, 238.0, 308.223511, 238.0 ],
+									"midpoints" : [ 308.22351, 238.0, 308.22351, 238.0 ],
 									"source" : [ "obj-32", 9 ]
 								}
 
@@ -5474,7 +5535,7 @@
 									"destination" : [ "obj-38", 6 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 263.638245, 238.0, 263.638245, 238.0 ],
+									"midpoints" : [ 263.638244, 238.0, 263.638244, 238.0 ],
 									"source" : [ "obj-32", 6 ]
 								}
 
@@ -5496,7 +5557,7 @@
 									"destination" : [ "obj-38", 4 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 233.914734, 238.0, 233.914734, 238.0 ],
+									"midpoints" : [ 233.914733, 238.0, 233.914733, 238.0 ],
 									"source" : [ "obj-32", 4 ]
 								}
 
@@ -5507,7 +5568,7 @@
 									"destination" : [ "obj-38", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 219.052979, 238.0, 219.052979, 238.0 ],
+									"midpoints" : [ 219.052978, 238.0, 219.052978, 238.0 ],
 									"source" : [ "obj-32", 3 ]
 								}
 
@@ -5529,7 +5590,7 @@
 									"destination" : [ "obj-38", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 189.329468, 238.0, 189.329468, 238.0 ],
+									"midpoints" : [ 189.329467, 238.0, 189.329467, 238.0 ],
 									"source" : [ "obj-32", 1 ]
 								}
 
@@ -5560,7 +5621,7 @@
 									"destination" : [ "obj-12", 14 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 480.5, 295.0, 382.532288, 295.0 ],
+									"midpoints" : [ 480.5, 295.0, 382.532287, 295.0 ],
 									"source" : [ "obj-36", 0 ]
 								}
 
@@ -6087,7 +6148,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 771.0, 668.0 ],
+						"rect" : [ 0.0, 26.0, 771.0, 668.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -6125,7 +6186,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 441.75, 536.0, 280.25, 60.0 ],
+									"patching_rect" : [ 441.75, 536.0, 285.0, 60.0 ],
 									"style" : "",
 									"text" : "Important : Unlike the GUI's, the attributes (angles, channels, mode..) are not saved within the object. So you have to write them directly into the box or to send a message.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -7019,7 +7080,7 @@
 									"destination" : [ "obj-38", 14 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 382.532287, 228.0, 382.532288, 228.0 ],
+									"midpoints" : [ 382.532287, 228.0, 382.532287, 228.0 ],
 									"source" : [ "obj-32", 14 ]
 								}
 
@@ -7041,7 +7102,7 @@
 									"destination" : [ "obj-38", 12 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 352.808776, 228.0, 352.808777, 228.0 ],
+									"midpoints" : [ 352.808776, 228.0, 352.808776, 228.0 ],
 									"source" : [ "obj-32", 12 ]
 								}
 
@@ -7074,7 +7135,7 @@
 									"destination" : [ "obj-38", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 308.22351, 228.0, 308.223511, 228.0 ],
+									"midpoints" : [ 308.22351, 228.0, 308.22351, 228.0 ],
 									"source" : [ "obj-32", 9 ]
 								}
 
@@ -7107,7 +7168,7 @@
 									"destination" : [ "obj-38", 6 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 263.638244, 228.0, 263.638245, 228.0 ],
+									"midpoints" : [ 263.638244, 228.0, 263.638244, 228.0 ],
 									"source" : [ "obj-32", 6 ]
 								}
 
@@ -7129,7 +7190,7 @@
 									"destination" : [ "obj-38", 4 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 233.914733, 228.0, 233.914734, 228.0 ],
+									"midpoints" : [ 233.914733, 228.0, 233.914733, 228.0 ],
 									"source" : [ "obj-32", 4 ]
 								}
 
@@ -7140,7 +7201,7 @@
 									"destination" : [ "obj-38", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 219.052978, 228.0, 219.052979, 228.0 ],
+									"midpoints" : [ 219.052978, 228.0, 219.052978, 228.0 ],
 									"source" : [ "obj-32", 3 ]
 								}
 
@@ -7162,7 +7223,7 @@
 									"destination" : [ "obj-38", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 189.329467, 228.0, 189.329468, 228.0 ],
+									"midpoints" : [ 189.329467, 228.0, 189.329467, 228.0 ],
 									"source" : [ "obj-32", 1 ]
 								}
 

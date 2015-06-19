@@ -2243,7 +2243,6 @@ void hoamap_mousedrag(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
     // group is dragged
     else if (x->f_selected_group != NULL)
     {
-        
         // Angle
 #ifdef _WINDOWS
         if(modifiers == 21) // Ctrl

@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 925.0, 749.0 ],
+						"rect" : [ 100.0, 113.0, 925.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -90,6 +90,55 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-4",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 354.5, 531.5, 245.0, 60.0 ],
+									"style" : "",
+									"text" : "The crop attribute can be usefull in binaural mode to reduce the CPU usage by cropping the impulse responses (between 0 and 512) 0 means no crop.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[5]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-8",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 354.5, 531.5, 244.5, 60.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "crop",
+									"id" : "obj-9",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 350.5, 475.0, 101.0, 21.0 ],
+									"style" : "",
+									"text_width" : 47.5625
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -414,7 +463,7 @@
 									"numinlets" : 16,
 									"numoutlets" : 0,
 									"order" : 3,
-									"patching_rect" : [ 537.0, 425.0, 249.0, 249.0 ]
+									"patching_rect" : [ 623.0, 427.0, 249.0, 249.0 ]
 								}
 
 							}
@@ -1081,7 +1130,7 @@
 									"destination" : [ "obj-30", 15 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 327.75, 379.5, 776.5, 379.5 ],
+									"midpoints" : [ 327.75, 379.5, 862.5, 379.5 ],
 									"source" : [ "obj-34", 15 ]
 								}
 
@@ -1092,7 +1141,7 @@
 									"destination" : [ "obj-30", 14 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 309.0, 379.5, 761.166667, 379.5 ],
+									"midpoints" : [ 309.0, 379.5, 847.166667, 379.5 ],
 									"source" : [ "obj-34", 14 ]
 								}
 
@@ -1103,7 +1152,7 @@
 									"destination" : [ "obj-30", 13 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 290.25, 379.5, 745.833333, 379.5 ],
+									"midpoints" : [ 290.25, 379.5, 831.833333, 379.5 ],
 									"source" : [ "obj-34", 13 ]
 								}
 
@@ -1114,7 +1163,7 @@
 									"destination" : [ "obj-30", 12 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 271.5, 379.5, 730.5, 379.5 ],
+									"midpoints" : [ 271.5, 379.5, 816.5, 379.5 ],
 									"source" : [ "obj-34", 12 ]
 								}
 
@@ -1125,7 +1174,7 @@
 									"destination" : [ "obj-30", 11 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 252.75, 379.5, 715.166667, 379.5 ],
+									"midpoints" : [ 252.75, 379.5, 801.166667, 379.5 ],
 									"source" : [ "obj-34", 11 ]
 								}
 
@@ -1136,7 +1185,7 @@
 									"destination" : [ "obj-30", 10 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 234.0, 379.5, 699.833333, 379.5 ],
+									"midpoints" : [ 234.0, 379.5, 785.833333, 379.5 ],
 									"source" : [ "obj-34", 10 ]
 								}
 
@@ -1147,7 +1196,7 @@
 									"destination" : [ "obj-30", 9 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 215.25, 379.5, 684.5, 379.5 ],
+									"midpoints" : [ 215.25, 379.5, 770.5, 379.5 ],
 									"source" : [ "obj-34", 9 ]
 								}
 
@@ -1158,7 +1207,7 @@
 									"destination" : [ "obj-30", 8 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 196.5, 379.5, 669.166667, 379.5 ],
+									"midpoints" : [ 196.5, 379.5, 755.166667, 379.5 ],
 									"source" : [ "obj-34", 8 ]
 								}
 
@@ -1169,7 +1218,7 @@
 									"destination" : [ "obj-30", 7 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 177.75, 379.5, 653.833333, 379.5 ],
+									"midpoints" : [ 177.75, 379.5, 739.833333, 379.5 ],
 									"source" : [ "obj-34", 7 ]
 								}
 
@@ -1180,7 +1229,7 @@
 									"destination" : [ "obj-30", 6 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 159.0, 379.5, 638.5, 379.5 ],
+									"midpoints" : [ 159.0, 379.5, 724.5, 379.5 ],
 									"source" : [ "obj-34", 6 ]
 								}
 
@@ -1191,7 +1240,7 @@
 									"destination" : [ "obj-30", 5 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 140.25, 379.5, 623.166667, 379.5 ],
+									"midpoints" : [ 140.25, 379.5, 709.166667, 379.5 ],
 									"source" : [ "obj-34", 5 ]
 								}
 
@@ -1202,7 +1251,7 @@
 									"destination" : [ "obj-30", 4 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 121.5, 379.5, 607.833333, 379.5 ],
+									"midpoints" : [ 121.5, 379.5, 693.833333, 379.5 ],
 									"source" : [ "obj-34", 4 ]
 								}
 
@@ -1213,7 +1262,7 @@
 									"destination" : [ "obj-30", 3 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 102.75, 379.5, 592.5, 379.5 ],
+									"midpoints" : [ 102.75, 379.5, 678.5, 379.5 ],
 									"source" : [ "obj-34", 3 ]
 								}
 
@@ -1224,7 +1273,7 @@
 									"destination" : [ "obj-30", 2 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 84.0, 379.5, 577.166667, 379.5 ],
+									"midpoints" : [ 84.0, 379.5, 663.166667, 379.5 ],
 									"source" : [ "obj-34", 2 ]
 								}
 
@@ -1235,7 +1284,7 @@
 									"destination" : [ "obj-30", 1 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 65.25, 379.5, 561.833333, 379.5 ],
+									"midpoints" : [ 65.25, 379.5, 647.833333, 379.5 ],
 									"source" : [ "obj-34", 1 ]
 								}
 
@@ -1246,7 +1295,7 @@
 									"destination" : [ "obj-30", 0 ],
 									"disabled" : 0,
 									"hidden" : 0,
-									"midpoints" : [ 46.5, 379.5, 546.5, 379.5 ],
+									"midpoints" : [ 46.5, 379.5, 632.5, 379.5 ],
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -1307,6 +1356,15 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 15 ],
+									"disabled" : 0,
+									"hidden" : 0,
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
  ],
 						"styles" : [ 							{
 								"name" : "newobjBlue-1",
@@ -1329,8 +1387,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1376,7 +1434,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 113.0, 925.0, 749.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 749.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -3269,8 +3327,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"fontsize" : [ 12.059008 ],
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3368,9 +3426,9 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
+			"obj-11::obj-55::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-11::obj-55::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
 			"obj-1::obj-55::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
-			"obj-11::obj-55::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-1::obj-55::obj-35" : [ "[1]", "Level", 0 ]
 		}
 ,
