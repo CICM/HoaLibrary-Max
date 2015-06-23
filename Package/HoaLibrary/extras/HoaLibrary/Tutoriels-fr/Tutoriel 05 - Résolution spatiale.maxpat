@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 192.0, 159.0, 778.0, 625.0 ],
+		"rect" : [ 615.0, 131.0, 778.0, 625.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -46,7 +46,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 590.5, 245.0, 108.150024, 45.0 ],
+					"patching_rect" : [ 590.5, 245.0, 109.0, 45.0 ],
 					"style" : "",
 					"text" : "ordre fractionnaire:\n0 - ordre minimal\n1 - ordre maximal",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -861,13 +861,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 522.5, 41.0, 74.0, 21.0 ],
-					"saved_object_attributes" : 					{
-						"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-						"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-						"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-					}
-,
 					"style" : "",
 					"text" : "hoa.connect"
 				}
@@ -930,9 +923,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 67.940063, 681.150024, 110.0 ],
+					"patching_rect" : [ 7.0, 67.940063, 682.0, 110.0 ],
 					"style" : "",
-					"text" : "L'ordre de la décomposition affecte la qualité de la restitution du champ sonore. Plus l'ordre de décomposition augmente, plus le nombre d'harmoniques augmente ainsi que la \"résolution spatiale\" du champ sonore. la \"qualité\" ou la \"pertinence\" des traitements ambisoniques varie en fonction de la résolution spatiale. Lors de l'encodage d'une source ponctuelle dans le domaine des harmoniques circulaires, la précision avec laquelle l'auditeur perçoit une source ponctuelle dépend de la résolution spatiale du champ sonore. Avec un ordre de décomposition élevé, l'auditeur peut clairement définir la direction d'une source ponctuelle. Il est habituel de parler de \"résolution angulaire\" pour décrire la précision avec laquelle l'auditeur perçoit une source ponctuelle. La \"résolution spatiale\" est un concept plus large permettant de qualifier un champ sonore plus variée et complexe où celui-ci n'est pas nécessairement composé de sources ponctuelles (par exemple. champ diffus).",
+					"text" : "L'ordre de la décomposition affecte la qualité de la restitution du champ sonore. Plus l'ordre de décomposition augmente, plus le nombre d'harmoniques augmente ainsi que la \"résolution spatiale\" du champ sonore. la \"qualité\" ou la \"pertinence\" des traitements ambisoniques varie en fonction de la résolution spatiale. Lors de l'encodage d'une source ponctuelle dans le domaine des harmoniques circulaires, la précision avec laquelle l'auditeur perçoit une source ponctuelle dépend de la résolution spatiale du champ sonore. Avec un ordre de décomposition élevé, l'auditeur peut clairement définir la direction d'une source ponctuelle. Il est habituel de parler de \"résolution angulaire\" pour décrire la précision avec laquelle l'auditeur perçoit une source ponctuelle. La \"résolution spatiale\" est un concept plus large permettant de qualifier un champ sonore plus varié et complexe où celui-ci n'est pas nécessairement composé de sources ponctuelles (par exemple. champ diffus).",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 

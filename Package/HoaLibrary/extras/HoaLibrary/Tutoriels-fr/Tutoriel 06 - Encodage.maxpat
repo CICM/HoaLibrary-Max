@@ -329,6 +329,35 @@
 								}
 
 							}
+ ],
+						"styles" : [ 							{
+								"name" : "newobjBlue-1",
+								"default" : 								{
+									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjGreen-1",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "newobjYellow-1",
+								"default" : 								{
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+									"fontsize" : [ 12.059008 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
  ]
 					}
 ,
@@ -2596,7 +2625,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 902.0, 73.940063, 288.0, 227.0 ],
+					"patching_rect" : [ 902.0, 73.940063, 291.0, 227.0 ],
 					"style" : "",
 					"text" : "En 3d, pour des ordres de décomposition élevés, les harmoniques Y sont définies par :\nY[l, m] = k(l, m) * P'[l, |m|](cos(φ)) * e^i|m|θ * S\nAvec k la normalisation, P' le polynome de Legendre associé, e^i l'exponentiel complexe, S le signal, l le degré, m l'ordre (azimutal), θ l'azimut et φ l'élévation.\nLe polynome de Legendre associé est défini par :\nP'[0, 0](x) = 1\nP'[l, l](x) = −(2l+1)√(1−x^2)P[l, l](x)\nP'[l, l-1](x) = x(2l+1)P[l, l](x)\nP'[l, m](x) = (x(2l+1)P[l-1, |m|](x)−(l+|m|)P[l−2, |m|](x)) / (l−|m|+1)\nLa normalisation k est définie par\nk(l, m) = sqrt((l - |m|)! / (l + |m|)!) * sqrt((2-σ) / 4π)\nAvec σ = 1 if m = 0 else σ = 0\nNotons que l'exponentiel complexe e^i est similaire à la 2d.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -2630,7 +2659,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 600.0, 138.940063, 300.0, 110.0 ],
+					"patching_rect" : [ 600.0, 138.940063, 301.0, 110.0 ],
 					"style" : "",
 					"text" : "Pour un ordre de décomposition 1, le champ sonore est composée de 4 harmoniques sphériques. Chaque harmonique dépend d'un azimuth θ, d'une élévation φ and et d'un signal S:\n• harmonique 0 0 : S\n• harmonique 1 -1 : sin(θ) * -√(1−cos(φ)^2) * -√(1/4π) * S\n• harmonique 1 0 : cos(φ) * S\n• harmonique 1 1 : cos(θ) * -√(1−cos(φ)^2) * -√(1/4π) * S",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -2734,7 +2763,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 194.440063, 288.0, 84.0 ],
 					"style" : "",
-					"text" : "Pour un ordre de décomposition 1, le champ sonore est composée de 3 harmoniques circulaires. Les harmoniques dépendent d'un azimut θ et d'un signal S \n• harmonique 0 0 : S\n• harmonique 1 -1 : sin(θ) * S\n• harmonique 1 1 : cos(θ) * S",
+					"text" : "Pour un ordre de décomposition 1, le champ sonore est composé de 3 harmoniques circulaires. Les harmoniques dépendent d'un azimut θ et d'un signal S \n• harmonique 0 0 : S\n• harmonique 1 -1 : sin(θ) * S\n• harmonique 1 1 : cos(θ) * S",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -2766,7 +2795,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 126.940063, 288.0, 58.0 ],
+					"patching_rect" : [ 7.0, 126.940063, 289.0, 58.0 ],
 					"style" : "",
 					"text" : "Encoder une source dans le domaine des harmoniques circulaires consiste à synthétiser les harmoniques circulaires Y en fonction d'un azimut θ et d'un ordre de décomposition N.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -3064,13 +3093,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 852.5, 41.0, 74.0, 21.0 ],
-					"saved_object_attributes" : 					{
-						"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-						"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-						"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-					}
-,
 					"style" : "",
 					"text" : "hoa.connect"
 				}
@@ -3133,7 +3155,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 73.940063, 288.0, 45.0 ],
+					"patching_rect" : [ 7.0, 73.940063, 289.0, 45.0 ],
 					"style" : "",
 					"text" : "En ambisonie, l'opération d'encodage donne les informations spatiales à un son. Ainsi, le son peut être écouté comme provenant d'un point de l'espace.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]

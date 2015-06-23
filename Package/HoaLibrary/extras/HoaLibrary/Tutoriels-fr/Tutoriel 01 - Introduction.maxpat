@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 104.0, 106.0, 1171.0, 756.0 ],
+		"rect" : [ 871.0, 95.0, 1171.0, 756.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -99,7 +99,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 478.525024, 329.0, 253.0 ],
 					"style" : "",
-					"text" : "• En ambisonie, l'auditeur doit être placé idéallement au centre des haut-parleurs pour percevoir parfaitement le champ sonore.\nNéanmoins, l'emploi d'une optimisation inPhase ou maxRe (cf tutoriel 8) peut aider à contourner cette limitation (au détriment de la résolution spatiale) et permettre un placement plus libre de l'auditeur dans l'espace.\n\n• le système de restitution est restreint par l'ordre de décomposition.\nLe nombre de haut-parleurs doit être supérieur ou égal au nombre d'harmoniques. De plus, il doivent être placés sur un cercle ou une sphère à égale distance les uns des autres. Néanmoins, ces restrictions peuvent être contournées (au détriment de la qualité de la réstitution du champ sonore). En pratique, il est possible de projeter le champ sonore pour s'adapter à un grand nombre de configurations (stereo, 5.1, casque..), voir le tutoriel 7 et l'aide de l'objet decoder pour plus de détails.",
+					"text" : "• En ambisonie, l'auditeur doit être placé idéalement au centre des haut-parleurs pour percevoir parfaitement le champ sonore.\nNéanmoins, l'emploi d'une optimisation inPhase ou maxRe (cf tutoriel 8) peut aider à contourner cette limitation (au détriment de la résolution spatiale) et permettre un placement plus libre de l'auditeur dans l'espace.\n\n• le système de restitution est restreint par l'ordre de décomposition.\nLe nombre de haut-parleurs doit être supérieur ou égal au nombre d'harmoniques. De plus, ils doivent être placés sur un cercle ou une sphère à égale distance les uns des autres. Néanmoins, ces restrictions peuvent être contournées (au détriment de la qualité de la réstitution du champ sonore). En pratique, il est possible de projeter le champ sonore pour s'adapter à un grand nombre de configurations (stereo, 5.1, casque..), voir le tutoriel 7 et l'aide de l'objet decoder pour plus de détails.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -115,7 +115,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 134.0, 329.0, 291.0 ],
 					"style" : "",
-					"text" : "• L'ambisonie permet de synthetiser et de décoder plusieurs champs sonores en une seule opération, réduisant ainsi l'usage du CPU.\nLa séparation de ces deux opérations permet de donner un accès direct aux harmoniques et à un grand nombre de traitements. Dans la même mesure cela rend possible l'enregistrement du champ sonore dans le domaine des harmoniques, ce qui peut permettre d'adaptater le champ sonore à une autre configuration d'écoute.\n\n• L'ambisonie offre un rendu homogène du champ sonore. à la différence d'autres techniques où la résolution angulaire varie en fonction de la direction de la source, l'ambisonie garanti une résolution angulaire constante.\n\n• L'ambisonie offre un grand nombre de transformations \"classiques\" du champ sonore comme la rotation ou encore la distorsion.\n\n• Ce model donne aussi une representation du champ sonore qui permet d'explorer de nouvelles techniques de synthèse et transformation du champ sonore au fort potentiel musical.",
+					"text" : "• L'ambisonie permet de synthétiser et de décoder plusieurs champs sonores en une seule opération, réduisant ainsi l'usage du CPU.\nLa séparation de ces deux opérations permet de donner un accès direct aux harmoniques et à un grand nombre de traitements. Dans la même mesure cela rend possible l'enregistrement du champ sonore dans le domaine des harmoniques, ce qui peut permettre d'adapter le champ sonore à une autre configuration d'écoute.\n\n• L'ambisonie offre un rendu homogène du champ sonore. à la différence d'autres techniques où la résolution angulaire varie en fonction de la direction de la source, l'ambisonie garanti une résolution angulaire constante.\n\n• L'ambisonie offre un grand nombre de transformations \"classiques\" du champ sonore comme la rotation ou encore la distorsion.\n\n• Ce model donne aussi une représentation du champ sonore qui permet d'explorer de nouvelles techniques de synthèse et transformation du champ sonore au fort potentiel musical.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -373,13 +373,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1027.0, 555.0, 74.0, 21.0 ],
-					"saved_object_attributes" : 					{
-						"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-						"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-						"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-					}
-,
 					"style" : "",
 					"text" : "hoa.connect"
 				}

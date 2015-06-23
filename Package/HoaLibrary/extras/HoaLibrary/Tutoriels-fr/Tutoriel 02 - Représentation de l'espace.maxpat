@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 179.0, 124.0, 1193.0, 709.0 ],
+		"rect" : [ 714.0, 132.0, 1193.0, 709.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -1070,7 +1070,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 251.440063, 364.0, 97.0 ],
 					"style" : "",
-					"text" : "Les angles sont généralement défini en radian pour une représentation de l'espace dans le domaine des harmoniques circulaires ou sphériques (entre 0 et 2π rad pour l'azimut et entre -π/2 et π/2 pour l'élévation). Les angles sont généralement défini en degrés pour une représentation de l'espace dans le domaine des ondes planes ou pour des haut-parleurs (entre 0° et 360° pour l'azimut et entre -90° et 90° pour l'élévation)",
+					"text" : "Les angles sont généralement définis en radian pour une représentation de l'espace dans le domaine des harmoniques circulaires ou sphériques (entre 0 et 2π rad pour l'azimut et entre -π/2 et π/2 pour l'élévation). Les angles sont généralement définis en degrés pour une représentation de l'espace dans le domaine des ondes planes ou pour des haut-parleurs (entre 0° et 360° pour l'azimut et entre -90° et 90° pour l'élévation)",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
@@ -1102,7 +1102,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 119.940063, 366.0, 84.0 ],
+					"patching_rect" : [ 7.0, 119.940063, 364.0, 84.0 ],
 					"style" : "",
 					"text" : "Le système de coordonnées utilisé dans la bibliothèque est similaire au système de coordonnées géographique. Nous définissons arbitrairement que le sens de rotation est anti-horaire pour l'azimut et de bas en haut pour l'élevation. L'azimut 0° est décalé de 90° par rapport à la représentation mathématique d'un cercle. Le 0° d'élévation correspond au plan équatorial.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -1840,7 +1840,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 7.0, 68.0, 815.650024, 32.0 ],
 					"style" : "",
-					"text" : "Le modèle ambisonique est basé sur une représentation polaire ou sphérique de l'espace dans laquelle l'auditeur est placé au centre d'un cercle ou d'une sphere de haut-parleurs",
+					"text" : "Le modèle ambisonique est basé sur une représentation polaire ou sphérique de l'espace dans laquelle l'auditeur est placé au centre d'un cercle ou d'une sphère de haut-parleurs.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 

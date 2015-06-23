@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 90.0, 133.0, 865.0, 676.0 ],
+		"rect" : [ 638.0, 129.0, 865.0, 676.0 ],
 		"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -3082,13 +3082,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 709.549988, 212.0, 74.0, 21.0 ],
-					"saved_object_attributes" : 					{
-						"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-						"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-						"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-						"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-					}
-,
 					"style" : "",
 					"text" : "hoa.connect"
 				}
@@ -3201,9 +3194,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 7.0, 129.0, 365.0, 45.0 ],
+					"patching_rect" : [ 7.0, 129.0, 364.0, 45.0 ],
 					"style" : "",
-					"text" : "• L'optimisation \"basic\" ne fait rien. ce n'est pas le choix optimal pour la spatialisation de sources ponctuelles, elle devrait être préféré pour des champs sonores diffus.",
+					"text" : "• L'optimisation \"basic\" ne fait rien. ce n'est pas le choix optimal pour la spatialisation de sources ponctuelles, elle devrait être préférée pour des champs sonores diffus.",
 					"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
 				}
 
