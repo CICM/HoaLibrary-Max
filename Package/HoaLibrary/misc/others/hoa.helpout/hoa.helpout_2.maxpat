@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 3,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -81,7 +81,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -496,7 +496,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -558,7 +558,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1339,7 +1339,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1784,7 +1784,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2058,6 +2058,7 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-7",
@@ -2067,9 +2068,9 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 59.75, 37.0, 434.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 400.0, 140.000031, 434.0, 22.0 ],
+					"presentation_rect" : [ 4.0, 184.000031, 379.0, 22.0 ],
 					"style" : "",
-					"text" : "patcherargs @mode 0 @nhps 6 @pinna 0 @angles 0. 30. 110. 250. 330. @ui 0"
+					"text" : "patcherargs @mode 0 @nhps 6 @angles 0. 30. 110. 250. 330. @ui 0"
 				}
 
 			}
@@ -2128,7 +2129,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 52.75, 415.0, 119.0, 25.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 177.0, 27.379921, 15.0, 101.57061 ]
+					"presentation_rect" : [ 177.0, 27.379921, 15.0, 101.57061 ],
+					"range" : [ 0.0, -3.273438 ]
 				}
 
 			}
