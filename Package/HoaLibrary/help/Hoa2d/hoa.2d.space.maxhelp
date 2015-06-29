@@ -60,7 +60,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 925.0, 697.0 ],
+						"rect" : [ 100.0, 126.0, 925.0, 697.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -174,13 +174,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 598.5, 577.0, 170.0, 33.0 ],
+									"patching_rect" : [ 598.5, 577.0, 178.0, 47.0 ],
 									"style" : "",
-									"text" : "tips : press the cmd key when you drag has the same effect",
+									"text" : "tips : press the cmd key (alt on windows) when you drag has the same effect",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[12]"
 								}
@@ -197,7 +197,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 598.5, 577.0, 168.0, 33.0 ],
+									"patching_rect" : [ 598.5, 577.0, 178.0, 47.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -3996,7 +3996,7 @@
 ,
 									"style" : "",
 									"text" : "autopattr",
-									"varname" : "u992029455"
+									"varname" : "u343015385"
 								}
 
 							}
@@ -5950,7 +5950,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 925.0, 697.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 697.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -5988,7 +5988,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 14.0, 618.0, 414.0, 58.0 ],
+									"patching_rect" : [ 14.0, 618.0, 416.0, 58.0 ],
 									"style" : "",
 									"text" : "If the \"save\" attribute is on (default) slider values are saved with the patcher and will be restored when the patch is loaded. \nNote : Another saving method is to enable \"parameter mode\" and \"initial\" in the object inspector (this second option has the priority over the first one)",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]

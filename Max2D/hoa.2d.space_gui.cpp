@@ -632,8 +632,14 @@ void hoa_2d_space_mouse_drag(t_hoa_2d_space *x, t_object *patcherview, t_pt pt, 
         value  *= (x->f_minmax[1] - x->f_minmax[0]);
         value  += x->f_minmax[0];
 		value   = Math<double>::clip(value, x->f_minmax[0], x->f_minmax[1]);
-		
-		if((x->f_snaptogrid || modifiers == 17) && x->f_grid)
+        
+    #ifdef _WINDOWS
+        bool snap = x->f_snaptogrid || modifiers == 24; // alt
+    #else
+        bool snap = x->f_snaptogrid || modifiers == 17; // cmd
+    #endif
+
+		if(snap && x->f_grid)
 		{
 			double grid_step = (x->f_minmax[1] - x->f_minmax[0]) / (double)x->f_grid;
 			double div = (int)((value - x->f_minmax[0]) / grid_step);
