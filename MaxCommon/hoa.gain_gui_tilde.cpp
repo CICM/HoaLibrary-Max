@@ -613,7 +613,7 @@ void hoa_gain_setminmax(t_hoa_gain *x, t_symbol *s, long argc, t_atom *argv)
 			x->j_min = b;
 			x->j_size = a - b;
 		}
-                
+        
         x->f_range[0] = x->j_min;
         x->f_range[1] = x->j_size + x->j_min;
 		
