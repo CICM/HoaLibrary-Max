@@ -936,7 +936,6 @@ void hoa_2d_recomposer_gui_mousedrag(t_hoa_2d_recomposer_gui *x, t_object *patch
 
     if (x->f_rectSelectionExist)
     {
-        post("do_rect_selection?");
         do_rect_selection(x, pt);
     }
 	// Fish eye
