@@ -57,7 +57,6 @@ typedef struct  _hoamap
     
     t_object*   f_patcher;
     t_object*   f_colorpicker;
-    t_object*   f_textfield;
     
 	Source::Manager*    f_manager;
 	Source::Manager*    f_self_manager;
@@ -113,288 +112,6 @@ typedef struct _linkmap
 			next->update_headptr(linkmap_headptr, newmap);
 	}
 } t_linkmap;
-
-
-/**********************************************************/
-/*                       TEXTFIELD                        */
-/**********************************************************/
-
-typedef struct _textfield {
-    t_jbox			j_box;
-    t_object*       j_patcher;
-    t_object*       j_patcherview;
-    t_jfont*        jfont;
-} t_textfield;
-
-static t_class *s_textfield_class = NULL;
-
-void hoamap_color_picker(t_hoa_map *x)
-{
-    if(x->f_patcher)
-        object_free(x->f_patcher);
-    if(x->f_colorpicker )
-        object_free(x->f_colorpicker);
-    
-    x->f_patcher = NULL;
-    x->f_colorpicker = NULL;
-    
-    t_dictionary *dico = dictionary_new();
-    char parsebuf[256];
-    t_atom a;
-    long ac = 0;
-    t_atom *av = NULL;
-    
-    sprintf(parsebuf,"@defrect 0 0 128 32 @openrect 0 0 128 32 @title color @enablehscroll 0 @enablevscroll 0 @presentation 0 @toolbarid \"\"");
-    atom_setparse(&ac,&av,parsebuf);
-    attr_args_dictionary(dico,ac,av);
-    atom_setobj(&a,dico);
-    sysmem_freeptr(av);
-    x->f_patcher = (t_object *)object_new_typed(CLASS_NOBOX,hoa_sym_jpatcher,1, &a);
-    freeobject((t_object *)dico);
-    
-    x->f_colorpicker = newobject_sprintf(x->f_patcher, "@maxclass colorpicker @patching_rect 0 0 128 32");
-    object_attach_byptr_register(x, x->f_patcher, CLASS_NOBOX);
-    object_attach_byptr_register(x, x->f_colorpicker, CLASS_BOX);
-    
-    object_method(x->f_colorpicker, hoa_sym_bang);
-}
-
-void hoamap_text_field(t_hoa_map *x)
-{
-    if(x->f_textfield)
-        object_free(x->f_textfield);
-    if(x->f_patcher)
-        object_free(x->f_patcher);
-    
-    x->f_patcher = NULL;
-    x->f_textfield = NULL;
-    
-    t_dictionary *dico = dictionary_new();
-    char parsebuf[256];
-    t_atom a;
-    long ac = 0;
-    t_atom *av = NULL;
-    
-    int posX, posY;
-    jmouse_getposition_global(&posX, &posY);
-    
-    sprintf(parsebuf,"@defrect %i %i 256 32 @openrect 0 0 256 32 @title Description @enablehscroll 0 @enablevscroll 0 @presentation 0 @toolbarvisible 0 @retain 1\"\"", posX, posY);
-    atom_setparse(&ac,&av,parsebuf);
-    attr_args_dictionary(dico,ac,av);
-    atom_setobj(&a,dico);
-    sysmem_freeptr(av);
-    x->f_patcher = (t_object *)object_new_typed(CLASS_NOBOX,hoa_sym_jpatcher,1, &a);
-    freeobject((t_object *)dico);
-    
-    x->f_textfield = newobject_sprintf(x->f_patcher, "@maxclass hoa.textfield @patching_rect 0 0 256 32");
-    
-    object_attach_byptr_register(x, x->f_patcher, CLASS_NOBOX);
-    object_attach_byptr_register(x, x->f_textfield, CLASS_NOBOX);
-    
-    object_method(x->f_patcher,hoa_sym_noedit, 1);
-    object_method(x->f_patcher,hoa_sym_vis);
-}
-
-void textfield_doselect(t_textfield *x)
-{
-    t_object *p = NULL;
-    object_obex_lookup(x, hoa_sym_pound_P, &p);
-    
-    if (p)
-    {
-        t_atom rv;
-        long ac = 1;
-        t_atom av[1];
-        atom_setobj(av, x);
-        object_method_typed(p, gensym("selectbox"), ac, av, &rv);
-    }
-}
-
-void textfield_select(t_textfield *x)
-{
-    defer(x, (method)textfield_doselect, 0, 0, 0);
-}
-
-long textfield_key(t_textfield *x, t_object *patcherview, long keycode, long modifiers, long textcharacter)
-{
-    char buff[256];
-    buff[0] = textcharacter;
-    buff[1] = 0;
-    object_method(patcherview, hoa_sym_insertboxtext, x, buff);
-    long size	= 0;
-    char *text	= NULL;
-    t_object *textfield = jbox_get_textfield((t_object *)x);
-    object_method(textfield, hoa_sym_gettextptr, &text, &size);
-    object_notify(x, hoa_sym_text, text);
-    jbox_redraw((t_jbox *)x);
-    return 1;
-}
-
-long textfield_keyfilter(t_textfield *x, t_object *patcherview, long *keycode, long *modifiers, long *textcharacter)
-{
-    t_atom arv;
-    long rv = 1;
-    long k = *keycode;
-    
-    if (k == JKEY_TAB || k == JKEY_ENTER || k == JKEY_RETURN || k == JKEY_ESC)
-    {
-        object_method_typed(patcherview, hoa_sym_endeditbox, 0, NULL, &arv);
-        rv = 0;
-    }
-    
-    long size	= 0;
-    char *text	= NULL;
-    t_object *textfield = jbox_get_textfield((t_object *)x);
-    object_method(textfield, hoa_sym_gettextptr, &text, &size);
-    object_notify(x, hoa_sym_text, text);
-    if (!rv) object_notify(x, hoa_sym_endeditbox, NULL);
-    return rv;
-}
-
-void textfield_enter(t_textfield *x)
-{
-    long size	= 0;
-    char *text	= NULL;
-    t_object *textfield = jbox_get_textfield((t_object *)x);
-    object_method(textfield, hoa_sym_gettextptr, &text, &size);
-    object_notify(x, hoa_sym_text, text);
-}
-
-void textfield_paint(t_textfield *x, t_object *view)
-{
-    t_rect rect;
-    t_jgraphics *g = (t_jgraphics*) patcherview_get_jgraphics(view);
-    jbox_get_rect_for_view((t_object*) x, view, &rect);
-    if(x->j_patcher == NULL)
-    {
-        object_obex_lookup(x, hoa_sym_pound_P, &x->j_patcher);
-        object_attach_byptr_register(x, x->j_patcher, CLASS_NOBOX);
-    }
-    if(x->j_patcherview == NULL)
-    {
-        x->j_patcherview = object_attr_getobj(x->j_patcher, hoa_sym_firstview);
-        object_attach_byptr_register(x, x->j_patcherview, CLASS_NOBOX);
-    }
-    
-    t_jrgba white = {1., 1., 1., 1.};
-    jgraphics_rectangle_rounded(g, 0., 0., rect.width, rect.height, 2., 2.);
-    jgraphics_set_source_jrgba(g, &white);
-    jgraphics_fill(g);
-    
-    
-    t_jrgba grey = {0., 0., 0., 1.};
-    jgraphics_rectangle(g, 0., 0., rect.width, rect.height);
-    jgraphics_set_source_jrgba(g, &grey);
-    jgraphics_set_line_width(g, 1.);
-    jgraphics_stroke(g);
-}
-
-t_max_err textfield_notify(t_textfield *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
-{
-    if (sender == x->j_patcher)
-    {
-        if (msg == hoa_sym_free)
-        {
-            x->j_patcher = NULL;
-            x->j_patcherview = NULL;
-        }
-    }
-    if(sender == x->j_patcherview)
-    {
-        if (msg == hoa_sym_attr_modified)
-        {
-            t_symbol* attrname = (t_symbol *)object_method(data, hoa_sym_getname);
-            if (attrname == hoa_sym_rect)
-            {
-                t_atom *av = NULL;
-                long    ac = 0;
-                object_attr_getvalueof(x->j_patcherview, hoa_sym_rect, &ac, &av);
-                if (ac && av)
-                {
-                    atom_setlong(av, 0);
-                    atom_setlong(av+1, 0);
-                    object_method(x, hoa_sym_rect, ac, av);
-                    freebytes(av, sizeof(t_atom) * ac);
-                }
-                jbox_redraw((t_jbox *)x);
-            }
-        }
-    }
-    return MAX_ERR_NONE;
-}
-
-t_textfield* textfield_new(t_symbol *name, short argc, t_atom *argv)
-{
-    t_textfield* x;
-    t_dictionary *d = NULL;
-    
-    if (!(d = object_dictionaryarg(argc,argv)))
-        return NULL;
-    
-    x = (t_textfield*)object_alloc(s_textfield_class);
-    if (x) {
-        long		flags;
-        t_object	*textfield;
-        
-        flags = 0
-        | JBOX_DRAWFIRSTIN
-        | JBOX_NODRAWBOX
-        | JBOX_DRAWINLAST
-        | JBOX_TRANSPARENT
-        | JBOX_GROWBOTH
-        | JBOX_TEXTFIELD
-        ;
-        
-        jbox_new(&x->j_box, flags, argc, argv);
-        x->j_box.b_firstin = (t_object*) x;
-        x->j_patcher = NULL;
-        x->j_patcherview = NULL;
-        t_jrgba textcolor = {0., 0., 0., 1.};
-        textfield = jbox_get_textfield((t_object*) x);
-        if (textfield)
-        {
-            textfield_set_editonclick(textfield, 1);
-            textfield_set_textmargins(textfield, 3, 3, 3, 3);
-            textfield_set_textcolor(textfield, &textcolor);
-        }
-        
-        attr_dictionary_process(x, d);
-        jbox_ready(&x->j_box);
-    }
-    return x;
-}
-
-void textfield_free(t_textfield *x)
-{
-    jbox_free(&x->j_box);
-}
-
-void hoa_textfield_init(void)
-{
-    t_class *c;
-    c = class_new("hoa.textfield",
-                  (method)textfield_new,
-                  (method)textfield_free,
-                  sizeof(t_textfield),
-                  (method)NULL,
-                  A_GIMME,
-                  0L);
-    
-    c->c_flags |= CLASS_FLAG_NEWDICTIONARY;
-    jbox_initclass(c, JBOX_TEXTFIELD | JBOX_FONTATTR | JBOX_FIXWIDTH);
-    
-    class_addmethod(c, (method)textfield_paint,         "paint",		A_CANT, 0);
-    class_addmethod(c, (method)textfield_key,			"key",			A_CANT, 0);
-    class_addmethod(c, (method)textfield_keyfilter,     "keyfilter",	A_CANT, 0);
-    class_addmethod(c, (method)textfield_enter,         "enter",		A_CANT, 0);
-    class_addmethod(c, (method)textfield_select,		"select",		0);
-    class_addmethod(c, (method)textfield_notify,		"notify",		A_CANT, 0);
-    
-    CLASS_ATTR_DEFAULT(c, "rect", 0, "0. 0. 100. 20.");
-    
-    class_register(CLASS_BOX, c);
-    s_textfield_class = c;
-}
 
 /**********************************************************/
 /*                          OUTPUT                        */
@@ -799,6 +516,85 @@ void hoamap_send_binded_map_update(t_hoa_map *x, long flags)
 	}
 }
 
+/**********************************************************/
+/*                       COLORPICKER                      */
+/**********************************************************/
+
+void hoamap_color_picker(t_hoa_map *x)
+{
+    if(x->f_patcher)
+        object_free(x->f_patcher);
+    if(x->f_colorpicker )
+        object_free(x->f_colorpicker);
+    
+    x->f_patcher = NULL;
+    x->f_colorpicker = NULL;
+    
+    t_dictionary *dico = dictionary_new();
+    char parsebuf[256];
+    t_atom a;
+    long ac = 0;
+    t_atom *av = NULL;
+    
+    sprintf(parsebuf,"@defrect 0 0 128 32 @openrect 0 0 128 32 @title color @enablehscroll 0 @enablevscroll 0 @presentation 0 @toolbarid \"\"");
+    atom_setparse(&ac,&av,parsebuf);
+    attr_args_dictionary(dico,ac,av);
+    atom_setobj(&a,dico);
+    sysmem_freeptr(av);
+    x->f_patcher = (t_object *)object_new_typed(CLASS_NOBOX,hoa_sym_jpatcher,1, &a);
+    freeobject((t_object *)dico);
+    
+    x->f_colorpicker = newobject_sprintf(x->f_patcher, "@maxclass colorpicker @patching_rect 0 0 128 32");
+    object_attach_byptr_register(x, x->f_patcher, CLASS_NOBOX);
+    object_attach_byptr_register(x, x->f_colorpicker, CLASS_BOX);
+    
+    object_method(x->f_colorpicker, hoa_sym_bang);
+}
+
+void hoamap_source_dialog(t_hoa_map *x, Source* src)
+{
+    if(src)
+    {
+        char *text = NULL;
+        char desc[100];
+        sprintf(desc, "Source %ld description :", src->getIndex());
+        jdialog_showtext(desc, (char*)src->getDescription().c_str(), 0, &text);
+        
+        if(text)
+        {
+            src->setDescription(text);
+            
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
+            jbox_redraw((t_jbox *)x);
+            hoamap_send_binded_map_update(x, BMAP_REDRAW | BMAP_NOTIFY);
+        }
+    }
+}
+
+void hoamap_group_dialog(t_hoa_map *x, Source::Group* grp)
+{
+    if(grp)
+    {
+        char *text = NULL;
+        char desc[100];
+        sprintf(desc, "Group %ld description :", grp->getIndex());
+        jdialog_showtext(desc, (char*)grp->getDescription().c_str(), 0, &text);
+        
+        if(text)
+        {
+            grp->setDescription(text);
+            
+            jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
+            jbox_redraw((t_jbox *)x);
+            hoamap_send_binded_map_update(x, BMAP_REDRAW | BMAP_NOTIFY);
+        }
+    }
+}
+
+/**********************************************************/
+/*                          OTHERS                        */
+/**********************************************************/
+
 void hoamap_deprecated(t_hoa_map *x, t_symbol* s, long ac, t_atom* av)
 {
 	if (s == hoa_sym_slot)
@@ -836,8 +632,6 @@ void hoamap_free(t_hoa_map *x)
         object_free(x->f_patcher);
     if(x->f_colorpicker )
         object_free(x->f_colorpicker);
-    if(x->f_textfield)
-        object_free(x->f_textfield);
 }
 
 void hoamap_assist(t_hoa_map *x, void *b, long m, long a, char *s)
@@ -1584,39 +1378,10 @@ t_max_err hoamap_notify(t_hoa_map *x, t_symbol *s, t_symbol *msg, void *sender, 
     {
 		if (sender == x->f_patcher)
         {
-            x->f_textfield = NULL;
             x->f_colorpicker = NULL;
 			x->f_patcher = NULL;
         }
 	}
-    else if (msg == hoa_sym_endeditbox)
-    {
-        if(x->f_textfield)
-            object_free(x->f_textfield);
-        if(x->f_patcher)
-            object_free(x->f_patcher);
-    }
-    else if(msg == hoa_sym_text)
-    {
-        if (sender == x->f_textfield)
-        {
-            if(x->f_source_being_modified && data)
-            {
-                x->f_source_being_modified->setDescription((char *)data);
-                jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_sources_layer);
-                object_notify(x, hoa_sym_modified, NULL);
-                hoamap_send_binded_map_update(x, BMAP_NOTIFY);
-            }
-            else if(x->f_group_being_modified && data)
-            {
-                x->f_group_being_modified->setDescription((char *)data);
-                jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_groups_layer);
-                object_notify(x, hoa_sym_modified, NULL);
-                hoamap_send_binded_map_update(x, BMAP_NOTIFY);
-            }
-        }
-        jbox_redraw((t_jbox *)x);
-    }
 	if (msg == hoa_sym_attr_modified)
     {
         if (sender == x->f_colorpicker)
@@ -2657,7 +2422,7 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
                 }
                 case 6: // Set group description
                 {
-                    hoamap_text_field(x);
+                    hoamap_group_dialog(x, x->f_group_being_modified);
 					causeOutput = causeRedraw = causeNotify = 0;
                     break;
                 }
@@ -2666,6 +2431,7 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
 					causeOutput = causeRedraw = causeNotify = 0;
 					break;
 				}
+                    
             }
         }
         else if(x->f_selected_source)
@@ -2707,7 +2473,7 @@ void hoamap_mousedown(t_hoa_map *x, t_object *patcherview, t_pt pt, long modifie
                 }
                 case 4:
                 {
-                    hoamap_text_field(x);
+                    hoamap_source_dialog(x, x->f_source_being_modified);
 					causeOutput = causeRedraw = causeNotify = 0;
                     break;
                 }
@@ -3110,7 +2876,6 @@ int hoa_map_gui_main(void)
 void ext_main(void *r)
 #endif
 {
-    hoa_textfield_init();
     t_class *c;
     
     c = class_new("hoa.map", (method)hoamap_new, (method)hoamap_free, (short)sizeof(t_hoa_map), 0L, A_GIMME, 0);
