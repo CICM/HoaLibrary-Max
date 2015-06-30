@@ -697,18 +697,19 @@ void draw_fishEye(t_hoa_2d_recomposer_gui *x, t_object *view, t_rect *rect)
 
 void draw_rect_selection(t_hoa_2d_recomposer_gui *x, t_object *view, t_rect *rect)
 {
-    t_jrgba fillColor = x->f_color_selection;
 	t_jgraphics *g = jbox_start_layer((t_object *)x, view, hoa_sym_rectselection_layer, rect->width, rect->height);
-    fillColor.alpha = max(fillColor.alpha - 0.2, 0.);
 	
 	if (g && x->f_rectSelectionExist)
     {
+        t_jrgba fillColor = x->f_color_selection;
+        fillColor.alpha = max(fillColor.alpha - 0.2, 0.);
+        
         jgraphics_rectangle(g, x->f_rectSelection.x, x->f_rectSelection.y, x->f_rectSelection.width, x->f_rectSelection.height);
         
         jgraphics_set_source_jrgba(g, &fillColor);
         jgraphics_fill_preserve(g);
         jgraphics_set_source_jrgba(g, &x->f_color_selection);
-        jgraphics_set_line_width(g, 2);
+        jgraphics_set_line_width(g, 1);
         jgraphics_stroke(g);
 		
 		jbox_end_layer((t_object*)x, view, hoa_sym_rectselection_layer);
@@ -778,13 +779,14 @@ void begin_rect_selection(t_hoa_2d_recomposer_gui *x, t_pt pt)
 
 void end_rect_selection(t_hoa_2d_recomposer_gui *x, t_pt pt)
 {
-    for (int i=0; i < x->f_number_of_channels; i++)
+    for(long i = 0; i < x->f_number_of_channels; i++)
     {
-        if (channel_hit_test_rect(x, i, x->f_rectSelection))
+        if(channel_hit_test_rect(x, i, x->f_rectSelection))
         {
             x->f_manager->setSelected(i, -1); // toggle selection state
         }
     }
+    
     x->f_rectSelectionExist = false;
     jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_rectselection_layer);
     jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_channels_layer);
@@ -829,10 +831,14 @@ void hoa_2d_recomposer_gui_mousedown(t_hoa_2d_recomposer_gui *x, t_object *patch
 
     int channelHitTest = -1;
     channelHitTest = channel_hit_test(x, &pt);
-    
-    if (x->f_rectSelectionExist) 
+
+#ifdef _WINDOWS
+    if (channelHitTest == -1 && modifiers == 21) // ctrl
+#else
+    if (channelHitTest == -1 && modifiers == 17) // cmd
+#endif
 	{
-        end_rect_selection(x, pt);
+        begin_rect_selection(x, pt);
     }
 	// Start fish eye
 #ifdef _WINDOWS
@@ -868,7 +874,8 @@ void hoa_2d_recomposer_gui_mouseup(t_hoa_2d_recomposer_gui *x, t_object *patcher
         jbox_invalidate_layer((t_object *)x, NULL, hoa_sym_fisheye_layer);
     }
     
-    if (x->f_rectSelectionExist) {
+    if (x->f_rectSelectionExist)
+    {
         end_rect_selection(x, pt);
     }
     
@@ -877,7 +884,7 @@ void hoa_2d_recomposer_gui_mouseup(t_hoa_2d_recomposer_gui *x, t_object *patcher
         if (x->f_last_mouseDownOverChannel == -1)
         {
 #ifdef _WINDOWS
-            if (modifiers == 21)  // Control
+            if (modifiers == 21)  // ctrl
 #else
             if (modifiers == 17)  // Cmd
 #endif
@@ -886,7 +893,7 @@ void hoa_2d_recomposer_gui_mouseup(t_hoa_2d_recomposer_gui *x, t_object *patcher
             }
             else if (modifiers == 16) // Nothing
             {
-                x->f_manager->setSelected(-1, 0); // tout deselectionné
+                x->f_manager->setSelected(-1, 0); // All unselected
             }
         }
         else if(x->f_last_mouseDownOverChannel == channelHitTest)
@@ -895,12 +902,12 @@ void hoa_2d_recomposer_gui_mouseup(t_hoa_2d_recomposer_gui *x, t_object *patcher
             {
                 if (!x->f_manager->isSelected(x->f_last_mouseDownOverChannel))
                 {
-                    x->f_manager->setSelected(-1, 0); // tout deselectionné
+                    x->f_manager->setSelected(-1, 0); // All unselected
                     x->f_manager->setSelected(x->f_last_mouseDownOverChannel, 1);
                 }
             }
 #ifdef _WINDOWS
-            else if (modifiers == 21)  // Control
+            else if (modifiers == 21)  // ctrl
 #else
             else if (modifiers == 17)  // Cmd / shift
 #endif
@@ -929,11 +936,12 @@ void hoa_2d_recomposer_gui_mousedrag(t_hoa_2d_recomposer_gui *x, t_object *patch
 
     if (x->f_rectSelectionExist)
     {
+        post("do_rect_selection?");
         do_rect_selection(x, pt);
     }
 	// Fish eye
 #ifdef _WINDOWS
-   else if (modifiers == 8 || x->f_fisheye_show)  // Alt
+    else if (modifiers == 8 || x->f_fisheye_show)  // Alt
 #else
 	else if (modifiers == 148 || x->f_fisheye_show)  // ctrl
 #endif
@@ -970,7 +978,7 @@ void hoa_2d_recomposer_gui_mousedrag(t_hoa_2d_recomposer_gui *x, t_object *patch
 			#ifdef _WINDOWS
 				int magnet = (modifiers == 21) ? 1 : 0;  // ctrl
 			#else
-				int magnet = (modifiers == 17) ? 1 : 0;  // ctrl
+				int magnet = (modifiers == 17) ? 1 : 0;  // cmd
 			#endif
             
             x->f_manager->setSelected(x->f_last_mouseDownOverChannel, 1);
