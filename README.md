@@ -17,7 +17,7 @@ Julien Colafrancesco, Pierre Guillot, Eliott Paris
 
 ##### Licence : 
 
-The hoa.library in under the <a title="GNU" href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GNU Public License</a>. If you want to avoid the restrictions of the GPL and use Hoa Library for a closed-source product, please contact the <a title="CICM" href="http://cicm.mshparisnord.org/" target="_blank">CICM</a>.
+The hoa.library is under the <a title="GNU" href="http://www.gnu.org/copyleft/gpl.html" target="_blank">GNU Public License</a>. If you want to avoid the restrictions of the GPL and use Hoa Library for a closed-source product, please contact the <a title="CICM" href="http://cicm.mshparisnord.org/" target="_blank">CICM</a>.
 
 ##### Objects :
 
