@@ -158,7 +158,7 @@ void *hoa_3d_optim_new(t_symbol *s, long argc, t_atom *argv)
     // @description First argument is the ambisonic order of decomposition.
     
     // @arg 1 @name optimization-mode @optional 1 @type symbol @digest The optimization mode.
-    // @description The optimization mode can be <b>basic</b> for no optimization (default), <b>maxRe</b> or <b>inPhase</b>.
+    // @description The optimization mode can be <b>basic</b> for no optimization, <b>maxRe</b> or <b>inPhase</b> (default).
     
     t_hoa_3d_optim *x = (t_hoa_3d_optim *)object_alloc(hoa_3d_optim_class);
     if (x)
@@ -208,7 +208,7 @@ void ext_main(void *r)
     class_addmethod(c, (method)hoa_3d_optim_assist,    "assist",	A_CANT, 0);
     
     // @method basic @digest Set the optimization mode to <b>basic</b>, does not apply any optimization.
-    // @description Set the optimization mode to <b>basic</b>. This is particulary suitable when the listener is ideally placed at the center of the loudspeaker arrangement, or for diffused soundfields.
+    // @description Set the optimization mode to <b>basic</b>. This is particulary suitable when the listener is ideally placed at the center of the loudspeaker arrangement, or for diffuse soundfields.
     class_addmethod(c, (method)hoa_3d_optim_basic,     "basic",	A_NOTHING, 0);
     
     // @method maxRe @digest Set the optimization mode to <b>maxRe</b>.

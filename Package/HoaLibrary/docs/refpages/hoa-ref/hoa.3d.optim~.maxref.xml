@@ -36,7 +36,7 @@
 				The optimization mode.
 			</digest>
 			<description>
-				The optimization mode can be <b>basic</b> for no optimization (default), <b>maxRe</b> or <b>inPhase</b>.
+				The optimization mode can be <b>basic</b> for no optimization, <b>maxRe</b> or <b>inPhase</b> (default).
 			</description>
 		</objarg>
 	</objarglist>

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 3,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -55,7 +55,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -93,12 +93,46 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
+									"id" : "obj-22",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 413.0, 249.0, 20.0 ],
+									"style" : "",
+									"text" : "basic has no effect.",
+									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
+									"varname" : "autohelp_top_description[6]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 0.0,
+									"bgcolor" : [ 0.94324, 0.954082, 0.954082, 1.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.75, 0.75, 0.75, 1.0 ],
+									"id" : "obj-24",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 287.0, 413.0, 249.0, 20.0 ],
+									"proportion" : 0.39,
+									"rounded" : 0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
 									"id" : "obj-17",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 338.0, 249.0, 33.0 ],
+									"patching_rect" : [ 287.0, 342.0, 249.0, 33.0 ],
 									"style" : "",
 									"text" : "if no optimization-mode is specified, the optimization will be inPhase.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -117,7 +151,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 338.0, 249.0, 33.0 ],
+									"patching_rect" : [ 287.0, 342.0, 249.0, 33.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -133,7 +167,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 518.0, 249.0, 33.0 ],
+									"patching_rect" : [ 354.0, 578.0, 182.0, 33.0 ],
 									"style" : "",
 									"text" : "NB : This is theoretical, the best choice is to trust your ears.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -152,7 +186,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 518.0, 249.0, 33.0 ],
+									"patching_rect" : [ 354.0, 578.0, 182.0, 33.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -164,13 +198,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-4",
-									"linecount" : 4,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 446.0, 249.0, 60.0 ],
+									"patching_rect" : [ 287.0, 491.0, 249.0, 33.0 ],
 									"style" : "",
-									"text" : "inPhase optimization could be used when an\naudience is confined to the center of the restitution area or when an audience covers all of the restitution area.",
+									"text" : "inPhase optimization is used when the audience covers all the circle.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[4]"
 								}
@@ -181,13 +215,13 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-3",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 388.0, 249.0, 47.0 ],
+									"patching_rect" : [ 287.0, 446.5, 249.0, 33.0 ],
 									"style" : "",
-									"text" : "maxRe optimization could be used when a listener is ideally placed at the center of the loudspeaker arrangement.",
+									"text" : "maxRe optimization is used when audience is confined to the center of the circle.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
 									"varname" : "autohelp_top_description[3]"
 								}
@@ -301,7 +335,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 388.0, 249.0, 47.0 ],
+									"patching_rect" : [ 287.0, 446.5, 249.0, 33.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -515,7 +549,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -658,13 +692,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 462.0, 158.0, 74.0, 21.0 ],
-									"saved_object_attributes" : 									{
-										"nhcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
-										"phcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-										"planecolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-										"zhcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
-									}
-,
 									"style" : "",
 									"text" : "hoa.connect"
 								}
@@ -733,7 +760,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 446.0, 249.0, 60.0 ],
+									"patching_rect" : [ 287.0, 491.0, 249.0, 33.0 ],
 									"proportion" : 0.39,
 									"rounded" : 0,
 									"style" : ""
@@ -1512,7 +1539,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1598,8 +1625,8 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-35::obj-30::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-35::obj-30::obj-35" : [ "[5]", "Level", 0 ]
+			"obj-35::obj-30::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-35::obj-30::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -1635,21 +1662,18 @@
 , 			{
 				"name" : "hoa.helpheader.maxpat",
 				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
-				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
 				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
-				"patcherrelativepath" : "../../misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
 				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
-				"patcherrelativepath" : "../../misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
