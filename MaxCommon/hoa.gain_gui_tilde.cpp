@@ -586,33 +586,35 @@ void hoa_gain_mouseup(t_hoa_gain *x, t_object *patcherview, t_pt pt, long modifi
 
 void hoa_gain_setminmax(t_hoa_gain *x, t_symbol *s, long argc, t_atom *argv)
 {
-	double a, b;
-	
-	if (argc > 1) {
+	if (argc > 1)
+    {
 		double old_min = x->j_min;
 		double old_size = x->j_size;
-		a = b = 0;
+		double a = 0., b = 0.;
 		
-		if (argv[0].a_type == A_LONG)
-			a = (double)atom_getlong(&argv[0]);
-		else if (argv[0].a_type == A_FLOAT)
-			a = (double)atom_getfloat(&argv[0]);
+		if (atom_isNumber(argv))
+			a = (double)atom_getfloat(argv);
 
-		if (argv[1].a_type == A_LONG)
-			b = (double)atom_getlong(&argv[1]);
-		else if (argv[1].a_type == A_FLOAT)
-			b = (double)atom_getfloat(&argv[1]);
+		if (atom_isNumber(argv+1))
+			b = (double)atom_getfloat(argv+1);
 		
-		if (a == b) {
+		if (a == b)
+        {
 			x->j_min = 0.;
 			x->j_size = 1.;
-		} else  if (a < b) {
+		}
+        else if (a < b)
+        {
 			x->j_min = a;
 			x->j_size = b - a;
-		} else {			
+		}
+        else
+        {
 			x->j_min = b;
 			x->j_size = a - b;
 		}
+        
+        post("a: %f, b:%f", a, b);
         
         x->f_range[0] = x->j_min;
         x->f_range[1] = x->j_size + x->j_min;
@@ -1072,7 +1074,7 @@ void ext_main(void *r)
     CLASS_ATTR_SAVE				(c, "channels", 1);
     
     CLASS_ATTR_CATEGORY			(c, "range", 0, "Value");
-    CLASS_ATTR_FLOAT_ARRAY      (c, "range", 0, t_hoa_gain, f_range, 2);
+    CLASS_ATTR_DOUBLE_ARRAY     (c, "range", 0, t_hoa_gain, f_range, 2);
     CLASS_ATTR_ACCESSORS        (c, "range", NULL, hoa_gain_setattr_range);
     CLASS_ATTR_ORDER			(c, "range", 0, "2");
     CLASS_ATTR_LABEL			(c, "range", 0, "Range (dB)");
