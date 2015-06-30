@@ -1,15 +1,19 @@
 
-HoaLibrary for MaxMSP, Pure Data, Faust and VST
-
------------------------- ------------------------
-		   Max Version 
------------------------- ------------------------
+-------------------------------------------------
+		HoaLibrary for Max 
+-------------------------------------------------
 
 ------------------------
-version Beta 2.0.4
+version Beta 2.2
 ------------------------
- - hoa.play~ and hoa.record~ removed
- - new hoa.2d.exchanger~ & hoa.3d.exchanger~ objects.
+ - new 2d and 3d binaural.
+ - new hoa.2d/3d.exchanger~ objects.
+ - new tutorials.
+ - several bug fixed.
+ - several GUIÕs enhancements.
+ - hoa.thisprocess~ now outputs [decomposition order, harm degree, harm order] in 2d harmonic mode.
+ - hoa.play~ and hoa.record~ removed.
+ - É
 
 ------------------------
 version Beta 2.0.2
