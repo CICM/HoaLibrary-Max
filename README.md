@@ -6,7 +6,7 @@ The Max implementation of the <a title="HoaLibrary" href="https://github.com/CIC
 
 * * *
 
-### Compatibilty :
+### Compatibility :
 
 The latest release is compatible with Max 6.1.9 and higher on Mac Os and Windows plateforms both 32/64bit. </br>
 => <a title="Download Hoa for Max" href="http://www.mshparisnord.fr/hoalibrary/en/downloads/max/">Downloads</a>.
