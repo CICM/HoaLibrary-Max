@@ -7,19 +7,22 @@ The Max implementation of the <a title="HoaLibrary" href="https://github.com/CIC
 * * *
 
 ### Compatibilty :
-The latest release is compatible with Max 6.1.9 and higher (32 & 64 bit) on Mac Os and Windows plateforms.
-	=> (<a title="Downloads" href="http://www.mshparisnord.fr/hoalibrary/en/downloads/">Downloads</a>).
+
+The latest release is compatible with Max 6.1.9 and higher on Mac Os and Windows plateforms both 32/64bit. </br>
+=> <a title="Download Hoa for Max" href="http://www.mshparisnord.fr/hoalibrary/en/downloads/max/">Downloads</a>.
 
 ### Authors :
+
+Pierre Guillot  
+Eliott Paris  
 Julien Colafrancesco
-Pierre Guillot
-Eliott Paris
 
 ### Dependencies : 
 <a title="HoaLibrary" href="https://github.com/CICM/HoaLibrary-Light">HoaLibrary</a> & <a title="MaxSDK" href="https://github.com/Cycling74/max-sdk">Max-sdk</a>
 
 ### Licence : 
-The HoaLibrary is under the terms of the <a title="GNU" href="http://www.gnu.org/copyleft/gpl.html">GNU Public License</a>. If you want to avoid the restrictions of the GPL and use HoaLibrary for a closed-source product, please <a title="contact the CICM" href="http://cicm.mshparisnord.org/">contact us</a>.
+The HoaLibrary is under the terms of the <a title="GNU" href="http://www.gnu.org/copyleft/gpl.html">GNU Public License</a>. </br>
+If you want to avoid the restrictions of the GPL and use HoaLibrary for a closed-source product, please <a title="contact the CICM" href="http://cicm.mshparisnord.org/">contact us</a>.
 
 ### Other implementations :
 * [HoaLibrary-Pd](https://github.com/CICM/HoaLibrary-PD "HoaLibrary-Pd") : HoaLibrary for Pure Data.
