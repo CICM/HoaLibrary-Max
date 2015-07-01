@@ -14,17 +14,15 @@ The HoaLibrary is under the GNU Public License. If you'd like to avoid the restr
 http://cicm.mshparisnord.org/
 
 ----------------------------------
-Max (HoaLibrary Beta 2.0.2) :
+Max (HoaLibrary Beta 2.2) :
 ----------------------------------
 
-This version is compatible with Max 6.1 and higher
+This version is compatible with Max 6.1.9 and higher
 
 Installation:
  - Firstly, remove any old version of HoaLibrary (if any).
  - To install the HoaLibrary package, simply copy it to your 'packages' folder.
  - To uninstall this package, simply remove it from your 'packages' folder.
-
-There are two packages folder you may use. One is called 'packages' in your Max folder. The other is called 'Max 6 Packages' in your Documents (Mac) or My Documents (Windows) folder.
 
 ----------------------------------
 
