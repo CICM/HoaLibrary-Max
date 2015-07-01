@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 3,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -54,7 +54,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -107,6 +107,7 @@
 , 							{
 								"box" : 								{
 									"bgcolor" : [ 0.853045, 0.853045, 0.853045, 1.0 ],
+									"color" : [ 0.92549, 0.364706, 0.341176, 1.0 ],
 									"id" : "obj-65",
 									"local" : 1,
 									"maxclass" : "ezdac~",
@@ -284,7 +285,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -454,7 +455,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -515,7 +516,7 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 3,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -980,7 +981,7 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 3,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1436,8 +1437,8 @@
 , 															{
 																"name" : "newobjYellow-1",
 																"default" : 																{
-																	"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-																	"fontsize" : [ 12.059008 ]
+																	"fontsize" : [ 12.059008 ],
+																	"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -1474,7 +1475,7 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 3,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1930,8 +1931,8 @@
 , 															{
 																"name" : "newobjYellow-1",
 																"default" : 																{
-																	"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-																	"fontsize" : [ 12.059008 ]
+																	"fontsize" : [ 12.059008 ],
+																	"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -1968,7 +1969,7 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 0,
-															"revision" : 3,
+															"revision" : 4,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2653,7 +2654,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2791,8 +2792,8 @@
 , 											{
 												"name" : "newobjYellow-1",
 												"default" : 												{
-													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-													"fontsize" : [ 12.059008 ]
+													"fontsize" : [ 12.059008 ],
+													"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -3400,6 +3401,24 @@
 							}
  ],
 						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjBlue-1",
 								"default" : 								{
 									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -3420,8 +3439,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3461,12 +3480,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 771.0, 668.0 ],
+						"rect" : [ 100.0, 126.0, 771.0, 668.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -3504,7 +3523,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 454.5, 537.5, 244.5, 60.0 ],
+									"patching_rect" : [ 454.5, 537.5, 245.0, 60.0 ],
 									"style" : "",
 									"text" : "The crop attribute can be usefull in binaural mode to reduce the CPU usage by cropping the impulse responses (between 0 and 512) 0 means no crop.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -3597,6 +3616,7 @@
 , 							{
 								"box" : 								{
 									"bgcolor" : [ 0.853045, 0.853045, 0.853045, 1.0 ],
+									"color" : [ 0.92549, 0.364706, 0.341176, 1.0 ],
 									"id" : "obj-65",
 									"local" : 1,
 									"maxclass" : "ezdac~",
@@ -3689,7 +3709,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3988,7 +4008,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4617,6 +4637,24 @@
 							}
  ],
 						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjBlue-1",
 								"default" : 								{
 									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -4637,8 +4675,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4678,7 +4716,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4731,6 +4769,7 @@
 , 							{
 								"box" : 								{
 									"bgcolor" : [ 0.853045, 0.853045, 0.853045, 1.0 ],
+									"color" : [ 0.92549, 0.364706, 0.341176, 1.0 ],
 									"id" : "obj-65",
 									"local" : 1,
 									"maxclass" : "ezdac~",
@@ -5175,7 +5214,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6233,6 +6272,24 @@
 							}
  ],
 						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
 								"name" : "newobjBlue-1",
 								"default" : 								{
 									"accentcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -6253,8 +6310,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -6294,12 +6351,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 771.0, 668.0 ],
+						"rect" : [ 0.0, 26.0, 771.0, 668.0 ],
 						"bgcolor" : [ 0.93, 0.93, 0.92, 1.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -6337,7 +6394,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 441.75, 536.0, 285.0, 62.0 ],
+									"patching_rect" : [ 441.75, 536.0, 285.0, 60.0 ],
 									"style" : "",
 									"text" : "Important : Unlike the GUI's, the attributes (angles, channels, mode..) are not saved within the object. So you have to write them directly into the box or to send a message.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -6374,7 +6431,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 498.0, 351.0, 224.0, 22.0 ],
+									"patching_rect" : [ 498.0, 351.0, 224.0, 21.0 ],
 									"style" : "",
 									"text_width" : 66.0
 								}
@@ -6391,7 +6448,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 498.0, 241.0, 224.0, 22.0 ],
+									"patching_rect" : [ 498.0, 241.0, 224.0, 21.0 ],
 									"style" : "",
 									"text_width" : 42.75
 								}
@@ -6406,7 +6463,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 61.9375, 576.5, 54.0, 33.0 ],
+									"patching_rect" : [ 61.9375, 576.5, 54.0, 32.0 ],
 									"style" : "",
 									"text" : "Audio\nOn/Off",
 									"textcolor" : [ 0.317518, 0.317518, 0.317518, 1.0 ]
@@ -6457,8 +6514,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 402.0, 294.0, 176.605499, 39.0 ],
-									"presentation_rect" : [ 402.0, 294.0, 176.605499, 39.0 ]
+									"patching_rect" : [ 402.0, 294.0, 176.618362, 39.0 ],
+									"presentation_rect" : [ 402.0, 294.0, 176.618362, 39.0 ]
 								}
 
 							}
@@ -6491,7 +6548,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 373.0, 171.0, 59.0, 22.0 ],
+									"patching_rect" : [ 373.0, 171.0, 59.0, 21.0 ],
 									"style" : "",
 									"text" : "hoa.pi~ 2"
 								}
@@ -6506,7 +6563,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 373.032288, 136.0, 72.0, 22.0 ],
+									"patching_rect" : [ 373.032288, 136.0, 72.0, 21.0 ],
 									"style" : "",
 									"text" : "phasor~ 0.5"
 								}
@@ -6521,7 +6578,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 441.75, 474.0, 210.0, 46.0 ],
+									"patching_rect" : [ 441.75, 474.0, 210.0, 45.0 ],
 									"style" : "",
 									"text" : "Note that if you change the mode or the number of loudspeaker, the audio will be turned off.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
@@ -6555,7 +6612,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 441.75, 406.0, 210.0, 60.0 ],
+									"patching_rect" : [ 441.75, 406.0, 210.0, 58.0 ],
 									"style" : "",
 									"text" : "The default mode is regular for an array of  2 * order + 2 loudspeakers. \nThe default irregular configuration is 5.1 standard multicanal configuration.\n",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ]
@@ -6585,7 +6642,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 498.0, 144.0, 224.0, 89.0 ],
+									"patching_rect" : [ 498.0, 144.0, 224.0, 87.0 ],
 									"style" : "",
 									"text" : "Mode : \n• regular for a regular loudspeakers repartition over a circle.\n• irregular if the loudspeakers are not  equally spaced on a circle.\n• binaural for headphones",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -6621,7 +6678,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 25.0, 165.0, 70.0, 22.0 ],
+									"patching_rect" : [ 25.0, 165.0, 70.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 0"
 								}
@@ -6637,7 +6694,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 25.0, 195.0, 100.0, 22.0 ],
+									"patching_rect" : [ 25.0, 195.0, 100.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -6651,7 +6708,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 164.967712, 127.0, 88.0, 22.0 ],
+									"patching_rect" : [ 164.967712, 127.0, 88.0, 21.0 ],
 									"style" : "",
 									"text" : "hoa.soundcoat"
 								}
@@ -6667,7 +6724,7 @@
 									"numinlets" : 15,
 									"numoutlets" : 15,
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 164.967712, 241.0, 227.064575, 22.0 ],
+									"patching_rect" : [ 164.967712, 241.0, 227.064575, 21.0 ],
 									"style" : "",
 									"text" : "hoa.2d.optim~ 7 basic"
 								}
@@ -6684,7 +6741,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 373.032288, 111.0, 50.0, 22.0 ],
+									"patching_rect" : [ 373.032288, 111.0, 50.0, 21.0 ],
 									"style" : ""
 								}
 
@@ -6699,7 +6756,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 373.032288, 77.5, 79.0, 22.0 ],
+									"patching_rect" : [ 373.032288, 77.5, 79.0, 21.0 ],
 									"style" : "",
 									"text" : "loadmess 0.5"
 								}
@@ -6714,7 +6771,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 15,
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 164.967712, 199.0, 227.064575, 22.0 ],
+									"patching_rect" : [ 164.967712, 199.0, 227.064575, 21.0 ],
 									"style" : "",
 									"text" : "hoa.2d.encoder~ 7"
 								}
@@ -6749,7 +6806,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 6.4375, 67.5, 595.3125, 34.0 ],
+									"patching_rect" : [ 6.4375, 67.5, 595.3125, 33.0 ],
 									"style" : "",
 									"text" : "hoa.2d.decoder~ decodes an ambisonics soundfield for several loudspeakers configuration or for headphones. First argument is the ambisonic order of decomposition.",
 									"textcolor" : [ 0.30292, 0.30292, 0.30292, 1.0 ],
@@ -6796,7 +6853,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 16,
 									"numoutlets" : 0,
-									"patching_rect" : [ 164.709869, 597.0, 227.322418, 22.0 ],
+									"patching_rect" : [ 164.709869, 597.0, 227.322418, 21.0 ],
 									"style" : "",
 									"text" : "hoa.dac~ 1:16"
 								}
@@ -6817,7 +6874,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 0,
-											"revision" : 3,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6936,7 +6993,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 648.0, 22.5, 51.0, 22.0 ],
+									"patching_rect" : [ 648.0, 22.5, 51.0, 21.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -6959,7 +7016,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 648.0, 52.5, 74.0, 22.0 ],
+									"patching_rect" : [ 648.0, 52.5, 74.0, 21.0 ],
 									"style" : "",
 									"text" : "hoa.connect"
 								}
@@ -6975,7 +7032,7 @@
 									"numinlets" : 15,
 									"numoutlets" : 16,
 									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
-									"patching_rect" : [ 164.967712, 294.0, 227.064575, 22.0 ],
+									"patching_rect" : [ 164.967712, 294.0, 227.064575, 21.0 ],
 									"style" : "",
 									"text" : "hoa.2d.decoder~ 7"
 								}
@@ -7899,8 +7956,8 @@
 , 							{
 								"name" : "newobjYellow-1",
 								"default" : 								{
-									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-									"fontsize" : [ 12.059008 ]
+									"fontsize" : [ 12.059008 ],
+									"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7940,7 +7997,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -8003,22 +8060,19 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "hoa.helpheader.maxpat",
-				"bootpath" : "~/Max 7/Packages/HoaLibrary/misc/others",
-				"patcherrelativepath" : "../../misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.2d.scope~.svg",
-				"bootpath" : "~/Max 7/Packages/HoaLibrary/misc/object-palettes",
-				"patcherrelativepath" : "../../misc/object-palettes",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/object-palettes",
 				"type" : "svg ",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "hoa.soundcoat.maxpat",
-				"bootpath" : "~/Max 7/Packages/HoaLibrary/misc/others",
-				"patcherrelativepath" : "../../misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -8030,8 +8084,7 @@
 			}
 , 			{
 				"name" : "hoa.helpcredit.maxpat",
-				"bootpath" : "~/Max 7/Packages/HoaLibrary/misc/others",
-				"patcherrelativepath" : "../../misc/others",
+				"bootpath" : "~/Documents/programmation/CICM/sourceTree/HoaLibrary-Max/Package/HoaLibrary/misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -8072,36 +8125,36 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "hoa.2d.decoder~.mxe64",
-				"type" : "mx64"
+				"name" : "hoa.2d.decoder~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "hoa.connect.mxe64",
-				"type" : "mx64"
+				"name" : "hoa.connect.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "hoa.2d.meter~.mxe64",
-				"type" : "mx64"
+				"name" : "hoa.2d.meter~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "hoa.2d.encoder~.mxe64",
-				"type" : "mx64"
+				"name" : "hoa.2d.encoder~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "hoa.2d.optim~.mxe64",
-				"type" : "mx64"
+				"name" : "hoa.2d.optim~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "hoa.gain~.mxe64",
-				"type" : "mx64"
+				"name" : "hoa.gain~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "hoa.pi~.mxe64",
-				"type" : "mx64"
+				"name" : "hoa.pi~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "hoa.2d.scope~.mxe64",
-				"type" : "mx64"
+				"name" : "hoa.2d.scope~.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"embedsnapshot" : 0

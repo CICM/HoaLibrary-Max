@@ -49,7 +49,7 @@
 				Set the optimization mode to <b>basic</b>, does not apply any optimization.
 			</digest>
 			<description>
-				Set the optimization mode to <b>basic</b>. This is particulary suitable when the listener is ideally placed at the center of the loudspeaker arrangement, or for diffused soundfields.
+				Set the optimization mode to <b>basic</b>. This is particulary suitable when the listener is ideally placed at the center of the loudspeaker arrangement, or for diffuse soundfields.
 			</description>
 		</method>
 		<method name="maxRe">

@@ -290,14 +290,14 @@
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>
-		<attribute name="range" get="1" set="1" type="float" size="1">
+		<attribute name="range" get="1" set="1" type="float_array" size="0">
 			<digest>
 				Range (dB)
 			</digest>
 			<description>
 			</description>
 			<attributelist>
-				<attribute name="default" get="1" set="1" type="float" size="1" value="-70. 18." />
+				<attribute name="default" get="1" set="1" type="float_array" size="0" value="-70. 18." />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Range (dB)" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />

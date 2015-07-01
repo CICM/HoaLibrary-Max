@@ -166,17 +166,6 @@
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
 		</attribute>
-		<attribute name="rect" get="1" set="1" type="" size="1">
-			<digest>
-				
-			</digest>
-			<description>
-			</description>
-			<attributelist>
-				<attribute name="default" get="1" set="1" type="" size="1" value="0. 0. 100. 20." />
-				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
-			</attributelist>
-		</attribute>
 		<attribute name="save" get="1" set="1" type="int" size="1">
 			<digest>
 				Save Object State with Patcher
@@ -187,6 +176,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Save Object State with Patcher" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="onoff" />
 			</attributelist>
@@ -242,6 +232,7 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="int" size="1" value="0" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Coordinate View" />
+				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="enumindex" />
 			</attributelist>
@@ -256,7 +247,6 @@
 			<attributelist>
 				<attribute name="default" get="1" set="1" type="float" size="1" value="0.35" />
 				<attribute name="label" get="1" set="1" type="symbol" size="1" value="Zoom" />
-				<attribute name="paint" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="save" get="1" set="1" type="int" size="1" value="1" />
 				<attribute name="style" get="1" set="1" type="symbol" size="1" value="text" />
 			</attributelist>
