@@ -27,4 +27,4 @@ If you want to avoid the restrictions of the GPL and use HoaLibrary for a closed
 ### Other implementations :
 * [HoaLibrary-Pd](https://github.com/CICM/HoaLibrary-PD "HoaLibrary-Pd") : HoaLibrary for Pure Data.
 * [ofxHoa](https://github.com/CICM/ofxHoa "ofxHoa") : HoaLibrary for openFrameworks.
-* [HoaLibrary-Faust](https://github.com/CICM/HoaLibrary-Faust "HoaLibrary-Faust") : HoaLibrary for openFrameworks.
+* [HoaLibrary-Faust](https://github.com/CICM/HoaLibrary-Faust "HoaLibrary-Faust") : HoaLibrary for Faust.
