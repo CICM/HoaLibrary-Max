@@ -1,0 +1,24 @@
+{
+	"author" : "Eliott Paris, Pierre Guillot, Julien Colafrancesco",
+	"description" : "Two and three dimensional High Order Ambisonics library",
+	"homepatcher" : "hoa.overview.maxpat",
+	"max_version_min" : "7.1",
+	"name" : "HoaLibrary",
+	"os" : {
+		"macintosh" : {
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		},
+		"windows" : {
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "none"
+		}
+	},
+	"package_extra" : {
+		"reverse_domain" : "com.CICM",
+		"copyright" : "Copyright (c) 2012-2016 CICM"
+	},
+	"tags" : [ ],
+	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
+	"website" : "https://github.com/CICM/HoaLibrary-Max"
+}
