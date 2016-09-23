@@ -79,18 +79,13 @@ t_max_err convolve_setattr_normalize(t_convolve *x, t_symbol *s, long ac, t_atom
 t_max_err convolve_setattr_fftsize(t_convolve *x, t_symbol *s, long ac, t_atom* av);
 t_max_err convolve_setattr_cropsize(t_convolve *x, t_symbol *s, long ac, t_atom* av);
 
-inline long next_power_of_two (long x);
+inline long next_power_of_two(long x);
 
-#ifdef HOA_PACKED_LIB
-int c_convolve_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
 	t_class *c;
     
 	c = class_new("c.convolve~", (method)convolve_new, (method)convolve_free, (short)sizeof(t_convolve), 0L, A_GIMME, 0);
-    class_setname((char *)"c.convolve~", (char *)"c.convolve~");
     
 	hoa_initclass(c, (method)NULL);
     class_dspinit(c);
@@ -115,8 +110,9 @@ void ext_main(void *r)
 	// @description Double-clicking on the <o>c.convolve~</o> opens a display window where you can view the contents of the <o>buffer~</o> used to load the impulse response.
     class_addmethod(c, (method) convolve_dblclick,  "dblclick",         A_CANT,  0);
     
+    CLASS_STICKY_CATEGORY(c, 0, "Behavior");
+    
     CLASS_ATTR_SYM                  (c, "buffer", 0, t_convolve, f_buffer_name);
-	CLASS_ATTR_CATEGORY             (c, "buffer", 0, "Behavior");
 	CLASS_ATTR_ACCESSORS            (c, "buffer", NULL, convolve_setattr_buffername);
 	CLASS_ATTR_LABEL                (c, "buffer", 0, "Buffer~ Object Name");
 	CLASS_ATTR_SAVE                 (c, "buffer", 1);
@@ -124,7 +120,6 @@ void ext_main(void *r)
     // @description The <b>buffer</b> attribute is the name of the <o>buffer~</o> used to read the impulse response.
 	
     CLASS_ATTR_LONG                 (c, "channel", 0, t_convolve, f_channel_offset);
-    CLASS_ATTR_CATEGORY             (c, "channel", 0, "Behavior");
 	CLASS_ATTR_ACCESSORS            (c, "channel", NULL, convolve_setattr_channel);
     CLASS_ATTR_LABEL                (c, "channel", 0, "Channel");
     CLASS_ATTR_SAVE                 (c, "channel", 1);
@@ -132,7 +127,6 @@ void ext_main(void *r)
     // @description The <b>channel</b> attribute is the channel number of the impulse response buffer.
     
     CLASS_ATTR_LONG                 (c, "normalize",  0, t_convolve, f_normalize);
-	CLASS_ATTR_CATEGORY             (c, "normalize",  0, "Behavior");
     CLASS_ATTR_STYLE_LABEL          (c, "normalize",  0, "onoff", "Normalize buffer content");
     CLASS_ATTR_ACCESSORS            (c, "normalize", NULL, convolve_setattr_normalize);
 	CLASS_ATTR_SAVE                 (c, "normalize",  1);
@@ -140,7 +134,6 @@ void ext_main(void *r)
     // @description If the <b>normalize</b> attribute is checked, <o>c.convolve</o> object will normalize the <o>buffer~</o> content.
     
     CLASS_ATTR_LONG                 (c, "fftsize", 0, t_convolve, f_fftsize);
-    CLASS_ATTR_CATEGORY             (c, "fftsize", 0, "Behavior");
 	CLASS_ATTR_ACCESSORS            (c, "fftsize", NULL, convolve_setattr_fftsize);
     CLASS_ATTR_LABEL                (c, "fftsize", 0, "FFT size");
     CLASS_ATTR_SAVE                 (c, "fftsize", 1);
@@ -148,13 +141,14 @@ void ext_main(void *r)
     // @description The <b>fftsize</b> attribute is the <o>c.convolve</o> FFT size.
     
     CLASS_ATTR_ATOM                 (c, "cropsize", 0, t_convolve, f_crop_size);
-    CLASS_ATTR_CATEGORY             (c, "cropsize", 0, "Behavior");
 	CLASS_ATTR_ACCESSORS            (c, "cropsize", NULL, convolve_setattr_cropsize);
     CLASS_ATTR_LABEL                (c, "cropsize", 0, "Crop size (ms)");
     CLASS_ATTR_SAVE                 (c, "cropsize", 1);
     CLASS_ATTR_ORDER                (c, "cropsize",  0, "5");
     // @description Use the <b>cropsize</b> attribute to limit the impulse response at a maximum size. It can be usefull to prevent too big CPU usage when loading big impulse responses.
     // the <b>cropsize</b> is set in milliseconds, dont set this if you want to play the entire IR.
+    
+    CLASS_STICKY_CATEGORY_CLEAR(c);
     
     class_register(CLASS_BOX, c);
 	convolve_class = c;
@@ -380,10 +374,13 @@ void convolve_set(t_convolve *x, t_symbol *s, long ac, t_atom *av)
 {
     if (ac && av && atom_gettype(av) == A_SYM)
 	{
-        object_method(x, gensym("buffer"), 1, av);
+        t_atom dummy_rv;
+        
+        object_method_sym((t_object*)x, gensym("buffer"), atom_getsym(av), &dummy_rv);
+        
         if (ac > 1 && atom_gettype(av+1) == A_LONG)
         {
-            object_method(x, gensym("channel"), 1, av+1);
+            object_method_long((t_object*)x, gensym("channel"), atom_getlong(av+1), &dummy_rv);
         }
 	}
 }
@@ -421,9 +418,10 @@ void convolve_perform64(t_convolve *x, t_object *d, double **ins, long ni, doubl
 #endif
 }
 
-void convolve_dsp64(t_convolve *x, t_object *dsp, short *count, double samplerate, long maxvectorsize, long flags)
+void convolve_dsp64(t_convolve *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
-    object_method(dsp, gensym("dsp_add64"), x, (method)convolve_perform64, 0, NULL);
+    object_method_direct(void, (t_object*, t_object*, t_perfroutine64, long, void*),
+                         dsp64, gensym("dsp_add64"), (t_object*)x, (t_perfroutine64)convolve_perform64, flags, NULL);
 }
 
 void convolve_dblclick(t_convolve *x)
