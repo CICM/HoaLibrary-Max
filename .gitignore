@@ -14,6 +14,7 @@
 *.sdf
 *.user
 *.suo
+*.sln
 *.cache
 *.unsuccessfulbuild
 *.ilk
@@ -21,7 +22,11 @@
 *.manifest
 *.res
 
-sysbuild/
+sysbuild
+log.txt
+*.o
+*.dylib
+tmp
 
 #################
 ## XCode
@@ -45,3 +50,8 @@ xcshareddata/
 *.mxo
 *.mxe
 *.mxe64
+
+externals
+support
+build
+package-info.json
