@@ -39,8 +39,8 @@ typedef struct  _connect
 	
 	t_object**  f_objects;
 	
-    Processor<Hoa2d, t_sample>::Harmonics* f_ambi2D;
-    Processor<Hoa3d, t_sample>::Harmonics* f_ambi3D;
+    Processor<Hoa2d, double>::Harmonics* f_ambi2D;
+    Processor<Hoa3d, double>::Harmonics* f_ambi3D;
 	
 	t_jrgba     f_color_zero;
 	t_jrgba     f_color_positiv;
@@ -68,7 +68,7 @@ void connect_attach(t_connect *x)
 {
 	object_obex_lookup(x, hoa_sym_pound_P, &x->f_patcher);
 	x->f_patcherview = object_attr_getobj(x->f_patcher, hoa_sym_firstview);
-	object_attach_byptr_register(x, x->f_patcherview, CLASS_NOBOX);
+	object_attach_byptr_register(x, x->f_patcherview, gensym("nobox"));
 }
 
 void connect_assist(t_connect *x, void *b, long m, long a, char *s)
@@ -218,7 +218,7 @@ void color_patchline(t_connect *x)
 	t_hoa_boxinfos* startobj_infos = (t_hoa_boxinfos*) malloc(sizeof(t_hoa_boxinfos));
 	line = jpatcher_get_firstline(x->f_patcher);
     
-	while (line)
+	while(line)
 	{
 		startobj = jbox_get_object(jpatchline_get_box1(line));
 		
@@ -235,10 +235,13 @@ void color_patchline(t_connect *x)
                     horder = 0;
 					outletnum = jpatchline_get_outletnum(line);
                     
-                    if(object_classname(startobj) == gensym("hoa.2d.exchanger~") ||
-                       object_classname(startobj) == gensym("hoa.3d.exchanger~"))
+                    if(object_classname(startobj) == hoa_sym_hoa_2d_exchanger_tilde ||
+                       object_classname(startobj) == hoa_sym_hoa_3d_exchanger_tilde)
                     {
-                        object_method(startobj, gensym("hoa_get_output_harmonic_order"), outletnum, &horder);
+                        object_method_direct(t_hoa_err, (t_object*, ulong, long*), startobj,
+                                             gensym("hoa_get_output_harmonic_order"), outletnum, &horder);
+                        
+                        //object_method(startobj, gensym("hoa_get_output_harmonic_order"), outletnum, &horder);
                     }
                     else
                     {
@@ -257,11 +260,11 @@ void color_patchline(t_connect *x)
 					
                     if(x->f_isMax7)
                     {
-                        object_attr_setcolor(line, hoa_sym_patchlinecolor, linecolor);
+                        object_attr_setcolor(line, hoa_sym_patchlinecolor, (char*)linecolor);
                     }
                     else
                     {
-                        jpatchline_set_color(line, linecolor);
+                        jpatchline_set_color(line, (char*)linecolor);
                     }
 				}
 				// planewave color (ex: hoa.projector~ => hoa.recomposer~)
@@ -269,11 +272,11 @@ void color_patchline(t_connect *x)
 				{
                     if(x->f_isMax7)
                     {
-                        object_attr_setcolor(line, hoa_sym_patchlinecolor, &x->f_color_plane);
+                        object_attr_setcolor(line, hoa_sym_patchlinecolor, (char*)(&x->f_color_plane));
                     }
                     else
                     {
-                        jpatchline_set_color(line, &x->f_color_plane);
+                        jpatchline_set_color(line, (char*)(&x->f_color_plane));
                     }
 				}
 			}
@@ -352,7 +355,7 @@ t_max_err connect_notify(t_connect *x, t_symbol *s, t_symbol *msg, void *sender,
 	else if(msg == hoa_sym_attr_modified && sender == x->f_patcherview)
 	{
 		t_symbol *attrname;
-		attrname = (t_symbol *)object_method(data, hoa_sym_getname);
+		attrname = (t_symbol *)object_method((t_object*)data, hoa_sym_getname);
 			
 		if (attrname == hoa_sym_selectedboxes)
 		{
@@ -418,8 +421,9 @@ t_max_err connect_notify(t_connect *x, t_symbol *s, t_symbol *msg, void *sender,
 					x->f_nbSelected++;
 				}
 			}
-			freebytes(av, sizeof(t_atom) * current_nb_selected);
-		}			
+            
+            sysmem_freeptr(av);
+		}
 	}
 
 
@@ -445,8 +449,8 @@ void *connect_new(t_symbol *s, long argc, t_atom *argv)
     if (x)
     {
         // load Ambisonic instances to query harmonics band or argument in 2D or 3D
-        x->f_ambi2D = new Processor<Hoa2d, t_sample>::Harmonics((ulong)(HOA_MAX_PLANEWAVES*0.5 -1));
-		x->f_ambi3D = new Processor<Hoa3d, t_sample>::Harmonics((ulong)(sqrt((long double)HOA_MAX_PLANEWAVES) - 1));
+        x->f_ambi2D = new Processor<Hoa2d, double>::Harmonics((ulong)(HOA_MAX_PLANEWAVES*0.5 -1));
+		x->f_ambi3D = new Processor<Hoa3d, double>::Harmonics((ulong)(sqrt((long double)HOA_MAX_PLANEWAVES) - 1));
         
         x->f_objects = new t_object*[CONNECT_MAX_TAB];
         
@@ -467,16 +471,11 @@ void *connect_new(t_symbol *s, long argc, t_atom *argv)
     return x;
 }
 
-#ifdef HOA_PACKED_LIB
-int hoa_connect_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
     t_class *c;
     
     c = class_new("hoa.connect", (method)connect_new, (method)connect_free, sizeof(t_connect), 0L, A_GIMME, 0);
-    class_setname((char *)"hoa.connect", (char *)"hoa.connect");
     
     hoa_initclass(c, (method)NULL);
     
@@ -488,6 +487,7 @@ void ext_main(void *r)
     class_addmethod(c, (method)connect_bang,	"bang",             0);
     
     CLASS_STICKY_ATTR		(c, "category", 0, "Behavior");
+    
     CLASS_ATTR_RGBA			(c, "zhcolor", 0, t_connect, f_color_zero);
     CLASS_ATTR_ACCESSORS	(c, "zhcolor", NULL, connect_setattr_zerocolor);
     CLASS_ATTR_STYLE_LABEL	(c, "zhcolor", 0, "rgba", "zero harmonics color");

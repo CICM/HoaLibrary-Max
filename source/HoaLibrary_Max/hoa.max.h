@@ -16,6 +16,13 @@
 
 using namespace c74::max;
 
+// hotfix : jgraphics_attr_setrgba => object_attr_setjrgba
+#undef CLASS_ATTR_RGBA
+#define CLASS_ATTR_RGBA(c,attrname,flags,structname,structmember) \
+{	CLASS_ATTR_DOUBLE_ARRAY(c,attrname,flags,structname,structmember,4); \
+    CLASS_ATTR_ACCESSORS(c,attrname,NULL,object_attr_setjrgba); \
+    CLASS_ATTR_PAINT(c,attrname,0); }
+
 #include "hoa.max_commonsyms.h"
 #include "hoa.max.math.h"
 
