@@ -163,7 +163,7 @@ void hoa_dac_set(t_hoa_dac *x, t_symbol *s, long argc, t_atom *argv)
 void hoa_dac_assist(t_hoa_dac *x, void *b, long m, long a, char *s)
 {
     // @in 0 @loop 1 @type signal @digest input channel and incoming messages.
-    object_method_direct(void, (t_object*, void*, long, long, char*), x,
+    object_method_direct(void, (t_object*, void*, long, long, char*), x->f_dac,
                          gensym("assist"), b, m, a, s);
 }
 

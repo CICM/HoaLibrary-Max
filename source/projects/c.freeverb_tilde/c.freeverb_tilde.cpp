@@ -240,16 +240,11 @@ void freeverb_roomsize(t_freeverb *x, double f);
 void freeverb_damp(t_freeverb *x, double f);
 void freeverb_freeze(t_freeverb *x, long n);
 
-#ifdef HOA_PACKED_LIB
-int c_freeverb_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
 	t_class *c;
     
 	c = class_new("c.freeverb~", (method)freeverb_new, (method)freeverb_free, (short)sizeof(t_freeverb), 0L, A_GIMME, 0);
-    class_setname((char *)"c.freeverb~", (char *)"c.freeverb~");
 
 	hoa_initclass(c, (method)NULL);
     
@@ -351,9 +346,10 @@ void freeverb_assist(t_freeverb *x, void *b, long m, long a, char *s)
     }
 }
 
-void freeverb_dsp(t_freeverb *x, t_object *dsp, short *count, double samplerate, long maxvectorsize, long flags)
+void freeverb_dsp(t_freeverb *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
-    object_method(dsp, gensym("dsp_add64"), x, (method)freeverb_perform, 0, NULL);
+    object_method_direct(void, (t_object*, t_object*, t_perfroutine64, long, void*),
+                         dsp64, gensym("dsp_add64"), (t_object*)x, (t_perfroutine64)freeverb_perform, 0, NULL);
 }
 
 void freeverb_perform(t_freeverb *x, t_object *d, double **ins, long ni, double **outs, long no, long sampleframes, long f,void *up)
