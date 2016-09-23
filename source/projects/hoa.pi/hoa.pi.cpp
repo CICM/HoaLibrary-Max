@@ -66,7 +66,7 @@ void hoa_pi_assist(t_hoa_pi *x, void *b, long m, long a, char *s)
 
 void hoa_pi_bang(t_hoa_pi *x) 
 {
-	outlet_float(x->f_outlet, M_PI * x->f_value);
+	outlet_float(x->f_outlet, HOA_PI * x->f_value);
 }
 
 void hoa_pi_int(t_hoa_pi *x, long n)
