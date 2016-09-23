@@ -45,6 +45,11 @@ static double s_hoa_gain_startval;
 #define hoa_gain_DISPLAYINSET			(4.)	// amount subtracted from rect for value
 #define knobMargin                      (2)		// Knob Margin
 
+template <typename T>
+T CLAMP(const T& n, const T& lower, const T& upper) {
+    return std::max(lower, std::min(n, upper));
+}
+
 enum inputmode {
 	DECIBELS	= 0,
 	AMPLITUDE	= 1,
@@ -172,7 +177,8 @@ void hoa_gain_perform64(t_hoa_gain *x, t_object *dsp64, double **ins, long numin
 void hoa_gain_dsp64(t_hoa_gain *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
     x->f_amp->setRamp((const ulong)(x->f_interp / 1000. * samplerate));
-    object_method(dsp64, gensym("dsp_add64"), x, hoa_gain_perform64, 0, NULL);
+    object_method_direct(void, (t_object*, t_object*, t_perfroutine64, long, void*),
+                         dsp64, gensym("dsp_add64"), (t_object*)x, (t_perfroutine64)hoa_gain_perform64, flags, NULL);
 }
 
 /* Utilities ------------------------------------- */
@@ -357,16 +363,16 @@ void draw_background(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
         
         // Background
         jgraphics_rectangle(g, 0, 0, rect->width, rect->height);
-        jgraphics_set_source_jrgba(g, &x->j_brgba);
+        jgraphics_set_source_jrgba(g, (char*)(&x->j_brgba));
         jgraphics_fill(g);
         
         // Border :
         jgraphics_rectangle(g, 0., 0., rect->width, rect->height);
-        jgraphics_set_source_jrgba(g, &x->j_knobcolor);
+        jgraphics_set_source_jrgba(g, (char*)(&x->j_knobcolor));
         jgraphics_set_line_width(g, 1.);
         jgraphics_stroke(g);
         
-        jgraphics_set_source_jrgba(g, &x->j_knobcolor);
+        jgraphics_set_source_jrgba(g, (char*)(&x->j_knobcolor));
         
         if (isHoriz)
         {
@@ -394,7 +400,7 @@ void draw_cursor(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
         long pos = (long)hoa_gain_dBvaltopos(x, CLAMP(x->j_valdB, x->f_range[0], x->f_range[1]), rect, isHoriz);
         
         // draw knob rect
-        jgraphics_set_source_jrgba(g, &x->j_knobcolor);
+        jgraphics_set_source_jrgba(g, (char*)(&x->j_knobcolor));
         
         if (isHoriz)
             jgraphics_rectangle(g, pos - hoa_gain_DISPLAYINSET*0.5, knobMargin, hoa_gain_DISPLAYINSET, rect->height - (knobMargin*2));
@@ -436,7 +442,7 @@ void draw_valuerect(t_hoa_gain *x, t_object *view, t_rect *rect, char isHoriz)
             return;
         
         jgraphics_rectangle(g, layer.x, layer.y, layer.width, layer.height);
-        jgraphics_set_source_jrgba(g, &x->j_barcolor);
+        jgraphics_set_source_jrgba(g, (char*)(&x->j_barcolor));
         jgraphics_fill(g);
         
         jbox_end_layer((t_object*)x, view, gensym("valuerect_layer"));
@@ -734,13 +740,14 @@ void hoa_gain_tometer(t_hoa_gain *x, t_symbol *s, long ac, t_atom *av)
         for(auto box : boxes)
         {
             // re-connect patchlines
-            for(int i = 0; jbox_getinlet(box, i) != NULL && i < x->f_number_of_channels; i++)
+            const long inlets = inlet_count((t_object*)box);
+            for(int i = 0; i < inlets && i < x->f_number_of_channels; ++i)
             {
                 atom_setobj(msg, gain);
                 atom_setlong(msg + 1, i);
                 atom_setobj(msg + 2, box);
                 atom_setlong(msg + 3, i);
-                object_method_typed(patcher , hoa_sym_connect, 4, msg, &rv);
+                object_method_typed(patcher, hoa_sym_connect, 4, msg, &rv);
             }
         }
         boxes.clear();
@@ -806,7 +813,7 @@ t_max_err hoa_gain_getvalueof(t_hoa_gain *x, long *ac, t_atom **av)
         else
         {
             *ac = 2;
-			*av = (t_atom *)getbytes(2 * sizeof(t_atom));
+			*av = (t_atom *)sysmem_newptr(2 * sizeof(t_atom));
         }
         
         atom_setlong(*av+0, (long)x->f_inputMode);
@@ -864,7 +871,10 @@ void hoa_gain_preset(t_hoa_gain *x)
     void *z = gensym("_preset")->s_thing;
     if (z)
     {
-        binbuf_vinsert(z,(char*)"osslf", x, object_classname(x), gensym("contextvalue"), x->f_inputMode, hoa_gain_get_input_mode_value(x));
+        /*
+        binbuf_vinsert(z,(char*)"osslf", x, object_classname((t_object*)x), gensym("contextvalue"),
+                       x->f_inputMode, hoa_gain_get_input_mode_value(x));
+        */
     }
 }
 
@@ -927,16 +937,11 @@ void *hoa_gain_new(t_symbol *s, short argc, t_atom *argv)
     return x;
 }
 
-#ifdef HOA_PACKED_LIB
-int hoa_gain_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
     t_class *c;
     
     c = class_new("hoa.gain~", (method)hoa_gain_new, (method)hoa_gain_free, sizeof(t_hoa_gain), (method)NULL, A_GIMME, 0L);
-    class_setname((char *)"hoa.gain~", (char *)"hoa.gain~");
     
     c->c_flags |= CLASS_FLAG_NEWDICTIONARY;
     class_dspinitjbox(c);
@@ -989,7 +994,7 @@ void ext_main(void *r)
     class_addmethod (c, (method) hoa_gain_setvalueof,          "setvalueof",           A_CANT, 0);
     class_addmethod (c, (method) hoa_gain_preset,              "preset",                       0);
     class_addmethod (c, (method) hoa_gain_notify,              "notify",               A_CANT, 0);
-    class_addmethod (c, (method) hoa_gain_oksize,              "oksize",               A_CANT, 0);
+    //class_addmethod (c, (method) hoa_gain_oksize,              "oksize",               A_CANT, 0);
     
     CLASS_ATTR_DEFAULT(c,"patching_rect",0, "0. 0. 140. 22.");
     
@@ -1007,8 +1012,8 @@ void ext_main(void *r)
     CLASS_ATTR_BASIC			(c, "relative", 0);
     // @description Mousing can either be <b>absolute</b> or <b>relative</b>
     
-    CLASS_ATTR_CHAR				(c,"inputmode", 0, t_hoa_gain, f_inputMode);
-    CLASS_ATTR_LABEL			(c,"inputmode", 0, "Input Mode");
+    CLASS_ATTR_CHAR				(c, "inputmode", 0, t_hoa_gain, f_inputMode);
+    CLASS_ATTR_LABEL			(c, "inputmode", 0, "Input Mode");
     CLASS_ATTR_ENUMINDEX3		(c, "inputmode", 0, "DeciBels", "Amplitude", "Midi");
     // @description Input mode can either be in <b>DeciBels</b>, <b>Amplitude</b> or <b>Midi</b>
     
@@ -1016,21 +1021,30 @@ void ext_main(void *r)
     CLASS_ATTR_LABEL			(c, "defvaldb", 0, "Default Value (dB)");
     // @description Default value in <b>DeciBels</b>, <b>Amplitude</b> or <b>Midi</b>
     
+    CLASS_ATTR_DOUBLE_ARRAY     (c, "range", 0, t_hoa_gain, f_range, 2);
+    CLASS_ATTR_ACCESSORS        (c, "range", NULL, hoa_gain_setattr_range);
+    CLASS_ATTR_ORDER			(c, "range", 0, "2");
+    CLASS_ATTR_LABEL			(c, "range", 0, "Range (dB)");
+    CLASS_ATTR_DEFAULT			(c, "range", 0, "-70. 18.");
+    CLASS_ATTR_SAVE             (c, "range", 1);
+    
     CLASS_STICKY_CATEGORY_CLEAR(c);
+    
+    CLASS_STICKY_CATEGORY(c, 0, "Appearance");
     
     CLASS_ATTR_CHAR				(c,"orientation",0,t_hoa_gain,j_orientation);
     CLASS_ATTR_LABEL			(c,"orientation",0,"Orientation");
     CLASS_ATTR_ENUMINDEX3		(c,"orientation", 0,"Automatic", "Horizontal", "Vertical");
-    CLASS_ATTR_CATEGORY			(c, "orientation", 0, "Appearance");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "orientation", 0, "0");
     // @description Orientation can either be in <b>Automatic</b>, <b>Horizontal</b> or <b>Vertical</b>
     
-    CLASS_STICKY_CATEGORY(c, 0, "Color");
+    CLASS_STICKY_CATEGORY_CLEAR(c);
     
+    CLASS_STICKY_CATEGORY(c, 0, "Color");
     CLASS_ATTR_INVISIBLE(c, "color", 0);
     // @exclude hoa.gain~
     
-    CLASS_ATTR_RGBA_LEGACY		(c, "bgcolor", "brgb", 0, t_hoa_gain, j_brgba);
+    CLASS_ATTR_RGBA             (c, "bgcolor", 0, t_hoa_gain, j_brgba);
     CLASS_ATTR_ALIAS			(c,"bgcolor", "brgba");
     CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bgcolor",0,"0.611765 0.611765 0.611765 1.");
     CLASS_ATTR_STYLE_LABEL		(c, "bgcolor", 0, "rgba", "Background Color");
@@ -1062,7 +1076,7 @@ void ext_main(void *r)
     CLASS_ATTR_ORDER			(c, "min",			0, "4");
     CLASS_ATTR_ORDER			(c, "mult",			0, "5");
     
-    CLASS_ATTR_CATEGORY			(c, "channels", 0, "Custom");
+    CLASS_STICKY_CATEGORY(c, 0, "Custom");
     CLASS_ATTR_LONG				(c, "channels", 0, t_hoa_gain, f_number_of_channels);
     CLASS_ATTR_ACCESSORS        (c, "channels", NULL, hoa_gain_setattr_channels);
     CLASS_ATTR_ORDER			(c, "channels", 0, "1");
@@ -1070,14 +1084,7 @@ void ext_main(void *r)
     CLASS_ATTR_FILTER_CLIP		(c, "channels", 1, MAX_IO);
     CLASS_ATTR_DEFAULT			(c, "channels", 0, "8");
     CLASS_ATTR_SAVE				(c, "channels", 1);
-    
-    CLASS_ATTR_CATEGORY			(c, "range", 0, "Value");
-    CLASS_ATTR_DOUBLE_ARRAY     (c, "range", 0, t_hoa_gain, f_range, 2);
-    CLASS_ATTR_ACCESSORS        (c, "range", NULL, hoa_gain_setattr_range);
-    CLASS_ATTR_ORDER			(c, "range", 0, "2");
-    CLASS_ATTR_LABEL			(c, "range", 0, "Range (dB)");
-    CLASS_ATTR_DEFAULT			(c, "range", 0, "-70. 18.");
-    CLASS_ATTR_SAVE             (c, "range", 1);
+    CLASS_STICKY_CATEGORY_CLEAR(c);
     
     class_register(CLASS_BOX, c);
     s_hoa_gain_class = c;    

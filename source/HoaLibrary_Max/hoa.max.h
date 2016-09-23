@@ -9,9 +9,11 @@
 
 #include "Hoa.hpp"
 
+#define _JPATCHER_API_H_ 1 // because of c74_ui.h - l169
+
 #include "c74_max.h"
+#include "c74_ui.h" // need to include before c74_msp.h because of c74_ui.h - l169
 #include "c74_msp.h"
-#include "c74_ui.h"
 #include "c74_max_proto.h"
 
 using namespace c74::max;
@@ -34,8 +36,10 @@ using namespace c74::max;
 #define HOA_CONTRAST_DARKER     0.14f
 #define HOA_DISPLAY_NPOINTS     360
 
+using t_sample = double;
+
 static t_symbol* _sym_is_hoa	   = gensym("is_hoa");
-static t_symbol* _sym_hoa_version  = gensym("(v2.2)");
+static t_symbol* _sym_hoa_version  = gensym("(v2.3)");
 static t_symbol* _sym_credit_line1 = gensym("by Julien Colafrancesco, Pierre Guillot & Eliott Paris");
 #ifdef _WINDOWS
 		static t_symbol* _sym_credit_line2 = gensym("(c) 2012 - 2016, CICM | University of Paris 8");
