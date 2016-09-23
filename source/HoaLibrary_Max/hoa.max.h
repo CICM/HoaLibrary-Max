@@ -7,24 +7,14 @@
 #ifndef __DEF_HOA_MAX__
 #define __DEF_HOA_MAX__
 
-#include "ThirdParty/HoaLibrary/Sources/Hoa.hpp"
+#include "Hoa.hpp"
 
-extern "C"
-{
-#include <ext.h>
-#include <ext_obex.h>
-#include <z_dsp.h>
-#include <ext_common.h>
-#include <jpatcher_api.h>
-#include <jgraphics.h>
-#include <jpatcher_syms.h>
-#include <ext_dictionary.h>
-#include <buffer.h>
-#include <ext_globalsymbol.h>
-#include <commonsyms.h>
-#include <ext_parameter.h>
-#include <jpatcher_syms.h>
-}
+#include "c74_max.h"
+#include "c74_msp.h"
+#include "c74_ui.h"
+#include "c74_max_proto.h"
+
+using namespace c74::max;
 
 #include "hoa.max_commonsyms.h"
 #include "hoa.max.math.h"
@@ -41,9 +31,9 @@ static t_symbol* _sym_is_hoa	   = gensym("is_hoa");
 static t_symbol* _sym_hoa_version  = gensym("(v2.2)");
 static t_symbol* _sym_credit_line1 = gensym("by Julien Colafrancesco, Pierre Guillot & Eliott Paris");
 #ifdef _WINDOWS
-		static t_symbol* _sym_credit_line2 = gensym("(c) 2012 - 2015, CICM | University of Paris 8");
+		static t_symbol* _sym_credit_line2 = gensym("(c) 2012 - 2016, CICM | University of Paris 8");
 #else
-		static t_symbol* _sym_credit_line2 = gensym("\u00a9 2012 - 2015, CICM | University of Paris 8");
+		static t_symbol* _sym_credit_line2 = gensym("\u00a9 2012 - 2016, CICM | University of Paris 8");
 #endif
 
 typedef long t_hoa_err;		///< an integer value suitable to be returned as an hoa error code  @ingroup misc
@@ -133,7 +123,7 @@ public:
         }
         c=0; p=0;
     }
-    
+
     inline T* get() const noexcept {return c ? p: 0;}
     inline T* operator->() const noexcept {return c ? p: 0;}
     inline T& operator*() const noexcept {return *get();}

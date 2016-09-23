@@ -13,14 +13,15 @@ void hoa_print_credit()
         t_object* print;
 		t_atom* sym = (t_atom*) malloc( sizeof(t_atom));
 		atom_setsym(sym, gensym("HoaLibrary"));
-		print = (t_object*)object_new_typed(CLASS_BOX, gensym("print"), 1, sym);
+        
+		print = (t_object*)object_new_typed(gensym("box"), gensym("print"), 1l, sym);
         if (print)
         {
             atom_setsym(sym, _sym_credit_line1);
             object_method_typed(print, hoa_sym_list, 1, sym, NULL);
             atom_setsym(sym, _sym_hoa_version);
             freeobject(print);
-            print = (t_object*)object_new_typed(CLASS_BOX, gensym("print"), 1, sym);
+            print = (t_object*)object_new_typed(gensym("box"), gensym("print"), 1, sym);
             atom_setsym(sym, _sym_credit_line2);
             object_method_typed(print, hoa_sym_list, 1, sym, NULL);
             gensym("hoa_print_credits")->s_thing = print;
@@ -33,7 +34,7 @@ void hoa_print_credit()
 
 t_hoa_err hoa_initclass(t_class* c, method hoa_getinfos_method)
 {
-    schedule_delay(NULL, (method)hoa_print_credit, 5000, NULL, NULL, NULL);
+    defer_low(NULL, (method)hoa_print_credit, NULL, 0, NULL);
 /*
 #ifdef _WINDOWS
 		schedule_delay(NULL, (method)hoa_print_credit, 5000, NULL, NULL, NULL);

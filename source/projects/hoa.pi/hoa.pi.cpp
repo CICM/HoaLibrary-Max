@@ -66,7 +66,7 @@ void hoa_pi_assist(t_hoa_pi *x, void *b, long m, long a, char *s)
 
 void hoa_pi_bang(t_hoa_pi *x) 
 {
-	outlet_float(x->f_outlet, PI * x->f_value);
+	outlet_float(x->f_outlet, M_PI * x->f_value);
 }
 
 void hoa_pi_int(t_hoa_pi *x, long n)
@@ -94,7 +94,7 @@ void *hoa_pi_new(t_symbol *s, int argc, t_atom *argv)
         if (atom_isNumber(argv))
             x->f_value = atom_getfloat(argv);
         
-        x->f_outlet = floatout(x);
+        x->f_outlet = outlet_new(x, "float");
         
         attr_args_process(x, argc, argv);
     }
@@ -102,16 +102,11 @@ void *hoa_pi_new(t_symbol *s, int argc, t_atom *argv)
     return(x);
 }
 
-#ifdef HOA_PACKED_LIB
-int hoa_pi_main(void)
-#else
-void ext_main(void *r)
-#endif
+void ext_main(void* r)
 {
     t_class *c;
     
     c = class_new("hoa.pi", (method)hoa_pi_new, (method)NULL, sizeof(t_hoa_pi), 0L, A_GIMME, 0);
-    class_setname((char *)"hoa.pi", (char *)"hoa.pi");
     
     hoa_initclass(c, (method)hoa_getinfos);
     

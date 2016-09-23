@@ -7,10 +7,9 @@
 #ifndef __DEF_HOA_MAX_COMMONSYMS__
 #define __DEF_HOA_MAX_COMMONSYMS__
 
-extern "C"
-{
-#include <ext.h>
-}
+#include "c74_max.h"
+
+using namespace c74::max;
 
 // Hoa
 static t_symbol* hoa_sym_hoa_getinfos               = gensym("hoa_getinfos");
