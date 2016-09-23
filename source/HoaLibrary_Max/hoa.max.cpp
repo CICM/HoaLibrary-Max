@@ -14,7 +14,7 @@ void hoa_print_credit()
 		t_atom* sym = (t_atom*) malloc( sizeof(t_atom));
 		atom_setsym(sym, gensym("HoaLibrary"));
         
-		print = (t_object*)object_new_typed(gensym("box"), gensym("print"), 1l, sym);
+		print = (t_object*)object_new_typed(hoa_sym_box, gensym("print"), 1l, sym);
         if (print)
         {
             atom_setsym(sym, _sym_credit_line1);

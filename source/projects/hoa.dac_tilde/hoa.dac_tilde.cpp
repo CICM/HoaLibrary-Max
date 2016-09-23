@@ -54,7 +54,7 @@ void *hoa_dac_new(t_symbol *s, int argc, t_atom *argv)
     {
         if (argc && atom_gettype(argv) == A_SYM)
         {
-            char *dac_bus_name = atom_getsym(argv)->s_name;
+            char const* dac_bus_name = atom_getsym(argv)->s_name;
             if (isalpha(dac_bus_name[0])) // only works if the first letter isn't a number
             {
                 symPrepend = 1;
@@ -98,7 +98,8 @@ void *hoa_dac_new(t_symbol *s, int argc, t_atom *argv)
         
         x->f_number_of_channels = count;
         dsp_setup((t_pxobject *)x, x->f_number_of_channels);
-        x->f_dac = (t_object *)object_new_typed(CLASS_BOX, gensym("dac~"), count + symPrepend, channels);
+        
+        x->f_dac = (t_object *)object_new_typed(hoa_sym_box, gensym("dac~"), count + symPrepend, channels);
         
         return x->f_dac;
     }
@@ -118,7 +119,8 @@ t_hoa_err hoa_getinfos(t_hoa_dac* x, t_hoa_boxinfos* boxinfos)
 
 void hoa_dac_dsp64(t_hoa_dac *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
 {
-    object_method((t_object *)x->f_dac, gensym("dsp64"), dsp64, count, samplerate, maxvectorsize, flags);
+    object_method_direct(void, (t_object*, t_object*, short*, double, long, long), x->f_dac,
+                         gensym("dsp64"), dsp64, count, samplerate, maxvectorsize, flags);
 }
 
 void hoa_dac_start(t_hoa_dac *x)
@@ -144,7 +146,8 @@ void hoa_dac_wclose(t_hoa_dac *x)
 
 void hoa_dac_int(t_hoa_dac *x, long l)
 {
-    object_method(x->f_dac, gensym("int"), l);
+    object_method_direct(void, (t_object*, long),
+                         x->f_dac, gensym("int"), l);
 }
 
 void hoa_dac_list(t_hoa_dac *x, t_symbol *s, long argc, t_atom *argv)
@@ -160,7 +163,8 @@ void hoa_dac_set(t_hoa_dac *x, t_symbol *s, long argc, t_atom *argv)
 void hoa_dac_assist(t_hoa_dac *x, void *b, long m, long a, char *s)
 {
     // @in 0 @loop 1 @type signal @digest input channel and incoming messages.
-	object_method(x->f_dac, gensym("assist"), b, m, a, s);
+    object_method_direct(void, (t_object*, void*, long, long, char*), x,
+                         gensym("assist"), b, m, a, s);
 }
 
 void hoa_dac_dblclick(t_hoa_dac *x)
@@ -173,16 +177,12 @@ void hoa_dac_free(t_hoa_dac *x)
 	dsp_free((t_pxobject*)x);
 }
 
-#ifdef HOA_PACKED_LIB
-int hoa_dac_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
     t_class *c;
     
-    c = class_new("hoa.dac~", (method)hoa_dac_new, (method)hoa_dac_free, (short)sizeof(t_hoa_dac), 0L, A_GIMME, 0);
-    class_setname((char *)"hoa.dac~", (char *)"hoa.dac~");
+    c = class_new("hoa.dac~", (method)hoa_dac_new, (method)hoa_dac_free,
+                  (short)sizeof(t_hoa_dac), 0L, A_GIMME, 0);
     
     hoa_initclass(c, (method)hoa_getinfos);
     

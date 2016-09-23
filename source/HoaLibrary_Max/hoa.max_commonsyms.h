@@ -11,6 +11,10 @@
 
 using namespace c74::max;
 
+// Max
+static t_symbol* hoa_sym_box                        = gensym("box");
+static t_symbol* hoa_sym_nobox                      = gensym("nobox");
+
 // Hoa
 static t_symbol* hoa_sym_hoa_getinfos               = gensym("hoa_getinfos");
 
