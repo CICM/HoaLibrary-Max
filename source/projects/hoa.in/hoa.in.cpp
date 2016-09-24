@@ -140,15 +140,10 @@ void hoa_in_assist(t_hoa_in *x, void *b, long m, long a, char *s)
 	}
 }
 
-#ifdef HOA_PACKED_LIB
-int hoa_in_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
     t_class* c;
     c = class_new("hoa.in", (method)hoa_in_new, (method)hoa_in_free, sizeof(t_hoa_in), NULL, A_GIMME, 0);
-    class_setname((char *)"hoa.in", (char *)"hoa.in");
     
     hoa_initclass(c, (method)NULL);
     

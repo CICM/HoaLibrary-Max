@@ -141,7 +141,9 @@ void hoa_sig_out_perform64(t_hoa_sig_out *x, t_object *dsp64, double **ins, long
 
 void hoa_sig_out_dsp64(t_hoa_sig_out *x, t_object *dsp64, short *count, double sr, long vecsize, long flags)
 {
-    object_method(dsp64, gensym("dsp_add64"), x, hoa_sig_out_perform64, 0, NULL);		// scalar routine
+    object_method_direct(void, (t_object*, t_object*, t_perfroutine64, long, void*),
+                         dsp64, gensym("dsp_add64"), (t_object*)x,
+                         (t_perfroutine64)hoa_sig_out_perform64, flags, NULL);
 }
 
 void hoa_sig_out_free(t_hoa_sig_out *x)
@@ -149,15 +151,11 @@ void hoa_sig_out_free(t_hoa_sig_out *x)
 	dsp_free(&x->x_obj);
 }
 
-#ifdef HOA_PACKED_LIB
-int hoa_out_sig_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
     t_class* c;
-    c = class_new("hoa.out~", (method) hoa_sig_out_new, (method)hoa_sig_out_free, sizeof(t_hoa_sig_out), NULL, A_GIMME, 0);
-    class_setname((char *)"hoa.out~", (char *)"hoa.out~");
+    c = class_new("hoa.out~", (method)hoa_sig_out_new, (method)hoa_sig_out_free,
+                  sizeof(t_hoa_sig_out), NULL, A_GIMME, 0);
     
     hoa_initclass(c, (method)NULL);
     

@@ -92,22 +92,22 @@ void hoa_thisprocess_mutechange(t_hoa_thisprocess *x)
 
 long hoa_get_number_of_attributes(long ac, t_atom *av)
 {
-	long nAttrs = 0;
-	char *attrName = NULL;
+	long attributes = 0;
 	if (ac > 0 && av)
 	{
-		for (int i=0; i<ac; i++)
+        std::string attr_name;
+		for(int i=0; i<ac; i++)
 		{
-			if (atom_gettype(av+i) == A_SYM)
+			if(atom_gettype(av+i) == A_SYM)
 			{
-				attrName = atom_string(av + i);
-				if (attrName[0] == '@')
-					nAttrs++;
+                attr_name = atom_getsym(av + i)->s_name;
+				if(attr_name[0] == '@')
+					attributes++;
 			}
 		}
 	}
 	
-	return nAttrs;
+	return attributes;
 }
 
 void hoa_process_attrs(t_hoa_thisprocess *x, long patcher_nAttrs, t_attr_struct *attrs_patcher, long *nAttr, t_attr_struct **attrs_processed)
@@ -238,7 +238,6 @@ void hoa_args_setup(short ac, t_atom *av, long *nAttr, t_args_struct *args, t_at
 {
     long attrOffset = 0, attrNumberOfArg = 0;
     attrOffset = attr_args_offset(ac, av);
-    char *attrName = NULL;
     t_symbol *tempsym;
     
     nAttr[0] = hoa_get_number_of_attributes(ac, av);
@@ -270,13 +269,13 @@ void hoa_args_setup(short ac, t_atom *av, long *nAttr, t_args_struct *args, t_at
         
         for (int i = 0; i < nAttr[0]; i++)
         {
-            attrName = atom_string(av);
+            std::string attr_name(atom_getsym(av)->s_name);
             
-            if (attrName[0] == '@')
+            if (attr_name[0] == '@')
             {
-                attrName++;						// remove '@' char
-                tempsym = gensym(attrName);
-                atom_setsym(av, tempsym);		// to check next offset
+                attr_name.erase(attr_name.begin());     // remove '@' char
+                tempsym = gensym(attr_name.c_str());
+                atom_setsym(av, tempsym);               // to check next offset
                 attrs[0][i].msg = tempsym;
             }
             
@@ -444,11 +443,11 @@ void *hoa_thisprocess_new(t_symbol *s, short argc, t_atom *argv)
     
     t_hoa_thisprocess *x = (t_hoa_thisprocess *) object_alloc(hoa_thisprocess_class);
     
-    x->out_mute				= intout(x);
-    x->out_patcherAttr		= listout(x);
-    x->out_patcherArgs		= listout(x);
-    x->out_mode				= listout(x);
-    x->out_instance_infos	= listout(x);
+    x->out_mute				= outlet_new(x, "int");
+    x->out_patcherAttr		= outlet_new(x, "list");
+    x->out_patcherArgs		= outlet_new(x, "list");
+    x->out_mode				= outlet_new(x, "list");
+    x->out_instance_infos	= outlet_new(x, "list");
     
     x->hoaProcessor_parent = Get_HoaProcessor_Object();
     x->f_order = HoaProcessor_Get_Ambisonic_Order(x->hoaProcessor_parent);
@@ -469,8 +468,8 @@ void ext_main(void *r)
 #endif
 {
     t_class* c;
-    c = class_new("hoa.thisprocess~", (method)hoa_thisprocess_new, (method)hoa_thisprocess_free, sizeof(t_hoa_thisprocess), NULL, A_GIMME, 0);
-    class_setname((char *)"hoa.thisprocess~", (char *)"hoa.thisprocess~");
+    c = class_new("hoa.thisprocess~", (method)hoa_thisprocess_new, (method)hoa_thisprocess_free,
+                  sizeof(t_hoa_thisprocess), NULL, A_GIMME, 0);
     
     hoa_initclass(c, (method)NULL);
     

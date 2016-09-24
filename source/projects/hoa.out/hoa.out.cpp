@@ -154,22 +154,12 @@ void hoa_out_anything(t_hoa_out *x, t_symbol *s, short argc, t_atom *argv)
 	object_method(x->parent_processor, hoa_sym_out_message, &args);
 }
 
-void hoa_out_free(t_hoa_out *x)
-{
-	;
-}
-
-#ifdef HOA_PACKED_LIB
-int hoa_out_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
     t_class* c;
-    c = class_new("hoa.out", (method)hoa_out_new, (method)hoa_out_free, sizeof(t_hoa_out), NULL, A_GIMME, 0);
-    class_setname((char *)"hoa.out", (char *)"hoa.out");
+    c = class_new("hoa.out", (method)hoa_out_new, nullptr, sizeof(t_hoa_out), nullptr, A_GIMME, 0);
     
-    hoa_initclass(c, (method)NULL);
+    hoa_initclass(c, nullptr);
     class_addmethod(c, (method)hoa_out_assist,			"assist",			A_CANT,	 0);
     
     // @method bang @digest output bang message in the corresponding hoa.process~ object's message outlet
