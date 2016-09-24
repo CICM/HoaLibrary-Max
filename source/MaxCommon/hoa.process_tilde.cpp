@@ -33,6 +33,8 @@
 
 t_class *hoa_processor_class;
 
+typedef long(*t_intmethod)(void*, ...);
+
 #define MAX_NUM_PATCHES 4096
 #define MAX_ARGS 50
 
@@ -41,7 +43,7 @@ t_class *hoa_processor_class;
 typedef struct _patchspace
 {
 	t_patcher*			the_patch;
-	struct _dspchain*	the_dspchain;
+	t_object*           the_dspchain;
 	t_symbol*			patch_name_in;
 	char				patch_name[256];
 	short				patch_path;
@@ -220,18 +222,11 @@ t_hoa_err hoa_getinfos(t_hoa_processor* x, t_hoa_boxinfos* boxinfos);
 // Main
 // ========================================================================================================================================== //
 
-#ifdef HOA_PACKED_LIB
-int hoa_process_main(void)
-#else
 void ext_main(void *r)
-#endif
 {
 	t_class* c;
-
-	c = class_new("hoa.process~", (method)hoa_processor_new,  (method)hoa_processor_free, sizeof(t_hoa_processor), NULL, A_GIMME, 0);
-	class_setname((char *)"hoa.process~", (char *)"hoa.process~");
-    class_setname((char *)"hoa.2d.process~", (char *)"hoa.process~");
-    class_setname((char *)"hoa.3d.process~", (char *)"hoa.process~");
+	c = class_new("hoa.process~", (method)hoa_processor_new,  (method)hoa_processor_free,
+                  sizeof(t_hoa_processor), NULL, A_GIMME, 0);
     
 	hoa_initclass(c, (method)hoa_getinfos);
 	
@@ -508,7 +503,7 @@ void *hoa_processor_new(t_symbol *s, short argc, t_atom *argv)
 	
 	if (x->declared_ins)
 	{
-		x->in_table = (t_outvoid *)t_getbytes(x->declared_ins * sizeof(t_outvoid));
+        x->in_table = (t_outvoid *)sysmem_newptr(x->declared_ins * sizeof(t_outvoid));
 		for (i = 0; i < x->declared_ins; i++)
 			x->in_table[i] = outlet_new(0L, 0L);											// make generic unowned inlets
 	}
@@ -522,7 +517,7 @@ void *hoa_processor_new(t_symbol *s, short argc, t_atom *argv)
 	
 	if (x->declared_outs)
 	{
-		x->out_table = (t_outvoid *) t_getbytes(x->declared_outs * sizeof(t_outvoid));
+		x->out_table = (t_outvoid *)sysmem_newptr(x->declared_outs * sizeof(t_outvoid));
 		
 		// non-signal extra outlets
 		if (x->extra_outs)
@@ -601,8 +596,8 @@ void hoa_processor_free(t_hoa_processor *x)
 		patch_space_ptr = x->patch_space_ptrs[i];
 		hoa_processor_free_patch_and_dsp (x, patch_space_ptr);
 		
-		if (patch_space_ptr)
-			freebytes((char *) patch_space_ptr, sizeof(t_patchspace));
+		if(patch_space_ptr)
+			sysmem_freeptr(patch_space_ptr);
 	}
 	
 	if (x->declared_sig_ins)
@@ -615,10 +610,10 @@ void hoa_processor_free(t_hoa_processor *x)
 		object_free((t_object*)x->in_table[i]);
 	
 	if (x->in_table)
-		freebytes(x->in_table, x->declared_ins * sizeof(t_outvoid));
+		sysmem_freeptr(x->in_table);
 	
 	if (x->out_table)
-		freebytes(x->out_table, x->declared_outs * sizeof(t_outvoid));
+		sysmem_freeptr(x->out_table);
 	
 	delete x->f_ambi2D;
 	delete x->f_ambi3D;
@@ -851,8 +846,8 @@ void hoa_processor_loadexit(t_hoa_processor *x, long replace_symbol_pointers, vo
 {
 	if (replace_symbol_pointers)
 	{
-		hoa_sym_HoaProcessor->s_thing = (struct object*)previous;
-		hoa_sym_HoaProcessorPatchIndex->s_thing = (struct object*)previousindex;
+		hoa_sym_HoaProcessor->s_thing = (t_object*)previous;
+		hoa_sym_HoaProcessorPatchIndex->s_thing = (t_object*)previousindex;
 	}
 	ATOMIC_DECREMENT_BARRIER(&x->patch_is_loading);
 }
@@ -925,7 +920,7 @@ t_hoa_err hoa_processor_loadpatch(t_hoa_processor *x, long index, t_symbol *patc
 	
 	// Try to locate a file of the given name that is of the correct type
 	
-	strncpy_zero(filename, patch_name_in->s_name, MAX_FILENAME_CHARS);
+	strcpy(filename, patch_name_in->s_name);
 	
 	// if filetype does not exists
 	if (locatefile_extended(filename, &patch_path, &type, &filetypelist, 1))
@@ -957,7 +952,7 @@ t_hoa_err hoa_processor_loadpatch(t_hoa_processor *x, long index, t_symbol *patc
 	
 	// Check that it is a patcher that has loaded
 	
-	if (!ispatcher((t_object*)p))
+	if (object_classname((t_object*)p) != hoa_sym_patcher)
 	{
 		object_error((t_object*)x, "%s is not a patcher file", filename);
 		object_free((t_object *)p);
@@ -989,7 +984,7 @@ t_hoa_err hoa_processor_loadpatch(t_hoa_processor *x, long index, t_symbol *patc
 	jpatcher_set_title(p, gensym(windowname));
 	
 	// Set the relevant associations
-	hoa_processor_patcher_descend((t_patcher *)p, (t_intmethod) hoa_processor_setsubassoc, x, x);
+	hoa_processor_patcher_descend((t_patcher *)p, (t_intmethod)hoa_processor_setsubassoc, x, x);
 	
 	// Link inlets and outlets
 	if (x->declared_ins) 
@@ -1371,7 +1366,7 @@ void hoa_processor_output_typed_message(void* outletptr, t_args_struct *args)
 // Perform and DSP Routines
 // ========================================================================================================================================== //
 
-void hoa_processor_perform64 (t_hoa_processor *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userparam)
+void hoa_processor_perform64(t_hoa_processor *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userparam)
 {
 	for (int i = 0; i < x->declared_sig_ins; i++)
 		x->sig_ins[i] = ins[i];
@@ -1386,7 +1381,7 @@ void hoa_processor_perform64 (t_hoa_processor *x, t_object *dsp64, double **ins,
 	t_patchspace **patch_space_ptrs = x->patch_space_ptrs;
 	t_patchspace *next_patch_space_ptr = 0;
 	
-	t_dspchain *next_dspchain = 0;
+	t_object* next_dspchain = nullptr;
 	
 	long patch_spaces_allocated = x->patch_spaces_allocated;
 	long index = 0;
@@ -1407,7 +1402,8 @@ void hoa_processor_perform64 (t_hoa_processor *x, t_object *dsp64, double **ins,
 	}
 }
 
-void hoa_processor_dsp64 (t_hoa_processor *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
+void hoa_processor_dsp64(t_hoa_processor *x, t_object *dsp64, short *count,
+                         double samplerate, long maxvectorsize, long flags)
 {
 	t_patchspace *patch_space_ptr;
 	
@@ -1424,11 +1420,13 @@ void hoa_processor_dsp64 (t_hoa_processor *x, t_object *dsp64, short *count, dou
 	
 	x->last_vec_size = maxvectorsize;
 	x->last_samp_rate = (long)samplerate;
-	
-	object_method(dsp64, gensym("dsp_add64"), x, hoa_processor_perform64, 0, NULL);
+    
+    object_method_direct(void, (t_object*, t_object*, t_perfroutine64, long, void*),
+                         dsp64, gensym("dsp_add64"), (t_object*)x,
+                         (t_perfroutine64)hoa_processor_perform64, flags, NULL);
 }
 
-void hoa_processor_dsp_internal (t_patchspace *patch_space_ptr, long vec_size, long samp_rate)
+void hoa_processor_dsp_internal(t_patchspace *patch_space_ptr, long vec_size, long samp_rate)
 {
 	// Free the old dspchain
 		
@@ -1497,7 +1495,7 @@ t_hoa_err hoa_processor_get_patch_filename_io_context(t_hoa_processor *x, t_symb
 	
 	// Try to locate a file of the given name that is of the correct type
 	
-	strncpy_zero(filename, patch_name_in->s_name, MAX_FILENAME_CHARS);
+	strcpy(filename, patch_name_in->s_name);
 	
 	// if filetype does not exists
 	if (locatefile_extended(filename, &patch_path, &type, &filetypelist, 1))
@@ -1508,7 +1506,7 @@ t_hoa_err hoa_processor_get_patch_filename_io_context(t_hoa_processor *x, t_symb
 	}
 	
 	// Load the patch
-	p = (t_patcher*) intload(filename, patch_path, 0, 0, NULL, false);
+	p = (t_patcher*)intload(filename, patch_path, 0, 0, NULL, false);
 	
 	// Check something has loaded
 	
@@ -1521,7 +1519,7 @@ t_hoa_err hoa_processor_get_patch_filename_io_context(t_hoa_processor *x, t_symb
 	
 	// Check that it is a patcher that has loaded
 	
-	if (!ispatcher((t_object*)p))
+	if (object_classname((t_object*)p) != hoa_sym_patcher)
 	{
 		object_error((t_object*)x, "%s is not a patcher file", filename);
 		object_free((t_object *)p);
@@ -1725,7 +1723,7 @@ void hoa_processor_doopen(t_hoa_processor *x, t_symbol *s, short argc, t_atom *a
 	long index = atom_getlong(argv);
 	
 	if (x->patch_space_ptrs[index]->the_patch)
-		mess0((t_object *)x->patch_space_ptrs[index]->the_patch, hoa_sym_front);		// this will always do the right thing
+        object_method((t_object *)x->patch_space_ptrs[index]->the_patch, hoa_sym_front);
 }
 
 void hoa_processor_wclose(t_hoa_processor *x, t_symbol *msg, short argc, t_atom *argv)
@@ -1850,9 +1848,11 @@ short hoa_processor_setsubassoc(t_patcher *p, t_hoa_processor *x)
 {
 	t_object *assoc;
 	object_method(p, hoa_sym_getassoc, &assoc);
+    
 	if (!assoc)
 		object_method(p, hoa_sym_setassoc, x);
-	object_method(p, hoa_sym_noedit, 1);
+    
+	object_method_long((t_object*)p, hoa_sym_noedit, 1, nullptr);
 	
 	return 0;
 }
@@ -1873,13 +1873,17 @@ void hoa_processor_pupdate(t_hoa_processor *x, void *b, t_patcher *p)
 
 void *hoa_processor_subpatcher(t_hoa_processor *x, long index, void *arg)
 {
-	if (arg && (long) arg != 1)
-		if (!OB_INVALID(arg))										// arg might be good but not a valid object pointer
-			if (object_classname(arg) == hoa_sym_dspchain)				// don't report subpatchers to dspchain
+	if (arg && (long)arg != 1)
+    {
+        t_object* obj = (t_object*)arg;
+		if (!OB_INVALID(obj)) // arg might be good but not a valid object pointer
+			if (object_classname(obj) == hoa_sym_dspchain) // don't report subpatchers to dspchain
 				return 0;
-	
+    }
+    
 	if (index < x->patch_spaces_allocated)
-		if (x->patch_space_ptrs[index]->patch_valid) return x->patch_space_ptrs[index]->the_patch;		// the indexed patcher
+		if (x->patch_space_ptrs[index]->patch_valid)
+            return x->patch_space_ptrs[index]->the_patch;		// the indexed patcher
 
 	return 0;
 }
@@ -1899,7 +1903,7 @@ t_patchspace *hoa_processor_new_patch_space (t_hoa_processor *x,long index)
 {
 	t_patchspace *patch_space_ptr;
 	
-	x->patch_space_ptrs[index] = patch_space_ptr = (t_patchspace *)t_getbytes(sizeof(t_patchspace));
+	x->patch_space_ptrs[index] = patch_space_ptr = (t_patchspace *)sysmem_newptr(sizeof(t_patchspace));
 	
 	hoa_processor_init_patch_space (patch_space_ptr);
 	x->patch_spaces_allocated++;
@@ -2087,7 +2091,7 @@ t_hoa_err hoa_processor_query_patcherargs(t_hoa_processor *x, long index, long *
 	{
 		long ac = x->patch_space_ptrs[index - 1]->x_argc;
 		argc[0] = ac;
-		argv[0] = (t_atom *) malloc(ac * sizeof(t_atom) );
+		argv[0] = (t_atom *)malloc(ac * sizeof(t_atom) );
 		for (int i = 0; i < ac; i++)
 			argv[0][i] = x->patch_space_ptrs[index - 1]->x_argv[i];
 		
